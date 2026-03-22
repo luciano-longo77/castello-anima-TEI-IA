@@ -4,6 +4,21 @@
 Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale controllata** per lo studio delle funzioni intertestuali nel *Castello dell’anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all’interno di un testo caratterizzato da forte vigilanza teologica.  
 
 ---
+## 📑 Indice
+
+* [Intertestualità sotto sorveglianza](#intertestualità-sotto-sorveglianza)
+
+  * [Obiettivi](#-obiettivi)
+  * [Struttura del repository](#-struttura-del-repository)
+  * [Modello TEI](#-modello-tei)
+  * [Pipeline AI](#-pipeline-ai)
+  * [Il campione](#-il-campione)
+  * [Stato dell’arte e ragioni del modello](#-stato-dellarte-e-ragioni-del-modello)
+  * [Contributo del progetto](#-contributo-del-progetto)
+  * [Licenza](#-licenza)
+  * [Autore](#-autore)
+
+---
 
 ##  🎯 Obiettivi
 
