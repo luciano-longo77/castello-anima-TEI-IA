@@ -1,0 +1,36 @@
+<seg type="indicatio"
+     function="introduzione_pedagogia"
+     xml:id="seg-pos_center-hand1-15"
+     xml:lang="it"
+     hand="ink_1"
+     ana="
+        function:introduzione_pedagogia;
+uso xml:id di <taxonomy xml:id="func">
+
+        relation:mistica/infusa/purificazione;
+quale <taxonomy xml:id="??????????">
+        impact:low;
+uso xml:id di <taxonomy xml:id="impact">
+
+        risk:dottrinale;
+uso xml:id di <taxonomy xml:id="risk">
+
+        certainty:low;
+uso xml:id di
+ 
+        mystic_state:unione;
+uso xml:id di <taxonomy xml:id="mystic_state">
+
+        operation:delimitazione;
+uso xml:id di <taxonomy xml:id="operation">
+
+        exposition_level:media;
+uso xml:id di <taxonomy xml:id="exposition">
+
+        phase:iniziale;
+uso xml:id di <taxonomy xml:id="phase">
+
+        layer:hand1/ink;
+        position:center">
+
+questa <taxonomy xml:id="operation"> a cosa corrisponde? la usa in glossa e cit e ref?
