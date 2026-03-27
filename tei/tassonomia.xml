@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+     <fileDesc>
+        <titleStmt>
+           <title>Castello dell’anima</title>
+           <author xml:id="p-teresa">Teresa di San Geronimo (Anna La Longa)</author>
+           <respStmt>
+              <resp>Modellazione TEI, annotazione intertestuale</resp>
+              <name xml:id="p-longo">Luciano Longo</name>
+           </respStmt>
+        </titleStmt>
+        <publicationStmt>
+           <publisher>Prototipo DH</publisher>
+           <date when="2026-01-28">Proof-of-concept</date>
+           <idno type="digital_edition">Edizione critica digitale</idno>
+        </publicationStmt>
+        <sourceDesc>
+           <bibl type="ms">Palermo, BCP, ms. 2 Qq E 29 (sec. XVII ex.) – 
+              <title>Il Castello
+                 dell’anima</title></bibl>
+        </sourceDesc>
+     </fileDesc>
+     <encodingDesc>
+        <classDecl>
+                
+                <!-- 1. TASS0NOMIA DELLE FUNZIONI RETORICHE -->
+                <taxonomy xml:id="func">
+                    
+                    <!-- Macro-funzioni del modello -->
+                    <category xml:id="legittimazione">
+                        <desc>Legittimazione dottrinale e ancoraggio canonico</desc>
+                        
+                        <category xml:id="legittimazione-biblica">
+                            <desc>Uso di Scrittura per rendere ortodosso un nodo dottrinale</desc>
+                        </category>
+                        <category xml:id="legittimazione-liturgica">
+                            <desc>Appoggio su formule liturgiche come garanzia</desc>
+                        </category>
+                        <category xml:id="legittimazione-tradizione">
+                            <desc>Richiamo a maestri mistici (Teresa, Giovanni, Molinos)</desc>
+                        </category>
+                    </category>
+                    
+                    <category xml:id="pedagogia">
+                        <desc>Pedagogia mistica e istruzione al discernimento</desc>
+                        
+                        <category xml:id="pedagogia-introduzione">
+                            <desc>Introduzione e preparazione del lettore</desc>
+                        </category>
+                        <category xml:id="pedagogia-discernimento">
+                            <desc>Distinzione tra stati spirituali e loro segni</desc>
+                        </category>
+                        <category xml:id="pedagogia-esemplificazione">
+                            <desc>Impiego di immagini ed esempi</desc>
+                        </category>
+                    </category>
+                    
+                    <category xml:id="rischio">
+                        <desc>Gestione del rischio dottrinale e attenuazione prudenziale</desc>
+                        
+                        <category xml:id="rischio-attenuatio">
+                            <desc>Glossa che smorza o corregge affermazioni rischiose</desc>
+                        </category>
+                        <category xml:id="rischio-precisatio">
+                            <desc>Precisazione che delimita il significato</desc>
+                        </category>
+                        <category xml:id="rischio-declaratio">
+                            <desc>Dichiarazione esplicita di ortodossia</desc>
+                        </category>
+                    </category>
+                    
+                    <category xml:id="ethos">
+                        <desc>Ethos dell’esperienza e auto-costruzione dell'autrice</desc>
+                        
+                        <category xml:id="ethos-umilta">
+                            <desc>Postura di umiltà e indegnità</desc>
+                        </category>
+                        <category xml:id="ethos-esperienza">
+                            <desc>Ricorso all’esperienza personale come autorità</desc>
+                        </category>
+                        <category xml:id="ethos-obbedienza">
+                            <desc>Insistenza sull’obbedienza alla Chiesa e al confessore</desc>
+                        </category>
+                    </category>
+                    
+                </taxonomy>
+                <!-- 2. TASS0NOMIA DELL’IMPATTO ESPLICATIVO-->
+                <taxonomy xml:id="impact">
+                    
+                    <category xml:id="impact-high">
+                        <desc>Impatto esplicativo molto alto; chiarisce nodi teologici critici</desc>
+                    </category>
+                    
+                    <category xml:id="impact-medium">
+                        <desc>Impatto medio; rafforza ma non fonda la comprensione</desc>
+                    </category>
+                    
+                    <category xml:id="impact-low">
+                        <desc>Impatto basso; funzione ornamentale o marginale</desc>
+                    </category>
+                    
+                    <!-- Livelli aggiuntivi -->
+                    <category xml:id="impact-critical">
+                        <desc>Nodi critici: senza questo elemento il passaggio diventa ambiguo</desc>
+                    </category>
+                    
+                    <category xml:id="impact-supportive">
+                        <desc>Supporto locale, complementare ma non decisivo</desc>
+                    </category>
+                    
+                    <category xml:id="impact-redundant">
+                        <desc>Ridondante o non necessario ai fini del chiarimento</desc>
+                    </category>
+                    
+                    <!-- Ambito -->
+                    <category xml:id="impact-local">
+                        <desc>Impatto limitato al paragrafo</desc>
+                    </category>
+                    
+                    <category xml:id="impact-global">
+                        <desc>Impatto esteso all’intero capitolo o libro</desc>
+                    </category>
+                    
+                    <category xml:id="impact-structural">
+                        <desc>Elemento che regge la struttura del ragionamento</desc>
+                    </category>
+                    
+                </taxonomy>
+                <!-- 3. TASS0NOMIA DEL RISCHIO DOTTRINALE-->
+                <taxonomy xml:id="risk">
+                    
+                    <category xml:id="risk-dottrinale">
+                        <desc>Rischio di equivocità dottrinale generale</desc>
+                    </category>
+                    
+                    <category xml:id="risk-quietismo">
+                        <desc>Rischio di interpretazione quietista</desc>
+                    </category>
+                    
+                    <category xml:id="risk-panteismo">
+                        <desc>Rischio di fusione ontologica con Dio</desc>
+                    </category>
+                    
+                    <category xml:id="risk-impeccabilita">
+                        <desc>Rischio di implicare impeccabilità dell’anima</desc>
+                    </category>
+                    
+                    <category xml:id="risk-ambiguita">
+                        <desc>Ambiguità non immediatamente collocabile</desc>
+                    </category>
+                    
+                </taxonomy>
+                <!-- 4. TASS0NOMIA DEGLI STATI MISTICI-->
+                <taxonomy xml:id="mystic_state">
+                    
+                    <category xml:id="unione">
+                        <desc>Stato di unione perfetta con Dio</desc>
+                    </category>
+                    
+                    <category xml:id="quiete">
+                        <desc>Quiete spirituale o sospensione delle potenze</desc>
+                    </category>
+                    
+                    <category xml:id="otium">
+                        <desc>Ozio delle potenze come stato mistico complesso</desc>
+                    </category>
+                    
+                    <category xml:id="sicurta">
+                        <desc>Sicurtà mistica (tema ad alta esposizione)</desc>
+                    </category>
+                    
+                    <category xml:id="trasformazione">
+                        <desc>Trasformazione dell’anima in Dio senza fusione</desc>
+                    </category>
+                    
+                </taxonomy>
+                <!-- 5. TASS0NOMIA DELLE OPERAZIONI PRUDENZIALI-->
+                <taxonomy xml:id="operation">
+                    
+                    <category xml:id="delimitazione">
+                        <desc>Delimitazione semantica di concetti rischiosi</desc>
+                    </category>
+                    
+                    <category xml:id="attenuatio">
+                        <desc>Attenuazione esplicita tramite glossa</desc>
+                    </category>
+                    
+                    <category xml:id="precisatio">
+                        <desc>Precisazione che restringe il campo semantico</desc>
+                    </category>
+                    
+                    <category xml:id="declaratio">
+                        <desc>Dichiarazione diretta di ortodossia</desc>
+                    </category>
+                    
+                    <category xml:id="riequilibrio">
+                        <desc>Riequilibrio prudenziale prima o dopo un’esposizione mistica</desc>
+                    </category>
+                    
+                </taxonomy>
+                <!-- 6. TASS0NOMIA DEL LIVELLO DI ESPOSIZIONE-->
+                <taxonomy xml:id="exposition">
+                    
+                    <category xml:id="expo-bassa">
+                        <desc>Bassa esposizione dottrinale</desc>
+                    </category>
+                    
+                    <category xml:id="expo-media">
+                        <desc>Esposizione media; richiede appoggi moderati</desc>
+                    </category>
+                    
+                    <category xml:id="expo-alta">
+                        <desc>Esposizione alta; richiede glosse e citazioni</desc>
+                    </category>
+                    
+                    <category xml:id="expo-critica">
+                        <desc>Esposizione massima; nodi del Libro III</desc>
+                    </category>
+                    
+                </taxonomy>
+                <!--7. TASS0NOMIA DELLA FASE DISCORSIVA-->
+                <taxonomy xml:id="phase">
+                    
+                    <category xml:id="fase-iniziale">
+                        <desc>Segmenti di apertura o inquadramento</desc>
+                    </category>
+                    
+                    <category xml:id="fase-mediana">
+                        <desc>Segmenti centrali della progressione mistica</desc>
+                    </category>
+                    
+                    <category xml:id="fase-critica">
+                        <desc>Nodi dottrinali ad alta complessità</desc>
+                    </category>
+                    
+                    <category xml:id="fase-conclusiva">
+                        <desc>Chiusura, riepilogo o stabilizzazione</desc>
+                    </category>
+                    
+                </taxonomy>
+                <taxonomy xml:id="relation">
+                    
+                    <!-- Relazioni tra stati mistici -->
+                    <category xml:id="mistica-infusa-purificazione">
+                        <desc>Relazione concettuale: mistica infusa → purificazione</desc>
+                    </category>
+                    
+                    <category xml:id="mistica-attiva-meditazione">
+                        <desc>Relazione: mistica attiva → meditazione operativa</desc>
+                    </category>
+                    
+                    <category xml:id="mistica-passiva-quiete">
+                        <desc>Relazione: mistica passiva → quiete spirituale</desc>
+                    </category>
+                    
+                    <category xml:id="mistica-unione-sposalitio">
+                        <desc>Relazione: unione mistica → sposalitio → trasformazione</desc>
+                    </category>
+                    
+                    <!-- Relazioni argomentative -->
+                    <category xml:id="causa-effetto">
+                        <desc>Rapporto causa → effetto (travagli → pace, luce → purificazione)</desc>
+                    </category>
+                    
+                    <category xml:id="premessa-conseguenza">
+                        <desc>Sequenza logica: premessa → conseguenza</desc>
+                    </category>
+                    
+                    <category xml:id="analogia">
+                        <desc>Uso di analogie e paragoni retorici</desc>
+                    </category>
+                    
+                    <category xml:id="contrasto">
+                        <desc>Relazione di opposizione (buio/luce, guerra/pace)</desc>
+                    </category>
+                    
+                    <!-- Relazioni intertestuali -->
+                    <category xml:id="intertesto-biblico">
+                        <desc>Relazione con testi biblici</desc>
+                    </category>
+                    
+                    <category xml:id="intertesto-liturgico">
+                        <desc>Relazione con testi liturgici</desc>
+                    </category>
+                    
+                    <category xml:id="intertesto-teresiano">
+                        <desc>Relazione con tradizione teresiana</desc>
+                    </category>
+                    
+                    <category xml:id="intertesto-molinista">
+                        <desc>Relazione con il Quietismo di Molinos</desc>
+                    </category>
+                    
+                </taxonomy>
+                <taxonomy xml:id="certainty">
+                    
+                    <category xml:id="low">
+                        <desc>Livello di certezza basso</desc>
+                    </category>
+                    
+                    <category xml:id="medium">
+                        <desc>Livello di certezza medio</desc>
+                    </category>
+                    
+                    <category xml:id="high">
+                        <desc>Livello di certezza elevato</desc>
+                    </category>
+                    
+                    <category xml:id="ambiguous">
+                        <desc>Segmento semanticamente ambiguo</desc>
+                    </category>
+                    
+                </taxonomy>
+                <taxonomy xml:id="position">
+                    
+                    <category xml:id="center">
+                        <desc>Posizione centrale nel blocco testuale</desc>
+                    </category>
+                    
+                    <category xml:id="margin">
+                        <desc>Posizione nel margine della pagina</desc>
+                    </category>
+                    
+                    <category xml:id="interlinear">
+                        <desc>Posizione in interlinea (glosse, precisazioni)</desc>
+                    </category>
+                    
+                    <category xml:id="top">
+                        <desc>Posizione nella parte superiore</desc>
+                    </category>
+                    
+                    <category xml:id="bottom">
+                        <desc>Posizione nella parte inferiore</desc>
+                    </category>
+                    
+                </taxonomy>
+            </classDecl>
+     </encodingDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+  </text>
+</TEI>
