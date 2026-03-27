@@ -1,0 +1,2112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+   xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Castello dell’anima</title>
+            <author xml:id="p-teresa">Teresa di San Geronimo (Anna La Longa)</author>
+            <respStmt>
+               <resp>Modellazione TEI, annotazione intertestuale</resp>
+               <name xml:id="p-longo">Luciano Longo</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Prototipo DH</publisher>
+            <date when="2026-01-28">Proof-of-concept</date>
+            <idno type="digital_edition">Encoding sematico</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl type="ms">Palermo, BCP, ms. 2 Qq E 29 (sec. XVII ex.) – 
+               <title>Il Castello dell’anima</title>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div rend="witness">
+            <listWit>
+               <witness xml:id="txt-b0" resp="#p-teresa">Tb0, testo base</witness>
+               <witness xml:id="txt-b1" resp="#p-teresa">Tb1, interventi immediati</witness>
+               <witness xml:id="txt-1" resp="#p-teresa">T1, riscrittura su testo base</witness>
+               <witness xml:id="txt-2" resp="#p-teresa">T2, interventi
+                  correttivi-glossativi</witness>
+               <witness xml:id="txt-3" resp="#p-teresa">T3, interventi correttivi-glossativi
+                  successivi con medium diverso</witness>
+               <witness xml:id="txt-4" resp="#esterno">T3, interventi glossativi esterni</witness>
+               <witness xml:id="txt-c" resp="#editor">Tc, Edizione critica.</witness>
+            </listWit>
+         </div>
+         <div rend="list:person">
+            <listPerson>
+               <person xml:id="p-avila">
+                  <persName>Teresa d’Ávila</persName>
+                  <note>Fonte ideale della metafora del “castello” (reinterpretata
+                     nell’opera)</note>
+               </person>
+               <person xml:id="p-john">
+                  <persName>Giovanni della Croce</persName>
+                  <note>Lessico mistico; auctore citato dall’opera</note>
+                  <!-- 1 -->
+               </person>
+               <person xml:id="p-molinos">
+                  <persName>Miguel de Molinos</persName>
+                  <note>Struttura tripartita e polemica sui direttori d’anime</note>
+                  <!-- 1 -->
+               </person>
+            </listPerson>
+         </div>
+         <div rend="list:cit-bibl">
+            <listBibl>
+               <bibl xml:id="bible-vulgate">
+                  <title level="m">Biblia Sacra Vulgata</title>
+               </bibl>
+               <bibl xml:id="molinos-guida">
+                  <author>Miguel de Molinos</author>
+                  <title>Guida spirituale</title>
+                  <date when="1675">1675/1677</date>
+                  <note>Modello strutturale e contenutistico</note>
+                  <!-- 1 -->
+               </bibl>
+               <bibl xml:id="avila-castello">
+                  <author>Teresa d’Ávila</author>
+                  <title>Castello interiore</title>
+                  <date when="1577">1577</date>
+                  <note>Metafora del castello rielaborata da Teresa di S. Geronimo</note>
+                  <!-- 1 -->
+               </bibl>
+            </listBibl>
+         </div>
+         <titlePage>
+            <docTitle>
+               <titlePart type="main">Il Castello dell’Anima</titlePart>
+               <titlePart type="sub">Diviso in tre Libri per l’anime Incipienti, Proficienti e
+                  Perfette</titlePart>
+            </docTitle>
+            <docAuthor resp="#p-teresa">Suor Teresa da San Geronimo</docAuthor>
+         </titlePage>
+      </front>
+      <body>
+
+         <div type="book" n="1" xml:id="Libro-I">
+            <fw type="sig" place="bottom" xml:id="f1"/>
+            <pb n="1r" facs="images/f1.jpg" xml:id="f1r"/>
+            <head>Libro Primo</head>
+         </div>
+
+         <div type="book" n="2" xml:id="Libro-II">
+            <fw type="sig" place="bottom" xml:id="f2"/>
+            <pb n="1r" facs="images/f2.jpg" xml:id="f2r"/>
+            <head>Libro Primo</head>
+         </div>
+
+         <div type="book" n="3" xml:id="Libro-III">
+            <fw type="sig" place="bottom" xml:id="f158"/>
+            <pb n="158r" facs="images/f158.jpg" xml:id="f158r"/>
+            <head>Libro Terzo</head>
+
+            <div type="preface">
+               <!-- Argomentazione del Libro III -->
+               <head>
+                  <seg type="indicatio" function="legittimazione-tradizione"
+                     subtype="titolo-dottrinale" xml:id="III-pref-tit-001" xml:lang="it"
+                     hand="ink_1" ana="function:legittimazione-tradizione;
+                     relation:intertesto-teresiano;
+                     impact:impact-medium;
+                     risk:risk-ambiguita;
+                     certainty:medium;
+                     mystic-state:unione;
+                     operation:delimitazione;
+                     exposition:expo-media;
+                     phase:fase-iniziale;
+                     layer:hand1_ink;
+                     position:center"> Del <ref target="#avila-castello"
+                        xml:lang="it" type="intertext" subtype="teresiano"
+                        ana="relation:intertesto-teresiano;
+                        impact:impact-supportive;
+                        risk:risk-dottrinale"> castello dell’anima</ref> per
+                     l’anime perfette, nel quale si tratta dell’<ref target="#molinos-guida"
+                        type="intertext" subtype="mystic-state-molinos"
+                        ana="relation:intertesto-molinos;
+                        impact:impact-high-critical;
+                        risk:risk-dottrinale">unione</ref>, che ponno
+                     arrivare queste anime con Dio anche in questa vita. <val n="0.87" cert="medium"
+                        ana="N:0.80;
+                           A:0.65;
+                           F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           impact:impact-medium;
+                           risk:risk-ambiguita"/>
+                  </seg>
+               </head>
+               <argument>
+                  <p n="1">
+                     <!-- Paragrafo 1 (Obedientia+ethos+invocatio) -->
+                     <seg type="indicatio" function="ethos-obbedienza"
+                        subtype="obedienza-performativa" xml:id="III-pref-p1-001" xml:lang="it"
+                        hand="ink_1" ana="function:ethos-obbedienza;
+                        relation:premessa-conseguenza;
+                        impact:impact-high;
+                        risk:risk-dottrinale;
+                        certainty:high;
+                        mystic-state:quiete;
+                        operation:delimitazione;
+                        exposition:expo-media;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> Incomincio <rs type="divinita"
+                           ana="entity:Deus; role:destinatario">mio Dio</rs>, come sapete, questo
+                        terzo ed ultimo libro per <term ana="term:obedientia; sem:virtus-mistica"
+                           >santa obedienza</term>, <ptr target="#Libro-II" ana="ptr:rinvio-interno"/>
+                        <spanGrp type="focus" ana="area:obedientia">
+                           <span xml:id="span-obed" from="#III-pref-p1-001" to="#III-pref-p1-001"
+                              ana="theme:obedientia; risk:risk-dottrinale"/>
+                        </spanGrp>
+                        <figure type="atto-sottomissione"
+                           ana="figura:sottomissione; ethos:obbedienza"/>
+                        <cit type="bible" xml:id="cit-phil2-8" ana="#legittimazione #obedientia">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Christus
+                                 factus est pro nobis obediens usque ad mortem. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Phil.2.8"/>
+                        </cit>
+                        <val n="0.89" cert="high" ana="N:0.92; A:0.82; F:0.86;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.889"/>
+                     </seg>
+                     <seg type="indicatio" function="ethos-umilta" subtype="autodemotio"
+                        xml:id="III-pref-p1-002" xml:lang="it" hand="ink_1"
+                        ana="function:ethos-umilta;
+                        relation:analogia;
+                        impact:impact-medium;
+                        risk:risk-ambiguita;
+                        certainty:medium;
+                        mystic-state:quiete;
+                        operation:attenuatio;
+                        exposition:expo-bassa;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> e per narrar <rs
+                           type="azione-spirituale" ana="entity:opera; role:azione-divina">l’opere
+                           nostre</rs>, questa sì <figure ana="figura:autodemotio; ethos:umilta"/>
+                        <rs type="soggetto-autodemotio" ana="entity:creatura; role:autoabbassamento"
+                           > miserabile creatura </rs>, <spanGrp type="focus" ana="area:humilitas">
+                           <span ana="focus:autodemotio"/>
+                        </spanGrp>
+                        <val n="0.64" cert="medium" ana="N:0.60; A:0.58; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.642"/>
+                     </seg>
+                     <seg type="indicatio" function="pedagogia-introduzione"
+                        subtype="invocatio-sapientiae" xml:id="III-pref-p1-003" xml:lang="it"
+                        hand="ink_1" ana="function:pedagogia-introduzione;
+                        relation:causa-effetto;
+                        impact:impact-high;
+                        risk:risk-dottrinale;
+                        certainty:medium;
+                        mystic-state:quiete;
+                        operation:invocatio;
+                        exposition:expo-media;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> e se nel <!-- AGGIUNTA: marker semantico interrogabile -->
+                        <ptr target="#Libro-II" ana="ptr:rinvio-interno"/>
+                        <ref target="#Libro-II">
+                           <app>
+                              <lem wit="#txt-c">secondo </lem>
+                              <rdg wit="#txt-b0">
+                                 <del place="inline" hand="#pen0" resp="#p-teresa" type="correction"
+                                    >to</del> secondo </rdg>
+                           </app> libro </ref> domandano a noi <rs type="divinita"
+                           ana="entity:Deus; role:destinatario">mio Dio</rs> il nostro <term
+                           ana="term:aiuto-divino; categoria:invocatio">santo agiuto</term>, più vi
+                        soplico adesso a darmi <term
+                           ana="term:sapientia-divina; categoria:invocatio">la vostra infinita
+                           sapienza</term>, <!-- figura retorica della supplica -->
+                        <figure ana="figura:supplicatio; funzione:invocatio"/>
+                        <!-- zona semantica interrogabile -->
+                        <spanGrp type="focus" ana="area:invocatio-sapientiae">
+                           <span ana="focus:sapientia-divina"/>
+                        </spanGrp>
+                        <cit type="liturgy" xml:id="cit-veni-creator"
+                           ana="#invocatio #legittimazione">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:liturgy">Veni Creator
+                                 Spiritus, mentes tuorum visita.</foreign>
+                           </quote>
+                           <ref type="liturgy" target="#Veni-Creator"/>
+                        </cit>
+                        <val n="0.86" cert="high" ana="N:0.88; A:0.78; F:0.84;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.858"/>
+                     </seg>
+                     <seg type="indicatio" function="ethos-umilta" subtype="incapacitas"
+                        xml:id="III-pref-p1-004" xml:lang="it" hand="ink_1"
+                        ana="function:ethos-umilta;
+                        relation:contrasto;
+                        impact:impact-medium;
+                        risk:risk-ambiguita;
+                        certainty:medium;
+                        mystic-state:quiete;
+                        operation:attenuatio;
+                        exposition:expo-bassa;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> poiché havendo io da trattare di
+                           <term ana="term:materia-alta; categoria:mistica">materia più alta</term>
+                        di che trattavo nel <ptr target="#Libro-II" ana="ptr:rinvio-interno"/>
+                        <ref target="#Libro-II"> trascorso libro <note type="contexual">Tema II vs
+                              III</note>
+                        </ref>, mi vedo perciò più <app>
+                           <lem wit="#txt-c">bisognosa</lem>
+                           <rdg>b <del place="inline" hand="#pen0" resp="#p-teresa"
+                                 type="correction">e</del>
+                              <add place="inline" hand="#pen0" resp="#p-teresa" type="substition"
+                                 >i</add>sognosa </rdg>
+                        </app> della vostra <term ana="term:sapientia-divina; categoria:invocatio"
+                           >sapienza</term>, senza la quale mi confesso al tutto <figure
+                           ana="figura:autodemotio; ethos:umilta"/> inabile, ed indegna per manegiar
+                        la penna, la quale la prendo tutta fidata in <rs type="divinita"
+                           ana="entity:Deus; role:affidamento">voi mio Dio</rs>. <spanGrp
+                           type="focus" ana="area:incapacitas; theme:humilitas">
+                           <span ana="focus:ethos-umilta; focus:incapacitas"/>
+                        </spanGrp>
+                        <val n="0.84" cert="medium" ana="N:0.75;
+                           A:0.60;
+                           F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           impact:impact-high;
+                           risk:risk-dottrinale"/>
+                     </seg>
+                  </p>
+
+                  <p n="2">
+                     <!-- Prgr 2 – Declaratio Orthodoxiae + attenuatio -->
+                     <seg type="indicatio" function="rischio-declaratio"
+                        subtype="declaratio-orthodoxiae" xml:id="III-pref-p2-001" xml:lang="it"
+                        hand="ink_1" ana="function:rischio-declaratio;
+                        relation:premessa-conseguenza;
+                        impact:impact-high;
+                        risk:risk-dottrinale;
+                        certainty:high;
+                        mystic-state:quiete;
+                        operation:declaratio;
+                        exposition:expo-alta;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> Anche <rs type="interlocutore"
+                           ana="entity:confessore; role:destinatario">padre</rs>
+                        <figure ana="figura:protestatio; ethos:ortodossia"/>mi protesto, che se dirò
+                        qualche cosa che contradichi la <term ana="term:fides; categoria:teologia"
+                           >santa fede</term>, <spanGrp type="focus"
+                           ana="area:orthodoxia; theme:declaratio">
+                           <span ana="focus:protestatio; risk:risk-dottrinale"/>
+                        </spanGrp>
+                        <cit type="bible" xml:id="cit-gal1-8" ana="#orthodoxia #declaratio">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Sed licet
+                                 nos, aut angelus de caelo evangeliset vobis praeterquam quod
+                                 evangelisavimus vobis, anathema sit. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Gal.1.8"/>
+                        </cit>
+                        <val n="0.90" cert="high" ana="N:0.93; A:0.85; F:0.88;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.902"/>
+                     </seg>
+                     <seg type="indicatio" function="rischio-attenuatio"
+                        subtype="attenuatio-ignorantiae" xml:id="III-pref-p2-002" xml:lang="it"
+                        hand="ink_1" ana="function:rischio-attenuatio;
+                        relation:contrasto;
+                        impact:impact-critical;
+                        risk:risk-quietismo;
+                        certainty:high;
+                        mystic-state:quiete;
+                        operation:attenuatio;
+                        exposition:expo-critica;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> non sarà per <rs
+                           type="concetto-etico" ana="entity:malitia; ruolo:accusa-evitata">mia
+                           malitia</rs>, ma per <term ana="term:ignorantia; ruolo:attenuatio"
+                           >ignoranza</term>, <!-- figura retorica vuota, come richiesto -->
+                        <figure ana="figura:attenuatio; ethos:giustificazione"/>
+                        <!-- zona semantica interrogabile -->
+                        <spanGrp type="focus" ana="area:attenuatio-ignorantiae">
+                           <span ana="focus:rischio-quietismo; ruolo:autodifesa"/>
+                        </spanGrp>
+                        <val n="0.87" cert="high" ana="N:0.90; A:0.82; F:0.83;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.868"/>
+                     </seg>
+                     <seg type="indicatio" function="legittimazione-liturgica"
+                        subtype="fides-ecclesiae" xml:id="III-pref-p2-003" xml:lang="it"
+                        hand="ink_1" ana="function:legittimazione-liturgica;
+                        relation:intertesto-liturgico;
+                        impact:impact-high;
+                        risk:risk-dottrinale;
+                        certainty:high;
+                        mystic-state:unione;
+                        operation:declaratio;
+                        exposition:expo-media;
+                        phase:fase-iniziale;
+                        layer:hand1_ink;
+                        position:center"> e cossì quanto dirò non intendo
+                        contradire quel che dice la nostra <rs type="istituzione-ecclesiale"
+                           ana="entity:Ecclesia; role:auctoritas"> santa Chiesa Catolica Romana
+                        </rs>, confessandomi sua <rs type="relazione-ecclesiale"
+                           ana="entity:filiazione-spirituale; role:figlia"> figlia </rs>, e <rs
+                           type="relazione-ecclesiale" ana="entity:sequacitas; role:seguace">
+                           seguace </rs>, tutto che indegna. <!-- Figura retorica: professio fidei -->
+                        <figure ana="figura:professio-fidei; ethos:orthodoxia"/>
+                        <!-- Zona semantica interrogabile -->
+                        <spanGrp type="focus" ana="area:orthodoxia-ecclesiae">
+                           <span ana="focus:fides-ecclesiae; risk:risk-dottrinale"/>
+                        </spanGrp>
+                        <cit type="liturgy" xml:id="cit-credo" ana="#fides #legittimatio-ecclesiae">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:liturgy"> Credo in
+                                 unam, sanctam, catholicam et apostolicam Ecclesiam. </foreign>
+                           </quote>
+                           <ref type="liturgy" target="#Symbolum-Nicenum"/>
+                        </cit>
+                        <val n="0.91" cert="medium" ana="N:0.88;
+                           A:0.55;
+                           F:0.82;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           impact:impact-high;
+                           risk:risk-dottrinale"/>
+                     </seg>
+                  </p>
+               </argument>
+
+               <div type="chapter" n="1" xml:id="III-cap-1">
+                  <head>Capitolo Primo</head>
+                  <argument>
+                     <p>
+                        <seg xml:id="III-cap-1-rubr-001" type="indicatio"
+                           function="pedagogia-introduzione" subtype="rubrica-definitio"
+                           xml:lang="it" hand="ink_1" ana="function:pedagogia-introduzione;
+                           relation:notte-dello-spirito;
+                           impact:impact-medio;
+                           risk:risk-medio-basso;
+                           certainty:medium;
+                           mystic-state:purificazione;
+                           operation:definitio;
+                           exposition:expo-media;
+                           phase:fase-iniziale;
+                           layer:hand1_ink;
+                           position:center"> Si tratta della <term
+                              ana="term:dispositio; categoria:mistica">dispositione</term> che
+                           lascia <rs type="anima" ana="entity:anima; ruolo:ricevente"
+                              >nell’anima</rs> la <term
+                              ana="term:notte-dello-spirito; stato:purificazione">notte dello
+                              spirito</term>. <figure ana="figura:definitio; ruolo:introduzione"/>
+                           <ptr target="#Libro-II" ana="ptr:rinvio-notte-dello-spirito"/>
+                           <spanGrp type="focus" ana="area:notte-dello-spirito; theme:dispositio">
+                              <span ana="focus:rubrica-definitio"/>
+                           </spanGrp>
+                           <link target="#III-cap-1-rubr-001 #III-cap-1-p2-001"
+                              ana="relation:continuita-dottrinale; tema:notte-dello-spirito"/>
+                           <val n="0.63" cert="medium" ana="N:0.60;
+                              A:0.55;
+                              F:0.70;
+                              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                              impact:impact-medio;
+                              risk:risk-medio-basso"/>
+                        </seg>
+                     </p>
+                  </argument>
+
+                  <p n="1">
+                     <!-- Seg 1 — apertura antropologico-spirituale: pedagogia della croce -->
+                     <seg xml:id="III-cap-1-p1-001" type="indicatio" function="pedagogia"
+                        subtype="introductio" ana="function:pedagogia;
+                        relation:croce-segno-progresso;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        mystic-state:purificazione;
+                        operation:expositio;
+                        layer:hand1_ink"> Quando più <rs type="anima"
+                           ana="entity:anima; ruolo:soggetto-esperiente">un’anima</rs> è ragionata
+                        di <term ana="term:croce; categoria:ascetica">croce</term>, e <term
+                           ana="term:travagli; categoria:ascetica">travagli</term>
+                        <figure ana="figura:introductio-ascetica"/>
+                        <spanGrp type="focus" ana="area:croce-travagli; theme:pedagogia">
+                           <span ana="focus:croce-segno-progresso"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p1-001 #III-cap-1-p1-004"
+                           ana="relation:croce→pace; tipo:causa-effetto"/>
+                        <val n="0.59" cert="medium" ana="N:0.56; A:0.54; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.592"/>
+                     </seg>
+                     <!-- Seg 2 — estensione: stato "sicuro" dell’anima (potenziale rischio) -->
+                     <seg xml:id="III-cap-1-p1-002" type="indicatio" function="gestione-rischio"
+                        subtype="attenuatio-experientiae" ana="function:gestione-rischio;
+                        relation:sicurtà_vs_travaglio;
+                        risk:risk-medio;
+                        impact:impact-medio;
+                        mystic-state:purificazione;
+                        operation:attenuatio;
+                        layer:hand1_ink"> altritanto è più <term
+                           ana="term:sicurtà; categoria:mistica; ruolo:stato-positivo">sicuro</term>
+                        lo <rs type="stato-anima" ana="entity:status-animae; ruolo:condizione">stato
+                           suo</rs>, <!-- Figura retorica: attenuatio-experientiae -->
+                        <figure ana="figura:attenuatio-experientiae"/>
+                        <!-- Zona semantica interrogabile -->
+                        <spanGrp type="focus" ana="area:sicurtà; theme:gestione-rischio">
+                           <span ana="focus:stato-sicuro; rischio:medio"/>
+                        </spanGrp>
+                        <!-- Collegamento concettuale con p1-001: croce → sicurezza -->
+                        <link target="#III-cap-1-p1-001 #III-cap-1-p1-002"
+                           ana="relation:croce→sicurtà; tipo:causa-effetto"/>
+                        <val n="0.78" cert="medium" ana="N:0.80; A:0.72; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           impact:impact-alto;
+                           risk:risk-dottrinale"/>
+                     </seg>
+                     <!-- Seg 3 — immagine ascensionale (monte Olimpo) + metafora ascetica -->
+                     <seg xml:id="III-cap-1-p1-003" type="indicatio" function="pedagogia"
+                        subtype="comparatio" ana="function:pedagogia;
+                        relation:metafora-salita;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:comparatio;
+                        layer:hand1_ink"> e tanto più potrà starsine molto
+                           <term ana="term:sicurtà; categoria:mistica">sicura</term>, quando prima
+                        d’arrivare all’<term ana="term:altezza; metafora:ascensio">altezza</term>
+                        del <figure ana="figura:metafora-ascensionale; tipo:classico"/>
+                        <rs type="luogo-classico" ana="entity:Olimpo; ruolo:metafora-ascetica">
+                           monte Olimpo </rs>, ha passata per <term
+                           ana="term:croccivoli; categoria:ascetica">duri croccivoli</term>, <!-- Zona semantica interrogabile -->
+                        <spanGrp type="focus" ana="area:ascensio; theme:comparatio">
+                           <span ana="focus:metafora-salita"/>
+                        </spanGrp>
+                        <!-- Collegamento concettuale con p1-001 (croci → salita) -->
+                        <link target="#III-cap-1-p1-001 #III-cap-1-p1-003"
+                           ana="relation:croce→salita; tipo:progressus-asceticus"/>
+                        <!-- Collegamento con p1-004 (travagli → pace) -->
+                        <link target="#III-cap-1-p1-003 #III-cap-1-p1-004"
+                           ana="relation:fatica→pace; tipo:causa-effetto"/>
+                        <val n="0.62" cert="medium" ana="N:0.60; A:0.56; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.620"/>
+                     </seg>
+                     <!-- Seg 4 — proposizione ascetica forte “è cosa molto certa” -->
+                     <seg xml:id="III-cap-1-p1-004" type="indicatio" function="legittimazione"
+                        subtype="assertio-forte" ana="function:legittimazione;
+                        relation:croce->pace;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        operation:assertio;
+                        layer:hand1_ink"> essendo che è <term
+                           ana="term:assertio-forte; ruolo:proposizione">cosa molto certa</term>,
+                        che s’arriva a <term ana="term:godimento; stato:pace">godere</term>
+                        <fw type="sig" place="bottom" xml:id="f158-1"/>
+                        <pb n="158r" facs="images/f158.jpg" xml:id="f158v"/> la <term
+                           ana="term:vera-pace; categoria:ascetica">vera pace</term>, se prima non
+                        si passa per <term ana="term:lunga-guerra; categoria:ascetica">lunga
+                           guerra</term>; <!-- Figura retorica: assertio forte ascetica -->
+                        <figure ana="figura:assertio-forte; ethos:ascetica"/>
+                        <!-- Zona semantica: croce → guerra → pace -->
+                        <spanGrp type="focus" ana="area:croce-guerra-pace; theme:ascensio">
+                           <span ana="focus:pace-attraverso-travaglio"/>
+                        </spanGrp>
+                        <!-- Collegamento concettuale con Seg 1 e Seg 3 -->
+                        <link target="#III-cap-1-p1-001 #III-cap-1-p1-004"
+                           ana="relation:croce->pace; tipo:progressus-asceticus"/>
+                        <link target="#III-cap-1-p1-003 #III-cap-1-p1-004"
+                           ana="relation:fatica->pace; tipo:causa-effetto"/>
+                        <cit type="bible" xml:id="cit-ps30-1" ana="#pedagogia #fiducia #ascetica">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> In te,
+                                 Domine, speravi; non confundar in aeternum: in iustitia tua libera
+                                 me. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Ps.30.1"/>
+                        </cit>
+                        <val n="0.74" cert="medium" ana="N:0.78; A:0.68; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.740"/>
+                     </seg>
+                     <!-- Seg 5 — esortazione ascetica destinata al lettore -->
+                     <seg xml:id="III-cap-1-p1-005" type="indicatio" function="pedagogia"
+                        subtype="exhortatio" ana="function:pedagogia;
+                        relation:croce-salvezza;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:exhortatio;
+                        layer:hand1_ink"> e perciò non vi sia <rs
+                           type="anima" ana="entity:anima; ruolo:destinatario-esortazione"
+                           >anima</rs>, che rinuncii la <term ana="term:croce; categoria:ascetica"
+                           >croce</term>, <figure ana="figura:exhortatio; ethos:pedagogia"/>
+                        <spanGrp type="focus" ana="area:croce; theme:esortazione">
+                           <span ana="focus:croce-salvezza"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p1-001 #III-cap-1-p1-005"
+                           ana="relation:croce→sicurtà; tipo:ascetica"/>
+                        <link target="#III-cap-1-p1-005 #III-cap-1-p1-004"
+                           ana="relation:croce→pace; tipo:causa-effetto"/>
+                        <val n="0.60" cert="medium" ana="N:0.58; A:0.55; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.601"/>
+                     </seg>
+                     <!-- Seg 6 — definizione teologica della croce come "scala" -->
+                     <seg xml:id="III-cap-1-p1-006" type="indicatio" function="legittimazione"
+                        subtype="definitio-mistica" ana="function:legittimazione;
+                        relation:croce-scala;
+                        risk:risk-basso;
+                        impact:impact-medio-alto;
+                        operation:definitio;
+                        mystic-state:purificazione;
+                        layer:hand1_ink"> essendo che ella è la <term
+                           ana="term:scala-sicura; categoria:ascetica">scala sicura</term>, che fa
+                        salir <rs type="anima" ana="entity:anima; ruolo:ascenso">l’anima</rs> al <rs
+                           type="luogo-spirituale" ana="entity:regnum; ruolo:destinazione"> regno
+                           del Cielo </rs>. <figure ana="figura:definitio-mistica"/>
+                        <spanGrp type="focus" ana="area:croce-scala; theme:definitio">
+                           <span ana="focus:scala-sicura"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p1-001 #III-cap-1-p1-006"
+                           ana="relation:croce→ascensio; tipo:progressus"/>
+                        <cit type="bible" xml:id="cit-ct2-10"
+                           ana="#legittimazione #sponsalitas #ascensio">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Surge, amica
+                                 mea, speciosa mea, et veni; iam enim hiems transiit, imber abiit et
+                                 recessit. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Cant.2.10-11"/>
+                        </cit>
+                        <val n="0.71" cert="medium" ana="N:0.70; A:0.65; F:0.76;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           impact:impact-medio-alto;
+                           risk:risk-basso"/>
+                     </seg>
+                  </p>
+
+                  <p n="2">
+                     <!-- Seg 1 — richiamo alla notte dello spirito (Libro II) -->
+                     <seg xml:id="III-cap-1-p2-001" type="indicatio" function="pedagogia"
+                        subtype="recapitulatio" ana="function:pedagogia;
+                        relation:notte-dello-spirito;
+                        operation:recapitulatio;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        layer:hand1_ink"> Dico dunque che la <term
+                           ana="term:notte; categoria:mistica">detta notte</term>, che trattammo nel
+                        fine del <ptr target="#Libro-II" ana="ptr:rinvio-interno"/>
+                        <rs type="luogo-testuale" ana="entity:Libro-II; ruolo:fonte-dottrinale">
+                           secondo libro </rs>, <figure ana="figura:recapitulatio"/>
+                        <spanGrp type="focus" ana="area:notte-dello-spirito; theme:recapitulatio">
+                           <span ana="focus:rinvio-notte"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-rubr-001 #III-cap-1-p2-001"
+                           ana="relation:continuità-dottrinale; tema:notte-dello-spirito"/>
+                        <val n="0.58" cert="medium" ana="N:0.55; A:0.54; F:0.63;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.579"/>
+                     </seg>
+                     <!-- Seg 2 — enunciazione: disposizione per ricevere la luce divina -->
+                     <seg xml:id="III-cap-1-p2-002" type="indicatio" function="legittimazione"
+                        subtype="assertio-mistica" ana="function:legittimazione;
+                        relation:dispositio-lux;
+                        risk:risk-medio;
+                        impact:impact-alto;
+                        mystic-state:purificazione;
+                        operation:assertio;
+                        layer:hand1_ink"> lascia <rs type="anima"
+                           ana="entity:anima; ruolo:ricevente">l’anima</rs> ben <term
+                           ana="term:disposta; categoria:mistica">disposta</term> per ricevere la
+                           <term ana="term:lux-divina; categoria:mistica">divina luce</term>, ed
+                        unirsi con <rs type="persona-divina" ana="entity:amato; ruolo:sponsus"
+                           >l’amato suo</rs>, <figure ana="figura:assertio-mistica"/>
+                        <spanGrp type="focus" ana="area:dispositio-lux; theme:unione">
+                           <span ana="focus:dispositio; stato:purificazione"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-001 #III-cap-1-p2-002"
+                           ana="relation:rinvio→dispositio; tipo:continuità-dottrinale"/>
+                        <val n="0.82" cert="high" ana="N:0.85; A:0.78; F:0.80;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.818"/>
+                     </seg>
+                     <!-- Seg 3 — descrizione del fenomeno mistico: investitura della luce -->
+                     <seg xml:id="III-cap-1-p2-003" type="indicatio" function="pedagogia"
+                        subtype="expositio-mistica" ana="function:pedagogia;
+                        relation:lux-investitura;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        mystic-state:illuminatio;
+                        operation:expositio;
+                        layer:hand1_ink"> talmente, che se prova investendo
+                           <rs type="anima" ana="entity:anima; ruolo:ricevente-lux">l’anima</rs> la
+                           <term ana="term:lux-divina; categoria:illuminatio">luce divina</term>,
+                           <figure ana="figura:expositio-mistica"/>
+                        <spanGrp type="focus" ana="area:investitura-lux; theme:illuminatio">
+                           <span ana="focus:luce-divina-investitura"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-002 #III-cap-1-p2-003"
+                           ana="relation:dispositio→investitura; tipo:progressus-mysticus"/>
+                        <cit type="bible" xml:id="cit-ps118-32" ana="#illuminatio #legittimazione">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Vias
+                                 mandatorum tuorum cucurri, cum dilatasti cor meum. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Ps.118.32"/>
+                        </cit>
+                        <val n="0.74" cert="medium" ana="N:0.76; A:0.68; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.741"/>
+                     </seg>
+                     <!-- Seg 4 — nodo pericoloso: anima non disposta → sofferenza violenta -->
+                     <seg xml:id="III-cap-1-p2-004" type="indicatio" function="gestione-rischio"
+                        subtype="periculum-doctrinale" ana="function:gestione-rischio;
+                        relation:dispositio-insufficiens;
+                        risk:risk-alto;
+                        impact:impact-alto;
+                        mystic-state:purificazione;
+                        operation:attenuatio-potenziale;
+                        layer:hand1_ink"> e non essendo <rs type="anima"
+                           ana="entity:anima; ruolo:non-disposta">ella</rs>
+                        <term ana="term:disposta; stato:insufficiente">disposta</term> per
+                        riceverla, vi <term ana="term:patimento; categoria:purificazione"
+                           >patia</term> grandemente, <figure ana="figura:attenuatio-potenziale"/>
+                        <spanGrp type="focus"
+                           ana="area:periculum-doctrinale; theme:patimento-purificatorio">
+                           <span ana="focus:dispositio-insufficiens; rischio:risk-alto"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-003 #III-cap-1-p2-004"
+                           ana="relation:investitura→patimento; tipo:contrasto-mistico"/>
+                        <cit type="bible" xml:id="cit-mt26-38"
+                           ana="#rischio #passio #legittimazione">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Tunc ait
+                                 illis Iesus: Tristis est anima mea usque ad mortem; sustinete hic
+                                 et vigilate mecum. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Matt.26.38"/>
+                        </cit>
+                        <val n="0.88" cert="high" ana="N:0.90; A:0.82; F:0.85;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.884"/>
+                     </seg>
+                     <!-- Seg 5 — chiarificazione: la luce non per godimento, ma per purificazione -->
+                     <seg xml:id="III-cap-1-p2-005" type="indicatio" function="clarificatio"
+                        subtype="negatio-finalitatis" ana="function:clarificatio;
+                        relation:lux-non-godimentum;
+                        risk:risk-medio-alto;
+                        impact:impact-medio-alto;
+                        operation:negatio;
+                        layer:hand1_ink"> come anche, che non la investiva
+                        per <term ana="term:godere; categoria:mistica">farla godere</term>, <figure
+                           ana="figura:negatio-finalitatis"/>
+                        <spanGrp type="focus" ana="area:lux-non-godimentum; theme:clarificatio">
+                           <span ana="focus:negatio-finalitatis"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-004 #III-cap-1-p2-005"
+                           ana="relation:patimento→negatio; tipo:riequilibrio-dottrinale"/>
+                        <val n="0.76" cert="medium" ana="N:0.78; A:0.70; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.757"/>
+                     </seg>
+                     <!-- Seg 6 — affermazione forte: la luce purifica e fa patire aspramente -->
+                     <seg xml:id="III-cap-1-p2-006" type="indicatio" function="legittimazione"
+                        subtype="purificatio-aspera" ana="function:legittimazione;
+                        relation:lux-purificatio;
+                        risk:risk-medio-alto;
+                        impact:impact-alto;
+                        mystic-state:purificazione;
+                        operation:intensificatio;
+                        layer:hand1_ink"> ma per <term
+                           ana="term:purificazione; categoria:mistica">purificarla</term> e farla
+                           <term ana="term:patimento-aspro; categoria:purificazione">aspramente
+                           patire</term>, <figure ana="figura:purificatio-aspera"/>
+                        <spanGrp type="focus" ana="area:purificatio-aspera; theme:patimento">
+                           <span ana="focus:lux→purificatio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-005 #III-cap-1-p2-006"
+                           ana="relation:negatio→purificatio; tipo:progressus-mysticus"/>
+                        <val n="0.83" cert="high" ana="N:0.86; A:0.78; F:0.80;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.829"/>
+                     </seg>
+                     <!-- Seg 7 — rinvio interno al trattato precedente -->
+                     <seg xml:id="III-cap-1-p2-007" type="indicatio" function="pedagogia"
+                        subtype="rinvio-interno" ana="function:pedagogia;
+                        relation:rinvio-Libro-II;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:memoria;
+                        layer:hand1_ink"> sì come nel suo <ptr
+                           target="#Libro-II" ana="ptr:rinvio-interno"/>
+                        <rs type="trattato" ana="entity:trattato; ruolo:fonte-dottrinale"> trattato
+                        </rs> dissimo. <figure ana="figura:rinvio-memoriale"/>
+                        <spanGrp type="focus" ana="area:rinvio; theme:memoria">
+                           <span ana="focus:rinvio-Libro-II"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-001 #III-cap-1-p2-007"
+                           ana="relation:richiamo-notte; tipo:continuità"/>
+                        <val n="0.58" cert="medium" ana="N:0.55; A:0.54; F:0.63;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.579"/>
+                     </seg>
+                  </p>
+
+                  <p n="3">
+                     <!-- Seg 1 — disposizione dell’anima -->
+                     <seg xml:id="III-cap-1-p3-001" type="indicatio" function="pedagogia"
+                        subtype="dispositio" ana="function:pedagogia;
+                        relation:dispositio-animae;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink"> Adesso, come che <rs type="anima"
+                           ana="entity:anima; ruolo:disposta">l’anima</rs> è <term
+                           ana="term:disposta; categoria:mistica">disposta</term>, e passata per
+                        quella sì dura <term ana="term:purga; categoria:purificazione">purga</term>,
+                           <figure ana="figura:dispositio"/>
+                        <spanGrp type="focus" ana="area:dispositio-anima; theme:purificazione">
+                           <span ana="focus:purga→dispositio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p2-006 #III-cap-1-p3-001"
+                           ana="relation:purificatio→dispositio; tipo:progressus-mysticus"/>
+                        <val n="0.58" cert="medium" ana="N:0.55; A:0.52; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.582"/>
+                     </seg>
+                     <!-- Seg 2 — purificazione -->
+                     <seg xml:id="III-cap-1-p3-002" type="indicatio" function="legittimazione"
+                        subtype="purificatio" ana="function:legittimazione;
+                        relation:purga-macchie;
+                        risk:risk-medio-basso;
+                        impact:impact-medio-alto;
+                        mystic-state:purificazione;
+                        operation:assertio;
+                        layer:hand1_ink"> e tolta ogni <term
+                           ana="term:macchia; categoria:purificazione">macchia</term>, che prima
+                        teneva, <figure ana="figura:purificatio"/>
+                        <spanGrp type="focus" ana="area:purga-macchie; theme:purificazione">
+                           <span ana="focus:macchie→purificazione"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p3-001 #III-cap-1-p3-002"
+                           ana="relation:dispositio→purificatio; tipo:progressus-mysticus"/>
+                        <cit type="bible" xml:id="cit-ps88-2" ana="#purificatio #illuminatio">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia">
+                                 Misericordias Domini in aeternum cantabo; in generationem et
+                                 generationem annuntiabo veritatem tuam in ore meo. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Ps.88.2"/>
+                        </cit>
+                        <val n="0.67" cert="medium" ana="N:0.70; A:0.60; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.672"/>
+                     </seg>
+                     <!-- Seg 3 — cessazione della luce divina -->
+                     <seg xml:id="III-cap-1-p3-003" type="indicatio" function="pedagogia"
+                        subtype="mutatio-operis" ana="function:pedagogia;
+                        relation:cessatio-lux;
+                        risk:risk-medio;
+                        impact:impact-medio;
+                        operation:mutatio;
+                        layer:hand1_ink"> non gli dà più né <rs
+                           type="divinità" ana="entity:Deus; ruolo:agente">Dio</rs> la <term
+                           ana="term:luce-divina; categoria:illuminatio">luce divina</term>, <figure
+                           ana="figura:mutatio-operis"/>
+                        <spanGrp type="focus" ana="area:cessatio-lux; theme:mutatio">
+                           <span ana="focus:cessatio-illuminationis"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p3-002 #III-cap-1-p3-003"
+                           ana="relation:purificatio→cessatio-lux; tipo:progressus-mysticus"/>
+                        <val n="0.61" cert="medium" ana="N:0.58; A:0.55; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.608"/>
+                     </seg>
+                     <!-- Seg 4 — consolazione divina -->
+                     <seg xml:id="III-cap-1-p3-004" type="indicatio" function="legittimazione"
+                        subtype="consolatio" ana="function:legittimazione;
+                        relation:consolatio;
+                        risk:risk-basso;
+                        impact:impact-medio-alto;
+                        operation:intensificatio;
+                        layer:hand1_ink"> anzi la <term
+                           ana="term:consolatio; categoria:mistica">consola</term>, <figure
+                           ana="figura:consolatio"/>
+                        <spanGrp type="focus" ana="area:consolatio; theme:post-purificazione">
+                           <span ana="focus:consolatio-divina"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p3-003 #III-cap-1-p3-004"
+                           ana="relation:cessatio-lux→consolatio; tipo:riequilibrio-mistico"/>
+                        <val n="0.69" cert="medium" ana="N:0.72; A:0.63; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.690"/>
+                     </seg>
+                     <!-- Seg 5 — illuminazione (similitudine “come sole”) -->
+                     <seg xml:id="III-cap-1-p3-005" type="indicatio" function="legittimazione"
+                        subtype="illuminatio" ana="function:legittimazione;
+                        relation:rischiarare-anima;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:illuminatio;
+                        layer:hand1_ink"> e la <term
+                           ana="term:rischiarare; categoria:illuminatio">rischiara</term> come <rs
+                           type="similitudo-luminosa" ana="entity:sole; ruolo:metafora-illuminatio"
+                           >sole</rs>. <figure ana="figura:illuminatio"/>
+                        <spanGrp type="focus" ana="area:rischiarare-anima; theme:illuminatio">
+                           <span ana="focus:metafora-lux"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p3-004 #III-cap-1-p3-005"
+                           ana="relation:consolatio→illuminatio; tipo:progressus-mysticus"/>
+                        <val n="0.66" cert="medium" ana="N:0.64; A:0.58; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.661"/>
+                     </seg>
+                  </p>
+
+                  <p n="4">
+                     <seg xml:id="III-cap-1-p4-001" type="indicatio" function="pedagogia"
+                        subtype="mutatio-status" ana="function:pedagogia;
+                        relation:travagli->pace;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink"> Al passaggio dei <term
+                           ana="term:travagli; categoria:ascetica">travagli</term> va <rs
+                           type="anima" ana="entity:anima; ruolo:soggetto-mistico">l’anima</rs> di
+                        nuovo acquistando la <term ana="term:pace; stato:ascetico">pace</term>, che
+                        prima <term ana="term:perdita-pace; categoria:purificazione">persa</term>
+                        havea, <figure ana="figura:mutatio-status"/>
+                        <spanGrp type="focus" ana="area:travaglio->pace; theme:mutatio-status">
+                           <span ana="focus:riacquisto-pace"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p1-004 #III-cap-1-p4-001"
+                           ana="relation:croce->pace; tipo:progressus-asceticus"/>
+                        <val n="0.63" cert="medium" ana="N:0.62; A:0.58; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.628"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p4-002" type="indicatio" function="pedagogia"
+                        subtype="segno-mistico" ana="function:pedagogia;
+                        relation:cessazione-amarezze;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:descriptio;
+                        layer:hand1_ink"> e vedesi cessar le <term
+                           ana="term:pioggie; categoria:ascetica-metaforica">pioggie</term> delle
+                        sue <term ana="term:amarezze; categoria:afflizione-mistica">amarezze</term>,
+                           <figure ana="figura:segno-mistico"/>
+                        <spanGrp type="focus" ana="area:cessazione-amarezze; theme:segno-mistico">
+                           <span ana="focus:pioggie→cessazione"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p4-001 #III-cap-1-p4-002"
+                           ana="relation:travaglio→cessazione; tipo:progressus-mysticus"/>
+                        <val n="0.60" cert="medium" ana="N:0.58; A:0.55; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.601"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p4-003" type="indicatio" function="legittimazione"
+                        subtype="similitudo-biblica" ana="function:legittimazione;
+                        relation:arca-Noe;
+                        risk:risk-medio-basso;
+                        impact:impact-medio-alto;
+                        operation:similitudo;
+                        layer:hand1_ink"> e comparir nella sua terra, in
+                           <term ana="term:segno-sicurtà; categoria:mistica">segno di
+                        sicurtà</term>, <figure ana="figura:similitudo-biblica"/>
+                        <rs type="similitudo" ana="entity:arca-Noe; ruolo:metafora-biblica"> l’Arca
+                           di Noè </rs>; <spanGrp type="focus"
+                           ana="area:arca-Noe; theme:segno-mistico">
+                           <span ana="focus:similitudo-biblica"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p4-001 #III-cap-1-p4-003"
+                           ana="relation:pace→sicurtà; tipo:continuità-mistica"/>
+                        <cit type="bible" xml:id="cit-gen6-9" ana="#similitudo-biblica">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Arca Noè,
+                                 quam Dominus iussit aedificari ad salutem domus eius. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Gen.6-9"/>
+                        </cit>
+                        <val n="0.71" cert="medium" ana="N:0.75; A:0.60; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.709"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p4-004" type="indicatio" function="pedagogia"
+                        subtype="apertura-porte" ana="function:pedagogia;
+                        relation:porte-aperte;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:intensificatio;
+                        layer:hand1_ink"> vede più, e più <term
+                           ana="term:aprirsi; categoria:segno-mistico">aprer</term> le <rs
+                           type="similitudo" ana="entity:porte-spirituali; ruolo:ostacolo->apertura"
+                           >porte</rs>, che prima stavano per lei <term
+                           ana="term:chiusura; categoria:ascetica">serrate</term>, e senza speranza
+                        d’aprirsi; <figure ana="figura:apertura-porte"/>
+                        <spanGrp type="focus" ana="area:porte-aperte; theme:mutatio-status">
+                           <span ana="focus:chiusura->apertura"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p4-002 #III-cap-1-p4-004"
+                           ana="relation:cessazione-amarezze->apertura; tipo:progressus-mysticus"/>
+                        <val n="0.64" cert="medium" ana="N:0.60; A:0.57; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.642"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p4-005" type="indicatio" function="pedagogia"
+                        subtype="annunciatio" ana="function:pedagogia;
+                        relation:segni-primavera;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:annunciatio;
+                        layer:hand1_ink"> e tutti questi, ed altri <term
+                           ana="term:segni; categoria:mistica">segni</term>, che tutti annunciano la
+                           <rs type="similitudo-stagionale"
+                           ana="entity:primavera-ventura; ruolo:metafora-mistica"> primavera ventura
+                        </rs> che verrà <rs type="anima"
+                           ana="entity:anima; ruolo:luogo-trasformazione">nell’anima</rs>, <figure
+                           ana="figura:annunciatio"/>
+                        <spanGrp type="focus" ana="area:segni-primavera; theme:annunciatio">
+                           <span ana="focus:primavera-mistica"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p4-003 #III-cap-1-p4-005"
+                           ana="relation:segno→annuncio; tipo:progressus-mysticus"/>
+                        <val n="0.62" cert="medium" ana="N:0.60; A:0.56; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.620"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p4-006" type="indicatio" function="pedagogia"
+                        subtype="promissio" ana="function:pedagogia;
+                        relation:promissio-futura;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:promissio;
+                        layer:hand1_ink"> sì come <ptr
+                           target="#III-cap-1-p5-001" ana="ptr:rinvio-futuro"/> doppo <term
+                           ana="term:dire; categoria:annuncio">dirò</term>. <figure
+                           ana="figura:promissio"/>
+                        <spanGrp type="focus" ana="area:promissio-futura; theme:annuncio-futuro">
+                           <span ana="focus:promissio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p4-005 #III-cap-1-p4-006"
+                           ana="relation:annunciatio→promissio; tipo:progressus-mysticus"/>
+                        <val n="0.55" cert="medium" ana="N:0.50; A:0.52; F:0.63;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.551"/>
+                     </seg>
+                  </p>
+
+                  <p n="5">
+                     <seg xml:id="III-cap-1-p5-001" type="indicatio" function="pedagogia"
+                        subtype="post-travagli" ana="function:pedagogia;
+                        relation:stanchezza-post-patimento;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink"> Resta <rs type="anima"
+                           ana="entity:anima; ruolo:soggetto-mistico">l’anima</rs> tutta <term
+                           ana="term:astinuata; categoria:stanchezza">astinuata</term> del <term
+                           ana="term:patimento; categoria:ascetica">patire</term>, e’ <term
+                           ana="term:travagli-passati; categoria:ascetica">travagli passati</term>.
+                           <figure ana="figura:post-travagli"/>
+                        <spanGrp type="focus"
+                           ana="area:stanchezza-post-patimento; theme:post-travagli">
+                           <span ana="focus:stanchezza"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p4-005 #III-cap-1-p5-001"
+                           ana="relation:primavera→stanchezza-post; tipo:progressus-mysticus"/>
+                        <val n="0.61" cert="medium" ana="N:0.58; A:0.55; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.611"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p5-002" type="indicatio" function="pedagogia"
+                        subtype="annunciatio-exemplum" ana="function:pedagogia;
+                        relation:preparatio-comperationis;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:annunciatio;
+                        layer:hand1_ink"> Qui per farmi ad intendire vorrei
+                        spiegarmi con una <term ana="term:comperatione; categoria:retorica"
+                           >comperatione</term>, <figure ana="figura:annunciatio-exemplum"/>
+                        <spanGrp type="focus" ana="area:preparatio-comperationis; theme:annunciatio">
+                           <span ana="focus:comperatione"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p5-001 #III-cap-1-p5-002"
+                           ana="relation:post-travagli→annuncio-esempio; tipo:progressus"/>
+                        <val n="0.59" cert="medium" ana="N:0.57; A:0.54; F:0.66;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.589"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p5-003" type="indicatio" function="pedagogia"
+                        subtype="exemplum" ana="function:pedagogia;
+                        relation:exemplum-annunciato;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:exemplum;
+                        layer:hand1_ink"> per <term
+                           ana="term:esempio; categoria:retorica">esempio</term>. <figure
+                           ana="figura:exemplum"/>
+                        <spanGrp type="focus" ana="area:exemplum; theme:retorica">
+                           <span ana="focus:esemplificazione"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p5-002 #III-cap-1-p5-003"
+                           ana="relation:annuncio→exemplum; tipo:progressus-retorico"/>
+                        <val n="0.55" cert="medium" ana="N:0.50; A:0.52; F:0.63;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.551"/>
+                     </seg>
+                  </p>
+
+                  <p n="6">
+                     <seg xml:id="III-cap-1-p6-001" type="indicatio" function="pedagogia"
+                        subtype="exemplum" ana="function:pedagogia;
+                        relation:statua-exemplum;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:similitudo;
+                        layer:hand1_ink"> Vi fosse una <rs
+                           type="exemplum-figurale" ana="entity:statua; ruolo:oggetto-exemplum"
+                           >statua</rs> che esposta molti tempi al <term
+                           ana="term:calore; categoria:similitudo">calor</term> del <rs
+                           type="similitudo-luminosa" ana="entity:sole; ruolo:sorgente-luce"
+                           >sole</rs>, <figure ana="figura:similitudo-statua"/>
+                        <spanGrp type="focus" ana="area:statua-exemplum; theme:similitudo">
+                           <span ana="focus:statua-esposta-sole"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p5-003 #III-cap-1-p6-001"
+                           ana="relation:exemplum→similitudo; tipo:progressus-retorico"/>
+                        <val n="0.60" cert="medium" ana="N:0.58; A:0.55; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.602"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p6-002" type="indicatio" function="pedagogia"
+                        subtype="exemplum" ana="function:pedagogia;
+                        relation:statua-astinuata;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:descriptio;
+                        layer:hand1_ink"> remanesse molto <term
+                           ana="term:astinuata; categoria:essiccazione-mistica">astinuata</term> e
+                           <term ana="term:secca; categoria:metafora-ascetica">secca</term>, e
+                        perciò sarebbe molto <term
+                           ana="term:leggiera; categoria:condizione-ascetica">leggiera</term>. <rs
+                           type="exemplum-figurale" ana="entity:statua; ruolo:oggetto-exemplum"/>
+                        <figure ana="figura:descriptio-exemplum"/>
+                        <spanGrp type="focus" ana="area:statua-astinuata; theme:exemplum">
+                           <span ana="focus:essiccazione→leggerezza"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-001 #III-cap-1-p6-002"
+                           ana="relation:esposizione-sole→essiccazione; tipo:progressus-exemplum"/>
+                        <val n="0.59" cert="medium" ana="N:0.57; A:0.54; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.589"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p6-003" type="indicatio" function="pedagogia"
+                        subtype="comparatio" ana="function:pedagogia;
+                        relation:comparatio-anima-statua;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:comparatio;
+                        layer:hand1_ink"> Cossì a punto è qui <rs
+                           type="anima" ana="entity:anima; ruolo:comparata">l’anima</rs>, <figure
+                           ana="figura:comparatio"/>
+                        <spanGrp type="focus" ana="area:comparatio-anima-statua; theme:similitudo">
+                           <span ana="focus:anima←→statua"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-001 #III-cap-1-p6-003"
+                           ana="relation:statua→anima; tipo:comparatio"/>
+                        <val n="0.61" cert="medium" ana="N:0.60; A:0.56; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.611"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p6-004" type="indicatio" function="pedagogia"
+                        subtype="illuminatio" ana="function:pedagogia;
+                        relation:calor-lux-divina;
+                        risk:risk-medio-basso;
+                        impact:impact-medio-alto;
+                        operation:illuminatio;
+                        layer:hand1_ink"> che <term
+                           ana="term:stinuata; categoria:essiccazione-mistica">stinuata</term> ed
+                        esposta al <term ana="term:calor-divino; categoria:illuminatio">calor</term>
+                        della <term ana="term:luce-divina; categoria:illuminatio">divina
+                        luce</term>, resto molto <term
+                           ana="term:leggiera; categoria:condizione-mistica">leggiera</term>, <rs
+                           type="anima" ana="entity:anima; ruolo:soggetto-illuminatio"/>
+                        <figure ana="figura:illuminatio"/>
+                        <spanGrp type="focus" ana="area:calor-lux-divina; theme:illuminatio">
+                           <span ana="focus:calore→leggerezza"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-002 #III-cap-1-p6-004"
+                           ana="relation:essiccazione→illuminatio; tipo:progressus-mysticus"/>
+                        <val n="0.68" cert="medium" ana="N:0.70; A:0.60; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.683"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p6-005" type="indicatio" function="legittimazione"
+                        subtype="purificatio" ana="function:legittimazione;
+                        relation:assenza-macchie-passioni;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:assertio;
+                        layer:hand1_ink"> e questa intendo dire, per la
+                        mancanza di tutte le <term ana="term:macchie; categoria:purificazione"
+                           >macchie</term>, e <term ana="term:passioni; categoria:purificazione"
+                           >passioni</term> che vede dentro di <rs type="anima"
+                           ana="entity:anima; ruolo:soggetto-introspezione">sé</rs>; <figure
+                           ana="figura:assertio-purificatio"/>
+                        <spanGrp type="focus" ana="area:assenza-macchie-passioni; theme:purificatio">
+                           <span ana="focus:purificazione-interna"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-004 #III-cap-1-p6-005"
+                           ana="relation:illuminatio→purificatio; tipo:progressus-mysticus"/>
+                        <val n="0.64" cert="medium" ana="N:0.63; A:0.58; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.642"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p6-006" type="indicatio" function="legittimazione"
+                        subtype="illuminatio-purificatio" ana="function:legittimazione;
+                        relation:contemplatio-disfacimento;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        mystic-state:purificazione;
+                        operation:intensificatio;
+                        layer:hand1_ink"> e per quanto <term
+                           ana="term:consumo; categoria:purificazione">consomò</term>, e <term
+                           ana="term:disfacimento; categoria:purificazione">disfece</term> quella
+                        divina <term ana="term:contemplatio-divina; categoria:contemplatio"
+                           >contemplatione</term>, <rs type="anima"
+                           ana="entity:anima; ruolo:oggetto-disfacimento"/>
+                        <figure ana="figura:illuminatio-purificatio"/>
+                        <spanGrp type="focus"
+                           ana="area:contemplatio-disfacimento; theme:intensificatio">
+                           <span ana="focus:consumare→disfare"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-005 #III-cap-1-p6-006"
+                           ana="relation:purificatio→disfacimento; tipo:progressus-mysticus"/>
+                        <val n="0.69" cert="medium" ana="N:0.70; A:0.60; F:0.74;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.691"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p6-007" type="indicatio" function="legittimazione"
+                        subtype="unio" ana="function:legittimazione;
+                        relation:capacitas-unionis;
+                        risk:risk-basso;
+                        impact:impact-medio-alto;
+                        operation:conclusio;
+                        layer:hand1_ink"> la lasciò ben <term
+                           ana="term:capace; categoria:unio">capace</term> di poter unirsi con lo
+                           <rs type="persona-divina" ana="entity:sponsus; ruolo:amato-suo"> sposo
+                           suo </rs>. <figure ana="figura:unio"/>
+                        <spanGrp type="focus" ana="area:capacitas-unionis; theme:unio">
+                           <span ana="focus:unione-sponsale"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-006 #III-cap-1-p6-007"
+                           ana="relation:purificatio→unio; tipo:progressus-mysticus"/>
+                        <cit type="bible" xml:id="cit-ct2-16" ana="#sponsalitas #unio">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia"> Dilectus
+                                 meus mihi, et ego illi, qui pascit inter lilia. </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Cant.2.16"/>
+                        </cit>
+                        <val n="0.71" cert="medium" ana="N:0.72; A:0.63; F:0.75;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.712"/>
+                     </seg>
+                  </p>
+
+                  <p n="7">
+                     <seg xml:id="III-cap-1-p7-001" type="indicatio" function="pedagogia"
+                        subtype="stato-intermedio" ana="function:pedagogia;
+                        relation:status-intermediarius;
+                        risk:risk-medio-basso;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink"> Sta per qualche tempo <rs
+                           type="anima" ana="entity:anima; ruolo:stato-intermedio">l’anima</rs>
+                        senza che né <term ana="term:patire; categoria:ascetica">patisse</term> come
+                        prima, né <term ana="term:godere; categoria:mistica">gode</term>, come poi
+                        cresciuta l’unione <term ana="term:goderà; categoria:mistica">goderà</term>,
+                           <figure ana="figura:stato-intermedio"/>
+                        <spanGrp type="focus"
+                           ana="area:status-intermediarius; theme:stato-intermedio">
+                           <span ana="focus:assenza-patire-e-godere"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p6-007 #III-cap-1-p7-001"
+                           ana="relation:unio→status-intermedio; tipo:progressus-mysticus"/>
+                        <val n="0.63" cert="medium" ana="N:0.62; A:0.58; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.628"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-002" type="indicatio" function="pedagogia"
+                        subtype="reminiscentia" ana="function:pedagogia;
+                        relation:attonita-memoria;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:descriptio;
+                        layer:hand1_ink"> e sta <term
+                           ana="term:attonita; categoria:reminiscentia">attonita</term> al guardare
+                        i <term ana="term:travagli-passati; categoria:memoria-ascetica">travagli
+                           passati</term>. <figure ana="figura:reminiscentia"/>
+                        <spanGrp type="focus" ana="area:attonita-memoria; theme:reminiscentia">
+                           <span ana="focus:ricordo-travagli"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-001 #III-cap-1-p7-002"
+                           ana="relation:status-intermedio→memoria; tipo:progressus-mysticus"/>
+                        <val n="0.58" cert="medium" ana="N:0.55; A:0.54; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.583"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-003" type="indicatio" function="pedagogia"
+                        subtype="exemplum" ana="function:pedagogia;
+                        relation:exemplum-viator;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:similitudo;
+                        layer:hand1_ink"> E qui per a punto come <rs
+                           type="persona" ana="entity:viator; ruolo:exemplum">chi</rs> doppo un
+                           <term ana="term:lungo-viaggio; categoria:similitudo">lungo
+                        viaggio</term>, se ne stasse un puoco a vedere, <figure
+                           ana="figura:exemplum-viator"/>
+                        <spanGrp type="focus" ana="area:viator; theme:similitudo">
+                           <span ana="focus:viaggio→pausa"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-002 #III-cap-1-p7-003"
+                           ana="relation:memoria→exemplum; tipo:progressus-retorico"/>
+                        <fw type="sig" place="bottom" xml:id="f159-1"/>
+                        <pb n="159r" facs="images/f159.jpg" xml:id="f159r"/>
+                        <val n="0.60" cert="medium" ana="N:0.58; A:0.55; F:0.66;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.602"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-004" type="indicatio" function="pedagogia"
+                        subtype="exemplum" ana="function:pedagogia;
+                        relation:exemplum-requies;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:exemplum;
+                        layer:hand1_ink"> e senza più <term
+                           ana="term:travagliare; categoria:ascetica">travagliare</term>. <figure
+                           ana="figura:exemplum-requies"/>
+                        <spanGrp type="focus" ana="area:requies; theme:pausa">
+                           <span ana="focus:cessazione-travaglio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-003 #III-cap-1-p7-004"
+                           ana="relation:viator→riposo; tipo:progressus"/>
+                        <val n="0.56" cert="medium" ana="N:0.53; A:0.52; F:0.63;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.558"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-005" type="indicatio" function="pedagogia"
+                        subtype="comparatio" ana="function:pedagogia;
+                        relation:comparatio-requies;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:comparatio;
+                        layer:hand1_ink"> Hor cossì è qui <rs type="anima"
+                           ana="entity:anima; ruolo:comparata">l’anima</rs>, che doppo quei <term
+                           ana="term:travagli; categoria:ascetica">travagli</term>, e <term
+                           ana="term:fatiche; categoria:ascetica">fatiche</term>
+                        <term ana="term:reposa; categoria:requies">reposa</term>, <figure
+                           ana="figura:comparatio"/>
+                        <spanGrp type="focus" ana="area:comparatio-requies; theme:requies">
+                           <span ana="focus:riposo-dopo-travaglio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-004 #III-cap-1-p7-005"
+                           ana="relation:requies→comparatio; tipo:progressus-mysticus"/>
+                        <val n="0.62" cert="medium" ana="N:0.60; A:0.56; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.623"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-006" type="indicatio" function="pedagogia"
+                        subtype="status-intermediarius" ana="function:pedagogia;
+                        relation:gaudium-non-plenum;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        operation:expositio;
+                        layer:hand1_ink"> ma però nei <term
+                           ana="term:principii; categoria:inizio-mistico">principii</term> non tanto
+                           <term ana="term:gode; categoria:mistica">gode</term>, <figure
+                           ana="figura:status-intermediarius"/>
+                        <spanGrp type="focus" ana="area:gaudium-non-plenum; theme:inizio-unione">
+                           <span ana="focus:gioia-imperfetta"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-005 #III-cap-1-p7-006"
+                           ana="relation:requies→gaudium-non-plenum; tipo:progressus-mysticus"/>
+                        <val n="0.66" cert="medium" ana="N:0.65; A:0.60; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.664"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-007" type="indicatio" function="legittimazione"
+                        subtype="nuptialitas" ana="function:legittimazione;
+                        relation:sponsus-non-possessus;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:assertio;
+                        layer:hand1_ink"> non havendo per ancora <rs
+                           type="sponsus" ana="entity:sposo; ruolo:non-pieno-posesso"> pigliato lo
+                           sposo </rs> in lei totalmente <term ana="term:posesso; categoria:unio"
+                           >posesso</term>, <figure ana="figura:nuptialitas"/>
+                        <spanGrp type="focus"
+                           ana="area:sponsus-non-possessus; theme:unio-incompleta">
+                           <span ana="focus:possesso-mancante"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-006 #III-cap-1-p7-007"
+                           ana="relation:gaudium-non-plenum→unio-incompleta; tipo:progressus"/>
+                        <val n="0.63" cert="medium" ana="N:0.62; A:0.58; F:0.68;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.629"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-008" type="indicatio" function="legittimazione"
+                        subtype="nuptialitas" ana="function:legittimazione;
+                        relation:manifestatio-sponsi;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink"> o perché ancora non gli piace di
+                           <term ana="term:scoprirsi; categoria:nuptialitas">scoprirsi</term> come
+                        poi farà; <figure ana="figura:manifestatio-sponsi"/>
+                        <spanGrp type="focus" ana="area:manifestatio-sponsi; theme:unio">
+                           <span ana="focus:sponsus-non-manifestus"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-007 #III-cap-1-p7-008"
+                           ana="relation:unio-incompleta→manifestatio; tipo:progressus"/>
+                        <val n="0.62" cert="medium" ana="N:0.60; A:0.57; F:0.66;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.617"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p7-009" type="indicatio" function="pedagogia"
+                        subtype="status-finalis" ana="function:pedagogia;
+                        relation:cessatio-patimenti;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:conclusio;
+                        layer:hand1_ink"> e però <rs type="anima"
+                           ana="entity:anima; ruolo:stato-finale">l’anima</rs> non <term
+                           ana="term:patire; categoria:cessatio">patisce</term> più. <figure
+                           ana="figura:status-finalis"/>
+                        <spanGrp type="focus" ana="area:cessatio-patimenti; theme:conclusio">
+                           <span ana="focus:cessatio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-008 #III-cap-1-p7-009"
+                           ana="relation:manifestatio→cessatio; tipo:conclusio-mystica"/>
+                        <val n="0.60" cert="medium" ana="N:0.58; A:0.55; F:0.65;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.599"/>
+                     </seg>
+                  </p>
+
+                  <p n="8">
+                     <seg xml:id="III-cap-1-p8-001" type="indicatio" function="pedagogia"
+                        subtype="perdita-desiderio" ana="function:pedagogia;
+          relation:desiderium-amissum;
+          risk:risk-alto;
+          impact:impact-alto;
+          operation:expositio;
+          layer:hand1_ink"> M’accorgio io però, che incomincia <rs
+                           type="anima" ana="entity:anima; ruolo:perdita-desiderio">l’anima</rs> a
+                           <term ana="term:perdire-desiderio; categoria:mistica">perdire qualunque
+                           desiderio</term>, <figure ana="figura:perdita-desiderio"/>
+                        <spanGrp type="focus" ana="area:desiderium-amissum; theme:negatio">
+                           <span ana="focus:cessazione-desiderio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p7-009 #III-cap-1-p8-001"
+                           ana="relation:cessatio-patimenti→perdita-desiderio; tipo:progressus-mysticus"/>
+                        <val n="0.82" cert="high" ana="N:0.85; A:0.78; F:0.80;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.818"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-002" type="indicatio" function="pedagogia"
+                        subtype="negatio-mundi" ana="function:pedagogia;
+          relation:negatio-mundi;
+          risk:risk-medio-basso;
+          impact:impact-medio;
+          operation:negatio;
+          layer:hand1_ink"> e non dico del <rs type="mundus"
+                           ana="entity:mondo; ruolo:oggetto-negatio">mondo</rs>, ch’è <term
+                           ana="term:cosa-certa; categoria:asserzione">cosa certa</term>, che prima
+                        d’arrivare a questo stato, <figure ana="figura:negatio-mundi"/>
+                        <spanGrp type="focus" ana="area:negatio-mundi; theme:pedagogia">
+                           <span ana="focus:rinuncia-mundana"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-001 #III-cap-1-p8-002"
+                           ana="relation:desiderium-amissum→negatio-mundi; tipo:progressus"/>
+                        <val n="0.63" cert="medium" ana="N:0.60; A:0.57; F:0.70;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.629"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-003" type="indicatio" function="pedagogia"
+                        subtype="nuptialitas" ana="function:pedagogia;
+          relation:sponsalizio-stato;
+          risk:risk-basso;
+          impact:impact-medio;
+          operation:expositio;
+          layer:hand1_ink"> cioè quando era nello <term
+                           ana="term:sposalitio; categoria:nuptialitas">sposalitio</term>, né meno
+                           <term ana="term:desiderare; categoria:ascetica">desiderava</term> cosa
+                        alcuna di questa vita, anzi molto <term
+                           ana="term:aborrire; categoria:ascetica">l’abborriva</term>; <figure
+                           ana="figura:sponsalitas"/>
+                        <spanGrp type="focus" ana="area:sponsalitas; theme:desiderio-negato">
+                           <span ana="focus:sponsalizio→non-desiderare"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-002 #III-cap-1-p8-003"
+                           ana="relation:negatio-mundi→sponsalizio; tipo:progressus-mysticus"/>
+                        <val n="0.64" cert="medium" ana="N:0.63; A:0.58; F:0.68;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.640"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-004" type="indicatio" function="pedagogia"
+                        subtype="perdita-desiderio-spirituale" ana="function:pedagogia;
+          relation:non-desiderare-gusti-spiritus;
+          risk:risk-medio-alto;
+          impact:impact-alto;
+          operation:negatio;
+          layer:hand1_ink"> intendo dunque dire che non <term
+                           ana="term:desiderare-gusti; categoria:mistica">desidera più gusti di
+                           spirito</term> come prima; <figure
+                           ana="figura:perdita-desiderio-spirituale"/>
+                        <spanGrp type="focus" ana="area:gusti-spiritus; theme:negatio">
+                           <span ana="focus:cessazione-gusti"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-003 #III-cap-1-p8-004"
+                           ana="relation:sponsalitas→negatio-gusti; tipo:progressus-mysticus"/>
+                        <val n="0.78" cert="high" ana="N:0.82; A:0.74; F:0.75;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.779"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-005" type="indicatio" function="legittimazione"
+                        subtype="purificatio" ana="function:legittimazione;
+          relation:dispositio-post-purga;
+          risk:risk-medio;
+          impact:impact-medio-alto;
+          operation:assertio;
+          layer:hand1_ink"> da qui se vede la grandissima <term
+                           ana="term:dispositio; categoria:mistica">dispositione</term>, che lasciò
+                        in lei la <term ana="term:purga-passata; categoria:purificazione">purga
+                           passata</term>, <rs type="anima" ana="entity:anima; ruolo:disposita"/>
+                        <figure ana="figura:purificatio"/>
+                        <spanGrp type="focus" ana="area:dispositio-post-purga; theme:purificatio">
+                           <span ana="focus:purga→dispositio"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-004 #III-cap-1-p8-005"
+                           ana="relation:negatio-gusti→dispositio; tipo:progressus-mysticus"/>
+                        <val n="0.72" cert="medium" ana="N:0.75; A:0.68; F:0.70;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.721"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-006" type="indicatio" function="legittimazione"
+                        subtype="concupiscibile-purgato" ana="function:legittimazione;
+          relation:potentia-concupiscibilis;
+          risk:risk-alto;
+          impact:impact-alto;
+          operation:expositio;
+          layer:hand1_ink"> e come purgò la <term
+                           ana="term:potentia-concupiscibilis; categoria:antropologia-mistica"
+                           >potenza del concopiscibile</term>, già che non è più atta per <term
+                           ana="term:desiderare; categoria:concupiscibile">desiderare</term>, come
+                        prima, che mai cessava di <term
+                           ana="term:desiderare; categoria:concupiscibile">desiderare</term>,
+                           <figure ana="figura:concupiscibile-purgato"/>
+                        <spanGrp type="focus" ana="area:concupiscibile; theme:purificatio">
+                           <span ana="focus:concupiscibile-purgato"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-005 #III-cap-1-p8-006"
+                           ana="relation:dispositio→concupiscibile-purgato; tipo:progressus-mysticus"/>
+                        <val n="0.85" cert="high" ana="N:0.88; A:0.80; F:0.82;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.847"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-007" type="indicatio" function="pedagogia"
+                        subtype="negatio-desiderio" ana="function:pedagogia;
+          relation:desideria-cessantia;
+          risk:risk-medio;
+          impact:impact-medio;
+          operation:negatio;
+          layer:hand1_ink"> e non solamente <term
+                           ana="term:gusta-spiritus; categoria:mistica">gusti di spirito</term>, ma
+                        anche desiderava d’andar innanzi alla <term
+                           ana="term:perfettione; categoria:ascetica">perfettione</term>, qui però
+                        cessa <term ana="term:qualunque-desiderio; categoria:negatio">ogni qualunque
+                           desiderio</term>; <figure ana="figura:negatio-desiderio"/>
+                        <spanGrp type="focus" ana="area:desideria-cessantia; theme:negatio">
+                           <span ana="focus:cessatio-desiderii"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-006 #III-cap-1-p8-007"
+                           ana="relation:concupiscibile-purgato→cessatio-desiderii; tipo:progressus"/>
+                        <val n="0.70" cert="medium" ana="N:0.72; A:0.65; F:0.68;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.694"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-008" type="indicatio" function="legittimazione"
+                        subtype="unio-non-totale" ana="function:legittimazione;
+          relation:non-possessio-Dei;
+          risk:risk-medio;
+          impact:impact-medio;
+          operation:expositio;
+          layer:hand1_ink"> e questo non è, per quanto <rs type="persona"
+                           ana="entity:ego; ruolo:percipientis">m’accorgio</rs>, per la totale <term
+                           ana="term:possessione-Dei; categoria:unio">posessione</term>, che intenda
+                        di <rs type="divinità" ana="entity:Deus; ruolo:possessor">Dio</rs>, <figure
+                           ana="figura:unio-non-totale"/>
+                        <spanGrp type="focus" ana="area:non-possessio-Dei; theme:unio">
+                           <span ana="focus:unione-non-perfetta"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-007 #III-cap-1-p8-008"
+                           ana="relation:cessatio-desiderii→non-possessio; tipo:progressus"/>
+                        <val n="0.66" cert="medium" ana="N:0.65; A:0.60; F:0.70;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.661"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-009" type="indicatio" function="pedagogia"
+                        subtype="status-intermediarius" ana="function:pedagogia;
+          relation:non-conoscere-unione;
+          risk:risk-basso;
+          impact:impact-medio;
+          operation:expositio;
+          layer:hand1_ink"> poiché, come <ptr target="#III-cap-1-p7-001"
+                           ana="ptr:rinvio-passato"/> dissi sopra, non <term
+                           ana="term:conoscere; categoria:mistica">conosce</term> questo per ancora;
+                           <figure ana="figura:status-intermediarius"/>
+                        <spanGrp type="focus" ana="area:non-conoscere-unione; theme:pedagogia">
+                           <span ana="focus:ignoranza-mistica"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-008 #III-cap-1-p8-009"
+                           ana="relation:non-possessio→non-conoscere; tipo:progressus"/>
+                        <val n="0.59" cert="medium" ana="N:0.56; A:0.55; F:0.63;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.592"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-010" type="indicatio" function="pedagogia"
+                        subtype="alienatio-sensuum" ana="function:pedagogia;
+          relation:alienatio-sensuum;
+          risk:risk-medio-alto;
+          impact:impact-alto;
+          operation:expositio;
+          layer:hand1_ink"> solamente in questi <term
+                           ana="term:principii; categoria:inizio-mistico">principii</term>
+                        s’alienano i <rs type="sensi" ana="entity:sensuum; ruolo:alienatio"
+                           >sensi</rs> al <term ana="term:conoscere; categoria:gnoseologia-mistica"
+                           >conoscere</term>, <figure ana="figura:alienatio-sensuum"/>
+                        <spanGrp type="focus"
+                           ana="area:alienatio-sensuum; theme:illuminatio-mystica">
+                           <span ana="focus:cessazione-sensuum"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-009 #III-cap-1-p8-010"
+                           ana="relation:non-conoscere→alienatio-sensuum; tipo:progressus"/>
+                        <val n="0.81" cert="high" ana="N:0.83; A:0.74; F:0.80;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.807"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-011" type="indicatio" function="pedagogia"
+                        subtype="perdita-desiderio" ana="function:pedagogia;
+          relation:capacitas-amissum-desiderare;
+          risk:risk-medio;
+          impact:impact-medio-alto;
+          operation:negatio;
+          layer:hand1_ink"> e <term
+                           ana="term:perdere-capacità; categoria:psychologia-mistica">perde la
+                           capacetà</term> per <term ana="term:desiderare; categoria:mistica"
+                           >desiderare</term>, però non totalmente come quando sarà arrivata all’
+                           <term ana="term:unione-perfetta; categoria:unio">unione perfetta</term>;
+                           <figure ana="figura:perdita-desiderio"/>
+                        <spanGrp type="focus" ana="area:capacitas-amissum-desiderare; theme:negatio">
+                           <span ana="focus:capacità-non-totale"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-010 #III-cap-1-p8-011"
+                           ana="relation:alienatio-sensuum→perdita-capacità; tipo:progressus"/>
+                        <val n="0.75" cert="medium" ana="N:0.78; A:0.67; F:0.72;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.741"/>
+                     </seg>
+                     <seg xml:id="III-cap-1-p8-012" type="indicatio" function="legittimazione"
+                        subtype="unio-principium" ana="function:legittimazione;
+          relation:signum-unionis;
+          risk:risk-alto;
+          impact:impact-alto;
+          operation:conclusio;
+          layer:hand1_ink"> solo dico, che ciò che ho detto è un bel <term
+                           ana="term:segno-unione; categoria:unio">segno d’unione</term>, cioè <term
+                           ana="term:principii; categoria:unio">principii</term>. <figure
+                           ana="figura:unio-principium"/>
+                        <spanGrp type="focus" ana="area:signum-unionis; theme:conclusio">
+                           <span ana="focus:principium-unionis"/>
+                        </spanGrp>
+                        <link target="#III-cap-1-p8-011 #III-cap-1-p8-012"
+                           ana="relation:capacitas-amissum→signum-unionis; tipo:conclusio"/>
+                        <val n="0.84" cert="high" ana="N:0.86; A:0.80; F:0.82;
+              formula:'I = 0.40*N + 0.35*A + 0.25*F';
+              I:0.838"/>
+                     </seg>
+                  </p>
+
+                  <p n="9">
+                     <seg xml:id="III-cap-1-p9-001"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="status-intermediarius"
+                        ana="function:pedagogia;
+                        relation:dies-non-revelatus;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        operation:expositio;
+                        layer:hand1_ink">
+                        
+                        Per quanto 
+                        <ptr target="#III-cap-1-p8-012" ana="ptr:rinvio-passato"/> 
+                        habbiamo detto sopra,
+                        non è svelato per 
+                        <rs type="anima" ana="entity:anima; ruolo:non-receptiva">l’anima</rs> 
+                        per ancora il 
+                        <term ana="term:giorno-chiaro; categoria:unio">giorno chiaro dell’unione</term>,
+                        
+                        <figure ana="figura:status-intermediarius"/>
+                        
+                        <spanGrp type="focus" ana="area:dies-non-revelatus; theme:non-conoscenza">
+                           <span ana="focus:giorno-non-svelato"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p8-012 #III-cap-1-p9-001"
+                           ana="relation:signum-unionis→non-revelatus; tipo:progressus-mysticus"/>
+                        
+                        <val n="0.74"
+                           cert="medium"
+                           ana="N:0.78; A:0.70; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.742"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p9-002"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="non-conoscere-statum"
+                        ana="function:pedagogia;
+                        relation:non-videre-statum;
+                        risk:risk-medio;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink">
+                        
+                        in quanto che non 
+                        <term ana="term:vedere; categoria:gnoseologia-mistica">vede</term> 
+                        ancora lo 
+                        <rs type="status-mysticus" ana="entity:status-anima; ruolo:non-conosciuto">stato suo</rs>;
+                        
+                        <figure ana="figura:non-conoscere-statum"/>
+                        
+                        <spanGrp type="focus" ana="area:non-videre-statum; theme:ignoranza-mistica">
+                           <span ana="focus:status-non-conosciuto"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p9-001 #III-cap-1-p9-002"
+                           ana="relation:dies-non-revelatus→non-videre; tipo:progressus"/>
+                        
+                        <val n="0.66"
+                           cert="medium"
+                           ana="N:0.65; A:0.60; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.662"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p9-003"
+                        type="indicatio"
+                        function="legittimazione"
+                        subtype="crescimento-internum"
+                        ana="function:legittimazione;
+                        relation:crescementum-ignotum;
+                        risk:risk-alto;
+                        impact:impact-alto;
+                        operation:expositio;
+                        layer:hand1_ink">
+                        
+                        e però 
+                        <term ana="term:scoprire; categoria:contemplatio">scuoprì</term> 
+                        in lei un gran 
+                        <term ana="term:crescemento; categoria:mistica">crescemento</term> 
+                        senza saper ciò che sia;
+                        
+                        <rs type="anima" ana="entity:anima; ruolo:soggetto-crescimento"/>
+                        
+                        <figure ana="figura:crescimento-internum"/>
+                        
+                        <spanGrp type="focus" ana="area:crescementum-ignotum; theme:intensificatio">
+                           <span ana="focus:crescimento-sine-notitia"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p9-002 #III-cap-1-p9-003"
+                           ana="relation:non-videre→crescimento; tipo:progressus"/>
+                        
+                        <val n="0.82"
+                           cert="high"
+                           ana="N:0.85; A:0.77; F:0.80;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.821"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p9-004"
+                        type="indicatio"
+                        function="legittimazione"
+                        subtype="satietas-fundi"
+                        ana="function:legittimazione;
+                        relation:satietas-fundus;
+                        risk:risk-medio-alto;
+                        impact:impact-alto;
+                        operation:assertio;
+                        layer:hand1_ink">
+                        
+                        intende una 
+                        <term ana="term:satietas; categoria:mistica">satietà</term> 
+                        nel 
+                        <rs type="locus-mysticus" ana="entity:fundus-animae; ruolo:interioritas">
+                           fondo suo
+                        </rs>,
+                        
+                        <figure ana="figura:satietas-fundi"/>
+                        
+                        <spanGrp type="focus" ana="area:satietas-fundus; theme:interioritas">
+                           <span ana="focus:satietas-interna"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p9-003 #III-cap-1-p9-004"
+                           ana="relation:crescimento→satietas; tipo:progressus"/>
+                        
+                        <cit type="bible" xml:id="cit-ct1-4" ana="#mystica #praesentia-amati">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia">
+                                 Introduxit me rex in cellam vinariam; ordinavit in me charitatem.
+                              </foreign>
+                           </quote>
+                           <ref type="scripture" target="#Cant.1.4"/>
+                        </cit>
+                        
+                        <val n="0.79"
+                           cert="medium"
+                           ana="N:0.82; A:0.75; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.788"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p9-005"
+                        type="indicatio"
+                        function="legittimazione"
+                        subtype="praesentia-amati"
+                        ana="function:legittimazione;
+                        relation:praesentia-amati;
+                        risk:risk-alto;
+                        impact:impact-alto;
+                        operation:interpretatio;
+                        layer:hand1_ink">
+                        
+                        e questa mi credo, sia la 
+                        <rs type="persona-divina" ana="entity:amato; ruolo:praesentia">
+                           presenza dell’amato
+                        </rs>,
+                        
+                        <figure ana="figura:praesentia-amati"/>
+                        
+                        <spanGrp type="focus" ana="area:praesentia-amati; theme:unio">
+                           <span ana="focus:presenza-amati"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p9-004 #III-cap-1-p9-005"
+                           ana="relation:satietas→praesentia; tipo:progressus-mysticus"/>
+                        
+                        <val n="0.84"
+                           cert="high"
+                           ana="N:0.88; A:0.78; F:0.82;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.839"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p9-006"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="crescimento-ignotum"
+                        ana="function:pedagogia;
+                        relation:crescimento-sine-notitia;
+                        risk:risk-medio-alto;
+                        impact:impact-alto;
+                        operation:intensificatio;
+                        layer:hand1_ink">
+                        
+                        sì che 
+                        <term ana="term:intendere; categoria:gnoseologia-mistica">intende</term> 
+                        più, e più farsi 
+                        <term ana="term:grande; categoria:mistica">grande</term> 
+                        senza sapere il 
+                        <term ana="term:come-sia; categoria:ignoranza-mistica">come sia</term>.
+                        
+                        <rs type="anima" ana="entity:anima; ruolo:soggetto-crescimento"/>
+                        
+                        <figure ana="figura:crescimento-ignotum"/>
+                        
+                        <spanGrp type="focus" ana="area:crescimento-sine-notitia; theme:intensificatio">
+                           <span ana="focus:crescimento-non-conosciuto"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p9-005 #III-cap-1-p9-006"
+                           ana="relation:praesentia→crescimento; tipo:progressus-mysticus"/>
+                        
+                        <val n="0.80"
+                           cert="medium"
+                           ana="N:0.82; A:0.74; F:0.76;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.798"/>
+                     </seg>
+                  </p>
+
+                  <p n="10">
+                     <seg xml:id="III-cap-1-p10-001"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="vita-nova"
+                        ana="function:pedagogia;
+                        relation:nascita-vita-nova;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        operation:expositio;
+                        layer:hand1_ink">
+                        
+                        Vede anche, che fuggita quella 
+                        <term ana="term:morte-antica; categoria:ascetica">morte di prima</term>, 
+                        incomincia a 
+                        <term ana="term:nascere; categoria:mistica">nascere</term> 
+                        in 
+                        <rs type="anima" ana="entity:anima; ruolo:ricettiva-vita-nova">lei</rs> 
+                        una 
+                        <term ana="term:vita-nova; categoria:mistica">nuova vita</term>, 
+                        però non totale come poi sarà.
+                        
+                        <figure ana="figura:vita-nova"/>
+                        
+                        <spanGrp type="focus" ana="area:vita-nova; theme:ascensio">
+                           <span ana="focus:nascita-non-totale"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p9-006 #III-cap-1-p10-001"
+                           ana="relation:crescimento→vita-nova; tipo:progressus-mysticus"/>
+                        
+                        <val n="0.73"
+                           cert="medium"
+                           ana="N:0.75; A:0.68; F:0.72;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.731"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p10-002"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="quies-animae"
+                        ana="function:pedagogia;
+                        relation:quies-crescens;
+                        risk:risk-medio-basso;
+                        impact:impact-medio;
+                        operation:intensificatio;
+                        layer:hand1_ink">
+                        
+                        Cresce col tempo poi una 
+                        <term ana="term:quiete; categoria:mistica">grandissima quiete</term> 
+                        nell’
+                        <rs type="anima" ana="entity:anima; ruolo:quies">anima</rs>,
+                        
+                        <figure ana="figura:quies-animae"/>
+                        
+                        <spanGrp type="focus" ana="area:quies-crescens; theme:quies">
+                           <span ana="focus:quiete-crescente"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p10-001 #III-cap-1-p10-002"
+                           ana="relation:vita-nova→quies; tipo:progressus-mysticus"/>
+                        
+                        <val n="0.66"
+                           cert="medium"
+                           ana="N:0.65; A:0.60; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.662"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p10-003"
+                        type="indicatio"
+                        function="legittimazione"
+                        subtype="concupiscibile-purgato"
+                        ana="function:legittimazione;
+                        relation:concupiscibile-cessatum;
+                        risk:risk-alto;
+                        impact:impact-alto;
+                        operation:expositio;
+                        layer:hand1_ink">
+                        
+                        poiché cessata la 
+                        <term ana="term:potentia-concupiscibilis; categoria:anthropologia">potenza del concopiscibile</term>, 
+                        che mai la lasciava 
+                        <term ana="term:quiete-desiderii; categoria:concupiscibile">quieta di desiderio</term>,
+                        
+                        <rs type="anima" ana="entity:anima; ruolo:liberata-concupiscibile"/>
+                        
+                        <figure ana="figura:concupiscibile-purgato"/>
+                        
+                        <spanGrp type="focus" ana="area:concupiscibile-cessatum; theme:purificatio">
+                           <span ana="focus:cessatio-concupiscibilis"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p10-002 #III-cap-1-p10-003"
+                           ana="relation:quies→cessatio-concupiscibilis; tipo:progressus"/>
+                        
+                        <val n="0.84"
+                           cert="high"
+                           ana="N:0.87; A:0.80; F:0.82;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.839"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p10-004"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="passiones-cessatae"
+                        ana="function:pedagogia;
+                        relation:cessatio-passiones;
+                        risk:risk-medio;
+                        impact:impact-medio-alto;
+                        operation:assertio;
+                        layer:hand1_ink">
+                        
+                        cessa ancora in lei ogni qualunque 
+                        <term ana="term:passioni; categoria:ascetica">passioni</term>;
+                        
+                        <rs type="anima" ana="entity:anima; ruolo:purificata-passiones"/>
+                        
+                        <figure ana="figura:cessatio-passiones"/>
+                        
+                        <spanGrp type="focus" ana="area:passiones-cessatae; theme:purificatio">
+                           <span ana="focus:cessazione-passiones"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p10-003 #III-cap-1-p10-004"
+                           ana="relation:concupiscibilis-cessum→passiones-cessum; tipo:progressus"/>
+                        
+                        <val n="0.72"
+                           cert="medium"
+                           ana="N:0.74; A:0.67; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.716"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p10-005"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="status-intermediarius"
+                        ana="function:pedagogia;
+                        relation:gaudium-non-continuum;
+                        risk:risk-medio-basso;
+                        impact:impact-medio;
+                        operation:expositio;
+                        layer:hand1_ink">
+                        
+                        non è pero in questo 
+                        <term ana="term:stato; categoria:mystica">stato</term> 
+                        di continuo il 
+                        <term ana="term:godimento; categoria:mystica">godimento</term>, 
+                        come poi sarà, quando crescerà l’
+                        <term ana="term:unione; categoria:unio">unione</term>.
+                        
+                        <figure ana="figura:gaudium-non-continuum"/>
+                        
+                        <spanGrp type="focus" ana="area:gaudium-non-continuum; theme:status-intermediarius">
+                           <span ana="focus:gioia-non-continua"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p10-004 #III-cap-1-p10-005"
+                           ana="relation:passiones-cessum→gaudium-non-continuum; tipo:progressus"/>
+                        
+                        <val n="0.64"
+                           cert="medium"
+                           ana="N:0.62; A:0.58; F:0.70;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.639"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p10-006"
+                        type="indicatio"
+                        function="legittimazione"
+                        subtype="unio-principium"
+                        ana="function:legittimazione;
+                        relation:signa-principii-unionis;
+                        risk:risk-medio-alto;
+                        impact:impact-alto;
+                        operation:conclusio;
+                        layer:hand1_ink">
+                        
+                        Tutti questi detti, sono 
+                        <term ana="term:segni-unione; categoria:unio">segni</term> 
+                        e 
+                        <term ana="term:principii-unione; categoria:unio">principii d’unione</term>,
+                        
+                        <figure ana="figura:unio-principium"/>
+                        
+                        <spanGrp type="focus" ana="area:signa-principii-unionis; theme:unio">
+                           <span ana="focus:principium-unionis"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p10-005 #III-cap-1-p10-006"
+                           ana="relation:gaudium-non-continuum→signa-unionis; tipo:conclusio"/>
+                        
+                        <cit type="bible" xml:id="cit-gv19-30" ana="#unio #passio #legittimazione">
+                           <quote xml:lang="la">
+                              <foreign xml:lang="la" ana="lingua:latino; fonte:bibbia">
+                                 Cum accepisset Iesus acetum, dixit: Consummatum est.
+                                 Et inclinato capite tradidit spiritum.
+                              </foreign>
+                           </quote>
+                           <ref type="scripture" target="#John.19.30"/>
+                        </cit>
+                        
+                        <val n="0.79"
+                           cert="medium"
+                           ana="N:0.82; A:0.74; F:0.76;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.789"/>
+                     </seg>
+                     
+                     <seg xml:id="III-cap-1-p10-007"
+                        type="indicatio"
+                        function="pedagogia"
+                        subtype="transitus-capituli"
+                        ana="function:pedagogia;
+                        relation:transitus-capituli;
+                        risk:risk-basso;
+                        impact:impact-medio;
+                        operation:transitus;
+                        layer:hand1_ink">
+                        
+                        adesso è di bene 
+                        <term ana="term:passare; categoria:transitus">passare</term> 
+                        al seguente capitolo per trattare di questa 
+                        <term ana="term:unione; categoria:unio">unione</term>.
+                        
+                        <figure ana="figura:transitus"/>
+                        
+                        <spanGrp type="focus" ana="area:transitus-capituli; theme:transitus">
+                           <span ana="focus:passaggio-finalis"/>
+                        </spanGrp>
+                        
+                        <link target="#III-cap-1-p10-006 #III-cap-1-p10-007"
+                           ana="relation:unio-principium→transitus; tipo:progressus"/>
+                        
+                        <val n="0.58"
+                           cert="medium"
+                           ana="N:0.55; A:0.54; F:0.63;
+                           formula:'I = 0.40*N + 0.35*A + 0.25*F';
+                           I:0.582"/>
+                     </seg>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
