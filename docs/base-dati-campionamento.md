@@ -598,6 +598,19 @@ Valore → glossa sulla logica della recinzione semantica.
 
 ## 7. INTERTESTUALITÀ NEL CASTELLO 
 
+graph TD
+    A[Intertestualità Castello] --> B[Teresa d'Ávila:<br/>rovesciamento metafora]
+    A --> C[Tradizione giovannea:<br/>grammatica della notte]
+    A --> D[Metafore femminili:<br/>calamita, attrazione]
+    A --> E[Consonanze Molinos:<br/>assorbimento sorvegliato]
+    A --> F[Agiografia femminile:<br/>genealogie legittimanti]
+    A --> G[Intertestualità culturale:<br/>registri familiari]
+    A --> H[Esperienza personale:<br/>autorità sostitutiva]
+    
+    style B fill:#e3f2fd
+    style E fill:#ffebee
+    style F fill:#e8f5e9
+
 ### 7.1. Il rapporto con Teresa d'Ávila: continuità e rovesciamento
 Nel Castello dell'anima, la presenza della tradizione teresiana emerge nella metafora del "castello", che nel Seicento religioso è uno dei nuclei più riconoscibili della mistica femminile. Tuttavia, il senso dell'immagine viene profondamente trasformato. Nel modello avilese, il castello è la struttura stessa dell'anima e il percorso mistico consiste nel penetrare progressivamente nelle sue stanze più interiori. Nel Castello siciliano, al contrario, l'immagine viene ricontestualizzata: non è l'anima a essere un castello, ma è l'"orazione" ad avere la forma di un edificio ascensivo. L'orante non entra in sé, ma costruisce un luogo interiore.  Questo spostamento semantico ha conseguenze decisive: (1) introduce una logica attiva (costruire) al posto di una logica introspettiva (entrare); (2) colloca l'esperienza mistica all'interno di una pedagogia ascetica più che visionaria; (3) crea un modello più compatibile con un contesto inquisitoriale, dove l'autonomia esperienziale poteva essere sospetta. (4) Qui l'intertestualità non è imitazione, ma rielaborazione regolativa: l'immagine tradizionale permette di aprire un linguaggio familiare, ma il suo significato viene spostato per assicurare tracciabilità e ortodossia.
 
