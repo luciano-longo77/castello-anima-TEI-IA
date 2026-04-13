@@ -48,7 +48,11 @@ Modellazione secondo TEI P5 con:
 - glosse rappresentate tramite `note type="glossa"` e `subtype="attenuatio|precisatio|declaratio"`;  
 - segmentazione retorica con `seg`;  
 - funzioni e impatto tramite `@ana` e `@n_imp`;  
-- gestione di varianti e fenomeni grafici con `add`, `del`, `subst`, `app`.  
+- gestione di varianti e fenomeni grafici con `add`, `del`, `subst`, `app`.
+
+### 📘 Documentazione TEI
+Per la struttura completa del teiHeader, criteri editoriali, tassonomie e pipeline IA:  
+➡️ **[Vai al README del teiHeader](./teiHeader/README.md)**  
 
 ### `/analysis`
 Strumenti per:
