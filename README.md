@@ -50,9 +50,11 @@ Modellazione secondo TEI P5 con:
 - funzioni e impatto tramite `@ana` e `@n_imp`;  
 - gestione di varianti e fenomeni grafici con `add`, `del`, `subst`, `app`.
 
-### 📘 Documentazione TEI
-Per criteri editoriali, tassonomie, description of manuscript e pipeline IA:  
-➡️ **[Leggi il README del teiHeader](./tei/README.md)**
+### 📘 Documentazione del teiHeader
+Per consultare la documentazione completa del **teiHeader**  
+(criteri editoriali, tassonomie, modello genetico, pipeline IA):  
+
+➡️ **[Leggi il README del teiHeader](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/readme-teiHeader_v1.md)**  
 
 ### `/analysis`
 Strumenti per:
