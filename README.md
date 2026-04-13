@@ -51,8 +51,8 @@ Modellazione secondo TEI P5 con:
 - gestione di varianti e fenomeni grafici con `add`, `del`, `subst`, `app`.
 
 ### 📘 Documentazione TEI
-Per la struttura completa del teiHeader, criteri editoriali, tassonomie e pipeline IA:  
-➡️ **[Vai al README del teiHeader](./teiHeader/README.md)**  
+Per criteri editoriali, tassonomie, description of manuscript e pipeline IA:  
+➡️ **[Leggi il README del teiHeader](./tei/README.md)**
 
 ### `/analysis`
 Strumenti per:
