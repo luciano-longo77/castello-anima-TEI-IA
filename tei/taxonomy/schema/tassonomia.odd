@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>ODD per la validazione delle tassonomie interpretative</title>
+                <author>Luciano Longo</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Uso interno al progetto “Castello dell’anima”.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>
+                    ODD focalizzato esclusivamente sulla validazione del file
+                    <code>tassonomia.xml</code>.
+                </p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    
+    <text>
+        <body>
+            
+            <schemaSpec ident="taxonomy-only"
+                start="TEI"
+                docLang="it">
+                
+                <!-- Moduli minimi -->
+                <moduleRef key="tei"/>
+                <moduleRef key="core"/>
+                <moduleRef key="header"/>
+                <moduleRef key="analysis"/>
+                <moduleRef key="textstructure"/>
+                
+                <!-- taxonomy -->
+                
+                <elementSpec ident="taxonomy" mode="change">
+                    <desc>Contenitore di un asse tassonomico interpretativo.</desc>
+                    
+                    <content>
+                        <rng:oneOrMore>
+                            <rng:ref name="category"/>
+                        </rng:oneOrMore>
+                    </content>
+                    
+                    <attList>
+                        <attDef ident="xml:id" usage="req">
+                            <datatype>
+                                <dataRef key="ID"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                
+                <!-- category -->
+                
+                <elementSpec ident="category" mode="change">
+                    <desc>Categoria semantica appartenente a una tassonomia.</desc>
+                    
+                    <content>
+                        <rng:sequence>
+                            <rng:ref name="desc"/>
+                            <rng:zeroOrMore>
+                                <rng:ref name="category"/>
+                            </rng:zeroOrMore>
+                        </rng:sequence>
+                    </content>
+                    
+                    <attList>
+                        <attDef ident="xml:id" usage="req">
+                            <datatype>
+                                <dataRef key="ID"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+                
+                <!-- desc -->
+                
+                <elementSpec ident="desc" mode="change">
+                    <desc>Descrizione testuale obbligatoria di una categoria.</desc>
+                    <content>
+                        <rng:text/>
+                    </content>
+                </elementSpec>
+                
+            </schemaSpec>
+            
+        </body>
+    </text>
+</TEI>

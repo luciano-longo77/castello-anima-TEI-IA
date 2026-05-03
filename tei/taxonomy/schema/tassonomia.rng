@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    
+   <start>
+        <ref name="TEI"/>
+    </start>
+    
+    <!-- TEI root -->
+    
+    <define name="TEI">
+        <element name="tei:TEI">
+            <optional>
+                <attribute name="xml:id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="xml:lang">
+                    <text/>
+                </attribute>
+            </optional>
+            <ref name="teiHeader"/>
+            <ref name="text"/>
+        </element>
+    </define>
+    
+    <!-- Header -->
+    
+    <define name="teiHeader">
+        <element name="tei:teiHeader">
+            <ref name="fileDesc"/>
+            <optional>
+                <ref name="encodingDesc"/>
+            </optional>
+        </element>
+    </define>
+    
+    <define name="fileDesc">
+        <element name="tei:fileDesc">
+            <ref name="titleStmt"/>
+            <ref name="publicationStmt"/>
+            <ref name="sourceDesc"/>
+        </element>
+    </define>
+    
+    <define name="titleStmt">
+        <element name="tei:titleStmt">
+            <oneOrMore>
+                <element name="tei:title">
+                    <text/>
+                </element>
+            </oneOrMore>
+            <zeroOrMore>
+                <element name="tei:author">
+                    <text/>
+                </element>
+            </zeroOrMore>
+            <zeroOrMore>
+                <element name="tei:respStmt">
+                    <element name="tei:resp">
+                        <text/>
+                    </element>
+                    <element name="tei:name">
+                        <optional>
+                            <attribute name="xml:id">
+                                <data type="ID"/>
+                            </attribute>
+                        </optional>
+                        <text/>
+                    </element>
+                </element>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="publicationStmt">
+        <element name="tei:publicationStmt">
+            <oneOrMore>
+                <choice>
+                    <element name="tei:publisher">
+                        <text/>
+                    </element>
+                    <element name="tei:date">
+                        <optional>
+                            <attribute name="when">
+                                <text/>
+                            </attribute>
+                        </optional>
+                        <text/>
+                    </element>
+                    <element name="tei:availability">
+                        <element name="tei:licence">
+                            <attribute name="target">
+                                <text/>
+                            </attribute>
+                            <text/>
+                        </element>
+                    </element>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+    
+    <define name="sourceDesc">
+        <element name="tei:sourceDesc">
+            <oneOrMore>
+                <element name="tei:bibl">
+                    <optional>
+                        <attribute name="type">
+                            <text/>
+                        </attribute>
+                    </optional>
+                    <zeroOrMore>
+                        <element name="tei:title">
+                            <text/>
+                        </element>
+                    </zeroOrMore>
+                    <zeroOrMore>
+                        <element name="tei:author">
+                            <text/>
+                        </element>
+                    </zeroOrMore>
+                    <text/>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+    
+    <!-- EncodingDesc / ClassDecl / Taxonomy     -->
+    
+    <define name="encodingDesc">
+        <element name="tei:encodingDesc">
+            <element name="tei:classDecl">
+                <oneOrMore>
+                    <ref name="taxonomy"/>
+                </oneOrMore>
+            </element>
+        </element>
+    </define>
+    
+    <define name="taxonomy">
+        <element name="tei:taxonomy">
+            <attribute name="xml:id">
+                <data type="ID"/>
+            </attribute>
+            <oneOrMore>
+                <ref name="category"/>
+            </oneOrMore>
+        </element>
+    </define>
+    
+    <define name="category">
+        <element name="tei:category">
+            <attribute name="xml:id">
+                <data type="ID"/>
+            </attribute>
+            <ref name="desc"/>
+            <zeroOrMore>
+                <ref name="category"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    
+    <define name="desc">
+        <element name="tei:desc">
+            <text/>
+        </element>
+    </define>
+    
+    <!-- Text body -->
+    
+    <define name="text">
+        <element name="tei:text">
+            <element name="tei:body">
+                <zeroOrMore>
+                    <element name="tei:p">
+                        <text/>
+                    </element>
+                </zeroOrMore>
+            </element>
+        </element>
+    </define>
+    
+</grammar>
+
