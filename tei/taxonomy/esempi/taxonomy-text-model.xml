@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+    xml:id="esempio-castello-anima"
+    xml:lang="it">
+    
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Esempio minimo di annotazione tassonomica</title>
+                <author>Teresa di San Geronimo</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Progetto Castello dell’anima (TEI + IA)</publisher>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>Esempio a fini di validazione.</bibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    
+    <text>
+        <body>
+            <p n="1">
+                
+                <seg xml:id="III-pref-p1-001"
+                    ana="#ethos-obbedienza
+                    #legittimazione-tradizione
+                    #relation-premessa-conseguenza
+                    #impact-high
+                    #risk-dottrinale
+                    #mystic_state-quiete
+                    #operation-delimitazione
+                    #exposition-medium
+                    #phase-introduction">
+                    Incomincio mio Dio, come sapete, questo terzo ed ultimo libro per santa obedienza,
+                    fidandomi solamente nella vostra divina disposizione.
+                </seg>
+                
+                <cit type="bible"
+                    xml:id="cit-phil2-8"
+                    ana="#legittimazione-biblica
+                    #impact-supportive
+                    #risk-dottrinale">
+                    <quote xml:lang="la">
+                        <foreign xml:lang="la">Christus factus est pro nobis obediens usque ad mortem.</foreign>
+                    </quote>
+                    <ref type="scripture" target="#Phil.2.8"/>
+                </cit>
+                
+                <seg xml:id="III-pref-p1-002"
+                    ana="#ethos-umilta
+                    #relation-analogia
+                    #impact-medium
+                    #risk-ambiguita
+                    #mystic_state-quiete
+                    #operation-attenuatio
+                    #exposition-low
+                    #phase-introduction">
+                    E per narrar l’opere vostre, questa sì miserabile creatura confessa la propria
+                    indegnità e bassezza, riconoscendo che nulla può senza il vostro lume.
+                </seg>
+                
+                <seg xml:id="III-pref-p1-003"
+                    ana="#pedagogia-introduzione
+                    #relation-causa-effetto
+                    #impact-high
+                    #risk-dottrinale
+                    #mystic_state-quiete
+                    #operation-delimitazione
+                    #exposition-medium
+                    #phase-introduction">
+                    E se nel secondo libro domandavano a noi il santo aiuto, ora più che mai
+                    supplico che mi sia concessa la divina sapienza, necessaria per trattare
+                    materia tanto alta.
+                </seg>
+                
+                <cit type="liturgy"
+                    xml:id="cit-veni-creator"
+                    ana="#legittimazione-liturgica
+                    #relation-intertesto-liturgico
+                    #impact-supportive
+                    #risk-dottrinale">
+                    <quote xml:lang="la">
+                        <foreign xml:lang="la">
+                            Veni Creator Spiritus, mentes tuorum visita.
+                        </foreign>
+                    </quote>
+                    <ref type="liturgy" target="#Veni-Creator"/>
+                </cit>
+                
+                <seg xml:id="III-pref-p1-004"
+                    ana="#ethos-umilta
+                    #relation-contrasto
+                    #impact-high
+                    #risk-dottrinale
+                    #mystic_state-quiete
+                    #operation-attenuatio
+                    #exposition-low
+                    #phase-introduction">
+                    Poiché dovendo io trattare materia più alta che nel libro trascorso,
+                    senza la vostra assistenza mi confesso del tutto inabile e indegna
+                    a reggere la penna.
+                </seg>
+                
+            </p>
+
+        </body>
+    </text>
+</TEI>
