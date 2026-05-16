@@ -6,26 +6,23 @@ La visualizzazione ha **funzione esplicativa** e non sostituisce lo schema forma
 di validazione (Relax NG e Schematron).
 
 ```mermaid
-flowchart TD
+graph TD
     TEI --> teiHeader
     teiHeader --> encodingDesc
     encodingDesc --> classDecl
     classDecl --> taxonomy
 
     taxonomy --> category
-    category --> desc
+    category --> descNode
 
-    category -.->|xml:id stabile| ana["@ana nei testi"]
+    category -.-> anaNode
 
-    note right of taxonomy
-      Tassonomie distinte
-      (func, risk, impact,
-       mystic_state, operation,
-       exposition, phase, relation)
+    subgraph NoteTaxonomy
+        taxList["func, risk, impact, mystic_state, operation, exposition, phase, relation"]
     end
+    taxonomy --- NoteTaxonomy
 
-    note right of desc
-      <desc> obbligatorio
-      (vincolo Schematron)
+    subgraph NoteDesc
+        descConstraint["vincolo Schematron"]
     end
-```
+    descNode --- NoteDesc
