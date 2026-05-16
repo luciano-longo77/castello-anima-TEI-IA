@@ -1,14 +1,3 @@
-Perfetto. Di seguito trovi **il README aggiornato, completo e internamente coerente** con:
-
-*   **TEI P5** (semantica corretta di `@ana` come *pointer/URI*),
-*   **ODD / Relax NG / Schematron**,
-*   **XML di esempio** che utilizza `#xml-id`,
-*   **CI/CD** e governance del repository.
-
-Ho **corretto tutte le occorrenze** di `func:…` / `risk:…` nel README trasformandole in **pointer canonici** (`#taxonomy-category`), ho **aggiornato le query XPath**, e ho **ripulito** gli `<?xml-model?>`.
-
-***
-
 # Sistema Tassonomico del modello TEI interpretativo
 
 **Castello dell’anima – Teresa di San Geronimo**
