@@ -91,7 +91,7 @@ Tassonomie coinvolte:
 </classDecl>
 ```
 
-📌 **Elenco completo dei valori ammessi**  
+**Elenco completo dei valori ammessi**  
 L’elenco delle `<category>` per ciascuna tassonomia è definito nel file **`./tassonomia.xml`**, che costituisce la **fonte normativa primaria** dei valori annotativi.
 
 ***
