@@ -1,4 +1,4 @@
- // ==================== XML DATA ====================
+
         const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="schema/tassonomia.rng"
             type="application/xml"
