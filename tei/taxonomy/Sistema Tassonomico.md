@@ -14,7 +14,7 @@ Il sistema tassonomico qui descritto costituisce il **core semantico** dell’ed
 
 Il sistema tassonomico si fonda sui seguenti principi strutturali:
 
-*   Ogni valore dell’attributo `@ana` fa riferimento in modo **esplicito e univoco** a una categoria dichiarata in una tassonomia all’interno di `&lt;classDecl&gt;`.
+*   Ogni valore dell’attributo `@ana` fa riferimento in modo **esplicito e univoco** a una categoria dichiarata in una tassonomia all’interno di `classDecl`.
 *   Ogni tassonomia definisce **un asse interpretativo distinto**, non riducibile agli altri.
 *   Le tassonomie sono **ortogonali ma non indipendenti**: la loro combinazione è regolata da vincoli interpretativi espliciti.
 *   Non è ammessa l’introduzione di valori annotativi che non siano dichiarati nelle tassonomie.
