@@ -197,4 +197,4 @@ Questo README ha **statuto normativo**. Ogni divergenza tra questo documento e i
 
 ***
 **Licenza:** Tutti i contenuti del repository sono rilasciati sotto licenza **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
-Vedi il file [LICENSE](./LICENSE) per i dettagli completi.
+Vedi il file **SPDX-License-Identifier: CC-BY-4.0** per i dettagli completi.
