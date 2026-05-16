@@ -28,3 +28,4 @@ flowchart TD
       <desc> obbligatorio
       (vincolo Schematron)
     end
+```
