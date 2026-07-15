@@ -143,7 +143,7 @@
                         </category>
 
                         <category xml:id="ethos-obbedienza">
-                            <desc>Insistenza sull’obbedienza al confessore (a scopo difensiovo),
+                            <desc>Insistenza sull’obbedienza al confessore (a scopo difensivo),
                                 vista come condizione necessaria per scrivere e come garanzia di
                                 umiltà, prudenza e sottomissione dottrinale.</desc>
                         </category>
@@ -349,7 +349,7 @@
                             della trattatistica mistica.</desc>
                     </category>
                     <category xml:id="relation-analogia">
-                        <desc>Relazioni analogiche basate su comperazioni naturali o quotidiane per
+                        <desc>Relazioni analogiche basate su comparazioni naturali o quotidiane per
                             spiegare realtà mistiche.</desc>
                     </category>
                     <category xml:id="relation-contrasto">
@@ -385,7 +385,7 @@
                 identifica un nodo concettuale specifico relativo agli stati mistici, ai rischi
                 dottrinali e alle operazioni di riequilibrio testuale rilevate nel manoscritto di
                 suor Teresa di San Geronimo.</p>
-            <p>Il file esemplificativo è in taxonomy/esempi</p>
+            <p>Il file esemplificativo è in taxonomy/esempio</p>
         </body>
     </text>
 
