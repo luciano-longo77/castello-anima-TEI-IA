@@ -258,7 +258,7 @@
                 <taxonomy xml:id="operation">
                     <category xml:id="operation-delimitazione">
                         <desc>Operazioni che circoscrivono semanticamente concetti rischiosi,
-                            evitando letture estreme e gui­dando l’interpretazione entro limiti
+                            evitando letture estreme e guidando l’interpretazione entro limiti
                             ortodossi.</desc>
                     </category>
                     <category xml:id="operation-attenuatio">
