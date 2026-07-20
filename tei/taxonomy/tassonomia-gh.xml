@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="schema/taxonomy-rng.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="schema/taxonomy-sch.sch"
+            type="application/xml"
+            schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="castello-anima-tassonomia" xml:lang="it">
+
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="full">
+                    <title type="main">Tassonomia prudenziale del "Castello dell’anima"</title>
+                    <title type="sub">Tassonomia prudenziale per la progettazione di un modello TEI IA per lo
+                        studio dell’intertestualità sotto sorveglianza del "Castello dell’anima" di suor
+                        Teresa di San Geronimo.</title>
+                </title>
+                <respStmt>
+                    <resp>Progettazione del modello tassonomico (taxonomy.xml)</resp>
+                    <name xml:id="p-longo">Luciano Longo</name>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <edition n="working">Versione di lavoro: modello tassonomico in fase di verifica
+                    incrociata con il corpus annotato (castello-anima-text.xml). Le categorie sono
+                    state validate per coerenza interna e per aderenza teorica; l’allineamento
+                    lessicale con i valori @ana realmente usati nel testo codificato è ancora in
+                    corso e non completato.</edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Progetto TEI + IA controllata</publisher>
+                <idno type="filename">tassonomia-gh.xml</idno>
+                <date when="2026-03-30">30 marzo 2026</date>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/"> CC‑BY 4.0 – Open Access </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Il presente documento è uno schema tassonomico analitico, nato digitale, applicato al 
+                    manoscritto del "Castello dell’anima" (descritto di seguito). 
+                    Il manoscritto elencato di seguito è l’oggetto di applicazione delle categorie qui definite, non
+                    la fonte diretta del testo tassonomico. La trascrizione TEI del manoscritto, a cui
+                    questa tassonomia si applica tramite l’attributo @ana, è un documento separato
+                    (castello-anima-text.xml).
+                   
+                <bibl type="ms"> Palermo, BCP, ms. 2 Qq E 29 (sec. XVII ex.) - "Castello dell’anima"
+                    di suor Teresa di San Geronimo (Anna La Longa) </bibl>
+                
+                <listBibl type="theoretical">
+                    <bibl xml:id="horstmann2023">Horstmann, J., Lück, C., &amp; Normann, I. (2023). Systems
+                        of intertextuality: Towards a formalization of text relations for manual
+                        annotation and automated reasoning. <title level="j">Digital Humanities
+                            Quarterly</title>, <biblScope unit="volume">17</biblScope><biblScope
+                                unit="issue">3</biblScope>.</bibl>
+                    
+                    <bibl xml:id="duan2025">Duan, S. (2025). Quantitative intertextuality from the Digital
+                        Humanities perspective: A survey (<ref target="https://arxiv.org/abs/2510.27045">arXiv:2510.27045</ref>). arXiv.</bibl>
+                    
+                    <bibl xml:id="puren2025">Puren, M., Lebreton, F., Pellet, A., &amp; Vernus, P. (2025).
+                        From parliamentary history to digital and computational history: A NLP-friendly
+                        TEI model for historical parliamentary proceedings. <title level="j">Digital
+                            Scholarship in the Humanities</title>, <biblScope unit="volume">40</biblScope>
+                        (Suppl. 1), i75–i86.</bibl>
+                    
+                    <bibl xml:id="cigliano2024">Cigliano, A., Fallucchi, F., &amp; Gerardi, M. (2024). The
+                        impact of digital analysis and Large Language Models in Digital Humanity. In
+                        <title level="m">ICYRIME 2024 Proceedings</title>. CEUR Workshop Proceedings.
+                        <ref target="https://ceur-ws.org/Vol-3869/p01.pdf">https://ceur-ws.org/Vol-3869/p01.pdf</ref>.</bibl>
+                    
+                    <bibl xml:id="piotrowski2024">Piotrowski, M. (2024). Towards computational
+                        historiographical modeling. <title level="m">DigiHistCH24 Book of
+                            Abstracts</title>.</bibl>
+                </listBibl>
+                </p>
+            </sourceDesc>
+        </fileDesc>
+
+        <encodingDesc>
+            <classDecl>
+
+                <!-- 1. Tassonomia delle FUNZIONI RETORICHE -->
+                <taxonomy xml:id="func">
+
+                    <category xml:id="legittimazione">
+                        <catDesc> Procedure retoriche che consolidano l’ortodossia del discorso mistico
+                            mediante appoggi biblici, liturgici e tradizionali (anche aurorali),
+                            usati per evitare sospetti di quietismo e per ancorare temi rischiosi
+                            all’autorità della Chiesa, dei santi. </catDesc>
+
+                        <category xml:id="legittimazione-biblica">
+                            <catDesc>Citazioni e parafrasi scritturali, spesso in latino, impiegate per
+                                rendere accettabili concetti come "quiete", "infusione" e "unione",
+                                mostrando conformità alla dottrina e inserendo l’esperienza mistica
+                                in una cornice canonica.</catDesc>
+                        </category>
+
+                        <category xml:id="legittimazione-liturgica">
+                            <catDesc>Ricorso a formule, stilemi e registri liturgici come garanzia
+                                devozionale e dottrinale, utile a circoscrivere affermazioni
+                                speculative e a integrare il trattato nella tradizione della
+                                preghiera ecclesiale.</catDesc>
+                        </category>
+
+                        <category xml:id="legittimazione-tradizione">
+                            <catDesc>Appello a maestri della mistica esplicitamente richiamati in prima persona
+                                dall’autrice ("la mia santa madre Teresa" per Teresa d’Avila; "il mio padre
+                                beato Giovanni della Croce") come legittimazione autorevole, a creare
+                                continuità con la genealogia carmelitana e a rafforzare la credibilità di
+                                un’autrice priva di formazione scolastica.</catDesc>
+                        </category>
+                    </category>
+
+                    <category xml:id="pedagogia">
+                        <catDesc>Strategie formative rivolte ad anime "incipienti", "proficienti" e
+                            "perfette", basate su distinzioni operative, esemplificazioni concrete e
+                            introduzione graduale ai concetti mistici, al fine di guidare il lettore
+                            nel discernimento e prevenire errori dottrinali.</catDesc>
+
+                        <category xml:id="pedagogia-introduzione">
+                            <catDesc>Sezioni introduttive e inquadramenti che predispongono il lettore
+                                all’orazione mentale e alla costruzione del “castello”, facendo leva
+                                sull’obbedienza e sulla dichiarata umiltà dell’autrice.</catDesc>
+                        </category>
+
+                        <category xml:id="pedagogia-discernimento">
+                            <catDesc>Distinzioni tra (1) "meditazione", (2) "contemplazione acquisita",
+                                (3) "contemplazione infusa", (4) "quiete" e (5) "sospensione delle
+                                potenze", con cui l’autrice chiarisce la progressione mistica e
+                                aiuta il lettore-ascoltatore a riconoscere illusioni o inganni
+                                spirituali.</catDesc>
+                        </category>
+
+                        <category xml:id="pedagogia-esemplificazione">
+                            <catDesc>Uso di immagini quotidiane (acqua, mare, torrente, giardino,
+                                specchio) e comparazioni che rendono intelligibili realtà
+                                sovrasensibili, traducendo la teologia mistica in scenari
+                                comprensibili anche a un pubblico poco istruito.</catDesc>
+                        </category>
+                    </category>
+
+                    <category xml:id="rischio">
+                        <catDesc>Insieme di strategie volte a prevenire o correggere letture
+                            potenzialmente eterodosse, specialmente nei punti critici (ex: Libro
+                            III), dove emergono concetti come "impeccabilità", "fusione con Dio",
+                            "notte oscura" e perdita apparente del "libero arbitrio".</catDesc>
+
+                        <category xml:id="rischio-attenuatio">
+                            <catDesc>Glosse esplicative aggiunte per smorzare formulazioni rischiose,
+                                spesso tramite “cioè”, “intendo dire”, “mi dichiaro”, con cui
+                                l’autrice riduce ambiguità dottrinali.</catDesc>
+                        </category>
+
+                        <category xml:id="rischio-precisatio">
+                            <catDesc>Limitazioni semantiche che delimitano concetti radicali (come
+                                “divenir un altro Dio”, “sicurtà totale”), precisando che il libero
+                                arbitrio non viene mai abolito e che l’azione resta sempre
+                                divina.</catDesc>
+                        </category>
+
+                        <category xml:id="rischio-declaratio">
+                            <catDesc>Dichiarazioni esplicite di adesione alla Chiesa e di rifiuto della
+                                “molinia” (Molinos), formulate per disinnescare ogni sospetto di
+                                quietismo e per riconfigurare enunciati pericolosi in senso
+                                ortodosso.</catDesc>
+                        </category>
+                    </category>
+
+                    <category xml:id="ethos">
+                        <catDesc>Costruzione dell’immagine autoriale come donna ignorante, obbediente e
+                            priva di lettere, che scrive per comando del confessore; strategia di
+                            protezione che al contempo rivendica l’esperienza diretta come fonte
+                            primaria di sapere mistico.</catDesc>
+
+                        <category xml:id="ethos-umilta">
+                            <catDesc>Professioni di "indegnità" e "ignoranza" per minimizzare la
+                                propria autorità; l’autrice usa queste formule per giustificare la
+                                scrittura teologica da parte di una donna.</catDesc>
+                        </category>
+
+                        <category xml:id="ethos-esperienza">
+                            <catDesc>Rivendicazione dell’esperienza (“non parlo senza l’esperienza”)
+                                come fondamento epistemico che legittima il discorso spirituale in
+                                mancanza di titoli di studio o di formazione teologica.</catDesc>
+                        </category>
+
+                        <category xml:id="ethos-obbedienza">
+                            <catDesc>Insistenza sull’obbedienza al confessore (a scopo difensivo),
+                                vista come condizione necessaria per scrivere e come garanzia di
+                                umiltà, prudenza e sottomissione dottrinale.</catDesc>
+                        </category>
+                    </category>
+
+                </taxonomy>
+                <!-- 2. Tassonomia dell’IMPATTO -->
+                <taxonomy xml:id="impact">
+                   <!--  Indice quantitativo, derivato dal calcolo composito N/A/F (necessità
+                        interpretativa, riduzione dell’ambiguità, funzione prudenziale). Non è un
+                        giudizio diretto dell’annotatore, ma l’esito di una formula.--> 
+                    
+                    <category xml:id="impact-high">
+                        <catDesc>Passaggi che chiariscono concetti dottrinali centrali (contemplazione
+                            infusa, unione, quiete, notte dei sensi); decisivi per la comprensione
+                            dell’opera e frequente oggetto di glosse prudenziali.</catDesc>
+                    </category>
+                    <category xml:id="impact-medium">
+                        <catDesc>Elementi che rafforzano e integrano i concetti principali mediante
+                            esempi, distinzioni e spiegazioni accessorie, senza modificarne
+                            l’assetto teologico.</catDesc>
+                    </category>
+                    <category xml:id="impact-low">
+                        <catDesc>Parti ornamentali o reiterative utili all’enfasi ma non decisive per
+                            l’argomentazione teologica.</catDesc>
+                    </category>
+                    <category xml:id="impact-critical">
+                        <catDesc>Nodi ad altissimo rischio interpretativo, come la trasformazione,
+                            l’apparente "impeccabilità", la "sicurtà divina", la "sospensione delle
+                            potenze" e la relazione fra volontà umana e azione divina.</catDesc>
+                    </category>
+                </taxonomy>
+
+                <!-- 3. Tassonomia del RISCHIO DOTTRINALE -->
+                <taxonomy xml:id="risk">
+                    <category xml:id="risk-dottrinale">
+                        <catDesc>Rischio generale di equivocità su dottrine come "grazia", "libertà",
+                            "unione" e "contemplazione", soprattutto nei punti dove la lingua
+                            dell’autrice risulta ambigua o metaforicamente esasperata.</catDesc>
+                    
+                    <category xml:id="risk-quietismo">
+                        <catDesc>Possibile lettura quietista dei concetti di “quiete”, “otio”, “non
+                            operare”, “abbandono totale”; rischio amplificato dal contesto storico e
+                            dalle accuse processuali.</catDesc>
+                    </category>
+                    <category xml:id="risk-panteismo">
+                        <catDesc>Rischio di interpretazione panteistica nelle espressioni sulla
+                            “trasformatione” e sul “divenir un altro Dio”; necessità di glosse per
+                            riaffermare la distinzione ontologica creatura/Creatore.</catDesc>
+                    </category>
+                    <category xml:id="risk-impeccabilita">
+                        <catDesc>Ambiguità relative alla “sicurtà” mistica e alla percezione
+                            dell’impossibilità di peccare nello stato di unione (impeccabilità);
+                            richiede continui interventi mitiganti.</catDesc>
+                    </category>
+                    <category xml:id="risk-ambiguita">
+                        <catDesc>Punti in cui la formulazione è oscura, metaforica o oscillante,
+                            generando difficoltà interpretative non collocabili in categorie
+                            specifiche.</catDesc>
+                    </category>
+                    </category>
+                </taxonomy>
+
+                <!-- 4. Tassonomia degli STATI MISTICI -->
+                <taxonomy xml:id="mystic_state">
+                    <category xml:id="mystic_state-purificazione">
+                        <catDesc>Fase purgativa del cammino mistico: prove, tribolazioni, sofferenze
+                            che preparano l’anima alla contemplazione, spesso associate alla croce.</catDesc>
+                    </category>
+                    <category xml:id="mystic_state-illuminazione">
+                        <catDesc>Fase illuminativa: elevazione, dolcezza, chiarezza contemplativa
+                            che precede l’unione piena.</catDesc>
+                    </category>
+                    <category xml:id="mystic_state-quiete">
+                        <catDesc>Stato di sospensione delle potenze, spesso minacciato da
+                            interpretazioni quietistiche; descritto come pace interiore infusa da
+                            Dio.</catDesc>
+                    </category>
+                    <category xml:id="mystic_state-otium">
+                        <catDesc>Ozio delle potenze inteso non come inerzia quietista, ma come
+                            sospensione operata da Dio affinché l’anima riceva passivamente la
+                            contemplazione infusa.</catDesc>
+                    </category>
+                    <category xml:id="mystic_state-unione">
+                        <catDesc>Stato mistico di massimo avvicinamento a Dio, descritto con lessico
+                            alto e analogie complesse; luogo delle maggiori ambiguità
+                            teologiche.</catDesc>
+                    </category>
+                </taxonomy>
+
+                <!-- 5. Tassonomia delle OPERAZIONI PRUDENZIALI -->
+                <taxonomy xml:id="operation">
+                    <category xml:id="operation-delimitazione">
+                        <catDesc>Operazioni che circoscrivono semanticamente concetti rischiosi,
+                            evitando letture estreme e guidando l’interpretazione entro limiti
+                            ortodossi.</catDesc>
+                    </category>
+                    <category xml:id="operation-attenuatio">
+                        <catDesc>Interventi che smorzano formulazioni troppo ardite mediante
+                            spiegazioni aggiunte, spesso negli spazi marginali del
+                            manoscritto.</catDesc>
+                    </category>
+                    <category xml:id="operation-precisatio">
+                        <catDesc>Chiarimenti puntuali volti a definire meglio concetti ambigui, tipici
+                            della riflessione autografa posteriore alla stesura iniziale.</catDesc>
+                    </category>
+                    <category xml:id="operation-declaratio">
+                        <catDesc>Dichiarazioni dirette di ortodossia, con cui l’autrice esplicita la
+                            propria adesione alla dottrina per evitare interpretazioni
+                            sospette.</catDesc>
+                    </category>
+                    <category xml:id="operation-riequilibrio">
+                        <catDesc>Interventi equilibranti che compensano un’affermazione rischiosa con
+                            una precisazione ortodossa prima o dopo l’enunciato mistico.</catDesc>
+                    </category>
+                </taxonomy>
+
+                <!-- 6. Tassonomia del LIVELLO DI ESPOSIZIONE -->
+                <taxonomy xml:id="exposition">
+                    <!-- Giudizio qualitativo sul livello di esposizione dottrinale
+                            del passaggio, assegnato per lettura interpretativa diretta, indipendentemente
+                            dal calcolo dell’indice d’impatto. Un disallineamento tra le fasce di
+                            exposition e impact per la stessa occorrenza è un dato significativo, non un
+                            errore da correggere.-->
+                    
+                    <category xml:id="exposition-low">
+                        <catDesc>Esposizione prudente di temi dottrinali, con ricorso limitato a
+                            tecnicismi e metafore.</catDesc>
+                    </category>
+                    <category xml:id="exposition-medium">
+                        <catDesc>Esposizione moderata di contenuti mistici, con appoggi occasionali a
+                            citazioni e spiegazioni aggiuntive.</catDesc>
+                    </category>
+                    <category xml:id="exposition-high">
+                        <catDesc>Esposizione intensa di dottrine mistiche complesse che richiedono
+                            glosse, precisazioni e cautele retoriche.</catDesc>
+                    </category>
+                    <category xml:id="exposition-critical">
+                        <catDesc>Livello massimo di esposizione dottrinale, tipico delle sezioni sul
+                            matrimonio spirituale, la trasformazione e l’unione; punti fortemente a
+                            rischio di censura.</catDesc>
+                    </category>
+                </taxonomy>
+
+                <!-- 7. Tassonomia della FASE DISCORSIVA -->
+                <taxonomy xml:id="phase">
+                    <category xml:id="phase-introduction">
+                        <catDesc>Segmenti introduttivi che stabiliscono tono, pubblico e obbedienza
+                            iniziale, preparando la progressione mistica.</catDesc>
+                    </category>
+                    <category xml:id="phase-mediana">
+                        <catDesc>Sezioni centrali in cui si analizzano stati intermedi del cammino
+                            contemplativo, con esempi ed esperienze.</catDesc>
+                    </category>
+                    <category xml:id="phase-conclusive">
+                        <catDesc>Chiusure che ricapitolano i contenuti, riordinano la materia e
+                            predispongono alla transizione verso stati più elevati.</catDesc>
+                    </category>
+                    <category xml:id="phase-critical">
+                        <catDesc>Marcatore trasversale, non posizionale: segnala che il segmento è
+                            teologicamente delicato indipendentemente da dove si colloca nella
+                            sequenza. Va assegnato insieme a una delle tre fasi posizionali sopra
+                            (introduction/mediana/conclusive), non al loro posto, per permettere
+                            l’allineamento tra collocazione testuale, rischio (risk) ed esposizione
+                            (exposition) sulla stessa occorrenza.</catDesc>
+                    </category>
+                </taxonomy>
+
+                <!-- 8. Tassonomia delle RELAZIONI -->
+                <taxonomy xml:id="relation">
+                    
+                    <category xml:id="relation-mistica">
+                        <catDesc>Relazioni che descrivono la progressione fenomenologica tra stati
+                            mistici lungo il cammino contemplativo, comprensiva delle immagini
+                            esperienziali (luce, tenebra, sonno, quiete) con cui l’autrice le
+                            descrive.</catDesc>
+                        <category xml:id="relation-mistica-infusa-purificazione">
+                            <catDesc>Relazione concettuale che descrive il passaggio dalle prove purgative
+                                alla contemplazione infusa.</catDesc>
+                        </category>
+                        <category xml:id="relation-mistica-attiva-meditazione">
+                            <catDesc>Relazione progressiva dalla meditazione attiva alla maturazione
+                                spirituale che prepara alla contemplazione.</catDesc>
+                        </category>
+                        <category xml:id="relation-mistica-passiva-quiete">
+                            <catDesc>Relazione tra contemplazione passiva e quiete, descritta come
+                                sospensione delle potenze per opera di Dio.</catDesc>
+                        </category>
+                        <category xml:id="relation-mistica-unione-sposalitio">
+                            <catDesc>Sequenza che conduce dall’unione allo sposalizio spirituale e alla
+                                trasformazione, secondo i modelli mistici tradizionali.</catDesc>
+                        </category>
+                    </category>
+                    
+                    <category xml:id="relation-intertesto">
+                        <catDesc>Relazioni con fonti esterne al testo, di diversa natura e provenienza.</catDesc>
+                        <category xml:id="relation-intertesto-biblico">
+                            <catDesc>Richiami espliciti o impliciti alla Scrittura che sostengono la
+                                dottrina mistica.</catDesc>
+                        </category>
+                        <category xml:id="relation-intertesto-liturgico">
+                            <catDesc>Riferimenti a testi, formule o registri liturgici che rinforzano il
+                                tono devoto e la legittimità dell’opera.</catDesc>
+                        </category>
+                        <category xml:id="relation-intertesto-teresiano">
+                            <catDesc>Risonanze e riprese del linguaggio e dei temi di Teresa d’Avila e
+                                delle tradizioni carmelitane.</catDesc>
+                        </category>
+                        <category xml:id="relation-intertesto-molinista">
+                            <catDesc>Affinità o divergenze rispetto al linguaggio della Guida di Molinos,
+                                spesso tematizzate per prendere le distanze dal quietismo.</catDesc>
+                        </category>
+                    </category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+    </teiHeader>
+
+    <text>
+        <body>
+            <p n="1">Il presente schema definisce una tassonomia per l’annotazione TEI controllata del
+                manoscritto "Castello dell’anima", utilizzata per l’addestramento e la supervisione
+                di modelli di IA applicati alla codifica del testo. Ogni categoria identifica un
+                nodo concettuale specifico relativo agli stati mistici, ai rischi dottrinali e alle
+                operazioni di riequilibrio testuale rilevate nel manoscritto di suor Teresa di San
+                Geronimo.</p>
+            
+            <p n="2">Il modello è multiassiale: le otto tassonomie dichiarate in questo file (func,
+                impact, risk, mystic_state, operation, exposition, phase, relation) descrivono
+                dimensioni indipendenti dello stesso fenomeno testuale — rispettivamente contenuto
+                retorico (func), peso interpretativo calcolato (impact), pericolo dottrinale (risk),
+                stato mistico coinvolto (mystic_state), meccanismo discorsivo (operation), giudizio
+                interpretativo indipendente (exposition), posizione nel discorso (phase) e relazione
+                con altri passaggi o fonti (relation). Ogni asse è concettualmente autonomo dagli
+                altri: nessuna categoria di una tassonomia duplica o presuppone necessariamente una
+                categoria di un’altra, salvo dove esplicitamente dichiarato nelle singole catDesc
+                (es. la relazione tra func:rischio-attenuatio e operation:attenuatio, o tra
+                phase-critical e le fasi posizionali).</p>
+            
+            <p n="3">Una stessa occorrenza testuale riceve normalmente più etichette contemporaneamente,
+                una per ciascun asse pertinente, combinate nello stesso attributo @ana. All’interno
+                di ciascuna tassonomia, salvo indicazione contraria nella catDesc della categoria
+                (come nel caso di phase-critical, dichiarato marcatore trasversale non esclusivo),
+                si assegna un solo valore per asse: l’annotatore sceglie la categoria più specifica
+                applicabile, non la combinazione di più categorie dello stesso asse sulla stessa
+                occorrenza. Il criterio guida per la scelta resta l’iperonimia: dove il fenomeno
+                osservato non trova una categoria esistente con sufficiente precisione, si preferisce
+                la categoria più ampia disponibile piuttosto che l’introduzione ad hoc di una
+                sottocategoria, per preservare la replicabilità dell’annotazione tra annotatori
+                diversi.</p>
+            
+            <p n="4">Un esempio di applicazione pratica di queste categorie a un’occorrenza reale del
+                manoscritto è disponibile in <ref target="taxonomy/esempio.xml">taxonomy/esempio.xml</ref>,
+                dove le categorie qui definite sono applicate come valori dell’attributo @ana su
+                segmenti TEI completi, mostrando la combinazione multiassiale descritta sopra su
+                casi concreti del testo.</p>
+        </body>
+    </text>
+</TEI>
+
