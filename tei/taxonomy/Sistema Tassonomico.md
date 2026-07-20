@@ -65,7 +65,8 @@ Le categorie `func` relative alla gestione del rischio presuppongono sempre una 
 *   `func` risponde a: *perché il testo interviene*;
 *   `operation` risponde a: *come il testo interviene*.
 
-> **Nota:** questo vincolo è al momento solo prosa normativa; non esiste un `constraintSpec` Schematron che lo verifichi automaticamente. Va rispettato in fase di annotazione editoriale.
+> **Nota:** questo vincolo è al momento solo prosa normativa; non esiste un `constraintSpec` Schematron che lo verifichi automaticamente.
+Va rispettato in fase di annotazione editoriale.
 
 ### 2.3 Asse strutturale ed esplicativo
 
@@ -171,7 +172,7 @@ Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca
 
 **Citazione bibliografica**
 
-> Luciano Longo, *Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima di Teresa di San Geronimo*, 2026, Repository GitHub: \<URL>.
+> Luciano Longo, *Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima di Teresa di San Geronimo*, 2026, Repository GitHub: [(https://github.com/luciano-longo77/castello-anima-TEI-IA)].
 
 **Formato BibTeX**
 
