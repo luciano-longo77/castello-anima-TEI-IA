@@ -8,6 +8,25 @@ Il modello è progettato per rappresentare in modo **computabile**, **interrogab
 
 Il sistema tassonomico qui descritto costituisce il **core semantico** dell'edizione digitale e governa l'uso dell'attributo `@ana` nel corpus TEI.
 
+## Indice
+
+1. [Principi generali del modello](#1-principi-generali-del-modello)
+   - 1.1 [Stack di Validazione (componenti del pacchetto)](#11-stack-di-validazione-componenti-del-pacchetto)
+2. [Assi interpretativi del sistema](#2-assi-interpretativi-del-sistema)
+   - 2.1 [Asse fenomenologico](#21-asse-fenomenologico)
+   - 2.2 [Asse prudenziale](#22-asse-prudenziale)
+   - 2.3 [Asse strutturale ed esplicativo](#23-asse-strutturale-ed-esplicativo)
+3. [Tassonomie operative (core)](#3-tassonomie-operative-core)
+4. [Uso dell'attributo `@ana`](#4-uso-dellattributo-ana)
+5. [Indice composito N–A–F](#5-indice-composito-naf)
+6. [Querying (XPath/XQuery – esempi)](#6-querying-xpathxquery--esempi)
+7. [Validazione e setup ambientale](#7-validazione-e-setup-ambientale)
+   - 7.1 [Configurazione oXygen XML Editor](#71-configurazione-oxygen-xml-editor)
+   - 7.2 [Vincoli Schematron e ODD](#72-vincoli-schematron-e-odd)
+8. [Come citare questo lavoro](#8-come-citare-questo-lavoro)
+9. [Contribuzione e workflow](#9-contribuzione-e-workflow)
+10. [Statuto del documento](#10-statuto-del-documento)
+
 ***
 
 ## 1. Principi generali del modello
@@ -172,7 +191,7 @@ Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca
 
 **Citazione bibliografica**
 
-> Luciano Longo, *Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima di Teresa di San Geronimo*, 2026, Repository GitHub: [(https://github.com/luciano-longo77/castello-anima-TEI-IA)].
+> Luciano Longo, *Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima di Teresa di San Geronimo*, 2026, Repository GitHub: (https://github.com/luciano-longo77/castello-anima-TEI-IA).
 
 **Formato BibTeX**
 
