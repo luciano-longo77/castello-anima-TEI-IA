@@ -1,189 +1,87 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tassonomia Prudenziale TEI + IA | Castello dell'anima</title>
-<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT-CA-LCM-1.0 | Interpretive Taxonomy</title>
+<meta name="dc.identifier" content="IT-CA-LCM-1.0">
+<meta name="dc.creator" content="Luciano Longo">
+<style>
+:root {
+  --bg-paper:#faf8f5; --bg-paper-dark:#f5f1e8; --bg-sidebar:#1a252f;
+  --text-main:#2c3e50; --text-muted:#7f8c8d; --accent-gold:#b8986e;
+  --accent-blue:#3d5a80; --accent-purple:#7c3aed; --accent-red:#a84448;
+  --border-color:#e0dcd5; --border-light:#ede9e3;
+  --shadow-md:0 4px 12px rgba(0,0,0,.1);
+  --font-serif:Georgia, serif; --font-sans:'Segoe UI', Arial, sans-serif;
+  --font-mono:'Consolas', 'Monaco', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg-paper); color: var(--text-main); font-family: var(--font-sans); padding: 24px; line-height: 1.5; }
+header { margin-bottom: 30px; border-bottom: 2px solid var(--bg-sidebar); padding-bottom: 10px;}
+h1 { font-family: var(--font-serif); font-size: 2.2rem; color: var(--bg-sidebar); margin-bottom: 4px; }
+header em { color: var(--text-muted); font-family: var(--font-serif); font-style: italic; }
+.epistemic-layer { background: #fff; border: 1px solid var(--accent-gold); padding: 20px; margin-bottom: 30px; border-radius: 12px; font-size: 0.9rem; }
+.epistemic-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 10px; }
+.epistemic-item h4 { font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 5px; }
+.wrapper { display: flex; gap: 32px; align-items: flex-start; }
+#tree { width: 45%; display: flex; flex-direction: column; gap: 12px; }
+#details { width: 55%; background: #fff; border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; position: sticky; top: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); min-height: 500px; }
+.node { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; cursor: pointer; transition: all .2s ease-in-out; }
+.node:hover { box-shadow: var(--shadow-md); transform: translateX(5px); border-color: var(--accent-gold); }
+.node.selected { background: linear-gradient(to right, var(--bg-paper-dark), #ffffff); border-color: var(--accent-gold); border-left: 5px solid var(--accent-gold); }
+.node-title { font-family: var(--font-serif); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
+.node-title small { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-blue); margin-left: 8px; }
+.node-note { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin-bottom: 8px; }
+.node-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; padding: 4px 10px; border-radius: 20px; border: 1px solid transparent; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.tag.element { background: rgba(61,90,128,0.1); color: var(--accent-blue); border-color: rgba(61,90,128,0.2); }
+.tag.ricorsivo { background: rgba(124,58,237,0.1); color: var(--accent-purple); border-color: rgba(124,58,237,0.2); }
+.tag.rng { background: rgba(3,105,161,0.1); color: #0369a1; border-color: rgba(3,105,161,0.2); }
+.tag.schematron { background: rgba(134,25,143,0.1); color: #86198f; border-color: rgba(134,25,143,0.2); }
+.tag.standard { background: rgba(127,140,141,0.15); color: var(--text-muted); border-color: rgba(127,140,141,0.3); }
+#d-title { font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 16px; color: var(--bg-sidebar); border-bottom: 2px solid var(--bg-paper-dark); padding-bottom: 8px; }
+.section { margin-bottom: 24px; }
+.section h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 10px; }
+pre { background: var(--bg-sidebar); color: #e0e0e0; padding: 16px; border-radius: 8px; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; overflow-x: auto; border-left: 4px solid var(--accent-gold); }
+pre.schematron-block { border-left: 4px solid var(--accent-purple); }
+.rng-line { display: block; white-space: pre; }
+.rng-line.highlight { background: rgba(184, 152, 110, 0.25); color: #fff; }
+pre.schematron-block .rng-line.highlight { background: rgba(124, 58, 237, 0.25); }
+.sch-rule { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border-light); }
+.sch-rule:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.sch-rule-name { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-purple); font-weight: 700; margin-bottom: 6px; display: block; }
+.test-case { margin-top: 10px; padding: 12px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem; }
+.test-case.valid { background: #f1f8e9; border: 1px solid #c5e1a5; color: #33691e; }
+.test-case.invalid { background: #fff1f0; border: 1px solid #ffa39e; color: #cf1322; }
+.empty-hint { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+@media (max-width: 900px) {
+  .wrapper { flex-direction: column; }
+  #tree, #details { width: 100%; }
+  #details { position: static; min-height: auto; }
+  .epistemic-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
-
 <body>
 
-    <header>
-        <div class="header-left">
-            <h1>Tassonomia Prudenziale TEI + IA</h1>
-            <div class="meta">Modello per lo studio dell'intertestualità del <em>Castello dell'anima</em></div>
-        </div>
+<header>
+<h1>Interpretive Taxonomy</h1>
+<em>Logical Constraint Model - ID: IT-CA-LCM-1.0 (Relax NG + Schematron)</em>
+</header>
 
-        <div class="header-right">
-            <a href="#" class="doc-btn" id="open-xml-viewer">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="12" y1="18" x2="12" y2="12" />
-                    <line x1="9" y1="15" x2="15" y2="15" />
-                </svg>
-                TEI-XML
-            </a>
-            <a href="#" class="doc-btn" id="open-doc-viewer">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10 9 9 9 8 9" />
-                </svg>
-                Documentazione
-            </a>
+<section class="epistemic-layer">
+<h3 style="font-family: var(--font-serif); margin-bottom: 5px;">Statuto del Dispositivo Normativo</h3>
+<p>Questo modello non descrive documenti, ma governa l'interpretazione formalizzata.</p>
+<div class="epistemic-grid">
+<div class="epistemic-item"><h4>Mapping Critico</h4><p>L'associazione nodo/grammatica e' una decisione editoriale esplicita e auditabile.</p></div>
+<div class="epistemic-item"><h4>Criteri di Valutazione</h4><p>Coerenza semantica, stabilita' ricorsiva e ispezionabilita' del vincolo.</p></div>
+<div class="epistemic-item"><h4>Confini</h4><p>Modello limitato alla norma tassonomica, non alla trascrizione testuale.</p></div>
+</div>
+</section>
 
-            <div class="project-info">
-                <div>Progetto TEI + IA Controllata</div>
-                <div class="license">Luciano Longo, 2026 • CC‑BY 4.0</div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <aside>
-            <div class="search-section">
-                <label for="search-input">Ricerca ontologia</label>
-                <div class="search-wrapper">
-                    <input type="text" id="search-input" class="search-box" placeholder="Cerca categoria, ID...">
-                    <button class="reset-btn" id="reset-search" title="Resetta ricerca">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="1 4 1 10 7 10" />
-                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="search-info" id="search-info">
-                <span id="search-count">0</span> risultati trovati
-            </div>
-            <ul class="taxon-list" id="taxon-list"></ul>
-        </aside>
-
-        <main>
-            <div class="tree-container" id="tree-root">
-                <div class="placeholder-panel fade-in">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <p>Seleziona una tassonomia dalla sidebar<br>per esplorare l'ontologia.</p>
-                </div>
-            </div>
-        </main>
-
-        <div class="details-panel">
-            <div id="details-content">
-                <div class="placeholder-panel">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 16v-4M12 8h.01" />
-                    </svg>
-                    <p>Seleziona un nodo dall'albero<br>per visualizzarne i dettagli.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL XML VIEWER -->
-    <div id="xml-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                    </svg>
-                    Visualizzatore TEI-XML
-                </h3>
-                <button class="modal-close" id="close-xml-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="xml-viewer" id="xml-content"></div>
-            </div>
-            <div class="modal-footer">
-                <div class="file-info">
-                    <span id="xml-stats">0 linee • 0 KB</span>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-copy" id="btn-copy-xml">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                        </svg>
-                        Copia
-                    </button>
-                    <a href="#" class="btn-external" id="btn-external-xml" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg>
-                        Apri esterno
-                    </a>
-                    <a href="#" class="btn-download" id="btn-download-xml" download>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                        Download
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL DOCUMENTATION VIEWER -->
-    <div id="doc-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                        <line x1="16" y1="13" x2="8" y2="13" />
-                        <line x1="16" y1="17" x2="8" y2="17" />
-                        <polyline points="10 9 9 9 8 9" />
-                    </svg>
-                    Documentazione Tassonomia
-                </h3>
-                <button class="modal-close" id="close-doc-modal">&times;</button>
-            </div>
-            <div class="modal-body" id="doc-content" style="background: #fff; padding: 2rem; overflow-y: auto;">
-                <!-- Documentation content will be injected here -->
-            </div>
-            <div class="modal-footer">
-                <div class="file-info">
-                    <span>Documentazione completa del modello tassonomico</span>
-                </div>
-                <div class="modal-actions">
-                    <a href="rel-html/documento_metodologico.pdf" class="btn-download" id="btn-download-doc" download>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                        Download PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12" />
-        </svg>
-        <span id="toast-message">Copiato negli appunti!</span>
-    </div>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+<div class="wrapper">
+<div id="tree"></div>
+<div id="details">
+<h2 id="d-title">Seleziona un nodo</h2>
+<div
