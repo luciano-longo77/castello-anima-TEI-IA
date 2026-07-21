@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT-CA-LCM-1.0 | Interpretive Taxonomy</title>
+    <title>Interpretive Taxonomy</title>
 
     <meta name="dc.identifier" content="IT-CA-LCM-1.0">
     <meta name="dc.creator" content="Luciano Longo">
 
     <style>
+        /* ===== PALETTE E BASE (TUA ORIGINALE) ===== */
         :root {
             --bg-paper:#faf8f5;
             --bg-paper-dark:#f5f1e8;
@@ -67,6 +68,8 @@
             margin-top: 10px;
         }
         .epistemic-item h4 { font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 5px; }
+
+        /* ===== LAYOUT ===== */
         .wrapper {
             display: flex;
             gap: 32px;
@@ -92,6 +95,7 @@
             min-height: 500px;
         }
 
+        /* ===== NODI (SINISTRA) ===== */
         .node {
             background: #fff;
             border: 1px solid var(--border-color);
@@ -124,6 +128,7 @@
             margin-left: 8px;
         }
 
+        /* ===== TAG ===== */
         .node-tags {
             display: flex;
             gap: 8px;
@@ -143,6 +148,7 @@
         .tag.rng { background: rgba(3,105,161,0.1); color: #0369a1; border-color: rgba(3,105,161,0.2); }
         .tag.schematron { background: rgba(134,25,143,0.1); color: #86198f; border-color: rgba(134,25,143,0.2); }
 
+        /* ===== DETTAGLI (DESTRA) ===== */
         #d-title {
             font-family: var(--font-serif);
             font-size: 1.5rem;
@@ -161,6 +167,7 @@
             margin-bottom: 10px;
         }
 
+        /* ===== CODE BLOCK ===== */
         pre {
             background: var(--bg-sidebar);
             color: #e0e0e0;
@@ -181,6 +188,7 @@
             color: #fff;
         }
 
+        /* ===== AUDIT TEST CASES ===== */
         .test-case {
             margin-top: 10px;
             padding: 12px;
@@ -237,6 +245,7 @@
 </div>
 
 <script>
+/* ===== DATABASE DATI (ESTESO TOP TIER) ===== */
 const NODI = [
     {
         id: "encodingDesc",
@@ -319,6 +328,7 @@ const NODI = [
     }
 ];
 
+/* ===== LOGICA DI RENDER (MANTENUTA E POTENZIATA) ===== */
 const treeContainer = document.getElementById("tree");
 const titleEl = document.getElementById("d-title");
 const contentEl = document.getElementById("d-content");
