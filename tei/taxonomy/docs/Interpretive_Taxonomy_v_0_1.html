@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT-CA-LCM-1.0 | Interpretive Taxonomy</title>
+    <title>Interpretive Taxonomy</title>
 
     <meta name="dc.identifier" content="IT-CA-LCM-1.0">
     <meta name="dc.creator" content="Luciano Longo">
 
     <style>
+        /* ===== PALETTE E BASE (TUA ORIGINALE) ===== */
         :root {
             --bg-paper:#faf8f5;
             --bg-paper-dark:#f5f1e8;
@@ -37,7 +38,6 @@
             line-height: 1.5;
         }
 
-        /* ===== HEADER ===== */
         header { margin-bottom: 30px; border-bottom: 2px solid var(--bg-sidebar); padding-bottom: 10px;}
         h1 {
             font-family: var(--font-serif);
@@ -51,7 +51,6 @@
             font-style: italic;
         }
 
-        /* ===== LAYER EPISTEMICO (NUOVA SEZIONE STABILE) ===== */
         .epistemic-layer {
             background: #fff;
             border: 1px solid var(--accent-gold);
@@ -67,6 +66,7 @@
             margin-top: 10px;
         }
         .epistemic-item h4 { font-size: 0.7rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 5px; }
+
         .wrapper {
             display: flex;
             gap: 32px;
@@ -212,7 +212,7 @@
     <div class="epistemic-grid">
         <div class="epistemic-item">
             <h4>Mapping Critico</h4>
-            <p>L’associazione nodo ↔ grammatica è una decisione editoriale esplicita e auditabile.</p>
+            <p>L'associazione nodo ↔ grammatica è una decisione editoriale esplicita e auditabile.</p>
         </div>
         <div class="epistemic-item">
             <h4>Criteri di Valutazione</h4>
@@ -246,17 +246,9 @@ const NODI = [
         descrizione: "Il contenitore normativo primario. Dichiara lo statuto ontologico della codifica e funge da radice per le definizioni tassonomiche.",
         tag: ["element", "rng", "schematron"],
         rngLines: { from: 2, to: 6 },
-        rng: `<define name="encodingDesc">
-  <element name="tei:encodingDesc">
-    <element name="tei:classDecl">
-      <oneOrMore>
-        <ref name="taxonomy"/>
-      </oneOrMore>
-    </element>
-  </element>
-</define>`,
-        testValid: `<encodingDesc>\n  <classDecl>\n    <taxonomy xml:id="tax1">...</taxonomy>\n  </classDecl>\n</encodingDesc>`,
-        testInvalid: `<encodingDesc>\n  <taxonomy>...</taxonomy> (Manca classDecl: violazione gerarchica)`
+        rng: "<define name=\"encodingDesc\">\n  <element name=\"tei:encodingDesc\">\n    <element name=\"tei:classDecl\">\n      <oneOrMore>\n        <ref name=\"taxonomy\"/>\n      </oneOrMore>\n    </element>\n  </element>\n</define>",
+        testValid: "<encodingDesc>\n  <classDecl>\n    <taxonomy xml:id=\"tax1\">...</taxonomy>\n  </classDecl>\n</encodingDesc>",
+        testInvalid: "<encodingDesc>\n  <taxonomy>...</taxonomy> (Manca classDecl: violazione gerarchica)"
     },
     {
         id: "taxonomy",
@@ -264,20 +256,11 @@ const NODI = [
         card: "1..*",
         tesi: "Identità e puntamento interpretativo.",
         descrizione: "Definisce una tassonomia critica. L'obbligatorietà dell'ID permette l'interoperabilità e il riuso dei dati interpretativi.",
-        tag: ["element", "rng"],
+        tag: ["element", "rng", "schematron"],
         rngLines: { from: 2, to: 9 },
-        rng: `<define name="taxonomy">
-  <element name="tei:taxonomy">
-    <attribute name="xml:id">
-      <data type="ID"/>
-    </attribute>
-    <oneOrMore>
-      <ref name="category"/>
-    </oneOrMore>
-  </element>
-</define>`,
-        testValid: `<taxonomy xml:id="tax_01">\n  <category>...</category>\n</taxonomy>`,
-        testInvalid: `<taxonomy>\n  <category>...</category> (Manca xml:id: identità non citabile)`
+        rng: "<define name=\"taxonomy\">\n  <element name=\"tei:taxonomy\">\n    <attribute name=\"xml:id\">\n      <data type=\"ID\"/>\n    </attribute>\n    <oneOrMore>\n      <ref name=\"category\"/>\n    </oneOrMore>\n  </element>\n</define>",
+        testValid: "<taxonomy xml:id=\"tax_01\">\n  <category>...</category>\n</taxonomy>",
+        testInvalid: "<taxonomy>\n  <category>...</category> (Manca xml:id: identità non citabile)"
     },
     {
         id: "category",
@@ -287,35 +270,21 @@ const NODI = [
         descrizione: "Rappresenta una categoria interpretativa. La struttura ricorsiva modella la stratificazione infinita del senso e dei concetti nidificati.",
         tag: ["element", "ricorsivo", "rng", "schematron"],
         rngLines: { from: 2, to: 10 },
-        rng: `<define name="category">
-  <element name="tei:category">
-    <attribute name="xml:id">
-      <data type="ID"/>
-    </attribute>
-    <ref name="desc"/>
-    <zeroOrMore>
-      <ref name="category"/>
-    </zeroOrMore>
-  </element>
-</define>`,
-        testValid: `<category xml:id="c1">\n  <desc>Livello 1</desc>\n  <category xml:id="c2">...</category>\n</category>`,
-        testInvalid: `<category xml:id="c1"> (Manca <desc>: nodo semanticamente vuoto)`
+        rng: "<define name=\"category\">\n  <element name=\"tei:category\">\n    <attribute name=\"xml:id\">\n      <data type=\"ID\"/>\n    </attribute>\n    <ref name=\"catDesc\"/>\n    <zeroOrMore>\n      <ref name=\"category\"/>\n    </zeroOrMore>\n  </element>\n</define>",
+        testValid: "<category xml:id=\"c1\">\n  <catDesc>Livello 1</catDesc>\n  <category xml:id=\"c2\">...</category>\n</category>",
+        testInvalid: "<category xml:id=\"c1\"> (Manca <catDesc>: nodo semanticamente vuoto)"
     },
     {
-        id: "desc",
-        nome: "tei:desc",
+        id: "catDesc",
+        nome: "tei:catDesc",
         card: "1..1",
         tesi: "Esplicitazione del senso.",
         descrizione: "Contiene la descrizione testuale leggibile. È il ponte tra la formalizzazione macchina e l'interpretazione umana.",
-        tag: ["element", "rng", "schematron"],
+        tag: ["element", "rng"],
         rngLines: { from: 2, to: 4 },
-        rng: `<define name="desc">
-  <element name="tei:desc">
-    <text/>
-  </element>
-</define>`,
-        testValid: `<desc>Trascrizione diplomatica conservativa</desc>`,
-        testInvalid: `<desc/> (Descrizione vuota: fallimento della funzione ermeneutica)`
+        rng: "<define name=\"catDesc\">\n  <element name=\"tei:catDesc\">\n    <text/>\n  </element>\n</define>",
+        testValid: "<catDesc>Trascrizione diplomatica conservativa</catDesc>",
+        testInvalid: "<catDesc/> (Descrizione vuota: fallimento della funzione ermeneutica)"
     }
 ];
 
@@ -324,75 +293,51 @@ const titleEl = document.getElementById("d-title");
 const contentEl = document.getElementById("d-content");
 
 function escapeHTML(str) {
-    return str.replace(/[&<>"']/g, (m) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
-    }[m]));
+    return str.replace(/[&<>"']/g, function(m) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[m];
+    });
 }
 
 function renderTree() {
     treeContainer.innerHTML = "";
-    NODI.forEach(nodo => {
-        const div = document.createElement("div");
+    NODI.forEach(function(nodo) {
+        var div = document.createElement("div");
         div.className = "node";
         div.dataset.id = nodo.id;
-        div.innerHTML = `
-            <div class="node-title">${nodo.nome} <small>[${nodo.card}]</small></div>
-            <div class="node-tags">
-                ${nodo.tag.map(t => `<span class="tag ${t}">${t}</span>`).join("")}
-            </div>
-        `;
-        div.onclick = () => selezionaNodo(nodo.id);
+        div.innerHTML = "<div class=\"node-title\">" + nodo.nome + " <small>[" + nodo.card + "]</small></div>" +
+            "<div class=\"node-tags\">" + nodo.tag.map(function(t){ return "<span class=\"tag " + t + "\">" + t + "</span>"; }).join("") + "</div>";
+        div.onclick = function(){ selezionaNodo(nodo.id); };
         treeContainer.appendChild(div);
     });
 }
 
 function renderRngCode(code, range) {
-    const lines = code.trim().split('\n');
-    return lines.map((line, index) => {
-        const lineNum = index + 1;
-        const isHighlighted = lineNum >= range.from && lineNum <= range.to;
-        return `<span class="rng-line ${isHighlighted ? 'highlight' : ''}">${escapeHTML(line)}</span>`;
+    var lines = code.trim().split("\n");
+    return lines.map(function(line, index) {
+        var lineNum = index + 1;
+        var isHighlighted = lineNum >= range.from && lineNum <= range.to;
+        return "<span class=\"rng-line " + (isHighlighted ? "highlight" : "") + "\">" + escapeHTML(line) + "</span>";
     }).join("");
 }
 
 function selezionaNodo(id) {
-    document.querySelectorAll(".node").forEach(n => n.classList.remove("selected"));
-    const selectedEl = document.querySelector(`.node[data-id="${id}"]`);
-    if(selectedEl) selectedEl.classList.add("selected");
+    document.querySelectorAll(".node").forEach(function(n){ n.classList.remove("selected"); });
+    var selectedEl = document.querySelector(".node[data-id=\"" + id + "\"]");
+    if (selectedEl) selectedEl.classList.add("selected");
 
-    const data = NODI.find(n => n.id === id);
+    var data = NODI.find(function(n){ return n.id === id; });
     if (!data) return;
 
-    titleEl.textContent = `${data.nome} [${data.card}]`;
-    contentEl.innerHTML = `
-        <div class="section">
-            <h3>Tesi Epistemica</h3>
-            <p style="color:var(--accent-blue); font-weight:bold;">${data.tesi}</p>
-        </div>
-
-        <div class="section">
-            <h3>Descrizione Concettuale</h3>
-            <p>${data.descrizione}</p>
-        </div>
-        
-        <div class="section">
-            <h3>Vincolo Relax NG (Audit)</h3>
-            <pre><code>${renderRngCode(data.rng, data.rngLines)}</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>Test Cases (Verifica Consistenza)</h3>
-            <div class="test-case valid"><strong>Valid:</strong><br>${escapeHTML(data.testValid)}</div>
-            <div class="test-case invalid"><strong>Invalid:</strong><br>${escapeHTML(data.testInvalid)}</div>
-        </div>
-
-        <div class="section">
-            <h3>Metadati Vincoli</h3>
-            <div class="node-tags">
-                ${data.tag.map(t => `<span class="tag ${t}">${t}</span>`).join("")}
-            </div>
-        </div>
-    `;
+    titleEl.textContent = data.nome + " [" + data.card + "]";
+    contentEl.innerHTML =
+        "<div class=\"section\"><h3>Tesi Epistemica</h3><p style=\"color:var(--accent-blue); font-weight:bold;\">" + data.tesi + "</p></div>" +
+        "<div class=\"section\"><h3>Descrizione Concettuale</h3><p>" + data.descrizione + "</p></div>" +
+        "<div class=\"section\"><h3>Vincolo Relax NG (Audit)</h3><pre><code>" + renderRngCode(data.rng, data.rngLines) + "</code></pre></div>" +
+        "<div class=\"section\"><h3>Test Cases (Verifica Consistenza)</h3>" +
+        "<div class=\"test-case valid\"><strong>Valid:</strong><br>" + escapeHTML(data.testValid) + "</div>" +
+        "<div class=\"test-case invalid\"><strong>Invalid:</strong><br>" + escapeHTML(data.testInvalid) + "</div></div>" +
+        "<div class=\"section\"><h3>Metadati Vincoli</h3><div class=\"node-tags\">" +
+        data.tag.map(function(t){ return "<span class=\"tag " + t + "\">" + t + "</span>"; }).join("") + "</div></div>";
 }
 
 renderTree();
