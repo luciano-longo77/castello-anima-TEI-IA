@@ -9,6 +9,7 @@
     <meta name="dc.creator" content="Luciano Longo">
 
     <style>
+        /* ===== PALETTE E BASE (TUA ORIGINALE) ===== */
         :root {
             --bg-paper:#faf8f5;
             --bg-paper-dark:#f5f1e8;
@@ -202,7 +203,7 @@
 
 <header>
     <h1>Interpretive Taxonomy</h1>
-    <em>Logical Constraint Model – ID: IT-CA-LCM-1.1 (Relax NG + Schematron)</em>
+    <em>Logical Constraint Model – ID: IT-CA-LCM-1.0 (Relax NG + Schematron)</em>
 </header>
 
 <section class="epistemic-layer">
@@ -258,7 +259,7 @@ const NODI = [
         tag: ["element", "rng", "schematron"],
         rngLines: { from: 2, to: 9 },
         rng: "<define name=\"taxonomy\">\n  <element name=\"tei:taxonomy\">\n    <attribute name=\"xml:id\">\n      <data type=\"ID\"/>\n    </attribute>\n    <oneOrMore>\n      <ref name=\"category\"/>\n    </oneOrMore>\n  </element>\n</define>",
-        testValid: "<category xml:id="legittimazione-biblica"> \n  <category>...</category>\n</taxonomy>",
+        testValid: "<taxonomy xml:id=\"tax_01\">\n  <category>...</category>\n</taxonomy>",
         testInvalid: "<taxonomy>\n  <category>...</category> (Manca xml:id: identità non citabile)"
     },
     {
@@ -282,7 +283,7 @@ const NODI = [
         tag: ["element", "rng"],
         rngLines: { from: 2, to: 4 },
         rng: "<define name=\"catDesc\">\n  <element name=\"tei:catDesc\">\n    <text/>\n  </element>\n</define>",
-        testValid: "<catDesc>Citazioni e parafrasi scritturali, spesso in latino, impiegate per rendere accettabili concetti come "quiete", "infusione" e "unione" mostrando conformità alla dottrina e inserendo l’esperienza mistica in una cornice canonica.</catDesc>",
+        testValid: "<catDesc>Trascrizione diplomatica conservativa</catDesc>",
         testInvalid: "<catDesc/> (Descrizione vuota: fallimento della funzione ermeneutica)"
     }
 ];
