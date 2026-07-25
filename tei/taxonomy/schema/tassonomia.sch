@@ -1,53 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron">
-    
-    
-    <!--  SCHEMATRON PER IL VOCABOLARIO TASSONOMICO TEI
-     Castello dell’anima – sistema prudenziale -->
-    
-    <pattern id="taxonomy-rules">
-        
-        
-        <!-- Regole per TUTTE le category -->
-        
-        
-        <rule context="*[local-name() = 'category']">
-            
-            <!-- Ogni category deve avere un desc -->
-            <assert test="*[local-name() = 'desc']">
-                Ogni &lt;category&gt; deve contenere un elemento &lt;desc&gt;.
-            </assert>
-            
-            <!-- Il desc non deve essere vuoto -->
-            <assert test="normalize-space(*[local-name() = 'desc']) != ''">
-                Il contenuto di &lt;desc&gt; non può essere vuoto.
-            </assert>
-            
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+    <title>ISO Schematron rules</title>
+    <!-- This file generated 2026-07-18-->
+    <ns prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+    <pattern id="schematron-constraint-category-catdesc-present-1">
+        <rule context="tei:category">
+            <assert test="tei:catDesc" role="error">Errore filologico: ogni &lt;category&gt; deve contenere un elemento &lt;catDesc&gt; per l'autodocumentazione semantica.</assert>
         </rule>
-        
-        
-        <!-- Regola di prefisso: SOLO per taxonomy ≠ func    -->
-        
-        <rule context="
-            *[local-name() = 'category']
-            [not(ancestor::*[local-name() = 'taxonomy'][@xml:id='func'])]">
-            
-            <let name="taxID"
-                value="ancestor::*[local-name() = 'taxonomy'][1]/@xml:id"/>
-            <assert test="
-                not(contains(@xml:id, '-'))
-                or
-                starts-with(@xml:id, concat($taxID, '-'))
-                ">
-                L’attributo @xml:id della &lt;category&gt; deve iniziare con
-                il prefisso della tassonomia padre (&lt;value-of select="$taxID"/&gt;-).
-            </assert>
-            
-        </rule>
-        
-        
-        <!-- NOTA  taxonomy xml:id='func' è ESENTE dalla regola perché ammette sotto‑assi funzionali interni: rischio-*, ethos-*, pedagogia-*-->
-        
     </pattern>
-    
+    <pattern id="schematron-constraint-category-catdesc-not-empty-2">
+        <rule context="tei:category">
+            <assert test="normalize-space(string(tei:catDesc)) != ''" role="error">Assegnazione semantica fallita: il contenuto di &lt;catDesc&gt; non può essere vuoto.</assert>
+        </rule>
+    </pattern>
+    <pattern id="schematron-constraint-category-prefix-consistency-3">
+        <rule context="tei:category">
+            <let name="taxID" value="string(ancestor::tei:taxonomy[1]/@xml:id)"/>
+            <assert role="error"
+                test="$taxID = 'func' or starts-with(@xml:id, concat($taxID, '-'))"> Errore di coerenza del dato: l'attributo @xml:id della &lt;category&gt; (<value-of select="@xml:id"/>) deve iniziare con il prefisso della tassonomia radice (<value-of select="$taxID"/>-), fatto salvo l'asse esente 'func'.</assert>
+        </rule>
+    </pattern>
+    <pattern id="schematron-constraint-taxonomy-category-xmlid-unique-4">
+        <rule context="tei:category | tei:taxonomy">
+            <assert role="error" test="count(//*[@xml:id = current()/@xml:id]) = 1"> Errore di unicità: l'attributo @xml:id ('<value-of select="@xml:id"/>') di &lt;<name/>&gt; non è univoco nel documento; è usato da almeno un altro elemento.</assert>
+        </rule>
+    </pattern>
 </schema>
