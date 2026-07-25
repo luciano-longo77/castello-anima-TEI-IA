@@ -1,93 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    xml:id="odd-tassonomia-castello-anima"
+    xml:lang="it">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>ODD per la validazione delle tassonomie interpretative</title>
-                <author>Luciano Longo</author>
+                <title type="main">ODD per la validazione delle tassonomie interpretative</title>
+                <title type="sub">Customizzazione TEI P5 compatibile con RomaJS per il progetto "Castello dell'anima"</title>
+                <author xml:id="p-longo">Luciano Longo</author>
             </titleStmt>
+            <editionStmt>
+                <edition n="working">Versione di lavoro: modello ODD tassonomico; prima strutturazione del 30-03-2026; ultima revisione 18-07-2026.</edition>
+            </editionStmt>
             <publicationStmt>
-                <p>Uso interno al progetto “Castello dell’anima”.</p>
+                <publisher>Progetto TEI + IA controllata</publisher>
+                <idno type="filename">taxonomy.odd</idno>
+                <date when="2026-03-30">30 marzo 2026: prima strutturazione dell'ODD</date>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 – Open Access</licence>
+                </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>
-                    ODD focalizzato esclusivamente sulla validazione del file
-                    <code>tassonomia.xml</code>.
-                </p>
+                <p>Meta-schema (ODD) da cui si generano Relax NG e Schematron per la validazione di <idno type="filename">tassonomia-gh.xml</idno> (definizione degli assi tassonomici). È ottimizzato per compilatori JavaScript (RomaJS) e per la toolchain standard dei TEI Stylesheets. Le regole di business (correttezza del prefisso di @xml:id, obbligo di <gi>catDesc</gi> e non vacuità di <gi>catDesc</gi>) sono dichiarate qui come <gi>constraintSpec</gi> e da qui derivano nel file Schematron compilato; non vanno quindi mantenute a mano in un file <code>.sch</code> separato.</p>
             </sourceDesc>
         </fileDesc>
+        <revisionDesc>
+            <change when="2026-07-18" who="#p-longo">Incorporate come <gi>constraintSpec</gi> Schematron le tre regole di validazione: presenza di <gi>catDesc</gi>, non vacuità di <gi>catDesc</gi>, coerenza del prefisso di @xml:id con la tassonomia radice. Rimosso <gi>moduleRef</gi> "analysis" perché non utilizzato da alcun elemento dello <gi>schemaSpec</gi>. Regole spostate come figlie dirette di schemaSpec e racchiuse in sch:rule per evitare che extract-isosch.xsl le scarti silenziosamente.</change>
+            <change when="2026-03-30" who="#p-longo">Prima strutturazione dell'ODD: ridefinizione di <gi>taxonomy</gi> e <gi>category</gi> con content model vincolato e @xml:id reso obbligatorio.</change>
+        </revisionDesc>
     </teiHeader>
     
     <text>
         <body>
-            
-            <schemaSpec ident="taxonomy-only"
-                start="TEI"
-                docLang="it">
+            <schemaSpec ident="taxonomy-framework" start="TEI" docLang="it">
                 
-                <!-- Moduli minimi -->
+                <desc>Questo schema restringe la classificazione TEI standard obbligando ogni categoria a dichiarare sempre una descrizione (<gi>catDesc</gi>) prima di eventuali sotto-categorie, così da garantire l'autodocumentazione semantica degli assi senza ridurre la flessibilità dei nodi foglia.</desc>
+                
                 <moduleRef key="tei"/>
                 <moduleRef key="core"/>
                 <moduleRef key="header"/>
-                <moduleRef key="analysis"/>
                 <moduleRef key="textstructure"/>
                 
-                <!-- taxonomy -->
-                
+                <!-- RIDEFINIZIONE DELL'ELEMENTO: taxonomy -->
                 <elementSpec ident="taxonomy" mode="change">
-                    <desc>Contenitore di un asse tassonomico interpretativo.</desc>
-                    
+                    <gloss>asse tassonomico</gloss>
+                    <desc>Contenitore di un asse tassonomico interpretativo multiassiale. Non ospita testo libero non strutturato, ma richiede la presenza di categorie codificate.</desc>
                     <content>
-                        <rng:oneOrMore>
-                            <rng:ref name="category"/>
-                        </rng:oneOrMore>
+                        <elementRef key="category" minOccurs="1" maxOccurs="unbounded"/>
                     </content>
-                    
                     <attList>
-                        <attDef ident="xml:id" usage="req">
+                        <attDef ident="xml:id" mode="change" usage="req">
+                            <desc>Identificatore univoco dell'asse (per esempio: func, risk, impact), impiegato come prefisso per la risoluzione dei puntatori nell'attributo @ana del testo primario.</desc>
                             <datatype>
                                 <dataRef key="ID"/>
                             </datatype>
                         </attDef>
                     </attList>
+                    <exemplum>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <taxonomy xml:id="risk">
+                                <category xml:id="risk-dottrinale">
+                                    <catDesc>Rischio generale di equivocità su dottrine come "grazia", "libertà", "unione".</catDesc>
+                                    <category xml:id="risk-quietismo">
+                                        <catDesc>Possibile lettura quietista dei concetti di "quiete", "otio".</catDesc>
+                                    </category>
+                                </category>
+                            </taxonomy>
+                        </egXML>
+                    </exemplum>
+                    <remarks>
+                        <p>Questa impostazione permette di inserire la documentazione metodologica globale dell'asse all'interno di una macro-categoria radice (per esempio: impact-scale), mantenendo l'albero pulito e privo di nodi testuali orfani.</p>
+                    </remarks>
                 </elementSpec>
                 
-                <!-- category -->
-                
+                <!-- RIDEFINIZIONE DELL'ELEMENTO: category -->
                 <elementSpec ident="category" mode="change">
-                    <desc>Categoria semantica appartenente a una tassonomia.</desc>
-                    
+                    <gloss>categoria tassonomica o nodo di classificazione</gloss>
+                    <desc>Unità semantica atomica o complessa all'interno di un asse. Impone che la descrizione preceda logicamente qualsiasi ramificazione interna, lasciando la libertà di fungere sia da nodo foglia sia da macro-contenitore gerarchico.</desc>
                     <content>
-                        <rng:sequence>
-                            <rng:ref name="desc"/>
-                            <rng:zeroOrMore>
-                                <rng:ref name="category"/>
-                            </rng:zeroOrMore>
-                        </rng:sequence>
+                        <sequence>
+                            <elementRef key="catDesc" minOccurs="1" maxOccurs="1"/>
+                            <elementRef key="category" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
                     </content>
-                    
                     <attList>
-                        <attDef ident="xml:id" usage="req">
+                        <attDef ident="xml:id" mode="change" usage="req">
+                            <desc>Identificatore univoco della categoria (per esempio: risk-quietismo, operation-delimitazione).</desc>
                             <datatype>
                                 <dataRef key="ID"/>
                             </datatype>
                         </attDef>
                     </attList>
+                    
+                    <exemplum>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <category xml:id="func-rischio">
+                                <catDesc>Strategie volte a prevenire o correggere letture potenzialmente eterodosse.</catDesc>
+                                <category xml:id="func-rischio-attenuatio">
+                                    <catDesc>Glosse esplicative per smorzare formulazioni rischiose.</catDesc>
+                                </category>
+                            </category>
+                        </egXML>
+                    </exemplum>
+                    
+                    <remarks>
+                        <p>L'ordine della sequenza è tassativo: <gi>catDesc</gi> deve precedere sempre eventuali sotto-categorie. L'assenza di sotto-categorie (<att>minOccurs</att>="0") permette la coesistenza nativa di assi piatti e assi ramificati nello stesso file tassonomico.</p>
+                    </remarks>
                 </elementSpec>
                 
-                <!-- desc -->
+                <constraintSpec ident="category-catdesc-present" scheme="schematron">
+                    <desc>Ogni <gi>category</gi> deve contenere un <gi>catDesc</gi>. Il controllo è ridondante rispetto al content model RNG, ma viene mantenuto per fornire un messaggio d'errore più esplicito in fase di validazione.</desc>
+                    <constraint>
+                        <sch:rule context="tei:category">
+                            <sch:assert test="tei:catDesc" role="error">Errore filologico: ogni &lt;category&gt; deve contenere un elemento &lt;catDesc&gt; per l'autodocumentazione semantica.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
                 
-                <elementSpec ident="desc" mode="change">
-                    <desc>Descrizione testuale obbligatoria di una categoria.</desc>
-                    <content>
-                        <rng:text/>
-                    </content>
-                </elementSpec>
+                <constraintSpec ident="category-catdesc-not-empty" scheme="schematron">
+                    <desc>Il contenuto testuale di <gi>catDesc</gi> non può essere vuoto né composto solo da spazi bianchi.</desc>
+                    <constraint>
+                        <sch:rule context="tei:category">
+                            <sch:assert test="normalize-space(string(tei:catDesc)) != ''" role="error">Assegnazione semantica fallita: il contenuto di &lt;catDesc&gt; non può essere vuoto.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+                
+                <constraintSpec ident="category-prefix-consistency" scheme="schematron">
+                    <desc>L'identificatore di ogni <gi>category</gi> deve iniziare con il prefisso della tassonomia radice a cui appartiene, salvo l'asse "func", che è esplicitamente esente. Le sue categorie di primo livello — legittimazione, pedagogia, rischio, ethos — non seguono infatti la prefissazione per scelta redazionale. La verifica è condotta contro la tassonomia radice, non contro la <gi>category</gi> padre immediata: categorie annidate sotto un nodo-contenitore come impact-scale o risk-dottrinale possono quindi legittimamente tornare al prefisso di primo livello (per esempio: impact-high, non impact-scale-high). Non esiste più un'eccezione per ID privi di trattino, perché quella clausola permetteva a un ID spurio di eludere il controllo.</desc>
+                    <constraint>
+                        <sch:rule context="tei:category">
+                            <sch:let name="taxID" value="string(ancestor::tei:taxonomy[1]/@xml:id)"/>
+                            <sch:assert role="error"
+                                test="$taxID = 'func' or starts-with(@xml:id, concat($taxID, '-'))">
+                                Errore di coerenza del dato: l'attributo @xml:id della &lt;category&gt; (<sch:value-of select="@xml:id"/>) deve iniziare con il prefisso della tassonomia radice (<sch:value-of select="$taxID"/>-), fatto salvo l'asse esente 'func'.
+                            </sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+                
+                <constraintSpec ident="taxonomy-category-xmlid-unique" scheme="schematron">
+                    <desc>Garantisce l'unicità di @xml:id su <gi>taxonomy</gi> e <gi>category</gi> in tutto il documento,
+                        indipendentemente dal fatto che il compilatore RNG (Roma) risolva correttamente il datatype ID
+                        per l'override locale di questi due elementi. È una rete di sicurezza: verificato che in una
+                        compilazione RNG l'attributo locale xml:id di taxonomy/category può risultare privo del vincolo
+                        <code>data type="ID"</code> presente invece nella dichiarazione standard TEI, il che permetterebbe
+                        ID duplicati non rilevati dalla sola validazione RelaxNG (18-07-2026, verificato con xmllint:
+                        un documento con due &lt;taxonomy xml:id="risk"/&gt; risultava "validates" nonostante il
+                        messaggio "ID risk already defined").</desc>
+                    <constraint>
+                        <sch:rule context="tei:category | tei:taxonomy">
+                            <sch:assert role="error" test="count(//*[@xml:id = current()/@xml:id]) = 1">
+                                Errore di unicità: l'attributo @xml:id ('<sch:value-of select="@xml:id"/>') di
+                                &lt;<sch:name/>&gt; non è univoco nel documento; è usato da almeno un altro elemento.
+                            </sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
                 
             </schemaSpec>
-            
         </body>
     </text>
 </TEI>
