@@ -129,9 +129,29 @@ L'attributo `@ana` può contenere **valori multipli**, separati da spazi, ciascu
 ```xml
 <seg ana="#pedagogia #relation-mistica-attiva-meditazione #risk-dottrinale #operation-delimitazione #impact-high #phase-mediana">
 ```
+### 4.1 Eccezione
+L'asse `func` è **esente dal vincolo di prefisso tassonomia**. 
+Le sue categorie di primo livello (`legittimazione`, `pedagogia`, `rischio`, `ethos`) 
+non portano il prefisso `func-` davanti al nome. Le loro sottocategorie seguono 
+la gerarchia naturale: `legittimazione-biblica`, `pedagogia-introduzione`, 
+`rischio-attenuatio`, `ethos-obbedienza`.
 
-> **Nota sui prefissi:** `func` è l'unico asse esente dal vincolo di prefisso (§7.2) — le sue categorie di primo livello (`legittimazione`, `pedagogia`, `rischio`, `ethos`) non portano il prefisso `func-`. Tutte le altre tassonomie richiedono che l'`xml:id` inizi col prefisso della tassonomia radice (es. `risk-dottrinale`, non `dottrinale` né `risk-risk-dottrinale`).
+### 4.2 Marcatori trasversali: `phase-critical`
 
+La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasversale**.
+
+**Regola di applicazione**: quando un passaggio riceve `#phase-critical`, 
+deve ricevere **contemporaneamente** uno e uno solo tra:
+- `#phase-introduction`
+- `#phase-mediana`
+- `#phase-conclusive`
+
+**Esempio corretto**:
+<seg ana="#phase-critical #phase-mediana #exposition-critical #risk-quietismo">
+
+**Esempio scorretto**:
+<seg ana="#phase-critical #exposition-critical #risk-quietismo">
+<!-- Errore: nessuna fase posizionale abbinata -->
 ***
 
 ## 5. Indice composito N–A–F
@@ -144,6 +164,31 @@ L'indice **N–A–F** è un indicatore interpretativo composito utilizzato in f
 
 L'indice non costituisce una tassonomia, ma un **valore derivato** calcolato a partire da `risk`, `impact` e dalla densità delle `operation`.
 
+### 5.1 Formula di calcolo
+
+La formula N–A–F è calcolata come segue:
+
+**N (Necessità interpretativa)**: funzione della densità di `#risk-*` presenti nel `@ana`.
+- Se `@ana` contiene 1+ categoria da `risk`: N = 1
+- Altrimenti: N = 0
+
+**A (Ambiguità semantica)**: funzione della specifica categoria di rischio dottrinale.
+- `risk-ambiguita` → A = 1.0
+- `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita` → A = 0.7
+- Altrimenti: A = 0
+
+**F (Funzione prudenziale)**: funzione della densità di `#operation-*` presenti nel `@ana`.
+- Se `@ana` contiene 1+ categoria da `operation`: F = 1
+- Altrimenti: F = 0
+
+**Valore composito N–A–F**:
+NAF_score = (N × 0.3) + (A × 0.4) + (F × 0.3)
+
+**Mapping a categorie `#impact-*`**:
+- N–A–F ≥ 0.7 → `#impact-critical` o `#impact-high`
+- 0.4 ≤ N–A–F < 0.7 → `#impact-medium`
+- N–A–F < 0.4 → `#impact-low`
+- 
 ***
 
 ## 6. Querying (XPath/XQuery – esempi)
@@ -155,6 +200,25 @@ Segmenti ad alto rischio con operazione attenuativa:
 ```xpath
 //tei:seg[matches(@ana, '\#risk-dottrinale') and matches(@ana, '\#operation-attenuatio')]
 ```
+
+### 6.1 Corrispondenza `func:rischio` ↔ `operation`
+
+**Regola semantica fondamentale**: Ogni categoria della tassonomia `func` 
+che appartenga al ramo `func:rischio` presuppone logicamente una categoria 
+corrispondente dalla tassonomia `operation`.
+
+| Categoria `func` | Categoria `operation` corrispondente |
+|-----------------|-------------------------------------|
+| `func:rischio-attenuatio` | `operation-attenuatio` |
+| `func:rischio-precisatio` | `operation-precisatio` |
+| `func:rischio-declaratio` | `operation-declaratio` |
+
+**Significato**: 
+- `func` descrive la **strategia autoriale**
+- `operation` descrive il **meccanismo discorsivo concreto**
+
+**Regola di applicazione**: Un segmento che riceve `#func:rischio-attenuatio` 
+deve ricevere anche `#operation-attenuatio`.
 
 ***
 
