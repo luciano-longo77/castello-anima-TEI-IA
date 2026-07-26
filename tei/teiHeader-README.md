@@ -50,13 +50,13 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 ├──────────────────┤├─────────────────┤ ├────────────────────┤├────────────────┤
 │ • Titolo & Auth  ││ • Criteri Ecd.  │ │ • Sociolinguistica ││ • JSON IA      │
 │ • Codicologia    ││ • classDecl(10) │ │ • listPerson       ││ • METS Link    │
-│ • Apparati       ││ • tagsDecl (46) │ │ • listOrg          ││                │
+│ • Apparati       ││ • tagsDecl (34) │ │ • listOrg          ││                │
 └──────────────────┘└─────────────────┘ └────────────────────┘└────────────────┘
                                         │
                              ┌──────────┴──────────┐
                              │    revisionDesc     │
                              ├──────────────────────┤
-                             │ • Audit Log (>50)   │
+                             │ • Audit Log (>60)   │
                              └──────────────────────┘
 ```
 
