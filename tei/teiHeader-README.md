@@ -72,7 +72,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 
 ## 3. Sistema Tassonomico (`classDecl`)
 
-Il sistema si fonda su **10 tassonomie**, suddivise in due famiglie distinte per evitare sovrapposizioni tra il piano ermeneutico sul testo e il piano gestionale del lavoro editoriale.
+Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distinte per evitare sovrapposizioni tra il piano ermeneutico sul testo (8 tassonomie) e il piano gestionale del lavoro editoriale (2 tassonomie).
 
 ```
                      classDecl (10 Tassonomie)
@@ -81,7 +81,7 @@ Il sistema si fonda su **10 tassonomie**, suddivise in due famiglie distinte per
      ▼                                                      ▼
 8 Tassonomie Interpretative                    2 Tassonomie di Processo
 (Annotazione sul testo via @ana)               (Tracciamento in revisionDesc)
-├── func (Funzioni retoriche, 16)              ├── fase (Fasi lavoro, 42)
+├── func (Funzioni retoriche, 4)              ├── fase (Fasi lavoro, 42)
 ├── risk (Rischio dottrinale, 5)                └── workflow (Scenari IA, 4)
 ├── impact (Impatto interpretativo, 4)
 ├── mystic_state (Stati mistici, 5)
@@ -99,7 +99,7 @@ Il sistema si fonda su **10 tassonomie**, suddivise in due famiglie distinte per
 
 ## 4. Dichiarazione del Tagset (`tagsDecl`)
 
-Il tagset disciplina **46 elementi TEI**, raggruppati per macro-funzione.
+Il tagset disciplina **34 elementi TEI**, raggruppati per macro-funzione.
 
 ### A. Struttura Core e Contesto
 | Elemento | Uso Ecdotico / Computazionale |
