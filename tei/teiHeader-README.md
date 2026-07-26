@@ -77,7 +77,7 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
                      classDecl (10 Tassonomie)
                                 │
      ┌──────────────────────────┴──────────────────────────┐
-     ▼                                                      ▼
+     ▼                                                     ▼
 8 Tassonomie Interpretative                    2 Tassonomie di Processo
 (Annotazione sul testo via @ana)               (Tracciamento in revisionDesc)
 ├── func (Funzioni retoriche, 4)              ├── fase (Fasi lavoro, 42)
