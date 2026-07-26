@@ -42,22 +42,21 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
                   ┌─────────────────────────────────────────┐
                   │                teiHeader                │
                   └────────────────────┬────────────────────┘
-                                        │
-     ┌──────────────────┬──────────────┴───────┬──────────────────┐
-     │                   │                      │                  │
-┌────┴────────────┐┌─────┴───────────┐ ┌────────┴──────────┐┌──────┴─────────┐
-│    fileDesc      ││  encodingDesc   │ │   profileDesc      ││   xenoData     │
-├──────────────────┤├─────────────────┤ ├────────────────────┤├────────────────┤
-│ • Titolo & Auth  ││ • Criteri Ecd.  │ │ • Sociolinguistica ││ • JSON IA      │
-│ • Codicologia    ││ • classDecl(10) │ │ • listPerson       ││ • METS Link    │
-│ • Apparati       ││ • tagsDecl (46) │ │ • listOrg          ││                │
-└──────────────────┘└─────────────────┘ └────────────────────┘└────────────────┘
+     ┌──────────────────┬──────────────┴──────┬────────────────────┐
+     │                  │                     │                    │
+┌────┴────────────┐┌────┴───────────┐ ┌───────┴────────────┐┌──────┴─────────┐
+│    fileDesc     ││  encodingDesc  │ │   profileDesc      ││   xenoData     │
+├─────────────────┤├────────────────┤ ├────────────────────┤├────────────────┤
+│ • Titolo & Auth ││ • Criteri Ecd. │ │ • Sociolinguistica ││ • JSON IA      │
+│ • Codicologia   ││ • classDecl(10)│ │ • listPerson       ││ • METS Link    │
+│ • Apparati      ││ • tagsDecl (46)│ │ • listOrg          ││                │
+└─────────────────┘└────────────────┘ └────────────────────┘└────────────────┘
                                         │
                              ┌──────────┴──────────┐
                              │    revisionDesc     │
-                             ├──────────────────────┤
+                             ├─────────────────────┤
                              │ • Audit Log (>60)   │
-                             └──────────────────────┘
+                             └─────────────────────┘
 ```
 
 | Blocco XML | Funzione Ecdotica e Computazionale |
