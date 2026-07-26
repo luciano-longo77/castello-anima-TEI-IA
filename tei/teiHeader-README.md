@@ -55,7 +55,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
                              ┌──────────┴──────────┐
                              │    revisionDesc     │
                              ├──────────────────────┤
-                             │ • Audit Log (>70)   │
+                             │ • Audit Log (>50)   │
                              └──────────────────────┘
 ```
 
