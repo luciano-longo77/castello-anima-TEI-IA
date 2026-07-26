@@ -192,7 +192,7 @@ Le tassonomie non sono attualmente esportate in formati Linked Open Data, ma la 
 2.  Vedi la sua definizione e il dominio semantico
 3.  Torna nel testo e leggi i segmenti che lo usano
 
-### 🔹 Per sapere cosa significa `hand="ink_1"`
+### 🔹 Per sapere cosa significa `xml:id="ink_1"`
 
 1.  Vai in `handDesc`
 2.  Leggi la descrizione paleografica
