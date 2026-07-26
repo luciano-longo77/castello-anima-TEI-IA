@@ -97,12 +97,15 @@ In TEI P5 l'attributo `@ana` ha tipo **pointer** e **deve contenere URI o fragme
 L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi (whitespace), ciascuno riferito a una categoria distinta.
 
 ### Esempio (forma TEI‑compliant)
-```xml<seg ana=\"#pedagogia
+
+```xml
+<seg ana=\"#pedagogia
 #relation-mistica-attiva-meditazione
 #risk-dottrinale
 #operation-delimitazione
 #impact-high #phase-mediana\">    
-Testo annotato del manoscritto...</seg>
+Testo annotato del manoscritto...
+</seg>
 ```
 
 ### 4.1 Regole sui prefissi
