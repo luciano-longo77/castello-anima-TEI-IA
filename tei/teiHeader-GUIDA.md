@@ -5,15 +5,13 @@
 ---
 ## Indice
 
-1. Cos'è questo file  
-2. Struttura generale del teiHeader  
-3. Mappa rapida della navigazione  
-4. Che cosa contiene ogni sezione  
-5. Come cercare velocemente nel teiHeader  
-6. Come usare il teiHeader per il riuso  
-7. Esempio di percorso tipico  
-8. Riferimenti utili  
-9. Contatti
+1. #1-cosè-questo-file
+2. [Struttura generale del teiHeader]r
+3. [Mappa rapapida-della-navigazione
+4. #4-che-cosa-contiene-ogni-sezione
+5. [Come cercare velocemente nel l-teiheader
+6. [Come usare il teiHeader perer-il-riuso
+7. [Esempio di percorso tipico](#7-esempio-di-percorso-tipico9-contatti
 
 ***
 
