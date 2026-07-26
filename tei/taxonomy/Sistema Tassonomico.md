@@ -143,8 +143,7 @@ La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasver
 
 **Esempio corretto**:
 
-```
-xml
+```xml
 <seg ana=\"#phase-critical #phase-mediana #exposition-critical #risk-quietismo\">
 Testo con problematiche teologiche in sezione centrale...
 </seg>
@@ -170,10 +169,15 @@ L'indice **N–A–F** è un indicatore interpretativo composito utilizzato in f
 La formula N–A–F è calcolata come segue:
 
 **N (Necessità interpretativa)**: 
-funzione della densità di `#risk-*` presenti nel `@ana`.- Se `@ana` contiene 1+ categoria da `risk`: N = 1- Altrimenti: N = 0
+funzione della densità di `#risk-*` presenti nel `@ana`.
+- Se `@ana` contiene 1+ categoria da `risk`: N = 1
+ - Altrimenti: N = 0
 
 **A (Ambiguità semantica)**: 
-funzione della specifica categoria di rischio dottrinale.- `risk-ambiguita` → A = 1.0- `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita` → A = 0.7- Altrimenti: A = 0
+funzione della specifica categoria di rischio dottrinale.
+- `risk-ambiguita` → A = 1.0
+- `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita` → A = 0.7-
+  - Altrimenti: A = 0
 
 **F (Funzione prudenziale)**: 
 funzione della densità di `#operation-*` presenti nel `@ana`.
@@ -189,13 +193,16 @@ NAF_score = (N × 0.3) + (A × 0.4) + (F × 0.3)
 - N–A–F ≥ 0.7 → `#impact-critical` o `#impact-high`
 - 0.4 ≤ N–A–F < 0.7 → `#impact-medium`
 -  N–A–F < 0.4 → `#impact-low`
-**Nota**: il calcolo è **indicativo e non vincolante** in fase di annotazione manuale. 
+
+**Nota**: 
+il calcolo è **indicativo e non vincolante** in fase di annotazione manuale. 
 L'annotatore assegna `#impact-*` secondo il proprio giudizio interpretativo; il valore N–A–F servirà come **controllo di coerenza** in fase di revisione e validazione corpus.
 
 ## 6. Vincoli semantici cross-assiali
 Alcuni vincoli collegano categorie provenienti da assi diversi. Di seguito sono elencati i vincoli **cross-assiali** principali.
 
 ### 6.1 Corrispondenza `rischio-*` ↔ `operation-*`
+
 **Regola semantica fondamentale**: 
 Ogni categoria della tassonomia `func` che appartenga al ramo `rischio` (cioè `rischio-attenuatio`, `rischio-precisatio`, `rischio-declaratio`) presuppone logicamente una categoria corrispondente dalla tassonomia `operation`.
 
@@ -213,14 +220,21 @@ Ogni categoria della tassonomia `func` che appartenga al ramo `rischio` (cioè `
 Un segmento che riceve `#rischio-attenuatio` deve ricevere anche `#operation-attenuatio`. Analogamente per `precisatio` e `declaratio`.
 
 **Esempio corretto**:
-```
-xml<seg ana=\"#rischio-attenuatio #operation-attenuatio #risk-dottrinale #legittimazione\">    
-Glosse esplicative che smorzano formulazioni rischiose...</seg>
+```xml
+<seg
+ana=\"#rischio-attenuatio
+#operation-attenuatio
+#risk-dottrinale
+#legittimazione\">    
+Glosse esplicative che smorzano formulazioni rischiose...
+</seg>
 ```
 
 **Esempio scorretto** (manca operazione corrispondente):
-```
-xml<seg ana=\"#rischio-attenuatio #legittimazione\">
+```xml
+<seg ana=\"#rischio-attenuatio
+#legittimazione\">
+
 <!-- Errore: manca #operation-attenuatio -->
 </seg>
 ```
@@ -262,8 +276,10 @@ xpath//tei:seg[matches(@ana, '#rischio-attenuatio') and not(matches(@ana, '#oper
 Per attivare la validazione automatica (strutturale e logica) durante l'editing del corpus TEI, il file corpus deve referenziare gli schemi locali inclusi nel pacchetto:
 
 ```xml
-<?xml-model href=\"../../tei/taxonomy/schema/taxonomy-rng.rng\" type=\"application/xml\"            
-schematypens=\"http://relaxng.org/ns/structure/1.0\"?><?xml-model href=\"../../tei/taxonomy/schema/taxonomy-sch.sch\" type=\"application/xml\"            
+<?xml-model
+href=\"../../tei/taxonomy/schema/taxonomy-rng.rng\" type=\"application/xml\"            
+schematypens=\"http://relaxng.org/ns/structure/1.0\"?>
+<?xml-model href=\"../../tei/taxonomy/schema/taxonomy-sch.sch\" type=\"application/xml\"            
 schematypens=\"http://purl.oclc.org/dsdl/schematron\"?>
 ```
 (Regolare il percorso relativo `href` in base alla posizione del corpus rispetto al directory `tei/taxonomy/schema/`.)
