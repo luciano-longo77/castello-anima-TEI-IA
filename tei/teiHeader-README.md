@@ -27,7 +27,7 @@
 
 ## 1. Definizione e Perimetro del File
 
-Questo file costituisce l'architettura metatestuale e il modello ecdotico-computazionale completo (`teiHeader`) per l'edizione digitale del *Castello dell'anima* (Palermo, Biblioteca Comunale, ms. 2 Qq E 29).
+Questo file costituisce l'architettura metatestuale e il modello computazionale completo (`teiHeader`) per l'edizione digitale del *Castello dell'anima* (Palermo, Biblioteca Comunale, ms. 2 Qq E 29).
 
 Come **dispositivo di rappresentazione scientifica**, il file racchiude l'infrastruttura d'inquadramento e audit dell'edizione: metadati bibliografici e codicologici, apparato critico, sistema tassonomico, protocollo di simulazione IA e tracciabilità del workflow. Non contiene il testo del manoscritto (collocato in un file TEI separato), garantendo la netta separazione tra **testo-oggetto** e **modello di descrizione**.
 
@@ -147,10 +147,10 @@ Il tagset disciplina **46 elementi TEI**, raggruppati per macro-funzione.
 
 ## 5. Protocollo IA (`xenoData` + `projectDesc`)
 
-L'edizione integra un **modello ecdotico controfattuale** guidato da IA (Claude Sonnet 5, fallback Gemini), formalizzato nel blocco `xenoData` e nei criteri di `projectDesc`.
+L'edizione integra un **protocollo IA per la generazione di eventi controfattuali** (Claude Sonnet 5, fallback Gemini), formalizzato nel blocco `xenoData` e nei criteri di `projectDesc`.
 
 ### Codici delle Operazioni Controfattuali
-| Codice | Operazione Ecdotica |
+| Codice | Operazione |
 | :--- | :--- |
 | `-CIT` | Soppressione di una glossa o citazione dal testo |
 | `+TEXTsub` | Recupero di una cancellatura autoriale |
