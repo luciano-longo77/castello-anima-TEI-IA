@@ -72,15 +72,20 @@ Tassonomie coinvolte:
 
 Descrive **dove** un segmento agisce nel discorso e **con quale forza interpretativa**. Tassonomie coinvolte:
 *   `impact` — impatto interpretativo;
-*   `phase` — fase discorsiva.## 3. Tassonomie operative (core)
-```xml<classDecl>  <taxonomy xml:id=\"func\"/>
+*   `phase` — fase discorsiva.
+
+  ##   3. Tassonomie operative (core)
+```xml
+<classDecl>
+<taxonomy xml:id=\"func\"/>
 <taxonomy xml:id=\"relation\"/>
 <taxonomy xml:id=\"impact\"/>
 <taxonomy xml:id=\"risk\"/>
 <taxonomy xml:id=\"mystic_state\"/>
 <taxonomy xml:id=\"operation\"/>
 <taxonomy xml:id=\"exposition\"/>
-<taxonomy xml:id=\"phase\"/></classDecl>
+<taxonomy xml:id=\"phase\"/>
+</classDecl>
 ```
 
 **Elenco completo dei valori ammessi**
