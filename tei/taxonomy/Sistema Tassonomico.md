@@ -146,7 +146,8 @@ La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasver
 ```
 xml
 <seg ana=\"#phase-critical #phase-mediana #exposition-critical #risk-quietismo\">
-Testo con problematiche teologiche in sezione centrale...</seg>
+Testo con problematiche teologiche in sezione centrale...
+</seg>
 ```
 
 **Esempio scorretto** (manca fase posizionale):
