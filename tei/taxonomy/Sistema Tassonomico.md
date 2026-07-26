@@ -79,18 +79,29 @@ Descrive **dove** un segmento agisce nel discorso e **con quale forza interpreta
 <taxonomy xml:id=\"mystic_state\"/>
 <taxonomy xml:id=\"operation\"/>
 <taxonomy xml:id=\"exposition\"/>
-<taxonomy xml:id=\"phase\"/></classDecl>```
+<taxonomy xml:id=\"phase\"/></classDecl>
+```
 
 **Elenco completo dei valori ammessi**
-L'elenco delle `<category>` per ciascuna tassonomia è definito nel file **`./tassonomia-gh.xml`**, che costituisce la **fonte normativa primaria** dei valori annotativi.
+L'elenco delle `<category>` per ciascuna tassonomia è definito nel file 
+**`./tassonomia-gh.xml`**, che costituisce la **fonte normativa primaria** dei valori annotativi.
 
 ## 4. Uso dell'attributo `@ana`
 In TEI P5 l'attributo `@ana` ha tipo **pointer** e **deve contenere URI o fragment identifier** che puntano alle categorie tassonomiche (es. riferimenti interni `#xml-id`).
-L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi (whitespace), ciascuno riferito a una categoria distinta.### Esempio (forma TEI‑compliant)
-```xml<seg ana=\"#pedagogia #relation-mistica-attiva-meditazione #risk-dottrinale #operation-delimitazione #impact-high #phase-mediana\">    Testo annotato del manoscritto...</seg>```
+L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi (whitespace), ciascuno riferito a una categoria distinta.
+
+### Esempio (forma TEI‑compliant)
+```xml<seg ana=\"#pedagogia
+#relation-mistica-attiva-meditazione
+#risk-dottrinale
+#operation-delimitazione
+#impact-high #phase-mediana\">    
+Testo annotato del manoscritto...</seg>
+```
 
 ### 4.1 Regole sui prefissi
 **Regola generale**: per tutte le tassonomie, le categorie che portano il trattino (`-`) devono iniziare con il prefisso della tassonomia radice a cui appartengono.
+
 **Esempio**:
 - Tassonomia `risk` 
 → categorie come `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita`, `risk-ambiguita` (prefisso `risk-` obbligatorio)- Tassonomia `operation` 
@@ -102,6 +113,7 @@ L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi
 **Eccezione**: l'asse `func` è **esente dal vincolo di prefisso tassonomia**. 
 Le sue categorie di primo livello non portano il prefisso `func-`:
 - ✅ `legittimazione`, `pedagogia`, `rischio`, `ethos` (NO prefisso `func-`).
+
 Le loro sottocategorie seguono la gerarchia naturale e il prefisso della categoria madre:
 - ✅ `legittimazione-biblica`, `legittimazione-liturgica`, `legittimazione-tradizione`
 - ✅ `pedagogia-introduzione`, `pedagogia-discernimento`, `pedagogia-esemplificazione`
@@ -121,12 +133,19 @@ La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasver
 - `#phase-conclusive` (se il passaggio critico si trova in conclusione)
 
 **Esempio corretto**:
-```xml<seg ana=\"#phase-critical #phase-mediana #exposition-critical #risk-quietismo\">    Testo con problematiche teologiche in sezione centrale...</seg>```
+```
+xml<seg ana=\"#phase-critical #phase-mediana #exposition-critical #risk-quietismo\">
+Testo con problematiche teologiche in sezione centrale...</seg>
+```
 
 **Esempio scorretto** (manca fase posizionale):
-```xml<seg ana=\"#phase-critical #exposition-critical #risk-quietismo\">    <!-- Errore: manca fase posizionale (introduction/mediana/conclusive) --></seg>```
+```xml<seg ana=\"#phase-critical #exposition-critical #risk-quietismo\">    
+<!-- Errore: manca fase posizionale (introduction/mediana/conclusive) -->
+</seg>
+```
 
-**Implementazione**: il vincolo è **gestito in fase editoriale** (prosa normativa). Un futuro constraint Schematron può essere aggiunto per enforcing automatico (vedi §8.3).
+**Implementazione**: il vincolo è **gestito in fase editoriale** (prosa normativa). 
+Un futuro constraint Schematron può essere aggiunto per enforcing automatico (vedi §8.3).
 
 ## 5. Indice composito N–A–F
 L'indice **N–A–F** è un indicatore interpretativo composito utilizzato in fase analitica per quantificare l'impatto semantico di una occorrenza annotata.*   
@@ -158,7 +177,8 @@ Alcuni vincoli collegano categorie provenienti da assi diversi. Di seguito sono 
 
 ### 6.1 Corrispondenza `rischio-*` ↔ `operation-*`
 **Regola semantica fondamentale**: 
-Ogni categoria della tassonomia `func` che appartenga al ramo `rischio` (cioè `rischio-attenuatio`, `rischio-precisatio`, `rischio-declaratio`) presuppone logicamente una categoria corrispondente dalla tassonomia `operation`.| Categoria `func` | Categoria `operation` corrispondente ||-----------------|-------------------------------------|| `rischio-attenuatio` | `operation-attenuatio` || `rischio-precisatio` | `operation-precisatio` || `rischio-declaratio` | `operation-declaratio` |
+Ogni categoria della tassonomia `func` che appartenga al ramo `rischio` (cioè `rischio-attenuatio`, `rischio-precisatio`, `rischio-declaratio`) presuppone logicamente una categoria corrispondente dalla tassonomia `operation`.
+| Categoria `func` | Categoria `operation` corrispondente ||-----------------|-------------------------------------|| `rischio-attenuatio` | `operation-attenuatio` || `rischio-precisatio` | `operation-precisatio` || `rischio-declaratio` | `operation-declaratio` |
 
 **Significato**:
 - `rischio-attenuatio` descrive la **strategia autoriale** di mitigazione di un enunciato rischioso (perché l'autrice interviene)
