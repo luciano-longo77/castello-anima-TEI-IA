@@ -1,6 +1,19 @@
-# 📘 Guida alla Navigazione del *teiHeader*
+# Guida alla Navigazione del *teiHeader*
 
 ### Edizione digitale TEI + IA — *Castello dell'anima*
+
+---
+## Indice
+
+1. Cos'è questo file  
+2. Struttura generale del teiHeader  
+3. Mappa rapida della navigazione  
+4. Che cosa contiene ogni sezione  
+5. Come cercare velocemente nel teiHeader  
+6. Come usare il teiHeader per il riuso  
+7. Esempio di percorso tipico  
+8. Riferimenti utili  
+9. Contatti
 
 ***
 
