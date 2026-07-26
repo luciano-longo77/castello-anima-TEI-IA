@@ -113,9 +113,9 @@ Testo annotato del manoscritto...
 
 **Esempio**:
 - Tassonomia `risk` 
-→ categorie come `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita`, `risk-ambiguita` (prefisso `risk-` obbligatorio)- Tassonomia `operation` 
+→ categorie come `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita`, `risk-ambiguita` (prefisso `risk-` obbligatorio)
+- Tassonomia `operation` 
 → categorie come `operation-delimitazione`, `operation-attenuatio`, `operation-precisatio`, `operation-declaratio`, `operation-riequilibrio` (prefisso `operation-` obbligatorio)
-
 - Tassonomia `exposition` 
 → categorie come `exposition-low`, `exposition-medium`, `exposition-high`, `exposition-critical` (prefisso `exposition-` obbligatorio)
 
