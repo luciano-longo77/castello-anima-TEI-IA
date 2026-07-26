@@ -1,12 +1,12 @@
 # 📘 Guida alla Navigazione del *teiHeader*
 
-### Edizione digitale TEI + IA — *Castello dell’anima*
+### Edizione digitale TEI + IA — *Castello dell'anima*
 
 ***
 
-## ✅ 1. Cos’è questo file
+## ✅ 1. Cos'è questo file
 
-Questo documento è una **guida operativa** per orientarsi all’interno del *teiHeader* dell’edizione digitale del *Castello dell’anima*.  
+Questo documento è una **guida operativa** per orientarsi all'interno del *teiHeader* dell'edizione digitale del *Castello dell'anima*.  
 Serve a:
 
 *   capire come è organizzata la struttura
@@ -18,11 +18,12 @@ Serve a:
 
 ## ✅ 2. Struttura generale del teiHeader
 
-Il teiHeader è composto da quattro grandi blocchi:
+Il teiHeader è composto da cinque blocchi diretti:
 
 *   **`<fileDesc>`** — Identità, provenienza, responsabilità
-*   **`<encodingDesc>`** — Metodo editoriale, tassonomie, pipeline IA
+*   **`<encodingDesc>`** — Metodo editoriale, tassonomie (`classDecl`)
 *   **`<profileDesc>`** — Lingue, persone, contesto storico
+*   **`<xenoData>`** — Pipeline IA (specifica machine-readable) e puntatore METS; è un blocco a sé, non annidato in `encodingDesc`
 *   **`<revisionDesc>`** — Log completo della lavorazione
 
 ***
@@ -33,10 +34,8 @@ Il teiHeader è composto da quattro grandi blocchi:
 
 Vai in:
 
-*   `fileDesc`
-*   `sourceDesc`
-*   `handDesc`
-*   `listWit`
+*   `fileDesc` → `sourceDesc` → `msDesc` → `physDesc` → `handDesc`
+*   `fileDesc` → `sourceDesc` → `listWit`
 
 ### 🔹 **Per capire i criteri editoriali**
 
@@ -51,7 +50,7 @@ Vai in:
 
 Vai in:
 
-*   `classDecl`
+*   `encodingDesc` → `classDecl`
 *   ogni `<taxonomy xml:id="...">`
 
 ### 🔹 **Per ricostruire il workflow editoriale**
@@ -71,7 +70,7 @@ Vai in:
 
 ## ✅ 4. Che cosa contiene ogni sezione
 
-### ### **`<fileDesc>`**
+### **`<fileDesc>`**
 
 *   informazioni su titolo, autore, editor
 *   provenienza del manoscritto
@@ -83,8 +82,7 @@ Vai in:
 *   principi di trascrizione
 *   apparato critico in *parallel segmentation*
 *   definizione delle mani e dei layer
-*   pipeline IA documentata (xenoData)
-*   tassonomie utilizzate nell’attributo `@ana`
+*   tassonomie utilizzate nell'attributo `@ana` (in `classDecl`)
 
 ### **`<profileDesc>`**
 
@@ -93,6 +91,11 @@ Vai in:
 *   lista delle persone coinvolte
 *   istituzioni religiose e inquisitoriali
 
+### **`<xenoData>`**
+
+*   specifica machine-readable della pipeline IA (modello, vincoli, operazioni controfattuali, audit trail)
+*   puntatore METS
+
 ### **`<revisionDesc>`**
 
 *   lista cronologica delle operazioni editoriali
@@ -100,14 +103,10 @@ Vai in:
 *   validazioni
 *   note di correzione
 
-### **`<classDecl>`**
+### **`<classDecl>`** (dentro `encodingDesc`)
 
-*   il modello concettuale dell’intera edizione
-*   funzioni retoriche
-*   stati mistici
-*   categorie di rischio
-*   posizioni materiali
-*   fasi discorsive
+*   il modello concettuale dell'intera edizione, articolato in otto assi interpretativi: funzioni retoriche (`func`), rischio dottrinale (`risk`), impatto interpretativo (`impact`), stati mistici (`mystic_state`), operazioni discorsive (`operation`), livelli di esposizione (`exposition`), fasi discorsive (`phase`), relazioni semantiche (`relation`)
+*   più due assi di processo editoriale (`fase`, `workflow`)
 
 ***
 
@@ -129,7 +128,7 @@ Controlla:
 
 Controlla:
 
-    listWit
+    fileDesc → sourceDesc → listWit
 
 ### 🔍 *Cerchi cosa indica un certo xml:id?*
 
@@ -137,19 +136,19 @@ Cerca:
 
     xml:id="..."
 
-### 🔍 *Cerchi l’elenco delle mani scriventi?*
+### 🔍 *Cerchi l'elenco delle mani scriventi?*
 
 Controlla:
 
-    handDesc
+    fileDesc → sourceDesc → msDesc → physDesc → handDesc
 
-### 🔍 *Cerchi come è stata gestita l’IA?*
+### 🔍 *Cerchi come è stata gestita l'IA?*
 
 Controlla:
 
-    xenoData
-    projectDesc
-    revisionDesc (scenari)
+    xenoData (specifica machine-readable)
+    projectDesc (descrizione discorsiva)
+    revisionDesc (scenari applicati)
 
 ***
 
@@ -157,20 +156,15 @@ Controlla:
 
 ### ✅ *Importare le tassonomie*
 
-Puoi copiare direttamente l’intero `<classDecl>` nel tuo progetto.
+Puoi copiare direttamente l'intero `<classDecl>` nel tuo progetto.
 
 ### ✅ *Replicare il metodo editoriale*
 
 La sezione `<encodingDesc>` è pensata per essere usata come modello.
 
-### ✅ *Estrarre l’ontologia del testo*
+### ✅ *Estrarre l'ontologia del testo*
 
-Le tassonomie sono pronte per essere esportate in:
-
-*   SKOS
-*   RDF
-*   JSON-LD
-*   OntoLex-Lemon
+Le tassonomie non sono attualmente esportate in formati Linked Open Data, ma la loro struttura (categorie con `xml:id` stabile e `catDesc`) le rende adattabili, con lavoro aggiuntivo, a formati come SKOS, RDF, JSON-LD o OntoLex-Lemon.
 
 ### ✅ *Creare documentazione FAIR*
 
@@ -180,9 +174,9 @@ Le tassonomie sono pronte per essere esportate in:
 
 ## ✅ 7. Esempio di percorso tipico
 
-### 🔹 Per capire “cos’è risk:risk-dottrinale”
+### 🔹 Per capire "cos'è `risk-dottrinale`"
 
-1.  Cerca `risk-dottrinale` in `classDecl`
+1.  Cerca `risk-dottrinale` in `classDecl` (tassonomia `risk`)
 2.  Vedi la sua definizione e il dominio semantico
 3.  Torna nel testo e leggi i segmenti che lo usano
 
@@ -205,11 +199,11 @@ Per una completa interoperabilità:
 
 *   TEI P5 Guidelines
 *   ODD customization
-*   Modello TEI + IA documentato in `encodingDesc`
+*   Modello TEI + IA documentato in `xenoData` e `projectDesc`
 *   Tassonomie descritte in `classDecl`
 
 ***
 
 ## ✅ 9. Contatti
 
-Per assistenza, consultare la sezione “Contatti” nel README principale.
+Per assistenza, consultare la sezione "Contatti" nel README principale.
