@@ -99,12 +99,16 @@ L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi
 ### Esempio (forma TEI‑compliant)
 
 ```xml
-<seg ana=\"#pedagogia
+<seg
+ana=\
+"#pedagogia
 #relation-mistica-attiva-meditazione
 #risk-dottrinale
 #operation-delimitazione
 #impact-high #phase-mediana\">    
+
 Testo annotato del manoscritto...
+
 </seg>
 ```
 
@@ -144,15 +148,28 @@ La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasver
 **Esempio corretto**:
 
 ```xml
-<seg ana=\"#phase-critical #phase-mediana #exposition-critical #risk-quietismo\">
+<seg
+ana=\
+"#phase-critical
+#phase-mediana
+#exposition-critical
+#risk-quietismo\">
+
 Testo con problematiche teologiche in sezione centrale...
+
 </seg>
 ```
 
 **Esempio scorretto** (manca fase posizionale):
 ```xml
-<seg ana=\"#phase-critical #exposition-critical #risk-quietismo\">    
+<seg
+ana=\
+"#phase-critical
+#exposition-critical
+#risk-quietismo\">
+   
 <!-- Errore: manca fase posizionale (introduction/mediana/conclusive) -->
+
 </seg>
 ```
 
@@ -190,9 +207,9 @@ NAF_score = (N × 0.3) + (A × 0.4) + (F × 0.3)
 ```
 
 **Mapping a categorie `#impact-*`**:
-- N–A–F ≥ 0.7 → `#impact-critical` o `#impact-high`
-- 0.4 ≤ N–A–F < 0.7 → `#impact-medium`
--  N–A–F < 0.4 → `#impact-low`
+- N–A–F ≥ 0.7 → `#impact-critical` o `#impact-high`0.4 ≤
+- N–A–F < 0.7 → `#impact-medium`
+- N–A–F < 0.4 → `#impact-low`
 
 **Nota**: 
 il calcolo è **indicativo e non vincolante** in fase di annotazione manuale. 
@@ -206,11 +223,11 @@ Alcuni vincoli collegano categorie provenienti da assi diversi. Di seguito sono 
 **Regola semantica fondamentale**: 
 Ogni categoria della tassonomia `func` che appartenga al ramo `rischio` (cioè `rischio-attenuatio`, `rischio-precisatio`, `rischio-declaratio`) presuppone logicamente una categoria corrispondente dalla tassonomia `operation`.
 
-| Categoria `func`     | Categoria `operation` corrispondente |
-|----------------------|--------------------------------------|
-| `rischio-attenuatio` | `operation-attenuatio`               |
-| `rischio-precisatio` | `operation-precisatio`               |
-| `rischio-declaratio` | `operation-declaratio`               |
+| Categoria `func`     | Categoria `operation` |
+|----------------------|-----------------------|
+| `rischio-attenuatio` | `operation-attenuatio`|
+| `rischio-precisatio` | `operation-precisatio`|
+| `rischio-declaratio` | `operation-declaratio`|
 
 **Significato**:
 - `rischio-attenuatio` descrive la **strategia autoriale** di mitigazione di un enunciato rischioso (perché l'autrice interviene)
