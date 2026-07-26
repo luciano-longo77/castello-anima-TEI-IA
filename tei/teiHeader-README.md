@@ -50,7 +50,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 ├──────────────────┤├─────────────────┤ ├────────────────────┤├────────────────┤
 │ • Titolo & Auth  ││ • Criteri Ecd.  │ │ • Sociolinguistica ││ • JSON IA      │
 │ • Codicologia    ││ • classDecl(10) │ │ • listPerson       ││ • METS Link    │
-│ • Apparati       ││ • tagsDecl (34) │ │ • listOrg          ││                │
+│ • Apparati       ││ • tagsDecl (46) │ │ • listOrg          ││                │
 └──────────────────┘└─────────────────┘ └────────────────────┘└────────────────┘
                                         │
                              ┌──────────┴──────────┐
@@ -66,7 +66,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 | **`encodingDesc`** | **Modello formale ed ecdotico.** Contiene l'abstract del modello, i criteri editoriali (`projectDesc`, `refsDecl`, `editorialDecl`), il tagset dichiarato (`tagsDecl`) e le tassonomie (`classDecl`). |
 | **`profileDesc`** | **Inquadramento storico e sociolinguistico.** Traccia il contesto di produzione del testo mistico secentesco: analisi sociolinguistica della lingua, prosopografia (`listPerson`) e istituzioni (`listOrg`: Carmelo, Inquisizione). |
 | **`xenoData` (×2)** | **Dati non-TEI e interoperabilità.** Ospita la specifica JSON del protocollo di simulazione IA e il puntatore ai metadati METS. |
-| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>70 voci) che traccia ogni modifica, revisione e decisione editoriale. |
+| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>60 voci) che traccia ogni modifica, revisione e decisione editoriale. |
 
 ---
 
@@ -99,7 +99,7 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
 
 ## 4. Dichiarazione del Tagset (`tagsDecl`)
 
-Il tagset disciplina **34 elementi TEI**, raggruppati per macro-funzione.
+Il tagset disciplina **46 elementi TEI**, raggruppati per macro-funzione.
 
 ### A. Struttura Core e Contesto
 | Elemento | Uso Ecdotico / Computazionale |
