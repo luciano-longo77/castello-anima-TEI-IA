@@ -1,5 +1,5 @@
 # Sistema Tassonomico del modello TEI interpretativo
-**Castello dell'anima – Teresa di San Geronimo
+**Castello dell'anima – Teresa di San Geronimo**
 
 **Questo documento descrive in modo **formale, normativo e vincolante** il sistema di tassonomie adottato per l'annotazione semantica del manoscritto autografo *Castello dell'anima* (Palermo, BCP, ms. 2 Qq E 29, sec. XVII ex.). Il modello è progettato per rappresentare in modo **computabile**, **interrogabile** e **filologicamente auditabile** la dinamica prudenziale, retorica e dottrinale della scrittura mistica tardomoderna.Il sistema tassonomico qui descritto costituisce il **core semantico** dell'edizione digitale e governa l'uso dell'attributo `@ana` nel corpus TEI.
 
@@ -29,12 +29,14 @@
 
 ## 1. Principi generali del modello
 Il sistema tassonomico si fonda sui seguenti principi strutturali: 
-*Ogni valore dell'attributo `@ana` fa riferimento in modo **esplicito e univoco** a una categoria dichiarata in una tassonomia all'interno di `classDecl`.
-*   Ogni tassonomia definisce **un asse interpretativo distinto**, non riducibile agli altri.
-*   Le tassonomie sono **ortogonali ma non indipendenti**: la loro combinazione è regolata da vincoli interpretativi espliciti, alcuni **enforced da Schematron** (automatico) e altri **gestiti in fase editoriale** (manuale).
+* Ogni valore dell'attributo `@ana` fa riferimento in modo **esplicito e univoco** a una categoria dichiarata in una tassonomia all'interno di `classDecl`.
+* Ogni tassonomia definisce **un asse interpretativo distinto**, non riducibile agli altri.
+* Le tassonomie sono **ortogonali ma non indipendenti**: la loro combinazione è regolata da vincoli interpretativi espliciti, alcuni **enforced da Schematron** (automatico) e altri **gestiti in fase editoriale** (manuale).
 
 Non è ammessa l'introduzione di valori annotativi che non siano dichiarati nelle tassonomie. Il modello non è ontologico in senso rigido, ma costituisce una **ontologia interpretativa leggera**, progettata per garantire: 
-*interrogabilità computazionale (XPath, XQuery);*   trasparenza metodologica; auditabilità filologica e riproducibilità dell'annotazione.
+* interrogabilità computazionale (XPath, XQuery);
+* trasparenza metodologica;
+* auditabilità filologica e riproducibilità dell'annotazione.
 
 ### 1.1 Stack di Validazione (componenti del pacchetto)
 L'integrità del sistema è garantita da una catena di validazione a tre livelli inclusa nella repository:
@@ -43,7 +45,10 @@ L'integrità del sistema è garantita da una catena di validazione a tre livelli
 2.  **Struttura (Relax NG):** validazione grammaticale e controllo di integrità strutturale tramite 
 `tei/taxonomy/schema/taxonomy-rng.rng` (generato da ODD).
 3.  **Logica (Schematron):** vincoli semantici avanzati e coerenza dei prefissi/relazioni tramite 
-`tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding=\"xslt2\").**Flusso di generazione**: `taxonomy.odd` → Roma (oXygen) → `taxonomy-rng.rng` + `taxonomy-sch.sch`.
+`tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding=\"xslt2\").
+
+**Flusso di generazione**: 
+`taxonomy.odd` → Roma (oXygen) → `taxonomy-rng.rng` + `taxonomy-sch.sch`.
 
 ## 2. Assi interpretativi del sistema
 
@@ -67,7 +72,14 @@ Tassonomie coinvolte:
 Descrive **dove** un segmento agisce nel discorso e **con quale forza interpretativa**. Tassonomie coinvolte:
 *   `impact` — impatto interpretativo;
 *   `phase` — fase discorsiva.## 3. Tassonomie operative (core)
-```xml<classDecl>  <taxonomy xml:id=\"func\"/>  <taxonomy xml:id=\"relation\"/>  <taxonomy xml:id=\"impact\"/>  <taxonomy xml:id=\"risk\"/>  <taxonomy xml:id=\"mystic_state\"/>  <taxonomy xml:id=\"operation\"/>  <taxonomy xml:id=\"exposition\"/>  <taxonomy xml:id=\"phase\"/></classDecl>```
+```xml<classDecl>  <taxonomy xml:id=\"func\"/>
+<taxonomy xml:id=\"relation\"/>
+<taxonomy xml:id=\"impact\"/>
+<taxonomy xml:id=\"risk\"/>
+<taxonomy xml:id=\"mystic_state\"/>
+<taxonomy xml:id=\"operation\"/>
+<taxonomy xml:id=\"exposition\"/>
+<taxonomy xml:id=\"phase\"/></classDecl>```
 
 **Elenco completo dei valori ammessi**
 L'elenco delle `<category>` per ciascuna tassonomia è definito nel file **`./tassonomia-gh.xml`**, che costituisce la **fonte normativa primaria** dei valori annotativi.
