@@ -3,15 +3,17 @@
 ### Edizione digitale TEI + IA — *Castello dell'anima*
 
 ---
-## Indice
+## 📘 Indice della Guida al teiHeader
 
-1. #1-cosè-questo-file
-2. [Struttura generale del teiHeader]r
-3. [Mappa rapapida-della-navigazione
-4. #4-che-cosa-contiene-ogni-sezione
-5. [Come cercare velocemente nel l-teiheader
-6. [Come usare il teiHeader perer-il-riuso
-7. [Esempio di percorso tipico](#7-esempio-di-percorso-tipico9-contatti
+1. [Cos'è questo file](tei/teiHeader-GUIDA.md#-1-cosè-questo-file)
+2. [Struttura generale del teiHeader](tei/teiHeader-GUIDA.md#-2-struttura-generale-del-teiheader)
+3. [Mappa rapida della navigazione](tei/teiHeader-GUIDA.md#-3-mappa-rapida-della-navigazione)
+4. [Che cosa contiene ogni sezione](tei/teiHeader-GUIDA.md#-4-che-cosa-contiene-ogni-sezione)
+5. [Come cercare velocemente nel teiHeader](tei/teiHeader-GUIDA.md#-5-come-cercare-velocemente-nel-teiheader)
+6. [Come usare il teiHeader per il riuso](tei/teiHeader-GUIDA.md#-6-come-usare-il-teiheader-per-il-riuso)
+7. [Esempio di percorso tipico](tei/teiHeader-GUIDA.md#-7-esempio-di-percorso-tipico)
+8. [Riferimenti utili](tei/teiHeader-GUIDA.md#-8-riferimenti-utili)
+9. [Contatti](tei/teiHeader-GUIDA.md#-9-contatti)
 
 ***
 
