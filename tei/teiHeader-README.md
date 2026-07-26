@@ -1,98 +1,184 @@
-# Castello dell'anima — Edizione Digitale TEI + IA (teiHeader)
+# Castello dell'anima — teiHeader dell'edizione digitale TEI + IA
 
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
-**Versione**: working draft — 25 luglio 2026  
-**Licenza**: CC BY 4.0
+**Licenza**: CC BY 4.0  
+**Stato**: Working Draft (25 luglio 2026)  
+
+---
+## Indice
+
+1. [Definizione e Perimetro del File](#1-definizione-e-perimetro-del-file)
+2. [Architettura dei Blocchi Metatestuali](#2-architettura-dei-blocchi-metatestuali)
+3. [Sistema Tassonomico (`classDecl`)](#3-sistema-tassonomico-classdecl)
+4. [Dichiarazione del Tagset (`tagsDecl`)](#4-dichiarazione-del-tagset-tagsdecl)
+   - A. [Struttura Core e Contesto](#a-struttura-core-e-contesto)
+   - B. [Descrizione del Manoscritto](#b-descrizione-del-manoscritto)
+   - C. [Trascrizione e Correzioni Autoriali](#c-trascrizione-e-correzioni-autoriali)
+   - D. [Apparato Critico e Annotazione Analitica](#d-apparato-critico-e-annotazione-analitica)
+   - E. [Collegamenti e Citazioni](#e-collegamenti-e-citazioni)
+   - F. [Entità Nominate e Note](#f-entità-nominate-e-note)
+5. [Protocollo IA (`xenoData` + `projectDesc`)](#5-protocollo-ia-xenodata--projectdesc)
+6. [Validazione e Qualità del Dato](#6-validazione-e-qualità-del-dato)
+7. [Citazione](#7-citazione)
+8. [Contatti](#8-contatti)
 
 ---
 
-## 1. Cos'è, e cosa non è, questo modello
+## 1. Definizione e Perimetro del File
 
-Questo `teiHeader` non è un contenitore di metadati descrittivi nel senso tradizionale. È l'infrastruttura di governo di un'edizione che tratta l'annotazione interpretativa come **dato di prima classe**, non come commento a margine del testo — e che rende esplicito, tracciabile e verificabile l'apporto di un protocollo IA-assistito all'interno del processo editoriale, invece di trattarlo come un dettaglio tecnico invisibile.
+Questo file costituisce l'architettura metatestuale e il modello ecdotico-computazionale completo (`teiHeader`) per l'edizione digitale del *Castello dell'anima* (Palermo, Biblioteca Comunale, ms. 2 Qq E 29).
 
-Tre scelte architetturali distinguono questo modello da un `teiHeader` descrittivo standard:
-
-- **Separazione categoriale tra interpretazione e processo.** Il `classDecl` non contiene un'unica tassonomia indifferenziata, ma due famiglie concettualmente distinte: otto assi interpretativi che governano la lettura del testo (§3), e due assi di provenienza editoriale (`fase`, `workflow`) che documentano *come* l'edizione è stata prodotta, incluso l'apporto dell'IA. Le due famiglie non si mescolano mai nei riferimenti `@ana` — è una scelta deliberata, verificata Schematron alla mano, non solo dichiarata in prosa.
-- **Auditabilità del protocollo IA a doppio livello.** La stessa logica operativa — tre procedure controfattuali, verifica *expert-in-the-loop*, misurazione su dimensioni esplicite — è espressa sia in prosa filologica (`projectDesc`) sia in specifica machine-readable (`xenoData`). Chi consulta il file può verificare che le due descrizioni coincidano, non deve fidarsi di una dichiarazione unica non controllabile.
-- **Il rischio dottrinale come categoria di analisi, non di giudizio.** La tassonomia `risk` non etichetta il testo come "sospetto"; modella le condizioni storiche di esposizione a cui la scrivente doveva rispondere, distinte dalle strategie retoriche con cui vi rispondeva (`func`, `operation`). È una distinzione metodologica, non solo terminologica: separa il fenomeno storico dall'azione autoriale su di esso.
+Come **dispositivo di rappresentazione scientifica**, il file racchiude l'infrastruttura d'inquadramento e audit dell'edizione: metadati bibliografici e codicologici, apparato critico, sistema tassonomico, protocollo di simulazione IA e tracciabilità del workflow. Non contiene il testo del manoscritto (collocato in un file TEI separato), garantendo la netta separazione tra **testo-oggetto** e **modello di descrizione**.
 
 ---
 
-## 2. Il protocollo TEI + IA
+## 2. Architettura dei Blocchi Metatestuali
 
-Il cuore metodologicamente più originale del progetto è il trattamento del protocollo IA come **oggetto filologico verificabile**, non come funzionalità accessoria.
+Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantire il rispetto dei principi **FAIR** (*Findable, Accessible, Interoperable, Reusable*).
 
-### 2.1 Le tre procedure controfattuali
+```
+                  ┌─────────────────────────────────────────┐
+                  │                teiHeader                │
+                  └────────────────────┬────────────────────┘
+                                        │
+     ┌──────────────────┬──────────────┴───────┬──────────────────┐
+     │                   │                      │                  │
+┌────┴────────────┐┌─────┴───────────┐ ┌────────┴──────────┐┌──────┴─────────┐
+│    fileDesc      ││  encodingDesc   │ │   profileDesc      ││   xenoData     │
+├──────────────────┤├─────────────────┤ ├────────────────────┤├────────────────┤
+│ • Titolo & Auth  ││ • Criteri Ecd.  │ │ • Sociolinguistica ││ • JSON IA      │
+│ • Codicologia    ││ • classDecl(10) │ │ • listPerson       ││ • METS Link    │
+│ • Apparati       ││ • tagsDecl (46) │ │ • listOrg          ││                │
+└──────────────────┘└─────────────────┘ └────────────────────┘└────────────────┘
+                                        │
+                             ┌──────────┴──────────┐
+                             │    revisionDesc     │
+                             ├──────────────────────┤
+                             │ • Audit Log (>70)   │
+                             └──────────────────────┘
+```
 
-| Codice | Procedura | Funzione critica |
-|---|---|---|
-| `-CIT` | Rimozione del dispositivo testuale (glossa/citazione) | Osservare l'effetto della sua assenza |
-| `+TEXTsub` | Recupero di una cancellatura autoriale | Rendere visibile un livello genetico non altrimenti accessibile |
-| `+CIT` | Integrazione per esteso di una citazione richiamata ma non riportata | Esplicitare un rimando lasciato implicito dall'autrice |
-
-Ogni evento generato è sottoposto a **verifica expert-in-the-loop** — non è mai incorporato nel testo stabilito, ma archiviato come lettura alternativa (`<app>/<lem>/<rdg>`) e misurato su tre dimensioni dichiarate esplicitamente: chiarezza argomentativa, coesione locale, stabilità dottrinale percepita (D1–D3).
-
-### 2.2 Perché due livelli di descrizione
-
-Il protocollo è documentato sia in `projectDesc` (prosa filologica, motivazione metodologica) sia in `xenoData` (specifica JSON: modello IA, vincoli linguistici, parametri di generazione, campi obbligatori dell'audit trail). Questo non è ridondanza: è la condizione perché un revisore esterno possa verificare che la descrizione discorsiva del metodo e il suo comportamento macchina-leggibile **coincidano**, invece di dover fidarsi dell'una o dell'altra.
-
-### 2.3 Cosa il protocollo esplicitamente non fa
-
-Nessun evento controfattuale modifica il testo base. Nessuna operazione IA interviene senza revisione umana dichiarata. I vincoli linguistici (`historical_style`, `forbidden: modernisms/anachronisms/semantic elaborations`) sono dichiarati come parametri verificabili, non come intenzioni generiche.
-
----
-
-## 3. Il sistema tassonomico
-
-Otto assi interpretativi, organizzati in tre livelli complementari (dichiarati esplicitamente in `projectDesc`):
-
-- **Fenomenologico** — cosa il testo tematizza: `func` (funzioni retoriche), `mystic_state` (stati mistici), `relation` (relazioni intertestuali e fenomenologiche)
-- **Prudenziale** — come il testo gestisce il rischio: `risk` (condizioni di esposizione dottrinale), `operation` (strategie discorsive di mitigazione), `exposition` (grado di esplicitazione)
-- **Strutturale** — dove e con quale peso: `impact` (rilevanza interpretativa), `phase` (posizione nella progressione discorsiva)
-
-A questi si affiancano due tassonomie di processo, **non interpretative**: `fase` (42 categorie, fasi di lavoro editoriale) e `workflow` (4 categorie, esclusivamente gli scenari controfattuali IA). La distinzione non è cosmetica: nessuna categoria di `workflow` descrive un'attività editoriale generica, e nessuna categoria di `fase` descrive un evento controfattuale — la separazione è stata verificata categoria per categoria, non solo dichiarata.
-
-Ogni categoria richiede una `catDesc` non vuota e un `xml:id` che rispetta il prefisso della tassonomia radice: vincoli imposti non editorialmente ma meccanicamente, tramite Schematron.
+| Blocco XML | Funzione Ecdotica e Computazionale |
+| :--- | :--- |
+| **`fileDesc`** | **Descrizione bibliografica e materiale.** Include dati di titolarità, licenza, 6 tipologie di note critiche, descrizione codicologica analitica (mani, inchiostri, layout), bibliografia e testimoni. |
+| **`encodingDesc`** | **Modello formale ed ecdotico.** Contiene l'abstract del modello, i criteri editoriali (`projectDesc`, `refsDecl`, `editorialDecl`), il tagset dichiarato (`tagsDecl`) e le tassonomie (`classDecl`). |
+| **`profileDesc`** | **Inquadramento storico e sociolinguistico.** Traccia il contesto di produzione del testo mistico secentesco: analisi sociolinguistica della lingua, prosopografia (`listPerson`) e istituzioni (`listOrg`: Carmelo, Inquisizione). |
+| **`xenoData` (×2)** | **Dati non-TEI e interoperabilità.** Ospita la specifica JSON del protocollo di simulazione IA e il puntatore ai metadati METS. |
+| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>70 voci) che traccia ogni modifica, revisione e decisione editoriale. |
 
 ---
 
-## 4. Validazione
+## 3. Sistema Tassonomico (`classDecl`)
 
-Il modello è verificato, non solo dichiarato conforme:
+Il sistema si fonda su **10 tassonomie**, suddivise in due famiglie distinte per evitare sovrapposizioni tra il piano ermeneutico sul testo e il piano gestionale del lavoro editoriale.
 
-- **Struttura**: RelaxNG (via ODD di progetto)
-- **Coerenza semantica**: 4 regole ISO Schematron — presenza e non-vacuità di `catDesc`, coerenza del prefisso `xml:id` rispetto alla tassonomia radice (verificata contro l'antenato, non il padre immediato — permette a nodi-contenitore come `risk-dottrinale` di avere figli con lo stesso prefisso), unicità globale degli `xml:id`
-- **Puntatori interni**: ogni `@ana`, `@ref`, `@who`, `@corresp` nel documento risolve a un `xml:id` realmente dichiarato — nessun riferimento orfano
+```
+                     classDecl (10 Tassonomie)
+                                │
+     ┌──────────────────────────┴──────────────────────────┐
+     ▼                                                      ▼
+8 Tassonomie Interpretative                    2 Tassonomie di Processo
+(Annotazione sul testo via @ana)               (Tracciamento in revisionDesc)
+├── func (Funzioni retoriche, 16)              ├── fase (Fasi lavoro, 42)
+├── risk (Rischio dottrinale, 5)                └── workflow (Scenari IA, 4)
+├── impact (Impatto interpretativo, 4)
+├── mystic_state (Stati mistici, 5)
+├── operation (Operazioni discorsive, 5)
+├── exposition (Livelli esposizione, 4)
+├── phase (Fasi discorsive, 4)
+└── relation (Intertestualità, 10)
+```
 
-Questi tre livelli sono verificabili indipendentemente da chiunque riesegua la validazione sul file, non solo dichiarati in questo README.
+### Regole di Formattazione e Integrità
+- **Separazione d'uso:** Le 8 tassonomie interpretative si applicano al testo tramite `@ana`. Le 2 di processo sono riservate al `revisionDesc`.
+- **Integrità dei Dati:** Ogni categoria possiede obbligatoriamente un `xml:id` e un elemento `catDesc` compilato e non vuoto. L'`xml:id` deve rispettare il prefisso della tassonomia radice — **eccetto l'asse `func`**, esplicitamente esente per consentire ai suoi assi di primo livello (`legittimazione`, `pedagogia`, `rischio`, `ethos`) di non portare il prefisso `func-`.
+
+---
+
+## 4. Dichiarazione del Tagset (`tagsDecl`)
+
+Il tagset disciplina **46 elementi TEI**, raggruppati per macro-funzione.
+
+### A. Struttura Core e Contesto
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `TEI`, `teiHeader`, `fileDesc` | Struttura radice e contenitori dei metadati. |
+| `sourceDesc`, `msDesc`, `msIdentifier` | Identificazione archivistica e descrizione del testimone. |
+| `div`, `p`, `seg`, `head` | Struttura del testo (Libri, Capitoli) e unità interpretative. |
+| `pb` | Foliazione originale (recto/verso) per il controllo della materialità. |
+
+### B. Descrizione del Manoscritto
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `msContents`, `msItem` | Contenuto e articolazione interna (Libri I–III). |
+| `physDesc`, `handDesc`, `handNote` | Descrizione materiale, mani e inchiostri. |
+| `layoutDesc`, `layout` | *Mise en page* e rigatura. |
+
+### C. Trascrizione e Correzioni Autoriali
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `add`, `del`, `subst` | Tracciamento di aggiunte, cancellature e sostituzioni autoriali. |
+| `abbr`, `expan` | Abbreviazioni e relativi scioglimenti editoriali. |
+| `sic`, `corr` | Distinzione tra errori materiali del ms. e correzioni editoriali. |
+| `gap`, `supplied`, `unclear` | Lacune fisiche, integrazioni congetturali e grafie illeggibili. |
+| `lb` | Interruzioni di riga rilevanti. |
+
+### D. Apparato Critico e Annotazione Analitica
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `app`, `lem`, `rdg` | Apparato *in situ*: lezioni base e varianti d'autore (`Tb0`, `Tb1`, `T1`…). |
+| `spanGrp`, `span` | Annotazioni analitiche su nuclei concettuali. |
+
+### E. Collegamenti e Citazioni
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `ref`, `ptr` | Rinvii interni, esterni e intertestuali. |
+| `cit`, `quote`, `bibl` | Citazioni bibliche, liturgiche, mistiche e riferimenti bibliografici. |
+
+### F. Entità Nominate e Note
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `persName`, `placeName`, `orgName` | Tagging di persone, luoghi e istituzioni. |
+| `date`, `term`, `lang` | Date, termini tecnici mistici e indicazioni di lingua. |
+| `note` | Note editoriali, dottrinali e contestuali. |
 
 ---
 
-## 5. Apparato storico-critico
+## 5. Protocollo IA (`xenoData` + `projectDesc`)
 
-Descrizione codicologica completa (mani, inchiostri, strati genetici Tb0–T3), ricostruzione biografica e processuale dell'autrice ancorata a identificatori esterni verificabili (VIAF, Wikidata, GeoNames), e un apparato di note critiche articolato su sei assi (materiale, prudenziale, linguistico, teologico, di trasmissione, stilistico) — non manualistico, con argomentazione filologica propria in ciascuna nota.
+L'edizione integra un **modello ecdotico controfattuale** guidato da IA (Claude Sonnet 5, fallback Gemini), formalizzato nel blocco `xenoData` e nei criteri di `projectDesc`.
+
+### Codici delle Operazioni Controfattuali
+| Codice | Operazione Ecdotica |
+| :--- | :--- |
+| `-CIT` | Soppressione di una glossa o citazione dal testo |
+| `+TEXTsub` | Recupero di una cancellatura autoriale |
+| `+CIT` | Integrazione per esteso di una citazione richiamata |
+
+### Principi di Controllo Filologico
+1. **Human-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
+2. **Auditability:** Parametri, vincoli e campi obbligatori dell'audit trail sono formalizzati in sintassi JSON all'interno di `xenoData`.
+
+---
+
+## 6. Validazione e Qualità del Dato
+
+- **Validazione Strutturale:** Schema **RelaxNG** generato dall'ODD di progetto (`taxonomy.odd`).
+- **Validazione Semantica (ISO Schematron):**
+  - Presenza e non-vacuità di `catDesc`.
+  - Coerenza del prefisso `xml:id` rispetto alla tassonomia radice (asse `func` esente).
+  - Unicità globale degli `xml:id` su `taxonomy` e `category`.
+
+La risoluzione dei puntatori interni (`@ana`, `@ref`, `@who`, `@corresp`) è verificata separatamente, non fa parte delle regole Schematron del progetto.
 
 ---
 
-## 6. Limiti dichiarati
+## 7. Citazione
 
-Non tutto nel modello è già chiuso, e va detto:
-
-- Il vincolo interpretativo secondo cui le categorie `func` di gestione del rischio presuppongono sempre un'operazione `operation` corrispondente è normativo solo in prosa (`projectDesc` §3) — non esiste ancora una regola Schematron che lo verifichi meccanicamente.
-- Il collegamento fra testo e immagini del manoscritto è oggi limitato a `@facs` su `<pb>` — non è previsto un vero apparato di facsimile digitale (`<facsimile>`/`<surface>`/IIIF), scelta consapevole ma che limita la fruizione rispetto a edizioni digitali costruite attorno alla sincronizzazione immagine-testo.
-- Non è presente un identificatore persistente (DOI/ARK) per la citazione stabile dell'edizione, né una dichiarazione di finanziamento (`fundingStmt`).
-
----
-
-## 7. Come citare
-
-Longo, Luciano (2026). *Castello dell'anima — teiHeader dell'edizione digitale TEI + IA*. Working draft, 25 luglio 2026. Licenza CC BY 4.0.
-
----
+Longo, Luciano (2026). *Castello dell'anima — teiHeader dell'edizione digitale TEI + IA*. Working draft, 25 luglio 2026. CC BY 4.0.
 
 ## 8. Contatti
 
-**Editor**: Luciano Longo  
-Email: luciano.longo@dedalus.com  
-ORCID: https://orcid.org/0009-0005-7557-7546
+Luciano Longo — `luciano.longo@dedalus.com`  
+ORCID: [0009-0005-7557-7546](https://orcid.org/0009-0005-7557-7546)
