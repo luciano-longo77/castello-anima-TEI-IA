@@ -1,5 +1,5 @@
-# Castello dell'anima teiHeader 
-- Edizione digitale TEI + IA
+# *Castello dell'anima* - teiHeader 
+### Edizione digitale TEI + IA
 
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
