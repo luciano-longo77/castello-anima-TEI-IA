@@ -4,7 +4,7 @@
 
 ***
 
-## ✅ 1. Cos'è questo file
+## 1. Cos'è questo file
 
 Questo documento è una **guida operativa** per orientarsi all'interno del *teiHeader* dell'edizione digitale del *Castello dell'anima*.  
 Serve a:
@@ -16,7 +16,7 @@ Serve a:
 
 ***
 
-## ✅ 2. Struttura generale del teiHeader
+## 2. Struttura generale del teiHeader
 
 Il teiHeader è composto da cinque blocchi diretti:
 
@@ -28,7 +28,7 @@ Il teiHeader è composto da cinque blocchi diretti:
 
 ***
 
-## ✅ 3. Mappa rapida della navigazione
+## 3. Mappa rapida della navigazione
 
 ### 🔹 **Per trovare i dati materiali del manoscritto**
 
@@ -68,7 +68,7 @@ Vai in:
 
 ***
 
-## ✅ 4. Che cosa contiene ogni sezione
+## 4. Che cosa contiene ogni sezione
 
 ### **`<fileDesc>`**
 
@@ -110,7 +110,7 @@ Vai in:
 
 ***
 
-## ✅ 5. Come cercare velocemente nel teiHeader
+## 5. Come cercare velocemente nel teiHeader
 
 ### 🔍 *Cerchi una categoria @ana?*
 
@@ -152,7 +152,7 @@ Controlla:
 
 ***
 
-## ✅ 6. Come usare il teiHeader per il riuso
+## 6. Come usare il teiHeader per il riuso
 
 ### ✅ *Importare le tassonomie*
 
@@ -172,7 +172,7 @@ Le tassonomie non sono attualmente esportate in formati Linked Open Data, ma la 
 
 ***
 
-## ✅ 7. Esempio di percorso tipico
+## 7. Esempio di percorso tipico
 
 ### 🔹 Per capire "cos'è `risk-dottrinale`"
 
@@ -193,7 +193,7 @@ Le tassonomie non sono attualmente esportate in formati Linked Open Data, ma la 
 
 ***
 
-## ✅ 8. Riferimenti utili
+## 8. Riferimenti utili
 
 Per una completa interoperabilità:
 
@@ -204,6 +204,7 @@ Per una completa interoperabilità:
 
 ***
 
-## ✅ 9. Contatti
+##  9. Contatti
 
-Per assistenza, consultare la sezione "Contatti" nel README principale.
+Luciano Longo — `luciano.longo@dedalus.com`  
+ORCID: [0009-0005-7557-7546](https://orcid.org/0009-0005-7557-7546)
