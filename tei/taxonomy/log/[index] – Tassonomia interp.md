@@ -25,9 +25,11 @@ agli interventi sulla tassonomia interpretativa prudenziale.
   Stabilizzazione della tassonomia.
 - **[2026-04-22] – Tassonomia interp.md**  
   Stabilizzazione e Uniformazione.
-- **[2026-05] – Tassonomia interp.md**  
+- **[2026-05-10] – Tassonomia interp.md**  
   Uniformazione prefissi delle tassonomie di processo `fase` e `workflow`.
-- **[2026-06] – Tassonomia interp.md**  
+- **[2026-06-22] – Tassonomia interp.md**  
   Normalizzazione dei riferimenti @ana e rimozione di riferimenti orfani nel teiHeader.
-- **[2026-07] – Tassonomia interp.md**  
+- **[2026-07-15] – Tassonomia interp.md**  
   Allineamento licenza, unificazione langUsage, verifica di coerenza completa tra tassonomia-gh.xml e teiHeader.
+- **[2026-07-29] – Tassonomia interp.md**  
+ Verifica di coerenza sistematica: XML, schema, esempi, CI, documentazione.
