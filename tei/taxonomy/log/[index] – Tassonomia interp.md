@@ -15,14 +15,10 @@ agli interventi sulla tassonomia interpretativa prudenziale.
   Introduzione dei livelli di esposizione dottrinale.
 - **[2026-02-17] – Tassonomia interp.md**  
   Stabilizzazione del sistema annotativo basato su @ana.
-- **[2026-03-28] – Tassonomia interp.md**  
+- **[2026-02-28] – Tassonomia interp.md**  
   Normalizzazione e riallineamento tassonomie–annotazione.
 - **[2026-03-30] – Tassonomia interp.md**  
   Raffinamento semantico (risk, operation, impact).
-- **[2026-04-08] – Tassonomia interp.md**  
-  Conversione degli elementi desc in catDesc nella tassonomia workflow.
-- **[2026-04-08] – Tassonomia interp (2).md**  
-  Rimozione della categoria duplicata quality_assurance da classDecl.
 - **[2026-04-18] – Tassonomia interp.md**  
   Infrastruttura metodologica e validazione del sistema.
 - **[2026-04-19] – Tassonomia interp.md**  
