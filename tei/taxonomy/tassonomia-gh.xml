@@ -439,7 +439,7 @@
                 diversi.</p>
             
             <p n="4">Un esempio di applicazione pratica di queste categorie a un’occorrenza reale del
-                manoscritto è disponibile in <ref target="taxonomy/esempio.xml">taxonomy/esempio.xml</ref>,
+                manoscritto è disponibile in <ref target="esempio/taxonomy-text-model.xml">taxonomy/esempio.xml</ref>,
                 dove le categorie qui definite sono applicate come valori dell’attributo @ana su
                 segmenti TEI completi, mostrando la combinazione multiassiale descritta sopra su
                 casi concreti del testo.</p>
