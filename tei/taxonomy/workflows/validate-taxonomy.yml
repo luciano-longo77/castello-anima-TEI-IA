@@ -1,0 +1,104 @@
+name: Validate Taxonomy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tei/taxonomy/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "tei/taxonomy/**"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate tassonomia-gh.xml (RelaxNG + Schematron)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install lxml
+        run: pip install lxml
+
+      - name: Check required files exist
+        run: |
+          test -f tei/taxonomy/tassonomia-gh.xml || { echo "::error::tei/taxonomy/tassonomia-gh.xml non trovato"; exit 1; }
+          test -f tei/taxonomy/schema/taxonomy-rng.rng || { echo "::error::tei/taxonomy/schema/taxonomy-rng.rng non trovato"; exit 1; }
+          test -f tei/taxonomy/schema/taxonomy-sch.sch || { echo "::error::tei/taxonomy/schema/taxonomy-sch.sch non trovato"; exit 1; }
+          echo "Tutti i file richiesti sono presenti."
+
+      - name: Run validation (well-formed, RelaxNG, Schematron, core taxonomies)
+        run: |
+          cat > validate_taxonomy.py << 'PYEOF'
+          import sys
+          from lxml import etree, isoschematron
+
+          XML_PATH = "tei/taxonomy/tassonomia-gh.xml"
+          RNG_PATH = "tei/taxonomy/schema/taxonomy-rng.rng"
+          SCH_PATH = "tei/taxonomy/schema/taxonomy-sch.sch"
+
+          REQUIRED_TAXONOMIES = [
+              "func", "risk", "impact", "mystic_state",
+              "operation", "exposition", "phase", "relation",
+          ]
+
+          ns = {"tei": "http://www.tei-c.org/ns/1.0", "xml": "http://www.w3.org/XML/1998/namespace"}
+
+          errors = []
+
+          # 1. Ben formato
+          try:
+              doc = etree.parse(XML_PATH)
+          except etree.XMLSyntaxError as e:
+              print(f"::error::{XML_PATH} non e' ben formato: {e}")
+              sys.exit(1)
+
+          # 2. RelaxNG
+          try:
+              rng = etree.RelaxNG(etree.parse(RNG_PATH))
+              if not rng.validate(doc):
+                  for log_entry in rng.error_log:
+                      errors.append(f"RelaxNG: {log_entry}")
+          except Exception as e:
+              print(f"::error::Errore caricando lo schema RelaxNG: {e}")
+              sys.exit(1)
+
+          # 3. Schematron
+          try:
+              sch = isoschematron.Schematron(etree.parse(SCH_PATH), store_report=True)
+              if not sch.validate(doc):
+                  svrl_ns = {"svrl": "http://purl.oclc.org/dsdl/svrl"}
+                  for fail in sch.validation_report.xpath("//svrl:failed-assert", namespaces=svrl_ns):
+                      loc = fail.get("location", "?")
+                      text = (fail.findtext("svrl:text", namespaces=svrl_ns) or "").strip()
+                      errors.append(f"Schematron [{loc}]: {text}")
+          except Exception as e:
+              print(f"::error::Errore caricando lo schema Schematron: {e}")
+              sys.exit(1)
+
+          # 4. Presenza delle 8 tassonomie core
+          present = set(
+              doc.xpath("//tei:classDecl/tei:taxonomy/@xml:id", namespaces=ns)
+          )
+          missing = [t for t in REQUIRED_TAXONOMIES if t not in present]
+          if missing:
+              errors.append(f"Tassonomie core mancanti: {', '.join(missing)}")
+
+          # Esito
+          if errors:
+              print("::error::Validazione fallita:")
+              for err in errors:
+                  print(f"  - {err}")
+              sys.exit(1)
+
+          print("Validazione superata: ben formato, RelaxNG OK, Schematron OK, tutte le tassonomie core presenti.")
+          PYEOF
+          python validate_taxonomy.py
