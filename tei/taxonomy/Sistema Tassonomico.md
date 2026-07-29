@@ -1,4 +1,4 @@
-# Sistema Tassonomico del modello TEI interpretativo
+# Sistema Tassonomico
 **Castello dell'anima – Teresa di San Geronimo**
 
 ## Abstract
