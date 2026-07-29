@@ -13,7 +13,7 @@ on:
 
 jobs:
   validate:
-    name: Validate tassonomia-gh.xml (RelaxNG + Schematron)
+    name: Validate tassonomia-gh.xml (RelaxNG + Schematron + esempi)
     runs-on: ubuntu-latest
 
     steps:
@@ -35,15 +35,17 @@ jobs:
           test -f tei/taxonomy/schema/taxonomy-sch.sch || { echo "::error::tei/taxonomy/schema/taxonomy-sch.sch non trovato"; exit 1; }
           echo "Tutti i file richiesti sono presenti."
 
-      - name: Run validation (well-formed, RelaxNG, Schematron, core taxonomies)
+      - name: Run validation (well-formed, RelaxNG, Schematron, core taxonomies, @ana referenziale negli esempi)
         run: |
           cat > validate_taxonomy.py << 'PYEOF'
           import sys
+          import glob
           from lxml import etree, isoschematron
 
           XML_PATH = "tei/taxonomy/tassonomia-gh.xml"
           RNG_PATH = "tei/taxonomy/schema/taxonomy-rng.rng"
           SCH_PATH = "tei/taxonomy/schema/taxonomy-sch.sch"
+          ESEMPIO_GLOB = "tei/taxonomy/esempio/*.xml"
 
           REQUIRED_TAXONOMIES = [
               "func", "risk", "impact", "mystic_state",
@@ -84,13 +86,37 @@ jobs:
               print(f"::error::Errore caricando lo schema Schematron: {e}")
               sys.exit(1)
 
-          # 4. Presenza delle 8 tassonomie core
-          present = set(
+          # 4. Presenza delle 8 tassonomie core (radici di classDecl)
+          valid_ids = set(
+              doc.xpath("//tei:classDecl//tei:category/@xml:id | //tei:classDecl//tei:taxonomy/@xml:id", namespaces=ns)
+          )
+          taxonomy_root_ids = set(
               doc.xpath("//tei:classDecl/tei:taxonomy/@xml:id", namespaces=ns)
           )
-          missing = [t for t in REQUIRED_TAXONOMIES if t not in present]
+          missing = [t for t in REQUIRED_TAXONOMIES if t not in taxonomy_root_ids]
           if missing:
               errors.append(f"Tassonomie core mancanti: {', '.join(missing)}")
+
+          # 5. Riferimenti @ana nei file esempio: ogni token deve puntare a un xml:id reale
+          esempio_files = glob.glob(ESEMPIO_GLOB)
+          for esempio_path in esempio_files:
+              try:
+                  esempio_doc = etree.parse(esempio_path)
+              except etree.XMLSyntaxError as e:
+                  errors.append(f"{esempio_path}: non e' ben formato: {e}")
+                  continue
+              for el in esempio_doc.iter():
+                  ana = el.get("ana")
+                  if not ana:
+                      continue
+                  el_id = el.get("{http://www.w3.org/XML/1998/namespace}id", "?")
+                  for token in ana.split():
+                      bare = token.lstrip("#")
+                      if bare not in valid_ids:
+                          errors.append(
+                              f"{esempio_path} (xml:id={el_id}): @ana='{token}' non corrisponde "
+                              f"a nessuna categoria dichiarata in {XML_PATH}"
+                          )
 
           # Esito
           if errors:
@@ -99,6 +125,7 @@ jobs:
                   print(f"  - {err}")
               sys.exit(1)
 
-          print("Validazione superata: ben formato, RelaxNG OK, Schematron OK, tutte le tassonomie core presenti.")
+          print(f"Validazione superata: ben formato, RelaxNG OK, Schematron OK, tassonomie core presenti, "
+                f"{len(esempio_files)} file esempio verificati (@ana referenziale OK).")
           PYEOF
           python validate_taxonomy.py
