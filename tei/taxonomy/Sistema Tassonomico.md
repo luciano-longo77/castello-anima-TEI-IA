@@ -2,10 +2,10 @@
 **Castello dell'anima – Teresa di San Geronimo**
 
 ## Abstract
-Questo documento descrive in modo **formale, normativo e vincolante** il sistema di tassonomie adottato per l'annotazione semantica del manoscritto autografo *Castello dell'anima* (Palermo, BCP, ms. 2 Qq E 29, sec. XVII ex.). Il modello è progettato per rappresentare in modo **computabile**, **interrogabile** e **filologicamente auditabile** la dinamica prudenziale, retorica e dottrinale della scrittura mistica tardomoderna.Il sistema tassonomico qui descritto costituisce il **core semantico** dell'edizione digitale e governa l'uso dell'attributo `@ana` nel corpus TEI.
+Questo documento descrive in modo **formale, normativo e vincolante** il sistema di tassonomie adottato per l'annotazione semantica del manoscritto autografo *Castello dell'anima* (Palermo, BCP, ms. 2 Qq E 29, sec. XVII ex.). Il modello è progettato per rappresentare in modo **computabile**, **interrogabile** e **filologicamente auditabile** la dinamica prudenziale, retorica e dottrinale della scrittura mistica tardomoderna. Il sistema tassonomico qui descritto costituisce il **core semantico** dell'edizione digitale e governa l'uso dell'attributo `@ana` nel corpus TEI.
 
 ## Indice
-1. [Principi generali del modello] (#1-principi-generali-del-modello)   
+1. [Principi generali del modello](#1-principi-generali-del-modello)   
 - 1.1 [Stack di Validazione (componenti del pacchetto)](#11-stack-di-validazione-componenti-del-pacchetto)
 2. [Assi interpretativi del sistema](#2-assi-interpretativi-del-sistema)   
 - 2.1 [Asse fenomenologico](#21-asse-fenomenologico)   
@@ -42,11 +42,11 @@ Non è ammessa l'introduzione di valori annotativi che non siano dichiarati nell
 ### 1.1 Stack di Validazione (componenti del pacchetto)
 L'integrità del sistema è garantita da una catena di validazione a tre livelli inclusa nella repository:
 1.  **Sorgente (ODD):** definizione astratta e documentazione tecnica in 
-`tei/taxonomy/schema/taxonomy-odd.odd`.
+`tei/taxonomy/schema/taxonomy.odd`.
 2.  **Struttura (Relax NG):** validazione grammaticale e controllo di integrità strutturale tramite 
 `tei/taxonomy/schema/taxonomy-rng.rng` (generato da ODD).
 3.  **Logica (Schematron):** vincoli semantici avanzati e coerenza dei prefissi/relazioni tramite 
-`tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding=\"xslt2\").
+`tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding="xslt2").
 
 **Flusso di generazione**: 
 `taxonomy.odd` → Roma (oXygen) → `taxonomy-rng.rng` + `taxonomy-sch.sch`.
@@ -56,7 +56,7 @@ L'integrità del sistema è garantita da una catena di validazione a tre livelli
 Il modello si articola in **tre assi interpretativi principali**, ciascuno dei quali corrisponde a un diverso livello di descrizione del testo.
 
 ### 2.1 Asse fenomenologico
-Descrive **ciò di cui il testo parla** e il modo in cui il contenuto mistico e dottrinale viene articolato nel discorso.Tassonomie coinvolte:
+Descrive **ciò di cui il testo parla** e il modo in cui il contenuto mistico e dottrinale viene articolato nel discorso. Tassonomie coinvolte:
 * `func` — funzioni retoriche e discorsive;
 * `mystic_state` — stati mistici e fenomenologici;
 * `relation` — relazioni concettuali e intertestuali.
@@ -74,17 +74,17 @@ Descrive **dove** un segmento agisce nel discorso e **con quale forza interpreta
 *   `impact` — impatto interpretativo;
 *   `phase` — fase discorsiva.
 
-  ##   3. Tassonomie operative (core)
+## 3. Tassonomie operative (core)
 ```xml
 <classDecl>
-<taxonomy xml:id=\"func\"/>
-<taxonomy xml:id=\"relation\"/>
-<taxonomy xml:id=\"impact\"/>
-<taxonomy xml:id=\"risk\"/>
-<taxonomy xml:id=\"mystic_state\"/>
-<taxonomy xml:id=\"operation\"/>
-<taxonomy xml:id=\"exposition\"/>
-<taxonomy xml:id=\"phase\"/>
+<taxonomy xml:id="func"/>
+<taxonomy xml:id="relation"/>
+<taxonomy xml:id="impact"/>
+<taxonomy xml:id="risk"/>
+<taxonomy xml:id="mystic_state"/>
+<taxonomy xml:id="operation"/>
+<taxonomy xml:id="exposition"/>
+<taxonomy xml:id="phase"/>
 </classDecl>
 ```
 
@@ -100,12 +100,11 @@ L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi
 
 ```xml
 <seg
-ana=\
-"#pedagogia
+ana="#pedagogia
 #relation-mistica-attiva-meditazione
 #risk-dottrinale
 #operation-delimitazione
-#impact-high #phase-mediana\">    
+#impact-high #phase-mediana">
 
 Testo annotato del manoscritto...
 
@@ -149,11 +148,10 @@ La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasver
 
 ```xml
 <seg
-ana=\
-"#phase-critical
+ana="#phase-critical
 #phase-mediana
 #exposition-critical
-#risk-quietismo\">
+#risk-quietismo">
 
 Testo con problematiche teologiche in sezione centrale...
 
@@ -163,10 +161,9 @@ Testo con problematiche teologiche in sezione centrale...
 **Esempio scorretto** (manca fase posizionale):
 ```xml
 <seg
-ana=\
-"#phase-critical
+ana="#phase-critical
 #exposition-critical
-#risk-quietismo\">
+#risk-quietismo">
    
 <!-- Errore: manca fase posizionale (introduction/mediana/conclusive) -->
 
@@ -177,39 +174,27 @@ ana=\
 Un futuro constraint Schematron può essere aggiunto per enforcing automatico (vedi §8.3).
 
 ## 5. Indice composito N–A–F
-L'indice **N–A–F** è un indicatore interpretativo composito utilizzato in fase analitica per quantificare l'impatto semantico di una occorrenza annotata.*   
-**N** = Necessità interpretativa*   
-**A** = Ambiguità semantica*   
-**F** = Funzione prudenzialeL'indice non costituisce una tassonomia, ma un **valore derivato** calcolato a partire dai tre assi.
+L'indice **N–A–F** è un indicatore interpretativo composito utilizzato in fase analitica per quantificare l'impatto semantico di una occorrenza annotata.
+*   **N** = Necessità interpretativa
+*   **A** = Ambiguità semantica (riduzione dell'ambiguità)
+*   **F** = Funzione prudenziale
+
+L'indice non costituisce una tassonomia, ma un **valore derivato** calcolato a partire dai tre assi.
 
 ### 5.1 Formula di calcolo
-La formula N–A–F è calcolata come segue:
+L'indice è definito secondo la formula:
+I = 0.40N + 0.35A + 0.25*F
 
-**N (Necessità interpretativa)**: 
-funzione della densità di `#risk-*` presenti nel `@ana`.
-- Se `@ana` contiene 1+ categoria da `risk`: N = 1
- - Altrimenti: N = 0
+dove **N** (necessità interpretativa), **A** (riduzione dell'ambiguità) e **F** (funzione prudenziale) sono valori normalizzati su scala continua **0–1**, non binari. I tre parametri **non** sono calcolati da semplici regole di presenza/assenza di categoria, ma sono derivati da correlazioni tra:
+- densità glossematica della pagina;
+- gravità/rischio del lemma coinvolto;
+- prossimità ai nodi dottrinalmente esposti;
+- stratificazione materiale (place, hand, layer).
 
-**A (Ambiguità semantica)**: 
-funzione della specifica categoria di rischio dottrinale.
-- `risk-ambiguita` → A = 1.0
-- `risk-dottrinale`, `risk-quietismo`, `risk-panteismo`, `risk-impeccabilita` → A = 0.7-
-  - Altrimenti: A = 0
-
-**F (Funzione prudenziale)**: 
-funzione della densità di `#operation-*` presenti nel `@ana`.
-- Se `@ana` contiene 1+ categoria da `operation`: F = 1
-- Altrimenti: F = 0
-
-**Valore composito N–A–F**:
-```
-NAF_score = (N × 0.3) + (A × 0.4) + (F × 0.3)
-```
-
-**Mapping a categorie `#impact-*`**:
-- N–A–F ≥ 0.7 → `#impact-critical` o `#impact-high`0.4 ≤
-- N–A–F < 0.7 → `#impact-medium`
-- N–A–F < 0.4 → `#impact-low`
+**Mapping indicativo a categorie `#impact-*`**:
+- I ≥ 0.7 → `#impact-critical` o `#impact-high`
+- 0.4 ≤ I < 0.7 → `#impact-medium`
+- I < 0.4 → `#impact-low`
 
 **Nota**: 
 il calcolo è **indicativo e non vincolante** in fase di annotazione manuale. 
@@ -239,18 +224,18 @@ Un segmento che riceve `#rischio-attenuatio` deve ricevere anche `#operation-att
 **Esempio corretto**:
 ```xml
 <seg
-ana=\"#rischio-attenuatio
+ana="#rischio-attenuatio
 #operation-attenuatio
 #risk-dottrinale
-#legittimazione\">    
+#legittimazione">    
 Glosse esplicative che smorzano formulazioni rischiose...
 </seg>
 ```
 
 **Esempio scorretto** (manca operazione corrispondente):
 ```xml
-<seg ana=\"#rischio-attenuatio
-#legittimazione\">
+<seg ana="#rischio-attenuatio
+#legittimazione">
 
 <!-- Errore: manca #operation-attenuatio -->
 </seg>
@@ -263,29 +248,28 @@ il vincolo è **formalmente dichiarato ma non ancora codificato in Schematron** 
 
 ## 7. Querying (XPath/XQuery – esempi)
 
->**Nota:** le query presuppongono che il namespace TEI (`xmlns:tei=\"http://www.tei-c.org/ns/1.0\"`) sia correttamente dichiarato nel processore XPath/XQuery e che `@ana` contenga **pointer** (fragment identifier con `#`).
+>**Nota:** le query presuppongono che il namespace TEI (`xmlns:tei="http://www.tei-c.org/ns/1.0"`) sia correttamente dichiarato nel processore XPath/XQuery e che `@ana` contenga **pointer** (fragment identifier con `#`).
 
 ### Segmenti ad alto rischio con operazione attenuativa
 
-```
-xpath//tei:seg[matches(@ana, '#risk-dottrinale') and matches(@ana, '#operation-attenuatio')]
+```xpath
+//tei:seg[matches(@ana, '#risk-dottrinale') and matches(@ana, '#operation-attenuatio')]
 ```
 
 ### Segmenti marcati come critical in fase mediana
 
-```
-xpath//tei:seg[matches(@ana, '#phase-critical') and matches(@ana, '#phase-mediana')]
-```
-
-### Segmenti che ricevono estrategia di rischio (per validazione)
-```
-xpath//tei:seg[matches(@ana, '#rischio-')]
+```xpath
+//tei:seg[matches(@ana, '#phase-critical') and matches(@ana, '#phase-mediana')]
 ```
 
-### Tutti i segmenti che violano il vincolo `rischio-
-*` ↔ `operation-*` (per validazione manuale)
+### Segmenti che ricevono strategia di rischio (per validazione)
+```xpath
+//tei:seg[matches(@ana, '#rischio-')]
 ```
-xpath//tei:seg[matches(@ana, '#rischio-attenuatio') and not(matches(@ana, '#operation-attenuatio'))]
+
+### Tutti i segmenti che violano il vincolo `rischio-*` ↔ `operation-*` (per validazione manuale)
+```xpath
+//tei:seg[matches(@ana, '#rischio-attenuatio') and not(matches(@ana, '#operation-attenuatio'))]
 ```
 
 ## 8. Validazione e setup ambientale
@@ -294,31 +278,31 @@ Per attivare la validazione automatica (strutturale e logica) durante l'editing 
 
 ```xml
 <?xml-model
-href=\"../../tei/taxonomy/schema/taxonomy-rng.rng\" type=\"application/xml\"            
-schematypens=\"http://relaxng.org/ns/structure/1.0\"?>
-<?xml-model href=\"../../tei/taxonomy/schema/taxonomy-sch.sch\" type=\"application/xml\"            
-schematypens=\"http://purl.oclc.org/dsdl/schematron\"?>
+href="../../tei/taxonomy/schema/taxonomy-rng.rng" type="application/xml"            
+schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../tei/taxonomy/schema/taxonomy-sch.sch" type="application/xml"            
+schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
 (Regolare il percorso relativo `href` in base alla posizione del corpus rispetto al directory `tei/taxonomy/schema/`.)
 
 ### 8.2 Vincoli Schematron (automatici)
 Il sistema impone controlli rigorosi via Schematron (definiti in `taxonomy-sch.sch`):
 *   **`category-catdesc-present`**: Ogni `<category>` deve contenere un `<catDesc>`.
-*   **`category-catdesc-not-empty`**: Il contenuto di ogni `<catDesc>` non può essere vuoto (biancheria-only).
-*   **`category-prefix-consistency`**: Per tutte le tassonomie tranne `func`, le categorie con trattino rispettano il prefisso della tassonomia radice (es. `risk-*`, `operation-*`, `exposition-*`, etc.).*
+*   **`category-catdesc-not-empty`**: Il contenuto di ogni `<catDesc>` non può essere vuoto (solo spazi bianchi).
+*   **`category-prefix-consistency`**: Per tutte le tassonomie tranne `func`, le categorie con trattino rispettano il prefisso della tassonomia radice (es. `risk-*`, `operation-*`, `exposition-*`, etc.).
 *   **`taxonomy-category-xmlid-unique`**: Unicità globale di `@xml:id` su tutti gli elementi `<taxonomy>` e `<category>` (rete di sicurezza per bug RNG).
 
 ### 8.3 Vincoli editoriali (prosa normativa)
-I seguenti vincoli sono **gestiti manualmente in fase di annotazione** e **non yet enforced da Schematron**:*   
+I seguenti vincoli sono **gestiti manualmente in fase di annotazione** e **non ancora enforced da Schematron**:
 
-**Coerenza `@ana` → categorie**: `@ana` deve puntare a categorie effettivamente definite in `tassonomia-gh.xml` (verificabile via XPath, ma non enforced da schema RNG/Schematron).*   
+**Coerenza `@ana` → categorie**: `@ana` deve puntare a categorie effettivamente definite in `tassonomia-gh.xml` (verificabile via XPath, ma non enforced da schema RNG/Schematron).
 
-**Corrispondenza `rischio-*` ↔ `operation-*`** (vedi §6.1): quando un segmento riceve `#rischio-attenuatio` (o `precisatio`, `declaratio`), deve ricevere la correspondente `#operation-attenuatio` (o `precisatio`, `declaratio`).*  
+**Corrispondenza `rischio-*` ↔ `operation-*`** (vedi §6.1): quando un segmento riceve `#rischio-attenuatio` (o `precisatio`, `declaratio`), deve ricevere la corrispondente `#operation-attenuatio` (o `precisatio`, `declaratio`).
  
- **Compatibilità `phase-critical`** (vedi §4.2): 
- `#phase-critical` deve comparire insieme a una fase posizionale (`#phase-introduction`, `#phase-mediana`, o `#phase-conclusive`).
+**Compatibilità `phase-critical`** (vedi §4.2): 
+`#phase-critical` deve comparire insieme a una fase posizionale (`#phase-introduction`, `#phase-mediana`, o `#phase-conclusive`).
 
-**Prossimi passi**: questi tre vincoli vanno convertiti in regole Schematron e inclusi in `taxonomy-sch.sch` per automazione completa della validazione. Sono candidati per una future versione dell'ODD.
+**Prossimi passi**: questi tre vincoli vanno convertiti in regole Schematron e inclusi in `taxonomy-sch.sch` per automazione completa della validazione. Sono candidati per una futura versione dell'ODD.
 
 ## 9. Come citare questo lavoro
 Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca, cita come segue:
@@ -327,32 +311,31 @@ Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca
 > Luciano Longo, *Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima di Teresa di San Geronimo* (versione 2026), Repository GitHub: https://github.com/luciano-longo77/castello-anima-TEI-IA
 
 **Formato BibTeX**
-```bibtex@software
-{longo_tassonomia_2026,  
-author       = {Longo, Luciano},
-title        = {Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima},  
-year         = {2026},
-publisher    = {GitHub},  
-howpublished = {\\url{https://github.com/luciano-longo77/castello-anima-TEI-IA}},  
-note         = {TEI + IA controllata}}
+```bibtex
+@software{longo_tassonomia_2026,  
+  author       = {Longo, Luciano},
+  title        = {Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima},  
+  year         = {2026},
+  publisher    = {GitHub},  
+  howpublished = {\url{https://github.com/luciano-longo77/castello-anima-TEI-IA}},  
+  note         = {TEI + IA controllata}
+}
 ```
 
-
 ## 10. Contribuzione e workflow
-Ogni modifica al sistema tassonomico deve avvenire tramite 
+Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e includere:
 
-**Pull Request** e includere: **Aggiornamento di `tei/taxonomy/tassonomia-gh.xml`**: aggiunta/modifica di categorie o descrizioni.
-
-**Rigenerazione dello schema** (se necessario): usare Roma (oXygen) per generare `taxonomy-rng.rng` e `taxonomy-sch.sch` a partire da `tei/taxonomy/schema/taxonomy-odd.odd`. Includere entrambi i file generati nella PR.  
-
-**Aggiornamento del presente documento (`Sistema Tassonomico.md`)** per riflettere i nuovi assi, categorie, o vincoli, inclusi eventuali aggiornamenti alla mappatura a tre assi interpretativi (§2) se una nuova tassonomia viene introdotta.
+1. **Aggiornamento di `tei/taxonomy/tassonomia-gh.xml`**: aggiunta/modifica di categorie o descrizioni.
+2. **Rigenerazione dello schema** (se necessario): usare Roma (oXygen) per generare `taxonomy-rng.rng` e `taxonomy-sch.sch` a partire da `tei/taxonomy/schema/taxonomy.odd`. Includere entrambi i file generati nella PR.
+3. **Aggiornamento del presente documento (`Sistema Tassonomico.md`)** per riflettere i nuovi assi, categorie, o vincoli, inclusi eventuali aggiornamenti alla mappatura a tre assi interpretativi (§2) se una nuova tassonomia viene introdotta.
 
 ## 11. Statuto del documento
-Questo documento ha **statuto normativo**. Ogni divergenza tra questo documento e i file XML della repository (`tassonomia-gh.xml`, `taxonomy-odd.odd`, `taxonomy-rng.rng`, `taxonomy-sch.sch`) costituisce **errore del modello** e deve essere risolto prioritariamente.
+Questo documento ha **statuto normativo**. Ogni divergenza tra questo documento e i file XML della repository (`tassonomia-gh.xml`, `taxonomy.odd`, `taxonomy-rng.rng`, `taxonomy-sch.sch`) costituisce **errore del modello** e deve essere risolto prioritariamente.
 
-**Versione corrente**: 2026-07-26 (allineamento 100% con XML e schema).
+**Versione corrente**: 2026-07-26 (allineamento verificato con XML e schema).
 
 **Licenza:**
 Tutti i contenuti del repository sono rilasciati sotto licenza
 **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
 Vedi il file **SPDX-License-Identifier: CC-BY-4.0** per i dettagli completi.
+
