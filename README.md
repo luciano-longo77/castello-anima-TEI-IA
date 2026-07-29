@@ -8,8 +8,8 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 ## Indice
 
 - [Intertestualità sotto sorveglianza](#intertestualità-sotto-sorveglianza)
-  * [Obiettivi](#-obiettivi)
-  * [Struttura del repository](#-struttura-del-repository)
+  * [Obiettivi](#obiettivi)
+  * [Struttura del repository](#struttura-del-repository)
   * [Modello TEI](#-modello-tei)
   * [Pipeline AI](#-pipeline-ai)
   * [Il campione](#-il-campione)
@@ -38,7 +38,7 @@ con successiva valutazione degli effetti su chiarezza argomentativa, coesione lo
 
 ---
 
-##  Struttura del repository
+## Struttura del repository
 
 ### `/tei`
 
