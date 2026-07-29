@@ -1,6 +1,6 @@
 ### 📝 Change Log: Progetto "Castello dell'anima"
 ## [2026-02-10] – Tassonomia interpretativa prudenziale
-# [2026-04-22] – Riorganizzazione Strutturale e Consolidamento delle Tassonomie Core
+# Riorganizzazione Strutturale e Consolidamento delle Tassonomie Core
 
 ### Added
 - **Definizione formale delle tassonomie core**: stabilito il set definitivo degli 8 assi interpretativi per l'analisi del testo:
