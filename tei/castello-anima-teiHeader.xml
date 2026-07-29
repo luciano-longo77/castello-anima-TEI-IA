@@ -407,7 +407,7 @@
                                 <origPlace cert="high">
                                     <placeName ref="#Palermo">Palermo</placeName>, <placeName ref="#Sicilia">Sicilia</placeName>
                                 </origPlace>
-                                <origDate notBefore="1692-09-10" notAfter="1703-06-04" cert="high"/>
+                                <origDate notBefore="1692-09-10" notAfter="1693" cert="high"/>
                                 Il <title level="m" xml:lang="it">Castello dell’anima</title> venne
                                 composto da <persName ref="#Anna-La-Longa" role="author" cert="high">Suor Teresa di San Geronimo</persName> (nata <persName>Anna La
                                     Longa</persName>, 1670–post 1703), terziaria carmelitana
