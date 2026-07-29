@@ -46,7 +46,7 @@ L'integrità del sistema è garantita da una catena di validazione a tre livelli
 2.  **Struttura (Relax NG):** validazione grammaticale e controllo di integrità strutturale tramite 
 `tei/taxonomy/schema/taxonomy-rng.rng` (generato da ODD).
 3.  **Logica (Schematron):** vincoli semantici avanzati e coerenza dei prefissi/relazioni tramite 
-`tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding="xslt2").
+`tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding="xslt").
 
 **Flusso di generazione**: 
 `taxonomy.odd` → Roma (oXygen) → `taxonomy-rng.rng` + `taxonomy-sch.sch`.
@@ -183,7 +183,7 @@ L'indice non costituisce una tassonomia, ma un **valore derivato** calcolato a p
 
 ### 5.1 Formula di calcolo
 L'indice è definito secondo la formula:
-I = 0.40N + 0.35A + 0.25*F
+I = 0.40*N + 0.35*A + 0.25*F
 
 dove **N** (necessità interpretativa), **A** (riduzione dell'ambiguità) e **F** (funzione prudenziale) sono valori normalizzati su scala continua **0–1**, non binari. I tre parametri **non** sono calcolati da semplici regole di presenza/assenza di categoria, ma sono derivati da correlazioni tra:
 - densità glossematica della pagina;
