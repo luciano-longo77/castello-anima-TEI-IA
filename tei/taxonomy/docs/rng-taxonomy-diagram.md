@@ -5,7 +5,7 @@ della tassonomia interpretativa in ambiente TEI.
 La visualizzazione ha **funzione esplicativa** e non sostituisce lo schema formale
 di validazione (Relax NG e Schematron).
 
-```
+```mermaid
 graph TD
     TEI --> teiHeader
     teiHeader --> encodingDesc
