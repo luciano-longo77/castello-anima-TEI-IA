@@ -330,8 +330,6 @@ Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e in
 3. **Aggiornamento del presente documento (`Sistema Tassonomico.md`)** per riflettere i nuovi assi, categorie, o vincoli, inclusi eventuali aggiornamenti alla mappatura a tre assi interpretativi (§2) se una nuova tassonomia viene introdotta.
 
 ## 11. Statuto del documento
-Questo documento ha **statuto normativo**. Ogni divergenza tra questo documento e i file XML della repository (`tassonomia-gh.xml`, `taxonomy.odd`, `taxonomy-rng.rng`, `taxonomy-sch.sch`) costituisce **errore del modello** e deve essere risolto prioritariamente.
-
 Questo documento descrive il sistema tassonomico a **scopo di orientamento**. La **fonte normativa vincolante** resta *tassonomia-gh.xml (dati) e taxonomy.odd (definizione formale)*; in caso di divergenza tra questo documento e i file XML della repository, prevalgono questi ultimi.
 
 **Versione corrente**: 2026-07-29 (allineamento verificato con XML e schema).
