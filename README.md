@@ -5,7 +5,7 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 ---
 
-## 📑 Indice
+## Indice
 
 - [Intertestualità sotto sorveglianza](#intertestualità-sotto-sorveglianza)
   * [Obiettivi](#-obiettivi)
@@ -20,7 +20,7 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 ---
 
-## 🎯 Obiettivi
+## Obiettivi
 
 - Rappresentare in TEI citazioni bibliche, liturgiche, mistiche e proverbiali come **oggetti analitici** dotati di fonte, funzione retorica e impatto esplicativo.
 
@@ -38,11 +38,7 @@ con successiva valutazione degli effetti su chiarezza argomentativa, coesione lo
 
 ---
 
-## 📁 Struttura del repository
-
-### `/data`
-
-- **base-dati**: contiene il set dei 14 capitoli utilizzati per l'analisi, insieme alle motivazioni della selezione (sensibilità, glosse, citazioni, articolazione tematica).
+##  Struttura del repository
 
 ### `/tei`
 
@@ -54,28 +50,24 @@ Modellazione secondo TEI P5 con:
 - funzioni, rischio, operazioni prudenziali, stati mistici, esposizione, fase discorsiva e relazioni tramite l'attributo `@ana`, con puntatori alle categorie dichiarate in `classDecl`;
 - gestione di varianti e fenomeni grafici con `add`, `del`, `subst`, `app`.
 
-#### `/tei/taxonomy`
+Organizzata in tre sottocartelle:
 
-Contiene il sistema tassonomico interpretativo del progetto: la tassonomia normativa (`tassonomia-gh.xml`), lo schema di validazione (ODD, RelaxNG, Schematron), esempi di annotazione, log di lavorazione e il workflow di validazione automatica (CI/CD).
+- **`/tei/header`** — il `teiHeader` completo dell'edizione (`castello-anima-teiHeader.xml`) e la relativa documentazione (README, guida di navigazione). ➡️ [Leggi il README del teiHeader](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/header/teiHeader-README.md)
+- **`/tei/taxonomy`** — il sistema tassonomico interpretativo del progetto: la tassonomia normativa (`tassonomia-gh.xml`), i tre documenti di schema dedicati alla tassonomia (ODD, RelaxNG, Schematron), esempi di annotazione, log di lavorazione.,
+ [Leggi il README del sistema tassonomico](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/taxonomy/Sistema%20Tassonomico.md)
+- **`/tei/text`** — il testo del manoscritto codificato in TEI.
 
-### 📘 Documentazione del teiHeader
+### `/schema`
 
-Per consultare la documentazione completa del **teiHeader**  
-(criteri editoriali, tassonomie, modello genetico, pipeline IA):
+Schema di validazione generale del progetto (ODD, RelaxNG, Schematron), a copertura dell'intero modello — non solo della tassonomia.
 
-➡️ **[Leggi il README del teiHeader](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/teiHeader-README.md)**
+### `/docs`
 
-### `/analysis`
+Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto per le singole sezioni (header, tassonomia, schema) confluisce anche qui, come punto di accesso unico alla documentazione completa.
 
-Strumenti per:
+### `/.github/workflows`
 
-- generazione controllata di eventi controfattuali tramite IA (`-CIT`, `+TEXTsub`, `+CIT`),
-- ricalcolo di funzioni retoriche e impatto,
-- analisi comparativa fra testo base e varianti.
-
-### `/documentation`
-
-Materiale di lavoro, linee guida di codifica e articolazione metodologica.
+Il workflow di validazione automatica (CI/CD) che verifica la tassonomia a ogni modifica.
 
 ---
 
