@@ -53,7 +53,7 @@ Modellazione secondo TEI P5 con:
 Organizzata in tre sottocartelle:
 
 - **`/tei/header`** — il `teiHeader` completo dell'edizione (`castello-anima-teiHeader.xml`) e la relativa documentazione (README, guida di navigazione). ➡️ [Leggi il README del teiHeader](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/header/teiHeader-README.md)
-- **`/tei/taxonomy`** — il sistema tassonomico interpretativo del progetto: la tassonomia normativa (`tassonomia-gh.xml`), i tre documenti di schema dedicati alla tassonomia (ODD, RelaxNG, Schematron), esempi di annotazione, log di lavorazione.,
+- **`/tei/taxonomy`** — il sistema tassonomico interpretativo del progetto: la tassonomia normativa (`tassonomia-gh.xml`), i tre documenti di schema dedicati alla tassonomia (ODD, RelaxNG, Schematron), esempi di annotazione, log di lavorazione. ➡️
  [Leggi il README del sistema tassonomico](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/taxonomy/Sistema%20Tassonomico.md)
 - **`/tei/text`** — il testo del manoscritto codificato in TEI.
 
