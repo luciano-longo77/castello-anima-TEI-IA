@@ -71,7 +71,7 @@ Il workflow di validazione automatica (CI/CD) che verifica la tassonomia a ogni 
 
 ---
 
-## 🧩 Modello TEI
+## Modello TEI
 
 ### Citazioni
 
@@ -100,7 +100,7 @@ Valore composito (alto, medio, basso), calcolato secondo la formula `I = 0.40*N 
 
 ---
 
-## 🤖 Pipeline AI
+## Pipeline AI
 
 La pipeline opera su eventi controfattuali generati sotto controllo, secondo tre procedure:
 
@@ -116,7 +116,7 @@ Ogni evento è sottoposto a:
 
 ---
 
-## 🔬 Il campione
+## Il campione
 
 Il dataset include **14 capitoli** distribuiti nei tre Libri dell'opera.  
 I segmenti selezionati presentano:
@@ -130,7 +130,7 @@ Questo campione costituisce la base per l'annotazione TEI e per la sperimentazio
 
 ---
 
-## 📌 Stato dell'arte e ragioni del modello
+## Stato dell'arte e ragioni del modello
 
 Dalle linee di ricerca degli studi attuali emerge che:
 
@@ -140,11 +140,11 @@ Dalle linee di ricerca degli studi attuali emerge che:
 
 Su questa base
 
-- 📡 il progetto propone un modello computazionale TEI+IA che colma questo vuoto metodologico.
+- il progetto propone un modello computazionale TEI+IA che colma questo vuoto metodologico.
 
 ---
 
-## 🌐 Contributo del progetto
+## Contributo del progetto
 
 Il modello permette di:
 
@@ -155,7 +155,7 @@ Il modello permette di:
 
 ---
 
-## 📄 Licenza
+## Licenza
 
 Creative Commons Attribution 4.0 International (**CC BY 4.0**).  
 Vedi il file `SPDX-License-Identifier: CC-BY-4.0` per i dettagli completi.
