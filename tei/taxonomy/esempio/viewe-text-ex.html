@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizzatore TEI Annotato - Castello dell'anima</title>
+    <style>
+        :root {
+            --gold: #947a4b;
+            --gold-light: #bfa577;
+            --gold-dark: #7a633d;
+            --brand-900: #0f172a;
+            --brand-800: #1e293b;
+            --brand-700: #334155;
+            --brand-50: #f8fafc;
+            --paper: #fdfcf9;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --axis-func: #2563eb;
+            --axis-risk: #dc2626;
+            --axis-impact: #d97706;
+            --axis-mystic: #7c3aed;
+            --axis-operation: #059669;
+            --axis-exposition: #0891b2;
+            --axis-phase: #ea580c;
+            --axis-relation: #4f46e5;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--brand-50);
+            color: var(--brand-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TOPBAR COMPATTA
+           ============================================ */
+        .topbar {
+            background: linear-gradient(90deg, #ffffff 0%, #faf9f7 35%, #f3f0ea 65%, #ffffff 100%);
+            border-bottom: 1px solid rgba(148, 122, 75, 0.18);
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .topbar-title {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--brand-900);
+            white-space: nowrap;
+        }
+        .topbar-subtitle {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: var(--gold-dark);
+        }
+
+        /* Legenda compatta inline */
+        .legend-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 0.75rem;
+            align-items: center;
+        }
+        .legend-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.7rem;
+            color: var(--brand-700);
+            white-space: nowrap;
+        }
+        .legend-chip .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-toggle {
+            background: none;
+            border: 1px solid rgba(148, 122, 75, 0.25);
+            color: var(--gold-dark);
+            font-size: 0.7rem;
+            font-family: inherit;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .legend-toggle:hover {
+            background: var(--brand-900);
+            color: white;
+            border-color: var(--brand-900);
+        }
+
+        /* Legenda estesa (nascosta di default) */
+        .legend-expanded {
+            display: none;
+            background: #ffffff;
+            border-bottom: 1px solid rgba(148, 122, 75, 0.15);
+            padding: 1rem 1.5rem;
+        }
+        .legend-expanded.open { display: block; }
+        .legend-expanded-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.6rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .legend-expanded-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--brand-800);
+            line-height: 1.4;
+        }
+        .legend-expanded-item .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        .legend-expanded-item strong {
+            color: var(--brand-900);
+            display: block;
+            font-size: 0.82rem;
+        }
+        .legend-expanded-item span {
+            color: var(--brand-700);
+            font-size: 0.75rem;
+            font-style: italic;
+        }
+
+        /* ============================================
+           LAYOUT: TESTO + PANNELLO AFFIANCATI
+           ============================================ */
+        .layout {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* Colonna testo: si restringe quando il pannello è aperto */
+        .text-column {
+            flex: 1;
+            min-width: 0;
+            padding: 2.5rem;
+            transition: padding-right 0.35s var(--transition-smooth);
+        }
+
+        @media (min-width: 900px) {
+            .text-column.panel-open {
+                padding-right: 1rem;
+            }
+        }
+
+        .text-container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+            border: 1px solid rgba(148, 122, 75, 0.15);
+        }
+
+        .text-header h1 {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 1.8rem;
+            color: var(--brand-900);
+            margin-bottom: 0.35rem;
+            font-weight: 600;
+        }
+        .text-header .subtitle {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-style: italic;
+            color: var(--brand-700);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(148, 122, 75, 0.15);
+        }
+
+        /* ============================================
+           TESTO ANNOTATO
+           ============================================ */
+        .text-body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--brand-900);
+        }
+        .text-body p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .annotated {
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-radius: 2px;
+            outline: none;
+        }
+        .annotated:hover {
+            background-color: rgba(148, 122, 75, 0.07);
+        }
+        .annotated.active {
+            background-color: rgba(148, 122, 75, 0.15);
+            box-shadow: inset 0 0 0 1px var(--gold-light);
+        }
+        .annotated:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .seg-badge {
+            position: absolute;
+            top: -0.5rem;
+            right: 0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            background: var(--paper);
+            border: 1px solid rgba(148, 122, 75, 0.3);
+            border-radius: 3px;
+            padding: 0.05rem 0.3rem;
+            opacity: 0;
+            transform: translateY(2px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+            z-index: 10;
+            white-space: nowrap;
+        }
+        .annotated:hover .seg-badge,
+        .annotated.active .seg-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .annotated.active .seg-badge {
+            background: var(--gold);
+            color: #ffffff;
+            border-color: var(--gold);
+        }
+
+        .annotated quote, .annotated foreign {
+            font-style: italic;
+            color: var(--brand-700);
+        }
+
+        /* ============================================
+           PANNELLO ANNOTAZIONI (colonna destra)
+           ============================================ */
+        .panel-column {
+            width: 0;
+            overflow: hidden;
+            transition: width 0.35s var(--transition-smooth);
+            flex-shrink: 0;
+            border-left: 0px solid rgba(148, 122, 75, 0.2);
+            background: #ffffff;
+        }
+        .panel-column.open {
+            width: 420px;
+            border-left-width: 2px;
+        }
+
+        .panel-inner {
+            width: 420px;
+            height: calc(100vh - 60px);
+            position: sticky;
+            top: 60px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 1rem 1.25rem;
+            background: var(--paper);
+            border-bottom: 1px solid rgba(148, 122, 75, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .panel-header-info { flex: 1; min-width: 0; }
+        .panel-header-label {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+        .panel-header h3 {
+            font-family: 'Consolas', monospace;
+            font-size: 0.82rem;
+            color: var(--brand-900);
+            font-weight: 600;
+            word-break: break-all;
+            line-height: 1.3;
+        }
+        .panel-close {
+            background: none;
+            border: 1px solid rgba(148, 122, 75, 0.25);
+            color: var(--brand-700);
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            line-height: 1;
+            border-radius: 3px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .panel-close:hover {
+            background: var(--brand-900);
+            color: white;
+            border-color: var(--brand-900);
+        }
+
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) transparent;
+        }
+        .panel-content::-webkit-scrollbar { width: 6px; }
+        .panel-content::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+        .axis-group {
+            margin-bottom: 1.25rem;
+            padding: 0.85rem 1rem;
+            background: var(--paper);
+            border-radius: 5px;
+            border-left: 4px solid #ccc;
+            border-top: 1px solid rgba(148, 122, 75, 0.08);
+            border-right: 1px solid rgba(148, 122, 75, 0.08);
+            border-bottom: 1px solid rgba(148, 122, 75, 0.08);
+        }
+        .axis-group:last-child { margin-bottom: 0; }
+
+        .axis-title {
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed rgba(148, 122, 75, 0.2);
+        }
+        .axis-title::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+            flex-shrink: 0;
+        }
+
+        .category-item {
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px dashed rgba(148, 122, 75, 0.12);
+        }
+        .category-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .cat-id-badge {
+            display: inline-block;
+            font-family: 'Consolas', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: #ffffff;
+            padding: 0.2rem 0.45rem;
+            border-radius: 3px;
+            border: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 0.35rem;
+        }
+        .cat-desc {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 1rem;
+            color: var(--brand-800);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .panel-hint {
+            text-align: center;
+            padding: 3rem 1.25rem;
+            color: var(--brand-700);
+            font-style: italic;
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .panel-hint strong {
+            display: block;
+            font-style: normal;
+            color: var(--gold-dark);
+            font-family: system-ui, sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .source-footer {
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(148, 122, 75, 0.2);
+            font-size: 0.8rem;
+            color: var(--brand-700);
+            text-align: center;
+            line-height: 1.6;
+        }
+        .source-footer code {
+            background: var(--paper);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: var(--gold-dark);
+        }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 899px) {
+            .text-column { padding: 1rem; }
+            .text-column.panel-open { padding-right: 1rem; }
+            .text-container { padding: 1.5rem; }
+            .text-body { font-size: 1.1rem; }
+
+            /* Su mobile il pannello copre tutto */
+            .panel-column {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                width: 0;
+                z-index: 500;
+                border-left: none;
+            }
+            .panel-column.open {
+                width: 100%;
+                border-left-width: 0;
+            }
+            .panel-inner {
+                width: 100%;
+                height: 100vh;
+                position: static;
+            }
+            .panel-header { padding: 1rem; }
+            .panel-content { padding: 1rem; }
+        }
+
+        @media (max-width: 600px) {
+            .topbar { padding: 0.6rem 1rem; }
+            .legend-bar { display: none; }
+            .text-header h1 { font-size: 1.4rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
+            <span class="topbar-title">Castello dell'anima</span>
+            <span class="topbar-subtitle">Teresa di San Geronimo</span>
+        </div>
+        <div class="legend-bar" aria-label="Legenda assi tassonomici">
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-func)"></span>Funzione</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-risk)"></span>Rischio</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-impact)"></span>Impatto</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-mystic)"></span>Stato mistico</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-operation)"></span>Operazione</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-exposition)"></span>Esposizione</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-phase)"></span>Fase</span>
+            <span class="legend-chip"><span class="dot" style="background:var(--axis-relation)"></span>Relazione</span>
+            <button class="legend-toggle" id="legend-toggle" type="button">Dettagli</button>
+        </div>
+    </header>
+
+    <!-- LEGENDA ESTESA -->
+    <div class="legend-expanded" id="legend-expanded">
+        <div class="legend-expanded-grid">
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-func)"></span><div><strong>Funzione Retorica</strong><span>Legittimazione, pedagogia, ethos</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-risk)"></span><div><strong>Rischio Dottrinale</strong><span>Quietismo, panteismo, ambiguità</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-impact)"></span><div><strong>Impatto Interpretativo</strong><span>High, medium, low, critical</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-mystic)"></span><div><strong>Stato Mistico</strong><span>Quiete, unione, otium</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-operation)"></span><div><strong>Operazione Prudenziale</strong><span>Attenuatio, precisatio, declaratio</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-exposition)"></span><div><strong>Livello Esposizione</strong><span>Low, medium, high, critical</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-phase)"></span><div><strong>Fase Discorsiva</strong><span>Introduction, mediana, conclusive</span></div></div>
+            <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-relation)"></span><div><strong>Relazione Intertestuale</strong><span>Biblico, liturgico, teresiano</span></div></div>
+        </div>
+    </div>
+
+    <!-- LAYOUT AFFIANCATO -->
+    <div class="layout">
+
+        <!-- COLONNA TESTO (sempre visibile) -->
+        <div class="text-column" id="text-column">
+            <div class="text-container">
+                <div class="text-header">
+                    <h1>Annotazione tassonomica</h1>
+                    <p class="subtitle">Prefazione del Libro III · Clicca sui segmenti per le annotazioni</p>
+                </div>
+                <main id="text-container" class="text-body" aria-label="Testo annotato">
+                    <p>Caricamento...</p>
+                </main>
+                <footer class="source-footer">
+                    <p>Fonte: <code>MC-1_castello-anima-TEI_Header.xml</code> · Definizioni: <code>classDecl</code></p>
+                </footer>
+            </div>
+        </div>
+
+        <!-- COLONNA PANNELLO (si apre a destra, testo resta leggibile) -->
+        <aside class="panel-column" id="panel-column" aria-hidden="true" role="complementary" aria-label="Dettagli annotazione">
+            <div class="panel-inner">
+                <div class="panel-header">
+                    <div class="panel-header-info">
+                        <div class="panel-header-label">Segmento annotato</div>
+                        <h3 id="panel-segment-id">—</h3>
+                    </div>
+                    <button class="panel-close" aria-label="Chiudi" id="panel-close-btn" title="Chiudi (ESC)">&times;</button>
+                </div>
+                <div class="panel-content" id="panel-content">
+                    <div class="panel-hint">
+                        <strong>Nessun segmento selezionato</strong>
+                        Clicca su un segmento nel testo per visualizzare qui le annotazioni.
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script>
+        const taxonomyData = {
+            'ethos-obbedienza': { axis: 'func', axisName: 'Funzione Retorica (Ethos)', color: 'var(--axis-func)', desc: `Insistenza sull'obbedienza al confessore (a scopo difensivo), vista come condizione necessaria per scrivere e come garanzia di umiltà, prudenza e sottomissione dottrinale.` },
+            'legittimazione-tradizione': { axis: 'func', axisName: 'Funzione Retorica (Legittimazione)', color: 'var(--axis-func)', desc: `Appello a maestri della mistica esplicitamente richiamati in prima persona dall'autrice come legittimazione autorevole.` },
+            'legittimazione-biblica': { axis: 'func', axisName: 'Funzione Retorica (Legittimazione)', color: 'var(--axis-func)', desc: `Citazioni e parafrasi scritturali, spesso in latino, impiegate per rendere accettabili concetti rischiosi mostrando conformità alla dottrina.` },
+            'legittimazione-liturgica': { axis: 'func', axisName: 'Funzione Retorica (Legittimazione)', color: 'var(--axis-func)', desc: `Ricorso a formule, stilemi e registri liturgici come garanzia devozionale e dottrinale.` },
+            'ethos-umilta': { axis: 'func', axisName: 'Funzione Retorica (Ethos)', color: 'var(--axis-func)', desc: `Professioni di "indegnità" e "ignoranza" per minimizzare la propria autorità; l'autrice usa queste formule per giustificare la scrittura teologica da parte di una donna.` },
+            'pedagogia-introduzione': { axis: 'func', axisName: 'Funzione Retorica (Pedagogia)', color: 'var(--axis-func)', desc: `Sezioni introduttive che predispongono il lettore all'orazione mentale e alla costruzione del "castello".` },
+            'risk-dottrinale': { axis: 'risk', axisName: 'Rischio Dottrinale', color: 'var(--axis-risk)', desc: `Rischio generale di equivocità su dottrine come "grazia", "libertà", "unione" e "contemplazione".` },
+            'risk-ambiguita': { axis: 'risk', axisName: 'Rischio Dottrinale', color: 'var(--axis-risk)', desc: `Punti in cui la formulazione è oscura, metaforica o oscillante, generando difficoltà interpretative.` },
+            'impact-high': { axis: 'impact', axisName: 'Impatto Interpretativo', color: 'var(--axis-impact)', desc: `Passaggi che chiariscono concetti dottrinali centrali; decisivi per la comprensione dell'opera.` },
+            'impact-medium': { axis: 'impact', axisName: 'Impatto Interpretativo', color: 'var(--axis-impact)', desc: `Elementi che rafforzano e integrano i concetti principali mediante esempi e spiegazioni accessorie.` },
+            'mystic_state-quiete': { axis: 'mystic', axisName: 'Stato Mistico', color: 'var(--axis-mystic)', desc: `Stato di sospensione delle potenze, spesso minacciato da interpretazioni quietistiche.` },
+            'operation-delimitazione': { axis: 'operation', axisName: 'Operazione Prudenziale', color: 'var(--axis-operation)', desc: `Operazioni che circoscrivono semanticamente concetti rischiosi, evitando letture estreme.` },
+            'operation-attenuatio': { axis: 'operation', axisName: 'Operazione Prudenziale', color: 'var(--axis-operation)', desc: `Interventi che smorzano formulazioni troppo ardite mediante spiegazioni aggiunte.` },
+            'exposition-medium': { axis: 'exposition', axisName: 'Livello di Esposizione', color: 'var(--axis-exposition)', desc: `Esposizione moderata di contenuti mistici, con appoggi occasionali a citazioni.` },
+            'exposition-low': { axis: 'exposition', axisName: 'Livello di Esposizione', color: 'var(--axis-exposition)', desc: `Esposizione prudente di temi dottrinali, con ricorso limitato a tecnicismi.` },
+            'phase-introduction': { axis: 'phase', axisName: 'Fase Discorsiva', color: 'var(--axis-phase)', desc: `Segmenti introduttivi che stabiliscono tono, pubblico e obbedienza iniziale.` },
+            'relation-intertesto-liturgico': { axis: 'relation', axisName: 'Relazione Intertestuale', color: 'var(--axis-relation)', desc: `Riferimenti a testi, formule o registri liturgici che rinforzano il tono devoto.` }
+        };
+
+        const teiXmlString = `<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="esempio-castello-anima" xml:lang="it">
+    <text><body><p n="1">
+        <seg xml:id="III-pref-p1-001" ana="#ethos-obbedienza #legittimazione-tradizione #impact-high #risk-dottrinale #mystic_state-quiete #operation-delimitazione #exposition-medium #phase-introduction">Incomincio mio Dio, come sapete, questo terzo ed ultimo libro per santa obedienza, fidandomi solamente nella vostra divina disposizione.</seg>
+        <cit type="bible" xml:id="cit-phil2-8" ana="#legittimazione-biblica #risk-dottrinale"><quote xml:lang="la"><foreign xml:lang="la">Christus factus est pro nobis obediens usque ad mortem.</foreign></quote><ref type="scripture" target="#Phil.2.8"/></cit>
+        <seg xml:id="III-pref-p1-002" ana="#ethos-umilta #impact-medium #risk-ambiguita #mystic_state-quiete #operation-attenuatio #exposition-low #phase-introduction">E per narrar l'opere vostre, questa sì miserabile creatura confessa la propria indegnità e bassezza, riconoscendo che nulla può senza il vostro lume.</seg>
+        <seg xml:id="III-pref-p1-003" ana="#pedagogia-introduzione #impact-high #risk-dottrinale #mystic_state-quiete #operation-delimitazione #exposition-medium #phase-introduction">E se nel secondo libro domandavano a noi il santo aiuto, ora più che mai supplico che mi sia concessa la divina sapienza, necessaria per trattare materia tanto alta.</seg>
+        <cit type="liturgy" xml:id="cit-veni-creator" ana="#legittimazione-liturgica #relation-intertesto-liturgico #risk-dottrinale"><quote xml:lang="la"><foreign xml:lang="la">Veni Creator Spiritus, mentes tuorum visita.</foreign></quote><ref type="liturgy" target="#Veni-Creator"/></cit>
+        <seg xml:id="III-pref-p1-004" ana="#ethos-umilta #impact-high #risk-dottrinale #mystic_state-quiete #operation-attenuatio #exposition-low #phase-introduction">Poiché dovendo io trattare materia più alta che nel libro trascorso, senza la vostra assistenza mi confesso del tutto inabile e indegna a reggere la penna.</seg>
+    </p></body></text>
+</TEI>`;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(teiXmlString, 'application/xml');
+                if (xmlDoc.querySelector('parsererror')) {
+                    document.getElementById('text-container').innerHTML = '<p style="color:#991b1b;background:#fef2f2;padding:1rem;border-radius:4px;">Errore XML.</p>';
+                    return;
+                }
+
+                const container = document.getElementById('text-container');
+                const panelColumn = document.getElementById('panel-column');
+                const panelId = document.getElementById('panel-segment-id');
+                const panelContent = document.getElementById('panel-content');
+                const closeBtn = document.getElementById('panel-close-btn');
+                const textColumn = document.getElementById('text-column');
+
+                let activeSegment = null;
+                let segmentCounter = 0;
+
+                function processNode(node) {
+                    if (node.nodeType === Node.TEXT_NODE) return document.createTextNode(node.textContent);
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        const el = document.createElement(node.tagName);
+                        for (let attr of node.attributes) {
+                            if (attr.name !== 'ana') el.setAttribute(attr.name, attr.value);
+                        }
+                        if ((node.tagName === 'seg' || node.tagName === 'cit') && node.hasAttribute('ana')) {
+                            segmentCounter++;
+                            el.classList.add('annotated');
+                            el.setAttribute('tabindex', '0');
+                            el.setAttribute('role', 'button');
+                            el.setAttribute('aria-expanded', 'false');
+                            const ids = node.getAttribute('ana').split(/\s+/).map(id => id.replace('#', '').trim()).filter(id => id);
+                            const xmlId = node.getAttribute('xml:id') || `seg-${segmentCounter}`;
+                            const shortId = xmlId.split('-').pop();
+                            const badge = document.createElement('span');
+                            badge.className = 'seg-badge';
+                            badge.textContent = `§${shortId}`;
+                            badge.setAttribute('aria-hidden', 'true');
+                            el.appendChild(badge);
+
+                            const grouped = {};
+                            ids.forEach(id => {
+                                const data = taxonomyData[id];
+                                if (data) {
+                                    if (!grouped[data.axis]) grouped[data.axis] = { name: data.axisName, color: data.color, items: [] };
+                                    grouped[data.axis].items.push({ id, desc: data.desc });
+                                }
+                            });
+
+                            let htmlContent = '';
+                            for (const [axis, data] of Object.entries(grouped)) {
+                                htmlContent += `<div class="axis-group" style="border-left-color:${data.color}">`;
+                                htmlContent += `<div class="axis-title" style="color:${data.color}">${data.name}</div>`;
+                                data.items.forEach(item => {
+                                    htmlContent += `<div class="category-item"><span class="cat-id-badge" style="color:${data.color};border-color:${data.color}40">${item.id}</span><div class="cat-desc">${item.desc}</div></div>`;
+                                });
+                                htmlContent += `</div>`;
+                            }
+
+                            el.dataset.segmentId = xmlId;
+                            el.dataset.panelHtml = htmlContent;
+
+                            const srOnly = document.createElement('div');
+                            srOnly.className = 'sr-only';
+                            srOnly.textContent = `Segmento ${xmlId}. ${Object.values(grouped).map(g => g.name + ': ' + g.items.map(i => i.id).join(', ')).join('. ')}`;
+                            el.appendChild(srOnly);
+                        }
+                        for (let child of node.childNodes) el.appendChild(processNode(child));
+                        return el;
+                    }
+                    return node;
+                }
+
+                container.innerHTML = '';
+                const bodyNode = xmlDoc.querySelector('body');
+                if (bodyNode) for (let child of bodyNode.childNodes) container.appendChild(processNode(child));
+
+                function openPanel(el) {
+                    if (activeSegment) {
+                        activeSegment.classList.remove('active');
+                        activeSegment.setAttribute('aria-expanded', 'false');
+                    }
+                    activeSegment = el;
+                    activeSegment.classList.add('active');
+                    activeSegment.setAttribute('aria-expanded', 'true');
+                    panelId.textContent = el.dataset.segmentId;
+                    panelContent.innerHTML = el.dataset.panelHtml;
+                    panelContent.scrollTop = 0;
+                    panelColumn.classList.add('open');
+                    panelColumn.setAttribute('aria-hidden', 'false');
+                    textColumn.classList.add('panel-open');
+                }
+
+                function closePanel() {
+                    if (activeSegment) {
+                        activeSegment.classList.remove('active');
+                        activeSegment.setAttribute('aria-expanded', 'false');
+                        const prev = activeSegment;
+                        activeSegment = null;
+                        setTimeout(() => prev.focus(), 100);
+                    }
+                    panelColumn.classList.remove('open');
+                    panelColumn.setAttribute('aria-hidden', 'true');
+                    textColumn.classList.remove('panel-open');
+                }
+
+                document.querySelectorAll('.annotated').forEach(el => {
+                    el.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        activeSegment === el ? closePanel() : openPanel(el);
+                    });
+                    el.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            activeSegment === el ? closePanel() : openPanel(el);
+                        }
+                    });
+                });
+
+                closeBtn.addEventListener('click', closePanel);
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && panelColumn.classList.contains('open')) closePanel();
+                });
+
+                // Toggle legenda estesa
+                document.getElementById('legend-toggle').addEventListener('click', () => {
+                    document.getElementById('legend-expanded').classList.toggle('open');
+                });
+
+            } catch (error) {
+                document.getElementById('text-container').innerHTML = `<p style="color:#991b1b;background:#fef2f2;padding:1rem;border-radius:4px;">Errore: ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
