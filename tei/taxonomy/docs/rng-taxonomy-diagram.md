@@ -5,7 +5,7 @@ della tassonomia interpretativa in ambiente TEI.
 La visualizzazione ha **funzione esplicativa** e non sostituisce lo schema formale
 di validazione (Relax NG e Schematron).
 
-```mermaid
+```
 graph TD
     TEI --> teiHeader
     teiHeader --> encodingDesc
@@ -13,7 +13,7 @@ graph TD
     classDecl --> taxonomy
 
     taxonomy --> category
-    category --> descNode
+    category --> descNode["catDesc"]
 
     category -.-> anaNode
 
@@ -22,7 +22,8 @@ graph TD
     end
     taxonomy --- NoteTaxonomy
 
-    subgraph NoteDesc
-        descConstraint["vincolo Schematron"]
+    subgraph NoteCategory
+        catConstraint["vincolo Schematron (context: category)"]
     end
-    descNode --- NoteDesc
+    category --- NoteCategory
+```
