@@ -4,7 +4,7 @@
 
 ### Added
 - **Tassonomia `risk`**: Introdotta la categoria specifica `risk-quietismo`. Questa aggiunta permette di isolare il rischio storico-dottrinale legato alle controversie del XVII secolo dal `risk-dottrinale` generico, aumentando la granularità analitica nelle sezioni a massima esposizione.
-- **Tassonomia `impact`**: Introdotti i livelli funzionali `impact-critical` (impatto strutturale) e `impact-supportive` (impatto locale). L'estensione è mirata a migliorare le correlazioni statistiche con l'indice numerico N/A/F (Nulla/Adeguata/Forte).
+- **Tassonomia `impact`**: Introdotti i livelli funzionali `impact-critical` (impatto strutturale) e `impact-supportive` (impatto locale). L'estensione è mirata a migliorare le correlazioni statistiche con l'indice numerico N/A/F (Necessità/Ambiguità/Funzione).
 
 ### Changed
 - **Tassonomia `operation`**: Eseguita una normalizzazione concettuale sulle categorie `attenuatio`, `precisatio` e `declaratio`. Le descrizioni sono state riscritte per rendere computabile la distinzione tra le diverse "mosse discorsive" autoriali e facilitare l'estrazione automatica delle strategie prudenziali.
