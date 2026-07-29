@@ -10,12 +10,12 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 - [Intertestualità sotto sorveglianza](#intertestualità-sotto-sorveglianza)
   * [Obiettivi](#obiettivi)
   * [Struttura del repository](#struttura-del-repository)
-  * [Modello TEI](#-modello-tei)
-  * [Pipeline AI](#-pipeline-ai)
-  * [Il campione](#-il-campione)
-  * [Stato dell'arte e ragioni del modello](#-stato-dellarte-e-ragioni-del-modello)
-  * [Contributo del progetto](#-contributo-del-progetto)
-  * [Licenza](#-licenza)
+  * [Modello TEI](#modello-tei)
+  * [Pipeline AI](#pipeline-ai)
+  * [Il campione](#il-campione)
+  * [Stato dell'arte e ragioni del modello](#stato-dellarte-e-ragioni-del-modello)
+  * [Contributo del progetto](#contributo-del-progetto)
+  * [Licenza](#licenza)
   * [Autore](#-autore)
 
 ---
