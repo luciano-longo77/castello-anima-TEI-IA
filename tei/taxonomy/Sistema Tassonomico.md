@@ -332,7 +332,7 @@ Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e in
 ## 11. Statuto del documento
 Questo documento ha **statuto normativo**. Ogni divergenza tra questo documento e i file XML della repository (`tassonomia-gh.xml`, `taxonomy.odd`, `taxonomy-rng.rng`, `taxonomy-sch.sch`) costituisce **errore del modello** e deve essere risolto prioritariamente.
 
-**Versione corrente**: 2026-07-26 (allineamento verificato con XML e schema).
+**Versione corrente**: 2026-07-29 (allineamento verificato con XML e schema).
 
 **Licenza:**
 Tutti i contenuti del repository sono rilasciati sotto licenza
