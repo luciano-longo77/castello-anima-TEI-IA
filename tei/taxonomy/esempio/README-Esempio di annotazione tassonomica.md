@@ -19,7 +19,7 @@ Esempio:
 ```
 
 Un segmento porta sempre più riferimenti insieme, uno per ciascun asse interpretativo pertinente 
-(funzione retorica, rischio dottrinale, stato mistico, operazione prudenziale, livello di esposizione, fase discorsiva) — non un solo tag generico.
+(funzione retorica, impatto interpretativo, rischio dottrinale, stato mistico, operazione prudenziale, livello di esposizione, fase discorsiva) non un solo tag generico.
 
 ## Validazione
 
