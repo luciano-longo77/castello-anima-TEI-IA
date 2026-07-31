@@ -75,8 +75,8 @@ Vai in:
 
 Vai in:
 
-*   `profileDesc` → `listPerson`
-*   `profileDesc` → `listOrg`
+*   `profileDesc` → `particDesc` → `listPerson`
+*   `profileDesc` → `particDesc` → `listOrg`
 
 ***
 
@@ -168,7 +168,7 @@ Controlla:
 
 ### ✅ *Importare le tassonomie*
 
-Puoi copiare direttamente l'intero `<classDecl>` nel tuo progetto.
+Per il riuso, parti dalla fonte normativa tei/taxonomy/tassonomia-gh.xml (le 8 tassonomie interpretative, con schema di validazione). Le 2 tassonomie di processo (fase, workflow) presenti nell'header sono interne al workflow editoriale e non sono pensate per il riuso.
 
 ### ✅ *Replicare il metodo editoriale*
 
