@@ -11,8 +11,8 @@ Ogni `<seg>` o `<cit>` porta un attributo `@ana` con una lista di riferimenti se
 Esempio:
 ```xml
 <seg xml:id="III-pref-p1-001"
-     ana="#ethos-obbedienza #legittimazione-tradizione #impact-high
-          #risk-dottrinale #mystic_state-quiete #operation-delimitazione
+     ana="#ethos-obbedienza #impact-high #risk-dottrinale
+          #mystic_state-quiete #operation-delimitazione
           #exposition-medium #phase-introduction">
     Incomincio mio Dio, come sapete...
 </seg>
