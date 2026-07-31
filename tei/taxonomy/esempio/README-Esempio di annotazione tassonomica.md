@@ -10,12 +10,15 @@ Ogni `<seg>` o `<cit>` porta un attributo `@ana` con una lista di riferimenti se
 
 Esempio:
 ```xml
-<seg xml:id="III-pref-p1-001"
-     ana="#ethos-obbedienza #impact-high #risk-dottrinale
-          #mystic_state-quiete #operation-delimitazione
-          #exposition-medium #phase-introduction">
-    Incomincio mio Dio, come sapete...
-</seg>
+<p n="1">
+    <seg xml:id="III-pref-p1-001"
+        ana="#ethos-obbedienza #exposition-low #phase-introduction">
+        Incomincio mio Dio, come sapete, questo terzo ed ultimo libro per santa obedienza,
+    </seg>
+    <seg xml:id="III-pref-p1-002"
+        ana="#ethos-umilta #exposition-low #phase-introduction">
+        e per narrar l’opere nostre, questa sì miserabile creatura,
+    </seg>
 ```
 
 Un segmento porta sempre più riferimenti insieme, uno per ciascun asse interpretativo pertinente 
