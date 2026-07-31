@@ -50,12 +50,13 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 │ • Titolo & Auth ││ • Criteri Ecd. │ │ • Sociolinguistica ││ • JSON IA      │
 │ • Codicologia   ││ • classDecl(10)│ │ • listPerson       ││ • METS Link    │
 │ • Apparati      ││ • tagsDecl (46)│ │ • listOrg          ││                │
+│                 ││                │ │ • textClass        ││                │
 └─────────────────┘└────────────────┘ └────────────────────┘└────────────────┘
                                         │
                              ┌──────────┴──────────┐
                              │    revisionDesc     │
                              ├─────────────────────┤
-                             │ • Audit Log (>60)   │
+                             │ • Audit Log (>70)   │
                              └─────────────────────┘
 ```
 
@@ -80,7 +81,7 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
      ▼                                                     ▼
 8 Tassonomie Interpretative                    2 Tassonomie di Processo
 (Annotazione sul testo via @ana)               (Tracciamento in revisionDesc)
-├── func (Funzioni retoriche, 4)              ├── fase (Fasi lavoro, 42)
+├── func (Funzioni retoriche, 4 rami)           ├── fase (Fasi lavoro, 42)
 ├── risk (Rischio dottrinale, 5)                └── workflow (Scenari IA, 4)
 ├── impact (Impatto interpretativo, 4)
 ├── mystic_state (Stati mistici, 5)
@@ -164,13 +165,15 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
 
 ## 6. Validazione e Qualità del Dato
 
-- **Validazione Strutturale:** Schema **RelaxNG** generato dall'ODD di progetto (`odd/castello-schema.odd.xml`).
-- **Validazione Semantica (ISO Schematron):**
-  - Presenza e non-vacuità di `catDesc`.
-  - Coerenza del prefisso `xml:id` rispetto alla tassonomia radice (asse `func` esente).
-  - Unicità globale degli `xml:id` su `taxonomy` e `category`.
-
-La risoluzione dei puntatori interni (`@ana`, `@ref`, `@who`, `@corresp`) è verificata separatamente, non fa parte delle regole Schematron del progetto.
+- **Validazione strutturale:** l'header è validato contro **`tei_all.rng`** (RelaxNG
+  completo TEI P5), dichiarato nel file tramite `<?xml-model?>`.
+- **Governance della tassonomia:** le tassonomie interpretative sono definite nella
+  fonte normativa `tei/taxonomy/tassonomia-gh.xml`, validata a parte contro il proprio
+  ODD (`taxonomy-odd.odd` → RelaxNG + Schematron: presenza/non-vacuità di `catDesc`,
+  coerenza del prefisso `xml:id`, unicità globale). L'header ne incorpora una copia
+  allineata; la coerenza della copia con la fonte è garantita per controllo separato.
+- **Integrità referenziale:** la risoluzione dei puntatori interni (`@ana`, `@ref`,
+  `@who`, `@corresp`) è verificata separatamente e non fa parte delle regole Schematron.
 
 ---
 
