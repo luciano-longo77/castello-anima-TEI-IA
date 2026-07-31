@@ -21,7 +21,6 @@
             <p n="1">
                 <seg xml:id="III-pref-p1-001"
                     ana="#ethos-obbedienza
-                    #legittimazione-tradizione
                     #impact-high
                     #risk-dottrinale
                     #mystic_state-quiete
@@ -35,10 +34,8 @@
                     xml:id="cit-phil2-8"
                     ana="#legittimazione-biblica
                     #risk-dottrinale">
-                    <quote xml:lang="la">
-                        <foreign xml:lang="la">Christus factus est pro nobis obediens usque ad mortem.</foreign>
-                    </quote>
-                    <ref type="scripture" target="#Phil.2.8"/>
+                    <quote xml:lang="la">Christus factus est pro nobis obediens usque ad mortem.</quote>
+                    <bibl>Phil 2,8</bibl>
                 </cit>
                 <seg xml:id="III-pref-p1-002"
                     ana="#ethos-umilta
@@ -68,12 +65,8 @@
                     ana="#legittimazione-liturgica
                     #relation-intertesto-liturgico
                     #risk-dottrinale">
-                    <quote xml:lang="la">
-                        <foreign xml:lang="la">
-                            Veni Creator Spiritus, mentes tuorum visita.
-                        </foreign>
-                    </quote>
-                    <ref type="liturgy" target="#Veni-Creator"/>
+                    <quote xml:lang="la">Veni Creator Spiritus, mentes tuorum visita.</quote>
+                    <bibl>Inno «Veni Creator Spiritus»</bibl>
                 </cit>
                 <seg xml:id="III-pref-p1-004"
                     ana="#ethos-umilta
@@ -91,4 +84,3 @@
         </body>
     </text>
 </TEI>
-
