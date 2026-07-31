@@ -42,14 +42,14 @@ Non è ammessa l'introduzione di valori annotativi che non siano dichiarati nell
 ### 1.1 Stack di Validazione (componenti del pacchetto)
 L'integrità del sistema è garantita da una catena di validazione a tre livelli inclusa nella repository:
 1.  **Sorgente (ODD):** definizione astratta e documentazione tecnica in 
-`tei/taxonomy/schema/taxonomy.odd`.
+`tei/taxonomy/schema/taxonomy-odd.odd`.
 2.  **Struttura (Relax NG):** validazione grammaticale e controllo di integrità strutturale tramite 
 `tei/taxonomy/schema/taxonomy-rng.rng` (generato da ODD).
 3.  **Logica (Schematron):** vincoli semantici avanzati e coerenza dei prefissi/relazioni tramite 
 `tei/taxonomy/schema/taxonomy-sch.sch` (generato da ODD, queryBinding="xslt").
 
 **Flusso di generazione**: 
-`taxonomy.odd` → Roma (oXygen) → `taxonomy-rng.rng` + `taxonomy-sch.sch`.
+`taxonomy-odd.odd` → Roma (oXygen) → `taxonomy-rng.rng` + `taxonomy-sch.sch`.
 
 ## 2. Assi interpretativi del sistema
 
@@ -326,11 +326,11 @@ Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca
 Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e includere:
 
 1. **Aggiornamento di `tei/taxonomy/tassonomia-gh.xml`**: aggiunta/modifica di categorie o descrizioni.
-2. **Rigenerazione dello schema** (se necessario): usare Roma (oXygen) per generare `taxonomy-rng.rng` e `taxonomy-sch.sch` a partire da `tei/taxonomy/schema/taxonomy.odd`. Includere entrambi i file generati nella PR.
+2. **Rigenerazione dello schema** (se necessario): usare Roma (oXygen) per generare `taxonomy-rng.rng` e `taxonomy-sch.sch` a partire da `tei/taxonomy/schema/taxonomy-odd.odd`. Includere entrambi i file generati nella PR.
 3. **Aggiornamento del presente documento (`Sistema Tassonomico.md`)** per riflettere i nuovi assi, categorie, o vincoli, inclusi eventuali aggiornamenti alla mappatura a tre assi interpretativi (§2) se una nuova tassonomia viene introdotta.
 
 ## 11. Statuto del documento
-Questo documento descrive il sistema tassonomico a **scopo di orientamento**. La **fonte normativa vincolante** resta *tassonomia-gh.xml (dati) e taxonomy.odd (definizione formale)*; in caso di divergenza tra questo documento e i file XML della repository, prevalgono questi ultimi.
+Questo documento descrive il sistema tassonomico a **scopo di orientamento**. La **fonte normativa vincolante** resta *tassonomia-gh.xml (dati) e taxonomy-odd.odd (definizione formale)*; in caso di divergenza tra questo documento e i file XML della repository, prevalgono questi ultimi.
 
 **Versione corrente**: 2026-07-29 (allineamento verificato con XML e schema).
 
