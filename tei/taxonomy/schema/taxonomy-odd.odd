@@ -15,7 +15,7 @@
             </editionStmt>
             <publicationStmt>
                 <publisher>Progetto TEI + IA controllata</publisher>
-                <idno type="filename">taxonomy.odd</idno>
+                <idno type="filename">taxonomy-odd.odd</idno>
                 <date when="2026-03-30">30 marzo 2026: prima strutturazione dell'ODD</date>
                 <availability>
                     <licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 – Open Access</licence>
