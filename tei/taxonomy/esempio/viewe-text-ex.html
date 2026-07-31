@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizzatore TEI Annotato - Castello dell'anima</title>
+    <title>Visualizzatore TEI - Annotato esemplificativa "Castello dell'anima"</title>
     <style>
         :root {
             --gold: #947a4b;
@@ -34,10 +34,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* ============================================
-           TOPBAR COMPATTA
-           ============================================ */
         .topbar {
             background: linear-gradient(90deg, #ffffff 0%, #faf9f7 35%, #f3f0ea 65%, #ffffff 100%);
             border-bottom: 1px solid rgba(148, 122, 75, 0.18);
@@ -65,7 +61,6 @@
             color: var(--gold-dark);
         }
 
-        /* Legenda compatta inline */
         .legend-bar {
             display: flex;
             flex-wrap: wrap;
@@ -105,7 +100,6 @@
             border-color: var(--brand-900);
         }
 
-        /* Legenda estesa (nascosta di default) */
         .legend-expanded {
             display: none;
             background: #ffffff;
@@ -146,15 +140,11 @@
             font-style: italic;
         }
 
-        /* ============================================
-           LAYOUT: TESTO + PANNELLO AFFIANCATI
-           ============================================ */
         .layout {
             display: flex;
             min-height: calc(100vh - 60px);
         }
 
-        /* Colonna testo: si restringe quando il pannello è aperto */
         .text-column {
             flex: 1;
             min-width: 0;
@@ -195,9 +185,6 @@
             border-bottom: 1px solid rgba(148, 122, 75, 0.15);
         }
 
-        /* ============================================
-           TESTO ANNOTATO
-           ============================================ */
         .text-body {
             font-family: 'Cormorant Garamond', 'Georgia', serif;
             font-size: 1.25rem;
@@ -264,9 +251,6 @@
             color: var(--brand-700);
         }
 
-        /* ============================================
-           PANNELLO ANNOTAZIONI (colonna destra)
-           ============================================ */
         .panel-column {
             width: 0;
             overflow: hidden;
@@ -428,10 +412,6 @@
             letter-spacing: 0.1em;
             margin-bottom: 0.6rem;
         }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
         .source-footer {
             margin-top: 2.5rem;
             padding-top: 1.25rem;
@@ -453,10 +433,6 @@
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
             overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
         }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
         @media (max-width: 899px) {
             .text-column { padding: 1rem; }
             .text-column.panel-open { padding-right: 1rem; }
@@ -497,7 +473,6 @@
 </head>
 <body>
 
-    <!-- TOPBAR -->
     <header class="topbar">
         <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
             <span class="topbar-title">Castello dell'anima</span>
@@ -515,8 +490,6 @@
             <button class="legend-toggle" id="legend-toggle" type="button">Dettagli</button>
         </div>
     </header>
-
-    <!-- LEGENDA ESTESA -->
     <div class="legend-expanded" id="legend-expanded">
         <div class="legend-expanded-grid">
             <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-func)"></span><div><strong>Funzione Retorica</strong><span>Legittimazione, pedagogia, ethos</span></div></div>
@@ -529,11 +502,7 @@
             <div class="legend-expanded-item"><span class="dot" style="background:var(--axis-relation)"></span><div><strong>Relazione Intertestuale</strong><span>Biblico, liturgico, teresiano</span></div></div>
         </div>
     </div>
-
-    <!-- LAYOUT AFFIANCATO -->
     <div class="layout">
-
-        <!-- COLONNA TESTO (sempre visibile) -->
         <div class="text-column" id="text-column">
             <div class="text-container">
                 <div class="text-header">
@@ -544,12 +513,10 @@
                     <p>Caricamento...</p>
                 </main>
                 <footer class="source-footer">
-                    <p>Fonte: <code>MC-1_castello-anima-TEI_Header.xml</code> · Definizioni: <code>classDecl</code></p>
+                    <p>Fonte: <code>taxonomy-text-model.xml</code> · Definizioni: <code>tassonomia-gh.xml</code></p>
                 </footer>
             </div>
         </div>
-
-        <!-- COLONNA PANNELLO (si apre a destra, testo resta leggibile) -->
         <aside class="panel-column" id="panel-column" aria-hidden="true" role="complementary" aria-label="Dettagli annotazione">
             <div class="panel-inner">
                 <div class="panel-header">
@@ -567,7 +534,6 @@
                 </div>
             </div>
         </aside>
-
     </div>
 
     <script>
@@ -803,7 +769,6 @@
                     if (e.key === 'Escape' && panelColumn.classList.contains('open')) closePanel();
                 });
 
-                // Toggle legenda estesa
                 document.getElementById('legend-toggle').addEventListener('click', () => {
                     document.getElementById('legend-expanded').classList.toggle('open');
                 });
