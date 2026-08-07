@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "tei/taxonomy/**"
+      - "tei/header/**"
   pull_request:
     branches: [main]
     paths:
       - "tei/taxonomy/**"
+      - "tei/header/**"
   workflow_dispatch:
 
 jobs:
@@ -129,3 +131,73 @@ jobs:
                 f"{len(esempio_files)} file esempio verificati (@ana referenziale OK).")
           PYEOF
           python validate_taxonomy.py
+
+  e1-guard:
+    name: Guardia E1 (classDecl header == tassonomia-gh.xml)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install lxml
+        run: pip install lxml
+
+      - name: Check required files exist
+        run: |
+          test -f tei/taxonomy/tassonomia-gh.xml || { echo "::error::tei/taxonomy/tassonomia-gh.xml non trovato"; exit 1; }
+          test -f tei/header/castello-anima-teiHeader.xml || { echo "::error::tei/header/castello-anima-teiHeader.xml non trovato"; exit 1; }
+
+      - name: Verifica non-divergenza delle 8 tassonomie interpretative (fonte <-> copia nell'header)
+        run: |
+          cat > e1_guard.py << 'PYEOF'
+          import sys
+          from lxml import etree
+
+          NS = {"t": "http://www.tei-c.org/ns/1.0"}
+          XMLID = "{http://www.w3.org/XML/1998/namespace}id"
+          INTERP = {"func", "impact", "risk", "mystic_state",
+                    "operation", "exposition", "phase", "relation"}
+          SRC = "tei/taxonomy/tassonomia-gh.xml"
+          HDR = "tei/header/castello-anima-teiHeader.xml"
+
+          def cats(path):
+              doc = etree.parse(path)
+              d = {}
+              for tax in doc.iterfind(".//t:taxonomy", NS):
+                  if tax.get(XMLID) not in INTERP:
+                      continue          # esclude fase/workflow: esistono solo nell'header
+                  for c in tax.iterfind(".//t:category", NS):
+                      cd = c.find("t:catDesc", NS)
+                      txt = " ".join("".join(cd.itertext()).split()) if cd is not None else None
+                      d[c.get(XMLID)] = txt
+              return d
+
+          src, hdr = cats(SRC), cats(HDR)
+          errors = []
+          for cid in sorted(set(src) | set(hdr)):
+              if cid not in src:
+                  errors.append(f"{cid}: presente nell'header ma NON nella fonte")
+              elif cid not in hdr:
+                  errors.append(f"{cid}: presente nella fonte ma NON nell'header")
+              elif src[cid] != hdr[cid]:
+                  errors.append(
+                      f"{cid}: catDesc DIVERGENTE\n"
+                      f"      fonte : {src[cid][:90]}\n"
+                      f"      header: {hdr[cid][:90]}"
+                  )
+
+          if errors:
+              print("::error::Divergenza E1 (fonte tassonomia-gh.xml <-> copia nell'header):")
+              for e in errors:
+                  print("  -", e)
+              sys.exit(1)
+
+          print(f"Guardia E1 superata: {len(src)} categorie interpretative identiche fra fonte e header.")
+          PYEOF
+          python e1_guard.py
