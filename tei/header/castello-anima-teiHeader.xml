@@ -856,7 +856,6 @@
                             <tagUsage gi="orgName">Istituzioni.</tagUsage>
                             <tagUsage gi="date">Date storiche o redazionali.</tagUsage>
                             <tagUsage gi="term">Termini tecnici o mistici.</tagUsage>
-                            <tagUsage gi="lang">Indicazione della lingua.</tagUsage>
                             <tagUsage gi="note">Note editoriali, dottrinali, contestuali.</tagUsage>
                             
 
