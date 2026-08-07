@@ -770,69 +770,96 @@
 
             <tagsDecl>
                 <namespace name="http://www.tei-c.org/ns/1.0">
-                    <!-- CORE STRUCTURE -->
-                    <tagUsage gi="TEI">Elemento radice della codifica TEI.</tagUsage>
-                    <tagUsage gi="teiHeader">Testata descrittiva del modulo di edizione.</tagUsage>
-                    <tagUsage gi="fileDesc">Metadati editoriali e di pubblicazione.</tagUsage>
-                    <tagUsage gi="sourceDesc">Descrizione del manoscritto autografo.</tagUsage>
-                    <tagUsage gi="msDesc">Descrizione strutturata del testimone.</tagUsage>
-                    <tagUsage gi="div">Struttura dell’opera (Libri, Capitoli).</tagUsage>
-                    <tagUsage gi="p">Unità minima del discorso.</tagUsage>
-                    <tagUsage gi="seg">Unità di struttura/unità interpretativa</tagUsage>
-                    <tagUsage gi="head">Rubriche tematiche e titoli.</tagUsage>
-                    <tagUsage gi="pb">Foliazione originale recto/verso.</tagUsage>
+                            
+                            <!-- 1. STRUTTURA RADICE E METADATI -->
+                            <tagUsage gi="TEI">Elemento radice della codifica TEI.</tagUsage>
+                            <tagUsage gi="teiHeader">Testata descrittiva del modulo di edizione.</tagUsage>
+                            <tagUsage gi="fileDesc">Metadati editoriali e di pubblicazione.</tagUsage>
+                            <tagUsage gi="sourceDesc">Descrizione del manoscritto autografo.</tagUsage>
+                            
+                            <!-- 2. DESCRIZIONE DEL MANOSCRITTO -->
+                            <tagUsage gi="msDesc">Descrizione strutturata del testimone.</tagUsage>
+                            <tagUsage gi="msIdentifier">Identificazione archivistica del manoscritto.</tagUsage>
+                            <tagUsage gi="msContents">Contenuto del manoscritto.</tagUsage>
+                            <tagUsage gi="msItem">Unità interne (Libri I–III).</tagUsage>
+                            <tagUsage gi="physDesc">Descrizione materiale.</tagUsage>
+                            <tagUsage gi="handDesc">Descrizione delle mani scriventi.</tagUsage>
+                            <tagUsage gi="handNote">Profilo delle diverse mani (inchiostro, matita).</tagUsage>
+                            <tagUsage gi="layoutDesc">Descrizione della mise en page.</tagUsage>
+                            <tagUsage gi="layout">Struttura grafica e rigatura.</tagUsage>
+                            
+                            <!-- 3. STRUTTURA DEL TESTO -->
+                            <tagUsage gi="div">Struttura dell’opera (Libri, Capitoli).</tagUsage>
+                            <tagUsage gi="head">Rubriche tematiche e titoli.</tagUsage>
+                            <tagUsage gi="argument">Sommario/rubrica argomentativa in apertura di capitolo.</tagUsage>
+                            <tagUsage gi="titlePage">Frontespizio del manoscritto.</tagUsage>
+                            <tagUsage gi="titlePart">Porzione del frontespizio (titolo, formula, responsabilità).</tagUsage>
+                            <tagUsage gi="p">Unità minima del discorso.</tagUsage>
+                            <tagUsage gi="seg">Unità di struttura/unità interpretativa.</tagUsage>
+                            <tagUsage gi="pb">Foliazione originale recto/verso.</tagUsage>
+                            <tagUsage gi="lb">Interruzioni di riga rilevanti.</tagUsage>
+                            <tagUsage gi="fw">Elementi di cornice (richiami, segnature, numerazione di carta).</tagUsage>
+                            <tagUsage gi="anchor">Punto d’ancoraggio per rimandi e annotazioni stand-off.</tagUsage>
+                            
+                            <!-- 4. TRASCRIZIONE DIPLOMATICA -->
+                            <tagUsage gi="abbr">Abbreviazioni.</tagUsage>
+                            <tagUsage gi="expan">Scioglimenti.</tagUsage>
+                            <tagUsage gi="choice">Contenitore di alternative editoriali (abbr/expan, orig/reg, sic/corr).</tagUsage>
+                            <tagUsage gi="orig">Forma originale del manoscritto.</tagUsage>
+                            <tagUsage gi="reg">Forma normalizzata editorialmente.</tagUsage>
+                            <tagUsage gi="sic">Errori materiali.</tagUsage>
+                            <tagUsage gi="corr">Correzioni editoriali esplicite.</tagUsage>
+                            <tagUsage gi="foreign">Segmenti in lingua diversa (latino biblico/liturgico).</tagUsage>
+                            <tagUsage gi="gap">Guasti o lacune.</tagUsage>
+                            <tagUsage gi="supplied">Integrazioni editoriali per lacune.</tagUsage>
+                            <tagUsage gi="unclear">Grafie non leggibili.</tagUsage>
+                            
+                            <!-- 5. GENETICA E CORREZIONI D’AUTORE -->
+                            <tagUsage gi="add">Aggiunte interlineari/marginali.</tagUsage>
+                            <tagUsage gi="del">Cancellature.</tagUsage>
+                            <tagUsage gi="subst">Sostituzioni (del+add).</tagUsage>
+                            <tagUsage gi="restore">Ripristino di una porzione cancellata e poi confermata.</tagUsage>
+                            <tagUsage gi="retrace">Ripasso/rinforzo del tratto da parte della stessa mano.</tagUsage>
+                            <tagUsage gi="metamark">Segni operativi d’autore (richiami, segni di spostamento).</tagUsage>
+                            
+                            <!-- 6. APPARATO CRITICO -->
+                            <tagUsage gi="app">Apparato critico in situ.</tagUsage>
+                            <tagUsage gi="lem">Lemma testuale.</tagUsage>
+                            <tagUsage gi="rdg">Varianti d’autore (Tb0, Tb1, T1…).</tagUsage>
+                            
+                            <!-- 7. ANNOTAZIONE INTERPRETATIVA E STAND-OFF -->
+                            <tagUsage gi="spanGrp">Gruppi di annotazioni analitiche.</tagUsage>
+                            <tagUsage gi="span">Annotazioni specifiche su nuclei concettuali.</tagUsage>
+                            <tagUsage gi="interp">Voce di vocabolario interpretativo (figure retoriche).</tagUsage>
+                            <tagUsage gi="interpGrp">Gruppo di voci interpretative a vocabolario condiviso.</tagUsage>
+                            <tagUsage gi="link">Associazione esplicita fra segmenti e annotazioni.</tagUsage>
+                            <tagUsage gi="linkGrp">Gruppo di associazioni omogenee.</tagUsage>
+                            <tagUsage gi="rs">Stringa referenziale generica (entità o nucleo concettuale).</tagUsage>
+                            <tagUsage gi="hi">Evidenziazione grafica rilevante.</tagUsage>
+                            
+                            <!-- 8. INDICE D’IMPATTO (FEATURE STRUCTURES) -->
+                            <tagUsage gi="standOff">Contenitore di annotazioni non in linea (indice d’impatto, figure).</tagUsage>
+                            <tagUsage gi="fs">Struttura di tratti dell’indice d’impatto.</tagUsage>
+                            <tagUsage gi="f">Tratto singolo (dimensione dell’indice).</tagUsage>
+                            <tagUsage gi="numeric">Valore numerico di un tratto.</tagUsage>
+                            
+                            <!-- 9. COLLEGAMENTI E CITAZIONI -->
+                            <tagUsage gi="ref">Rinvii interni, esterni, intertestuali.</tagUsage>
+                            <tagUsage gi="ptr">Puntatori strutturali.</tagUsage>
+                            <tagUsage gi="cit">Citazioni bibliche, liturgiche, mistiche.</tagUsage>
+                            <tagUsage gi="quote">Testo della citazione.</tagUsage>
+                            <tagUsage gi="bibl">Riferimenti bibliografici.</tagUsage>
+                            
+                            <!-- 10. ENTITÀ NOMINATE, TERMINI, NOTE -->
+                            <tagUsage gi="persName">Persone.</tagUsage>
+                            <tagUsage gi="placeName">Luoghi.</tagUsage>
+                            <tagUsage gi="orgName">Istituzioni.</tagUsage>
+                            <tagUsage gi="date">Date storiche o redazionali.</tagUsage>
+                            <tagUsage gi="term">Termini tecnici o mistici.</tagUsage>
+                            <tagUsage gi="lang">Indicazione della lingua.</tagUsage>
+                            <tagUsage gi="note">Note editoriali, dottrinali, contestuali.</tagUsage>
+                            
 
-                    <!-- MANUSCRIPT DESCRIPTION -->
-                    <tagUsage gi="msIdentifier">Identificazione archivistica del manoscritto.</tagUsage>
-                    <tagUsage gi="msContents">Contenuto del manoscritto.</tagUsage>
-                    <tagUsage gi="msItem">Unità interne (Libri I–III).</tagUsage>
-                    <tagUsage gi="physDesc">Descrizione materiale.</tagUsage>
-                    <tagUsage gi="handDesc">Descrizione delle mani scriventi.</tagUsage>
-                    <tagUsage gi="handNote">Profilo delle diverse mani (inchiostro, matita).</tagUsage>
-                    <tagUsage gi="layoutDesc">Descrizione della mise en page.</tagUsage>
-                    <tagUsage gi="layout">Struttura grafica e rigatura.</tagUsage>
-
-                    <!-- TRANSCRIPTION -->
-                    <tagUsage gi="add">Aggiunte interlineari/marginali.</tagUsage>
-                    <tagUsage gi="del">Cancellature.</tagUsage>
-                    <tagUsage gi="subst">Sostituzioni (del+add).</tagUsage>
-                    <tagUsage gi="abbr">Abbreviazioni.</tagUsage>
-                    <tagUsage gi="expan">Scioglimenti.</tagUsage>
-                    <tagUsage gi="sic">Errori materiali.</tagUsage>
-                    <tagUsage gi="corr">Correzioni editoriali esplicite.</tagUsage>
-                    <tagUsage gi="gap">Guasti o lacune.</tagUsage>
-                    <tagUsage gi="supplied">Integrazioni editoriali per lacune.</tagUsage>
-                    <tagUsage gi="unclear">Grafie non leggibili.</tagUsage>
-                    <tagUsage gi="lb">Interruzioni di riga rilevanti.</tagUsage>
-
-                    <!-- TEXTCRIT -->
-                    <tagUsage gi="app">Apparato critico in situ.</tagUsage>
-                    <tagUsage gi="lem">Lemma testuale.</tagUsage>
-                    <tagUsage gi="rdg">Varianti d’autore (Tb0, Tb1, T1…).</tagUsage>
-
-                    <!-- ANALYSIS -->
-                    <tagUsage gi="spanGrp">Gruppi di annotazioni analitiche.</tagUsage>
-                    <tagUsage gi="span">Annotazioni specifiche su nuclei concettuali.</tagUsage>
-
-                    <!-- LINKING -->
-                    <tagUsage gi="ref">Rinvii interni, esterni, intertestuali.</tagUsage>
-                    <tagUsage gi="ptr">Puntatori strutturali.</tagUsage>
-
-                    <!-- QUOTATIONS -->
-                    <tagUsage gi="cit">Citazioni bibliche, liturgiche, mistiche.</tagUsage>
-                    <tagUsage gi="quote">Testo della citazione.</tagUsage>
-                    <tagUsage gi="bibl">Riferimenti bibliografici.</tagUsage>
-
-                    <!-- NAMES, TERMS, DATES -->
-                    <tagUsage gi="persName">Persone.</tagUsage>
-                    <tagUsage gi="placeName">Luoghi.</tagUsage>
-                    <tagUsage gi="orgName">Istituzioni.</tagUsage>
-                    <tagUsage gi="date">Date storiche o redazionali.</tagUsage>
-                    <tagUsage gi="term">Termini tecnici o mistici.</tagUsage>
-                    <tagUsage gi="lang">Indicazione della lingua.</tagUsage>
-
-                    <!-- NOTES -->
-                    <tagUsage gi="note">Note editoriali, dottrinali, contestuali.</tagUsage>
                 </namespace>
             </tagsDecl>
 
@@ -1637,6 +1664,21 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
+            
+            <change when="2026-08-07" who="#editor" ana="#fase-armonizzazione-header"> Completato e
+                riordinato il <code>tagsDecl</code>: aggiunti 22 elementi finora usati ma non
+                dichiarati (<code>argument</code>, <code>titlePage</code>, <code>titlePart</code>,
+                <code>fw</code>, <code>anchor</code>; <code>choice</code>, <code>orig</code>,
+                <code>reg</code>, <code>foreign</code>; <code>restore</code>, <code>retrace</code>,
+                <code>metamark</code>; <code>interp</code>, <code>interpGrp</code>, <code>link</code>,
+                <code>linkGrp</code>, <code>rs</code>, <code>hi</code>; <code>standOff</code>,
+                <code>fs</code>, <code>f</code>, <code>numeric</code>), portando il tagset da 46 a 68
+                <code>tagUsage</code>. Le dichiarazioni sono state risistemate in un unico ordinamento
+                logico dal contenitore al dettaglio (struttura radice → descrizione del testimone →
+                struttura del testo → trascrizione diplomatica → genetica d'autore → apparato critico →
+                annotazione interpretativa e stand-off → indice d'impatto → collegamenti e citazioni →
+                entità e note), con i nuovi elementi integrati nei rispettivi gruppi funzionali.
+                Intervento preparatorio alla codifica del <code>text</code> (Libro III). </change>
             
             <change when="2026-07-31" who="#editor" ana="#fase-revisione-header"> Revisione
                 integrale del <code>teiHeader</code> per conformità TEI P5 e interoperabilità DH.
