@@ -15,12 +15,16 @@
 2. [Architettura dei Blocchi Metatestuali](#2-architettura-dei-blocchi-metatestuali)
 3. [Sistema Tassonomico (`classDecl`)](#3-sistema-tassonomico-classdecl)
 4. [Dichiarazione del Tagset (`tagsDecl`)](#4-dichiarazione-del-tagset-tagsdecl)
-   - A. [Struttura Core e Contesto](#a-struttura-core-e-contesto)
+   - A. [Struttura Radice e Metadati](#a-struttura-radice-e-metadati)
    - B. [Descrizione del Manoscritto](#b-descrizione-del-manoscritto)
-   - C. [Trascrizione e Correzioni Autoriali](#c-trascrizione-e-correzioni-autoriali)
-   - D. [Apparato Critico e Annotazione Analitica](#d-apparato-critico-e-annotazione-analitica)
-   - E. [Collegamenti e Citazioni](#e-collegamenti-e-citazioni)
-   - F. [Entità Nominate e Note](#f-entità-nominate-e-note)
+   - C. [Struttura del Testo](#c-struttura-del-testo)
+   - D. [Trascrizione Diplomatica](#d-trascrizione-diplomatica)
+   - E. [Genetica e Correzioni d'Autore](#e-genetica-e-correzioni-dautore)
+   - F. [Apparato Critico](#f-apparato-critico)
+   - G. [Annotazione Interpretativa e Stand-off](#g-annotazione-interpretativa-e-stand-off)
+   - H. [Indice d'Impatto (Feature Structures)](#h-indice-dimpatto-feature-structures)
+   - I. [Collegamenti e Citazioni](#i-collegamenti-e-citazioni)
+   - J. [Entità Nominate, Termini e Note](#j-entità-nominate-termini-e-note)
 5. [Protocollo IA (`xenoData` + `projectDesc`)](#5-protocollo-ia-xenodata--projectdesc)
 6. [Validazione e Qualità del Dato](#6-validazione-e-qualità-del-dato)
 7. [Citazione](#7-citazione)
@@ -51,7 +55,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 ├─────────────────┤├────────────────┤ ├────────────────────┤├────────────────┤
 │ • Titolo & Auth ││ • Criteri Ecd. │ │ • Sociolinguistica ││ • JSON IA      │
 │ • Codicologia   ││ • classDecl(10)│ │ • listPerson       ││ • METS Link    │
-│ • Apparati      ││ • tagsDecl (46)│ │ • listOrg          ││                │
+│ • Apparati      ││ • tagsDecl (67)│ │ • listOrg          ││                │
 │                 ││                │ │ • textClass        ││                │
 └─────────────────┘└────────────────┘ └────────────────────┘└────────────────┘
                                         │
@@ -101,49 +105,78 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
 
 ## 4. Dichiarazione del Tagset (`tagsDecl`)
 
-Il tagset disciplina **46 elementi TEI**, raggruppati per macro-funzione.
+Il tagset disciplina **67 elementi TEI**, dichiarati nel `tagsDecl` in un unico ordinamento logico dal contenitore al dettaglio e qui raggruppati per macro-funzione (A–J).
 
-### A. Struttura Core e Contesto
+### A. Struttura Radice e Metadati
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
-| `TEI`, `teiHeader`, `fileDesc` | Struttura radice e contenitori dei metadati. |
-| `sourceDesc`, `msDesc`, `msIdentifier` | Identificazione archivistica e descrizione del testimone. |
-| `div`, `p`, `seg`, `head` | Struttura del testo (Libri, Capitoli) e unità interpretative. |
-| `pb` | Foliazione originale (recto/verso) per il controllo della materialità. |
+| `TEI`, `teiHeader` | Radice della codifica e testata descrittiva del modulo. |
+| `fileDesc`, `sourceDesc` | Metadati editoriali e descrizione del manoscritto autografo. |
 
 ### B. Descrizione del Manoscritto
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
+| `msDesc`, `msIdentifier` | Descrizione strutturata e identificazione archivistica del testimone. |
 | `msContents`, `msItem` | Contenuto e articolazione interna (Libri I–III). |
-| `physDesc`, `handDesc`, `handNote` | Descrizione materiale, mani e inchiostri. |
+| `physDesc`, `handDesc`, `handNote` | Descrizione materiale, mani scriventi e inchiostri/matita. |
 | `layoutDesc`, `layout` | *Mise en page* e rigatura. |
 
-### C. Trascrizione e Correzioni Autoriali
+### C. Struttura del Testo
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
-| `add`, `del`, `subst` | Tracciamento di aggiunte, cancellature e sostituzioni autoriali. |
-| `abbr`, `expan` | Abbreviazioni e relativi scioglimenti editoriali. |
-| `sic`, `corr` | Distinzione tra errori materiali del ms. e correzioni editoriali. |
+| `div`, `head`, `argument` | Partizione (Libri, Capitoli), rubriche/titoli e sommari argomentativi. |
+| `titlePage`, `titlePart` | Frontespizio e sue porzioni (titolo, formula, responsabilità). |
+| `p`, `seg` | Unità minima del discorso e unità di struttura/interpretative. |
+| `pb`, `lb` | Foliazione originale (recto/verso) e interruzioni di riga. |
+| `fw`, `anchor` | Elementi di cornice (richiami, segnature) e punti d'ancoraggio per lo stand-off. |
+
+### D. Trascrizione Diplomatica
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `abbr`, `expan` | Abbreviazioni e relativi scioglimenti. |
+| `choice`, `orig`, `reg` | Contenitore di alternative editoriali; forma originale vs normalizzata. |
+| `sic`, `corr` | Errori materiali del ms. vs correzioni editoriali esplicite. |
+| `foreign` | Segmenti in lingua diversa (latino biblico/liturgico). |
 | `gap`, `supplied`, `unclear` | Lacune fisiche, integrazioni congetturali e grafie illeggibili. |
-| `lb` | Interruzioni di riga rilevanti. |
 
-### D. Apparato Critico e Annotazione Analitica
+### E. Genetica e Correzioni d'Autore
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
-| `app`, `lem`, `rdg` | Apparato *in situ*: lezioni base e varianti d'autore (`Tb0`, `Tb1`, `T1`…). |
-| `spanGrp`, `span` | Annotazioni analitiche su nuclei concettuali. |
+| `add`, `del`, `subst` | Aggiunte, cancellature e sostituzioni autoriali. |
+| `restore` | Ripristino di una porzione cancellata e poi confermata. |
+| `retrace` | Ripasso/rinforzo del tratto da parte della stessa mano. |
+| `metamark` | Segni operativi d'autore (richiami, segni di spostamento). |
 
-### E. Collegamenti e Citazioni
+### F. Apparato Critico
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
-| `ref`, `ptr` | Rinvii interni, esterni e intertestuali. |
-| `cit`, `quote`, `bibl` | Citazioni bibliche, liturgiche, mistiche e riferimenti bibliografici. |
+| `app`, `lem`, `rdg` | Apparato *in situ*: lezione base e varianti d'autore (`Tb0`, `Tb1`, `T1`…). |
 
-### F. Entità Nominate e Note
+### G. Annotazione Interpretativa e Stand-off
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `spanGrp`, `span` | Gruppi e singole annotazioni analitiche su nuclei concettuali. |
+| `interp`, `interpGrp` | Voci e gruppi di vocabolario interpretativo (figure retoriche). |
+| `link`, `linkGrp` | Associazioni esplicite fra segmenti e annotazioni. |
+| `rs`, `hi` | Stringhe referenziali generiche ed evidenziazioni grafiche. |
+
+### H. Indice d'Impatto (Feature Structures)
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `standOff` | Contenitore di annotazioni non in linea (indice d'impatto, figure). |
+| `fs`, `f`, `numeric` | Struttura di tratti, tratto singolo e valore numerico dell'indice. |
+
+### I. Collegamenti e Citazioni
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `ref`, `ptr` | Rinvii interni/esterni/intertestuali e puntatori strutturali. |
+| `cit`, `quote`, `bibl` | Citazioni bibliche/liturgiche/mistiche e riferimenti bibliografici. |
+
+### J. Entità Nominate, Termini e Note
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
 | `persName`, `placeName`, `orgName` | Tagging di persone, luoghi e istituzioni. |
-| `date`, `term`, `lang` | Date, termini tecnici mistici e indicazioni di lingua. |
+| `date`, `term` | Date storiche/redazionali e termini tecnici o mistici. |
 | `note` | Note editoriali, dottrinali e contestuali. |
 
 ---
