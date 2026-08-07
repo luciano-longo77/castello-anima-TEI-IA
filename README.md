@@ -131,7 +131,8 @@ I segmenti selezionati presentano:
 - estensione comparabile e equilibrio fra fenomeni retorici.
 
 Questo campione costituisce la base per l'annotazione TEI e per la sperimentazione AI.
-➡️ [Leggi la **Base dati per il campionamento**](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/base-dati_campionamento.md) — capitoli selezionati, authority list e matrice tipizzata delle glosse.
+
+- ➡️ [Leggi la **Base dati per il campionamento**](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/base-dati_campionamento.md) 
 
 ---
 
