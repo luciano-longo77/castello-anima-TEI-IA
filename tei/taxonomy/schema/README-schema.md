@@ -1,4 +1,12 @@
 # Schema — file di validazione della tassonomia
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0  
 
 Questa cartella contiene i file che governano la validazione formale del sistema tassonomico. Non contengono la tassonomia stessa (quella è in [`tassonomia-gh.xml`](../tassonomia-gh.xml)) — definiscono le regole a cui `tassonomia-gh.xml` deve conformarsi.
 
