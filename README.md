@@ -94,11 +94,13 @@ Porzioni di testo rilevanti, classificate tramite `@ana` secondo la funzione che
 
 ### Indice di impatto
 
-Valore composito (alto, medio, basso), calcolato secondo la formula `I = 0.40*N + 0.35*A + 0.25*F`, assegnato a citazioni e glosse in base a:
+Valore composito discretizzato in quattro classi (impact-low, impact-medium, impact-high, impact-critical), calcolato secondo la formula del progetto AURORA I = (4·F_norm + 2·N + 1·A)/7, con pesi AHP in rapporto F:N:A = 4:2:1, assegnato a citazioni e glosse in base a:
 
-- necessità interpretativa (N),
-- capacità di ridurre ambiguità (A),
-- funzione prudenziale (F) nel chiarire o delimitare concetti teologici complessi.
+N — necessità interpretativa (esposizione dottrinale del passo prima dell'intervento);
+A — riduzione dell'ambiguità (quanto l'intervento restringe le letture possibili);
+F — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse operation), normalizzata come F_norm = F/3.
+
+Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione (cfr. Sistema Tassonomico.md §5).
 
 ---
 
