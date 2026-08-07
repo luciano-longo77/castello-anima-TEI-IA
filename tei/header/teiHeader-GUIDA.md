@@ -1,4 +1,4 @@
-# Guida alla Navigazione del *teiHeader*
+# Guida alla navigazione del *teiHeader*
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
