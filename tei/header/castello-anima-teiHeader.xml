@@ -598,16 +598,16 @@
                     e presuppongono sempre una corrispondente operazione discorsiva rappresentata
                     nella tassonomia <gi>operation</gi>; (2) la tassonomia <gi>risk</gi> modella le
                     condizioni storiche e dottrinali di esposizione, mentre <gi>func</gi> modella le
-                    strategie discorsive adottate per gestirle; (3) la tassonomia <gi>impact</gi> è
-                    impiegata come asse interpretativo composito, combinando scala esplicativa e
-                    funzione strutturale, senza postulare una distinzione ontologica rigida tra i
-                    suoi valori. </p>
+                    strategie discorsive adottate per gestirle; (3) la tassonomia <gi>impact</gi> registra 
+                    l'esito della discretizzazione dell'indice composito N–A–F (necessità interpretativa, 
+                    riduzione dell'ambiguità e funzione prudenziale), 
+                    non un giudizio diretto dell'annotatore: le sue quattro classi sono le fasce di valore dell'indice. </p>
                 
                 <p n="4" ana="#imp-idx"> Ogni occorrenza intertestuale è modellata come nodo formale
                     tramite <code>seg</code>, <code>cit</code>, <code>quote</code>, <code>ref</code>, <code>note
                     type="glossa"</code>, ciascuno corredato da tassonomie, da relazioni espresse
                     attraverso attributi come @corresp e @target, e da indicatori numerici. 
-                    Il modello integra un indice d'impatto composto (N, A, F) calcolato secondo la formula I = (4·F_norm + 2·N + 1·A)/7, ,
+                    Il modello integra un indice d'impatto composto (N, A, F) calcolato secondo la formula I = (4·F_norm + 2·N + 1·A)/7,
                     con pesi AHP in rapporto F:N:A = 4:2:1 (w_F=4/7, w_N=2/7, w_A=1/7), dove N misura la necessità interpretativa 
                     (esposizione dottrinale del passo prima dell'intervento), A la riduzione dell'ambiguità e F la funzione prudenziale 
                     espressa come classe formale ordinale del marcatore (1 = cioè; 2 = ciò s'intende; 3 = io mi dichiaro), derivata dal rango 
@@ -947,23 +947,27 @@
                         giudizio diretto dell’annotatore, ma l’esito di una formula.--> 
                     
                     <category xml:id="impact-high">
-                        <catDesc>Passaggi che chiariscono concetti dottrinali centrali (contemplazione
-                            infusa, unione, quiete, notte dei sensi); decisivi per la comprensione
-                            dell’opera e frequente oggetto di glosse prudenziali.</catDesc>
+                        <catDesc>Fascia alta dell'indice (0.66 ≤ I &lt; 0.82): forte forza regolativa del
+    marcatore. Passaggi che ridefiniscono proposizioni dottrinali centrali
+    (contemplazione infusa, unione, quiete, notte dei sensi), decisivi per la
+    comprensione dell'opera e frequente oggetto di glosse prudenziali.</catDesc>
                     </category>
                     <category xml:id="impact-medium">
-                        <catDesc>Elementi che rafforzano e integrano i concetti principali mediante
-                            esempi, distinzioni e spiegazioni accessorie, senza modificarne
-                            l’assetto teologico.</catDesc>
+<catDesc>Fascia intermedia dell'indice (0.50 ≤ I &lt; 0.66): forza regolativa
+    moderata. Marcatori che rafforzano o integrano i concetti principali (esempi,
+    distinzioni, spiegazioni accessorie) senza modificarne l'assetto teologico.</catDesc>
                     </category>
                     <category xml:id="impact-low">
-                        <catDesc>Parti ornamentali o reiterative utili all’enfasi ma non decisive per
-                            l’argomentazione teologica.</catDesc>
+<catDesc>Fascia inferiore dell'indice (I &lt; 0.50): minima forza regolativa del
+    marcatore. Parti ornamentali o reiterative, utili all'enfasi ma non decisive
+    per l'argomentazione teologica.</catDesc>
                     </category>
                     <category xml:id="impact-critical">
-                        <catDesc>Nodi ad altissimo rischio interpretativo, come la trasformazione,
-                            l’apparente "impeccabilità", la "sicurtà divina", la "sospensione delle
-                            potenze" e la relazione fra volontà umana e azione divina.</catDesc>
+<catDesc>Fascia superiore dell'indice (I ≥ 0.82): massima forza regolativa del
+    marcatore. Nel campione coincide con le declaratio (F=3), i sigilli performativi
+    di ortodossia ("io mi dichiaro"), collocati nei nodi dottrinalmente più esposti
+    (trasformazione, apparente "impeccabilità", "sicurtà divina", "sospensione delle
+    potenze").</catDesc>
                     </category>
                 </taxonomy>
                 <!-- 3. Tassonomia del RISCHIO DOTTRINALE -->
@@ -1665,6 +1669,17 @@
                 A seguito degli interventi il documento risulta ben formato, con <code>@xml:id</code>
                 univoci e riferimenti interni tutti risolti, e validato contro <code>tei_all</code>. </change>
 
+            <change when="2026-08-07" who="#editor" ana="#fase-precisione-metodologica"> Aggiornato
+                l'indice d'impatto al modello AHP del progetto AURORA: <hi rend="italic">I =
+                (4·F_norm + 2·N + 1·A)/7</hi> (pesi F:N:A = 4:2:1), con F come classe formale
+                ordinale derivata dall'asse <code>operation</code> (delimitazione=1;
+                attenuatio/precisatio/riequilibrio=2; declaratio=3) e soglie calibrate sulla
+                distribuzione reale del campione. Aggiunta la dichiarazione formale
+                <code>interpretation xml:id="imp-idx"</code> in <code>editorialDecl</code>;
+                allineati il punto (3) di <code>projectDesc</code> e i <code>catDesc</code> della
+                tassonomia <code>impact</code>. Sostituita la precedente formula a pesi ad hoc
+                (0.40·N + 0.35·A + 0.25·F). </change>
+            
             <change when="2026-07-18" who="#editor" ana="#fase-revisione-struttura"> Convertito
                 in encodingDesc l'elemento <code>ab xml:base="abstract"</code> in <code>p
                 xml:base="abstract"</code>, a parità di contenuto, per rimuovere un'incertezza di
