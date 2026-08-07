@@ -12,12 +12,12 @@
 
 ## Premessa
 
-Questo documento espone **il set di tag adottato per la codifica del testo** del *Castello dell'anima* e lo **argomenta**: per ciascun fenomeno spiega *quale* elemento si usa, *con quali attributi e valori*, e soprattutto **perché quello e non un altro**. È dunque, insieme, la parte metodologica sulla marcatura (che confluisce nel cap. 3 del paper) e il **contratto di codifica** per `castello-anima-text.xml`.
+Questo documento espone **il set di tag adottato per la codifica del testo** del *Castello dell'anima* e lo **argomenta**: per ciascun fenomeno spiega *quale* elemento si usa, *con quali attributi e valori*. È dunque, insieme, la parte metodologica sulla marcatura e il **contratto di codifica** per `castello-anima-text.xml`.
 
 Tre principi lo governano:
 
-1. **Ancoraggio.** Ogni puntatore (`#id`) usato nel testo *esiste già* in `castello-anima-teiHeader.xml` (mani, testimoni, entità, tassonomia `workflow`) o in `tassonomia-gh.xml` (categorie `@ana`). **Regola d'oro: 0 dangling** — nessun `#id` inventato.
-2. **Trasparenza filologica.** Nessuna normalizzazione tacita, nessuna lezione ricostruita in silenzio: ogni scelta editoriale è marcata e attribuita.
+1. **Ancoraggio.** Ogni puntatore (`#id`) usato in `castello-anima-teiHeader.xml` (mani, testimoni, entità, tassonomia `workflow`) o in `tassonomia-gh.xml` (categorie `@ana`). 
+2. **Trasparenza filologica.** Ogni scelta editoriale è marcata e attribuita.
 3. **Verificabilità.** Elementi, attributi e annidamenti qui descritti sono verificati contro le specifiche **TEI P5** (`tei_all`): un esemplare che li esercita tutti supera il controllo strutturale con **0 errori**. La validazione RelaxNG completa (ordine, occorrenze, Schematron) si fa in oXygen.
 
 > La forma canonica *machine-actionable* di questi vincoli è l'**ODD**; questo documento ne è il contenuto pronto (schema + manuale generabili in un secondo momento). Le liste di valori vincolati sono in [Appendice](#appendice--liste-di-valori-i-puntatori).
@@ -30,7 +30,7 @@ La marcatura è stratificata in cinque livelli, dal più esterno (la struttura d
 
 ## 1. La struttura del testo
 
-Il testo è un autografo unico, articolato in **Libri** e **capitoli**: una gerarchia continua, non una sequenza di segnaposti. Per questo la struttura si rende con `<div>` annidati (`@type` = `book` › `chapter`) e **non** con `<milestone>`, che segnerebbe confini senza contenere il testo. Le rubriche dei capitoli sono `<head>`; l'eventuale cappello che precede un capitolo è `<argument>` (elemento di struttura dedicato, non una `<note>`).
+Il testo è un autografo unico, articolato in **Libri** e **capitoli**: una gerarchia continua. Per questo la struttura si rende con `<div>` annidati (`@type` = `book` › `chapter`) e **non** con `<milestone>`, che segnerebbe confini senza contenere il testo. Le rubriche dei capitoli sono `<head>`; l'eventuale cappello che precede un capitolo è `<argument>` (elemento di struttura dedicato, non una `<note>`).
 
 ```xml
 <div type="chapter" n="III.1" xml:id="L3-1">
@@ -53,13 +53,13 @@ Dove serve un ancoraggio *senza* spezzare il flusso (per lo stand-off), si usa `
 
 ## 2. Il livello diplomatico
 
-Principio: **mai normalizzare in silenzio.** Ogni volta che l'editore regolarizza, scioglie o corregge, il testo conserva *entrambe* le forme dentro `<choice>` — grafia originale ↔ regolarizzata (`orig`/`reg`), abbreviazione ↔ scioglimento (`abbr`/`expan`), errore materiale ↔ correzione (`sic`/`corr`). La correzione porta sempre `@resp="#editor"` e `@cert`.
+Principio: **ogni volta che l'editore regolarizza, scioglie o corregge**, il testo conserva *entrambe* le forme dentro `<choice>` — grafia originale ↔ regolarizzata (`orig`/`reg`), abbreviazione ↔ scioglimento (`abbr`/`expan`), errore materiale ↔ correzione (`sic`/`corr`). La correzione porta sempre `@resp="#editor"` e `@cert`.
 
 ```xml
 <choice><sic>perdire</sic><corr resp="#editor" cert="low">perdere</corr></choice>
 ```
 
-Simmetricamente, **mai inventare lezioni**: la lettura incerta è `<unclear reason="…" cert="…">`, la perdita materiale è `<gap reason="…" unit="…"/>`, l'integrazione congetturale è `<supplied reason="editorial" resp="#editor">`. Il latino entro il volgare è `<foreign xml:lang="la">` — segnala il *codice linguistico*, non un'enfasi.
+La **lettura incerta** è `<unclear reason="…" cert="…">`, la **perdita materiale** è `<gap reason="…" unit="…"/>`, l'**integrazione congetturale** è `<supplied reason="editorial" resp="#editor">`. Il latino entro il volgare è `<foreign xml:lang="la">` — segnala il *codice linguistico*, non un'enfasi.
 
 ## 3. La genetica sulla carta
 
@@ -74,7 +74,7 @@ Qui si registra il *lavoro dell'autrice sul foglio*. L'aggiunta è `<add>` (con 
 
 Il **ripasso** del tratto (non una variante di lezione, ma un rinforzo) è `<retrace>`; il ripristino d'autore è `<restore>`; il segno di richiamo o spostamento — che *non è testo* — è `<metamark>`.
 
-Due assi vanno tenuti distinti e **non confusi**:
+Due assi vanno tenuti **distinti** e **non confusi**:
 - **`@hand` = la mano fisica** (`#ink_1`, `#ink_2`, `#ink_3-dark`, `#pencil_1`, `#ink_4-external`): *chi/con che strumento* scrive;
 - **`@wit` = la fase genetica** (i testimoni-strato del `listWit`): *in quale stadio* di elaborazione.
 
@@ -130,7 +130,7 @@ La citazione è `<cit>` che racchiude `<quote>` (con `@xml:lang`) e la fonte `<b
 
 # Parte 2 · Vincoli su elementi e attributi
 
-## 2.1 Vocabolari chiusi (da dichiarare in `editorialDecl`)
+## 2.1 Vocabolari chiusi (dichiarati `editorialDecl`)
 
 Questi attributi ammettono **solo** i valori elencati.
 
@@ -151,7 +151,7 @@ Questi attributi ammettono **solo** i valori elencati.
 | `fw/@type` | `header` · `footer` · `pageNum` · `sig` · `catch` |
 | `@cert` (globale) | `low` · `medium` · `high` |
 
-## 2.2 Regole trasversali (non negoziabili)
+## 2.2 Regole trasversali
 
 1. **0 dangling** — ogni `#id` (`@ana`/`@hand`/`@wit`/`@ref`/`@resp`/`@target`/`@corresp`) risolve a un `xml:id` reale (verifica cross-file in CI).
 2. **Un valore per asse** in `@ana`, eccetto `#phase-critical` (che si affianca a una fase posizionale).
@@ -161,7 +161,7 @@ Questi attributi ammettono **solo** i valori elencati.
 6. **`@hand` (mano fisica) ≠ `@wit` (fase genetica).** `@type` su `add`/`del` (atto materiale) ≠ `@type` su `app` (variazione d'apparato).
 7. **`I` mai a mano** — categoria in `@ana`, numeri in `<fs>` dallo script.
 
-## 2.3 L'inventario degli elementi
+## 2.3 Inventario degli elementi
 
 Il testo usa questi elementi (che il `tagsDecl` dell'header dichiara), raggruppati per funzione:
 
