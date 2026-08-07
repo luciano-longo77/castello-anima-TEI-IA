@@ -1672,13 +1672,15 @@
                 <code>reg</code>, <code>foreign</code>; <code>restore</code>, <code>retrace</code>,
                 <code>metamark</code>; <code>interp</code>, <code>interpGrp</code>, <code>link</code>,
                 <code>linkGrp</code>, <code>rs</code>, <code>hi</code>; <code>standOff</code>,
-                <code>fs</code>, <code>f</code>, <code>numeric</code>), portando il tagset da 46 a 68
-                <code>tagUsage</code>. Le dichiarazioni sono state risistemate in un unico ordinamento
-                logico dal contenitore al dettaglio (struttura radice → descrizione del testimone →
-                struttura del testo → trascrizione diplomatica → genetica d'autore → apparato critico →
-                annotazione interpretativa e stand-off → indice d'impatto → collegamenti e citazioni →
-                entità e note), con i nuovi elementi integrati nei rispettivi gruppi funzionali.
-                Intervento preparatorio alla codifica del <code>text</code> (Libro III). </change>
+                <code>fs</code>, <code>f</code>, <code>numeric</code>) e rimossa la dichiarazione
+                impropria <code>tagUsage gi="lang"</code> (in TEI l'indicazione di lingua non è un
+                elemento ma si esprime con <code>@xml:lang</code> e <code>foreign</code>), portando il
+                tagset da 46 a 67 <code>tagUsage</code>. Le dichiarazioni sono state risistemate in un
+                unico ordinamento logico dal contenitore al dettaglio (struttura radice → descrizione
+                del testimone → struttura del testo → trascrizione diplomatica → genetica d'autore →
+                apparato critico → annotazione interpretativa e stand-off → indice d'impatto →
+                collegamenti e citazioni → entità e note). Intervento preparatorio alla codifica del
+                <code>text</code> (Libro III). </change>
             
             <change when="2026-07-31" who="#editor" ana="#fase-revisione-header"> Revisione
                 integrale del <code>teiHeader</code> per conformità TEI P5 e interoperabilità DH.
