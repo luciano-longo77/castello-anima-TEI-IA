@@ -78,17 +78,14 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 
 ## Versioning
 
-- **Dataset version**: v1.6
+- **Dataset version**: v1.7
 - **Data di preparazione**: 2026-08-07
 - **Autore**: Luciano Longo
 
 - **v0.0** (2026-03-09)
 - **v1.1** (2026-03-25)
 - **v1.2** (2026-04-01)
-- **v1.3** (2026-08-07): allineamento a §2.2.1 dell'articolo UD (rimozione di III.9, contrappunto a bassa densità = III.12); codici controfattuali canonici -CIT / +TEXTsub / +CIT; edizione di riferimento Casapullo 2015; nomi file del repository.
-- **v1.4** (2026-08-07): riscontro sull'edizione critica (Casapullo 2015). Riattribuite *Consummatum est* e *In manus tuas* da III.8 a III.XXXI–XXXII (cc. 241v–243v); *Tristis est anima mea* confermata in III.24 (c. 219r); a III.8 i dispositivi reali («un altro Dio per particepatione/gratia», «per quanto sta da parte di Dio»). Formula della nota §6 uniformata a 4·F_norm. Rimossi i residui «sostituzione».
-- **v1.5** (2026-08-07): §6 riscritta come **matrice tipizzata sugli assi di tassonomia-gh.xml** (29 glosse con operation+F, func, risk, mystic_state/relation, N, A, I). Soglie dell'indice tagliate sulla distribuzione reale (low<0.50 · medium 0.50–0.66 · high 0.66–0.82 · critical ≥0.82). F derivato dal rango di `operation`.
-- **v1.6** (2026-08-07): **coerenza interna del campione.** Aggiunta la riga **III.1** alla tabella §1.3 (Libro III), che risultava mancante rispetto al riepilogo §2. Corretto «nove sezioni principali» → **14 loci di selezione (16 capitoli)** in §2.1. Riscritto l'incipit di §2.4 per coprire i 7 loci del Libro III, non i soli III.8 e III.12. Nessuna modifica ai dati (authority list, matrice delle 29 glosse, intertestualità).
+- **v1.3** (2026-08-07)
 
 ## Uso del documento
 
@@ -148,7 +145,7 @@ Il campione consta di **14 loci di selezione** (corrispondenti a **16 capitoli**
 | Capitolo | Titolo | Motivo della selezione |
 |---|---|---|
 | III.1 | *Si tratta della dispositione che lascia nell'anima la notte dello spirito* (c. 158r) | Soglia del Libro III: ingresso nella fase purgativa; baseline a bassa densità citazionale, comparabile a I.1–2 e II.1–2 → contrappunto strutturale |
-| III.8 | *Cella secreta / matrimonio spirituale* | Capitolo più ricco di glosse autoriali anti-sostanziali («un altro Dio per particepatione / per gratia»); nodo della «sicurtà» («per quanto sta da parte di Dio») |
+| III.8 | *Cella secreta / matrimonio spirituale* (c. 175v) | Capitolo più ricco di glosse difensive: «l'anima divenuta un altro Dio» (c. 178v) mitigata da «totale sicurtà… non per fidar di sé stessa»; «una sicurtà… se Dio ci lasciasse potremo di nuovo cadire» (c. 178r) |
 | III.12 | *Stato d'otio / operazione di Dio nel fondo* | Segmento di unione alta, senza glosse → banco per **+CIT / +TEXTsub** |
 | III.14 | *Santa ignoranza* | Concetto teologicamente esposto; alta utilità per analisi controfattuale |
 | III.24 | *Non si medita la passione, ma si "emita" Tristis est anima mea* | Citazione semiliturgica pericolosa → nodo critico |
@@ -175,7 +172,7 @@ Dal Libro II vengono selezionati l'inizio (capitoli 1–2) e il capitolo VIII. I
 
 ### 2.4. Selezione Libro III: motivazioni
 
-Dal Libro III vengono selezionati **sette loci** — III.1, III.8, III.12, III.14, III.24, III.34, III.40 — che coprono l'intero arco della mistica alta e vigilata. Il capitolo I (c. 158r) funge da **soglia purgativa** a bassa densità difensiva, contrappunto strutturale a I.1–2 e II.1–2; i capitoli **8 e 12** costituiscono i poli di massima e minima densità difensiva, attorno ai quali si organizza in profondità l'analisi controfattuale; i capitoli 14, 24, 34 e 40 scandiscono i nodi successivi dell'itinerario ascensionale (santa ignoranza, imitazione della Passione, trasformazione totale, sigillo conclusivo). Il capitolo VIII presenta il nucleo più alto della mistica teresiana: unione, matrimonio spirituale, sicurezza dell'anima e la gestione dell'iperbole «divenuta un altro Dio», subito attenuata dalle glosse anti-sostanziali «per particepatione» / «per gratia» (cc. 173v, 178v) e dal nodo della «sicurtà» delimitato da «per quanto sta da parte di Dio» (c. 173v). Le citazioni cristologiche della Passione (*Consummatum est*, *In manus tuas, Domine, commendo spiritum meum*) non appartengono a questo capitolo ma ai capp. XXXI–XXXII (cc. 241v–243v). Questo capitolo è caratterizzato dalla presenza sistematica di glosse difensive in cui l'autrice specifica "ciò s'intende / ciò non s'intende", un tratto identificato dall'introduzione come meccanismo di auto-mitigazione e di sorveglianza del discorso teologico. Si tratta della sezione più adatta per gli esperimenti di rimozione citazionale (-CIT), di restituzione (+CIT) e di recupero delle cancellature autoriali (+TEXTsub), poiché consente di misurare con precisione la funzione stabilizzante delle citazioni bibliche e delle correzioni autoriali. Il capitolo XII, invece, espone l'ozio delle potenze al rischio quietista ma risulta strutturalmente privo di glosse difensive esplicite; questa minima densità difensiva ne fa il contrappunto ideale a III.8 e il banco di prova per la restituzione di citazioni (+CIT) e il recupero di eventuali cancellature (+TEXTsub), così da valutarne l'effetto sulla coerenza argomentativa.
+Dal Libro III vengono selezionati **sette loci** — III.1, III.8, III.12, III.14, III.24, III.34, III.40 — che coprono l'intero arco della mistica alta e vigilata. Il capitolo I (c. 158r) funge da **soglia purgativa** a bassa densità difensiva, contrappunto strutturale a I.1–2 e II.1–2; i capitoli **8 e 12** costituiscono i poli di massima e minima densità difensiva, attorno ai quali si organizza in profondità l'analisi controfattuale; i capitoli 14, 24, 34 e 40 scandiscono i nodi successivi dell'itinerario ascensionale (santa ignoranza, imitazione della Passione, trasformazione totale, sigillo conclusivo). Il capitolo VIII (c. 175v) presenta il nucleo più alto della mistica teresiana: unione, matrimonio spirituale, sicurezza dell'anima e la gestione dell'iperbole «l'anima divenuta un altro Dio» (c. 178v, §34), mitigata non per via sostanziale ma dal contesto prudenziale — «vedendosi tanto da lui fortificata», «totale sicurtà, e questo non per fidar di sé stessa» (c. 178v) — mentre il nodo della «sicurtà» è delimitato da «una sicurtà, però è di bene pensare, che se Dio ci lasciasse potremo di nuovo cadire» (c. 178r, §29). La formula anti-sostanziale «(un altro Dio) per particepatione» è invece il leitmotiv dei capitoli precedenti del blocco matrimoniale (III.5, c. 167v; III.6, c. 171v; III.7, c. 173r), e «per quanto sta da parte di Dio» appartiene a III.7 (c. 173v). Le citazioni cristologiche della Passione (*Consummatum est*, *In manus tuas, Domine, commendo spiritum meum*) non appartengono a questo capitolo ma ai capp. XXXI–XXXII (cc. 241v–243v). Il capitolo è caratterizzato inoltre dal ricorso prudenziale al refrain «dovemo sempre temere» / «mai fidarci di noi stessi» (§§28, 34), meccanismo di auto-mitigazione e di sorveglianza del discorso teologico. Si tratta della sezione più adatta per gli esperimenti di rimozione citazionale (-CIT), di restituzione (+CIT) e di recupero delle cancellature autoriali (+TEXTsub), poiché consente di misurare con precisione la funzione stabilizzante delle glosse e delle correzioni autoriali. Il capitolo XII, invece, espone l'ozio delle potenze al rischio quietista ma risulta strutturalmente privo di glosse difensive esplicite; questa minima densità difensiva ne fa il contrappunto ideale a III.8 e il banco di prova per la restituzione di citazioni (+CIT) e il recupero di eventuali cancellature (+TEXTsub), così da valutarne l'effetto sulla coerenza argomentativa.
 
 ### 2.5. Dataset e Guida al modello
 
@@ -225,12 +222,15 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 
 *(mistica alta + glosse difensive)*
 
-**III.8** — matrimonio spirituale, cella secreta. Dispositivi regolativi reali del capitolo (glosse, non citazioni latine):
+**III.8** — matrimonio spirituale, cella secreta (c. 175v). Dispositivi regolativi reali del capitolo (glosse, non citazioni latine):
 
-- «divenuta un altro Dio» (cc. 173v, 178v) → subito attenuata da «per particepatione» / «per gratia» (glosse anti-sostanziali / anti-panteistiche).
-- «sicurtà» dell'anima → delimitata da «per quanto sta da parte di Dio» (c. 173v).
+- «l'anima **divenuta un altro Dio**» (c. 178v, §34) → mitigata dal contesto prudenziale «vedendosi tanto da lui fortificata» e «totale sicurtà… non per fidar di sé stessa» (178v).
+- «una **sicurtà**, però è di bene pensare, che se Dio ci lasciasse potremo di nuovo cadire» (c. 178r, §29) → delimitazione del nodo della sicurezza.
+- refrain prudenziale «dovemo sempre temere» / «mai fidarci di noi stessi» (178r–v, §§28, 34).
 
-> **N.B.** *Consummatum est*, *In manus tuas* e *Tristis est anima mea* non sono in III.8: le prime due sono in III.XXXI–XXXII (cc. 241v–243v), la terza in III.24 (c. 219r).
+> **N.B. (attribuzione).** «(un altro Dio) **per particepatione**» è il leitmotiv del blocco **III.5–III.7** (cc. 167v, 171v, 173r), non di III.8; «**per quanto sta da parte di Dio**» è in **III.7** (c. 173v).
+
+> **N.B. (citazioni).** *Consummatum est*, *In manus tuas* e *Tristis est anima mea* non sono in III.8: le prime due sono in III.XXXI–XXXII (cc. 241v–243v), la terza in III.24 (c. 219r).
 
 - *Dignare Domine die isto sine peccato nos custodire* — Te Deum → liturgica, usata come protezione nei momenti di esposizione dottrinale.
 
@@ -391,6 +391,8 @@ Le **soglie** delle quattro classi non sono fissate a priori ma tagliate sulla d
 **Assi `mystic_state` / `relation` (dove pertinenti):** 6.1.3 (III.VIII,8) → `relation-mistica-unione-sposalitio`; 6.1.6 (III.VII,6) → `mystic_state-otium`; 6.1.8 (II.VIII,37) → `mystic_state-illuminazione`; 6.2.1 (III.XXIV,20) → `relation-intertesto-biblico`; 6.2.3 (II.II,2) → `mystic_state-otium`; 6.7.1 (II.II) → `mystic_state-otium`; 6.7.2 (III.XII,3-4) → `mystic_state-otium`; 6.10.1 (III.XXXIX) → `relation-mistica-unione-sposalitio`.
 
 **Nota `cert`.** Giudizio dell'annotatore *low* dove N/A restano incerti: 6.1.6, 6.1.7, 6.1.8, 6.2.2, 6.2.3, 6.2.4, 6.4.3, 6.6.1, 6.7.1 (da rivedere sul manoscritto in fase di validazione corpus).
+
+**Nota loci `III.VIII` (in revisione — v1.7).** Le righe **6.1.3** e **6.3.3**, etichettate `III.VIII,8`, vanno riassegnate al paragrafo corretto: nel capitolo VIII (c. 175v) le glosse anti-sostanziali cadono al **§34** (c. 178v: «divenuta un altro Dio», panteismo) e al **§29** (c. 178r: «sicurtà… se Dio ci lasciasse potremo cadire», impeccabilità), non al §8. La riga **6.9.1** (`III.VIII,34`) è già corretta. Il locus definitivo va fissato sul riscontro d'edizione (Casapullo 2015).
 
 ## 7. Intertestualità nel Castello
 
