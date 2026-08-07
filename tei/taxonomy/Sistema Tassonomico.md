@@ -173,32 +173,51 @@ ana="#phase-critical
 **Implementazione**: il vincolo è **gestito in fase editoriale** (prosa normativa). 
 Un futuro constraint Schematron può essere aggiunto per enforcing automatico (vedi §8.3).
 
-## 5. Indice composito N–A–F
-L'indice **N–A–F** è un indicatore interpretativo composito utilizzato in fase analitica per quantificare l'impatto semantico di una occorrenza annotata.
-*   **N** = Necessità interpretativa
-*   **A** = Ambiguità semantica (riduzione dell'ambiguità)
-*   **F** = Funzione prudenziale
+## 5. Indice composito di impatto (N–A–F)
 
-L'indice non costituisce una tassonomia, ma un **valore derivato** calcolato a partire dai tre assi.
+L'indice di impatto è un valore **derivato** (non una tassonomia) che quantifica
+la forza regolativa di ogni occorrenza annotata. Combina tre parametri:
 
-### 5.1 Formula di calcolo
-L'indice è definito secondo la formula:
-I = 0.40*N + 0.35*A + 0.25*F
+- **N** = necessità interpretativa (esposizione dottrinale del passo *prima*
+  dell'intervento), continuo 0–1;
+- **A** = riduzione dell'ambiguità (quanto l'intervento restringe le letture),
+  continuo 0–1;
+- **F** = funzione prudenziale, espressa come **classe formale del marcatore** su
+  scala ordinale {1, 2, 3}, **derivata dal rango dell'asse `operation`**:
+  - `operation-delimitazione` → F = 1 (il «cioè»: circoscrive una parola);
+  - `operation-attenuatio` / `operation-precisatio` / `operation-riequilibrio`
+    → F = 2 (il «ciò s'intende»: ridefinisce una proposizione);
+  - `operation-declaratio` → F = 3 (il «io mi dichiaro»: dichiarazione performativa).
 
-dove **N** (necessità interpretativa), **A** (riduzione dell'ambiguità) e **F** (funzione prudenziale) sono valori normalizzati su scala continua **0–1**, non binari. I tre parametri **non** sono calcolati da semplici regole di presenza/assenza di categoria, ma sono derivati da correlazioni tra:
-- densità glossematica della pagina;
-- gravità/rischio del lemma coinvolto;
-- prossimità ai nodi dottrinalmente esposti;
-- stratificazione materiale (place, hand, layer).
+### 5.1 Formula (AHP)
+Pesi da confronti a coppie (Analytic Hierarchy Process) in rapporto F : N : A = 4 : 2 : 1:
 
-**Mapping indicativo a categorie `#impact-*`**:
-- I ≥ 0.7 → `#impact-critical` o `#impact-high`
-- 0.4 ≤ I < 0.7 → `#impact-medium`
-- I < 0.4 → `#impact-low`
+    I = (4·F_norm + 2·N + 1·A) / 7,   con F_norm = F/3
 
-**Nota**: 
-il calcolo è **indicativo e non vincolante** in fase di annotazione manuale. 
-L'annotatore assegna `#impact-*` secondo il proprio giudizio interpretativo; il valore N–A–F servirà come **controllo di coerenza** in fase di revisione e validazione corpus.
+(w_F = 4/7, w_N = 2/7, w_A = 1/7).
+
+### 5.2 Discretizzazione (soglie fisse)
+Il valore I è ricondotto alle 4 categorie dell'asse `impact` con soglie **tagliate
+sulla distribuzione reale del campione** (non a priori):
+
+- `impact-low`:      I < 0.50
+- `impact-medium`:   0.50 ≤ I < 0.66
+- `impact-high`:     0.66 ≤ I < 0.82
+- `impact-critical`: I ≥ 0.82
+
+La banda `impact-critical` corrisponde alle *declaratio* (F = 3), i sigilli
+performativi di ortodossia — coerente con il catDesc di `impact-critical`.
+
+### 5.3 Registrazione TEI
+La classe discreta è dichiarata in `@ana` sul segmento (una delle 4 categorie
+`impact`); il calcolo (N, A, F, I) è registrato come **feature structure** `<fs>`
+in `<standOff type="impact-index">`, collegata al segmento via `@corresp`. La
+formula è dichiarata **una sola volta** nell'`editorialDecl`, non ripetuta.
+
+### 5.4 Robustezza
+Ricalcolo con pesi alternativi (analisi di sensibilità) e prova inter-annotatore
+(*encoding challenge*): le divergenze di classificazione e di pesi vengono pubblicate.
+
 
 ## 6. Vincoli semantici cross-assiali
 Alcuni vincoli collegano categorie provenienti da assi diversi. Di seguito sono elencati i vincoli **cross-assiali** principali.
