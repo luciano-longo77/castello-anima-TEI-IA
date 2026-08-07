@@ -38,7 +38,7 @@ Il modello definisce otto tassonomie principali, ciascuna formalizzata come elem
   Svolge una funzione eminentemente prudenziale.
 
 - **Impatto interpretativo (`impact`)**  
-  Indica il peso interpretativo di un segmento sul contesto esegetico, distinguendo nodi portanti da passaggi di supporto.
+ Indica il peso interpretativo di un segmento sul contesto esegetico, distinguendo nodi portanti da passaggi di supporto. L'impatto non è però soltanto giudicato: è calcolato tramite l'indice composito N–A–F — necessità interpretativa (N), riduzione dell'ambiguità (A) e funzione prudenziale (F), con F = rango dell'asse operation. La categoria impact è quindi l'esito della discretizzazione di tale indice, non un giudizio diretto (cfr. Sistema Tassonomico.md §5).
 
 - **Stati mistici (`mystic_state`)**  
   Modella gli stati dell'esperienza mistica non come temi, ma come categorie operative dell'interpretazione.
