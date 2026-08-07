@@ -1,0 +1,215 @@
+# Guida ragionata alla codifica del `<text>`
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
+
+---
+
+## Premessa
+
+Questo documento espone **il set di tag adottato per la codifica del testo** del *Castello dell'anima* e lo **argomenta**: per ciascun fenomeno spiega *quale* elemento si usa, *con quali attributi e valori*, e soprattutto **perché quello e non un altro**. È dunque, insieme, la parte metodologica sulla marcatura (che confluisce nel cap. 3 del paper) e il **contratto di codifica** per `castello-anima-text.xml`.
+
+Tre principi lo governano:
+
+1. **Ancoraggio.** Ogni puntatore (`#id`) usato nel testo *esiste già* in `castello-anima-teiHeader.xml` (mani, testimoni, entità, tassonomia `workflow`) o in `tassonomia-gh.xml` (categorie `@ana`). **Regola d'oro: 0 dangling** — nessun `#id` inventato.
+2. **Trasparenza filologica.** Nessuna normalizzazione tacita, nessuna lezione ricostruita in silenzio: ogni scelta editoriale è marcata e attribuita.
+3. **Verificabilità.** Elementi, attributi e annidamenti qui descritti sono verificati contro le specifiche **TEI P5** (`tei_all`): un esemplare che li esercita tutti supera il controllo strutturale con **0 errori**. La validazione RelaxNG completa (ordine, occorrenze, Schematron) si fa in oXygen.
+
+> La forma canonica *machine-actionable* di questi vincoli è l'**ODD**; questo documento ne è il contenuto pronto (schema + manuale generabili in un secondo momento). Le liste di valori vincolati sono in [Appendice](#appendice--liste-di-valori-i-puntatori).
+
+---
+
+# Parte 1 · Il set di tag, ragionato
+
+La marcatura è stratificata in cinque livelli, dal più esterno (la struttura del libro) al più interno (l'interpretazione e la misura d'impatto). Ogni livello risponde a una domanda diversa e usa gli elementi che *quella* domanda richiede.
+
+## 1. La struttura del testo
+
+Il testo è un autografo unico, articolato in **Libri** e **capitoli**: una gerarchia continua, non una sequenza di segnaposti. Per questo la struttura si rende con `<div>` annidati (`@type` = `book` › `chapter`) e **non** con `<milestone>`, che segnerebbe confini senza contenere il testo. Le rubriche dei capitoli sono `<head>`; l'eventuale cappello che precede un capitolo è `<argument>` (elemento di struttura dedicato, non una `<note>`).
+
+```xml
+<div type="chapter" n="III.1" xml:id="L3-1">
+  <head>Capitolo Primo</head>
+  <p n="1"> … </p>
+</div>
+```
+
+Il paragrafo è `<p>` (con `@n` come integrazione editoriale). La **materialità** entra con `<pb n="158r"/>` — la foliazione *reale* del manoscritto, agganciata al facsimile via `@facs` — e con `<lb break="no"/>`, riservato ai **soli** a-capo rilevanti (parola spezzata), non a ogni riga. Il materiale non-testuale di pagina (segnature, richiami, numeri di carta) è `<fw>`, tenuto distinto dal testo d'autore.
+
+L'unità portante dell'annotazione è **`<seg>`**, non `<ab>` né `<p>`: è l'unica che porta `@ana` (l'interpretazione) a granularità sub-paragrafo ed è governata dal `classDecl`. Ogni `seg` del corpo ha un `@xml:id` nel formato `Libro-cap-p-progr`, che diventa l'ancora per l'apparato e per l'indice d'impatto.
+
+```xml
+<seg xml:id="seg-159r" ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">
+  incomincia l'anima a perdire qualunque desiderio
+</seg>
+```
+
+Dove serve un ancoraggio *senza* spezzare il flusso (per lo stand-off), si usa `<anchor xml:id="…"/>`.
+
+## 2. Il livello diplomatico
+
+Principio: **mai normalizzare in silenzio.** Ogni volta che l'editore regolarizza, scioglie o corregge, il testo conserva *entrambe* le forme dentro `<choice>` — grafia originale ↔ regolarizzata (`orig`/`reg`), abbreviazione ↔ scioglimento (`abbr`/`expan`), errore materiale ↔ correzione (`sic`/`corr`). La correzione porta sempre `@resp="#editor"` e `@cert`.
+
+```xml
+<choice><sic>perdire</sic><corr resp="#editor" cert="low">perdere</corr></choice>
+```
+
+Simmetricamente, **mai inventare lezioni**: la lettura incerta è `<unclear reason="…" cert="…">`, la perdita materiale è `<gap reason="…" unit="…"/>`, l'integrazione congetturale è `<supplied reason="editorial" resp="#editor">`. Il latino entro il volgare è `<foreign xml:lang="la">` — segnala il *codice linguistico*, non un'enfasi.
+
+## 3. La genetica sulla carta
+
+Qui si registra il *lavoro dell'autrice sul foglio*. L'aggiunta è `<add>` (con `@place` topografico e `@type` = natura dell'atto), la cassatura è `<del>` (con `@rend` = *come* è cassata). Quando cassatura e aggiunta sono **un solo atto sostitutivo** (es. la correzione di una lettera, *e→i*) si usa `<subst>` che le racchiude, non `del`+`add` sciolti — e lo schema (Schematron) esige che `subst` contenga almeno un `add` e un `del`.
+
+```xml
+<subst hand="#ink_1">
+  <del place="inline" type="correction">e</del>
+  <add place="inline" type="substitution">i</add>
+</subst>
+```
+
+Il **ripasso** del tratto (non una variante di lezione, ma un rinforzo) è `<retrace>`; il ripristino d'autore è `<restore>`; il segno di richiamo o spostamento — che *non è testo* — è `<metamark>`.
+
+Due assi vanno tenuti distinti e **non confusi**:
+- **`@hand` = la mano fisica** (`#ink_1`, `#ink_2`, `#ink_3-dark`, `#pencil_1`, `#ink_4-external`): *chi/con che strumento* scrive;
+- **`@wit` = la fase genetica** (i testimoni-strato del `listWit`): *in quale stadio* di elaborazione.
+
+Lo stesso inchiostro può comparire in più fasi; la stessa fase può usare più mani. `retrace` porta `@hand`, non `@wit`.
+
+## 4. L'apparato genetico (parallel-segmentation)
+
+L'edizione è un **autografo stratificato**: non ci sono testimoni indipendenti da collazionare, ma *fasi* di riscrittura sullo stesso foglio. Il metodo TEI adatto è la **segmentazione parallela**: ogni luogo di variazione è un `<app>` che contiene la lezione a testo (`<lem>`) e le fasi (`<rdg>`).
+
+Scelta ecdotica di fondo: **`lem` = ultima volontà autoriale**, cioè l'edizione critica (`@wit="#txt-c"`). Le fasi anteriori vanno in `rdg`, ordinate con `@varSeq`. La **mano esterna** (`#txt-4`) non fissa mai il testo: **mai a `lem`**, solo a `rdg`.
+
+```xml
+<app>
+  <lem wit="#txt-c">silentio</lem>
+  <rdg wit="#txt-b0" varSeq="1"><del place="inline" hand="#ink_1">sonno</del></rdg>
+  <rdg wit="#txt-b1" varSeq="2"><add place="above" hand="#ink_1">silentio</add></rdg>
+</app>
+```
+
+`lem` e `rdg` possono essere **vuoti**: una lezione presente in una fase ma assente nel testo critico (o viceversa) si rende con l'elemento vuoto, non omettendolo.
+
+Gli **eventi IA controfattuali** (il protocollo −CIT / +TEXTsub / +CIT) sono anch'essi `rdg`, mai `lem`: l'IA non fissa mai il testo. Portano `@type="ai-counterfactual"`, `@resp="#AI_controllata"` e un `@ana` alla tassonomia `workflow` dell'header; il loro scarto d'impatto (ΔI) si misura sulle dimensioni D1 chiarezza · D2 coesione · D3 stabilità dottrinale.
+
+```xml
+<rdg type="ai-counterfactual" resp="#AI_controllata" ana="#workflow-rimozione" cert="medium">sonno</rdg>
+```
+
+## 5. L'interpretazione e l'indice d'impatto
+
+L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, con puntatori alle categorie del `classDecl` (le 8 tassonomie): `@ana`, non un `@type` libero, perché deve restare *governata* dal vocabolario normativo. Regola: un valore per asse (eccetto `#phase-critical`, trasversale); nel dubbio si sale alla categoria superiore (*astensione semantica*).
+
+Le **figure retoriche** non sono `<figure>` (che in TEI è un'illustrazione): si rendono in **stand-off** con `<span>`/`<spanGrp>` ancorati per riferimento, con `@ana` a un vocabolario locale `interpGrp` (`#fig-metafora`, `#fig-similitudine`…) tenuto nel file del testo — così l'annotazione non spezza il flusso e resta governata senza toccare la tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa editoriale è `<note>`.
+
+L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La categoria (`#impact-*`) sta in `@ana` sul `seg`; il fascio numerico sta in un `<fs>` (feature structure) in uno strato `<standOff type="impact-index">`, fratello di `<text>` nello stesso documento, collegato via `@corresp`. Si usa `fs`, **non `<val>`** (non ammesso in `seg`). La formula AHP — `I = (4·Fnorm + 2N + A)/7` con `F` dal rango dell'asse `operation` — è dichiarata **una volta** in `editorialDecl`; il valore `I` è prodotto dallo script, mai digitato a mano.
+
+```xml
+<standOff type="impact-index">
+  <fs xml:id="idx-159r" corresp="#seg-159r" cert="medium">
+    <f name="N"><numeric value="0.92"/></f>
+    <f name="A"><numeric value="0.82"/></f>
+    <f name="F"><numeric value="2"/></f>
+    <f name="Fnorm"><numeric value="0.667"/></f>
+    <f name="I"><numeric value="0.761"/></f>
+  </fs>
+</standOff>
+```
+
+## 6. Citazioni ed entità
+
+La citazione è `<cit>` che racchiude `<quote>` (con `@xml:lang`) e la fonte `<bibl>` — non un `<ref>` penzolante; `cit/@type` classifica (bible/liturgy/mystic/patristic) e `cit/@ana` la aggancia all'interpretazione. I rinvii interni sono `<ref>`/`<ptr>` con `@target` a `xml:id` esistenti. Le entità nominate (`<persName>`/`<placeName>`/`<orgName>`) portano `@ref` alle entità dell'header; le date sono `<date>` normalizzate.
+
+---
+
+# Parte 2 · Vincoli su elementi e attributi
+
+## 2.1 Vocabolari chiusi (da dichiarare in `editorialDecl`)
+
+Questi attributi ammettono **solo** i valori elencati.
+
+| Attributo | Valori |
+|---|---|
+| `div/@type` | `book` · `preface` · `chapter` |
+| `add/@type`, `del/@type` | `correction` · `substitution` · `integration` · `punctuation` |
+| `add/@place`, `del/@place` | **canonici TEI:** `above` · `below` · `inline` · `margin` — **estensioni progetto:** `interlinear` · `interlinear-above` · `margin-left` · `margin-right` |
+| `del/@rend` | `strikethrough` · `erased` · `overwritten` · `expunged` · `crossed` |
+| `gap/@reason`, `unclear/@reason` | `illegible` · `damage` · `ink-fade` · `abrasion` · `binding` · `hole` · `stain` · `trimmed` |
+| `gap/@unit`, `supplied/@unit` | `char` · `chars` · `word` · `words` · `line` · `lines` |
+| `app/@type` | `substitution` · `addition` · `deletion` · `transposition` · `variant` |
+| `rdg/@type` | `authorial` · `external` · `ai-counterfactual` |
+| `rdg/@cause` | `correction` · `clarification` · `orthodoxy` · `attenuation` · `precision` · `amplification` |
+| `cit/@type` | `bible` · `liturgy` · `mystic` · `patristic` |
+| `note/@type` | `editorial` · `doctrinal` · `contextual` · `glossa` · `critical` · `linguistic` |
+| `hi/@rend` | `italic` · `underline` · `superscript` · `larger` · `spaced` · `rubric` |
+| `fw/@type` | `header` · `footer` · `pageNum` · `sig` · `catch` |
+| `@cert` (globale) | `low` · `medium` · `high` |
+
+## 2.2 Regole trasversali (non negoziabili)
+
+1. **0 dangling** — ogni `#id` (`@ana`/`@hand`/`@wit`/`@ref`/`@resp`/`@target`/`@corresp`) risolve a un `xml:id` reale (verifica cross-file in CI).
+2. **Un valore per asse** in `@ana`, eccetto `#phase-critical` (che si affianca a una fase posizionale).
+3. **Astensione semantica** — nel dubbio, categoria immediatamente superiore.
+4. **Niente normalizzazione tacita** → sempre `choice`. **Niente lezioni inventate** → `unclear`/`gap`/`supplied` + `@cert`/`@resp`.
+5. **`lem` = ultima volontà** (`#txt-c`); fasi ordinate con `@varSeq`; **`#txt-4` mai a `lem`**; eventi IA solo in `rdg` con `@resp="#AI_controllata"`.
+6. **`@hand` (mano fisica) ≠ `@wit` (fase genetica).** `@type` su `add`/`del` (atto materiale) ≠ `@type` su `app` (variazione d'apparato).
+7. **`I` mai a mano** — categoria in `@ana`, numeri in `<fs>` dallo script.
+
+## 2.3 `tagsDecl` — elementi da dichiarare per il testo
+
+Già dichiarati: `div p seg head pb add del subst abbr expan sic corr gap supplied unclear lb app lem rdg spanGrp span ref ptr cit quote bibl persName placeName orgName date term note`.
+
+**Da aggiungere:** `choice` · `orig` · `reg` · `foreign` · `restore` · `retrace` · `metamark` · `hi` · `anchor` · `fw` · `argument` · `titlePage` · `titlePart` · `link` · `linkGrp` · `rs` · `interpGrp` · `interp` · `standOff` · `fs` · `f` · `numeric` · (`milestone`).
+
+*(`figure`/`figDesc` **non** per le figure retoriche — vedi §5; solo per illustrazioni reali.)*
+
+---
+
+# Appendice · Liste di valori (i puntatori)
+
+Valori **chiusi**, letti dai file costruiti. Usare solo questi.
+
+### A1 · `@hand` — le 5 mani
+| Valore | Mano | medium |
+|---|---|---|
+| `#ink_1` | autografa, stesura base + correzioni/integrazioni inline | brown-ink |
+| `#ink_2` | autografa, 2ª fase | brown-ink |
+| `#ink_3-dark` | autografa, ritocchi (`retrace`) e glosse tardive | dark-ink |
+| `#pencil_1` | autografa, correzioni/meditazioni a matita | pencil |
+| `#ink_4-external` | mano **esterna** (mai a `lem`) | ink |
+
+### A2 · `@wit` — gli 8 testimoni/fasi (ordine per `@varSeq`)
+`#txt-b0` (1) · `#txt-b1` (2) · `#txt-1` (3) · `#txt-2` (4) · `#txt-3` (5) · `#txt-m` (6) · `#txt-4` (esterno) · `#txt-c` (edizione critica → solo a `lem`)
+
+### A3 · `@ref` / `@resp` — le 16 entità
+Persone `#s-teresa` `#Anna-La-Longa` `#editor` `#esterno` `#p-avila` `#p-john` `#p-molinos` `#CelestinoSanNicolo` · Luoghi `#Palermo` `#Sicilia` `#Caltanissetta` · Org `#Carmelo` `#Inquisizione` `#BCP` `#AI_controllata` `#QA`
+
+### A4 · `@ana` — le 8 tassonomie interpretative (un valore per asse)
+| Asse | Valori |
+|---|---|
+| **func** *(senza prefisso)* | `#legittimazione(-biblica/-liturgica/-tradizione)` · `#pedagogia(-introduzione/-discernimento/-esemplificazione)` · `#rischio(-attenuatio/-precisatio/-declaratio)` · `#ethos(-umilta/-esperienza/-obbedienza)` |
+| **impact** | `#impact-low/-medium/-high/-critical` |
+| **risk** | `#risk-dottrinale/-quietismo/-panteismo/-impeccabilita/-ambiguita` |
+| **mystic_state** | `#mystic_state-purificazione/-illuminazione/-quiete/-otium/-unione` |
+| **operation** | `#operation-delimitazione/-attenuatio/-precisatio/-declaratio/-riequilibrio` |
+| **exposition** | `#exposition-low/-medium/-high/-critical` |
+| **phase** | `#phase-introduction/-mediana/-conclusive/-critical` |
+| **relation** | `#relation-mistica`(+4) · `#relation-intertesto(-biblico/-liturgico/-teresiano/-molinista)` |
+
+### A5 · `#fig-*` — figure retoriche (`interpGrp` in un `<standOff type="rhetorical-figures">`)
+`#fig-metafora` `#fig-similitudine` `#fig-anafora` `#fig-antitesi` `#fig-allegoria` `#fig-iperbole` `#fig-apostrofe` `#fig-climax` `#fig-ossimoro` `#fig-paradosso` `#fig-personificazione` `#fig-sinestesia` *(seme estendibile)*
+
+### A6 · `#workflow-*` — operazioni IA controfattuali (tassonomia `workflow` dell'header)
+`#workflow-rimozione` (−CIT) · `#workflow-recupero-cancellature` (+TEXTsub) · `#workflow-aggiunta` (+CIT) · `#workflow-validazione` — dimensioni ΔI: **D1** chiarezza · **D2** coesione · **D3** stabilità dottrinale.
+
+---
+
+## Conformità
+
+Il set di tag qui descritto è verificato contro le specifiche **TEI P5** (`tei_all`): 0 errori al controllo strutturale (esistenza elementi, attributi ammessi, modelli di contenuto). Restano da eseguire in oXygen la validazione **RelaxNG** completa e i vincoli **Schematron** (0-dangling cross-file, `subst` = `add`+`del`, `lem`=`#txt-c`, IA solo `rdg`), che la forma **ODD** del progetto renderà automatici.
