@@ -12,7 +12,7 @@
 ---
 ## Indice
 
-1. [Definizione e Perimetro del File](#1-definizione-e-perimetro-del-file)
+1. [Definizione e perimetro del file](#1-definizione-e-perimetro-del-file)
 2. [Architettura dei Blocchi Metatestuali](#2-architettura-dei-blocchi-metatestuali)
 3. [Sistema Tassonomico (`classDecl`)](#3-sistema-tassonomico-classdecl)
 4. [Dichiarazione del Tagset (`tagsDecl`)](#4-dichiarazione-del-tagset-tagsdecl)
@@ -29,7 +29,7 @@
 
 ---
 
-## 1. Definizione e Perimetro del File
+## 1. Definizione e perimetro del file
 
 Questo file costituisce l'architettura metatestuale e il modello computazionale completo (`teiHeader`) per l'edizione digitale del *Castello dell'anima* (Palermo, Biblioteca Comunale, ms. 2 Qq E 29).
 
