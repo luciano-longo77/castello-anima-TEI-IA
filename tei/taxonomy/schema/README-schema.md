@@ -1,4 +1,12 @@
 # Schema — file di validazione della tassonomia
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0  
 
 Questa cartella contiene i file che governano la validazione formale del sistema tassonomico. Non contengono la tassonomia stessa (quella è in [`tassonomia-gh.xml`](../tassonomia-gh.xml)) — definiscono le regole a cui `tassonomia-gh.xml` deve conformarsi.
 
@@ -6,18 +14,18 @@ Questa cartella contiene i file che governano la validazione formale del sistema
 
 | File | Ruolo | Origine |
 |---|---|---|
-| `taxonomy.odd` | **Fonte normativa** — definizione astratta del modello, in linguaggio ODD (TEI) | Scritto a mano |
-| `taxonomy-rng.rng` | Schema RelaxNG — validazione strutturale | **Generato automaticamente** da `taxonomy.odd` |
-| `taxonomy-sch.sch` | Regole Schematron — validazione semantica (4 regole: presenza `catDesc`, non-vacuità, coerenza prefisso, unicità `xml:id`) | **Generato automaticamente** da `taxonomy.odd` |
+| `taxonomy-odd.odd` | **Fonte normativa** — definizione astratta del modello, in linguaggio ODD (TEI) | Scritto a mano |
+| `taxonomy-rng.rng` | Schema RelaxNG — validazione strutturale | **Generato automaticamente** da `taxonomy-odd.odd` |
+| `taxonomy-sch.sch` | Regole Schematron — validazione semantica (4 regole: presenza `catDesc`, non-vacuità, coerenza prefisso, unicità `xml:id`) | **Generato automaticamente** da `taxonomy-odd.odd` |
 
 ## ⚠️ Non modificare `.rng` e `.sch` a mano
 
-Sono file generati. Qualsiasi modifica diretta viene persa al prossimo giro di rigenerazione. Per cambiare una regola di validazione, modifica **sempre** `taxonomy.odd`, poi rigenera.
+Sono file generati. Qualsiasi modifica diretta viene persa al prossimo giro di rigenerazione. Per cambiare una regola di validazione, modifica **sempre** `taxonomy-odd.odd`, poi rigenera.
 
 ## Come rigenerare
 
 Con Roma (integrato in oXygen XML Editor):
-taxonomy.odd → Roma → taxonomy-rng.rng + taxonomy-sch.sch
+taxonomy-odd.odd → Roma → taxonomy-rng.rng + taxonomy-sch.sch
 
 Dopo la rigenerazione, entrambi i file vanno committati insieme alla modifica dell'ODD che li ha prodotti.
 

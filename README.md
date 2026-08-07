@@ -1,5 +1,7 @@
 # Intertestualità sotto sorveglianza
-### Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel *Castello dell'anima*
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
 
 Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale controllata** per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all'interno di un testo caratterizzato da forte vigilanza teologica.
 
@@ -92,11 +94,13 @@ Porzioni di testo rilevanti, classificate tramite `@ana` secondo la funzione che
 
 ### Indice di impatto
 
-Valore composito (alto, medio, basso), calcolato secondo la formula `I = 0.40*N + 0.35*A + 0.25*F`, assegnato a citazioni e glosse in base a:
+Valore composito discretizzato in quattro classi (impact-low, impact-medium, impact-high, impact-critical), calcolato secondo la formula del progetto AURORA I = (4·F_norm + 2·N + 1·A)/7, con pesi AHP in rapporto F:N:A = 4:2:1, assegnato a citazioni e glosse in base a:
 
-- necessità interpretativa (N),
-- capacità di ridurre ambiguità (A),
-- funzione prudenziale (F) nel chiarire o delimitare concetti teologici complessi.
+N — necessità interpretativa (esposizione dottrinale del passo prima dell'intervento);
+A — riduzione dell'ambiguità (quanto l'intervento restringe le letture possibili);
+F — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse operation), normalizzata come F_norm = F/3.
+
+Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione (cfr. Sistema Tassonomico.md §5).
 
 ---
 
@@ -127,6 +131,8 @@ I segmenti selezionati presentano:
 - estensione comparabile e equilibrio fra fenomeni retorici.
 
 Questo campione costituisce la base per l'annotazione TEI e per la sperimentazione AI.
+
+- ➡️ [Leggi la **Base dati per il campionamento**](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/base-dati_campionamento.md) 
 
 ---
 

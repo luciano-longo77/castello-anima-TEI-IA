@@ -1,15 +1,17 @@
-# *Castello dell'anima* - teiHeader 
-### Edizione digitale TEI + IA
+# teiHeader
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
 
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0  
-**Stato**: Working Draft (25 luglio 2026)  
 
 ---
 ## Indice
 
-1. [Definizione e Perimetro del File](#1-definizione-e-perimetro-del-file)
+1. [Definizione e perimetro del file](#1-definizione-e-perimetro-del-file)
 2. [Architettura dei Blocchi Metatestuali](#2-architettura-dei-blocchi-metatestuali)
 3. [Sistema Tassonomico (`classDecl`)](#3-sistema-tassonomico-classdecl)
 4. [Dichiarazione del Tagset (`tagsDecl`)](#4-dichiarazione-del-tagset-tagsdecl)
@@ -26,7 +28,7 @@
 
 ---
 
-## 1. Definizione e Perimetro del File
+## 1. Definizione e perimetro del file
 
 Questo file costituisce l'architettura metatestuale e il modello computazionale completo (`teiHeader`) per l'edizione digitale del *Castello dell'anima* (Palermo, Biblioteca Comunale, ms. 2 Qq E 29).
 
@@ -50,12 +52,13 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 │ • Titolo & Auth ││ • Criteri Ecd. │ │ • Sociolinguistica ││ • JSON IA      │
 │ • Codicologia   ││ • classDecl(10)│ │ • listPerson       ││ • METS Link    │
 │ • Apparati      ││ • tagsDecl (46)│ │ • listOrg          ││                │
+│                 ││                │ │ • textClass        ││                │
 └─────────────────┘└────────────────┘ └────────────────────┘└────────────────┘
                                         │
                              ┌──────────┴──────────┐
                              │    revisionDesc     │
                              ├─────────────────────┤
-                             │ • Audit Log (>60)   │
+                             │ • Audit Log (>70)   │
                              └─────────────────────┘
 ```
 
@@ -65,7 +68,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 | **`encodingDesc`** | **Modello formale ed ecdotico.** Contiene l'abstract del modello, i criteri editoriali (`projectDesc`, `refsDecl`, `editorialDecl`), il tagset dichiarato (`tagsDecl`) e le tassonomie (`classDecl`). |
 | **`profileDesc`** | **Inquadramento storico e sociolinguistico.** Traccia il contesto di produzione del testo mistico secentesco: analisi sociolinguistica della lingua, prosopografia (`listPerson`) e istituzioni (`listOrg`: Carmelo, Inquisizione). |
 | **`xenoData` (×2)** | **Dati non-TEI e interoperabilità.** Ospita la specifica JSON del protocollo di simulazione IA e il puntatore ai metadati METS. |
-| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>60 voci) che traccia ogni modifica, revisione e decisione editoriale. |
+| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>70 voci) che traccia ogni modifica, revisione e decisione editoriale. |
 
 ---
 
@@ -80,7 +83,7 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
      ▼                                                     ▼
 8 Tassonomie Interpretative                    2 Tassonomie di Processo
 (Annotazione sul testo via @ana)               (Tracciamento in revisionDesc)
-├── func (Funzioni retoriche, 4)              ├── fase (Fasi lavoro, 42)
+├── func (Funzioni retoriche, 4 rami)           ├── fase (Fasi lavoro, 42)
 ├── risk (Rischio dottrinale, 5)                └── workflow (Scenari IA, 4)
 ├── impact (Impatto interpretativo, 4)
 ├── mystic_state (Stati mistici, 5)
@@ -157,20 +160,26 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
 | `+CIT` | Integrazione per esteso di una citazione richiamata |
 
 ### Principi di Controllo Filologico
-1. **Human-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
+1. **Exepert-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
 2. **Auditability:** Parametri, vincoli e campi obbligatori dell'audit trail sono formalizzati in sintassi JSON all'interno di `xenoData`.
 
 ---
 
 ## 6. Validazione e Qualità del Dato
 
-- **Validazione Strutturale:** Schema **RelaxNG** generato dall'ODD di progetto unico (`schema/castello-schema.odd.xml`, `schemaSpec` `castello-header`).
-- **Validazione Semantica (ISO Schematron):**
-  - Presenza e non-vacuità di `catDesc`.
-  - Coerenza del prefisso `xml:id` rispetto alla tassonomia radice (asse `func` esente).
-  - Unicità globale degli `xml:id` su `taxonomy` e `category`.
-
-La risoluzione dei puntatori interni (`@ana`, `@ref`, `@who`, `@corresp`) è verificata separatamente, non fa parte delle regole Schematron del progetto.
+- **Validazione strutturale:** l'header è validato contro **`tei_all.rng`** (RelaxNG
+  completo TEI P5), dichiarato nel file tramite `<?xml-model?>`.
+- **Governance della tassonomia:** le tassonomie interpretative sono definite nella
+  fonte normativa `tei/taxonomy/tassonomia-gh.xml`, validata a parte contro il proprio
+  ODD (`taxonomy-odd.odd` → RelaxNG + Schematron: presenza/non-vacuità di `catDesc`,
+  coerenza del prefisso `xml:id`, unicità globale). L'header ne incorpora una copia
+  allineata; la coerenza della copia con la fonte è garantita da controllo separato.
+- **ODD di progetto (unico):** `schema/castello-schema.odd.xml` raccoglie in tre
+  `schemaSpec` i modelli di *taxonomy*, *text* e *header*; da esso si generano gli
+  schemi RelaxNG/Schematron (via Roma). La tassonomia è già coperta dal proprio ODD;
+  *text* e *header* ne costituiscono il modello-obiettivo, da generare e agganciare in CI.
+- **Integrità referenziale:** la risoluzione dei puntatori interni (`@ana`, `@ref`,
+  `@who`, `@corresp`) è verificata separatamente e non fa parte delle regole Schematron.
 
 ---
 

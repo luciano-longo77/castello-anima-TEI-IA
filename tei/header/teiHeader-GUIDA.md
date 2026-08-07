@@ -1,6 +1,12 @@
-# Guida alla Navigazione del *teiHeader*
+# Guida alla navigazione del *teiHeader*
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
-### Edizione digitale TEI + IA — *Castello dell'anima*
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0  
 
 ---
 ## Indice
@@ -75,8 +81,8 @@ Vai in:
 
 Vai in:
 
-*   `profileDesc` → `listPerson`
-*   `profileDesc` → `listOrg`
+*   `profileDesc` → `particDesc` → `listPerson`
+*   `profileDesc` → `particDesc` → `listOrg`
 
 ***
 
@@ -168,7 +174,7 @@ Controlla:
 
 ### ✅ *Importare le tassonomie*
 
-Puoi copiare direttamente l'intero `<classDecl>` nel tuo progetto.
+Per il riuso, parti dalla fonte normativa tei/taxonomy/tassonomia-gh.xml (le 8 tassonomie interpretative, con schema di validazione). Le 2 tassonomie di processo (fase, workflow) presenti nell'header sono interne al workflow editoriale e non sono pensate per il riuso.
 
 ### ✅ *Replicare il metodo editoriale*
 

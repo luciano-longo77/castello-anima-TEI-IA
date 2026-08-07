@@ -1,4 +1,12 @@
 # Esempio di annotazione tassonomica
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0  
 
 ## Cos'è questo file
 
@@ -10,16 +18,22 @@ Ogni `<seg>` o `<cit>` porta un attributo `@ana` con una lista di riferimenti se
 
 Esempio:
 ```xml
-<seg xml:id="III-pref-p1-001"
-     ana="#ethos-obbedienza #legittimazione-tradizione #impact-high
-          #risk-dottrinale #mystic_state-quiete #operation-delimitazione
-          #exposition-medium #phase-introduction">
-    Incomincio mio Dio, come sapete...
+<p n="1">
+<seg xml:id="III-pref-p1-004"
+  ana="#rischio-declaratio
+        #operation-declaratio
+          #risk-dottrinale
+            #exposition-medium
+              #phase-introduction
+                #phase-critical">
+                  Anche padre mi protesto, che se dirò qualche cosa che contradichi la santa fede, non sarà
+                  per mia malitia, ma per ignoranza, e cossì quanto dirò non intendo contradire quel che dice
+                  la nostra santa Chiesa Catolica Romana, confessandomi sua figlia, e seguace, tutto che indegna.
 </seg>
 ```
 
 Un segmento porta sempre più riferimenti insieme, uno per ciascun asse interpretativo pertinente 
-(funzione retorica, rischio dottrinale, stato mistico, operazione prudenziale, livello di esposizione, fase discorsiva) — non un solo tag generico.
+(funzione retorica, impatto interpretativo, rischio dottrinale, stato mistico, operazione prudenziale, livello di esposizione, fase discorsiva) non un solo tag generico.
 
 ## Validazione
 

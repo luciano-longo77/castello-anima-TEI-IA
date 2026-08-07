@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="it">
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" 
+    type="application/xml" 
+    schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="it">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -15,20 +19,21 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>Versione di lavoro — <date when="2026-07-25"/></edition>
+                <edition>Edizione digitale con annotazione semantica (versione di lavoro) <date when="2026-07-31"/></edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>Prototipo DH. Proof-of-concept</publisher>
                 <date when="2026-01-28"/>
                 <idno type="METS">mets.xml</idno>
-                <idno type="digital_edition">Edizione digitale con annotazione semantica</idno>
-                <availability status="restricted">
-                    <p>Le immagini degli autografi possono essere consultati in modalità
-                        off-line.</p>
+                <availability status="free">
                     <licence target="https://creativecommons.org/licenses/by/4.0/"> Questa
                         edizione TEI e la documentazione associata sono rilasciate con licenza
                         Creative Commons BY 4.0: uso consentito con attribuzione, anche per fini
                         commerciali. </licence>
+                </availability>
+                <availability status="restricted">
+                    <p>Le immagini degli autografi sono consultabili solo in modalità off-line
+                        presso l'ente conservatore.</p>
                 </availability>
             </publicationStmt>
 
@@ -177,7 +182,7 @@
                             di riferimento geografico</note>
                     </place>
                     <place xml:id="Caltanissetta">
-                        <placeName ref="https://www.geonames.org/2525448/caltanissetta.html">Caltanissetta"</placeName>
+                        <placeName ref="https://www.geonames.org/2525448/caltanissetta.html">Caltanissetta</placeName>
                         <note>Presunto luogo di permanenza di Suor Teresa</note>
                     </place>
                     <place xml:id="Sicilia">
@@ -191,31 +196,22 @@
                 <bibl type="support" xml:id="ms-Palermo-2QqE29">
                     <settlement ref="#Palermo">Palermo</settlement>
                     <affiliation ref="#BCP">Biblioteca Comunale</affiliation>
-                    <idno ana="#ms-Palermo-2QqE29">ms. 2 Qq E 29</idno>
+                    <idno corresp="#ms-Palermo-2QqE29">ms. 2 Qq E 29</idno>
                     <date notBefore="1670" notAfter="1700">sec. XVII ex.</date>
                     <title level="m" ref="#castello-anima">Il Castello dell’anima</title>
                 </bibl>
 
                 <!-- Origine dei loci e delle citazioni: edizione e introduzione -->
-                <msDesc xml:lang="ita" corresp="#castello-anima">
+                <msDesc xml:lang="it" corresp="#castello-anima">
                     <msIdentifier>
-                        <country>
-                            <name type="place" ref="https://www.geonames.org/3175395">Italia</name>
-                        </country>
-                        <region>
-                            <name type="place" ref="https://www.geonames.org/2523118/sicily.html">Sicilia</name>
-                        </region>
-                        <settlement>
-                            <name type="place" ref="https://www.geonames.org/2523920">Palermo</name>
-                        </settlement>
-                        <institution ref="http://viaf.org/viaf/133691077">Biblioteca
-                            Comunale</institution>
-                        <repository ref="#BCP">Casa Professa</repository>
+                        <country ref="https://www.geonames.org/3175395">Italia</country>
+                        <region ref="https://www.geonames.org/2523118/sicily.html">Sicilia</region>
+                        <settlement ref="https://www.geonames.org/2523920">Palermo</settlement>
+                        <repository ref="#BCP">Biblioteca Comunale di Palermo (già Casa Professa)</repository>
                         <altIdentifier>
-                            <idno ana="#ms-Palermo-2QqE29">2 Qq E 29</idno>
+                            <idno corresp="#ms-Palermo-2QqE29">2 Qq E 29</idno>
                         </altIdentifier>
                     </msIdentifier>
-
                     <msContents>
                         <msItem n="I" xml:id="msItem-I">
                             <author cert="high" ref="http://viaf.org/viaf/39222032" corresp="#s-teresa"> Teresa di San Geronimo </author>
@@ -235,7 +231,7 @@
                                     contemplativa, che sono l’anime proficienti. Iddio sia quello,
                                     che la conceda per sola sua gloria, et honore, amen. </seg>
                             </explicit>
-                            <textLang mainLang="ita"/>
+                            <textLang mainLang="it"/>
                             <textLang otherLangs="la"/>
                         </msItem>
                         <msItem n="II" xml:id="msItem-II">
@@ -273,7 +269,7 @@
                                     bontà divina, faccio, non potendo più con le mie debole forze,
                                     e finisco. </seg>
                             </explicit>
-                            <textLang mainLang="ita"/>
+                            <textLang mainLang="it"/>
                             <textLang otherLangs="la"/>
                         </msItem>
                         <msItem n="III" xml:id="msItem-III">
@@ -312,7 +308,7 @@
                                     d’haver fatto quanto l’obe- dienza m’ha comandato. Soli Deo
                                     honor, et gloria </seg>
                             </explicit>
-                            <textLang mainLang="ita"/>
+                            <textLang mainLang="it"/>
                             <textLang otherLangs="la"/>
                         </msItem>
                     </msContents>
@@ -354,7 +350,7 @@
 
                         <handDesc>
                             <!-- mano originale #1-->
-                            <handNote xml:id="ink_1" scribe="s-teresa" script="cursive" medium="ink_1" scope="major" scribeRef="#s-teresa">
+                            <handNote xml:id="ink_1" scribe="s-teresa" script="cursive" medium="brown-ink" scope="major" scribeRef="#s-teresa">
                                 <p n="1"> La mano principale del manoscritto è quella autografa di
                                         <persName ana="#s-teresa">Teresa di San Geronimo</persName>, eseguita con
                                     inchiostro bruno ormai parzialmente ossidato. La grafia,
@@ -366,7 +362,7 @@
                             </handNote>
 
                             <!-- mano originale #2 -->
-                            <handNote xml:id="ink_2" scribe="s-teresa" script="cursive" medium="ink_2" scope="minor" scribeRef="#s-teresa">
+                            <handNote xml:id="ink_2" scribe="s-teresa" script="cursive" medium="brown-ink" scope="minor" scribeRef="#s-teresa">
                                 <p n="1"> Nel terzo libro è attestata una seconda fase di intervento,
                                     ancora autografa, realizzata a inchiostro. Tali aggiunte (<ref target="#txt-1">T1</ref>, <ref target="#txt-2">T2</ref>)
                                     consistono in glosse marginali, precisazioni dottrinali,
@@ -379,7 +375,7 @@
                             </handNote>
 
                             <!-- mano originale #3  -->
-                            <handNote xml:id="ink_3-dark" scribe="s-teresa" script="cursive" medium="ink_3-dark" scope="medium" scribeRef="#s-teresa">
+                            <handNote xml:id="ink_3-dark" scribe="s-teresa" script="cursive" medium="dark-ink" scope="minor" scribeRef="#s-teresa">
                                 <p n="1"> Una ulteriore tipologia di intervento autografo tardivo
                                     (<ref target="#txt-3">T3</ref>) è riconoscibile in un inchiostro
                                     più scuro, spesso collocato nei margini o nelle righe bianche.
@@ -390,7 +386,7 @@
                             </handNote>
 
                             <!-- mano esterna (?) #4 -->
-                            <handNote xml:id="ink_4-external" scribe="uncertain" script="cursive" medium="ink_4-external" scope="major" scribeRef="#esterno">
+                            <handNote xml:id="ink_4-external" scribe="uncertain" script="cursive" medium="ink" scope="major" scribeRef="#esterno">
                                 <p n="1"> In alcune carte, soprattutto nel terzo libro, compaiono note
                                     marginali o foglietti intercalati attribuibili a mano non
                                     riconducibile con certezza a Teresa (<ref target="#txt-4">
@@ -399,14 +395,27 @@
                                     e presentano un ductus più regolare e disteso, con differenze
                                     sensibili rispetto alla scrittura autografa. </p>
                             </handNote>
+                            
+                            <!-- mano autografa a matita #5 -->
+                            <handNote xml:id="pencil_1" scribe="s-teresa" script="cursive" medium="pencil" scope="minor" scribeRef="#s-teresa">
+                                <p n="1"> Nel terzo libro è documentato un ulteriore strato autografo eseguito
+                                    a matita (<ref target="#txt-m">Tm</ref>): correzioni, glosse e brevi
+                                    annotazioni di natura correttiva e meditativa, aggiunte in un momento
+                                    successivo alla stesura a inchiostro e attribuibili alla stessa mano di
+                                    Teresa di San Geronimo. Si concentrano nei margini e negli spazi
+                                    interlineari, in corrispondenza dei nuclei dottrinali più esposti,
+                                    testimoniando una fase di ripensamento tardivo. </p>
+                            </handNote>
                         </handDesc>
                     </physDesc>
                     <history>
                         <origin>
                             <p n="1">
-                                <origPlace cert="high">
-                                    <placeName ref="#Palermo">Palermo</placeName>, <placeName ref="#Sicilia">Sicilia</placeName>
-                                </origPlace>
+                                    <origPlace>
+                                        <placeName ref="#Caltanissetta">Caltanissetta</placeName> (inizio della stesura) 
+                                        e <placeName ref="#Palermo">Palermo</placeName> (prosecuzione e completamento), 
+                                        <placeName ref="#Sicilia">Sicilia</placeName>
+                                    </origPlace>
                                 <origDate notBefore="1692-09-10" notAfter="1693" cert="high"/>
                                 Il <title level="m" xml:lang="it">Castello dell’anima</title> venne
                                 composto da <persName ref="#Anna-La-Longa" role="author" cert="high">Suor Teresa di San Geronimo</persName> (nata <persName>Anna La
@@ -445,7 +454,7 @@
                                 in particolare nella tripartizione, nella funzione dei
                                 direttori spirituali e nella concezione dell’orazione come via al
                                     <quote>vuoto interiore</quote>. <note type="terminology"> La
-                                    metafora del <quote resp="#avila-castello">castello</quote> non indica, 
+                                    metafora del <quote source="#avila-castello">castello</quote> non indica, 
                                         come in <title xml:lang="es">Las moradas</title> di Teresa d’Ávila, l’anima
                                     stessa, bensì <quote resp="#avila-castello">l’oratione, che l’anima fabrica dalle
                                         fondamenta sino al tetto</quote>, reinterpretata in chiave
@@ -462,7 +471,7 @@
                                 mentre gli atti inquisitoriali in italiano andarono distrutti nell’incendio dello Steri. 
                                 I verbali superstiti in spagnolo, conservati presso l' 
                                     <orgName>Archivio di Stato di 
-                                        <placeName ref="https://www.geonames.org/3117735">Madrid</placeName></orgName>, 
+                                        <placeName ref="http://www.geonames.org/3117735">Madrid</placeName></orgName>, 
                                     costituiscono la principale
                                 testimonianza sul contesto di produzione dell’opera e sulla sua
                                 ricezione censoria. 
@@ -473,7 +482,7 @@
                     <additional>
                         <surrogates>
                             <p n="1"> L’autografo del <title level="m">Castello dell’anima</title>,
-                                conservato nel ms. <idno ana="#ms-Palermo-2QqE29">2 Qq E 29</idno>
+                                conservato nel ms. <idno corresp="#ms-Palermo-2QqE29">2 Qq E 29</idno>
                                 presso la <orgName ref="http://viaf.org/viaf/133691077">Biblioteca
                                     Comunale di Palermo</orgName>, è consultabile in riproduzione
                                 digitale (formato JPEG) presso l’ente conservatore, laddove
@@ -530,6 +539,7 @@
                     <witness xml:id="txt-1" resp="#s-teresa">T1, riscrittura su testo base</witness>
                     <witness xml:id="txt-2" resp="#s-teresa">T2, interventi correttivi-glossativi</witness>
                     <witness xml:id="txt-3" resp="#s-teresa">T3, interventi correttivi-glossativi successivi con medium diverso</witness>
+                    <witness xml:id="txt-m" resp="#s-teresa">Tm, interventi autografi a matita</witness>
                     <witness xml:id="txt-4" resp="#esterno">T4, interventi glossativi esterni</witness>
                     <witness xml:id="txt-c" resp="#editor">Tc, Edizione critica.</witness>
                 </listWit>
@@ -590,20 +600,21 @@
                     e presuppongono sempre una corrispondente operazione discorsiva rappresentata
                     nella tassonomia <gi>operation</gi>; (2) la tassonomia <gi>risk</gi> modella le
                     condizioni storiche e dottrinali di esposizione, mentre <gi>func</gi> modella le
-                    strategie discorsive adottate per gestirle; (3) la tassonomia <gi>impact</gi> è
-                    impiegata come asse interpretativo composito, combinando scala esplicativa e
-                    funzione strutturale, senza postulare una distinzione ontologica rigida tra i
-                    suoi valori. </p>
+                    strategie discorsive adottate per gestirle; (3) la tassonomia <gi>impact</gi> registra 
+                    l'esito della discretizzazione dell'indice composito N–A–F (necessità interpretativa, 
+                    riduzione dell'ambiguità e funzione prudenziale), 
+                    non un giudizio diretto dell'annotatore: le sue quattro classi sono le fasce di valore dell'indice. </p>
                 
                 <p n="4" ana="#imp-idx"> Ogni occorrenza intertestuale è modellata come nodo formale
                     tramite <code>seg</code>, <code>cit</code>, <code>quote</code>, <code>ref</code>, <code>note
                     type="glossa"</code>, ciascuno corredato da tassonomie, da relazioni espresse
-                    attraverso attributi come @corresp e @target, e da indicatori numerici. Il
-                    modello integra un indice d’impatto composto (N, A, F) calcolato secondo la
-                    formula I = 0.40*N + 0.35*A + 0.25*F, dove N misura la necessità interpretativa,
-                    A la riduzione dell’ambiguità e F la funzione prudenziale; l’indice è derivato
-                    da correlazioni tra densità glossematica, gravità del lemma, prossimità ai nodi
-                    dottrinalmente esposti e stratificazione materiale (place, hand, layer). </p>
+                    attraverso attributi come @corresp e @target, e da indicatori numerici. 
+                    Il modello integra un indice d'impatto composto (N, A, F) calcolato secondo la formula I = (4·F_norm + 2·N + 1·A)/7,
+                    con pesi AHP in rapporto F:N:A = 4:2:1 (w_F=4/7, w_N=2/7, w_A=1/7), dove N misura la necessità interpretativa 
+                    (esposizione dottrinale del passo prima dell'intervento), A la riduzione dell'ambiguità e F la funzione prudenziale 
+                    espressa come classe formale ordinale del marcatore (1 = cioè; 2 = ciò s'intende; 3 = io mi dichiaro), derivata dal rango 
+                    dell'asse operation e normalizzata come F_norm = F/3; il valore è discretizzato in quattro classi 
+                    (impact-low/medium/high/critical) con soglie calibrate sulla distribuzione reale del campione.</p>
                 
                 <p n="5"> Il modello TEI utilizza una segmentazione strutturata
                     secondo la sequenza <code>div type="book"</code> → <code>div type="chapter"</code> →
@@ -717,27 +728,44 @@
                         senza modificare la struttura sintattica o stilistica dell’autografo. </p>
                 </normalization>
 
-                <interpretation xml:id="imp-idx">
-                    <p>Dichiarazione della metrica interpretativa per il calcolo dell'indice di
-                        impatto (Impact Index).</p>
-                    <ab xml:id="impact-metric">
-                        <hi rend="italic">I = 0.40N + 0.35A + 0.25F</hi>
-                        <list type="glossary">
-                            <item xml:id="val-N">
-                                <label>N</label>
-                                <p>Necessità interpretativa (valore normalizzato tra 0 e 1).</p>
-                            </item>
-                            <item xml:id="val-A">
-                                <label>A</label>
-                                <p>Ambiguità ridotta (valore normalizzato tra 0 e 1).</p>
-                            </item>
-                            <item xml:id="val-F">
-                                <label>F</label>
-                                <p>Funzione prudenziale (valore normalizzato tra 0 e 1).</p>
-                            </item>
-                        </list>
-                    </ab>
-                </interpretation>
+               <interpretation xml:id="imp-idx">
+    <p>Dichiarazione della metrica interpretativa per il calcolo dell'indice di
+        impatto (Impact Index). Definizione di riferimento: progetto AURORA,
+        Part B-1, §1.2.d.4.</p>
+    <p>Pesi derivati da confronti a coppie con Analytic Hierarchy Process (AHP),
+        in rapporto F : N : A = 4 : 2 : 1 (w<hi rend="sub">F</hi>=4/7,
+        w<hi rend="sub">N</hi>=2/7, w<hi rend="sub">A</hi>=1/7), fissi su tutto il
+        corpus; la classificazione è ricalcolata con pesi alternativi come test di
+        robustezza. Il valore è discretizzato in quattro classi con soglie calibrate
+        sulla distribuzione reale del campione:
+        <ref target="#impact-low">impact-low</ref> (I &lt; 0.50),
+        <ref target="#impact-medium">impact-medium</ref> (0.50 ≤ I &lt; 0.66),
+        <ref target="#impact-high">impact-high</ref> (0.66 ≤ I &lt; 0.82),
+        <ref target="#impact-critical">impact-critical</ref> (I ≥ 0.82).</p>
+    <ab xml:id="impact-metric">
+        <hi rend="italic">I = (4·F_norm + 2·N + 1·A) / 7</hi>
+        <list type="glossary">
+            <item xml:id="val-N">
+                <label>N</label>
+                <p>Necessità interpretativa: grado di esposizione dottrinale del passo
+                    prima dell'intervento (normalizzato tra 0 e 1). Peso 2/7.</p>
+            </item>
+            <item xml:id="val-A">
+                <label>A</label>
+                <p>Riduzione dell'ambiguità: quanto l'intervento restringe le letture
+                    possibili (normalizzato tra 0 e 1). Peso 1/7.</p>
+            </item>
+            <item xml:id="val-F">
+                <label>F</label>
+                <p>Funzione prudenziale: classe formale del marcatore su scala ordinale
+                    (1 = <hi rend="italic">cioè</hi>; 2 = <hi rend="italic">ciò s'intende</hi>;
+                    3 = <hi rend="italic">io mi dichiaro</hi>), derivata dal rango dell'asse
+                    <hi rend="italic">operation</hi> e normalizzata nel calcolo come F/3.
+                    Peso 4/7 (termine dominante).</p>
+            </item>
+        </list>
+    </ab>
+</interpretation>
             </editorialDecl>
 
             <tagsDecl>
@@ -921,23 +949,27 @@
                         giudizio diretto dell’annotatore, ma l’esito di una formula.--> 
                     
                     <category xml:id="impact-high">
-                        <catDesc>Passaggi che chiariscono concetti dottrinali centrali (contemplazione
-                            infusa, unione, quiete, notte dei sensi); decisivi per la comprensione
-                            dell’opera e frequente oggetto di glosse prudenziali.</catDesc>
+                        <catDesc>Fascia alta dell'indice (0.66 ≤ I &lt; 0.82): forte forza regolativa del
+    marcatore. Passaggi che ridefiniscono proposizioni dottrinali centrali
+    (contemplazione infusa, unione, quiete, notte dei sensi), decisivi per la
+    comprensione dell'opera e frequente oggetto di glosse prudenziali.</catDesc>
                     </category>
                     <category xml:id="impact-medium">
-                        <catDesc>Elementi che rafforzano e integrano i concetti principali mediante
-                            esempi, distinzioni e spiegazioni accessorie, senza modificarne
-                            l’assetto teologico.</catDesc>
+<catDesc>Fascia intermedia dell'indice (0.50 ≤ I &lt; 0.66): forza regolativa
+    moderata. Marcatori che rafforzano o integrano i concetti principali (esempi,
+    distinzioni, spiegazioni accessorie) senza modificarne l'assetto teologico.</catDesc>
                     </category>
                     <category xml:id="impact-low">
-                        <catDesc>Parti ornamentali o reiterative utili all’enfasi ma non decisive per
-                            l’argomentazione teologica.</catDesc>
+<catDesc>Fascia inferiore dell'indice (I &lt; 0.50): minima forza regolativa del
+    marcatore. Parti ornamentali o reiterative, utili all'enfasi ma non decisive
+    per l'argomentazione teologica.</catDesc>
                     </category>
                     <category xml:id="impact-critical">
-                        <catDesc>Nodi ad altissimo rischio interpretativo, come la trasformazione,
-                            l’apparente "impeccabilità", la "sicurtà divina", la "sospensione delle
-                            potenze" e la relazione fra volontà umana e azione divina.</catDesc>
+<catDesc>Fascia superiore dell'indice (I ≥ 0.82): massima forza regolativa del
+    marcatore. Nel campione coincide con le declaratio (F=3), i sigilli performativi
+    di ortodossia ("io mi dichiaro"), collocati nei nodi dottrinalmente più esposti
+    (trasformazione, apparente "impeccabilità", "sicurtà divina", "sospensione delle
+    potenze").</catDesc>
                     </category>
                 </taxonomy>
                 <!-- 3. Tassonomia del RISCHIO DOTTRINALE -->
@@ -1298,7 +1330,7 @@
         </encodingDesc>
         <profileDesc>
             <langUsage>
-                <language ident="it-reg-sic" xml:id="it"> Italiano regionale siciliano (XVII
+                <language ident="it-x-sicreg" xml:id="lang-it-sic"> Italiano regionale siciliano (XVII
                     secolo). Strato primario della redazione, caratterizzato da fenomeni fonetici
                     come dittongamenti irregolari, metatesi vocaliche e caduta di vocali finali;
                     morfologia con forme verbali sincopate, articoli e pronomi clitici in variazione
@@ -1332,16 +1364,30 @@
                         </interp>
                     </term>
                     <term xml:id="ling-orth">
-                        <interp type="linguistic-orthograpy">
+                        <interp type="linguistic-orthography">
                             <desc>Grafia: oscillazioni nell'uso di "h", alternanza "si/sì", uso di
                                 "j" per il suono /i/.</desc>
                         </interp>
                     </term>
                 </language>
-                <language ident="la" xml:id="la"> Latino liturgico e biblico (citazioni e formule
+                <language ident="la" xml:id="lang-la"> Latino liturgico e biblico (citazioni e formule
                     dottrinali). </language>
 
             </langUsage>
+            <textClass>
+                <keywords xml:lang="it">
+                    <term type="genre">Trattato di teologia mistica</term>
+                    <term type="topic">Mistica cristiana</term>
+                    <term type="topic">Quietismo</term>
+                    <term type="topic">Contemplazione e orazione mentale</term>
+                    <term type="topic">Scrittura mistica femminile</term>
+                    <term type="topic" ref="#Carmelo">Ordine carmelitano</term>
+                    <term type="topic" ref="#Inquisizione">Inquisizione e censura dottrinale</term>
+                    <term type="topic">Intertestualità</term>
+                    <term type="place" ref="#Sicilia">Sicilia</term>
+                    <term type="period">Secolo XVII (1670–1703)</term>
+                </keywords>
+            </textClass>
 
             <particDesc>
                 <listPerson>
@@ -1352,7 +1398,7 @@
                             <surname key="Longa">La Longa</surname>
                         </persName>
                         <birth when="1670-12-25">25 dicembre 1670</birth>
-                        <death notBefore="1703" notAfter="1703" cert="low">post 1703</death>
+                        <death notBefore="1703" cert="low">post 1703</death>
                         <persName type="religious" ref="#s-teresa" sameAs="#Anna-La-Longa">Teresa di
                             San Geronimo</persName>
                         <sex value="f"/>
@@ -1396,7 +1442,7 @@
                     <person xml:id="p-avila" role="guida-dottrinale">
                         <persName ref="#p-avila">Teresa d’Ávila</persName>
                         <occupation ref="#Carmelo">Mistica carmelitana</occupation>
-                        <idno type="VIAF">https://viaf.org/en/viaf/95217173</idno>
+                        <idno type="VIAF">http://viaf.org/viaf/95217173</idno>
                     </person>
 
                     <person xml:id="p-john" role="guida-spirituale">
@@ -1409,7 +1455,7 @@
                         <persName ref="#p-molinos">Miguel de Molinos</persName>
                         <occupation ref="#Inquisizione">Autore della Guía espiritual; riferimento
                             controverso</occupation>
-                        <idno type="VIAF">https://viaf.org/en/viaf/46777589</idno>
+                        <idno type="VIAF">http://viaf.org/viaf/46777589</idno>
                     </person>
                     <person xml:id="CelestinoSanNicolo">
                         <persName role="director" ref="#CelestinoSanNicolo">Fra Celestino di San
@@ -1457,7 +1503,7 @@
                     <org xml:id="Carmelo">
                         <orgName>Ordine della Beata Vergine del Monte Carmelo
                             (Carmelitani)</orgName>
-                        <idno type="Wikidata">https://www.wikidata.org/wiki/Q186277</idno>
+                        <idno type="Wikidata">http://www.wikidata.org/wiki/Q186277</idno>
                         <note type="historical">
                             <p> Fondato nel <date when="1150">XII secolo</date> da eremiti latini
                                 sul Monte Carmelo (Palestina), l’Ordine si diffuse in Europa nel
@@ -1482,7 +1528,7 @@
                                 diffusione della mistica <term>teresiana</term> e
                                     <term>giovannista</term> tra <date notBefore="1600" notAfter="1750">XVII e XVIII secolo</date>, grazie a conventi
                                 come quello di <placeName ref="#Palermo">Palermo</placeName> (Casa
-                                Professa) e <placeName ref="https://www.geonames.org/2524219">Caltanissetta</placeName>, dove Teresa visse tra il 1691 e il
+                                Professa) e <placeName ref="#Caltanissetta">Caltanissetta</placeName>, dove Teresa visse tra il 1691 e il
                                 1693. L’Ordine promosse anche la <term>direzione spirituale</term>
                                 per terziari e laici, un contesto in cui l’autrice esercitò la sua
                                 guida carismatica, pur senza essere una monaca di clausura. </p>
@@ -1591,7 +1637,51 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
+            
+            <change when="2026-07-31" who="#editor" ana="#fase-revisione-header"> Revisione
+                integrale del <code>teiHeader</code> per conformità TEI P5 e interoperabilità DH.
+                Interventi principali:
+                <list>
+                    <item>Conformità: corretto un valore non ammesso di <code>@scope</code> su
+                        <code>handNote</code>; reso l'<code>@ident</code> di <code>language</code>
+                        conforme a BCP 47 (<code>it-x-sicreg</code>); uniformati i codici di lingua
+                        da <code>ita</code> a <code>it</code>.</item>
+                    <item>Identificatori: resi descrittivi gli <code>@xml:id</code> delle lingue
+                        (<code>lang-it-sic</code>, <code>lang-la</code>); rimossa la dichiarazione di
+                        namespace <code>xmlns:xi</code> non utilizzata.</item>
+                    <item><code>msIdentifier</code>: spostati i puntatori di autorità direttamente su
+                        <code>country</code>/<code>region</code>/<code>settlement</code>; corretto il
+                        <code>repository</code> (biblioteca conservatrice) e rimossa la
+                        <code>institution</code> ridondante; sostituito <code>@ana</code> con
+                        <code>@corresp</code> sugli <code>idno</code> del testimone.</item>
+                    <item>Diritti ed edizione: distinti due <code>availability</code> separati
+                        (edizione <code>free</code> in CC-BY; immagini <code>restricted</code>);
+                        spostata la qualificazione dell'edizione da un <code>idno</code> improprio
+                        all'elemento <code>edition</code>.</item>
+                    <item><code>physDesc</code>: assegnati valori significativi a <code>@medium</code>
+                        (brown-ink, dark-ink, ink, pencil); aggiunta la mano autografa a matita come
+                        quinta mano, con il relativo testimone <ref target="#txt-m">Tm</ref> in
+                        <code>listWit</code>.</item>
+                    <item><code>profileDesc</code>: introdotto <code>textClass</code> con parole
+                        chiave tematiche per l'indicizzazione FAIR.</item>
+                    <item>Dati e autorità: uniformati i permalink VIAF alla forma canonica; corretto
+                        il doppio identificatore GeoNames di Caltanissetta; sanata una data di morte
+                        incoerente; corretti refusi.</item>
+                </list>
+                A seguito degli interventi il documento risulta ben formato, con <code>@xml:id</code>
+                univoci e riferimenti interni tutti risolti, e validato contro <code>tei_all</code>. </change>
 
+            <change when="2026-08-07" who="#editor" ana="#fase-precisione-metodologica"> Aggiornato
+                l'indice d'impatto al modello AHP del progetto AURORA: <hi rend="italic">I =
+                (4·F_norm + 2·N + 1·A)/7</hi> (pesi F:N:A = 4:2:1), con F come classe formale
+                ordinale derivata dall'asse <code>operation</code> (delimitazione=1;
+                attenuatio/precisatio/riequilibrio=2; declaratio=3) e soglie calibrate sulla
+                distribuzione reale del campione. Aggiunta la dichiarazione formale
+                <code>interpretation xml:id="imp-idx"</code> in <code>editorialDecl</code>;
+                allineati il punto (3) di <code>projectDesc</code> e i <code>catDesc</code> della
+                tassonomia <code>impact</code>. Sostituita la precedente formula a pesi ad hoc
+                (0.40·N + 0.35·A + 0.25·F). </change>
+            
             <change when="2026-07-18" who="#editor" ana="#fase-revisione-struttura"> Convertito
                 in encodingDesc l'elemento <code>ab xml:base="abstract"</code> in <code>p
                 xml:base="abstract"</code>, a parità di contenuto, per rimuovere un'incertezza di

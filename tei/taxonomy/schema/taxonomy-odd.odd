@@ -15,7 +15,7 @@
             </editionStmt>
             <publicationStmt>
                 <publisher>Progetto TEI + IA controllata</publisher>
-                <idno type="filename">taxonomy.odd</idno>
+                <idno type="filename">taxonomy-odd.odd</idno>
                 <date when="2026-03-30">30 marzo 2026: prima strutturazione dell'ODD</date>
                 <availability>
                     <licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 – Open Access</licence>
@@ -26,7 +26,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change when="2026-07-18" who="#p-longo">Incorporate come <gi>constraintSpec</gi> Schematron le tre regole di validazione: presenza di <gi>catDesc</gi>, non vacuità di <gi>catDesc</gi>, coerenza del prefisso di @xml:id con la tassonomia radice. Rimosso <gi>moduleRef</gi> "analysis" perché non utilizzato da alcun elemento dello <gi>schemaSpec</gi>. Regole spostate come figlie dirette di schemaSpec e racchiuse in sch:rule per evitare che extract-isosch.xsl le scarti silenziosamente.</change>
+            <change when="2026-07-18" who="#p-longo">Incorporate come <gi>constraintSpec</gi> Schematron le quattro regole di validazione: presenza di <gi>catDesc</gi>, non vacuità di <gi>catDesc</gi>, coerenza del prefisso di @xml:id con la tassonomia radice. Rimosso <gi>moduleRef</gi> "analysis" perché non utilizzato da alcun elemento dello <gi>schemaSpec</gi>. Regole spostate come figlie dirette di schemaSpec e racchiuse in sch:rule per evitare che extract-isosch.xsl le scarti silenziosamente.</change>
             <change when="2026-03-30" who="#p-longo">Prima strutturazione dell'ODD: ridefinizione di <gi>taxonomy</gi> e <gi>category</gi> con content model vincolato e @xml:id reso obbligatorio.</change>
         </revisionDesc>
     </teiHeader>

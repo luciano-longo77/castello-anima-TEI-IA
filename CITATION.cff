@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Surveillance-Led Intertextuality: A TEI-AI (TEIIA) Modelling Framework for Il Castello dell'anima"
+abstract: >-
+  TEI-driven and AI-assisted model for the analysis of intertextuality
+  (citations, authorial glosses, mystical references) in "Il Castello dell'anima"
+  (1692-1693) by Sister Teresa di San Geronimo. Data, TEI schema and controlled
+  AI pipeline accompanying the entry on the SSH Open Marketplace (DARIAH).
+type: software
+authors:
+  - given-names: Luciano
+    family-names: Longo
+    orcid: "https://orcid.org/0009-0005-7557-7546"
+version: "v1.0.0-beta"
+date-released: "2026-08-05"
+license: CC-BY-4.0
+repository-code: "https://github.com/luciano-longo77/castello-anima-TEI-IA"
+url: "https://github.com/luciano-longo77/castello-anima-TEI-IA"
+identifiers:
+  - type: other
+    value: "SSH Open Marketplace (DARIAH) id: niqkwP"
+    description: "SSH Open Marketplace entry for the TEIIA modelling framework"
+keywords:
+  - XML-TEI
+  - digital scholarly edition
+  - intertextuality
+  - genetic criticism
+  - AI for textual scholarship
+  - mediation philology
+  - early modern women's writing
