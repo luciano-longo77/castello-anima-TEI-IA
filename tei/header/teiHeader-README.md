@@ -66,7 +66,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 | **`encodingDesc`** | **Modello formale ed ecdotico.** Contiene l'abstract del modello, i criteri editoriali (`projectDesc`, `refsDecl`, `editorialDecl`), il tagset dichiarato (`tagsDecl`) e le tassonomie (`classDecl`). |
 | **`profileDesc`** | **Inquadramento storico e sociolinguistico.** Traccia il contesto di produzione del testo mistico secentesco: analisi sociolinguistica della lingua, prosopografia (`listPerson`) e istituzioni (`listOrg`: Carmelo, Inquisizione). |
 | **`xenoData` (×2)** | **Dati non-TEI e interoperabilità.** Ospita la specifica JSON del protocollo di simulazione IA e il puntatore ai metadati METS. |
-| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>60 voci) che traccia ogni modifica, revisione e decisione editoriale. |
+| **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>70 voci) che traccia ogni modifica, revisione e decisione editoriale. |
 
 ---
 
@@ -158,7 +158,7 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
 | `+CIT` | Integrazione per esteso di una citazione richiamata |
 
 ### Principi di Controllo Filologico
-1. **Human-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
+1. **Exepert-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
 2. **Auditability:** Parametri, vincoli e campi obbligatori dell'audit trail sono formalizzati in sintassi JSON all'interno di `xenoData`.
 
 ---
@@ -171,7 +171,7 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
   fonte normativa `tei/taxonomy/tassonomia-gh.xml`, validata a parte contro il proprio
   ODD (`taxonomy-odd.odd` → RelaxNG + Schematron: presenza/non-vacuità di `catDesc`,
   coerenza del prefisso `xml:id`, unicità globale). L'header ne incorpora una copia
-  allineata; la coerenza della copia con la fonte è garantita per controllo separato.
+  allineata; la coerenza della copia con la fonte è garantita da controllo separato.
 - **Integrità referenziale:** la risoluzione dei puntatori interni (`@ana`, `@ref`,
   `@who`, `@corresp`) è verificata separatamente e non fa parte delle regole Schematron.
 
