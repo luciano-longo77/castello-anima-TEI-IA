@@ -78,7 +78,7 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 
 ## Versioning
 
-- **Dataset version**: v1.7
+- **Dataset version**: v1.8
 - **Data di preparazione**: 2026-08-07
 - **Autore**: Luciano Longo
 
@@ -360,7 +360,7 @@ Le **soglie** delle quattro classi non sono fissate a priori ma tagliate sulla d
 |---|---|---|---|---|---|---|---|
 | 6.1.1 · III.V,15 | attenuatio (2) | rischio | risk-quietismo | 0.85 | 0.76 | 0.732 | high |
 | 6.1.2 · III.VI,2 | attenuatio (2) | rischio | risk-impeccabilita | 0.88 | 0.80 | 0.747 | high |
-| 6.1.3 · III.VIII,8 | attenuatio (2) | rischio | risk-panteismo | 0.95 | 0.85 | 0.774 | high |
+| 6.1.3 · III.VII,8 | attenuatio (2) | rischio | risk-panteismo | 0.95 | 0.85 | 0.774 | high |
 | 6.1.4 · III.X,6 | attenuatio (2) | rischio | risk-quietismo | 0.75 | 0.68 | 0.692 | high |
 | 6.1.5 · III.XXXIX,5 | attenuatio (2) | rischio | risk-quietismo | 0.88 | 0.82 | 0.750 | high |
 | 6.1.6 · III.VII,6 | attenuatio (2) | rischio | risk-quietismo | 0.78 | 0.66 | 0.698 | high |
@@ -373,7 +373,7 @@ Le **soglie** delle quattro classi non sono fissate a priori ma tagliate sulla d
 | 6.2.5 · III.V | riequilibrio (2) | rischio | risk-impeccabilita | 0.80 | 0.70 | 0.710 | high |
 | 6.3.1 · III.XXXVIII,20 | declaratio (3) | rischio | risk-dottrinale | 0.90 | 0.85 | 0.950 | critical |
 | 6.3.2 · III.XXXIX,3 | declaratio (3) | rischio | risk-panteismo | 0.94 | 0.88 | 0.966 | critical |
-| 6.3.3 · III.VIII,8 | declaratio (3) | rischio | risk-impeccabilita | 0.92 | 0.85 | 0.956 | critical |
+| 6.3.3 · II.XXI,16 | declaratio (3) | rischio | risk-impeccabilita | 0.92 | 0.85 | 0.956 | critical |
 | 6.4.1 · I.IV,7 | delimitazione (1) | pedagogia | risk-ambiguita | 0.55 | 0.58 | 0.430 | low |
 | 6.4.2 · I.V,13 | delimitazione (1) | pedagogia | risk-ambiguita | 0.48 | 0.52 | 0.402 | low |
 | 6.4.3 · II.VIII,32 | delimitazione (1) | pedagogia | risk-ambiguita | 0.60 | 0.56 | 0.442 | low |
@@ -388,11 +388,11 @@ Le **soglie** delle quattro classi non sono fissate a priori ma tagliate sulla d
 | 6.9.1 · III.VIII,34 | attenuatio (2) | rischio | risk-impeccabilita | 0.90 | 0.82 | 0.755 | high |
 | 6.10.1 · III.XXXIX | riequilibrio (2) | rischio | risk-panteismo | 0.90 | 0.82 | 0.755 | high |
 
-**Assi `mystic_state` / `relation` (dove pertinenti):** 6.1.3 (III.VIII,8) → `relation-mistica-unione-sposalitio`; 6.1.6 (III.VII,6) → `mystic_state-otium`; 6.1.8 (II.VIII,37) → `mystic_state-illuminazione`; 6.2.1 (III.XXIV,20) → `relation-intertesto-biblico`; 6.2.3 (II.II,2) → `mystic_state-otium`; 6.7.1 (II.II) → `mystic_state-otium`; 6.7.2 (III.XII,3-4) → `mystic_state-otium`; 6.10.1 (III.XXXIX) → `relation-mistica-unione-sposalitio`.
+**Assi `mystic_state` / `relation` (dove pertinenti):** 6.1.3 (III.VII,8) → `relation-mistica-unione-sposalitio`; 6.1.6 (III.VII,6) → `mystic_state-otium`; 6.1.8 (II.VIII,37) → `mystic_state-illuminazione`; 6.2.1 (III.XXIV,20) → `relation-intertesto-biblico`; 6.2.3 (II.II,2) → `mystic_state-otium`; 6.7.1 (II.II) → `mystic_state-otium`; 6.7.2 (III.XII,3-4) → `mystic_state-otium`; 6.10.1 (III.XXXIX) → `relation-mistica-unione-sposalitio`.
 
 **Nota `cert`.** Giudizio dell'annotatore *low* dove N/A restano incerti: 6.1.6, 6.1.7, 6.1.8, 6.2.2, 6.2.3, 6.2.4, 6.4.3, 6.6.1, 6.7.1 (da rivedere sul manoscritto in fase di validazione corpus).
 
-**Nota loci `III.VIII` (in revisione — v1.7).** Le righe **6.1.3** e **6.3.3**, etichettate `III.VIII,8`, vanno riassegnate al paragrafo corretto: nel capitolo VIII (c. 175v) le glosse anti-sostanziali cadono al **§34** (c. 178v: «divenuta un altro Dio», panteismo) e al **§29** (c. 178r: «sicurtà… se Dio ci lasciasse potremo cadire», impeccabilità), non al §8. La riga **6.9.1** (`III.VIII,34`) è già corretta. Il locus definitivo va fissato sul riscontro d'edizione (Casapullo 2015).
+**Nota loci (risolti — v1.8).** Le righe **6.1.3** e **6.3.3**, in precedenza etichettate `III.VIII,8`, sono state riassegnate sul riscontro delle trascrizioni: **6.1.3** («divenuta un altro Dio», panteismo, attenuatio) è a **III.VII,8** (c. 173r); **6.3.3** (impeccabilità, declaratio) è la terza «mi dichiaro» dell'opera — «Mi dichiaro però che resta nell'anima passiva capacetà… quando Dio l'abandonasse», glossa autoriale tardiva a inchiostro scuro — in **II.XXI** (c. 146r, § ≈ 16, da rifinire). La riga **6.9.1** (`III.VIII,34`, «totale sicurtà… non per fidar di sé stessa») è già corretta e resta la glossa anti-sostanziale propria di III.8.
 
 ## 7. Intertestualità nel Castello
 
