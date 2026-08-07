@@ -7,7 +7,6 @@
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0  
-**Stato**: Working Draft (25 luglio 2026)  
 
 ---
 ## Indice
