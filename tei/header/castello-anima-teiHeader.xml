@@ -606,12 +606,13 @@
                 <p n="4" ana="#imp-idx"> Ogni occorrenza intertestuale è modellata come nodo formale
                     tramite <code>seg</code>, <code>cit</code>, <code>quote</code>, <code>ref</code>, <code>note
                     type="glossa"</code>, ciascuno corredato da tassonomie, da relazioni espresse
-                    attraverso attributi come @corresp e @target, e da indicatori numerici. Il
-                    modello integra un indice d’impatto composto (N, A, F) calcolato secondo la
-                    formula I = 0.40*N + 0.35*A + 0.25*F, dove N misura la necessità interpretativa,
-                    A la riduzione dell’ambiguità e F la funzione prudenziale; l’indice è derivato
-                    da correlazioni tra densità glossematica, gravità del lemma, prossimità ai nodi
-                    dottrinalmente esposti e stratificazione materiale (place, hand, layer). </p>
+                    attraverso attributi come @corresp e @target, e da indicatori numerici. 
+                    Il modello integra un indice d'impatto composto (N, A, F) calcolato secondo la formula I = (4·F_norm + 2·N + 1·A)/7, ,
+                    con pesi AHP in rapporto F:N:A = 4:2:1 (w_F=4/7, w_N=2/7, w_A=1/7), dove N misura la necessità interpretativa 
+                    (esposizione dottrinale del passo prima dell'intervento), A la riduzione dell'ambiguità e F la funzione prudenziale 
+                    espressa come classe formale ordinale del marcatore (1 = cioè; 2 = ciò s'intende; 3 = io mi dichiaro), derivata dal rango 
+                    dell'asse operation e normalizzata come F_norm = F/3; il valore è discretizzato in quattro classi 
+                    (impact-low/medium/high/critical) con soglie calibrate sulla distribuzione reale del campione.</p>
                 
                 <p n="5"> Il modello TEI utilizza una segmentazione strutturata
                     secondo la sequenza <code>div type="book"</code> → <code>div type="chapter"</code> →
@@ -725,27 +726,44 @@
                         senza modificare la struttura sintattica o stilistica dell’autografo. </p>
                 </normalization>
 
-                <interpretation xml:id="imp-idx">
-                    <p>Dichiarazione della metrica interpretativa per il calcolo dell'indice di
-                        impatto (Impact Index).</p>
-                    <ab xml:id="impact-metric">
-                        <hi rend="italic">I = 0.40N + 0.35A + 0.25F</hi>
-                        <list type="glossary">
-                            <item xml:id="val-N">
-                                <label>N</label>
-                                <p>Necessità interpretativa (valore normalizzato tra 0 e 1).</p>
-                            </item>
-                            <item xml:id="val-A">
-                                <label>A</label>
-                                <p>Ambiguità ridotta (valore normalizzato tra 0 e 1).</p>
-                            </item>
-                            <item xml:id="val-F">
-                                <label>F</label>
-                                <p>Funzione prudenziale (valore normalizzato tra 0 e 1).</p>
-                            </item>
-                        </list>
-                    </ab>
-                </interpretation>
+               <interpretation xml:id="imp-idx">
+    <p>Dichiarazione della metrica interpretativa per il calcolo dell'indice di
+        impatto (Impact Index). Definizione di riferimento: progetto AURORA,
+        Part B-1, §1.2.d.4.</p>
+    <p>Pesi derivati da confronti a coppie con Analytic Hierarchy Process (AHP),
+        in rapporto F : N : A = 4 : 2 : 1 (w<hi rend="sub">F</hi>=4/7,
+        w<hi rend="sub">N</hi>=2/7, w<hi rend="sub">A</hi>=1/7), fissi su tutto il
+        corpus; la classificazione è ricalcolata con pesi alternativi come test di
+        robustezza. Il valore è discretizzato in quattro classi con soglie calibrate
+        sulla distribuzione reale del campione:
+        <ref target="#impact-low">impact-low</ref> (I &lt; 0.50),
+        <ref target="#impact-medium">impact-medium</ref> (0.50 ≤ I &lt; 0.66),
+        <ref target="#impact-high">impact-high</ref> (0.66 ≤ I &lt; 0.82),
+        <ref target="#impact-critical">impact-critical</ref> (I ≥ 0.82).</p>
+    <ab xml:id="impact-metric">
+        <hi rend="italic">I = (4·F_norm + 2·N + 1·A) / 7</hi>
+        <list type="glossary">
+            <item xml:id="val-N">
+                <label>N</label>
+                <p>Necessità interpretativa: grado di esposizione dottrinale del passo
+                    prima dell'intervento (normalizzato tra 0 e 1). Peso 2/7.</p>
+            </item>
+            <item xml:id="val-A">
+                <label>A</label>
+                <p>Riduzione dell'ambiguità: quanto l'intervento restringe le letture
+                    possibili (normalizzato tra 0 e 1). Peso 1/7.</p>
+            </item>
+            <item xml:id="val-F">
+                <label>F</label>
+                <p>Funzione prudenziale: classe formale del marcatore su scala ordinale
+                    (1 = <hi rend="italic">cioè</hi>; 2 = <hi rend="italic">ciò s'intende</hi>;
+                    3 = <hi rend="italic">io mi dichiaro</hi>), derivata dal rango dell'asse
+                    <hi rend="italic">operation</hi> e normalizzata nel calcolo come F/3.
+                    Peso 4/7 (termine dominante).</p>
+            </item>
+        </list>
+    </ab>
+</interpretation>
             </editorialDecl>
 
             <tagsDecl>
