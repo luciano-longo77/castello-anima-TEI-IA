@@ -3,6 +3,8 @@
 
 [![TEI P5](https://img.shields.io/badge/TEI%20P5-tei__all-1a252f)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-b8986e)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
 
+**Castello dell'anima – Teresa di San Geronimo**
+
 Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale controllata** per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all'interno di un testo caratterizzato da forte vigilanza teologica.
 
 ---
