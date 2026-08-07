@@ -1,7 +1,7 @@
 # Intertestualità sotto sorveglianza
 ### Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel *Castello dell'anima*
 
-[![TEI P5](https://img.shields.io/badge/TEI%20P5-tei__all-1a252f)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-b8986e)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
 
 **Castello dell'anima – Teresa di San Geronimo**
 
