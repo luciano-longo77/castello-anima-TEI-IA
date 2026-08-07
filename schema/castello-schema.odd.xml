@@ -1,1 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    xml:id="odd-castello-anima"
+    xml:lang="it">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">ODD generale del progetto «Castello dell'anima»</title>
+                <title type="sub">Customizzazione TEI P5 unica e machine-actionable: tassonomia, testo, header. Compatibile RomaJS / TEI Stylesheets.</title>
+                <author xml:id="p-longo">Luciano Longo</author>
+            </titleStmt>
+            <editionStmt>
+                <edition n="working">Versione di lavoro: prima strutturazione dell'ODD di progetto (unico), 2026-08-07. Assorbe l'ODD tassonomico preesistente e aggiunge il modello del testo e la validazione dell'header.</edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Progetto TEI + IA controllata</publisher>
+                <idno type="filename">castello-schema.odd.xml</idno>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 – Open Access</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Meta-schema (ODD) unico del progetto. Contiene tre <gi>schemaSpec</gi> indipendenti — <ident>castello-taxonomy</ident>, <ident>castello-text</ident>, <ident>castello-header</ident> — da cui si generano gli schemi RelaxNG + Schematron per i tre file normativi (<idno>tassonomia-gh.xml</idno>, <idno>castello-anima-text.xml</idno>, <idno>castello-anima-teiHeader.xml</idno>). Le regole <emph>per-file</emph> (vocabolari chiusi, vincoli editoriali) sono dichiarate qui come <gi>valList</gi> e <gi>constraintSpec</gi>. Le regole <emph>cross-file</emph> (0-dangling dei puntatori fra i tre file; guardia E1 header↔tassonomia) non sono esprimibili in uno schema mono-documento e restano nella CI (<idno>.github/workflows/main.yml</idno>).</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2026-08-07" who="#p-longo">Prima strutturazione dell'ODD generale unico. Assorbito, invariato, lo <gi>schemaSpec</gi> tassonomico (ex <idno>taxonomy.odd</idno>). Aggiunto lo <gi>schemaSpec</gi> del testo (vocabolari chiusi come <gi>valList</gi>, vincoli editoriali come <gi>constraintSpec</gi>, esempi) derivato dal dizionario dei tag. Aggiunto lo <gi>schemaSpec</gi> di validazione strutturale dell'header.</change>
+        </revisionDesc>
+    </teiHeader>
 
+    <text>
+        <body>
+            <div>
+                <head>ODD di progetto «Castello dell'anima»</head>
+                <p>Fonte normativa unica. Ogni <gi>schemaSpec</gi> genera uno schema distinto, così che ciascuno dei tre file validi contro il modello appropriato senza uno schema-minestrone che accetterebbe tutto ovunque. Generazione (TEI Stylesheets / oXygen-Roma), selezionando lo <gi>schemaSpec</gi> per <att>ident</att>:</p>
+                <p>
+                    <code>teitorelaxng --odd=castello-schema.odd.xml --schemaSpec=castello-text  text-rng.rng</code><lb/>
+                    <code>teitoschematron --odd=castello-schema.odd.xml --schemaSpec=castello-text  text-sch.sch</code>
+                </p>
+                <p>Regola: non modificare mai i <code>.rng</code>/<code>.sch</code> a mano — sono generati. Si cambia questo ODD, poi si rigenera e si committano insieme.</p>
+            </div>
+
+            <!-- ============================================================= -->
+            <!-- SCHEMASPEC 1 · TASSONOMIA  (assorbito da taxonomy.odd, invariato) -->
+            <!-- ============================================================= -->
+            <schemaSpec ident="castello-taxonomy" start="TEI" docLang="it">
+                <desc>Valida <ident>tassonomia-gh.xml</ident>: restringe la classificazione TEI obbligando ogni <gi>category</gi> a dichiarare un <gi>catDesc</gi> prima di eventuali sotto-categorie.</desc>
+
+                <moduleRef key="tei"/>
+                <moduleRef key="core"/>
+                <moduleRef key="header"/>
+                <moduleRef key="textstructure"/>
+
+                <elementSpec ident="taxonomy" mode="change">
+                    <gloss>asse tassonomico</gloss>
+                    <desc>Contenitore di un asse tassonomico interpretativo multiassiale. Non ospita testo libero non strutturato, ma richiede la presenza di categorie codificate.</desc>
+                    <content>
+                        <elementRef key="category" minOccurs="1" maxOccurs="unbounded"/>
+                    </content>
+                    <attList>
+                        <attDef ident="xml:id" mode="change" usage="req">
+                            <desc>Identificatore univoco dell'asse (per esempio: func, risk, impact), impiegato come prefisso per la risoluzione dei puntatori nell'attributo @ana del testo primario.</desc>
+                            <datatype><dataRef key="ID"/></datatype>
+                        </attDef>
+                    </attList>
+                    <exemplum>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <taxonomy xml:id="risk">
+                                <category xml:id="risk-dottrinale">
+                                    <catDesc>Rischio generale di equivocità su dottrine come "grazia", "libertà", "unione".</catDesc>
+                                    <category xml:id="risk-quietismo">
+                                        <catDesc>Possibile lettura quietista dei concetti di "quiete", "otio".</catDesc>
+                                    </category>
+                                </category>
+                            </taxonomy>
+                        </egXML>
+                    </exemplum>
+                    <remarks>
+                        <p>Questa impostazione permette di inserire la documentazione metodologica globale dell'asse in una macro-categoria radice, mantenendo l'albero privo di nodi testuali orfani.</p>
+                    </remarks>
+                </elementSpec>
+
+                <elementSpec ident="category" mode="change">
+                    <gloss>categoria tassonomica o nodo di classificazione</gloss>
+                    <desc>Unità semantica atomica o complessa. Impone che la descrizione preceda logicamente qualsiasi ramificazione interna, lasciando la libertà di fungere da nodo foglia o da macro-contenitore.</desc>
+                    <content>
+                        <sequence>
+                            <elementRef key="catDesc" minOccurs="1" maxOccurs="1"/>
+                            <elementRef key="category" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
+                    </content>
+                    <attList>
+                        <attDef ident="xml:id" mode="change" usage="req">
+                            <desc>Identificatore univoco della categoria (per esempio: risk-quietismo, operation-delimitazione).</desc>
+                            <datatype><dataRef key="ID"/></datatype>
+                        </attDef>
+                    </attList>
+                    <exemplum>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <category xml:id="func-rischio">
+                                <catDesc>Strategie volte a prevenire o correggere letture potenzialmente eterodosse.</catDesc>
+                                <category xml:id="func-rischio-attenuatio">
+                                    <catDesc>Glosse esplicative per smorzare formulazioni rischiose.</catDesc>
+                                </category>
+                            </category>
+                        </egXML>
+                    </exemplum>
+                    <remarks>
+                        <p>L'ordine della sequenza è tassativo: <gi>catDesc</gi> deve precedere sempre eventuali sotto-categorie.</p>
+                    </remarks>
+                </elementSpec>
+
+                <constraintSpec ident="category-catdesc-present" scheme="schematron">
+                    <desc>Ogni <gi>category</gi> deve contenere un <gi>catDesc</gi>.</desc>
+                    <constraint>
+                        <sch:rule context="tei:category">
+                            <sch:assert test="tei:catDesc" role="error">Errore filologico: ogni &lt;category&gt; deve contenere un elemento &lt;catDesc&gt; per l'autodocumentazione semantica.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="category-catdesc-not-empty" scheme="schematron">
+                    <desc>Il contenuto di <gi>catDesc</gi> non può essere vuoto.</desc>
+                    <constraint>
+                        <sch:rule context="tei:category">
+                            <sch:assert test="normalize-space(string(tei:catDesc)) != ''" role="error">Assegnazione semantica fallita: il contenuto di &lt;catDesc&gt; non può essere vuoto.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="category-prefix-consistency" scheme="schematron">
+                    <desc>L'@xml:id di ogni <gi>category</gi> deve iniziare con il prefisso della tassonomia radice, salvo l'asse "func", esente.</desc>
+                    <constraint>
+                        <sch:rule context="tei:category">
+                            <sch:let name="taxID" value="string(ancestor::tei:taxonomy[1]/@xml:id)"/>
+                            <sch:assert role="error"
+                                test="$taxID = 'func' or starts-with(@xml:id, concat($taxID, '-'))">
+                                Errore di coerenza: l'@xml:id della &lt;category&gt; (<sch:value-of select="@xml:id"/>) deve iniziare con il prefisso della tassonomia radice (<sch:value-of select="$taxID"/>-), salvo l'asse esente 'func'.
+                            </sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="taxonomy-category-xmlid-unique" scheme="schematron">
+                    <desc>Unicità di @xml:id su <gi>taxonomy</gi> e <gi>category</gi> in tutto il documento (rete di sicurezza rispetto al datatype ID nell'override locale).</desc>
+                    <constraint>
+                        <sch:rule context="tei:category | tei:taxonomy">
+                            <sch:assert role="error" test="count(//*[@xml:id = current()/@xml:id]) = 1">
+                                Errore di unicità: l'@xml:id ('<sch:value-of select="@xml:id"/>') di &lt;<sch:name/>&gt; non è univoco nel documento.
+                            </sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+            </schemaSpec>
+
+            <!-- ============================================================= -->
+            <!-- SCHEMASPEC 2 · TESTO  (dal dizionario dei tag)                 -->
+            <!-- ============================================================= -->
+            <schemaSpec ident="castello-text" start="TEI" docLang="it">
+                <desc>Valida <ident>castello-anima-text.xml</ident>: modello del testo (diplomatica, genetica, apparato a segmentazione parallela, interpretazione stand-off, indice d'impatto). Descrive il modello-obiettivo: il file pre-migrazione (con &lt;val&gt; e &lt;figure&gt; retoriche) non valida finché non è migrato.</desc>
+
+                <moduleRef key="tei"/>
+                <moduleRef key="core"/>
+                <moduleRef key="header"/>
+                <moduleRef key="textstructure"/>
+                <moduleRef key="transcr"/>
+                <moduleRef key="textcrit"/>
+                <moduleRef key="linking"/>
+                <moduleRef key="analysis"/>
+                <moduleRef key="iso-fs"/>
+                <moduleRef key="namesdates"/>
+                <moduleRef key="figures"/>
+
+                <!-- Vocabolari chiusi (A5 del dizionario) come valList -->
+                <elementSpec ident="div" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="req">
+                            <desc>Livello strutturale.</desc>
+                            <valList type="closed">
+                                <valItem ident="book"><gloss>libro</gloss></valItem>
+                                <valItem ident="preface"><gloss>prefazione/proemio</gloss></valItem>
+                                <valItem ident="chapter"><gloss>capitolo</gloss></valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="add" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <desc>Natura dell'atto materiale d'aggiunta.</desc>
+                            <valList type="closed">
+                                <valItem ident="correction"/><valItem ident="substitution"/>
+                                <valItem ident="integration"/><valItem ident="punctuation"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="place" mode="change" usage="rec">
+                            <desc>Collocazione topografica. Lista semi-aperta: valori canonici TEI + estensioni di progetto.</desc>
+                            <valList type="semi">
+                                <valItem ident="above"/><valItem ident="below"/><valItem ident="inline"/>
+                                <valItem ident="margin"/><valItem ident="interlinear"/>
+                                <valItem ident="interlinear-above"/><valItem ident="margin-left"/><valItem ident="margin-right"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="del" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="correction"/><valItem ident="substitution"/>
+                                <valItem ident="integration"/><valItem ident="punctuation"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="rend" mode="change" usage="opt">
+                            <desc>Modalità grafica della cassatura.</desc>
+                            <valList type="semi">
+                                <valItem ident="strikethrough"/><valItem ident="erased"/><valItem ident="overwritten"/>
+                                <valItem ident="expunged"/><valItem ident="crossed"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="app" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="substitution"/><valItem ident="addition"/><valItem ident="deletion"/>
+                                <valItem ident="transposition"/><valItem ident="variant"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="rdg" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <desc>Natura della lezione. Le letture IA usano <val>ai-counterfactual</val>.</desc>
+                            <valList type="closed">
+                                <valItem ident="authorial"/><valItem ident="external"/><valItem ident="ai-counterfactual"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="cause" mode="change" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="correction"/><valItem ident="clarification"/><valItem ident="orthodoxy"/>
+                                <valItem ident="attenuation"/><valItem ident="precision"/><valItem ident="amplification"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="cit" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="bible"/><valItem ident="liturgy"/><valItem ident="mystic"/><valItem ident="patristic"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="note" mode="change">
+                    <attList>
+                        <attDef ident="type" mode="change" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="editorial"/><valItem ident="doctrinal"/><valItem ident="contextual"/>
+                                <valItem ident="glossa"/><valItem ident="critical"/><valItem ident="linguistic"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <elementSpec ident="gap" mode="change">
+                    <attList>
+                        <attDef ident="unit" mode="change" usage="opt">
+                            <valList type="closed">
+                                <valItem ident="char"/><valItem ident="chars"/><valItem ident="word"/>
+                                <valItem ident="words"/><valItem ident="line"/><valItem ident="lines"/>
+                            </valList>
+                        </attDef>
+                        <attDef ident="reason" mode="change" usage="rec">
+                            <desc>Causa materiale della lacuna. Semi-aperta.</desc>
+                            <valList type="semi">
+                                <valItem ident="illegible"/><valItem ident="damage"/><valItem ident="ink-fade"/>
+                                <valItem ident="abrasion"/><valItem ident="binding"/><valItem ident="hole"/>
+                                <valItem ident="stain"/><valItem ident="trimmed"/>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
+                <!-- Vincoli editoriali per-file (regole trasversali C del dizionario) -->
+                <constraintSpec ident="lem-copytext" scheme="schematron">
+                    <desc>La lezione a testo (<gi>lem</gi>) è l'ultima volontà autoriale: deve provenire dall'edizione critica <val>#txt-c</val>.</desc>
+                    <constraint>
+                        <sch:rule context="tei:lem[@wit]">
+                            <sch:assert role="error" test="contains(@wit,'#txt-c')">Il &lt;lem&gt; deve avere @wit="#txt-c" (testo critico = ultima volontà autoriale).</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="external-hand-never-lem" scheme="schematron">
+                    <desc>La mano esterna (<val>#txt-4</val>) non può mai costituire la lezione a testo.</desc>
+                    <constraint>
+                        <sch:rule context="tei:lem">
+                            <sch:assert role="error" test="not(contains(@wit,'#txt-4'))">La mano esterna #txt-4 non può comparire in &lt;lem&gt;.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="ai-counterfactual-only-rdg" scheme="schematron">
+                    <desc>Gli eventi IA controfattuali sono solo <gi>rdg</gi>, con responsabilità <val>#AI_controllata</val> e un puntatore alla tassonomia <ident>workflow</ident>. Mai in <gi>lem</gi>.</desc>
+                    <constraint>
+                        <sch:rule context="tei:rdg[@type='ai-counterfactual']">
+                            <sch:assert role="error" test="@resp='#AI_controllata'">Una lezione ai-counterfactual deve avere @resp="#AI_controllata".</sch:assert>
+                            <sch:assert role="error" test="starts-with(@ana,'#workflow-')">Una lezione ai-counterfactual deve puntare a una categoria #workflow-* in @ana.</sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:lem">
+                            <sch:assert role="error" test="not(@type='ai-counterfactual')">Un evento ai-counterfactual non può essere &lt;lem&gt;.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="seg-xmlid-in-body" scheme="schematron">
+                    <desc>Ogni <gi>seg</gi> annotabile nel corpo deve avere un @xml:id (ancora per @ana e per il fascio d'impatto).</desc>
+                    <constraint>
+                        <sch:rule context="tei:body//tei:seg">
+                            <sch:assert role="error" test="@xml:id">Ogni &lt;seg&gt; nel &lt;body&gt; deve avere @xml:id.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <constraintSpec ident="impact-fs-corresp" scheme="schematron">
+                    <desc>Il fascio numerico d'impatto (<gi>fs</gi> in <gi>standOff</gi>) deve agganciarsi al segmento con @corresp.</desc>
+                    <constraint>
+                        <sch:rule context="tei:standOff[@type='impact-index']/tei:fs">
+                            <sch:assert role="error" test="@corresp">Ogni &lt;fs&gt; dell'indice d'impatto deve avere @corresp verso il &lt;seg&gt;.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+
+                <elementSpec ident="seg" mode="change">
+                    <gloss>unità testuale annotabile</gloss>
+                    <desc>Unità di granularità sub-paragrafo che porta l'annotazione interpretativa in @ana e, nel corpo, un @xml:id (vincolo <ident>seg-xmlid-in-body</ident>). Si preferisce a <gi>ab</gi> perché governata dal classDecl.</desc>
+                    <exemplum>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <div type="chapter" n="III.1" xml:id="L3-1">
+                                <p n="1">
+                                    <seg xml:id="seg-159r" ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">incomincia l'anima a perdire qualunque desiderio</seg>
+                                    <app type="substitution">
+                                        <lem wit="#txt-c">silentio</lem>
+                                        <rdg wit="#txt-b0" varSeq="1"><del place="inline" type="correction" hand="#ink_1">sonno</del></rdg>
+                                        <rdg type="ai-counterfactual" resp="#AI_controllata" ana="#workflow-rimozione" cert="medium">sonno</rdg>
+                                    </app>
+                                </p>
+                            </div>
+                        </egXML>
+                    </exemplum>
+                    <remarks>
+                        <p>I valori dei puntatori (@ana, @hand, @wit, @ref, @resp) sono vincolati dalle liste del dizionario, ma la loro <emph>risoluzione</emph> a @xml:id reali in altri file (0-dangling) è cross-file e resta verificata in CI, non qui.</p>
+                    </remarks>
+                </elementSpec>
+            </schemaSpec>
+
+            <!-- ============================================================= -->
+            <!-- SCHEMASPEC 3 · HEADER  (validazione strutturale)              -->
+            <!-- ============================================================= -->
+            <schemaSpec ident="castello-header" start="TEI" docLang="it">
+                <desc>Valida strutturalmente <ident>castello-anima-teiHeader.xml</ident>: descrizione bibliografica e codicologica (<gi>msDesc</gi>), entità (<gi>particDesc</gi>, <gi>listPlace</gi>, <gi>listOrg</gi>), mani (<gi>handDesc</gi>), copia delle tassonomie interpretative e assi di processo (<gi>fase</gi>, <gi>workflow</gi>). Non vincola i vocabolari editoriali del testo: usa i moduli TEI standard più <ident>msdescription</ident> e <ident>namesdates</ident>.</desc>
+                <moduleRef key="tei"/>
+                <moduleRef key="header"/>
+                <moduleRef key="core"/>
+                <moduleRef key="textstructure"/>
+                <moduleRef key="namesdates"/>
+                <moduleRef key="msdescription"/>
+                <moduleRef key="linking"/>
+                <moduleRef key="transcr"/>
+            </schemaSpec>
+
+        </body>
+    </text>
+</TEI>

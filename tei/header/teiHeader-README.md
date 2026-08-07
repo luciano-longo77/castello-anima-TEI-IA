@@ -164,7 +164,7 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
 
 ## 6. Validazione e Qualità del Dato
 
-- **Validazione Strutturale:** Schema **RelaxNG** generato dall'ODD di progetto (`odd/castello-schema.odd.xml`).
+- **Validazione Strutturale:** Schema **RelaxNG** generato dall'ODD di progetto unico (`schema/castello-schema.odd.xml`, `schemaSpec` `castello-header`).
 - **Validazione Semantica (ISO Schematron):**
   - Presenza e non-vacuità di `catDesc`.
   - Coerenza del prefisso `xml:id` rispetto alla tassonomia radice (asse `func` esente).

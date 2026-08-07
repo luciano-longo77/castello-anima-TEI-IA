@@ -1294,7 +1294,7 @@
                     </category>
                 </taxonomy>
             </classDecl>
-            <schemaRef type="odd" url="odd/castello-schema.odd.xml"/>
+            <schemaRef type="odd" url="../../schema/castello-schema.odd.xml"/>
         </encodingDesc>
         <profileDesc>
             <langUsage>
