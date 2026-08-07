@@ -200,23 +200,28 @@
                             Soglie in Sistema Tassonomico.md §5.La categoria impact è l'esito del calcolo, non un giudizio diretto. --> 
                     
                     <category xml:id="impact-high">
-                        <catDesc>Passaggi che chiariscono concetti dottrinali centrali (contemplazione
-                            infusa, unione, quiete, notte dei sensi); decisivi per la comprensione
-                            dell’opera e frequente oggetto di glosse prudenziali.</catDesc>
+                        <catDesc>Fascia alta dell'indice (0.66 ≤ I &lt; 0.82): forte forza regolativa
+                            del marcatore. Passaggi che ridefiniscono proposizioni dottrinali centrali
+                            (contemplazione infusa, unione, quiete, notte dei sensi), decisivi per la
+                            comprensione dell'opera e frequente oggetto di glosse prudenziali.</catDesc>
                     </category>
                     <category xml:id="impact-medium">
-                        <catDesc>Elementi che rafforzano e integrano i concetti principali mediante
-                            esempi, distinzioni e spiegazioni accessorie, senza modificarne
-                            l’assetto teologico.</catDesc>
+                        <catDesc>Fascia intermedia dell'indice (0.50 ≤ I &lt; 0.66): forza regolativa
+                            moderata. Marcatori che rafforzano o integrano i concetti principali
+                            (esempi, distinzioni, spiegazioni accessorie) senza modificarne l'assetto
+                            teologico.</catDesc>
                     </category>
                     <category xml:id="impact-low">
-                        <catDesc>Parti ornamentali o reiterative utili all’enfasi ma non decisive per
-                            l’argomentazione teologica.</catDesc>
+                        <catDesc>Fascia inferiore dell'indice (I &lt; 0.50): minima forza regolativa del
+                            marcatore. Parti ornamentali o reiterative, utili all'enfasi ma non decisive
+                            per l'argomentazione teologica.</catDesc>
                     </category>
                     <category xml:id="impact-critical">
-                        <catDesc>Nodi ad altissimo rischio interpretativo, come la trasformazione,
-                            l’apparente "impeccabilità", la "sicurtà divina", la "sospensione delle
-                            potenze" e la relazione fra volontà umana e azione divina.</catDesc>
+                        <catDesc>Fascia superiore dell'indice (I ≥ 0.82): massima forza regolativa del
+                            marcatore. Nel campione coincide con le declaratio (F=3), i sigilli
+                            performativi di ortodossia ("io mi dichiaro"), collocati nei nodi
+                            dottrinalmente più esposti (trasformazione, apparente "impeccabilità",
+                            "sicurtà divina", "sospensione delle potenze").</catDesc>
                     </category>
                 </taxonomy>
 
