@@ -6,6 +6,21 @@
 Il contributo presenta una **tassonomia interpretativa prudenziale** progettata a partire dal *Castello dell'anima* di Teresa di San Geronimo (secolo XVII), come modello per la formalizzazione e il governo dell'annotazione interpretativa in ambiente TEI. La tassonomia è concepita come un **oggetto ermeneutico autonomo**, formalizzato nel `teiHeader` e governato mediante vincoli strutturali (Relax NG) e semantici (Schematron). L'obiettivo non è classificare contenuti tematici, ma rendere **esplicite, verificabili e controllabili** le categorie interpretative che presiedono all'annotazione di testi ad alta densità ermeneutica. Il modello si fonda su un'architettura multi‑asse, distingue nettamente la definizione delle categorie dal loro uso nel testo e costituisce un'infrastruttura metodologica verificabile e riproducibile.
 
 ---
+## Indice
+1. [Oggetto e statuto della tassonomia interpretativa](#1-oggetto-e-statuto-della-tassonomia-interpretativa)
+2. [Architettura della tassonomia interpretativa prudenziale](#2-architettura-della-tassonomia-interpretativa-prudenziale)
+- 2.1 [Razionale della struttura multi-asse](#21-razionale-della-struttura-multi-asse)
+- 2.2 [Le tassonomie core](#22-le-tassonomie-core)
+- 2.3 [Categorie e descrizioni](#23-categorie-e-descrizioni)
+3. [Implementazione TEI e governo formale](#3-implementazione-tei-e-governo-formale)
+- 3.1 [Collocazione nel `teiHeader`](#31-collocazione-nel-teiheader)
+- 3.2 [Vincoli strutturali e semantici](#32-vincoli-strutturali-e-semantici)
+- 3.3 [Separazione tra definizione e uso](#33-separazione-tra-definizione-e-uso)
+- 3.4 [Robustezza del modello: verifica empirica dei vincoli](#34-robustezza-del-modello-verifica-empirica-dei-vincoli)
+4. [Uso controllato della tassonomia](#4-uso-controllato-della-tassonomia)
+- [Conclusione](#conclusione)
+
+---
 
 ## 1. Oggetto e statuto della tassonomia interpretativa
 
