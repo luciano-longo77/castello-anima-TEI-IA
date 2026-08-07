@@ -106,7 +106,7 @@ Gli **eventi IA controfattuali** (il protocollo −CIT / +TEXTsub / +CIT) sono a
 
 L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, con puntatori alle categorie del `classDecl` (le 8 tassonomie): `@ana`, non un `@type` libero, perché deve restare *governata* dal vocabolario normativo. Regola: un valore per asse (eccetto `#phase-critical`, trasversale); nel dubbio si sale alla categoria superiore (*astensione semantica*).
 
-Le **figure retoriche** non sono `<figure>` (che in TEI è un'illustrazione): si rendono in **stand-off** con `<span>`/`<spanGrp>` ancorati per riferimento, con `@ana` a un vocabolario locale `interpGrp` (`#fig-metafora`, `#fig-similitudine`…) tenuto nel file del testo — così l'annotazione non spezza il flusso e resta governata senza toccare la tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa editoriale è `<note>`.
+Le **figure retoriche** si annotano in **stand-off** con `<span>`/`<spanGrp>`: il tratto di testo che realizza la figura si àncora per riferimento e si classifica con `@ana` su un vocabolario retorico locale (`#fig-metafora`, `#fig-similitudine`…), tenuto nel file del testo come `interpGrp`. Così l'annotazione retorica non spezza il flusso testuale e resta governata da un vocabolario, senza gravare sulla tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa editoriale è `<note>`.
 
 L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La categoria (`#impact-*`) sta in `@ana` sul `seg`; il fascio numerico sta in un `<fs>` (feature structure) in uno strato `<standOff type="impact-index">`, fratello di `<text>` nello stesso documento, collegato via `@corresp`. Si usa `fs`, **non `<val>`** (non ammesso in `seg`). La formula AHP — `I = (4·Fnorm + 2N + A)/7` con `F` dal rango dell'asse `operation` — è dichiarata **una volta** in `editorialDecl`; il valore `I` è prodotto dallo script, mai digitato a mano.
 
@@ -161,13 +161,17 @@ Questi attributi ammettono **solo** i valori elencati.
 6. **`@hand` (mano fisica) ≠ `@wit` (fase genetica).** `@type` su `add`/`del` (atto materiale) ≠ `@type` su `app` (variazione d'apparato).
 7. **`I` mai a mano** — categoria in `@ana`, numeri in `<fs>` dallo script.
 
-## 2.3 `tagsDecl` — elementi da dichiarare per il testo
+## 2.3 L'inventario degli elementi
 
-Già dichiarati: `div p seg head pb add del subst abbr expan sic corr gap supplied unclear lb app lem rdg spanGrp span ref ptr cit quote bibl persName placeName orgName date term note`.
+Il testo usa questi elementi (che il `tagsDecl` dell'header dichiara), raggruppati per funzione:
 
-**Da aggiungere:** `choice` · `orig` · `reg` · `foreign` · `restore` · `retrace` · `metamark` · `hi` · `anchor` · `fw` · `argument` · `titlePage` · `titlePart` · `link` · `linkGrp` · `rs` · `interpGrp` · `interp` · `standOff` · `fs` · `f` · `numeric` · (`milestone`).
-
-*(`figure`/`figDesc` **non** per le figure retoriche — vedi §5; solo per illustrazioni reali.)*
+- **Struttura:** `div` `head` `argument` `titlePage` `titlePart` `p` `pb` `lb` `fw` `seg` `anchor`
+- **Diplomatica:** `choice` `orig` `reg` `abbr` `expan` `sic` `corr` `unclear` `gap` `supplied` `foreign`
+- **Genetica:** `add` `del` `subst` `restore` `retrace` `metamark`
+- **Apparato:** `app` `lem` `rdg`
+- **Interpretazione / stand-off:** `seg` `span` `spanGrp` `interp` `interpGrp` `link` `linkGrp` `rs` `term` `note`
+- **Indice d'impatto:** `standOff` `fs` `f` `numeric`
+- **Citazioni ed entità:** `cit` `quote` `bibl` `ref` `ptr` `persName` `placeName` `orgName` `date`
 
 ---
 
