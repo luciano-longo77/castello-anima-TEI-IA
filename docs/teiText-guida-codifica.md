@@ -169,7 +169,7 @@ Il testo usa questi elementi (che il `tagsDecl` dell'header dichiara), raggruppa
 - **Diplomatica:** `choice` `orig` `reg` `abbr` `expan` `sic` `corr` `unclear` `gap` `supplied` `foreign`
 - **Genetica:** `add` `del` `subst` `restore` `retrace` `metamark`
 - **Apparato:** `app` `lem` `rdg`
-- **Interpretazione / stand-off:** `seg` `span` `spanGrp` `interp` `interpGrp` `link` `linkGrp` `rs` `term` `note`
+- **Interpretazione / stand-off:** `seg` `span` `spanGrp` `interp` `interpGrp` `link` `linkGrp` `rs` `hi` `term` `note`
 - **Indice d'impatto:** `standOff` `fs` `f` `numeric`
 - **Citazioni ed entità:** `cit` `quote` `bibl` `ref` `ptr` `persName` `placeName` `orgName` `date`
 
