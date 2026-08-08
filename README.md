@@ -1,7 +1,10 @@
 # Intertestualità sotto sorveglianza
-### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
-
+## *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 [![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
 
 Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale controllata** per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all'interno di un testo caratterizzato da forte vigilanza teologica.
 
