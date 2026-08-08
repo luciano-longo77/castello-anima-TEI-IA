@@ -8,9 +8,22 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-Documentazione operativa dell'indice d'impatto del modello TEI+IA del *Castello dell'anima*.
+Documentazione operativa dell'**indice d'impatto** del modello TEI+IA del *Castello dell'anima*.
 Vocabolario: `tassonomia-gh.xml`, asse `impact`.
 
+---
+## Indice
+
+- [Cos'è](#cosè)
+- [I tre parametri](#i-tre-parametri-scala-01)
+- [F — rango ordinale dell'asse `operation`](#f--rango-ordinale-dellasse-operation)
+- [Formula (pesi AHP)](#formula-pesi-ahp)
+- [Bande (asse `impact`)](#bande-asse-impact)
+- [Codifica TEI](#codifica-tei)
+- [Uso controfattuale](#uso-controfattuale)
+- [Robustezza](#robustezza)
+
+---
 ## Cos'è
 
 Metrica composita che misura la **forza regolativa** di una glossa, citazione o segmento
@@ -107,5 +120,4 @@ perturbazione) misura quanto il nodo dipende dal presidio, lungo tre dimensioni:
 ## Robustezza
 
 - ricalcolo con **pesi alternativi** → quota di segmenti che cambiano banda pubblicata come misura di sensibilità;
-- **prova inter-annotatore** (codificatori TEI esterni ripetono in autonomia i confronti a coppie, divergenze documentate);
 - **pipeline deterministica** (versione del modello e parametri fissati e rilasciati) → indice indipendente dall'annotatore e dal modello.
