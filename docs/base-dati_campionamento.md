@@ -225,7 +225,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **III.8** — matrimonio spirituale, cella secreta (c. 175v). Dispositivi regolativi reali del capitolo (glosse, non citazioni latine):
 
 - «l'anima **divenuta un altro Dio**» (c. 178v, §34) → mitigata dal contesto prudenziale «vedendosi tanto da lui fortificata» e «totale sicurtà… non per fidar di sé stessa» (178v).
-- «una **sicurtà**, però è di bene pensare, che se Dio ci lasciasse potremo di nuovo cadire» (c. 178r, §29) → delimitazione del nodo della sicurezza.
+- «una **sicurtà**, però è di bene pensare, che se Dio ci lasciasse potremo di nuovo cadire» (c. 178r, §29) → *attenuatio* del nodo della sicurezza.
 - refrain prudenziale «dovemo sempre temere» / «mai fidarci di noi stessi» (178r–v, §§28, 34).
 
 > **N.B. (attribuzione).** «(un altro Dio) **per particepatione**» è il leitmotiv del blocco **III.5–III.7** (cc. 167v, 171v, 173r), non di III.8; «**per quanto sta da parte di Dio**» è in **III.7** (c. 173v).
