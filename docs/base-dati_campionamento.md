@@ -356,6 +356,8 @@ Le 29 glosse selezionate sono tipizzate qui come **proiezione degli assi della t
 
 Le **soglie** delle quattro classi non sono fissate a priori ma tagliate sulla distribuzione reale dei 29 valori di I (i quattro gruppi risultano separati da ampi *natural breaks*): **`impact-low` < 0.50 · `impact-medium` 0.50–0.66 · `impact-high` 0.66–0.82 · `impact-critical` ≥ 0.82**. La banda critica coincide con le tre *declaratio* (F=3), i sigilli performativi di ortodossia dell'autrice, coerentemente con il catDesc di `impact-critical` («nodi ad altissimo rischio: impeccabilità, panteismo, sicurtà divina»).
 
+**Frequenze dei marcatori seriali**: *cioè* = 289; *s'intende* / *non s'intende* = 128 (di cui *non s'intende* = 16); *mi dichiaro* = 3.
+
 | Glossa | Operazione (F) | func | risk | N | A | I | impact |
 |---|---|---|---|---|---|---|---|
 | 6.1.1 · III.V,15 | attenuatio (2) | rischio | risk-quietismo | 0.85 | 0.76 | 0.732 | high |
