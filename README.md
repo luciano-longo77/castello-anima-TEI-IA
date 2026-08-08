@@ -106,7 +106,7 @@ Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`,
 Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione.
 
 ➡️
- [Leggi il README del sistema tassonomico](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
+ [Leggi il README del Indice d'impatto (impact-index)](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
 
 ---
 
