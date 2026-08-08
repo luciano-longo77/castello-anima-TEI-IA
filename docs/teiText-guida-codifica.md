@@ -39,7 +39,7 @@ Il testo è un autografo unico, articolato in **Libri** e **capitoli**: una gera
 </div>
 ```
 
-Il paragrafo è `<p>` (con `@n` come integrazione editoriale). La **materialità** entra con `<pb n="158r"/>` — la foliazione *reale* del manoscritto, agganciata al facsimile via `@facs` — e con `<lb break="no"/>`, riservato ai **soli** a-capo rilevanti (parola spezzata), non a ogni riga. Il materiale non-testuale di pagina (segnature, richiami, numeri di carta) è `<fw>`, tenuto distinto dal testo d'autore.
+Il paragrafo è `<p>` (con `@n` come integrazione editoriale). La **materialità** entra con `<pb n="158r"/>` — la foliazione *reale* del manoscritto e con `<lb break="no"/>`, riservato ai **soli** a-capo rilevanti (parola spezzata), non a ogni riga. Il materiale non-testuale di pagina (segnature, richiami, numeri di carta) è `<fw>`, tenuto distinto dal testo d'autore.
 
 L'unità portante dell'annotazione è **`<seg>`**, non `<ab>` né `<p>`: è l'unica che porta `@ana` (l'interpretazione) a granularità sub-paragrafo ed è governata dal `classDecl`. Ogni `seg` del corpo ha un `@xml:id` nel formato `Libro-cap-p-progr`, che diventa l'ancora per l'apparato e per l'indice d'impatto.
 
@@ -107,7 +107,7 @@ Gli **eventi IA controfattuali** (il protocollo −CIT / +TEXTsub / +CIT) sono a
 L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, con puntatori alle categorie del `classDecl` (le 8 tassonomie): `@ana`, non un `@type` libero, perché deve restare *governata* dal vocabolario normativo. Regola: un valore per asse (eccetto `#phase-critical`, trasversale); nel dubbio si sale alla categoria superiore (*astensione semantica*).
 
 Le **figure retoriche** si annotano in **stand-off** con `<span>`/`<spanGrp>`: il tratto di testo che realizza la figura si àncora per riferimento e si classifica con `@ana` su un vocabolario retorico locale (`#fig-metafora`, `#fig-similitudine`…), tenuto nel file del testo come `interpGrp`. Così l'annotazione retorica non spezza il flusso testuale e resta governata da un vocabolario, senza gravare sulla tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa editoriale è `<note>`. 
-La glossa (`<note type="glossa">`) si àncora al segmento/lemma tramite `@target` (puntamento direzionale glossa→testo), mentre `@corresp` resta riservato al legame `<fs>`-indice → `seg`; la collocazione materiale è resa da `@place` (margin, interlinear…) e la mano da `@hand`.
+La glossa (`<note type="glossa">`) si àncora al segmento/lemma tramite `@target` (puntamento direzionale glossa→testo), mentre `@corresp` resta riservato al legame `<fs>`-indice → `seg;` la collocazione materiale è resa da `@place` (margin, interlinear…) e la mano da `@hand`.
 
 L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La categoria (`#impact-*`) sta in `@ana` sul `seg`; il fascio numerico sta in un `<fs>` (feature structure) in uno strato `<standOff type="impact-index">`, fratello di `<text>` nello stesso documento, collegato via `@corresp`. Si usa `fs`, **non `<val>`** (non ammesso in `seg`). La formula AHP — `I = (4·F_norm + 2·N + 1·A)/7` con `F` dal rango dell'asse `operation` — è dichiarata **una volta** in `editorialDecl`; il valore `I` è prodotto dallo script, mai digitato a mano.
 
