@@ -6,7 +6,7 @@
    xml:lang="it">
    <!-- teiHeader consolidato e stabilizzato: incluso per riferimento (K1).
         In oXygen attivare "Enable XInclude processing". -->
-   <xi:include href="../tei/header/castello-anima-teiHeader.xml" xpointer="teiHeader-castello"/>
+   <xi:include href="../header/castello-anima-teiHeader.xml" xpointer="teiHeader-castello"/>
    <text xml:lang="it-x-sicreg">
       <body>
          <!-- Start Libro I -->
