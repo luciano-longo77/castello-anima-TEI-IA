@@ -103,7 +103,10 @@ Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`,
 - **A** — riduzione dell'ambiguità (quanto l'intervento restringe le letture possibili);
 - **F** — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse `operation`), normalizzata come `F_norm = F/3`.
 
-Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione (cfr. `Sistema Tassonomico.md` §5).
+Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione.
+
+➡️
+ [Leggi il README del sistema tassonomico](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
 
 ---
 
