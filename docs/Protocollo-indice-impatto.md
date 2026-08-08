@@ -157,9 +157,3 @@ Il risultato si scrive in **due posti**, nello stesso file del testo: sul segmen
 - **Derivazione di F:** rango dell'asse `operation` (delimitazione → 1; attenuatio/precisatio/riequilibrio → 2; declaratio → 3).
 
 **Nota sulle scale.** Le rubriche di N e A sono *scale di input* per il giudizio dell'annotatore; le quattro bande `impact-*` sono la *scala di output* calcolata su I. Hanno soglie vicine ma distinte e non vanno confuse.
-
-**Residui:**
-
-- rimappatura di `operation` dai marcatori sui 182 segmenti del testo TEI (unico passo non meccanico del rollout);
-- validazione sul manoscritto dei valori N/A marcati `cert=low`;
-- riferimento AHP: Saaty, T. L. (1980), *The Analytic Hierarchy Process*, New York, McGraw-Hill (formulazione originale: Saaty, T. L. (1977), «A scaling method for priorities in hierarchical structures», *Journal of Mathematical Psychology* 15/3, 234–281).
