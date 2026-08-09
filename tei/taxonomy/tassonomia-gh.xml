@@ -224,7 +224,36 @@
                             "sicurtà divina", "sospensione delle potenze").</catDesc>
                     </category>
                 </taxonomy>
-
+                <!-- Bande di input di N e A (scala di giudizio dell'annotatore).
+                     L'annotatore sceglie la banda; lo strumento converte la banda nel
+                     valore-ancora e lo scrive nella <fs> (<f name="N_band"/>/<f name="A_band"/>
+                     come <symbol value="critica|alta|media|bassa"/>). Non sono token di @ana:
+                     sono il vocabolario controllato della doppia registrazione dell'indice. -->
+                <taxonomy xml:id="impact-band-N">
+                    <category xml:id="impact-band-N-critica">
+                        <catDesc>Banda «critica» di necessità interpretativa (N ≥ 0.85); valore-ancora N = 0.90. La rimozione del presidio esporrebbe il passo a eresia esplicita (panteismo o quietismo).</catDesc>
+                    </category>
+                    <category xml:id="impact-band-N-alta">
+                        <catDesc>Banda «alta» (0.65 ≤ N &lt; 0.85); valore-ancora N = 0.75. Passo teologicamente sensibile: la glossa è strutturalmente utile, ma il nodo non collassa in eresia esplicita.</catDesc>
+                    </category>
+                    <category xml:id="impact-band-N-media">
+                        <catDesc>Banda «media» (0.45 ≤ N &lt; 0.65); valore-ancora N = 0.55. Chiarificazione utile, esposizione moderata; l'assenza non produrrebbe deriva dottrinale.</catDesc>
+                    </category>
+                    <category xml:id="impact-band-N-bassa">
+                        <catDesc>Banda «bassa» (N &lt; 0.45); valore-ancora N = 0.30. Funzione marginale, ornamentale o descrittiva.</catDesc>
+                    </category>
+                </taxonomy>
+                <taxonomy xml:id="impact-band-A">
+                    <category xml:id="impact-band-A-alta">
+                        <catDesc>Banda «alta» di riduzione dell'ambiguità (A ≥ 0.80); valore-ancora A = 0.85. Chiude quasi del tutto l'ambiguità e delimita con precisione.</catDesc>
+                    </category>
+                    <category xml:id="impact-band-A-media">
+                        <catDesc>Banda «media» (0.55 ≤ A &lt; 0.80); valore-ancora A = 0.675. Restringe il campo ma lascia un margine di lettura.</catDesc>
+                    </category>
+                    <category xml:id="impact-band-A-bassa">
+                        <catDesc>Banda «bassa» (A &lt; 0.55); valore-ancora A = 0.40. Tocca l'ambiguità solo marginalmente.</catDesc>
+                    </category>
+                </taxonomy>
                 <!-- 3. Tassonomia del RISCHIO DOTTRINALE -->
                 <taxonomy xml:id="risk">
                     <category xml:id="risk-dottrinale">
