@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Esempio · Stadio 3 — teiText compilato: @ana con #impact-low risolto + <fs> in <standOff>.
+     Uso: apri 3-visualizzatore-indice.html e carica questo file ("Apri teiText.xml"):
+     mostra 1 segmento, classe impact-low, coerenza OK (I=0.405), 0 problemi di puntatori. -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt><title>Esempio dimostrativo — Visualizzatore indice d'impatto</title></titleStmt>
+      <publicationStmt><p>Frammento a scopo dimostrativo (Castello dell'anima, c. 158r, titolo).</p></publicationStmt>
+      <sourceDesc><p>Estratto dall'edizione TEI del Castello dell'anima.</p></sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <p>
+        <seg xml:id="seg-III-tit" type="indicatio" subtype="titolo-dottrinale" hand="#ink_1" cert="medium"
+             ana="#legittimazione-tradizione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-intertesto-teresiano #impact-low">Del
+          <rs xml:id="rs-castello-anima" type="opera-metafora" ref="#avila-castello" ana="#relation-intertesto-teresiano">castello dell'anima</rs>
+          per l'<term type="mistico">anime perfette</term>, nel quale si tratta dell'<rs xml:id="rs-unione-tit" type="stato-mistico" ana="#relation-intertesto-molinista"><term type="mistico">unione</term></rs>,
+          che ponno arrivare queste <rs type="soggetto-mistico">anime</rs> con <rs type="divinita" ref="#dio">Dio</rs> anche in questa vita.</seg>
+      </p>
+    </body>
+  </text>
+  <standOff type="impact-index">
+    <fs xml:id="idx-seg-III-tit" corresp="#seg-III-tit" cert="medium"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+  </standOff>
+</TEI>

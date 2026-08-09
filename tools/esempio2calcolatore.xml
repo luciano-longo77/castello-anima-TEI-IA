@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Esempio · Stadio 2 — segmento codificato con @ana; impact è ancora un segnaposto (#impact*).
+     Uso: apri 2-calcolatore-indice.html, incolla questo <seg> nell'area appunti e premi
+     "Rileva operation e xml:id"; poi scegli banda N e banda A per ottenere I, la classe e la <fs>. -->
+<seg xmlns="http://www.tei-c.org/ns/1.0" xml:id="seg-III-tit" type="indicatio" subtype="titolo-dottrinale" hand="#ink_1" cert="medium"
+     ana="#legittimazione-tradizione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-intertesto-teresiano #impact*">Del castello dell'anima, nel quale si tratta dell'unione, che ponno arrivare queste anime con Dio anche in questa vita.</seg>
