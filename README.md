@@ -31,7 +31,7 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 - Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
 
-- Strutturare un **campione di 14 capitoli** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
+- Strutturare un **campione di 14 loci (16 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
 
 - Implementare una **pipeline AI controllata** che consente:
 
@@ -128,7 +128,7 @@ Ogni evento è sottoposto a:
 
 ## Il campione
 
-Il dataset include **14 capitoli** distribuiti nei tre Libri dell'opera.  
+Il dataset include **campione di 14 loci (16 capitoli)** distribuiti nei tre Libri dell'opera.  
 I segmenti selezionati presentano:
 
 - nodi dottrinali sensibili (contemplazione, unione, sicurezza spirituale, discernimento),
