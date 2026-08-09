@@ -20,13 +20,13 @@ Vocabolario: `tassonomia-gh.xml`, asse `impact`. Procedura di assegnazione passo
 - [Cos'è](#cosè)
 - [Posizione nella pipeline](#posizione-nella-pipeline)
 - [I tre parametri](#i-tre-parametri-scala-01)
-- [F — rango ordinale dell'asse `operation`](#f--rango-ordinale-dellasse-operation)
-- [N e A — bande e valori-ancora](#n-e-a--bande-e-valori-ancora)
+- [F - rango ordinale dell'asse `operation`](#f--rango-ordinale-dellasse-operation)
+- [N e A - bande e valori-ancora](#n-e-a--bande-e-valori-ancora)
 - [Formula (pesi AHP)](#formula-pesi-ahp)
 - [Bande (asse `impact`)](#bande-asse-impact)
 - [Comportamento dell'indice](#comportamento-dellindice)
 - [Codifica TEI](#codifica-tei)
-- [Automazione — `impact_index.py`](#automazione--impact_indexpy)
+- [Automazione - `impact_index.py`](#automazione--impact_indexpy)
 - [Pipeline e workflow controfattuale](#pipeline-e-workflow-controfattuale)
 - [Robustezza e riproducibilità](#robustezza-e-riproducibilità)
 
@@ -38,18 +38,16 @@ Metrica composita che misura la **forza regolativa** di una glossa, citazione o 
 prudenziale nel punto esatto in cui compare. Opera **a valle** dell'interpretazione
 filologica, su unità già codificate: non giudica l'ortodossia dell'intervento, ne
 quantifica l'incidenza sulla tenuta del discorso. Pesi e soglie sono **fissi e invariati**
-su tutto il corpus, così ogni occorrenza è comparabile con ogni altra, anche fra testimoni
-diversi (un `impact-high` nel *Castello* e in un altro codice designano la stessa intensità).
+su tutto il corpus, così ogni occorrenza è comparabile con ogni altra.
 
-L'indice è, insieme, un **valore statico** — quanto un nodo pesa nella sua posizione — e la
+L'indice è, insieme, un **valore statico**, quanto un nodo pesa nella sua posizione, e la
 base di una **misura dinamica**: sotto perturbazione controllata (§ *Pipeline e workflow*),
-la sua oscillazione ΔI dice quanto il discorso dipende da quel nodo. Il primo valore descrive,
+la sua oscillazione **ΔI** dice quanto il discorso dipende da quel nodo. Il primo valore descrive,
 il secondo prova.
 
 ## Posizione nella pipeline
 
-L'indice non è un modulo isolato: è il terzo anello di una catena deterministica e
-unidirezionale che va dal dato materiale alla misura sperimentale.
+L'indice non è un modulo isolato: è il terzo anello di una catena che va dal dato materiale alla misura sperimentale.
 
 ```
 trascrizione diplomatica
@@ -65,7 +63,7 @@ IA controllata (expert-in-the-loop) ← eventi controfattuali, mai retroattivi s
 misura ΔI su D1/D2/D3
 ```
 
-La direzione è **irreversibile**: filologo → codifica TEI → intervento computazionale.
+La direzione è  **(1)** filologo → **(2)** codifica TEI → **(3)** intervento computazionale.
 L'attribuzione di senso resta in ogni fase prerogativa del filologo; l'indice ne è un
 derivato formale, non un giudizio autonomo.
 
@@ -91,11 +89,10 @@ F è il **rango dell'operazione** dichiarata in `@ana`, normalizzato `Fnorm = F/
 | 3 | `declaratio` | *io mi dichiaro* — dichiarazione performativa |
 
 I gradi sono **classi funzionali**, non un elenco chiuso di formule: un marcatore non
-canonico si assegna al grado la cui operazione condivide. La scala è robusta perché colloca
+canonico si assegna al grado la cui **operazione** condivide. La scala è robusta perché colloca
 nello stesso grado le operazioni più difficili da distinguere (attenuatio ↔ precisatio).
 Serialità decrescente dei marcatori nell'edizione — **cioè 289 · s'intende/non s'intende
-128 · mi dichiaro 3** (fonte: `3_edizione.pdf`; criterio: stringa esatta, apostrofo curvo,
-occorrenze ricongiunte a cavallo di riga; forma affermativa «ciò s'intende» = 0).
+128 · mi dichiaro 3** .
 
 ## N e A — bande e valori-ancora
 
@@ -108,10 +105,10 @@ un **valore-ancora fisso** per banda. L'annotatore sceglie la banda, non il deci
 | **N** | 0,90 | 0,75 | 0,55 | 0,30 |
 | **A** | — | 0,85 | 0,675 | 0,40 |
 
-Le soglie di banda e i criteri d'attribuzione (con esempi ancorati) sono nel Protocollo.
-Effetto: l'indice diventa **interamente ordinale** — tre giudizi di banda (F si legge, N e A
+Le soglie di banda e i criteri d'attribuzione (con esempi ancorati) sono nel **Protocollo**.
+Effetto: l'indice diventa **interamente ordinale**, tre giudizi di banda (F si legge, N e A
 si scelgono) e ogni cifra è determinata. Due annotatori che concordano sulle bande ottengono
-lo stesso identico I: l'accordo inter-annotatore si misura sulla banda, non su un decimale non
+lo stesso identico **I**: l'accordo inter-annotatore si misura sulla banda, non su un decimale non
 ispezionabile.
 
 ## Formula (pesi AHP)
@@ -174,7 +171,7 @@ prodotto dal calcolo, mai immesso dall'annotatore. Si usa `<fs>`, non `<val>`.
      ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical
           #phase-mediana #phase-critical #mystic_state-quiete
           #relation-mistica-passiva-quiete #impact-high"
-     hand="#ink_1" cert="medium">incomincia l'anima a perdire qualunque desiderio…</seg>
+     hand="#ink_1" cert="medium"> (...) incomincia l'anima a perdire qualunque desiderio (...)</seg>
 
 <!-- in standoff, stesso documento del testo: il fascio computabile -->
 <standOff type="impact-index">
@@ -235,7 +232,7 @@ garantita per costruzione. Collocazione nel repo: `tools/`, accanto ai dati che 
 
 L'indice statico è la premessa di una **prova sperimentale**. La pipeline IA non tocca il
 testo stabilito: genera **eventi controfattuali** su unità già codificate e ne misura
-l'effetto, in un regime *expert-in-the-loop*.
+l'effetto, in un regime **expert-in-the-loop**.
 
 ### I tre scenari
 
