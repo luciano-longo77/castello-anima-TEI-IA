@@ -694,7 +694,7 @@
                         <biblScope unit="page">40(Suppl. 1), i75-i86</biblScope>
                     </bibl>
                 </listBibl>
-
+                </listBibl>
 
                 <listWit>
                     <witness xml:id="txt-b0" resp="#s-teresa">Tb0, testo base</witness>
