@@ -40,7 +40,7 @@ esattamente l'errore che affliggeva la versione precedente (137 valori su 182 no
 > valori-ancora, calcola I, assegna la classe, scrive la codifica e la valida. **I non si
 > digita: lo calcola lo script.**
 
-## Passo 0 — Perimetro: a che cosa si applica
+## Passo 0 - Perimetro: a che cosa si applica
 
 L'indice si applica **solo** a un'unità già codificata come dispositivo di mediazione, una
 glossa (`<note type="glossa">`), una citazione (`<cit>`), un segmento prudenziale (`<seg>`),
@@ -53,7 +53,7 @@ Quando in un segmento coesistono più connettivi, **F** si legge dal marcatore c
 chiarisce «sposalitio» accanto all'*intendo dunque dire* che ridefinisce la proposizione). Il
 segmento, del resto, racchiude l'**asserzione esposta insieme al presidio** che la regola.
 
-## Passo 1 — Assegnare N (necessità interpretativa) — GIUDIZIO
+## Passo 1 - Assegnare N (necessità interpretativa) — GIUDIZIO
 
 **N** misura quanto il passo sia dottrinalmente esposto e quanto lo sia *prima* dell'intervento. Il criterio è
 controfattuale e interno al *Castello*: «se togliessi questo presidio, il nodo scivolerebbe
@@ -73,7 +73,7 @@ semiaperte: nessuna sovrapposizione ai bordi):
 | Media | 0.45 ≤ N < 0.65 | **0.55** | Chiarificazione utile, esposizione moderata; l'assenza non produrrebbe deriva dottrinale. |
 | Bassa | N < 0.45 | **0.30** | Funzione marginale, ornamentale o descrittiva. |
 
-## Passo 2 — Assegnare A (riduzione dell'ambiguità) — GIUDIZIO
+## Passo 2 - Assegnare A (riduzione dell'ambiguità) — GIUDIZIO
 
 **A** misura quanto l'intervento restringe le letture possibili: quanto dell'ambiguità di partenza
 viene chiusa grazie all'occorrenza. **A** è un **input** dell'indice; il suo effetto sulla tenuta
@@ -93,7 +93,7 @@ semiaperte):
 | Media | 0.55 ≤ A < 0.80 | **0.675** | Restringe il campo ma lascia un margine di lettura. |
 | Bassa | A < 0.55 | **0.40** | Tocca l'ambiguità solo marginalmente. |
 
-## Passo 3 — Leggere F (funzione prudenziale) — LETTURA, non stima
+## Passo 3 - Leggere *F* (funzione prudenziale) — LETTURA, non stima
 
 **F** non si stima: si **legge** dalla forma del marcatore, e si classifica in tre gradi. È il parametro meno inferenziale **quasi oggettivo** ed è per questo
 che nel modello pesa di più. Non promuovere **F** perché l'occorrenza *sembra importante*: quello
@@ -114,7 +114,7 @@ giustifica davvero. **F** risponde alla domanda «che *forma* ha il gesto?», ma
 | 2 | Ridefinizione proposizionale | Ridisegna una proposizione esposta: *s'intende* / *non s'intende* / *m'esplico*; attenuatio e precisatio su una proposizione. |
 | 3 | Dichiarazione performativa | Presa di posizione dottrinale in prima persona: *io mi dichiaro*, *mi dichiaro*; declaratio. |
 
-## Passo 4 — Registrare cert (certezza dell'annotatore)
+## Passo 4 - Registrare *cert* (certezza dell'annotatore)
 
 - **`high`** se marcatore inequivoco e passo chiaro;
 - **`medium`** se l'attribuzione richiede inferenza;
@@ -122,7 +122,7 @@ giustifica davvero. **F** risponde alla domanda «che *forma* ha il gesto?», ma
 
 **Non incide sul calcolo di I**: documenta l'affidabilità del giudizio.
 
-## Passo 5 — Calcolo — MECCANICO
+## Passo 5 - Calcolo *meccanico*
 
 Si normalizza **F** (`Fnorm = F/3`, cioè 1 → 0.333, 2 → 0.667, 3 → 1.0) e si applica la formula.
 Lo fa lo script; **tu non digiti I**.
@@ -131,7 +131,7 @@ Lo fa lo script; **tu non digiti I**.
 I = (4·Fnorm + 2·N + 1·A) / 7          wF = 4/7   wN = 2/7   wA = 1/7
 ```
 
-## Passo 6 — Discretizzazione — MECCANICO
+## Passo 6 - Discretizzazione *meccanico*
 
 Si confronta **I** con le **soglie fisse** e si ottiene la classe:
 
@@ -142,7 +142,7 @@ Si confronta **I** con le **soglie fisse** e si ottiene la classe:
 | `impact-high` | 0.66 ≤ I < 0.82 |
 | `impact-critical` | I ≥ 0.82 |
 
-## Passo 7 — Codifica — la doppia registrazione
+## Passo 7 - Codifica: la doppia registrazione
 
 Il risultato si scrive in **due posti**, nello stesso file del testo: sul segmento la sola
 categoria in `@ana`; in `<standOff>` il fascio computabile come **feature structure** collegata
@@ -173,7 +173,7 @@ nell'`editorialDecl`, non ripetuta a ogni occorrenza.
 </standOff>
 ```
 
-## Passo 8 — Validazione — MECCANICO (checklist)
+## Passo 8 - Validazione *meccaniac* (checklist)
 
 - [ ] il segmento ha `@xml:id`;
 - [ ] `@ana` contiene la classe `#impact-X` più func (rischio) / operation / risk / exposition;
@@ -185,7 +185,7 @@ nell'`editorialDecl`, non ripetuta a ogni occorrenza.
 - [ ] ogni puntatore (`#impact-X` → tassonomia; `#ink_1` → header) risolve: 0 dangling cross-file;
 - [ ] il file valida contro `tei_all` (RelaxNG).
 
-## Esempio svolto per intero — c. 159r
+## Esempio *c. 159r*
 
 **Occorrenza:** la *precisatio* di c. 159r con cui l'autrice restringe la formula «perdire
 qualunque desiderio»: *e non dico del mondo (...) intendo dunque dire che non desidera più gusti di
