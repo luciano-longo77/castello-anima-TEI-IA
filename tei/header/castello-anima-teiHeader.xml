@@ -757,7 +757,7 @@
             <item xml:id="val-F">
                 <label>F</label>
                 <p>Funzione prudenziale: classe formale del marcatore su scala ordinale
-                    (1 = <hi rend="italic">cioè</hi>; 2 = <hi rend="italic">ciò s'intende</hi>;
+                    (1 = <hi rend="italic">cioè</hi>; 2 = <hi rend="italic">s'intende / non s'intende</hi>;
                     3 = <hi rend="italic">io mi dichiaro</hi>), derivata dal rango dell'asse
                     <hi rend="italic">operation</hi> e normalizzata nel calcolo come F/3.
                     Peso 4/7 (termine dominante).</p>
