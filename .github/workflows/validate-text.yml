@@ -1,0 +1,51 @@
+name: Validate Text
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tei/text/**"
+      - "tei/taxonomy/tassonomia-gh.xml"
+      - "tei/header/**"
+      - ".github/workflows/validate-text.yml"
+      - "scripts/e2_guard.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - "tei/text/**"
+      - "tei/taxonomy/tassonomia-gh.xml"
+      - "tei/header/**"
+  workflow_dispatch:
+
+env:
+  TEXT: tei/text/castello-anima-teiText.xml
+  TAX:  tei/taxonomy/tassonomia-gh.xml
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install lxml
+      - name: Installa xmllint e jing
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libxml2-utils jing
+      - name: File richiesti presenti
+        run: |
+          test -f "$TEXT" || { echo "::error::$TEXT non trovato"; exit 1; }
+          test -f "$TAX"  || { echo "::error::$TAX non trovato"; exit 1; }
+      - name: Scarica TEI All (RelaxNG)
+        run: |
+          curl -sSL --retry 3 --fail -o tei_all.rng \
+            https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng
+          test -s tei_all.rng
+      - name: Buona formazione + risoluzione XInclude
+        run: xmllint --noout --xinclude "$TEXT"
+      - name: Componi documento risolto (senza fixup xml:base)
+        run: xmllint --nofixup-base-uris --xinclude "$TEXT" > resolved.xml
+      - name: Validazione RelaxNG (TEI All)
+        run: jing tei_all.rng resolved.xml
+      - name: Guardia E2 (@ana -> tassonomia)
+        run: python3 scripts/e2_guard.py "$TEXT" "$TAX"
