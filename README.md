@@ -62,7 +62,7 @@ Organizzata in tre sottocartelle:
 - **`/tei/taxonomy`** — il sistema tassonomico interpretativo del progetto: la tassonomia normativa (`tassonomia-gh.xml`), i tre documenti di schema dedicati alla tassonomia (ODD, RelaxNG, Schematron), esempi di annotazione, log di lavorazione. ➡️
  [Leggi il README del sistema tassonomico](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/taxonomy/Sistema%20Tassonomico.md)
 - **`/tei/text`** — il testo del manoscritto codificato in TEI.➡️
-  [Leggi la Guida ragionata alla codifica del <text>](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/teiText-guida-codifica.md)
+  [Leggi la Guida ragionata alla codifica del text](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/teiText-guida-codifica.md)
 
 ### `/schema`
 
