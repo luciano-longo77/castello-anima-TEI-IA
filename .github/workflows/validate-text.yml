@@ -8,7 +8,7 @@ on:
       - "tei/taxonomy/tassonomia-gh.xml"
       - "tei/header/**"
       - ".github/workflows/validate-text.yml"
-      - "scripts/e2_guard.py"
+      - ".github/workflows/scripts/**"
   pull_request:
     branches: [main]
     paths:
@@ -49,3 +49,5 @@ jobs:
         run: jing tei_all.rng resolved.xml
       - name: Guardia E2 (@ana -> tassonomia)
         run: python3 .github/workflows/scripts/e2_guard.py "$TEXT" "$TAX"
+      - name: Guardia co-occorrenza (@ana)
+        run: python3 .github/workflows/scripts/cooccurrence_guard.py "$TEXT"
