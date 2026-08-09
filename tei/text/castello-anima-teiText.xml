@@ -37,7 +37,7 @@
                   <seg xml:id="seg-III-tit" type="indicatio" subtype="titolo-dottrinale" hand="#ink_1" cert="medium"
                        ana="#legittimazione-tradizione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-intertesto-teresiano #impact-low">Del
                      <rs xml:id="rs-castello-anima" type="opera-metafora" ref="#avila-castello" ana="#relation-intertesto-teresiano">castello dell'anima</rs>
-                     per l'<term type="mistico">anime perfette</term>, nel quale si tratta dell'<rs xml:id="rs-unione-tit" type="stato-mistico" ref="#molinos-guida" ana="#relation-intertesto-molinista"><term type="mistico">unione</term></rs>,
+                     per l'<term type="mistico">anime perfette</term>, nel quale si tratta dell'<rs xml:id="rs-unione-tit" type="stato-mistico" ana="#relation-intertesto-molinista"><term type="mistico">unione</term></rs>,
                      che ponno arrivare queste <rs type="soggetto-mistico">anime</rs> con <rs type="divinita" ref="#dio">Dio</rs> anche in questa vita.</seg>
                </p>
             </argument>
@@ -156,14 +156,14 @@
                        N=0.85 (alta: la rimozione esporrebbe a lettura edonistica dell'unione); A=0.80 (alta: restringe fortemente);
                        F=2 precisatio -> I=0.738 high. Figura: antitesi godere/purificarla. -->
                   <seg xml:id="seg-c2-purificazione" type="indicatio" subtype="precisazione-investitura" hand="#ink_1" cert="medium"
-                       ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical #phase-introduction #phase-critical #mystic_state-purificazione #relation-mistica-infusa-purificazione #impact-high">non
+                       ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical #phase-mediana #phase-critical #mystic_state-purificazione #relation-mistica-infusa-purificazione #impact-high">non
                      la investiva per farla godere, ma per purificarla</seg>, e farla aspramente patire, sì come nel <choice><sic>suo</sic><corr resp="#editor" cert="medium">secondo</corr></choice> trattato dissimo.</p>
 
                <p n="3">
                   <!-- C7 CONSOLAZIONE DOPO LA PURGA. Passata la purga, la luce non affligge più ma consola e "rischiara come sole".
                        N=0.35 (bassa: descrizione dello stato); A=0.40; F=1 delimitazione -> I=0.347 low. Norm: ne->né. -->
                   <seg xml:id="seg-c3-purga" type="indicatio" subtype="consolazione-post-purga" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-illuminazione #impact-low">Adesso,
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-illuminazione #impact-low">Adesso,
                      come che l'anima è disposta, e passata per quella sì dura <term type="mistico">purga</term>, e tolta ogni <term type="mistico">macchia</term>, che
                      prima teneva, non gli dà più <choice><orig>ne</orig><reg>né</reg></choice> Dio la <term type="mistico">divina luce</term>, anzi la consola, e la rischiara come sole</seg>.</p>
 
@@ -171,7 +171,7 @@
                   <!-- C8 RITORNO DELLA PACE. L'anima riacquista la pace perduta; cessano le "pioggie" delle amarezze (metafora).
                        N=0.35 (bassa: descrizione); A=0.40; F=1 delimitazione -> I=0.347 low. Genetico: app delle (<della, NOTA3). Norm: de' i->dei, la pioggie->le pioggie. -->
                   <seg xml:id="seg-c4-pace2" type="indicatio" subtype="ritorno-pace" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-quiete #impact-low">Al
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-quiete #impact-low">Al
                      passaggio <choice><orig>de' i</orig><reg>dei</reg></choice> <term type="mistico">travagli</term> va l'anima di nuovo acquistando la <term type="mistico">pace</term>,
                      che prima persa havea, e vedesi cessar <choice><sic>la</sic><corr resp="#editor" cert="high">le</corr></choice> pioggie <app>
                         <lem wit="#txt-c">delle</lem>
@@ -180,26 +180,26 @@
                   <!-- C9 SEGNO DI SICURTÀ (Arca di Noè). Allegoria biblica: l'Arca e la "primavera ventura" come segni di sicurtà e rinascita.
                        N=0.50 (media: segno biblico rassicurante); A=0.60 (media); F=2 riequilibrio -> I=0.610 medium. Norm: ed'altri->ed altri. -->
                   <seg xml:id="seg-c4-arca" type="indicatio" subtype="segno-sicurta" hand="#ink_1" cert="medium"
-                       ana="#legittimazione-biblica #operation-riequilibrio #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-quiete #relation-intertesto-biblico #impact-medium">e
+                       ana="#legittimazione-biblica #operation-riequilibrio #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #relation-intertesto-biblico #impact-medium">e
                      comparir nella sua terra, in segno di sicurtà, l'<rs type="segno-biblico">Arca di Noè</rs>; vede più e più aprer le porte che prima
                      stavano per lei serrate e senza speranza d'aprirsi; e tutti questi, <choice><orig>ed'altri</orig><reg>ed altri</reg></choice> segni, che tutti
                      annunciano la <term type="mistico">primavera ventura</term> che verrà nell'anima, sì come doppo dirò</seg>,
                   <!-- C10 STATO DI ARIDITÀ (sicilianismo 'astinuata'). L'anima resta prosciugata dal patire. N=0.35 (bassa); A=0.40; F=1 -> I=0.347 low. -->
                   <seg xml:id="seg-c4-astinuata" type="indicatio" subtype="stato-aridita" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-otium #impact-low">resta
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-otium #impact-low">resta
                      l'anima tutta <term type="sicilianismo">astinuata</term> del patire <choice><orig>e</orig><reg>e'</reg></choice> <term type="mistico">travagli</term> passati</seg>.</p>
 
                <p n="5">
                   <!-- C11 INTRODUZIONE DELLA SIMILITUDINE. Metatesto: annuncia una comparatione. N=0.25 (bassa: meta-testuale); A=0.30; F=1 -> I=0.305 low. Norm: ad'intendire->ad intendire. -->
                   <seg xml:id="seg-c5-intro" type="indicatio" subtype="introduzione-similitudine" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-quiete #impact-low">Qui
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-quiete #impact-low">Qui
                      per farmi <choice><orig>ad'intendire</orig><reg>ad intendire</reg></choice> vorrei spiegarmi con una comperatione, per esempio</seg>.</p>
 
                <p n="6">
                   <!-- C12 SIMILITUDINE DELLA STATUA. La statua essiccata al sole = l'anima alleggerita dalle passioni (sicilianismi astinuata/stinuata).
                        N=0.35 (bassa: similitudine pedagogica); A=0.45; F=1 delimitazione -> I=0.355 low. Norm: à punto->a punto, ed' esposta->ed esposta. -->
                   <seg xml:id="seg-c6-statua" type="indicatio" subtype="similitudine-statua" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-otium #impact-low">Vi
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-otium #impact-low">Vi
                      fosse una <rs type="oggetto-comparante">statua</rs> che esposta molti tempi al calor del sole remanesse molto <term type="sicilianismo">astinuata</term>
                      e secca, e perciò sarebbe molto leggiera. <choice><orig>Cossi</orig><reg>Cossì</reg></choice> <choice><orig>à</orig><reg>a</reg></choice> punto è qui l'anima, che <term type="sicilianismo">stinuata</term>
                      <choice><orig>ed' esposta</orig><reg>ed esposta</reg></choice> al calor della <term type="mistico">divina luce</term>, restò molto leggiera, e questa intendo dire,
@@ -207,20 +207,20 @@
                   <!-- C13 DISPOSIZIONE ALL'UNIONE. La contemplazione, consumate le macchie, rende l'anima capace d'unirsi con lo sposo.
                        N=0.50 (media: unione/sposo, contemplatione); A=0.45; F=1 delimitazione -> I=0.397 low. -->
                   <seg xml:id="seg-c6-contemplatione" type="indicatio" subtype="disposizione-unione" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">e
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">e
                      per quanto consomò e disfece quella <term type="mistico">divina contemplatione</term>, la lasciò ben capace di poter unirsi con lo <rs type="divinita" ref="#dio">sposo suo</rs></seg>.</p>
 
                <p n="7">
                   <!-- C14 STATO INTERMEDIO. L'anima non patisce più come prima né gode come poi: sospesa fra pena e gioia.
                        N=0.40 (media-bassa: descrizione); A=0.40; F=1 delimitazione -> I=0.362 low. Norm: ne->né (x2). -->
                   <seg xml:id="seg-c7-attesa" type="indicatio" subtype="stato-intermedio" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-quiete #impact-low">Sta
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-quiete #impact-low">Sta
                      per qualche tempo l'anima senza che <choice><orig>ne</orig><reg>né</reg></choice> patisse come prima, <choice><orig>ne</orig><reg>né</reg></choice> gode, come poi cresciuta
                      l'<term type="mistico">unione</term> goderà, e sta attonita al guardare i <term type="mistico">travagli</term> passati</seg>.
                   <!-- C15 SIMILITUDINE DEL VIAGGIO. Il viandante che riposa dopo il lungo viaggio = l'anima dopo i travagli.
                        N=0.35 (bassa: similitudine); A=0.40; F=1 delimitazione -> I=0.347 low. Genetico: app 'e'(<è, NOTA4); richiamo 'senza'(fw catch, NOTA5). Norm: quì->qui, à->a (x2). -->
                   <seg xml:id="seg-c7-viaggio" type="indicatio" subtype="similitudine-viaggio" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-otium #impact-low">E
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-otium #impact-low">E
                      <choice><orig>quì</orig><reg>qui</reg></choice> per <choice><orig>à</orig><reg>a</reg></choice> punto come chi doppo un lungo viaggio se ne stasse un puoco <choice><orig>à</orig><reg>a</reg></choice> vedere, <app>
                         <lem wit="#txt-c">e</lem>
                         <rdg wit="#txt-b0"><del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">è</del><add place="inline" hand="#ink_1" resp="#s-teresa" type="substitution">e</add></rdg>
@@ -228,7 +228,7 @@
                   <!-- C16 RIEQUILIBRIO DEL RIPOSO. L'anima riposa ma "nei principii non tanto gode": auto-riequilibrio che frena l'attesa di godimento pieno.
                        N=0.55 (media: sfiora l'otium ma lo modera); A=0.60 (media); F=2 riequilibrio -> I=0.624 medium. Norm: ne'i->nei, ò->o, per che->perché. -->
                   <seg xml:id="seg-c7-reposa" type="indicatio" subtype="riequilibrio-riposo" hand="#ink_1" cert="medium"
-                       ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-introduction #mystic_state-quiete #relation-mistica-passiva-quiete #impact-medium">Hor
+                       ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-mediana #mystic_state-quiete #relation-mistica-passiva-quiete #impact-medium">Hor
                      cossì è qui l'anima, che doppo quei travagli e fatiche reposa, ma però <choice><orig>ne'i</orig><reg>nei</reg></choice> principii non tanto gode, non havendo
                      per ancora pigliato lo <rs type="divinita" ref="#dio">sposo</rs> in lei totalmente posesso, <choice><orig>ò</orig><reg>o</reg></choice> <choice><orig>per che</orig><reg>perché</reg></choice> ancora non gli piace
                      di scoprirsi come poi farà; e però l'anima non patisce più</seg>.</p>
@@ -240,7 +240,7 @@
                        A=0.82 (alta: restringe un termine ad altissima densità); F=2 precisatio ("intendo dunque dire" ridisegna la proposizione)
                        -> I=0.761 high (valori del paper 3.1.3). Norm: à->a (x2), ne meno->né meno. -->
                   <seg xml:id="seg-c8-desiderio" type="indicatio" subtype="precisazione-quiete" hand="#ink_1" cert="medium"
-                       ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical #phase-introduction #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">incomincia
+                       ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical #phase-mediana #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">incomincia
                      <rs type="soggetto-mistico">l'anima</rs> <choice><orig>à</orig><reg>a</reg></choice> perdire <choice><abbr>qualunq</abbr><expan>qualunque</expan></choice> desiderio, e non dico del
                      mondo, ch'è cosa certa che prima d'arrivare <choice><orig>à</orig><reg>a</reg></choice> questo stato, cioè quando era nello <term type="mistico">sposalitio</term>,
                      <choice><orig>ne meno</orig><reg>né meno</reg></choice> desiderava cosa alcuna di questa vita, anzi molto l'abborriva; intendo <choice><abbr>dunq</abbr><expan>dunque</expan></choice> dire che non
@@ -248,7 +248,7 @@
                   <!-- C18 PURGAZIONE DELLA POTENZA (concopiscibile). Spiega che la purga ha reso l'anima non più atta a desiderare.
                        N=0.50 (media: potenza del concopiscibile, otium); A=0.45; F=1 delimitazione -> I=0.397 low. -->
                   <seg xml:id="seg-c8-concopiscibile" type="indicatio" subtype="purgazione-potenza" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-otium #impact-low">da
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-low">da
                      qui se vede la grandissima <term type="mistico">dispositione</term> che lasciò in lei la <term type="mistico">purga</term> passata, e come purgò la potenza del
                      <term type="mistico">concopiscibile</term>, già che non è più atta per desiderare, come prima, che mai cessava di desiderare, e non solamente gusti di
                      spirito, ma anche desiderava d'andar innanzi alla <term type="mistico">perfettione</term>; qui però cessa ogni <choice><abbr>qualunq</abbr><expan>qualunque</expan></choice> desiderio</seg>.</p>
@@ -258,7 +258,7 @@
                        N=0.75 (alta: totale posessione, unione, rischio di sovra-affermazione); A=0.78 (media-alta: delimita fortemente); F=2 precisatio -> I=0.707 high.
                        Norm: poiche->poiché, hò->ho. -->
                   <seg xml:id="seg-c9-precis2" type="indicatio" subtype="precisazione-limite" hand="#ink_1" cert="medium"
-                       ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-high #phase-introduction #phase-critical #mystic_state-quiete #impact-high">E
+                       ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-quiete #impact-high">E
                      questo non è, per quanto m'accorgio, per la totale posessione che intenda di Dio, <choice><orig>poiche</orig><reg>poiché</reg></choice>, come dissi sopra, non
                      conosce questo per ancora; solamente in questi principii s'alienano i sensi al conoscere, e perde la <term type="mistico">capacetà</term> per desiderare,
                      però non totalmente come quando sarà arrivata all'<term type="mistico">unione</term> perfetta; solo dico che ciò che <choice><orig>hò</orig><reg>ho</reg></choice> detto è un
@@ -268,7 +268,7 @@
                   <!-- C20 UNIONE VELATA. L'unione non è ancora svelata: l'anima intende un "gran crescemento" senza saperne la natura.
                        N=0.50 (media: unione non svelata); A=0.45; F=1 delimitazione -> I=0.397 low. Genetico: app scuoprì (<sc.p, apparato). -->
                   <seg xml:id="seg-c10-unione-velata" type="indicatio" subtype="unione-velata" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">Per
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">Per
                      quanto habbiamo detto sopra, non è svelato per l'anima per ancora il giorno chiaro dell'<term type="mistico">unione</term>, in quanto che non vede
                      ancora lo stato suo; e però <app>
                         <lem wit="#txt-c"><choice><orig>scuopri</orig><reg>scuoprì</reg></choice></lem>
@@ -276,7 +276,7 @@
                      </app> in lei un gran crescemento senza saper ciò che sia</seg>;
                   <!-- C21 PRESENZA DELL'AMATO. La "satietà nel fondo" interpretata come presenza dell'amato. N=0.50 (media: unione/presenza); A=0.45; F=1 -> I=0.397 low. -->
                   <seg xml:id="seg-c10-satieta" type="indicatio" subtype="presenza-amato" hand="#ink_1" cert="medium"
-                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">intende
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">intende
                      una <term type="mistico">satietà</term> nel fondo suo, e questa mi credo sia la presenza dell'<rs type="divinita" ref="#dio">amato</rs>, sì che intende più, e più
                      farsi grande senza sapere il come sia</seg>.</p>
 
@@ -287,13 +287,13 @@
                   <!-- C22 RIEQUILIBRIO DELLA NUOVA VITA. Nasce una nuova vita, ma "però non totale come poi sarà": auto-riequilibrio (metafora morte/vita).
                        N=0.55 (media: morte/nuova vita); A=0.60 (media); F=2 riequilibrio -> I=0.624 medium. Norm: à->a. -->
                   <seg xml:id="seg-c11-nuovavita" type="indicatio" subtype="riequilibrio-vita" hand="#ink_1" cert="medium"
-                       ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-introduction #mystic_state-quiete #impact-medium">incomincia
+                       ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-conclusive #mystic_state-quiete #impact-medium">incomincia
                      <choice><orig>à</orig><reg>a</reg></choice> nascere in lei una <term type="mistico">nuova vita</term>, però non totale come poi sarà</seg>.
                   <!-- C23 (MARQUEE) RIEQUILIBRIO DELL'OTIUM. La "grandissima quiete" sfiora l'otium quietista, ma è ristretta da "non è di
                        continuo il godimento": auto-riequilibrio anti-quietista. N=0.80 (alta: quiete/otium -> rischio quietista); A=0.75 (media-alta);
                        F=2 riequilibrio -> I=0.717 high. Norm: poiche->poiché. -->
                   <seg xml:id="seg-c11-quiete" type="indicatio" subtype="riequilibrio-quiete" hand="#ink_1" cert="medium"
-                       ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-high #phase-introduction #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">Cresce
+                       ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-high #phase-conclusive #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">Cresce
                      col tempo poi una grandissima <term type="mistico">quiete</term> nell'anima, <choice><orig>poiche</orig><reg>poiché</reg></choice> cessata la potenza del <term type="mistico">concopiscibile</term>,
                      che mai la lasciava quieta di desiderio, cessa ancora in lei ogni <choice><abbr>qualunq</abbr><expan>qualunque</expan></choice> passioni; non è pero in questo stato
                      di continuo il <term type="mistico">godimento</term>, come poi sarà, quando crescerà l'<term type="mistico">unione</term></seg>.
