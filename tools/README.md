@@ -83,7 +83,11 @@ Definizione e protocollo: `docs/indice-impatto.md`, `docs/Protocollo-indice-impa
 
 Richiede `python3` e `lxml` (`pip install lxml`).
 
+---
+
 > **Esempi pronti** in [`tools/esempi/`](esempi/): [`esempio-1-assistente.xml`](esempi/esempio-1-assistente.xml) (segmento grezzo) → [`esempio-2-calcolatore.xml`](esempi/esempio-2-calcolatore.xml) (`@ana` + `#impact*`) → [`esempio-3-visualizzatore.xml`](esempi/esempio-3-visualizzatore.xml) (teiText compilato, apribile nel Visualizzatore). Stesso segmento (`seg-III-tit`) nei tre stadi del flusso.
+
+---
 
 **Modalità**
 - **audit** (default) — legge le `<fs>` presenti, ri‑mappa N/A alle bande, ricalcola I con le ancore e lo confronta
