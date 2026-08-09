@@ -20,6 +20,9 @@ on:
 env:
   TEXT: tei/text/castello-anima-teiText.xml
   TAX:  tei/taxonomy/tassonomia-gh.xml
+  # Versione TEI P5 FISSATA per riproducibilità (TEI Vault, non "release"=latest).
+  # Aggiorna consapevolmente e allinea gli xml-model dei file se la cambi.
+  TEI_VERSION: "4.9.0"
 
 jobs:
   validate:
@@ -36,11 +39,26 @@ jobs:
         run: |
           test -f "$TEXT" || { echo "::error::$TEXT non trovato"; exit 1; }
           test -f "$TAX"  || { echo "::error::$TAX non trovato"; exit 1; }
-      - name: Scarica TEI All (RelaxNG)
+      - name: Scarica TEI All (RelaxNG) - versione fissata dal Vault
         run: |
           curl -sSL --retry 3 --fail -o tei_all.rng \
-            https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng
+            "https://tei-c.org/Vault/P5/${TEI_VERSION}/xml/tei/custom/schema/relaxng/tei_all.rng"
           test -s tei_all.rng
+          echo "TEI P5 schema pinnato alla versione ${TEI_VERSION}"
+      - name: Guardia NFC (normalizzazione Unicode)
+        run: |
+          python3 - <<'PY'
+          import unicodedata, sys, glob
+          bad=[]
+          for f in ["tei/text/castello-anima-teiText.xml","tei/header/castello-anima-teiHeader.xml","tei/taxonomy/tassonomia-gh.xml"]+glob.glob("tei/taxonomy/esempio/*.xml"):
+              s=open(f,encoding="utf-8").read()
+              if s!=unicodedata.normalize("NFC",s): bad.append(f)
+          if bad:
+              print("::error::File non in forma Unicode NFC:")
+              for f in bad: print("  -",f)
+              sys.exit(1)
+          print("Guardia NFC superata: tutti i file XML sono normalizzati (NFC).")
+          PY
       - name: Buona formazione + risoluzione XInclude
         run: xmllint --noout --xinclude "$TEXT"
       - name: Componi documento risolto (senza fixup xml:base)
