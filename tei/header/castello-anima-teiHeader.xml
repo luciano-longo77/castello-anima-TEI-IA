@@ -530,7 +530,171 @@
                     </bibl>
 
                     <!-- EDIZIONI E STUDI SPECIFICI SULL'OPERA -->
+                  <listBibl type="studia">
+                    <head>Edizione critica, fonti del processo e studi storici</head>
+                    <bibl xml:id="ed-casapullo-2015" corresp="#ms-Palermo-2QqE29">
+                        <title level="m">Il Castello dell'anima</title>
+                        <editor>R. Casapullo</editor>
+                        <pubPlace>Alessandria</pubPlace>
+                        <publisher>Edizioni dell'Orso</publisher>
+                        <date when="2015">2015</date>
+                        <note>Edizione critica; in collaborazione con L. Longo, S. Mondino, R. Sciovè.</note>
+                    </bibl>
+                    <bibl type="archival" xml:id="processo-teresa" corresp="#s-teresa">
+                        <title level="u">Memoria difensiva di suor Teresa di San Geronimo</title>
+                        <orgName>Archivo Histórico Nacional</orgName>
+                        <placeName>Madrid</placeName>
+                        <idno>Inquisición, Sicilia, Legajo 1747, f. 13</idno>
+                        <note>Traduzione castigliana. I verbali originali del processo inquisitoriale andarono distrutti nell'incendio dell'archivio di Palazzo Chiaramonte (lo Steri), Palermo.</note>
+                    </bibl>
+                    <bibl xml:id="modica-vasta-1989">
+                        <author>M. Modica Vasta</author>
+                        <title level="a">Figure del molinismo siciliano. Suor Teresa di San Geronimo</title>
+                        <title level="j">Archivio Storico per la Sicilia Orientale</title>
+                        <date when="1989">1989</date>
+                        <biblScope unit="page">205-244</biblScope>
+                    </bibl>
+                    <bibl xml:id="caffiero-2020">
+                        <author>M. Caffiero</author>
+                        <title level="m">Profetesse a giudizio. Donne, religione e potere in età moderna</title>
+                        <publisher>Morcelliana</publisher>
+                        <date when="2020">2020</date>
+                    </bibl>
+                    <bibl xml:id="canosa-colonnello-1986">
+                        <author>R. Canosa</author>
+                        <author>I. Colonnello</author>
+                        <title level="m">L'ultima eresia. Quietisti e Inquisizione in Sicilia tra Seicento e Settecento</title>
+                        <publisher>Sellerio</publisher>
+                        <date when="1986">1986</date>
+                    </bibl>
+                    <bibl xml:id="dagostino-1988">
+                        <author>M. D'Agostino</author>
+                        <title level="m">La piazza e l'altare. Momenti della politica linguistica della Chiesa siciliana (secoli XVI–XVIII)</title>
+                        <publisher>Centro di Studi Filologici e Linguistici Siciliani</publisher>
+                        <date when="1988">1988</date>
+                    </bibl>
+                    <bibl xml:id="malena-2003">
+                        <author>A. Malena</author>
+                        <title level="m">L'eresia dei perfetti. Inquisizione romana ed esperienze mistiche nel Seicento italiano</title>
+                        <publisher>Edizioni di Storia e Letteratura</publisher>
+                        <date when="2003">2003</date>
+                    </bibl>
+                    <bibl xml:id="malena-2004">
+                        <author>A. Malena</author>
+                        <title level="a">Profezia femminile nel quietismo italiano del Seicento</title>
+                        <title level="j">Archivio Italiano per la Storia della Pietà</title>
+                        <date when="2004">2004</date>
+                        <biblScope unit="page">285-306</biblScope>
+                    </bibl>
+                    <bibl xml:id="marchetti-2001">
+                        <author>E. Marchetti</author>
+                        <title level="m">Le prime traduzioni italiane delle opere di Teresa di Gesù nel quadro dell'impegno papale post tridentino</title>
+                        <publisher>Lo Scarabeo</publisher>
+                        <date when="2001">2001</date>
+                    </bibl>
+                    <bibl xml:id="messana-2012">
+                        <author>M. S. Messana</author>
+                        <title level="m">Il Santo Uffizio dell'Inquisizione. Sicilia 1500–1782</title>
+                        <publisher>Istituto Poligrafico Europeo</publisher>
+                        <date when="2012">2012</date>
+                    </bibl>
+                    <bibl xml:id="modica-2004">
+                        <author>M. Modica</author>
+                        <title level="a">Misticismo e quietismo nel Seicento: note sul caso siciliano</title>
+                        <title level="m">Studi in ricordo di Nino Recupero</title>
+                        <pubPlace>Soveria Mannelli</pubPlace>
+                        <publisher>Rubbettino</publisher>
+                        <date when="2004">2004</date>
+                        <biblScope unit="page">159-189</biblScope>
+                    </bibl>
+                    <bibl xml:id="modica-2005">
+                        <author>M. Modica</author>
+                        <title level="a">Misticismo e quietismo nel Seicento siciliano</title>
+                        <title level="m">I monasteri femminili come centri di cultura fra Rinascimento e Barocco</title>
+                        <editor>G. Pomata</editor>
+                        <editor>G. Zarri</editor>
+                        <pubPlace>Roma</pubPlace>
+                        <publisher>Edizioni di Storia e Letteratura</publisher>
+                        <date when="2005">2005</date>
+                        <biblScope unit="page">205-230</biblScope>
+                    </bibl>
+                    <bibl xml:id="modica-2009">
+                        <author>M. Modica</author>
+                        <title level="m">Infetta dottrina. Inquisizione e quietismo nel Seicento</title>
+                        <publisher>Viella</publisher>
+                        <date when="2009">2009</date>
+                    </bibl>
+                    <bibl xml:id="prosperi-1996">
+                        <author>A. Prosperi</author>
+                        <title level="m">Tribunali della coscienza. Inquisitori, confessori, missionari</title>
+                        <pubPlace>Torino</pubPlace>
+                        <publisher>Einaudi</publisher>
+                        <date when="1996">1996</date>
+                        <biblScope unit="page">431-464, 508-542</biblScope>
+                    </bibl>
+                    <bibl xml:id="renda-1997">
+                        <author>F. Renda</author>
+                        <title level="m">L'Inquisizione in Sicilia. I fatti. Le persone</title>
+                        <publisher>Sellerio</publisher>
+                        <date when="1997">1997</date>
+                    </bibl>
+                    <bibl xml:id="zarri-2000">
+                        <author>G. Zarri</author>
+                        <title level="m">Recinti. Donne, clausura e matrimonio nella prima età moderna</title>
+                        <publisher>Il Mulino</publisher>
+                        <date when="2000">2000</date>
+                    </bibl>
+                    <bibl xml:id="zarri-2009">
+                        <author>G. Zarri</author>
+                        <title level="m">Libri di spirito. Editoria religiosa in volgare nei secoli XV–XVII</title>
+                        <publisher>Rosenberg &amp; Sellier</publisher>
+                        <date when="2009">2009</date>
+                    </bibl>
+                    <bibl xml:id="zito-1997">
+                        <author>P. Zito</author>
+                        <title level="m">Il veleno della quiete. Mistica ereticale e potere dell'ordine nella vicenda di Miguel Molinos</title>
+                        <publisher>Edizioni Scientifiche Italiane</publisher>
+                        <date when="1997">1997</date>
+                    </bibl>
                 </listBibl>
+                <listBibl type="methodologia">
+                    <head>Digital Humanities, NLP e intertestualità computazionale</head>
+                    <bibl xml:id="duan-2025">
+                        <author>S. Duan</author>
+                        <title level="a">Quantitative intertextuality from the digital humanities perspective: A survey</title>
+                        <publisher>arXiv</publisher>
+                        <date when="2025">2025</date>
+                        <ref target="https://arxiv.org/abs/2510.27045">https://arxiv.org/abs/2510.27045</ref>
+                    </bibl>
+                    <bibl xml:id="horstmann-2023">
+                        <author>J. Horstmann</author>
+                        <author>C. Lück</author>
+                        <author>I. Normann</author>
+                        <title level="a">Systems of intertextuality: Towards a formalization of text relations for manual annotation and automated reasoning</title>
+                        <title level="j">Digital Humanities Quarterly</title>
+                        <date when="2023">2023</date>
+                        <biblScope unit="page">17(3)</biblScope>
+                        <ref target="https://www.digitalhumanities.org/dhq/vol/17/3/000731/000731.html">https://www.digitalhumanities.org/dhq/vol/17/3/000731/000731.html</ref>
+                    </bibl>
+                    <bibl xml:id="piotrowski-2024">
+                        <author>M. Piotrowski</author>
+                        <title level="m">Natural language processing for historical texts</title>
+                        <publisher>Springer</publisher>
+                        <date when="2024">2024</date>
+                        <note>Edizione aggiornata.</note>
+                    </bibl>
+                    <bibl xml:id="puren-2025">
+                        <author>M. Puren</author>
+                        <author>F. Lebreton</author>
+                        <author>A. Pellet</author>
+                        <author>P. Vernus</author>
+                        <title level="a">From parliamentary history to digital and computational history: An NLP-friendly TEI model for historical parliamentary proceedings</title>
+                        <title level="j">Digital Scholarship in the Humanities</title>
+                        <date when="2025">2025</date>
+                        <biblScope unit="page">40(Suppl. 1), i75-i86</biblScope>
+                    </bibl>
+                </listBibl>
+
 
                 <listWit>
                     <witness xml:id="txt-b0" resp="#s-teresa">Tb0, testo base</witness>
