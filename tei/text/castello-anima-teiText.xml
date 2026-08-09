@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="it">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Il Castello dell'anima - Libro III, Capitolo I (III.1)</title>
-         </titleStmt>
-         <publicationStmt>
-            <p>Edizione digitale TEI (working draft) - CC BY 4.0.</p>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Palermo, Biblioteca Comunale, ms. 2 Qq E 29, cc. 158r-159r.</p>
-         </sourceDesc>
-      </fileDesc>
-   </teiHeader>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xml:lang="it">
+   <xi:include href="../header/castello-anima-teiHeader.xml" xpointer="teiHeader-castello"/>
    <text xml:lang="it-x-sicreg">
       <body>
          <!-- Start Libro I -->
