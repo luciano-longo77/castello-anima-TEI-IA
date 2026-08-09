@@ -8,7 +8,7 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-Strumenti a supporto dell'edizione TEI+IA del *Castello dell'anima*: uno script a riga di comando e quattro
+Strumenti a supporto dell'edizione TEI+IA del *Castello dell'anima*: uno script a riga di comando e tre
 strumenti visuali autonomi (pagine HTML, si aprono nel browser con doppio clic, **nessuna dipendenza esterna**).
 Gli strumenti sono **aiuti** all'annotazione: la verifica autoritativa resta la **CI** (guardie E1/E2, co-occorrenza,
 RelaxNG, Schematron, NFC).
@@ -17,15 +17,13 @@ RelaxNG, Schematron, NFC).
 
 ```mermaid
 flowchart TD
-    A["Testo trascritto<br/> si individua il seg"]:::step --> B["assistenteana.html<br/> scelta degli assi → @ana"]:::tool
+    A["Testo trascritto<br/>si individua il seg"]:::step --> B["1-assistente-ana.html<br/>scelta degli assi → @ana"]:::tool
     B --> C["@ana<br/>impact = segnaposto #impact*"]:::data
-    C --> D["calcolatoreindice.html<br/> 1 segmento · banda N + banda A"]:::tool
-    C --> E["annotatoreindice.html<br/> intero teiText · tutte le fs"]:::tool
-    D --> F["teiText compilato<br/> #impact-* in @ana + fs in standOff"]:::data
-    E --> F
-    F --> G["visualizzatoreindice.html<br/> audit · distribuzione · export CSV/JSON"]:::tool
-    F --> H["impact_index.py<br/> audit da riga di comando"]:::tool
-    G --> I["CI GitHub — verifica autoritativa<br/> E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
+    C --> D["2-calcolatore-indice.html<br/>1 segmento · banda N + banda A"]:::tool
+    D --> F["teiText compilato<br/>#impact-* in @ana + fs in standOff"]:::data
+    F --> G["3-visualizzatore-indice.html<br/>audit · distribuzione · export CSV/JSON"]:::tool
+    F --> H["impact_index.py<br/>audit · authoring batch (--bands)"]:::tool
+    G --> I["CI GitHub — verifica autoritativa<br/>E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
     H --> I
 
     classDef step fill:#ffffff,stroke:#7f8c8d,color:#2c3e50;
@@ -35,21 +33,21 @@ flowchart TD
 ```
 
 Confine metodologico: lo studioso decide gli **assi** interpretativi e le due **bande** N/A; tutto il resto
-(F, I, classe, `<fs>`) è **meccanico e deterministico**. «I mai a mano».
+(F, I, classe, `<fs>`) è prodotto **automaticamente** e in modo **deterministico**. Il valore I non si digita:
+si calcola.
 
 ## Gli strumenti
 
 | File | Tipo | Ruolo | Input → Output |
 |---|---|---|---|
-| `assistenteana.html` | browser | compila `@ana` dagli assi della tassonomia | scelte per asse → `@ana` + `<seg>` |
-| `calcolatoreindice.html` | browser | indice di **un** segmento, con guida alla griglia | banda N/A + operation → `I`, `#impact-*`, `<fs>` |
-| `annotatoreindice.html` | browser | authoring **batch** sull'intero teiText | bande per segmento → teiText con tutte le `<fs>` |
-| `visualizzatoreindice.html` | browser | viewer read-only + audit + export | teiText compilato → tabella/distribuzione, CSV/JSON |
-| `impact_index.py` | CLI | audit/authoring deterministico | teiText → report di coerenza e puntatori |
+| `1-assistente-ana.html` | browser | compila `@ana` dagli assi della tassonomia | scelte per asse → `@ana` + `<seg>` |
+| `2-calcolatore-indice.html` | browser | indice di **un** segmento, con guida alla griglia | banda N/A + operation → `I`, `#impact-*`, `<fs>` |
+| `3-visualizzatore-indice.html` | browser | viewer read-only + audit + export | teiText compilato → tabella/distribuzione, CSV/JSON |
+| `impact_index.py` | CLI | audit e authoring **batch** deterministico | teiText → report di coerenza e puntatori |
 
 ---
 
-### `assistenteana.html` — Assistente @ana
+### `1-assistente-ana.html` — Assistente @ana
 
 Individuato il `<seg>`, lo studioso sceglie per ogni **asse** la categoria dalla tassonomia (con descrizione a
 fianco); lo strumento compone l'`@ana` con i prefissi corretti (l'asse `func` senza prefisso — `#legittimazione-…`,
@@ -61,28 +59,23 @@ tassonomia), **co-occorrenza** (1 `#operation-*`, 1 fase base, `#phase-critical`
 duplicati, presenza di `impact`. Le categorie sono uno **snapshot** di `tei/taxonomy/tassonomia-gh.xml`: se la
 tassonomia cambia, rigenerare lo strumento.
 
-### `calcolatoreindice.html` — Calcolatore indice d'impatto
+### `2-calcolatore-indice.html` — Calcolatore indice d'impatto
 
 Strumento a segmento singolo, da usare **mentre** si codifica. Si scelgono `operation` (dà F), **banda N** e
 **banda A**; applica `I = (4·F/3 + 2·N + A)/7` e restituisce `I`, la classe `#impact-*` e la `<fs>` pronta da
 incollare. Include la **Guida alla griglia** (rubriche N/A/F, ancore, soglie, esempi ancorati) sempre visibile a
-fianco, l'aiuto contestuale sotto ogni menù e un'area appunti per la codifica. Non si digita mai il numero: si
-sceglie la banda, l'ancora è determinata.
+fianco, l'aiuto contestuale sotto ogni menù e un'area appunti per la codifica. Il numero non si digita: si sceglie
+la banda, l'ancora è determinata. Per generare le `<fs>` di **molti** segmenti in un colpo si usa
+`impact_index.py --bands`.
 
-### `annotatoreindice.html` — Annotatore indice d'impatto
-
-Authoring **sull'intero** `teiText`. Apre il file, elenca i segmenti con asse `operation`, e per ciascuno si
-scelgono le due bande; genera/riscrive tutte le `<fs>` (con `N_band`/`A_band`) e sincronizza `#impact-*` in `@ana`.
-È la via batch; il Calcolatore è la via a segmento singolo. Esporta il teiText compilato.
-
-### `visualizzatoreindice.html` — Visualizzatore indice d'impatto
+### `3-visualizzatore-indice.html` — Visualizzatore indice d'impatto
 
 Sola lettura. Apre un `teiText` compilato, legge le `<fs>`, **ricalcola I** dalle ancore e ne **verifica la
 coerenza** con la classe `#impact-*` (segnala `DIVERGE` con il motivo), valida i puntatori, mostra la
 **distribuzione** per classe e per F, ed **esporta CSV/JSON**. È l'anteprima browser di ciò che `impact_index.py`
 e lo Schematron fanno in CI.
 
-### `impact_index.py` — audit/authoring da riga di comando
+### `impact_index.py` — audit e authoring da riga di comando
 
 Calcolo deterministico e audit dell'**indice d'impatto** (`I = (4·F/3 + 2·N + A)/7`, pesi AHP 4:2:1).
 Modello **a bande‑ancora**: N ∈ {0.90, 0.75, 0.55, 0.30}, A ∈ {0.85, 0.675, 0.40};
@@ -95,7 +88,8 @@ Richiede `python3` e `lxml` (`pip install lxml`).
 - **audit** (default) — legge le `<fs>` presenti, ri‑mappa N/A alle bande, ricalcola I con le ancore e lo confronta
   con l'`#impact-*` dichiarato in `@ana`; valida i puntatori (`@corresp`/`@target` → `xml:id` esistenti; ogni
   `<seg>` con `#impact-*` ha la sua `<fs>`).
-- **authoring** (`--bands`) — da una tabella `id;banda_N;banda_A` stampa I, banda e valori calcolati.
+- **authoring batch** (`--bands`) — da una tabella `id;banda_N;banda_A` calcola I, banda e valori per molti
+  segmenti in un colpo (l'equivalente da riga di comando del Calcolatore).
 
 ```bash
 # audit dell'intero teiText
@@ -105,7 +99,7 @@ python3 tools/impact_index.py tei/text/castello-anima-teiText.xml
 python3 tools/impact_index.py tei/text/castello-anima-teiText.xml \
         --rng schema/tei_all.rng --sch schema/impactindex.sch
 
-# authoring da bande decise dall'annotatore
+# authoring batch da bande decise dallo studioso
 python3 tools/impact_index.py tei/text/castello-anima-teiText.xml --bands bande.csv
 ```
 
@@ -120,7 +114,7 @@ Gli strumenti **anticipano** i controlli che la CI poi **impone**:
 
 | Livello | Dove | Controlli |
 |---|---|---|
-| Anteprima (mentre annoti) | strumenti visuali | `assistenteana` → E2 + co-occorrenza; `calcolatore` → formula espansa; `visualizzatore` → audit `DIVERGE` |
+| Anteprima (mentre annoti) | strumenti visuali | `1-assistente-ana` → E2 + co-occorrenza; `2-calcolatore-indice` → formula espansa; `3-visualizzatore-indice` → audit `DIVERGE` |
 | Verifica autoritativa (al commit) | workflow GitHub | E1, E2, co-occorrenza, RelaxNG `tei_all`, Schematron `impactindex.sch`, NFC |
 
 Se un `@ana` supera i Controlli dell'Assistente, supera E2 e la co-occorrenza anche in pipeline; se una `<fs>` è
