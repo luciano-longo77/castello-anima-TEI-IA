@@ -60,7 +60,7 @@ Questo documento costituisce la documentazione ufficiale del dataset utilizzato 
 
 Il documento è concepito per essere riusabile, trasparente e interoperabile con:
 
-- i file TEI *castello-anima-text.xml*, *castello-anima-teiHeader.xml* e *tassonomia-gh.xml* (TEI P5),
+- i file TEI *castello-anima-teiText.xml*, *castello-anima-teiHeader.xml* e *tassonomia-gh.xml* (TEI P5),
 - la pipeline IA controllata (procedure -CIT, +TEXTsub, +CIT),
 - *Guida TEI-driven*.
 
