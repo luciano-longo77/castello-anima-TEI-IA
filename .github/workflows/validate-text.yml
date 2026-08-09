@@ -48,4 +48,4 @@ jobs:
       - name: Validazione RelaxNG (TEI All)
         run: jing tei_all.rng resolved.xml
       - name: Guardia E2 (@ana -> tassonomia)
-        run: python3 scripts/e2_guard.py "$TEXT" "$TAX"
+        run: python3 .github/workflows/scripts/e2_guard.py "$TEXT" "$TAX"
