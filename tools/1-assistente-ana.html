@@ -1,241 +1,572 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assistente @ana — Castello dell'anima</title>
-<meta name="dc.creator" content="Luciano Longo">
-<style>
-:root{--bg-paper:#faf8f5;--bg-paper-dark:#f5f1e8;--bg-sidebar:#1a252f;--text-main:#2c3e50;--text-muted:#7f8c8d;--accent-gold:#b8986e;--accent-blue:#3d5a80;--accent-red:#a84448;--border-color:#e0dcd5;--border-light:#ede9e3;--shadow-md:0 4px 12px rgba(0,0,0,.1);--font-serif:Georgia,serif;--font-sans:'Segoe UI',Arial,sans-serif;--font-mono:'Consolas','Monaco',monospace}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg-paper);color:var(--text-main);font-family:var(--font-sans);padding:24px 24px 90px;line-height:1.5}
-.shell{max-width:900px;margin:0 auto}
-header{margin-bottom:16px;border-bottom:2px solid var(--bg-sidebar);padding-bottom:10px}
-h1{font-family:var(--font-serif);font-size:1.9rem;color:var(--bg-sidebar)}
-header em{color:var(--text-muted);font-family:var(--font-serif);font-style:italic;font-size:.9rem}
-.hint{background:#fff;border:1px solid var(--accent-gold);border-radius:12px;padding:13px 18px;margin-bottom:18px;font-size:.85rem}
-.hint code{font-family:var(--font-mono);background:var(--bg-paper);padding:1px 5px;border-radius:4px}
-.panel{background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:20px;margin-bottom:18px}
-h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-gold);margin:2px 0 10px}
-textarea{width:100%;min-height:80px;resize:vertical;padding:10px 12px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-paper);font-family:var(--font-serif);font-size:.9rem;line-height:1.5;color:var(--text-main)}
-textarea:focus{outline:2px solid var(--accent-gold);border-color:var(--accent-gold);background:#fff}
-.attrs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
-.axes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:680px){.axes{grid-template-columns:1fr}}
-.fld label{display:block;font-size:.7rem;font-weight:700;color:var(--text-muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
-.fld .req{color:var(--accent-red)}
-select,input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--border-color);border-radius:8px;background:#fff;font-size:.83rem;font-family:var(--font-sans);color:var(--text-main)}
-select:focus,input:focus{outline:2px solid var(--accent-gold);border-color:var(--accent-gold)}
-.help{font-size:.73rem;color:var(--text-muted);margin-top:5px;min-height:1.2em}
-.chk{display:flex;align-items:center;gap:7px;margin-top:8px;font-size:.8rem}
-.chk input{width:auto}
-pre{font-family:var(--font-mono);font-size:.78rem;background:var(--bg-sidebar);color:#e8eaed;padding:12px 14px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-word;margin-top:6px}
-.btn{border:0;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;background:var(--accent-gold);color:#fff}
-.btn:hover{filter:brightness(1.06)}
-.btn.copied{background:var(--accent-blue)}
-.warn{color:var(--accent-red);font-size:.78rem;margin-top:8px;min-height:1em}
-.checks{list-style:none;margin-top:4px}
-.checks li{display:flex;gap:9px;align-items:flex-start;padding:6px 0;border-top:1px solid var(--border-light);font-size:.82rem}
-.checks li:first-child{border-top:0}
-.ck-ico{font-weight:700;width:18px;flex-shrink:0}
-.ck-ok .ck-ico{color:#3f7d5a}
-.ck-no .ck-ico{color:var(--accent-red)}
-.ck-info .ck-ico{color:var(--accent-blue)}
-.ck-txt b{font-weight:700}
-.ck-src{color:var(--text-muted);font-size:.9em}
-.verdict{margin-top:12px;padding:10px 14px;border-radius:8px;font-weight:700;font-size:.85rem}
-.verdict.ok{background:rgba(63,125,90,.12);color:#3f7d5a;border:1px solid rgba(63,125,90,.3)}
-.verdict.no{background:rgba(168,68,72,.12);color:var(--accent-red);border:1px solid rgba(168,68,72,.3)}
-/* barra sticky con @ana live */
-.stickybar{position:fixed;left:0;right:0;bottom:0;background:var(--bg-sidebar);color:#e8eaed;padding:10px 20px;box-shadow:0 -3px 12px rgba(0,0,0,.2);z-index:10}
-.stickybar .in{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:12px}
-.stickybar .lb{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-gold);font-weight:700;white-space:nowrap}
-.stickybar code{font-family:var(--font-mono);font-size:.76rem;flex:1;overflow-x:auto;white-space:nowrap}
-.stickybar .btn{background:var(--accent-gold);flex-shrink:0}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente @ana — Castello dell'anima</title>
+  <meta name="dc.creator" content="Luciano Longo">
+  <style>
+    :root {
+      --bg-paper: #faf8f5;
+      --bg-paper-dark: #f5f1e8;
+      --bg-sidebar: #1a252f;
+      --text-main: #2c3e50;
+      --text-muted: #7f8c8d;
+      --accent-gold: #b8986e;
+      --accent-blue: #3d5a80;
+      --accent-red: #a84448;
+      --border-color: #e0dcd5;
+      --border-light: #ede9e3;
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
+      --font-serif: Georgia, serif;
+      --font-sans: 'Segoe UI', Arial, sans-serif;
+      --font-mono: 'Consolas', 'Monaco', monospace
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      background: var(--bg-paper);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      padding: 24px 24px 90px;
+      line-height: 1.5
+    }
+
+    .shell {
+      max-width: 900px;
+      margin: 0 auto
+    }
+
+    header {
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--bg-sidebar);
+      padding-bottom: 10px
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      color: var(--bg-sidebar)
+    }
+
+    header em {
+      color: var(--text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: .9rem
+    }
+
+    .hint {
+      background: #fff;
+      border: 1px solid var(--accent-gold);
+      border-radius: 12px;
+      padding: 13px 18px;
+      margin-bottom: 18px;
+      font-size: .85rem
+    }
+
+    .hint code {
+      font-family: var(--font-mono);
+      background: var(--bg-paper);
+      padding: 1px 5px;
+      border-radius: 4px
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 18px
+    }
+
+    h3 {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent-gold);
+      margin: 2px 0 10px
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      resize: vertical;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-paper);
+      font-family: var(--font-serif);
+      font-size: .9rem;
+      line-height: 1.5;
+      color: var(--text-main)
+    }
+
+    textarea:focus {
+      outline: 2px solid var(--accent-gold);
+      border-color: var(--accent-gold);
+      background: #fff
+    }
+
+    .attrs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 14px
+    }
+
+    .axes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    @media(max-width:680px) {
+      .axes {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .fld label {
+      display: block;
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .fld .req {
+      color: var(--accent-red)
+    }
+
+    select,
+    input[type=text] {
+      width: 100%;
+      padding: 9px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #fff;
+      font-size: .83rem;
+      font-family: var(--font-sans);
+      color: var(--text-main)
+    }
+
+    select:focus,
+    input:focus {
+      outline: 2px solid var(--accent-gold);
+      border-color: var(--accent-gold)
+    }
+
+    .help {
+      font-size: .73rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+      min-height: 1.2em
+    }
+
+    .chk {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 8px;
+      font-size: .8rem
+    }
+
+    .chk input {
+      width: auto
+    }
+
+    pre {
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      background: var(--bg-sidebar);
+      color: #e8eaed;
+      padding: 12px 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-top: 6px
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--accent-gold);
+      color: #fff
+    }
+
+    .btn:hover:not(:disabled) {
+      filter: brightness(1.06)
+    }
+
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed
+    }
+
+    .btn.copied {
+      background: var(--accent-blue)
+    }
+
+    .warn {
+      color: var(--accent-red);
+      font-size: .78rem;
+      margin-top: 8px;
+      min-height: 1em
+    }
+
+    .checks {
+      list-style: none;
+      margin-top: 4px
+    }
+
+    .checks li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      padding: 6px 0;
+      border-top: 1px solid var(--border-light);
+      font-size: .82rem
+    }
+
+    .checks li:first-child {
+      border-top: 0
+    }
+
+    .ck-ico {
+      font-weight: 700;
+      width: 18px;
+      flex-shrink: 0
+    }
+
+    .ck-ok .ck-ico {
+      color: #3f7d5a
+    }
+
+    .ck-no .ck-ico {
+      color: var(--accent-red)
+    }
+
+    .ck-info .ck-ico {
+      color: var(--accent-blue)
+    }
+
+    .ck-txt b {
+      font-weight: 700
+    }
+
+    .ck-src {
+      color: var(--text-muted);
+      font-size: .9em
+    }
+
+    .verdict {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: .85rem
+    }
+
+    .verdict.ok {
+      background: rgba(63, 125, 90, .12);
+      color: #3f7d5a;
+      border: 1px solid rgba(63, 125, 90, .3)
+    }
+
+    .verdict.no {
+      background: rgba(168, 68, 72, .12);
+      color: var(--accent-red);
+      border: 1px solid rgba(168, 68, 72, .3)
+    }
+
+    /* barra sticky con @ana live */
+    .stickybar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg-sidebar);
+      color: #e8eaed;
+      padding: 10px 20px;
+      box-shadow: 0 -3px 12px rgba(0, 0, 0, .2);
+      z-index: 10
+    }
+
+    .stickybar .in {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .stickybar .lb {
+      font-size: .66rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent-gold);
+      font-weight: 700;
+      white-space: nowrap
+    }
+
+    .stickybar code {
+      font-family: var(--font-mono);
+      font-size: .76rem;
+      flex: 1;
+      overflow-x: auto;
+      white-space: nowrap
+    }
+
+    .stickybar .btn {
+      background: var(--accent-gold);
+      flex-shrink: 0
+    }
+  </style>
 </head>
+
 <body>
-<div class="shell">
-<header>
-  <h1>Assistente @ana</h1>
-  <em>Intertestualità sotto sorveglianza — modello TEI+IA per il Castello dell'anima</em>
-</header>
+  <div class="shell">
+    <header>
+      <h1>Assistente @ana</h1>
+      <em>Intertestualità sotto sorveglianza — modello TEI+IA per il Castello dell'anima</em>
+    </header>
 
-<div class="hint">
-  Individuato il <code>&lt;seg&gt;</code>, scegli per ogni <b>asse</b> la categoria dalla tassonomia (descrizione a fianco):
-  lo strumento compone l'<code>@ana</code> con i prefissi giusti e genera il <code>&lt;seg&gt;</code>. L'asse <b>impact</b>
-  resta un segnaposto <code>#impact*</code>: lo risolvi dopo con il <b>Calcolatore</b> (scelte le bande di N e A).
-</div>
+    <div class="hint">
+      Individuato il <code>&lt;seg&gt;</code>, scegli per ogni <b>asse</b> la categoria dalla tassonomia (descrizione a
+      fianco):
+      lo strumento compone l'<code>@ana</code> con i prefissi giusti e genera il <code>&lt;seg&gt;</code>. L'asse
+      <b>impact</b>
+      resta un segnaposto <code>#impact*</code>: lo risolvi dopo con il <b>Calcolatore</b> (scelte le bande di N e A).
+    </div>
 
-<div class="panel">
-  <h3>Il segmento</h3>
-  <textarea id="txt" placeholder="Incolla qui il testo del segmento…">Del castello dell'anima, nel quale si tratta dell'unione, che ponno arrivare queste anime con Dio anche in questa vita.</textarea>
-  <div class="attrs">
-    <div class="fld"><label>xml:id <span class="req">*</span></label><input type="text" id="a-id" placeholder="seg-III-tit"></div>
-    <div class="fld"><label>type</label><input type="text" id="a-type" placeholder="indicatio"></div>
-    <div class="fld"><label>subtype</label><input type="text" id="a-subtype" placeholder="titolo-dottrinale"></div>
-    <div class="fld"><label>hand</label><input type="text" id="a-hand" placeholder="#ink_1"></div>
-    <div class="fld"><label>cert</label><select id="a-cert"><option value="">—</option><option>high</option><option selected>medium</option><option>low</option></select></div>
+    <div class="panel">
+      <h3>Il segmento</h3>
+      <textarea id="txt" placeholder="Incolla qui il testo del segmento…"></textarea>
+      <div class="attrs">
+        <div class="fld"><label for="a-id">xml:id <span class="req">*</span></label><input type="text" id="a-id"
+            aria-required="true" placeholder="seg-III-tit"></div>
+        <div class="fld"><label for="a-type">type</label><input type="text" id="a-type" placeholder="indicatio"></div>
+        <div class="fld"><label for="a-subtype">subtype</label><input type="text" id="a-subtype"
+            placeholder="titolo-dottrinale"></div>
+        <div class="fld"><label for="a-hand">hand</label><input type="text" id="a-hand" placeholder="#ink_1"></div>
+        <div class="fld"><label for="a-cert">cert</label><select id="a-cert">
+            <option value="">—</option>
+            <option>high</option>
+            <option selected>medium</option>
+            <option>low</option>
+          </select></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Assi interpretativi (dalla tassonomia)</h3>
+      <div class="axes" id="axes"></div>
+      <div class="chk"><input type="checkbox" id="crit"><label for="crit"
+          style="margin:0;text-transform:none;font-weight:400;color:var(--text-main)">aggiungi
+          <code>#phase-critical</code> (oltre alla fase base)</label></div>
+      <div class="chk"><input type="checkbox" id="imp" checked><label for="imp"
+          style="margin:0;text-transform:none;font-weight:400;color:var(--text-main)">aggiungi il segnaposto
+          <code>#impact*</code> (da risolvere col Calcolatore)</label></div>
+      <div class="warn" id="warn"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Controlli (verificabilità · stesse guardie della CI)</h3>
+      <ul class="checks" id="checks"></ul>
+      <div class="verdict" id="verdict"></div>
+    </div>
+
+    <div class="panel">
+      <h3>@ana assemblato</h3>
+      <pre id="ana">—</pre>
+      <button class="btn" id="cpana" style="margin-top:8px">copia @ana</button>
+      <h3 style="margin-top:18px">&lt;seg&gt; completo</h3>
+      <pre id="seg">—</pre>
+      <button class="btn" id="cpseg" style="margin-top:8px">copia &lt;seg&gt;</button>
+    </div>
   </div>
-</div>
 
-<div class="panel">
-  <h3>Assi interpretativi (dalla tassonomia)</h3>
-  <div class="axes" id="axes"></div>
-  <div class="chk"><input type="checkbox" id="crit"><label for="crit" style="margin:0;text-transform:none;font-weight:400;color:var(--text-main)">aggiungi <code>#phase-critical</code> (oltre alla fase base)</label></div>
-  <div class="chk"><input type="checkbox" id="imp" checked><label for="imp" style="margin:0;text-transform:none;font-weight:400;color:var(--text-main)">aggiungi il segnaposto <code>#impact*</code> (da risolvere col Calcolatore)</label></div>
-  <div class="warn" id="warn"></div>
-</div>
+  <div class="stickybar">
+    <div class="in"><span class="lb">@ana</span><code id="live" role="status" aria-live="polite">—</code><button
+        class="btn" id="cplive">copia</button></div>
+  </div>
 
-<div class="panel">
-  <h3>Controlli (verificabilità · stesse guardie della CI)</h3>
-  <ul class="checks" id="checks"></ul>
-  <div class="verdict" id="verdict"></div>
-</div>
+  <script>
+    "use strict";
+    const AXES = {"func": [{"id": "legittimazione", "depth": 0, "desc": "Procedure retoriche che consolidano l’ortodossia del discorso mistico mediante appoggi biblici,"}, {"id": "legittimazione-biblica", "depth": 1, "desc": "Citazioni e parafrasi scritturali, spesso in latino, impiegate per rendere accettabili concetti"}, {"id": "legittimazione-liturgica", "depth": 1, "desc": "Ricorso a formule, stilemi e registri liturgici come garanzia devozionale e dottrinale, utile a"}, {"id": "legittimazione-tradizione", "depth": 1, "desc": "Appello a maestri della mistica esplicitamente richiamati in prima persona dall’autrice (\"la mi"}, {"id": "pedagogia", "depth": 0, "desc": "Strategie formative rivolte ad anime \"incipienti\", \"proficienti\" e \"perfette\", basate su distin"}, {"id": "pedagogia-introduzione", "depth": 1, "desc": "Sezioni introduttive e inquadramenti che predispongono il lettore all’orazione mentale e alla c"}, {"id": "pedagogia-discernimento", "depth": 1, "desc": "Distinzioni tra (1) \"meditazione\", (2) \"contemplazione acquisita\", (3) \"contemplazione infusa\","}, {"id": "pedagogia-esemplificazione", "depth": 1, "desc": "Uso di immagini quotidiane (acqua, mare, torrente, giardino, specchio) e comparazioni che rendo"}, {"id": "rischio", "depth": 0, "desc": "Insieme di strategie volte a prevenire o correggere letture potenzialmente eterodosse, specialm"}, {"id": "rischio-attenuatio", "depth": 1, "desc": "Glosse esplicative aggiunte per smorzare formulazioni rischiose, spesso tramite “cioè”, “intend"}, {"id": "rischio-precisatio", "depth": 1, "desc": "Limitazioni semantiche che delimitano concetti radicali (come “divenir un altro Dio”, “sicurtà "}, {"id": "rischio-declaratio", "depth": 1, "desc": "Dichiarazioni esplicite di adesione alla Chiesa e di rifiuto della “molinia” (Molinos), formula"}, {"id": "ethos", "depth": 0, "desc": "Costruzione dell’immagine autoriale come donna ignorante, obbediente e priva di lettere, che sc"}, {"id": "ethos-umilta", "depth": 1, "desc": "Professioni di \"indegnità\" e \"ignoranza\" per minimizzare la propria autorità; l’autrice usa que"}, {"id": "ethos-esperienza", "depth": 1, "desc": "Rivendicazione dell’esperienza (“non parlo senza l’esperienza”) come fondamento epistemico che "}, {"id": "ethos-obbedienza", "depth": 1, "desc": "Insistenza sull’obbedienza al confessore (a scopo difensivo), vista come condizione necessaria "}], "risk": [{"id": "risk-dottrinale", "depth": 0, "desc": "Rischio generale di equivocità su dottrine come \"grazia\", \"libertà\", \"unione\" e \"contemplazione"}, {"id": "risk-quietismo", "depth": 1, "desc": "Possibile lettura quietista dei concetti di “quiete”, “otio”, “non operare”, “abbandono totale”"}, {"id": "risk-panteismo", "depth": 1, "desc": "Rischio di interpretazione panteistica nelle espressioni sulla “trasformatione” e sul “divenir "}, {"id": "risk-impeccabilita", "depth": 1, "desc": "Ambiguità relative alla “sicurtà” mistica e alla percezione dell’impossibilità di peccare nello"}, {"id": "risk-ambiguita", "depth": 1, "desc": "Punti in cui la formulazione è oscura, metaforica o oscillante, generando difficoltà interpreta"}], "mystic_state": [{"id": "mystic_state-purificazione", "depth": 0, "desc": "Fase purgativa del cammino mistico: prove, tribolazioni, sofferenze che preparano l’anima alla "}, {"id": "mystic_state-illuminazione", "depth": 0, "desc": "Fase illuminativa: elevazione, dolcezza, chiarezza contemplativa che precede l’unione piena."}, {"id": "mystic_state-quiete", "depth": 0, "desc": "Stato di sospensione delle potenze, spesso minacciato da interpretazioni quietistiche; descritt"}, {"id": "mystic_state-otium", "depth": 0, "desc": "Ozio delle potenze inteso non come inerzia quietista, ma come sospensione operata da Dio affinc"}, {"id": "mystic_state-unione", "depth": 0, "desc": "Stato mistico di massimo avvicinamento a Dio, descritto con lessico alto e analogie complesse; "}], "operation": [{"id": "operation-delimitazione", "depth": 0, "desc": "Operazioni che circoscrivono semanticamente concetti rischiosi, evitando letture estreme e guid"}, {"id": "operation-attenuatio", "depth": 0, "desc": "Interventi che smorzano formulazioni troppo ardite mediante spiegazioni aggiunte, spesso negli "}, {"id": "operation-precisatio", "depth": 0, "desc": "Chiarimenti puntuali volti a definire meglio concetti ambigui, tipici della riflessione autogra"}, {"id": "operation-declaratio", "depth": 0, "desc": "Dichiarazioni dirette di ortodossia, con cui l’autrice esplicita la propria adesione alla dottr"}, {"id": "operation-riequilibrio", "depth": 0, "desc": "Interventi equilibranti che compensano un’affermazione rischiosa con una precisazione ortodossa"}], "exposition": [{"id": "exposition-low", "depth": 0, "desc": "Esposizione prudente di temi dottrinali, con ricorso limitato a tecnicismi e metafore."}, {"id": "exposition-medium", "depth": 0, "desc": "Esposizione moderata di contenuti mistici, con appoggi occasionali a citazioni e spiegazioni ag"}, {"id": "exposition-high", "depth": 0, "desc": "Esposizione intensa di dottrine mistiche complesse che richiedono glosse, precisazioni e cautel"}, {"id": "exposition-critical", "depth": 0, "desc": "Livello massimo di esposizione dottrinale, tipico delle sezioni sul matrimonio spirituale, la t"}], "phase": [{"id": "phase-introduction", "depth": 0, "desc": "Segmenti introduttivi che stabiliscono tono, pubblico e obbedienza iniziale, preparando la prog"}, {"id": "phase-mediana", "depth": 0, "desc": "Sezioni centrali in cui si analizzano stati intermedi del cammino contemplativo, con esempi ed "}, {"id": "phase-conclusive", "depth": 0, "desc": "Chiusure che ricapitolano i contenuti, riordinano la materia e predispongono alla transizione v"}, {"id": "phase-critical", "depth": 0, "desc": "Marcatore trasversale, non posizionale: segnala che il segmento è teologicamente delicato indip"}], "relation": [{"id": "relation-mistica", "depth": 0, "desc": "Relazioni che descrivono la progressione fenomenologica tra stati mistici lungo il cammino cont"}, {"id": "relation-mistica-infusa-purificazione", "depth": 1, "desc": "Relazione concettuale che descrive il passaggio dalle prove purgative alla contemplazione infus"}, {"id": "relation-mistica-attiva-meditazione", "depth": 1, "desc": "Relazione progressiva dalla meditazione attiva alla maturazione spirituale che prepara alla con"}, {"id": "relation-mistica-passiva-quiete", "depth": 1, "desc": "Relazione tra contemplazione passiva e quiete, descritta come sospensione delle potenze per ope"}, {"id": "relation-mistica-unione-sposalitio", "depth": 1, "desc": "Sequenza che conduce dall’unione allo sposalizio spirituale e alla trasformazione, secondo i mo"}, {"id": "relation-intertesto", "depth": 0, "desc": "Relazioni con fonti esterne al testo, di diversa natura e provenienza."}, {"id": "relation-intertesto-biblico", "depth": 1, "desc": "Richiami espliciti o impliciti alla Scrittura che sostengono la dottrina mistica."}, {"id": "relation-intertesto-liturgico", "depth": 1, "desc": "Riferimenti a testi, formule o registri liturgici che rinforzano il tono devoto e la legittimit"}, {"id": "relation-intertesto-teresiano", "depth": 1, "desc": "Risonanze e riprese del linguaggio e dei temi di Teresa d’Avila e delle tradizioni carmelitane."}, {"id": "relation-intertesto-molinista", "depth": 1, "desc": "Affinità o divergenze rispetto al linguaggio della Guida di Molinos, spesso tematizzate per pre"}]};
+    // ordine e presentazione degli assi (impact escluso: e' calcolato)
+    const ORDER = [
+      {ax: "func", label: "func — funzione retorica", req: false},
+      {ax: "operation", label: "operation — operazione prudenziale", req: true},
+      {ax: "risk", label: "risk — rischio dottrinale", req: false},
+      {ax: "exposition", label: "exposition — grado di esposizione", req: false},
+      {ax: "phase", label: "phase — fase (base)", req: true},
+      {ax: "mystic_state", label: "mystic_state — stato mistico", req: false},
+      {ax: "relation", label: "relation — relazione/intertesto", req: false}
+    ];
+    const DESC = {}; // id -> desc
+    Object.values(AXES).flat().forEach(c => DESC[c.id] = c.desc);
+    const VALID = new Set(Object.values(AXES).flat().map(c => c.id)); // token validi (E2), impact escluso
+    const BASE_PHASE = new Set(["phase-introduction", "phase-mediana", "phase-conclusive"]);
+    const $ = id => document.getElementById(id);
+    const IDPAT = /^[A-Za-z_][A-Za-z0-9_.:-]*$/;   // xml:id valido (XML Name semplificato)
+    const esc = s => (s || "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+    const indent = d => d > 0 ? "  ".repeat(d) + "› " : "";
 
-<div class="panel">
-  <h3>@ana assemblato</h3>
-  <pre id="ana">—</pre>
-  <button class="btn" id="cpana" style="margin-top:8px">copia @ana</button>
-  <h3 style="margin-top:18px">&lt;seg&gt; completo</h3>
-  <pre id="seg">—</pre>
-  <button class="btn" id="cpseg" style="margin-top:8px">copia &lt;seg&gt;</button>
-</div>
-</div>
-
-<div class="stickybar"><div class="in"><span class="lb">@ana</span><code id="live">—</code><button class="btn" id="cplive">copia</button></div></div>
-
-<script>
-"use strict";
-const AXES={"func": [{"id": "legittimazione", "depth": 0, "desc": "Procedure retoriche che consolidano l’ortodossia del discorso mistico mediante appoggi biblici,"}, {"id": "legittimazione-biblica", "depth": 1, "desc": "Citazioni e parafrasi scritturali, spesso in latino, impiegate per rendere accettabili concetti"}, {"id": "legittimazione-liturgica", "depth": 1, "desc": "Ricorso a formule, stilemi e registri liturgici come garanzia devozionale e dottrinale, utile a"}, {"id": "legittimazione-tradizione", "depth": 1, "desc": "Appello a maestri della mistica esplicitamente richiamati in prima persona dall’autrice (\"la mi"}, {"id": "pedagogia", "depth": 0, "desc": "Strategie formative rivolte ad anime \"incipienti\", \"proficienti\" e \"perfette\", basate su distin"}, {"id": "pedagogia-introduzione", "depth": 1, "desc": "Sezioni introduttive e inquadramenti che predispongono il lettore all’orazione mentale e alla c"}, {"id": "pedagogia-discernimento", "depth": 1, "desc": "Distinzioni tra (1) \"meditazione\", (2) \"contemplazione acquisita\", (3) \"contemplazione infusa\","}, {"id": "pedagogia-esemplificazione", "depth": 1, "desc": "Uso di immagini quotidiane (acqua, mare, torrente, giardino, specchio) e comparazioni che rendo"}, {"id": "rischio", "depth": 0, "desc": "Insieme di strategie volte a prevenire o correggere letture potenzialmente eterodosse, specialm"}, {"id": "rischio-attenuatio", "depth": 1, "desc": "Glosse esplicative aggiunte per smorzare formulazioni rischiose, spesso tramite “cioè”, “intend"}, {"id": "rischio-precisatio", "depth": 1, "desc": "Limitazioni semantiche che delimitano concetti radicali (come “divenir un altro Dio”, “sicurtà "}, {"id": "rischio-declaratio", "depth": 1, "desc": "Dichiarazioni esplicite di adesione alla Chiesa e di rifiuto della “molinia” (Molinos), formula"}, {"id": "ethos", "depth": 0, "desc": "Costruzione dell’immagine autoriale come donna ignorante, obbediente e priva di lettere, che sc"}, {"id": "ethos-umilta", "depth": 1, "desc": "Professioni di \"indegnità\" e \"ignoranza\" per minimizzare la propria autorità; l’autrice usa que"}, {"id": "ethos-esperienza", "depth": 1, "desc": "Rivendicazione dell’esperienza (“non parlo senza l’esperienza”) come fondamento epistemico che "}, {"id": "ethos-obbedienza", "depth": 1, "desc": "Insistenza sull’obbedienza al confessore (a scopo difensivo), vista come condizione necessaria "}], "risk": [{"id": "risk-dottrinale", "depth": 0, "desc": "Rischio generale di equivocità su dottrine come \"grazia\", \"libertà\", \"unione\" e \"contemplazione"}, {"id": "risk-quietismo", "depth": 1, "desc": "Possibile lettura quietista dei concetti di “quiete”, “otio”, “non operare”, “abbandono totale”"}, {"id": "risk-panteismo", "depth": 1, "desc": "Rischio di interpretazione panteistica nelle espressioni sulla “trasformatione” e sul “divenir "}, {"id": "risk-impeccabilita", "depth": 1, "desc": "Ambiguità relative alla “sicurtà” mistica e alla percezione dell’impossibilità di peccare nello"}, {"id": "risk-ambiguita", "depth": 1, "desc": "Punti in cui la formulazione è oscura, metaforica o oscillante, generando difficoltà interpreta"}], "mystic_state": [{"id": "mystic_state-purificazione", "depth": 0, "desc": "Fase purgativa del cammino mistico: prove, tribolazioni, sofferenze che preparano l’anima alla "}, {"id": "mystic_state-illuminazione", "depth": 0, "desc": "Fase illuminativa: elevazione, dolcezza, chiarezza contemplativa che precede l’unione piena."}, {"id": "mystic_state-quiete", "depth": 0, "desc": "Stato di sospensione delle potenze, spesso minacciato da interpretazioni quietistiche; descritt"}, {"id": "mystic_state-otium", "depth": 0, "desc": "Ozio delle potenze inteso non come inerzia quietista, ma come sospensione operata da Dio affinc"}, {"id": "mystic_state-unione", "depth": 0, "desc": "Stato mistico di massimo avvicinamento a Dio, descritto con lessico alto e analogie complesse; "}], "operation": [{"id": "operation-delimitazione", "depth": 0, "desc": "Operazioni che circoscrivono semanticamente concetti rischiosi, evitando letture estreme e guid"}, {"id": "operation-attenuatio", "depth": 0, "desc": "Interventi che smorzano formulazioni troppo ardite mediante spiegazioni aggiunte, spesso negli "}, {"id": "operation-precisatio", "depth": 0, "desc": "Chiarimenti puntuali volti a definire meglio concetti ambigui, tipici della riflessione autogra"}, {"id": "operation-declaratio", "depth": 0, "desc": "Dichiarazioni dirette di ortodossia, con cui l’autrice esplicita la propria adesione alla dottr"}, {"id": "operation-riequilibrio", "depth": 0, "desc": "Interventi equilibranti che compensano un’affermazione rischiosa con una precisazione ortodossa"}], "exposition": [{"id": "exposition-low", "depth": 0, "desc": "Esposizione prudente di temi dottrinali, con ricorso limitato a tecnicismi e metafore."}, {"id": "exposition-medium", "depth": 0, "desc": "Esposizione moderata di contenuti mistici, con appoggi occasionali a citazioni e spiegazioni ag"}, {"id": "exposition-high", "depth": 0, "desc": "Esposizione intensa di dottrine mistiche complesse che richiedono glosse, precisazioni e cautel"}, {"id": "exposition-critical", "depth": 0, "desc": "Livello massimo di esposizione dottrinale, tipico delle sezioni sul matrimonio spirituale, la t"}], "phase": [{"id": "phase-introduction", "depth": 0, "desc": "Segmenti introduttivi che stabiliscono tono, pubblico e obbedienza iniziale, preparando la prog"}, {"id": "phase-mediana", "depth": 0, "desc": "Sezioni centrali in cui si analizzano stati intermedi del cammino contemplativo, con esempi ed "}, {"id": "phase-conclusive", "depth": 0, "desc": "Chiusure che ricapitolano i contenuti, riordinano la materia e predispongono alla transizione v"}, {"id": "phase-critical", "depth": 0, "desc": "Marcatore trasversale, non posizionale: segnala che il segmento è teologicamente delicato indip"}], "relation": [{"id": "relation-mistica", "depth": 0, "desc": "Relazioni che descrivono la progressione fenomenologica tra stati mistici lungo il cammino cont"}, {"id": "relation-mistica-infusa-purificazione", "depth": 1, "desc": "Relazione concettuale che descrive il passaggio dalle prove purgative alla contemplazione infus"}, {"id": "relation-mistica-attiva-meditazione", "depth": 1, "desc": "Relazione progressiva dalla meditazione attiva alla maturazione spirituale che prepara alla con"}, {"id": "relation-mistica-passiva-quiete", "depth": 1, "desc": "Relazione tra contemplazione passiva e quiete, descritta come sospensione delle potenze per ope"}, {"id": "relation-mistica-unione-sposalitio", "depth": 1, "desc": "Sequenza che conduce dall’unione allo sposalizio spirituale e alla trasformazione, secondo i mo"}, {"id": "relation-intertesto", "depth": 0, "desc": "Relazioni con fonti esterne al testo, di diversa natura e provenienza."}, {"id": "relation-intertesto-biblico", "depth": 1, "desc": "Richiami espliciti o impliciti alla Scrittura che sostengono la dottrina mistica."}, {"id": "relation-intertesto-liturgico", "depth": 1, "desc": "Riferimenti a testi, formule o registri liturgici che rinforzano il tono devoto e la legittimit"}, {"id": "relation-intertesto-teresiano", "depth": 1, "desc": "Risonanze e riprese del linguaggio e dei temi di Teresa d’Avila e delle tradizioni carmelitane."}, {"id": "relation-intertesto-molinista", "depth": 1, "desc": "Affinità o divergenze rispetto al linguaggio della Guida di Molinos, spesso tematizzate per pre"}]};
-// ordine e presentazione degli assi (impact escluso: e' calcolato)
-const ORDER=[
-  {ax:"func",label:"func — funzione retorica",req:false},
-  {ax:"operation",label:"operation — operazione prudenziale",req:true},
-  {ax:"risk",label:"risk — rischio dottrinale",req:false},
-  {ax:"exposition",label:"exposition — grado di esposizione",req:false},
-  {ax:"phase",label:"phase — fase (base)",req:true},
-  {ax:"mystic_state",label:"mystic_state — stato mistico",req:false},
-  {ax:"relation",label:"relation — relazione/intertesto",req:false}
-];
-const DESC={}; // id -> desc
-Object.values(AXES).flat().forEach(c=>DESC[c.id]=c.desc);
-const VALID=new Set(Object.values(AXES).flat().map(c=>c.id)); // token validi (E2), impact escluso
-const BASE_PHASE=new Set(["phase-introduction","phase-mediana","phase-conclusive"]);
-const $=id=>document.getElementById(id);
-const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const indent=d=>d>0?"  ".repeat(d)+"› ":"";
-
-function buildAxes(){
-  const host=$("axes");
-  ORDER.forEach(o=>{
-    let cats=AXES[o.ax]||[];
-    if(o.ax==="phase") cats=cats.filter(c=>c.id!=="phase-critical"); // critical via checkbox
-    const opts=['<option value="">— nessuna —</option>']
-      .concat(cats.map(c=>`<option value="${c.id}">${indent(c.depth)}${c.id}</option>`)).join("");
-    const div=document.createElement("div");
-    div.className="fld";
-    div.innerHTML=`<label>${o.label} ${o.req?'<span class="req">*</span>':''}</label>
-      <select id="ax-${o.ax}" data-ax="${o.ax}">${opts}</select>
+    function buildAxes() {
+      const host = $("axes");
+      ORDER.forEach(o => {
+        let cats = AXES[o.ax] || [];
+        if (o.ax === "phase") cats = cats.filter(c => c.id !== "phase-critical"); // critical via checkbox
+        const opts = ['<option value="">— nessuna —</option>']
+          .concat(cats.map(c => `<option value="${c.id}">${indent(c.depth)}${c.id}</option>`)).join("");
+        const div = document.createElement("div");
+        div.className = "fld";
+        div.innerHTML = `<label for="ax-${o.ax}">${o.label} ${o.req ? '<span class="req">*</span>' : ''}</label>
+      <select id="ax-${o.ax}" data-ax="${o.ax}"${o.req ? ' aria-required="true"' : ''}>${opts}</select>
       <div class="help" id="h-${o.ax}"></div>`;
-    host.appendChild(div);
-  });
-  host.querySelectorAll("select").forEach(s=>s.addEventListener("change",build));
-}
+        host.appendChild(div);
+      });
+      host.querySelectorAll("select").forEach(s => s.addEventListener("change", build));
+    }
 
-function tokens(){
-  const t=[];
-  ORDER.forEach(o=>{
-    const v=$("ax-"+o.ax).value;
-    if(v) t.push("#"+v);
-    if(o.ax==="phase" && $("crit").checked) t.push("#phase-critical");
-  });
-  if($("imp").checked) t.push("#impact*");
-  return t;
-}
-function build(){
-  // help per asse
-  ORDER.forEach(o=>{const v=$("ax-"+o.ax).value; $("h-"+o.ax).textContent=v?(DESC[v]||""):"";});
-  const toks=tokens();
-  const ana=toks.join(" ");
-  $("ana").textContent=ana||"—";
-  $("live").textContent=ana||"—";
-  // seg completo
-  const id=$("a-id").value.trim(), ty=$("a-type").value.trim(), st=$("a-subtype").value.trim(),
-        hd=$("a-hand").value.trim(), ce=$("a-cert").value.trim(), tx=$("txt").value.trim();
-  const at=[];
-  at.push(`xml:id="${esc(id||"SEG-ID")}"`);
-  if(ty)at.push(`type="${esc(ty)}"`);
-  if(st)at.push(`subtype="${esc(st)}"`);
-  if(hd)at.push(`hand="${esc(hd)}"`);
-  if(ce)at.push(`cert="${esc(ce)}"`);
-  at.push(`ana="${esc(ana)}"`);
-  $("seg").textContent=`<seg ${at.join(" ")}>${esc(tx)}</seg>`;
-  // avvisi: operation e phase base consigliati (guardia di co-occorrenza)
-  const w=[];
-  if(!$("ax-operation").value) w.push("manca #operation-* (serve per F e per la guardia di co-occorrenza)");
-  if(!$("ax-phase").value) w.push("manca una fase base (#phase-introduction/mediana/conclusive)");
-  if($("crit").checked && !$("ax-phase").value) w.push("#phase-critical richiede sempre una fase base");
-  if(!id) w.push("manca xml:id");
-  $("warn").textContent=w.length?("⚠ "+w.join(" · ")):"";
-  runChecks(toks, id);
-}
+    function tokens() {
+      const t = [];
+      ORDER.forEach(o => {
+        const v = $("ax-" + o.ax).value;
+        if (v) t.push("#" + v);
+        if (o.ax === "phase" && $("crit").checked) t.push("#phase-critical");
+      });
+      if ($("imp").checked) t.push("#impact*");
+      return t;
+    }
+    function build() {
+      // help per asse
+      ORDER.forEach(o => {const v = $("ax-" + o.ax).value; $("h-" + o.ax).textContent = v ? (DESC[v] || "") : "";});
+      const toks = tokens();
+      const ana = toks.join(" ");
+      $("ana").textContent = ana || "—";
+      $("live").textContent = ana || "—";
+      // seg completo
+      const id = $("a-id").value.trim(), ty = $("a-type").value.trim(), st = $("a-subtype").value.trim(),
+        hd = $("a-hand").value.trim(), ce = $("a-cert").value.trim(), tx = $("txt").value.trim();
+      const at = [];
+      at.push(`xml:id="${esc(id || "SEG-ID")}"`);
+      if (ty) at.push(`type="${esc(ty)}"`);
+      if (st) at.push(`subtype="${esc(st)}"`);
+      if (hd) at.push(`hand="${esc(hd)}"`);
+      if (ce) at.push(`cert="${esc(ce)}"`);
+      at.push(`ana="${esc(ana)}"`);
+      $("seg").textContent = `<seg ${at.join(" ")}>${esc(tx)}</seg>`;
+      // avvisi: operation e phase base consigliati (guardia di co-occorrenza)
+      const w = [];
+      if (!$("ax-operation").value) w.push("manca #operation-* (serve per F e per la guardia di co-occorrenza)");
+      if (!$("ax-phase").value) w.push("manca una fase base (#phase-introduction/mediana/conclusive)");
+      if ($("crit").checked && !$("ax-phase").value) w.push("#phase-critical richiede sempre una fase base");
+      if (!id) w.push("manca xml:id");
+      else if (!IDPAT.test(id)) w.push("xml:id non valido (lettere/cifre/._:- ; deve iniziare con lettera o _)");
+      $("warn").textContent = w.length ? ("⚠ " + w.join(" · ")) : "";
+      runChecks(toks, id);
+    }
 
-function runChecks(toks, id){
-  const bare=toks.map(t=>t.replace(/^#/,""));
-  const nonImpact=bare.filter(t=>t!=="impact*" && !t.startsWith("impact-"));
-  const unresolved=nonImpact.filter(t=>!VALID.has(t));
-  const opCount=bare.filter(t=>t.startsWith("operation-")).length;
-  const baseCount=bare.filter(t=>BASE_PHASE.has(t)).length;
-  const hasCritical=bare.includes("phase-critical");
-  const impactCount=bare.filter(t=>t==="impact*"||t.startsWith("impact-")).length;
-  const impactResolved=bare.some(t=>t.startsWith("impact-"));
-  const dup=(()=>{const s=new Set(),d=new Set();bare.forEach(t=>{if(s.has(t))d.add(t);s.add(t);});return [...d];})();
+    function runChecks(toks, id) {
+      const bare = toks.map(t => t.replace(/^#/, ""));
+      const nonImpact = bare.filter(t => t !== "impact*" && !t.startsWith("impact-"));
+      const unresolved = nonImpact.filter(t => !VALID.has(t));
+      const opCount = bare.filter(t => t.startsWith("operation-")).length;
+      const baseCount = bare.filter(t => BASE_PHASE.has(t)).length;
+      const hasCritical = bare.includes("phase-critical");
+      const impactCount = bare.filter(t => t === "impact*" || t.startsWith("impact-")).length;
+      const impactResolved = bare.some(t => t.startsWith("impact-"));
+      const dup = (() => {const s = new Set(), d = new Set(); bare.forEach(t => {if (s.has(t)) d.add(t); s.add(t);}); return [...d];})();
 
-  const C=[];
-  C.push(id?["ok","<b>xml:id</b> presente","richiesto per la <fs> e i puntatori"]
-            :["no","<b>xml:id</b> mancante","ogni &lt;seg&gt; valutato deve averlo"]);
-  C.push(unresolved.length===0
-    ?["ok","<b>E2</b> — ogni token @ana risolve alla tassonomia",`${nonImpact.length} token verificati`]
-    :["no","<b>E2</b> — token non dichiarati: "+unresolved.join(", "),"guardia E2 in CI"]);
-  C.push(opCount===1
-    ?["ok","<b>Co-occorrenza</b> — esattamente 1 <code>#operation-*</code>","serve anche per F"]
-    :["no",`<b>Co-occorrenza</b> — ${opCount} operation (ne serve 1)`,"guardia co-occorrenza"]);
-  C.push(baseCount===1
-    ?["ok","<b>Co-occorrenza</b> — esattamente 1 fase base","introduction/mediana/conclusive"]
-    :["no",`<b>Co-occorrenza</b> — ${baseCount} fasi base (ne serve 1)`,"guardia co-occorrenza"]);
-  C.push((!hasCritical||baseCount>=1)
-    ?["ok","<b>phase-critical</b> coerente","assente, o presente con fase base"]
-    :["no","<b>phase-critical</b> senza fase base","#phase-critical richiede una base"]);
-  C.push(dup.length===0
-    ?["ok","Nessun token duplicato",""]
-    :["no","Token duplicati: "+dup.join(", "),""]);
-  if(impactResolved)
-    C.push(["ok","<b>impact</b> risolto ("+bare.find(t=>t.startsWith("impact-"))+")","classe assegnata dal Calcolatore"]);
-  else if(impactCount===1)
-    C.push(["info","<b>impact</b> segnaposto <code>#impact*</code>","da risolvere col Calcolatore prima del commit"]);
-  else
-    C.push(["no","<b>impact</b> assente","la classe #impact-* va aggiunta"]);
-  C.push(["info","Prefissi e unicità d'asse","garantiti per costruzione (menù dalla tassonomia)"]);
+      const C = [];
+      C.push(!id
+        ? ["no", "<b>xml:id</b> mancante", "ogni &lt;seg&gt; valutato deve averlo"]
+        : !IDPAT.test(id)
+          ? ["no", "<b>xml:id</b> non valido: «" + esc(id) + "»", "lettere/cifre/._:- ; inizia con lettera o _"]
+          : ["ok", "<b>xml:id</b> valido", "richiesto per la &lt;fs&gt; e i puntatori"]);
+      C.push(unresolved.length === 0
+        ? ["ok", "<b>E2</b> — ogni token @ana risolve alla tassonomia", `${nonImpact.length} token verificati`]
+        : ["no", "<b>E2</b> — token non dichiarati: " + unresolved.join(", "), "guardia E2 in CI"]);
+      C.push(opCount === 1
+        ? ["ok", "<b>Co-occorrenza</b> — esattamente 1 <code>#operation-*</code>", "serve anche per F"]
+        : ["no", `<b>Co-occorrenza</b> — ${opCount} operation (ne serve 1)`, "guardia co-occorrenza"]);
+      C.push(baseCount === 1
+        ? ["ok", "<b>Co-occorrenza</b> — esattamente 1 fase base", "introduction/mediana/conclusive"]
+        : ["no", `<b>Co-occorrenza</b> — ${baseCount} fasi base (ne serve 1)`, "guardia co-occorrenza"]);
+      C.push((!hasCritical || baseCount >= 1)
+        ? ["ok", "<b>phase-critical</b> coerente", "assente, o presente con fase base"]
+        : ["no", "<b>phase-critical</b> senza fase base", "#phase-critical richiede una base"]);
+      C.push(dup.length === 0
+        ? ["ok", "Nessun token duplicato", ""]
+        : ["no", "Token duplicati: " + dup.join(", "), ""]);
+      if (impactResolved)
+        C.push(["ok", "<b>impact</b> risolto (" + bare.find(t => t.startsWith("impact-")) + ")", "classe assegnata dal Calcolatore"]);
+      else if (impactCount === 1)
+        C.push(["info", "<b>impact</b> segnaposto <code>#impact*</code>", "da risolvere col Calcolatore prima del commit"]);
+      else
+        C.push(["no", "<b>impact</b> assente", "la classe #impact-* va aggiunta"]);
+      C.push(["info", "Prefissi e unicità d'asse", "garantiti per costruzione (menù dalla tassonomia)"]);
 
-  $("checks").innerHTML=C.map(c=>
-    `<li class="ck-${c[0]}"><span class="ck-ico">${c[0]==="ok"?"✓":c[0]==="no"?"✗":"ℹ"}</span>
-       <span class="ck-txt">${c[1]}${c[2]?` <span class="ck-src">— ${c[2]}</span>`:""}</span></li>`).join("");
+      $("checks").innerHTML = C.map(c =>
+        `<li class="ck-${c[0]}"><span class="ck-ico">${c[0] === "ok" ? "✓" : c[0] === "no" ? "✗" : "ℹ"}</span>
+       <span class="ck-txt">${c[1]}${c[2] ? ` <span class="ck-src">— ${c[2]}</span>` : ""}</span></li>`).join("");
 
-  const blocking=C.filter(c=>c[0]==="no").length;
-  const v=$("verdict");
-  if(blocking===0){v.className="verdict ok";v.textContent=impactResolved
-      ?"✓ @ana valido e completo — pronto per il commit":"✓ @ana valido — pronto per il Calcolatore (poi risolvi #impact*)";}
-  else{v.className="verdict no";v.textContent=`✗ ${blocking} controllo/i da correggere prima del commit`;}
-}
-function copy(txt,btn){navigator.clipboard.writeText(txt).then(()=>{btn.classList.add("copied");const t=btn.textContent;btn.textContent="copiato ✓";setTimeout(()=>{btn.classList.remove("copied");btn.textContent=t;},1200);});}
+      const blocking = C.filter(c => c[0] === "no").length;
+      const v = $("verdict");
+      if (blocking === 0) {
+        v.className = "verdict ok"; v.textContent = impactResolved
+          ? "✓ @ana valido e completo — pronto per il commit" : "✓ @ana valido — pronto per il Calcolatore (poi risolvi #impact*)";
+      }
+      else {v.className = "verdict no"; v.textContent = `✗ ${blocking} controllo/i da correggere prima del commit`;}
+      // il <seg> completo si copia solo se non ci sono errori bloccanti (il segnaposto #impact* non blocca)
+      const cs = $("cpseg");
+      cs.disabled = blocking > 0;
+      cs.title = blocking > 0 ? "Correggi i controlli in rosso prima di copiare il <seg>" : "";
+    }
+    function copy(txt, btn) {
+      if (!btn || btn.disabled) return;
+      const prev = btn.textContent;
+      const flash = ok => {
+        btn.classList.add("copied"); btn.textContent = ok ? "copiato ✓" : "errore";
+        setTimeout(() => {btn.classList.remove("copied"); btn.textContent = prev;}, 1300);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(() => flash(true)).catch(() => fallback(txt, flash));
+      } else {fallback(txt, flash);}
+    }
+    function fallback(txt, flash) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = txt; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.left = "-9999px";
+        document.body.appendChild(ta); ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta); flash(!!ok);
+      } catch (e) {flash(false);}
+    }
 
-buildAxes();
-["txt","a-id","a-type","a-subtype","a-hand","a-cert","crit","imp"].forEach(id=>$(id).addEventListener("input",build));
-$("cpana").addEventListener("click",()=>copy($("ana").textContent,$("cpana")));
-$("cpseg").addEventListener("click",()=>copy($("seg").textContent,$("cpseg")));
-$("cplive").addEventListener("click",()=>copy($("live").textContent,$("cplive")));
-build();
-</script>
+    buildAxes();
+    ["txt", "a-id", "a-type", "a-subtype", "a-hand", "a-cert", "crit", "imp"].forEach(id => $(id).addEventListener("input", build));
+    $("cpana").addEventListener("click", () => copy($("ana").textContent, $("cpana")));
+    $("cpseg").addEventListener("click", () => copy($("seg").textContent, $("cpseg")));
+    $("cplive").addEventListener("click", () => copy($("live").textContent, $("cplive")));
+    build();
+  </script>
 </body>
+
 </html>
