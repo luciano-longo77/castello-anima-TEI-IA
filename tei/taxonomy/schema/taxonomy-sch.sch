@@ -25,4 +25,10 @@
             <assert role="error" test="count(//*[@xml:id = current()/@xml:id]) = 1"> Errore di unicità: l'attributo @xml:id ('<value-of select="@xml:id"/>') di &lt;<name/>&gt; non è univoco nel documento; è usato da almeno un altro elemento.</assert>
         </rule>
     </pattern>
+    <pattern id="schematron-constraint-func-branch-consistency-5">
+        <rule context="tei:taxonomy[@xml:id='func']//tei:category">
+            <assert role="error"
+                test="@xml:id='legittimazione' or @xml:id='pedagogia' or @xml:id='rischio' or @xml:id='ethos' or starts-with(@xml:id,'legittimazione-') or starts-with(@xml:id,'pedagogia-') or starts-with(@xml:id,'rischio-') or starts-with(@xml:id,'ethos-')"> Errore di coerenza del dato: sotto l'asse 'func' l'@xml:id (<value-of select="@xml:id"/>) deve essere uno dei quattro rami (legittimazione, pedagogia, rischio, ethos) o iniziare con uno di essi seguìto da trattino.</assert>
+        </rule>
+    </pattern>
 </schema>
