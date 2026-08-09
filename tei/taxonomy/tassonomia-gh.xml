@@ -230,7 +230,9 @@
                     <category xml:id="risk-dottrinale">
                         <catDesc>Rischio generale di equivocità su dottrine come "grazia", "libertà",
                             "unione" e "contemplazione", soprattutto nei punti dove la lingua
-                            dell’autrice risulta ambigua o metaforicamente esasperata.</catDesc>
+                            dell’autrice risulta ambigua o metaforicamente esasperata. Categoria contenitore: 
+                                    se usata direttamente in @ana, senza una delle foglie (quietismo, panteismo, impeccabilità, ambiguità), 
+                                    denota, per astensione semantica (guida, regola 3), un rischio dottrinale di sottotipo non specificato.</catDesc>
                     
                     <category xml:id="risk-quietismo">
                         <catDesc>Possibile lettura quietista dei concetti di “quiete”, “otio”, “non
