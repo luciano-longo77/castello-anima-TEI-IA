@@ -170,7 +170,7 @@ Il modello permette di:
 ## Licenza
 
 Creative Commons Attribution 4.0 International (**CC BY 4.0**).  
-Vedi il file `SPDX-License-Identifier: CC-BY-4.0` per i dettagli completi.
+Vedi il file `License` per i dettagli completi.
 
 ---
 
