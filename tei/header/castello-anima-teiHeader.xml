@@ -611,7 +611,7 @@
                     Il modello integra un indice d'impatto composto (N, A, F) calcolato secondo la formula I = (4·F_norm + 2·N + 1·A)/7,
                     con pesi AHP in rapporto F:N:A = 4:2:1 (w_F=4/7, w_N=2/7, w_A=1/7), dove N misura la necessità interpretativa 
                     (esposizione dottrinale del passo prima dell'intervento), A la riduzione dell'ambiguità e F la funzione prudenziale 
-                    espressa come classe formale ordinale del marcatore (1 = cioè; 2 = ciò s'intende; 3 = io mi dichiaro), derivata dal rango 
+                    espressa come classe formale ordinale del marcatore (1 = cioè; 2 = s'intende / non s'intende; 3 = io mi dichiaro), derivata dal rango 
                     dell'asse operation e normalizzata come F_norm = F/3; il valore è discretizzato in quattro classi 
                     (impact-low/medium/high/critical) con soglie calibrate sulla distribuzione reale del campione.</p>
                 
