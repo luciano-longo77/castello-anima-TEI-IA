@@ -38,7 +38,7 @@
                        ana="#legittimazione-tradizione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-intertesto-teresiano #impact-low">Del
                      <rs xml:id="rs-castello-anima" type="opera-metafora" ref="#avila-castello" ana="#relation-intertesto-teresiano">castello dell'anima</rs>
                      per l'<term type="mistico">anime perfette</term>, nel quale si tratta dell'<rs xml:id="rs-unione-tit" type="stato-mistico" ref="#molinos-guida" ana="#relation-intertesto-molinista"><term type="mistico">unione</term></rs>,
-                     che ponno arrivare queste <rs type="soggetto-mistico">anime</rs> con <rs type="divinita" ref="#s-teresa">Dio</rs> anche in questa vita.</seg>
+                     che ponno arrivare queste <rs type="soggetto-mistico">anime</rs> con <rs type="divinita" ref="#dio">Dio</rs> anche in questa vita.</seg>
                </p>
             </argument>
 
@@ -51,7 +51,7 @@
                        Norm: sic/corr sapere->sapete. -->
                   <seg xml:id="seg-158r-obedienza" type="indicatio" subtype="obbedienza-performativa" hand="#ink_1" cert="high"
                        ana="#ethos-obbedienza #operation-delimitazione #risk-dottrinale #exposition-medium #phase-introduction #mystic_state-quiete #impact-low">Incomincio
-                     <rs type="divinita" ref="#s-teresa">mio Dio</rs>, come <choice><sic>sapere</sic><corr resp="#editor" cert="high">sapete</corr></choice>,
+                     <rs type="divinita" ref="#dio">mio Dio</rs>, come <choice><sic>sapere</sic><corr resp="#editor" cert="high">sapete</corr></choice>,
                      questo terzo ed ultimo libro per <term type="mistico">santa obedienza</term></seg>, e per narrar
                   <!-- S2 AUTO-ABBASSAMENTO. Topos d'umiltà ("miserabile creatura") che riduce l'autorità dell'io scrivente.
                        N=0.30 (bassa: formula convenzionale, nessuna metafora né termine ambiguo); A=0.35 (bassa); F=1 delimitazione -> I=0.326 low.
@@ -69,8 +69,8 @@
                         <rdg wit="#txt-b0"><del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">to</del> secondo</rdg>
                      </app> <ref target="#Libro-II">libro</ref> <choice><sic>domandano</sic><corr resp="#editor" cert="medium">domandavo</corr></choice>
                      <choice><orig>à</orig><reg>a</reg></choice> <choice><sic>noi</sic><corr resp="#editor" cert="medium">voi</corr></choice>
-                     <rs type="divinita" ref="#s-teresa">mio Dio</rs> il <choice><sic>nostro</sic><corr resp="#editor" cert="medium">vostro</corr></choice>
-                     <term type="mistico">santo agiuto</term>, più vi soplico adesso <choice><orig>à</orig><reg>a</reg></choice> darmi
+                     <rs type="divinita" ref="#dio">mio Dio</rs> il <choice><sic>nostro</sic><corr resp="#editor" cert="medium">vostro</corr></choice>
+                     <term type="mistico">santo <choice><orig>agiuuto</orig><reg>agiuto</reg></choice></term>, più vi soplico adesso <choice><orig>à</orig><reg>a</reg></choice> darmi
                      <term type="mistico">la vostra infinita sapienza</term></seg>,
                   <!-- S4 FALSA MODESTIA. Il "confessarsi inabile a manegiar la penna" è topos retorico (captatio benevolentiae),
                        non incapacità reale: retoricamente un'attenuatio dell'autorità autoriale. N=0.40 (media-bassa: dichiara
@@ -85,7 +85,7 @@
                         <rdg wit="#txt-b0">b<del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">e</del><add place="inline" hand="#ink_1" resp="#s-teresa" type="substitution">i</add>sognosa</rdg>
                      </app> della vostra <term type="mistico">sapienza</term>, senza la quale mi confesso al tutto
                      <term type="etico">inabile</term>, ed <term type="etico">indegna</term> per manegiar la penna, la quale la prendo tutta
-                     <term type="etico">fidata</term> in <rs type="divinita" ref="#s-teresa">voi mio Dio</rs></seg>.</p>
+                     <term type="etico">fidata</term> in <rs type="divinita" ref="#dio">voi mio Dio</rs></seg>.</p>
 
                <p n="2">
                   <!-- S5 DICHIARAZIONE D'ORTODOSSIA. Protestatio performativa ("mi protesto"): primo sigillo d'ortodossia, tipico
@@ -149,7 +149,7 @@
                        ana="#pedagogia-introduzione #operation-delimitazione #risk-dottrinale #exposition-medium #phase-introduction #mystic_state-purificazione #relation-mistica-infusa-purificazione #impact-low">Dico
                      <choice><abbr>dunq</abbr><expan>dunque</expan></choice> che la detta <term type="mistico">notte</term>, che trattammo nel fine del
                      <ref target="#Libro-II">secondo libro</ref>, lascia l'anima ben disposta per ricevere la <term type="mistico">divina luce</term>
-                     <choice><orig>ed'unirsi</orig><reg>ed unirsi</reg></choice> con l'<rs type="divinita">amato suo</rs></seg>, talmente, che se prova investendo
+                     <choice><orig>ed'unirsi</orig><reg>ed unirsi</reg></choice> con l'<rs type="divinita" ref="#dio">amato suo</rs></seg>, talmente, che se prova investendo
                      l'anima la luce divina, e non essendo ella disposta per riceverla, vi pativa grandemente, come anche, che
                   <!-- C6 (MARQUEE) PRECISAZIONE DELL'INVESTITURA. Delimita internamente il senso dell'investitura divina: NON per far godere
                        (lettura edonistico-quietista) MA per purificare. Nodo localmente esposto in un capitolo-soglia (cfr. paper 3.1.3).
@@ -187,7 +187,7 @@
                   <!-- C10 STATO DI ARIDITÀ (sicilianismo 'astinuata'). L'anima resta prosciugata dal patire. N=0.35 (bassa); A=0.40; F=1 -> I=0.347 low. -->
                   <seg xml:id="seg-c4-astinuata" type="indicatio" subtype="stato-aridita" hand="#ink_1" cert="medium"
                        ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-otium #impact-low">resta
-                     l'anima tutta <term type="sicilianismo">astinuata</term> del patire e' <term type="mistico">travagli</term> passati</seg>.</p>
+                     l'anima tutta <term type="sicilianismo">astinuata</term> del patire <choice><orig>e</orig><reg>e'</reg></choice> <term type="mistico">travagli</term> passati</seg>.</p>
 
                <p n="5">
                   <!-- C11 INTRODUZIONE DELLA SIMILITUDINE. Metatesto: annuncia una comparatione. N=0.25 (bassa: meta-testuale); A=0.30; F=1 -> I=0.305 low. Norm: ad'intendire->ad intendire. -->
@@ -201,14 +201,14 @@
                   <seg xml:id="seg-c6-statua" type="indicatio" subtype="similitudine-statua" hand="#ink_1" cert="medium"
                        ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-otium #impact-low">Vi
                      fosse una <rs type="oggetto-comparante">statua</rs> che esposta molti tempi al calor del sole remanesse molto <term type="sicilianismo">astinuata</term>
-                     e secca, e perciò sarebbe molto leggiera. Cossì <choice><orig>à</orig><reg>a</reg></choice> punto è qui l'anima, che <term type="sicilianismo">stinuata</term>
+                     e secca, e perciò sarebbe molto leggiera. <choice><orig>Cossi</orig><reg>Cossì</reg></choice> <choice><orig>à</orig><reg>a</reg></choice> punto è qui l'anima, che <term type="sicilianismo">stinuata</term>
                      <choice><orig>ed' esposta</orig><reg>ed esposta</reg></choice> al calor della <term type="mistico">divina luce</term>, restò molto leggiera, e questa intendo dire,
                      per la mancanza di tutte le <term type="mistico">macchie</term> e passioni che vede dentro di sé</seg>;
                   <!-- C13 DISPOSIZIONE ALL'UNIONE. La contemplazione, consumate le macchie, rende l'anima capace d'unirsi con lo sposo.
                        N=0.50 (media: unione/sposo, contemplatione); A=0.45; F=1 delimitazione -> I=0.397 low. -->
                   <seg xml:id="seg-c6-contemplatione" type="indicatio" subtype="disposizione-unione" hand="#ink_1" cert="medium"
                        ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">e
-                     per quanto consomò e disfece quella <term type="mistico">divina contemplatione</term>, la lasciò ben capace di poter unirsi con lo <rs type="divinita">sposo suo</rs></seg>.</p>
+                     per quanto consomò e disfece quella <term type="mistico">divina contemplatione</term>, la lasciò ben capace di poter unirsi con lo <rs type="divinita" ref="#dio">sposo suo</rs></seg>.</p>
 
                <p n="7">
                   <!-- C14 STATO INTERMEDIO. L'anima non patisce più come prima né gode come poi: sospesa fra pena e gioia.
@@ -230,7 +230,7 @@
                   <seg xml:id="seg-c7-reposa" type="indicatio" subtype="riequilibrio-riposo" hand="#ink_1" cert="medium"
                        ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-introduction #mystic_state-quiete #relation-mistica-passiva-quiete #impact-medium">Hor
                      cossì è qui l'anima, che doppo quei travagli e fatiche reposa, ma però <choice><orig>ne'i</orig><reg>nei</reg></choice> principii non tanto gode, non havendo
-                     per ancora pigliato lo <rs type="divinita">sposo</rs> in lei totalmente posesso, <choice><orig>ò</orig><reg>o</reg></choice> <choice><orig>per che</orig><reg>perché</reg></choice> ancora non gli piace
+                     per ancora pigliato lo <rs type="divinita" ref="#dio">sposo</rs> in lei totalmente posesso, <choice><orig>ò</orig><reg>o</reg></choice> <choice><orig>per che</orig><reg>perché</reg></choice> ancora non gli piace
                      di scoprirsi come poi farà; e però l'anima non patisce più</seg>.</p>
 
                <p n="8">M'accorgio io però, che
@@ -271,13 +271,13 @@
                        ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">Per
                      quanto habbiamo detto sopra, non è svelato per l'anima per ancora il giorno chiaro dell'<term type="mistico">unione</term>, in quanto che non vede
                      ancora lo stato suo; e però <app>
-                        <lem wit="#txt-c">scuoprì</lem>
+                        <lem wit="#txt-c"><choice><orig>scuopri</orig><reg>scuoprì</reg></choice></lem>
                         <rdg wit="#txt-b0"><del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">sc<gap reason="illegible" unit="char" quantity="1"/></del> scuoprì</rdg>
                      </app> in lei un gran crescemento senza saper ciò che sia</seg>;
                   <!-- C21 PRESENZA DELL'AMATO. La "satietà nel fondo" interpretata come presenza dell'amato. N=0.50 (media: unione/presenza); A=0.45; F=1 -> I=0.397 low. -->
                   <seg xml:id="seg-c10-satieta" type="indicatio" subtype="presenza-amato" hand="#ink_1" cert="medium"
                        ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">intende
-                     una <term type="mistico">satietà</term> nel fondo suo, e questa mi credo sia la presenza dell'<rs type="divinita">amato</rs>, sì che intende più, e più
+                     una <term type="mistico">satietà</term> nel fondo suo, e questa mi credo sia la presenza dell'<rs type="divinita" ref="#dio">amato</rs>, sì che intende più, e più
                      farsi grande senza sapere il come sia</seg>.</p>
 
                <p n="11">Vede anche, che fuggita quella <app>
@@ -374,6 +374,7 @@
          <interp xml:id="area-unio">unione/sposalizio</interp><interp xml:id="area-desiderium">desiderio</interp>
       </interpGrp>
       <spanGrp type="focus">
+         <span from="#seg-III-tit" ana="#area-unio"/><span from="#seg-158r-ignoranza" ana="#area-orthodoxia"/>
          <span from="#seg-158r-obedienza" ana="#area-obedientia"/><span from="#seg-158r-autodemotio" ana="#area-humilitas"/>
          <span from="#seg-158r-invocatio" ana="#area-sapientia"/><span from="#seg-158r-incapacitas" ana="#area-humilitas"/>
          <span from="#seg-158r-declaratio" ana="#area-orthodoxia"/><span from="#seg-158r-sottomissione" ana="#area-orthodoxia"/>
