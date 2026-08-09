@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolatore — Indice d'impatto · Castello dell'anima</title>
+<meta name="dc.creator" content="Luciano Longo">
+<style>
+:root{
+  --bg-paper:#faf8f5; --bg-paper-dark:#f5f1e8; --bg-sidebar:#1a252f;
+  --text-main:#2c3e50; --text-muted:#7f8c8d; --accent-gold:#b8986e;
+  --accent-blue:#3d5a80; --accent-red:#a84448;
+  --border-color:#e0dcd5; --border-light:#ede9e3; --shadow-md:0 4px 12px rgba(0,0,0,.1);
+  --font-serif:Georgia,serif; --font-sans:'Segoe UI',Arial,sans-serif; --font-mono:'Consolas','Monaco',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-paper);color:var(--text-main);font-family:var(--font-sans);padding:24px;line-height:1.5}
+.shell{max-width:1120px;margin:0 auto}
+header{margin-bottom:16px;border-bottom:2px solid var(--bg-sidebar);padding-bottom:10px}
+h1{font-family:var(--font-serif);font-size:1.9rem;color:var(--bg-sidebar)}
+header em{color:var(--text-muted);font-family:var(--font-serif);font-style:italic;font-size:.9rem}
+.hint{background:#fff;border:1px solid var(--accent-gold);border-radius:12px;padding:13px 18px;margin-bottom:18px;font-size:.85rem}
+.hint code{font-family:var(--font-mono);background:var(--bg-paper);padding:1px 5px;border-radius:4px}
+
+/* layout a due colonne: strumento a sx, guida sticky a dx */
+.layout{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.aside{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+@media(max-width:900px){.aside{position:static;max-height:none;overflow:visible}}
+
+.panel{background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:20px;margin-bottom:18px}
+.grid3{display:grid;grid-template-columns:1fr;gap:14px}
+.fld label{display:block;font-size:.7rem;font-weight:700;color:var(--text-muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+select,input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--border-color);border-radius:8px;background:#fff;font-size:.85rem;font-family:var(--font-sans);color:var(--text-main)}
+select:focus,input:focus{outline:2px solid var(--accent-gold);border-color:var(--accent-gold)}
+.help{font-size:.75rem;color:var(--text-muted);margin-top:6px;min-height:1.3em}
+.help b{color:var(--text-main)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:640px){.row2{grid-template-columns:1fr}}
+.out{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:16px}
+.ibig{font:700 2.3rem var(--font-mono);color:var(--bg-sidebar)}
+.ibig small{font:400 .9rem var(--font-sans);color:var(--text-muted)}
+.badge{font-size:.8rem;padding:6px 14px;border-radius:20px;border:1px solid transparent;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.b-low{background:rgba(127,140,141,.15);color:var(--text-muted);border-color:rgba(127,140,141,.3)}
+.b-medium{background:rgba(61,90,128,.12);color:var(--accent-blue);border-color:rgba(61,90,128,.25)}
+.b-high{background:rgba(184,152,110,.18);color:#916c3d;border-color:rgba(184,152,110,.4)}
+.b-critical{background:rgba(168,68,72,.12);color:var(--accent-red);border-color:rgba(168,68,72,.3)}
+.b-none{background:var(--bg-paper-dark);color:var(--text-muted);border-color:var(--border-color)}
+.formula{font-family:var(--font-mono);font-size:.82rem;color:#55606a;margin-top:12px;background:var(--bg-paper);padding:9px 12px;border-radius:6px;border-left:3px solid var(--border-color)}
+h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-gold);margin:2px 0 8px}
+pre{font-family:var(--font-mono);font-size:.74rem;background:var(--bg-sidebar);color:#e8eaed;padding:12px 14px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-word;margin-top:6px}
+.cprow{display:flex;gap:10px;align-items:center;margin-top:8px}
+.btn{border:0;border-radius:8px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;background:var(--accent-gold);color:#fff}
+.btn:hover{filter:brightness(1.06)}
+.btn.copied{background:var(--accent-blue)}
+.tok{font-family:var(--font-mono);font-size:.82rem}
+textarea{width:100%;min-height:120px;resize:vertical;padding:10px 12px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-paper);font-family:var(--font-mono);font-size:.78rem;line-height:1.45;color:var(--text-main)}
+textarea:focus{outline:2px solid var(--accent-gold);border-color:var(--accent-gold);background:#fff}
+.detectmsg{font-size:.74rem;margin-left:10px}
+.detect-ok{color:var(--accent-blue);font-weight:700}
+.detect-no{color:var(--text-muted)}
+
+/* guida */
+.guide{padding:16px 18px}
+.guide h2{font-family:var(--font-serif);font-size:1.05rem;color:var(--bg-sidebar);margin-bottom:2px}
+.guide .lead{font-size:.78rem;color:var(--text-muted);margin-bottom:12px}
+.guide h4{font-size:.74rem;color:var(--accent-blue);margin:14px 0 5px;font-weight:700}
+.guide h4 span{font-weight:400;color:var(--text-muted);font-size:.92em}
+table.g{border-collapse:collapse;width:100%;margin-top:4px;font-size:.75rem}
+table.g th{background:var(--bg-paper-dark);text-align:left;padding:5px 7px;font-size:.64rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text-muted)}
+table.g td{border-top:1px solid var(--border-light);padding:6px 7px;vertical-align:top}
+table.g .bnd{font-weight:700;white-space:nowrap}
+table.g .anc{font-family:var(--font-mono);font-weight:700;white-space:nowrap;color:var(--bg-sidebar)}
+.mod{font-size:.72rem;color:var(--text-muted);margin-top:6px;font-style:italic}
+.thr{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+.thr span{font-family:var(--font-mono);font-size:.7rem;padding:4px 9px;border-radius:20px;border:1px solid transparent}
+.docnote{font-size:.72rem;color:var(--text-muted);margin-top:12px}
+.docnote code{font-family:var(--font-mono)}
+.asidehead{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-gold);font-weight:700;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+  <h1>Calcolatore — Indice d'impatto</h1>
+  <em>Intertestualità sotto sorveglianza — modello TEI+IA per il Castello dell'anima</em>
+</header>
+
+<div class="hint">
+  Inserisci <b>operation</b> (dà F), scegli <b>banda N</b> e <b>banda A</b> leggendo la <b>Guida qui a fianco →</b>:
+  lo strumento converte le bande nei valori‑ancora, applica <code>I = (4·F/3 + 2·N + A)/7</code>, assegna la classe
+  <code>#impact-*</code> e genera la <code>&lt;fs&gt;</code>. Tu scegli le bande, mai il numero.
+</div>
+
+<div class="layout">
+  <!-- COLONNA SINISTRA: lo strumento -->
+  <div>
+    <div class="panel">
+      <h3>La tua codifica (appunti)</h3>
+      <textarea id="codifica" placeholder="Incolla qui il tuo &lt;seg&gt; con l'@ana e il testo, per averlo davanti mentre scegli le bande. Es.&#10;&#10;&lt;seg xml:id=&quot;seg-III-tit&quot; ana=&quot;#operation-delimitazione …&quot;&gt;Del castello dell'anima…&lt;/seg&gt;"></textarea>
+      <div class="cprow"><button class="btn" id="detect">Rileva operation e xml:id</button><span class="detectmsg detect-no" id="detectmsg">gli appunti si salvano da soli in questo browser</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="grid3">
+        <div class="fld"><label>Operation → F</label>
+          <select id="op">
+            <option value="">— scegli —</option>
+            <option value="delimitazione">delimitazione (F=1)</option>
+            <option value="attenuatio">attenuatio (F=2)</option>
+            <option value="precisatio">precisatio (F=2)</option>
+            <option value="riequilibrio">riequilibrio (F=2)</option>
+            <option value="declaratio">declaratio (F=3)</option>
+          </select>
+          <div class="help" id="hop">Rango formale del marcatore (si legge, non si stima).</div></div>
+        <div class="fld"><label>Banda N (necessità)</label>
+          <select id="nb">
+            <option value="">— scegli —</option>
+            <option value="critica">critica → 0.90</option>
+            <option value="alta">alta → 0.75</option>
+            <option value="media">media → 0.55</option>
+            <option value="bassa">bassa → 0.30</option>
+          </select>
+          <div class="help" id="hn">Quanto il passo era esposto <b>prima</b> dell'intervento.</div></div>
+        <div class="fld"><label>Banda A (ambiguità)</label>
+          <select id="ab">
+            <option value="">— scegli —</option>
+            <option value="alta">alta → 0.85</option>
+            <option value="media">media → 0.675</option>
+            <option value="bassa">bassa → 0.40</option>
+          </select>
+          <div class="help" id="ha">Quanto l'occorrenza <b>restringe</b> le letture possibili.</div></div>
+      </div>
+
+      <div class="out">
+        <div><span class="ibig" id="ival">—</span><br><small>indice I</small></div>
+        <div id="badge" class="badge b-none">scegli i tre valori</div>
+      </div>
+      <div class="formula" id="formula">I = (4·F/3 + 2·N + A) / 7</div>
+    </div>
+
+    <div class="panel">
+      <div class="row2">
+        <div class="fld"><label>xml:id del segmento (per la fs)</label>
+          <input type="text" id="segid" placeholder="es. seg-III-tit"></div>
+        <div class="fld"><label>cert</label>
+          <select id="cert"><option>medium</option><option>high</option><option>low</option></select></div>
+      </div>
+      <h3 style="margin-top:18px">Token per l'@ana del &lt;seg&gt;</h3>
+      <div class="cprow"><span class="tok" id="tok">—</span><button class="btn" id="cptok" disabled>copia</button></div>
+      <h3 style="margin-top:16px">&lt;fs&gt; da incollare in &lt;standOff type="impact-index"&gt;</h3>
+      <pre id="fs">—</pre>
+      <button class="btn" id="cpfs" disabled>copia &lt;fs&gt;</button>
+    </div>
+  </div>
+
+  <!-- COLONNA DESTRA: la guida sticky -->
+  <aside class="aside">
+    <div class="panel guide">
+      <div class="asidehead">Sempre visibile mentre scegli</div>
+      <h2>Guida alla griglia</h2>
+      <p class="lead">Fissa e invariante. Scegli la <b>banda</b> leggendo il criterio; l'ancora è determinata.</p>
+
+      <h4>N — necessità <span>(«se togliessi il presidio, scivolerebbe verso panteismo/quietismo?»)</span></h4>
+      <table class="g"><tr><th>Banda</th><th>Criterio</th><th>Anc.</th><th>Nel <em>Castello</em></th></tr>
+        <tr><td class="bnd">Critica</td><td>N ≥ 0.85</td><td class="anc">0.90</td><td>toglierlo esporrebbe a eresia esplicita («divenuta un altro Dio»).</td></tr>
+        <tr><td class="bnd">Alta</td><td>0.65–0.85</td><td class="anc">0.75</td><td>passo sensibile; utile ma non collassa in eresia.</td></tr>
+        <tr><td class="bnd">Media</td><td>0.45–0.65</td><td class="anc">0.55</td><td>chiarificazione utile, esposizione moderata.</td></tr>
+        <tr><td class="bnd">Bassa</td><td>&lt; 0.45</td><td class="anc">0.30</td><td>funzione marginale o descrittiva.</td></tr>
+      </table>
+      <p class="mod">Spingono verso l'alto: lessico a rischio (unione, fusione, <em>otium</em>, annichilazione), metafore forti, nodi esposti del Libro III.</p>
+
+      <h4>A — riduzione dell'ambiguità <span>(quanto dell'ambiguità viene chiusa)</span></h4>
+      <table class="g"><tr><th>Banda</th><th>Criterio</th><th>Anc.</th><th>Nel <em>Castello</em></th></tr>
+        <tr><td class="bnd">Alta</td><td>A ≥ 0.80</td><td class="anc">0.85</td><td>chiude quasi del tutto l'ambiguità (c.159r «intendo dunque dire…»).</td></tr>
+        <tr><td class="bnd">Media</td><td>0.55–0.80</td><td class="anc">0.675</td><td>restringe il campo, lascia un margine.</td></tr>
+        <tr><td class="bnd">Bassa</td><td>&lt; 0.55</td><td class="anc">0.40</td><td>tocca l'ambiguità solo marginalmente.</td></tr>
+      </table>
+
+      <h4>F — funzione prudenziale <span>(si legge da <code>operation</code>)</span></h4>
+      <table class="g"><tr><th>F</th><th>Operation · marcatori</th></tr>
+        <tr><td class="anc">1</td><td><b>delimitazione</b> — <em>cioè, ossia</em>: circoscrive una parola.</td></tr>
+        <tr><td class="anc">2</td><td><b>attenuatio/precisatio/riequilibrio</b> — <em>s'intende, m'esplico</em>.</td></tr>
+        <tr><td class="anc">3</td><td><b>declaratio</b> — <em>io mi dichiaro</em>.</td></tr>
+      </table>
+
+      <h4>Soglie <code>#impact-*</code></h4>
+      <div class="thr">
+        <span class="b-low">low &lt; 0.50</span>
+        <span class="b-medium">medium 0.50–0.66</span>
+        <span class="b-high">high 0.66–0.82</span>
+        <span class="b-critical">critical ≥ 0.82</span>
+      </div>
+
+      <p class="docnote">Fonte completa: <code>docs/Protocollo-indice-impatto.md</code> · <code>docs/indice-impatto.md</code>.</p>
+    </div>
+  </aside>
+</div>
+</div>
+
+<script>
+"use strict";
+const F_BY_OP={delimitazione:1,attenuatio:2,precisatio:2,riequilibrio:2,declaratio:3};
+const N_ANCHOR={critica:0.90,alta:0.75,media:0.55,bassa:0.30};
+const A_ANCHOR={alta:0.85,media:0.675,bassa:0.40};
+const CSS={"impact-low":"b-low","impact-medium":"b-medium","impact-high":"b-high","impact-critical":"b-critical"};
+const OP_HELP={delimitazione:"<b>F=1</b> · circoscrive una parola (cioè/ossia).",attenuatio:"<b>F=2</b> · ridefinisce una proposizione esposta.",precisatio:"<b>F=2</b> · precisa una proposizione (intendo dunque dire).",riequilibrio:"<b>F=2</b> · riequilibra una proposizione a rischio.",declaratio:"<b>F=3</b> · dichiarazione performativa (io mi dichiaro)."};
+const N_HELP={critica:"<b>critica → 0.90</b> · toglierlo esporrebbe a eresia esplicita.",alta:"<b>alta → 0.75</b> · passo sensibile, non collassa in eresia.",media:"<b>media → 0.55</b> · chiarificazione utile, esposizione moderata.",bassa:"<b>bassa → 0.30</b> · funzione marginale o descrittiva."};
+const A_HELP={alta:"<b>alta → 0.85</b> · chiude quasi del tutto l'ambiguità.",media:"<b>media → 0.675</b> · restringe il campo, lascia un margine.",bassa:"<b>bassa → 0.40</b> · tocca l'ambiguità solo marginalmente."};
+const fmt=x=>{const s=x.toFixed(3);return s.endsWith("0")?s.slice(0,-1):s};
+const bandOf=I=>I<0.50?"impact-low":I<0.66?"impact-medium":I<0.82?"impact-high":"impact-critical";
+const $=id=>document.getElementById(id);
+
+function calc(){
+  const op=$("op").value, nb=$("nb").value, ab=$("ab").value;
+  $("hop").innerHTML = op?OP_HELP[op]:"Rango formale del marcatore (si legge, non si stima).";
+  $("hn").innerHTML  = nb?N_HELP[nb]:"Quanto il passo era esposto <b>prima</b> dell'intervento.";
+  $("ha").innerHTML  = ab?A_HELP[ab]:"Quanto l'occorrenza <b>restringe</b> le letture possibili.";
+  const badge=$("badge"), ival=$("ival"), tok=$("tok"), fs=$("fs"), formula=$("formula");
+  if(!op||!nb||!ab){
+    ival.textContent="—"; badge.className="badge b-none"; badge.textContent="scegli i tre valori";
+    tok.textContent="—"; fs.textContent="—"; formula.textContent="I = (4·F/3 + 2·N + A) / 7";
+    $("cptok").disabled=true; $("cpfs").disabled=true; return;
+  }
+  const F=F_BY_OP[op], Fn=F/3, N=N_ANCHOR[nb], A=A_ANCHOR[ab];
+  const I=(4*Fn+2*N+A)/7, cls=bandOf(I);
+  ival.textContent="I="+I.toFixed(3);
+  badge.className="badge "+CSS[cls]; badge.textContent=cls;
+  formula.textContent=`I = (4·${fmt(Fn)} + 2·${fmt(N)} + ${fmt(A)}) / 7 = ${I.toFixed(3)}  →  ${cls}`;
+  tok.textContent="#"+cls;
+  const raw=($("segid").value||"").trim();
+  const m=raw.match(/xml:id\s*=\s*["']([^"']+)["']/);
+  const id=(m?m[1]:raw.replace(/^#/,"").replace(/["']/g,"").trim())||"SEG-ID";
+  const cert=$("cert").value;
+  fs.textContent=`<fs xml:id="idx-${id}" corresp="#${id}" cert="${cert}"><f name="N_band"><symbol value="${nb}"/></f><f name="A_band"><symbol value="${ab}"/></f><f name="N"><numeric value="${fmt(N)}"/></f><f name="A"><numeric value="${fmt(A)}"/></f><f name="F"><numeric value="${F}"/></f><f name="Fnorm"><numeric value="${fmt(Fn)}"/></f><f name="I"><numeric value="${I.toFixed(3)}"/></f></fs>`;
+  $("cptok").disabled=false; $("cpfs").disabled=false;
+}
+function copy(el,btn){navigator.clipboard.writeText(el.textContent).then(()=>{btn.classList.add("copied");const t=btn.textContent;btn.textContent="copiato ✓";setTimeout(()=>{btn.classList.remove("copied");btn.textContent=t;},1200);});}
+["op","nb","ab","segid","cert"].forEach(id=>$(id).addEventListener("input",calc));
+$("cptok").addEventListener("click",()=>copy($("tok"),$("cptok")));
+$("cpfs").addEventListener("click",()=>copy($("fs"),$("cpfs")));
+
+// --- appunti di codifica: persistenza locale + rilevamento operation/xml:id ---
+const KEY="castello-codifica-appunti";
+const ta=$("codifica"), msg=$("detectmsg");
+try{ const s=localStorage.getItem(KEY); if(s) ta.value=s; }catch(e){}
+ta.addEventListener("input",()=>{ try{ localStorage.setItem(KEY,ta.value); }catch(e){} });
+$("detect").addEventListener("click",()=>{
+  const t=ta.value; const found=[];
+  const mId=t.match(/xml:id\s*=\s*["']([^"']+)["']/);
+  if(mId){ $("segid").value=mId[1]; found.push("xml:id = "+mId[1]); }
+  const mOp=t.match(/#?operation-([a-zà-ù]+)/i);
+  if(mOp && F_BY_OP[mOp[1].toLowerCase()]!=null){ $("op").value=mOp[1].toLowerCase(); found.push("operation = "+mOp[1].toLowerCase()); }
+  calc();
+  if(found.length){ msg.className="detectmsg detect-ok"; msg.textContent="rilevato: "+found.join(" · "); }
+  else { msg.className="detectmsg detect-no"; msg.textContent="nessun xml:id o #operation-* trovato negli appunti"; }
+});
+</script>
+</body>
+</html>
