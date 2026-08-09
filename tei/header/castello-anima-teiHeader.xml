@@ -1672,7 +1672,25 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
-            
+                        <change when="2026-08-09" who="#editor" ana="#fase-quality-assurance"> Consolidamento
+                del pilota III.1 e dell'infrastruttura di validazione. Collegato il file del
+                <code>text</code> alla testata consolidata tramite <code>xi:include</code>
+                (xpointer <code>teiHeader-castello</code>), ripristinando l'integrità referenziale
+                di <code>rs</code>, <code>wit</code>, <code>hand</code> e <code>@ana</code>. Corretto
+                il referente divino: introdotta l'entità <code>person</code> <code>xml:id="dio"</code>
+                in <code>particDesc</code> e allineate le otto <code>rs type="divinita"</code> (prima
+                erroneamente riferite all'autrice o prive di riferimento). Affinato l'asse
+                <code>phase</code> del campione su progressione intra-capitolo
+                (introduction → mediana → conclusive) e rimosso un <code>@ref</code> improprio su
+                «unione» (l'intertesto resta in <code>@ana</code>). Marcate quattro normalizzazioni
+                grafiche minori residue con <code>choice</code>/<code>orig</code>/<code>reg</code>.
+                Sul piano tassonomico: aggiunto il vincolo Schematron
+                <code>func-branch-consistency</code> (coerenza del ramo sotto l'asse
+                <code>func</code>) e documentato l'uso di <code>risk-dottrinale</code> come categoria
+                contenitore (astensione semantica). Attivata in CI la validazione del
+                <code>text</code> (RelaxNG TEI All + guardia referenziale <code>@ana</code> +
+                guardia di co-occorrenza degli assi) accanto alla guardia di non-divergenza
+                fonte↔testata. </change>
             <change when="2026-08-07" who="#editor" ana="#fase-armonizzazione-header"> Completato e
                 riordinato il <code>tagsDecl</code>: aggiunti 22 elementi finora usati ma non
                 dichiarati (<code>argument</code>, <code>titlePage</code>, <code>titlePart</code>,
