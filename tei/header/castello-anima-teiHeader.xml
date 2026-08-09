@@ -1455,6 +1455,14 @@
                             <note type="biographical">Autrice autografa del manoscritto</note>
                         </trait>
                     </person>
+                    <!-- Referente divino dell'unione mistica (Dio / lo Sposo / l'Amato) -->
+                    <person xml:id="dio">
+                        <persName>Dio</persName>
+                        <trait>
+                            <note type="doctrinal">Referente divino: nel testo «Dio», «mio Dio», «lo sposo», «l'amato». 
+                                Entità di riferimento per le rs type="divinita".</note>
+                        </trait>
+                    </person>
 
                     <!-- mano esterna non identificata-->
                     <person xml:id="esterno">
