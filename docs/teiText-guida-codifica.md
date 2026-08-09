@@ -12,7 +12,7 @@
 
 ## Premessa
 
-Questo documento espone **il set di tag adottato per la codifica del testo** del *Castello dell'anima* e lo **argomenta**: per ciascun fenomeno spiega *quale* elemento si usa, *con quali attributi e valori*. È dunque, insieme, la parte metodologica sulla marcatura e il **contratto di codifica** per `castello-anima-text.xml`.
+Questo documento espone **il set di tag adottato per la codifica del testo** del *Castello dell'anima* e lo **argomenta**: per ciascun fenomeno spiega *quale* elemento si usa, *con quali attributi e valori*. È dunque, insieme, la parte metodologica sulla marcatura e il **contratto di codifica** per `castello-anima-teiText.xml`.
 
 Tre principi lo governano:
 
