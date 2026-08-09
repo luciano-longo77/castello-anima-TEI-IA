@@ -8,7 +8,7 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-Strumenti a supporto dell'edizione TEI+IA del *Castello dell'anima*: uno script a riga di comando e tre
+Strumenti a supporto dell'edizione del *Castello dell'anima*: uno script a riga di comando e tre
 strumenti visuali autonomi (pagine HTML, si aprono nel browser con doppio clic, **nessuna dipendenza esterna**).
 Gli strumenti sono **aiuti** all'annotazione: la verifica autoritativa resta la **CI** (guardie E1/E2, co-occorrenza,
 RelaxNG, Schematron, NFC).
@@ -17,13 +17,13 @@ RelaxNG, Schematron, NFC).
 
 ```mermaid
 flowchart TD
-    A["Testo trascritto<br/>si individua il seg"]:::step --> B["1-assistente-ana.html<br/>scelta degli assi → @ana"]:::tool
+    A["Testo trascritto<br/> si individua il seg"]:::step --> B["1-assistente-ana.html<br/>scelta degli assi → @ana"]:::tool
     B --> C["@ana<br/>impact = segnaposto #impact*"]:::data
-    C --> D["2-calcolatore-indice.html<br/>1 segmento · banda N + banda A"]:::tool
-    D --> F["teiText compilato<br/>#impact-* in @ana + fs in standOff"]:::data
-    F --> G["3-visualizzatore-indice.html<br/>audit · distribuzione · export CSV/JSON"]:::tool
+    C --> D["2-calcolatore-indice.html<br/> 1 segmento · banda N + banda A"]:::tool
+    D --> F["teiText compilato<br/> #impact-* in @ana + fs in standOff"]:::data
+    F --> G["3-visualizzatore-indice.html<br/> audit · distribuzione · export CSV/JSON"]:::tool
     F --> H["impact_index.py<br/>audit · authoring batch (--bands)"]:::tool
-    G --> I["CI GitHub — verifica autoritativa<br/>E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
+    G --> I["CI GitHub — verifica autoritativa<br/> E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
     H --> I
 
     classDef step fill:#ffffff,stroke:#7f8c8d,color:#2c3e50;
@@ -32,8 +32,8 @@ flowchart TD
     classDef ci fill:#1a252f,stroke:#1a252f,color:#e8eaed;
 ```
 
-Confine metodologico: lo studioso decide gli **assi** interpretativi e le due **bande** N/A; tutto il resto
-(F, I, classe, `<fs>`) è prodotto **automaticamente** e in modo **deterministico**. Il valore I non si digita:
+Confine metodologico: lo studioso decide gli **assi** interpretativi e le due **bande** N (necessità interpretativa) /A (riduzione dell'ambiguità); tutto il resto
+(F (funzione prudenziale, letta da *operation*), I (indice), classe, `<fs>`) è prodotto **automaticamente** e in modo **deterministico**. Il valore I non si digita:
 si calcola.
 
 ## Gli strumenti
@@ -51,18 +51,17 @@ si calcola.
 
 Individuato il `<seg>`, lo studioso sceglie per ogni **asse** la categoria dalla tassonomia (con descrizione a
 fianco); lo strumento compone l'`@ana` con i prefissi corretti (l'asse `func` senza prefisso — `#legittimazione-…`,
-`#ethos-…` —, gli altri con prefisso) e genera il `<seg>`. L'asse `impact` resta il segnaposto `#impact*`, risolto
-poi dal Calcolatore.
+`#ethos-…`, gli altri con prefisso) e genera il `<seg>`. L'asse `impact` resta il segnaposto **`#impact*`**, risolto
+poi dal *Calcolatore*.
 
 Include un pannello **Controlli** che replica in tempo reale le guardie della CI: **E2** (ogni token risolve alla
 tassonomia), **co-occorrenza** (1 `#operation-*`, 1 fase base, `#phase-critical` sempre con una base), assenza di
-duplicati, presenza di `impact`. Le categorie sono uno **snapshot** di `tei/taxonomy/tassonomia-gh.xml`: se la
-tassonomia cambia, rigenerare lo strumento.
+duplicati, presenza di `impact`. Le categorie sono uno **snapshot** di **`tei/taxonomy/tassonomia-gh.xml`**.
 
 ### `2-calcolatore-indice.html` — Calcolatore indice d'impatto
 
 Strumento a segmento singolo, da usare **mentre** si codifica. Si scelgono `operation` (dà F), **banda N** e
-**banda A**; applica `I = (4·F/3 + 2·N + A)/7` e restituisce `I`, la classe `#impact-*` e la `<fs>` pronta da
+**banda A**; applica **`I = (4·F/3 + 2·N + A)/7`** e restituisce `I`, la classe `#impact-*` e la `<fs>` pronta da
 incollare. Include la **Guida alla griglia** (rubriche N/A/F, ancore, soglie, esempi ancorati) sempre visibile a
 fianco, l'aiuto contestuale sotto ogni menù e un'area appunti per la codifica. Il numero non si digita: si sceglie
 la banda, l'ancora è determinata. Per generare le `<fs>` di **molti** segmenti in un colpo si usa
@@ -125,4 +124,4 @@ verità** è il repository (tassonomia, schemi, guardie).
 
 Le pagine HTML sono **autonome** (nessuna libreria esterna, nessuna rete) e non vengono validate dalla CI: sono
 strumenti d'ausilio, non dati del corpus (in `tools/**` non scatta alcun workflow). I dati tassonomici incorporati
-negli strumenti sono uno **snapshot** di `tei/taxonomy/tassonomia-gh.xml` al momento della generazione.
+negli strumenti sono uno **snapshot** di **`tei/taxonomy/tassonomia-gh.xml`** al momento della generazione.
