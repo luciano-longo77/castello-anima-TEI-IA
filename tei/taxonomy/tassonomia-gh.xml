@@ -24,7 +24,7 @@
             </titleStmt>
             <editionStmt>
                 <edition n="working">Versione di lavoro: modello tassonomico in fase di verifica
-                    incrociata con il corpus annotato (castello-anima-text.xml). Le categorie sono
+                    incrociata con il corpus annotato (castello-anima-teiText.xml). Le categorie sono
                     state validate per coerenza interna e per aderenza teorica; l’allineamento
                     lessicale con i valori @ana realmente usati nel testo codificato è ancora in
                     corso e non completato.</edition>
@@ -43,7 +43,7 @@
                     Il manoscritto elencato di seguito è l’oggetto di applicazione delle categorie qui definite, non
                     la fonte diretta del testo tassonomico. La trascrizione TEI del manoscritto, a cui
                     questa tassonomia si applica tramite l’attributo @ana, è un documento separato
-                    (castello-anima-text.xml).
+                    (castello-anima-teiText.xml).
                    
                 <bibl type="ms"> Palermo, BCP, ms. 2 Qq E 29 (sec. XVII ex.) - "Castello dell’anima"
                     di suor Teresa di San Geronimo (Anna La Longa) </bibl>
