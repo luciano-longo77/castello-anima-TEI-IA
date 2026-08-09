@@ -18,7 +18,7 @@ RelaxNG, Schematron, NFC).
 ```mermaid
 flowchart TD
     A["Testo trascritto<br/> si individua il `seg`"]:::step --> B["1-assistente-ana.html<br/>scelta degli assi → `@ana`"]:::tool
-    B --> C["@ana<br/>impact = segnaposto `#impact*`"]:::data
+    B --> C["@ana<br/> impact = segnaposto `#impact*`"]:::data
     C --> D["2-calcolatore-indice.html<br/> 1 segmento · banda N + banda A"]:::tool
     D --> F["teiText compilato<br/> `#impact`-* in `@ana` + `fs` in `standOff`"]:::data
     F --> G["3-visualizzatore-indice.html<br/> audit · distribuzione · export CSV/JSON"]:::tool
