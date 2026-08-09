@@ -192,7 +192,7 @@ la forza regolativa di ogni occorrenza annotata. Combina tre parametri:
   scala ordinale {1, 2, 3}, **derivata dal rango dell'asse `operation`**:
   - `operation-delimitazione` → F = 1 (il «cioè»: circoscrive una parola);
   - `operation-attenuatio` / `operation-precisatio` / `operation-riequilibrio`
-    → F = 2 (il «ciò s'intende»: ridefinisce una proposizione);
+    → F = 2 (il «s'intende/ non s'intende»: ridefinisce una proposizione);
   - `operation-declaratio` → F = 3 (il «io mi dichiaro»: dichiarazione performativa).
 
 ### 5.1 Formula (AHP)
