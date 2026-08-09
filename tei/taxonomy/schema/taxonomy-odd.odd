@@ -159,6 +159,16 @@
                     </constraint>
                 </constraintSpec>
                 
+                <constraintSpec ident="func-branch-consistency" scheme="schematron">
+                    <desc>Nell'asse "func" — esente dalla prefissazione radice per scelta redazionale — ogni <gi>category</gi> deve comunque appartenere a uno dei quattro rami di primo livello: deve essere <mentioned>legittimazione</mentioned>, <mentioned>pedagogia</mentioned>, <mentioned>rischio</mentioned> o <mentioned>ethos</mentioned>, oppure iniziare con uno di questi seguìto da trattino. Porta "func" alla pari degli altri assi sul controllo del ramo (non dell'ortografia della foglia).</desc>
+                    <constraint>
+                        <sch:rule context="tei:taxonomy[@xml:id='func']//tei:category">
+                            <sch:assert role="error"
+                                test="@xml:id='legittimazione' or @xml:id='pedagogia' or @xml:id='rischio' or @xml:id='ethos' or starts-with(@xml:id,'legittimazione-') or starts-with(@xml:id,'pedagogia-') or starts-with(@xml:id,'rischio-') or starts-with(@xml:id,'ethos-')">Errore di coerenza del dato: sotto l'asse "func" l'@xml:id (<sch:value-of select="@xml:id"/>) deve essere uno dei quattro rami (legittimazione, pedagogia, rischio, ethos) o iniziare con uno di essi.</sch:assert>
+                        </sch:rule>
+                    </constraint>
+                </constraintSpec>
+                
             </schemaSpec>
         </body>
     </text>
