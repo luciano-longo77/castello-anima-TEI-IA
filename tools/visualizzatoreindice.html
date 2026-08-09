@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizzatore — Indice d'impatto · Castello dell'anima</title>
+<meta name="dc.creator" content="Luciano Longo">
+<style>
+:root {
+  --bg-paper:#faf8f5; --bg-paper-dark:#f5f1e8; --bg-sidebar:#1a252f;
+  --text-main:#2c3e50; --text-muted:#7f8c8d; --accent-gold:#b8986e;
+  --accent-blue:#3d5a80; --accent-green:#3f7d5a; --accent-red:#a84448;
+  --border-color:#e0dcd5; --border-light:#ede9e3;
+  --shadow-md:0 4px 12px rgba(0,0,0,.1);
+  --font-serif:Georgia, serif; --font-sans:'Segoe UI', Arial, sans-serif;
+  --font-mono:'Consolas','Monaco',monospace;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg-paper); color:var(--text-main); font-family:var(--font-sans); padding:24px; line-height:1.5; }
+header { margin-bottom:20px; border-bottom:2px solid var(--bg-sidebar); padding-bottom:10px; }
+h1 { font-family:var(--font-serif); font-size:2.1rem; color:var(--bg-sidebar); margin-bottom:4px; }
+header em { color:var(--text-muted); font-family:var(--font-serif); font-style:italic; }
+header .meta { font-size:.78rem; color:var(--text-muted); margin-top:6px; }
+
+.epistemic-layer { background:#fff; border:1px solid var(--accent-gold); padding:16px 20px; margin-bottom:20px; border-radius:12px; font-size:.85rem; }
+.epistemic-layer code { font-family:var(--font-mono); background:var(--bg-paper); padding:1px 5px; border-radius:4px; }
+
+.toolbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:20px; }
+.btn { border:0; border-radius:8px; padding:10px 16px; font-size:.85rem; font-weight:700; cursor:pointer; font-family:var(--font-sans); transition:all .2s ease; }
+.btn-p { background:var(--bg-sidebar); color:#fff; }
+.btn-p:hover:not(:disabled){ background:#24323f; box-shadow:var(--shadow-md); }
+.btn-gold { background:var(--accent-gold); color:#fff; }
+.btn-gold:hover:not(:disabled){ filter:brightness(1.06); box-shadow:var(--shadow-md); }
+.btn-s { background:var(--bg-paper-dark); color:var(--text-main); border:1px solid var(--border-color); }
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+label.file { display:inline-flex; align-items:center; }
+input[type=file]{ display:none; }
+.summary { margin-left:auto; font-size:.8rem; color:var(--text-muted); font-family:var(--font-mono); }
+
+.dash { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-bottom:20px; }
+.card { background:#fff; border:1px solid var(--border-color); border-radius:10px; padding:16px; }
+.card h3 { font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--accent-gold); margin-bottom:10px; }
+.dist-row { display:flex; align-items:center; gap:8px; margin:5px 0; font-size:.8rem; }
+.dist-row .lbl { width:120px; font-family:var(--font-mono); font-size:.72rem; }
+.dist-bar { height:16px; border-radius:4px; min-width:2px; }
+.dist-row .n { font-weight:700; }
+.big { font-size:1.7rem; font-weight:700; font-family:var(--font-mono); }
+.big small { font-size:.8rem; font-weight:400; color:var(--text-muted); }
+.audit-ok { color:var(--accent-green); }
+.audit-bad { color:var(--accent-red); }
+.issues { font-size:.78rem; }
+.issues li { margin-left:16px; }
+
+.filters { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px; font-size:.8rem; }
+.filters select { padding:6px 8px; border:1px solid var(--border-color); border-radius:6px; background:#fff; font-size:.8rem; }
+
+table.grid { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border-color); border-radius:8px; overflow:hidden; font-size:.82rem; }
+table.grid th { background:var(--bg-sidebar); color:#fff; text-align:left; padding:9px 10px; font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; cursor:pointer; white-space:nowrap; }
+table.grid th:hover { background:#24323f; }
+table.grid td { padding:8px 10px; border-top:1px solid var(--border-light); vertical-align:top; }
+table.grid tr:hover td { background:var(--bg-paper); }
+.mono { font-family:var(--font-mono); }
+.seg-text { color:#55606a; font-family:var(--font-serif); max-width:340px; }
+.band { font-family:var(--font-mono); font-size:.74rem; }
+.band b { color:var(--text-main); }
+
+.badge { font-size:.68rem; padding:3px 9px; border-radius:20px; border:1px solid transparent; text-transform:uppercase; letter-spacing:.4px; font-weight:700; white-space:nowrap; }
+.b-low { background:rgba(127,140,141,.15); color:var(--text-muted); border-color:rgba(127,140,141,.3); }
+.b-medium { background:rgba(61,90,128,.12); color:var(--accent-blue); border-color:rgba(61,90,128,.25); }
+.b-high { background:rgba(184,152,110,.18); color:#916c3d; border-color:rgba(184,152,110,.4); }
+.b-critical { background:rgba(168,68,72,.12); color:var(--accent-red); border-color:rgba(168,68,72,.3); }
+.st-ok { color:var(--accent-green); font-weight:700; }
+.st-bad { color:var(--accent-red); font-weight:700; cursor:help; }
+.empty { color:var(--text-muted); text-align:center; padding:56px 0; font-style:italic; }
+.wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Visualizzatore — Indice d'impatto</h1>
+  <em>Intertestualità sotto sorveglianza — modello TEI+IA per il Castello dell'anima</em>
+  <p class="meta">Autrice: Teresa di San Geronimo (Anna La Longa, 1670–post 1703) · Editor: Luciano Longo · Licenza: CC BY 4.0</p>
+</header>
+
+<section class="epistemic-layer">
+  <b>Sola lettura.</b> Dopo la codifica, apri il <code>teiText.xml</code> compilato: lo strumento
+  <b>legge le <code>&lt;fs&gt;</code></b> dell'indice, <b>ricalcola I</b> con la formula AHP dai valori-ancora,
+  <b>verifica la coerenza</b> con la classe <code>#impact-*</code> dichiarata in <code>@ana</code> e i puntatori,
+  e <b>genera i dati</b> come tabella + distribuzione, esportabili in CSV/JSON. Non modifica il TEI.
+</section>
+
+<div class="toolbar">
+  <label class="file"><span class="btn btn-p">Apri teiText.xml</span><input type="file" id="file" accept=".xml,.tei,text/xml"></label>
+  <button class="btn btn-s" id="demo">Carica esempio</button>
+  <button class="btn btn-gold" id="csv" disabled>Esporta CSV</button>
+  <button class="btn btn-gold" id="json" disabled>Esporta JSON</button>
+  <span class="summary" id="summary">nessun file caricato</span>
+</div>
+
+<div id="dash" class="dash" hidden></div>
+<div id="content"><div class="empty">Apri un <code>teiText.xml</code> compilato o carica l'esempio.</div></div>
+
+<script>
+"use strict";
+const XML="http://www.w3.org/XML/1998/namespace";
+const F_BY_OP={delimitazione:1,attenuatio:2,precisatio:2,riequilibrio:2,declaratio:3};
+const N_ANCHOR={critica:0.90,alta:0.75,media:0.55,bassa:0.30};
+const A_ANCHOR={alta:0.85,media:0.675,bassa:0.40};
+const WF=4,WN=2,WA=1,WSUM=WF+WN+WA;
+const CLASS_CSS={"impact-low":"b-low","impact-medium":"b-medium","impact-high":"b-high","impact-critical":"b-critical"};
+const CLASS_COLOR={"impact-low":"#7f8c8d","impact-medium":"#3d5a80","impact-high":"#b8986e","impact-critical":"#a84448"};
+const nBandOf=x=> x>=0.85?"critica": x>=0.65?"alta": x>=0.45?"media":"bassa";
+const aBandOf=x=> x>=0.80?"alta": x>=0.55?"media":"bassa";
+const impactBand=I=> I<0.50?"impact-low": I<0.66?"impact-medium": I<0.82?"impact-high":"impact-critical";
+const cap=s=>s?s[0].toUpperCase()+s.slice(1):s;
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+let rows=[], issues=[], sortKey="id", sortDir=1, filterClass="";
+
+function anaTokens(el){return (el.getAttribute("ana")||"").split(/\s+/).map(t=>t.replace(/^#/,"")).filter(Boolean);}
+function axisOf(el,prefix){for(const t of anaTokens(el)) if(t.startsWith(prefix)) return t.slice(prefix.length); return null;}
+function impactOf(el){for(const t of anaTokens(el)) if(t.startsWith("impact-")) return t; return null;}
+function fVals(fs){
+  const out={sym:{},num:{}};
+  [...fs.children].forEach(f=>{
+    if(f.localName!=="f")return;
+    const name=f.getAttribute("name");
+    const num=[...f.children].find(c=>c.localName==="numeric");
+    const sym=[...f.children].find(c=>c.localName==="symbol");
+    if(num) out.num[name]=parseFloat(num.getAttribute("value"));
+    if(sym) out.sym[name]=sym.getAttribute("value");
+  });
+  return out;
+}
+
+function parse(text){
+  const doc=new DOMParser().parseFromString(text,"application/xml");
+  if(doc.querySelector("parsererror")){alert("XML non valido o non ben formato.");return;}
+  const ids=new Set();
+  doc.querySelectorAll("*").forEach(e=>{const i=e.getAttributeNS(XML,"id"); if(i) ids.add(i);});
+  const segEls=[...doc.querySelectorAll("seg")].filter(s=>s.getAttributeNS(XML,"id"));
+  const segById={}; segEls.forEach(s=>segById[s.getAttributeNS(XML,"id")]=s);
+  const fsEls=[...doc.querySelectorAll("fs")].filter(fs=>(fs.getAttribute("corresp")||"").startsWith("#"));
+  const fsByCorr={}; fsEls.forEach(fs=>{fsByCorr[(fs.getAttribute("corresp")||"").replace(/^#/,"")]=fs;});
+
+  rows=[]; issues=[];
+  // puntatori: fs -> seg inesistente
+  fsEls.forEach(fs=>{const c=(fs.getAttribute("corresp")||"").replace(/^#/,""); if(!ids.has(c)) issues.push(`<fs ${fs.getAttributeNS(XML,"id")||"?"}> @corresp #${c} non esiste`);});
+  // seg con #impact-* senza fs
+  segEls.forEach(s=>{const id=s.getAttributeNS(XML,"id"); if(impactOf(s)&&!fsByCorr[id]) issues.push(`<seg ${id}> ha ${impactOf(s)} ma nessuna <fs> lo referenzia`);});
+
+  fsEls.forEach(fs=>{
+    const id=(fs.getAttribute("corresp")||"").replace(/^#/,"");
+    const seg=segById[id];
+    const v=fVals(fs);
+    const op=seg?axisOf(seg,"operation-"):null;
+    const F=v.num.F!=null?v.num.F:(op?F_BY_OP[op]:null);
+    const N=v.num.N, A=v.num.A;
+    const symN=v.sym.N_band||null, symA=v.sym.A_band||null;
+    const declI=v.num.I;
+    const declClass=seg?impactOf(seg):null;
+    // audit alla impact_index.py: banda dal decimale -> ancora -> ricalcolo
+    let calcI=null, calcClass=null, nb=null, ab=null, aN=null, aA=null;
+    if(F!=null && N!=null && A!=null){
+      nb=nBandOf(N); ab=aBandOf(A); aN=N_ANCHOR[nb]; aA=A_ANCHOR[ab];
+      calcI=(WF*(F/3)+WN*aN+WA*aA)/WSUM;
+      calcClass=impactBand(calcI);
+    }
+    const reasons=[];
+    if(declClass&&calcClass&&declClass!==calcClass) reasons.push(`classe dichiarata ${declClass} ≠ ricalcolata ${calcClass}`);
+    if(declI!=null&&calcI!=null&&Math.abs(declI-calcI)>0.0015) reasons.push(`I dichiarato ${declI.toFixed(3)} ≠ formula ${calcI.toFixed(3)}`);
+    if(symN&&nb&&symN!==nb) reasons.push(`N_band «${symN}» ≠ banda del valore (${nb})`);
+    if(symA&&ab&&symA!==ab) reasons.push(`A_band «${symA}» ≠ banda del valore (${ab})`);
+    if(!seg) reasons.push("nessun <seg> corrispondente");
+    rows.push({id,text:seg?seg.textContent.trim().replace(/\s+/g," "):"",op,F,
+      N,A,symN,symA,nb,ab,I:declI,declClass,calcClass,calcI,
+      cert:fs.getAttribute("cert")||seg&&seg.getAttribute("cert")||"",
+      ok:reasons.length===0,reasons});
+  });
+  render();
+}
+
+function render(){
+  const dash=document.getElementById("dash"), content=document.getElementById("content");
+  if(!rows.length){dash.hidden=true; content.innerHTML='<div class="empty">Nessuna &lt;fs&gt; d\'indice trovata (standOff type="impact-index").</div>';
+    document.getElementById("summary").textContent="0 segmenti"; toggleExport(false); return;}
+  // distribuzione
+  const byClass={"impact-low":0,"impact-medium":0,"impact-high":0,"impact-critical":0};
+  const byF={1:0,2:0,3:0};
+  let okc=0;
+  rows.forEach(r=>{ if(r.declClass&&byClass[r.declClass]!=null) byClass[r.declClass]++; if(byF[r.F]!=null) byF[r.F]++; if(r.ok) okc++;});
+  const tot=rows.length, maxc=Math.max(1,...Object.values(byClass));
+  const distHTML=Object.entries(byClass).map(([k,n])=>`<div class="dist-row"><span class="lbl">${k.replace("impact-","")}</span>
+    <span class="dist-bar" style="width:${Math.round(n/maxc*140)}px;background:${CLASS_COLOR[k]}"></span><span class="n">${n}</span></div>`).join("");
+  const fHTML=Object.entries(byF).map(([k,n])=>`<div class="dist-row"><span class="lbl">F=${k}</span>
+    <span class="dist-bar" style="width:${Math.round(n/Math.max(1,...Object.values(byF))*140)}px;background:var(--accent-blue)"></span><span class="n">${n}</span></div>`).join("");
+  const issuesHTML = issues.length
+    ? `<ul class="issues audit-bad">${issues.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`
+    : `<span class="audit-ok">nessun problema di puntatori</span>`;
+  dash.hidden=false;
+  dash.innerHTML=`
+    <div class="card"><h3>Segmenti indicizzati</h3><div class="big">${tot}<small> &lt;fs&gt;</small></div>
+      <div style="margin-top:8px;font-size:.8rem" class="${okc===tot?'audit-ok':'audit-bad'}">
+      Coerenza audit: <b>${okc}/${tot}</b> ${okc===tot?'✓':'— controlla la colonna Stato'}</div></div>
+    <div class="card"><h3>Distribuzione per classe</h3>${distHTML}</div>
+    <div class="card"><h3>Distribuzione per F (operation)</h3>${fHTML}</div>
+    <div class="card"><h3>Validazione puntatori</h3>${issuesHTML}</div>`;
+
+  // filtro + tabella
+  let view=rows.slice();
+  if(filterClass) view=view.filter(r=>r.declClass===filterClass);
+  view.sort((a,b)=>{let x=a[sortKey],y=b[sortKey]; if(x==null)x=""; if(y==null)y=""; return (x>y?1:x<y?-1:0)*sortDir;});
+  const th=(k,l)=>`<th data-k="${k}">${l}${sortKey===k?(sortDir>0?" ▲":" ▼"):""}</th>`;
+  const rowsHTML=view.map(r=>`<tr>
+    <td class="mono">${esc(r.id)}</td>
+    <td class="seg-text">${esc(r.text.slice(0,90))}${r.text.length>90?"…":""}</td>
+    <td>${esc(cap(r.op)||"—")}</td>
+    <td class="mono" style="text-align:center">${r.F??"—"}</td>
+    <td class="band">${r.symN||r.nb||"—"} <b>${r.N!=null?r.N.toFixed(2):"—"}</b></td>
+    <td class="band">${r.symA||r.ab||"—"} <b>${r.A!=null?r.A.toFixed(3):"—"}</b></td>
+    <td class="mono"><b>${r.I!=null?r.I.toFixed(3):"—"}</b></td>
+    <td>${r.declClass?`<span class="badge ${CLASS_CSS[r.declClass]}">${r.declClass}</span>`:"—"}</td>
+    <td class="mono" style="text-align:center">${esc(r.cert)}</td>
+    <td>${r.ok?'<span class="st-ok">OK</span>':`<span class="st-bad" title="${esc(r.reasons.join(' · '))}">DIVERGE</span>`}</td>
+  </tr>`).join("");
+  content.innerHTML=`
+    <div class="filters">
+      <label>Filtra classe:
+        <select id="fc">
+          <option value="">tutte (${tot})</option>
+          ${Object.entries(byClass).map(([k,n])=>`<option value="${k}" ${filterClass===k?"selected":""}>${k} (${n})</option>`).join("")}
+        </select></label>
+      <span style="color:var(--text-muted)">clicca un'intestazione per ordinare</span>
+    </div>
+    <div class="wrap"><table class="grid"><thead><tr>
+      ${th("id","Segmento")}${th("text","Testo")}${th("op","Operazione")}${th("F","F")}
+      ${th("N","N (banda→val)")}${th("A","A (banda→val)")}${th("I","I")}${th("declClass","Classe")}${th("cert","cert")}${th("ok","Stato")}
+    </tr></thead><tbody>${rowsHTML}</tbody></table></div>`;
+  content.querySelectorAll("th").forEach(h=>h.addEventListener("click",()=>{
+    const k=h.dataset.k; if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir=1;} render();
+  }));
+  content.querySelector("#fc").addEventListener("change",e=>{filterClass=e.target.value; render();});
+  document.getElementById("summary").textContent=`${tot} segmenti · ${okc}/${tot} coerenti`;
+  toggleExport(true);
+}
+
+function toggleExport(on){document.getElementById("csv").disabled=!on; document.getElementById("json").disabled=!on;}
+function download(name,text,type){
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([text],{type}));
+  a.download=name; a.click();
+}
+function exportCSV(){
+  const cols=["id","text","op","F","N_band","N","A_band","A","Fnorm","I","classe","cert","stato","note"];
+  const line=a=>a.map(x=>`"${String(x==null?"":x).replace(/"/g,'""')}"`).join(",");
+  const body=rows.map(r=>line([r.id,r.text,r.op,r.F,r.symN||r.nb,r.N,r.symA||r.ab,r.A,
+    r.F!=null?(r.F/3).toFixed(3):"",r.I,r.declClass,r.cert,r.ok?"OK":"DIVERGE",r.reasons.join(" · ")]));
+  download("indice-impatto.csv",[line(cols),...body].join("\n"),"text/csv");
+}
+function exportJSON(){
+  const data=rows.map(r=>({id:r.id,operation:r.op,F:r.F,Fnorm:r.F!=null?+(r.F/3).toFixed(3):null,
+    N_band:r.symN||r.nb,N:r.N,A_band:r.symA||r.ab,A:r.A,I:r.I,classe:r.declClass,cert:r.cert,
+    coerente:r.ok,note:r.reasons}));
+  download("indice-impatto.json",JSON.stringify({generato:"visualizzatore-indice-impatto",segmenti:data.length,dati:data,puntatori:issues},null,2),"application/json");
+}
+
+document.getElementById("file").addEventListener("change",e=>{const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>parse(r.result); r.readAsText(f);});
+document.getElementById("csv").addEventListener("click",exportCSV);
+document.getElementById("json").addEventListener("click",exportJSON);
+document.getElementById("demo").addEventListener("click",()=>parse(`<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body>
+ <seg xml:id="seg-c8-desiderio" ana="#operation-precisatio #risk-quietismo #impact-high" cert="medium">incomincia l'anima a perdire qualunque desiderio, e non dico del mondo… intendo dunque dire che non desidera più gusti di spirito come prima</seg>
+ <seg xml:id="seg-158r-declaratio" ana="#operation-declaratio #risk-quietismo #impact-critical" cert="high">qui mi dichiaro che Dio non affligge tentando, ma permettendo</seg>
+ <seg xml:id="seg-c5-intro" ana="#operation-delimitazione #impact-low" cert="medium">cioè, quando l'anima entra in questo stato</seg>
+</body>
+<standOff type="impact-index">
+ <fs xml:id="idx-seg-c8-desiderio" corresp="#seg-c8-desiderio" cert="medium"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="alta"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.85"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.760"/></f></fs>
+ <fs xml:id="idx-seg-158r-declaratio" corresp="#seg-158r-declaratio" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="alta"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.85"/></f><f name="F"><numeric value="3"/></f><f name="Fnorm"><numeric value="1.00"/></f><f name="I"><numeric value="0.907"/></f></fs>
+ <fs xml:id="idx-seg-c5-intro" corresp="#seg-c5-intro" cert="medium"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
+</standOff>
+</text></TEI>`));
+</script>
+</body>
+</html>
