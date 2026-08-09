@@ -24,7 +24,7 @@ RelaxNG, Schematron, NFC).
 ```
 
 Confine metodologico: lo studioso decide gli **assi** interpretativi e le due **bande** N/A; tutto il resto
-(F, I, classe, `<fs>`) è **meccanico e deterministico**. «I mai a mano».
+(F, I, classe, `<fs>`) è **automatico**.
 
 ## Gli strumenti
 
@@ -73,7 +73,7 @@ e lo Schematron fanno in CI.
 
 ### `impact_index.py` — audit/authoring da riga di comando
 
-Calcolo deterministico e audit dell'**indice d'impatto** (`I = (4·F/3 + 2·N + A)/7`, pesi AHP 4:2:1).
+Calcolo automatico e audit dell'**indice d'impatto** (`I = (4·F/3 + 2·N + A)/7`, pesi AHP 4:2:1).
 Modello **a bande‑ancora**: N ∈ {0.90, 0.75, 0.55, 0.30}, A ∈ {0.85, 0.675, 0.40};
 F = rango dell'asse `operation` (delimitazione=1; attenuatio/precisatio/riequilibrio=2; declaratio=3).
 Definizione e protocollo: `docs/indice-impatto.md`, `docs/Protocollo-indice-impatto.md`.
