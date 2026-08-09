@@ -302,7 +302,7 @@ Le citazioni illustrano l'uso delle citazioni come dispositivi di stabilizzazion
 
 **Salmi**
 
-- *In te Domine speravi, non confundar in aeternum* — Sal 70/71 → usata nel Libro I per fondare la virtù dell'umiltà (I.5).
+- *In te Domine speravi, non confundar in aeternum* — Sal 30/31 → usata nel Libro I per fondare la virtù dell'umiltà (I.5).
 - *Misericordias Domini in aeternum cantabo* — Sal 88,2 → citazione di stato mistico "di sicurezza", ricorrente nei momenti di luce divina.
 - *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Sal 118,32 → usata per la "dilatazione del cuore" nei capitoli di unione infusa.
 
