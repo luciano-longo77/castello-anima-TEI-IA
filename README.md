@@ -64,16 +64,22 @@ Organizzata in tre sottocartelle:
 
 ### `/schema`
 
-Schema di validazione generale del progetto (ODD, RelaxNG, Schematron), a copertura dell'intero modello — non solo della tassonomia.
+Schema di validazione generale del progetto: l'ODD del modello, il **`tei_all.rng` vendorizzato** (TEI All, versione fissata per una validazione riproducibile) e lo **Schematron dell'indice d'impatto** (`impactindex.sch`), a copertura dell'intero modello — non solo della tassonomia.
 
 ### `/docs`
 
 Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto per le singole sezioni (header, tassonomia, schema) confluisce anche qui, come punto di accesso unico alla documentazione completa.
 
+### `/tools`
+
+Strumenti d'ausilio all'annotazione (non validati dalla CI): l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando). Vedi il [README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
+
 ### `/.github/workflows`
 
-Il workflow di validazione automatica (CI/CD) che verifica la tassonomia a ogni modifica.
+Due workflow di validazione automatica (CI), attivi a ogni push/PR:
 
+- **Validate Taxonomy** — buona formazione, RelaxNG + Schematron della tassonomia, e guardia **E1** (le 8 tassonomie interpretative in `tassonomia-gh.xml` coincidono con la copia nella testata).
+- **Validate Text** — buona formazione, risoluzione `xi:include`, RelaxNG (TEI All, versione fissata), guardia **NFC**, guardia **E2** (ogni token `@ana` risolve a una categoria dichiarata), guardia di **co-occorrenza** e **Schematron dell'indice d'impatto** (`impactindex.sch`).
 ---
 
 ## Modello TEI
@@ -103,10 +109,11 @@ Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`,
 - **A** — riduzione dell'ambiguità (quanto l'intervento restringe le letture possibili);
 - **F** — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse `operation`), normalizzata come `F_norm = F/3`.
 
-Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione.
+Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione. 
+N e A si assegnano per **bande** (l'annotatore sceglie la banda, non il decimale), ciascuna con un **valore‑ancora fisso**; la doppia registrazione porta la classe `#impact-*` in `@ana` e il calcolo in una `<fs>` dentro `<standOff type="impact-index">`.
 
 ➡️
- [Leggi il README del Indice d'impatto (impact-index)](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
+ [Leggi il README dell'Indice d'impatto (impact-index)](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
 
 ---
 
@@ -128,7 +135,7 @@ Ogni evento è sottoposto a:
 
 ## Il campione
 
-Il dataset include **campione di 14 loci (16 capitoli)** distribuiti nei tre Libri dell'opera.  
+Il dataset include un **campione di 14 loci (16 capitoli)** distribuiti nei tre Libri dell'opera.  
 I segmenti selezionati presentano:
 
 - nodi dottrinali sensibili (contemplazione, unione, sicurezza spirituale, discernimento),
