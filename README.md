@@ -6,7 +6,7 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale (IA) controllata** *expert-in-the-loop*, per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all'interno di un testo caratterizzato da forte vigilanza teologica.
+Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale (IA) controllata** *expert-in-the-loop*, per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di **suor Teresa di San Geronimo**. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di *chiarezza*, *coesione* e *stabilità dottrinale* all'interno di un testo caratterizzato da **forte vigilanza teologica**.
 
 ---
 
@@ -27,17 +27,17 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 ## Obiettivi (O)
 
-- (O1) Rappresentare in TEI citazioni bibliche, liturgiche, mistiche e proverbiali come **oggetti analitici** dotati di fonte, funzione retorica e impatto esplicativo.
+- **(O1)** Rappresentare in TEI citazioni bibliche, liturgiche, mistiche e proverbiali come **oggetti analitici** dotati di fonte, funzione retorica e impatto esplicativo.
 
-- (O2) Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
+- **(O2)** Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
 
-- (O3) Strutturare un **campione di 14 loci (16 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
+- **(O3)** Strutturare un **campione di 14 loci (16 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
 
-- (O4) Implementare una **pipeline AI controllata** che consente:
+- **(O4)** Implementare una **pipeline AI controllata** che consente:
 
-  * rimozione di un dispositivo testuale dal testo **(`-CIT`)**,
-  * recupero nel testo di una cancellatura autoriale **(`+TEXTsub`)**,
-  * integrazione per esteso di una citazione richiamata ma non riportata **(`+CIT`)**,
+  * **rimozione** di un dispositivo testuale dal testo **(`-CIT`)**,
+  * **recupero** nel testo di una cancellatura autoriale **(`+TEXTsub`)**,
+  * **integrazione** per esteso di una citazione richiamata ma non riportata **(`+CIT`)**,
 
 con successiva **valutazione degli effetti** su chiarezza argomentativa, coesione locale e stabilità dottrinale percepita.
 
