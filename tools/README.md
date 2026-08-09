@@ -34,16 +34,8 @@ flowchart TD
     classDef ci fill:#1a252f,stroke:#1a252f,color:#e8eaed;
 ```
 
-```
-1. assistenteana.html        →  codifica @ana (assi dalla tassonomia)          → <seg> con @ana (impact = segnaposto)
-2. calcolatoreindice.html    →  per un segmento: banda N + banda A             → #impact-* + <fs>
-   (oppure)  annotatoreindice.html →  sull'intero teiText: scrive tutte le <fs>
-3. visualizzatoreindice.html →  apre il teiText compilato                      → tabella + distribuzione + audit + CSV/JSON
-   impact_index.py           →  stessa verifica da riga di comando (equivale alla guardia CI)
-```
-
 Confine metodologico: lo studioso decide gli **assi** interpretativi e le due **bande** N/A; tutto il resto
-(F, I, classe, `<fs>`) è **automatico**.
+(F, I, classe, `<fs>`) è **meccanico e deterministico**. «I mai a mano».
 
 ## Gli strumenti
 
@@ -92,7 +84,7 @@ e lo Schematron fanno in CI.
 
 ### `impact_index.py` — audit/authoring da riga di comando
 
-Calcolo automatico e audit dell'**indice d'impatto** (`I = (4·F/3 + 2·N + A)/7`, pesi AHP 4:2:1).
+Calcolo deterministico e audit dell'**indice d'impatto** (`I = (4·F/3 + 2·N + A)/7`, pesi AHP 4:2:1).
 Modello **a bande‑ancora**: N ∈ {0.90, 0.75, 0.55, 0.30}, A ∈ {0.85, 0.675, 0.40};
 F = rango dell'asse `operation` (delimitazione=1; attenuatio/precisatio/riequilibrio=2; declaratio=3).
 Definizione e protocollo: `docs/indice-impatto.md`, `docs/Protocollo-indice-impatto.md`.
