@@ -6,7 +6,7 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale controllata** per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all'interno di un testo caratterizzato da forte vigilanza teologica.
+Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale (IA) controllata** *expert-in-the-loop*, per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di suor Teresa di San Geronimo. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di chiarezza, coesione e stabilità dottrinale all'interno di un testo caratterizzato da forte vigilanza teologica.
 
 ---
 
@@ -25,21 +25,21 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 ---
 
-## Obiettivi
+## Obiettivi (O)
 
-- Rappresentare in TEI citazioni bibliche, liturgiche, mistiche e proverbiali come **oggetti analitici** dotati di fonte, funzione retorica e impatto esplicativo.
+- (O1) Rappresentare in TEI citazioni bibliche, liturgiche, mistiche e proverbiali come **oggetti analitici** dotati di fonte, funzione retorica e impatto esplicativo.
 
-- Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
+- (O2) Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
 
-- Strutturare un **campione di 14 loci (16 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
+- (O3) Strutturare un **campione di 14 loci (16 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
 
-- Implementare una **pipeline AI controllata** che consente:
+- (O4) Implementare una **pipeline AI controllata** che consente:
 
-  * rimozione di un dispositivo testuale dal testo (`-CIT`),
-  * recupero nel testo di una cancellatura autoriale (`+TEXTsub`),
-  * integrazione per esteso di una citazione richiamata ma non riportata (`+CIT`),
+  * rimozione di un dispositivo testuale dal testo **(`-CIT`)**,
+  * recupero nel testo di una cancellatura autoriale **(`+TEXTsub`)**,
+  * integrazione per esteso di una citazione richiamata ma non riportata **(`+CIT`)**,
 
-con successiva valutazione degli effetti su chiarezza argomentativa, coesione locale e stabilità dottrinale percepita.
+con successiva **valutazione degli effetti** su chiarezza argomentativa, coesione locale e stabilità dottrinale percepita.
 
 ---
 
@@ -57,10 +57,12 @@ Modellazione secondo TEI P5 con:
 
 Organizzata in tre sottocartelle:
 
-- **`/tei/header`** — il `teiHeader` completo dell'edizione (`castello-anima-teiHeader.xml`) e la relativa documentazione (README, guida di navigazione). ➡️ [Leggi il README del teiHeader](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/header/teiHeader-README.md)
+- **`/tei/header`** — il `teiHeader` completo dell'edizione (`castello-anima-teiHeader.xml`) e la relativa documentazione (README, guida di navigazione). ➡️
+  [Leggi il README del teiHeader](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/header/teiHeader-README.md)
 - **`/tei/taxonomy`** — il sistema tassonomico interpretativo del progetto: la tassonomia normativa (`tassonomia-gh.xml`), i tre documenti di schema dedicati alla tassonomia (ODD, RelaxNG, Schematron), esempi di annotazione, log di lavorazione. ➡️
  [Leggi il README del sistema tassonomico](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tei/taxonomy/Sistema%20Tassonomico.md)
-- **`/tei/text`** — il testo del manoscritto codificato in TEI.
+- **`/tei/text`** — il testo del manoscritto codificato in TEI.➡️
+  [Leggi la Guida ragionata alla codifica del <text>](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/teiText-guida-codifica.md)
 
 ### `/schema`
 
@@ -72,7 +74,8 @@ Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto
 
 ### `/tools`
 
-Strumenti d'ausilio all'annotazione (non validati dalla CI): l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando). Vedi il [README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
+Strumenti d'ausilio all'annotazione (non validati dalla CI): l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando). 
+➡️ [Leggi il README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
 
 ### `/.github/workflows`
 
@@ -110,9 +113,7 @@ Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`,
 - **F** — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse `operation`), normalizzata come `F_norm = F/3`.
 
 Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione. 
-N e A si assegnano per **bande** (l'annotatore sceglie la banda, non il decimale), ciascuna con un **valore‑ancora fisso**; la doppia registrazione porta la classe `#impact-*` in `@ana` e il calcolo in una `<fs>` dentro `<standOff type="impact-index">`.
-
-➡️
+N e A si assegnano per **bande** (l'annotatore sceglie la banda, non il decimale), ciascuna con un **valore‑ancora fisso**; la doppia registrazione porta la classe `#impact-*` in `@ana` e il calcolo in una `<fs>` dentro `<standOff type="impact-index">`. ➡️
  [Leggi il README dell'Indice d'impatto (impact-index)](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
 
 ---
@@ -145,7 +146,7 @@ I segmenti selezionati presentano:
 
 Questo campione costituisce la base per l'annotazione TEI e per la sperimentazione AI.
 
-- ➡️ [Leggi la **Base dati per il campionamento**](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/base-dati_campionamento.md) 
+➡️ [Leggi la **Base dati per il campionamento**](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/base-dati_campionamento.md) 
 
 ---
 
@@ -153,13 +154,13 @@ Questo campione costituisce la base per l'annotazione TEI e per la sperimentazio
 
 Dalle linee di ricerca degli studi attuali emerge che:
 
-- la scrittura mistica femminile post tridentina è caratterizzata da forte pressione normativa e sorveglianza dottrinale;
-- citazioni e glosse formano **una infrastruttura di controllo** che stabilizza il discorso nei punti ad alta esposizione;
-- mancano strumenti replicabili per misurare il ruolo dell'intertestualità in contesti analoghi;
+- **(1)** la scrittura mistica femminile post tridentina è caratterizzata da forte pressione normativa e sorveglianza dottrinale;
+- **(2)** citazioni e glosse formano **una infrastruttura di controllo** che stabilizza il discorso nei punti ad alta esposizione;
+- **(3)** mancano strumenti replicabili per misurare il ruolo dell'intertestualità in contesti analoghi;
 
 Su questa base
 
-- il progetto propone un modello computazionale TEI+IA che colma questo vuoto metodologico.
+- il progetto propone un *modello computazionale TEI+IA* che tende a colmare questo vuoto metodologico.
 
 ---
 
@@ -167,10 +168,10 @@ Su questa base
 
 Il modello permette di:
 
-- analizzare in modo sistematico il rapporto fra citazione, glossa e costruzione del discorso mistico;
-- rendere osservabili e misurabili fenomeni normalmente affidati alla sola interpretazione qualitativa;
-- verificare l'effetto delle varianti tramite scenari controfattuali controllati;
-- fornire un protocollo replicabile per lo studio di testi mistici post tridentini e materiali prodotti in contesti di sorveglianza dottrinale.
+- **(1)** analizzare in modo sistematico il rapporto fra citazione, glossa e costruzione del discorso mistico;
+- **(2)** rendere osservabili e misurabili fenomeni normalmente affidati alla sola interpretazione qualitativa;
+- **(3)** verificare l'effetto delle varianti tramite scenari controfattuali controllati;
+- **(4)** fornire un protocollo replicabile per lo studio di testi mistici post tridentini e materiali prodotti in contesti di sorveglianza dottrinale.
 
 ---
 
