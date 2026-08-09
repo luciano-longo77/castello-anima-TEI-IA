@@ -17,15 +17,15 @@ RelaxNG, Schematron, NFC).
 
 ```mermaid
 flowchart TD
-    A["Testo trascritto<br/>si individua il seg"]:::step --> B["assistenteana.html<br/>scelta degli assi → @ana"]:::tool
+    A["Testo trascritto<br/> si individua il seg"]:::step --> B["assistenteana.html<br/> scelta degli assi → @ana"]:::tool
     B --> C["@ana<br/>impact = segnaposto #impact*"]:::data
-    C --> D["calcolatoreindice.html<br/>1 segmento · banda N + banda A"]:::tool
-    C --> E["annotatoreindice.html<br/>intero teiText · tutte le fs"]:::tool
-    D --> F["teiText compilato<br/>#impact-* in @ana + fs in standOff"]:::data
+    C --> D["calcolatoreindice.html<br/> 1 segmento · banda N + banda A"]:::tool
+    C --> E["annotatoreindice.html<br/> intero teiText · tutte le fs"]:::tool
+    D --> F["teiText compilato<br/> #impact-* in @ana + fs in standOff"]:::data
     E --> F
-    F --> G["visualizzatoreindice.html<br/>audit · distribuzione · export CSV/JSON"]:::tool
-    F --> H["impact_index.py<br/>audit da riga di comando"]:::tool
-    G --> I["CI GitHub — verifica autoritativa<br/>E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
+    F --> G["visualizzatoreindice.html<br/> audit · distribuzione · export CSV/JSON"]:::tool
+    F --> H["impact_index.py<br/> audit da riga di comando"]:::tool
+    G --> I["CI GitHub — verifica autoritativa<br/> E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
     H --> I
 
     classDef step fill:#ffffff,stroke:#7f8c8d,color:#2c3e50;
