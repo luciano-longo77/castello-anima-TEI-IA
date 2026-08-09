@@ -120,4 +120,5 @@ perturbazione) misura quanto il nodo dipende dal presidio, lungo tre dimensioni:
 ## Robustezza
 
 - ricalcolo con **pesi alternativi** → quota di segmenti che cambiano banda pubblicata come misura di sensibilità;
-- **pipeline deterministica** (versione del modello e parametri fissati e rilasciati) → indice indipendente dall'annotatore e dal modello.
+- **pipeline IA documentata e auditabile** — modello, parametri (temperatura, top-p, seed), prompt e audit-trail fissati e registrati nel blocco `xenoData`, con governance *expert-in-the-loop* → esiti IA tracciabili e verificabili, non affidati a un singolo run opaco;
+- l'**indice d'impatto** è calcolato dalla formula AHP su N/A/F: è dunque **indipendente dal modello IA** (che interviene solo nella generazione degli scenari controfattuali, non nel calcolo di I).
