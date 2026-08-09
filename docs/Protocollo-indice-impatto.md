@@ -53,7 +53,7 @@ Quando in un segmento coesistono più connettivi, **F** si legge dal marcatore c
 chiarisce «sposalitio» accanto all'*intendo dunque dire* che ridefinisce la proposizione). Il
 segmento, del resto, racchiude l'**asserzione esposta insieme al presidio** che la regola.
 
-## Passo 1 - Assegnare N (necessità interpretativa) — GIUDIZIO
+## Passo 1 - Assegnare N (necessità interpretativa): GIUDIZIO
 
 **N** misura quanto il passo sia dottrinalmente esposto e quanto lo sia *prima* dell'intervento. Il criterio è
 controfattuale e interno al *Castello*: «se togliessi questo presidio, il nodo scivolerebbe
@@ -73,7 +73,7 @@ semiaperte: nessuna sovrapposizione ai bordi):
 | Media | 0.45 ≤ N < 0.65 | **0.55** | Chiarificazione utile, esposizione moderata; l'assenza non produrrebbe deriva dottrinale. |
 | Bassa | N < 0.45 | **0.30** | Funzione marginale, ornamentale o descrittiva. |
 
-## Passo 2 - Assegnare A (riduzione dell'ambiguità) — GIUDIZIO
+## Passo 2 - Assegnare A (riduzione dell'ambiguità): GIUDIZIO
 
 **A** misura quanto l'intervento restringe le letture possibili: quanto dell'ambiguità di partenza
 viene chiusa grazie all'occorrenza. **A** è un **input** dell'indice; il suo effetto sulla tenuta
@@ -93,7 +93,7 @@ semiaperte):
 | Media | 0.55 ≤ A < 0.80 | **0.675** | Restringe il campo ma lascia un margine di lettura. |
 | Bassa | A < 0.55 | **0.40** | Tocca l'ambiguità solo marginalmente. |
 
-## Passo 3 - Leggere *F* (funzione prudenziale) — LETTURA, non stima
+## Passo 3 - Leggere *F* (funzione prudenziale): LETTURA, non stima
 
 **F** non si stima: si **legge** dalla forma del marcatore, e si classifica in tre gradi. È il parametro meno inferenziale **quasi oggettivo** ed è per questo
 che nel modello pesa di più. Non promuovere **F** perché l'occorrenza *sembra importante*: quello
