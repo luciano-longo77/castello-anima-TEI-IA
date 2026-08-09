@@ -264,7 +264,7 @@ function exportJSON(){
   download("indice-impatto.json",JSON.stringify({generato:"visualizzatore-indice-impatto",segmenti:data.length,dati:data,puntatori:issues},null,2),"application/json");
 }
 
-document.getElementById("file").addEventListener("change",e=>{const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>parse(r.result); r.readAsText(f);});
+document.getElementById("file").addEventListener("change",e=>{const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>parse(r.result); r.readAsText(f); e.target.value="";});
 document.getElementById("csv").addEventListener("click",exportCSV);
 document.getElementById("json").addEventListener("click",exportJSON);
 document.getElementById("demo").addEventListener("click",()=>parse(`<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body>
