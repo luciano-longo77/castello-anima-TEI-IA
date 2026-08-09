@@ -17,10 +17,10 @@ RelaxNG, Schematron, NFC).
 
 ```mermaid
 flowchart TD
-    A["Testo trascritto<br/> si individua il `<seg>`"]:::step --> B["1-assistente-ana.html<br/>scelta degli assi → `@ana`"]:::tool
+    A["Testo trascritto<br/> si individua il `seg`"]:::step --> B["1-assistente-ana.html<br/>scelta degli assi → `@ana`"]:::tool
     B --> C["@ana<br/>impact = segnaposto `#impact*`"]:::data
     C --> D["2-calcolatore-indice.html<br/> 1 segmento · banda N + banda A"]:::tool
-    D --> F["teiText compilato<br/> `#impact`-* in `@ana` + `<fs>` in `standOff`"]:::data
+    D --> F["teiText compilato<br/> `#impact`-* in `@ana` + `fs` in `standOff`"]:::data
     F --> G["3-visualizzatore-indice.html<br/> audit · distribuzione · export CSV/JSON"]:::tool
     F --> H["impact_index.py<br/>audit · authoring batch (--bands)"]:::tool
     G --> I["CI GitHub — verifica autoritativa<br/> E1 · E2 · co-occorrenza · RNG · Schematron · NFC"]:::ci
