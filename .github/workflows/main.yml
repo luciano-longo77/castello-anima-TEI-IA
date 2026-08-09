@@ -1,203 +1,89 @@
-name: Validate Taxonomy
+name: Validate Text
 
 on:
   push:
     branches: [main]
     paths:
-      - "tei/taxonomy/**"
+      - "tei/text/**"
+      - "tei/taxonomy/tassonomia-gh.xml"
       - "tei/header/**"
+      - "schema/tei_all.rng"
+      - "schema/impactindex.sch"
+      - ".github/workflows/validate-text.yml"
+      - ".github/workflows/scripts/**"
   pull_request:
     branches: [main]
     paths:
-      - "tei/taxonomy/**"
+      - "tei/text/**"
+      - "tei/taxonomy/tassonomia-gh.xml"
       - "tei/header/**"
+      - "schema/impactindex.sch"
   workflow_dispatch:
+
+env:
+  TEXT: tei/text/castello-anima-teiText.xml
+  TAX:  tei/taxonomy/tassonomia-gh.xml
+  # Schema TEI P5 VENDORIZZATO nel repo (copia di oXygen): validazione riproducibile e
+  # identica a quella locale. Per aggiornare la versione TEI, sostituire questo file.
+  RNG:  schema/tei_all.rng
+  # Schematron dell'indice d'impatto: R1 vocabolario bande, R2 ancore + formula, R3 classe<->I.
+  SCH:  schema/impactindex.sch
 
 jobs:
   validate:
-    name: Validate tassonomia-gh.xml (RelaxNG + Schematron + esempi)
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Install lxml
-        run: pip install lxml
-
-      - name: Check required files exist
+      - run: pip install lxml
+      - name: Installa xmllint e jing
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libxml2-utils jing
+      - name: File richiesti presenti
         run: |
-          test -f tei/taxonomy/tassonomia-gh.xml || { echo "::error::tei/taxonomy/tassonomia-gh.xml non trovato"; exit 1; }
-          test -f tei/taxonomy/schema/taxonomy-rng.rng || { echo "::error::tei/taxonomy/schema/taxonomy-rng.rng non trovato"; exit 1; }
-          test -f tei/taxonomy/schema/taxonomy-sch.sch || { echo "::error::tei/taxonomy/schema/taxonomy-sch.sch non trovato"; exit 1; }
-          echo "Tutti i file richiesti sono presenti."
-
-      - name: Run validation (well-formed, RelaxNG, Schematron, core taxonomies, @ana referenziale negli esempi)
+          test -f "$TEXT" || { echo "::error::$TEXT non trovato"; exit 1; }
+          test -f "$TAX"  || { echo "::error::$TAX non trovato"; exit 1; }
+          test -s "$RNG"  || { echo "::error::$RNG non trovato o vuoto (vendorizza tei_all.rng)"; exit 1; }
+          test -s "$SCH"  || { echo "::error::$SCH non trovato o vuoto"; exit 1; }
+      - name: Guardia NFC (normalizzazione Unicode)
         run: |
-          cat > validate_taxonomy.py << 'PYEOF'
-          import sys
-          import glob
+          python3 - <<'PY'
+          import unicodedata, sys, glob
+          bad=[]
+          for f in ["tei/text/castello-anima-teiText.xml","tei/header/castello-anima-teiHeader.xml","tei/taxonomy/tassonomia-gh.xml"]+glob.glob("tei/taxonomy/esempio/*.xml"):
+              s=open(f,encoding="utf-8").read()
+              if s!=unicodedata.normalize("NFC",s): bad.append(f)
+          if bad:
+              print("::error::File non in forma Unicode NFC:")
+              for f in bad: print("  -",f)
+              sys.exit(1)
+          print("Guardia NFC superata: tutti i file XML sono normalizzati (NFC).")
+          PY
+      - name: Buona formazione + risoluzione XInclude
+        run: xmllint --noout --xinclude "$TEXT"
+      - name: Componi documento risolto (senza fixup xml:base)
+        run: xmllint --nofixup-base-uris --xinclude "$TEXT" > resolved.xml
+      - name: Validazione RelaxNG (TEI All, schema vendorizzato)
+        run: jing "$RNG" resolved.xml
+      - name: Guardia E2 (@ana -> tassonomia)
+        run: python3 .github/workflows/scripts/e2_guard.py "$TEXT" "$TAX"
+      - name: Guardia co-occorrenza (@ana)
+        run: python3 .github/workflows/scripts/cooccurrence_guard.py "$TEXT"
+      - name: Guardia Schematron indice d'impatto (bande + ancore + formula)
+        run: |
+          python3 - <<'PY'
+          import os, sys
           from lxml import etree, isoschematron
-
-          XML_PATH = "tei/taxonomy/tassonomia-gh.xml"
-          RNG_PATH = "tei/taxonomy/schema/taxonomy-rng.rng"
-          SCH_PATH = "tei/taxonomy/schema/taxonomy-sch.sch"
-          ESEMPIO_GLOB = "tei/taxonomy/esempio/*.xml"
-
-          REQUIRED_TAXONOMIES = [
-              "func", "risk", "impact", "mystic_state",
-              "operation", "exposition", "phase", "relation",
-          ]
-
-          ns = {"tei": "http://www.tei-c.org/ns/1.0", "xml": "http://www.w3.org/XML/1998/namespace"}
-
-          errors = []
-
-          # 1. Ben formato
-          try:
-              doc = etree.parse(XML_PATH)
-          except etree.XMLSyntaxError as e:
-              print(f"::error::{XML_PATH} non e' ben formato: {e}")
+          doc = etree.parse(os.environ["TEXT"])
+          sch = isoschematron.Schematron(etree.parse(os.environ["SCH"]), store_report=True)
+          if not sch.validate(doc):
+              svrl = {"svrl": "http://purl.oclc.org/dsdl/svrl"}
+              print("::error::Schematron indice d'impatto: asserzioni fallite:")
+              for f in sch.validation_report.xpath("//svrl:failed-assert", namespaces=svrl):
+                  loc = f.get("location", "?")
+                  txt = (f.findtext("svrl:text", namespaces=svrl) or "").strip()
+                  print(f"  - [{loc}] {txt}")
               sys.exit(1)
-
-          # 2. RelaxNG
-          try:
-              rng = etree.RelaxNG(etree.parse(RNG_PATH))
-              if not rng.validate(doc):
-                  for log_entry in rng.error_log:
-                      errors.append(f"RelaxNG: {log_entry}")
-          except Exception as e:
-              print(f"::error::Errore caricando lo schema RelaxNG: {e}")
-              sys.exit(1)
-
-          # 3. Schematron
-          try:
-              sch = isoschematron.Schematron(etree.parse(SCH_PATH), store_report=True)
-              if not sch.validate(doc):
-                  svrl_ns = {"svrl": "http://purl.oclc.org/dsdl/svrl"}
-                  for fail in sch.validation_report.xpath("//svrl:failed-assert", namespaces=svrl_ns):
-                      loc = fail.get("location", "?")
-                      text = (fail.findtext("svrl:text", namespaces=svrl_ns) or "").strip()
-                      errors.append(f"Schematron [{loc}]: {text}")
-          except Exception as e:
-              print(f"::error::Errore caricando lo schema Schematron: {e}")
-              sys.exit(1)
-
-          # 4. Presenza delle 8 tassonomie core (radici di classDecl)
-          valid_ids = set(
-              doc.xpath("//tei:classDecl//tei:category/@xml:id | //tei:classDecl//tei:taxonomy/@xml:id", namespaces=ns)
-          )
-          taxonomy_root_ids = set(
-              doc.xpath("//tei:classDecl/tei:taxonomy/@xml:id", namespaces=ns)
-          )
-          missing = [t for t in REQUIRED_TAXONOMIES if t not in taxonomy_root_ids]
-          if missing:
-              errors.append(f"Tassonomie core mancanti: {', '.join(missing)}")
-
-          # 5. Riferimenti @ana nei file esempio: ogni token deve puntare a un xml:id reale
-          esempio_files = glob.glob(ESEMPIO_GLOB)
-          for esempio_path in esempio_files:
-              try:
-                  esempio_doc = etree.parse(esempio_path)
-              except etree.XMLSyntaxError as e:
-                  errors.append(f"{esempio_path}: non e' ben formato: {e}")
-                  continue
-              for el in esempio_doc.iter():
-                  ana = el.get("ana")
-                  if not ana:
-                      continue
-                  el_id = el.get("{http://www.w3.org/XML/1998/namespace}id", "?")
-                  for token in ana.split():
-                      bare = token.lstrip("#")
-                      if bare not in valid_ids:
-                          errors.append(
-                              f"{esempio_path} (xml:id={el_id}): @ana='{token}' non corrisponde "
-                              f"a nessuna categoria dichiarata in {XML_PATH}"
-                          )
-
-          # Esito
-          if errors:
-              print("::error::Validazione fallita:")
-              for err in errors:
-                  print(f"  - {err}")
-              sys.exit(1)
-
-          print(f"Validazione superata: ben formato, RelaxNG OK, Schematron OK, tassonomie core presenti, "
-                f"{len(esempio_files)} file esempio verificati (@ana referenziale OK).")
-          PYEOF
-          python validate_taxonomy.py
-
-  e1-guard:
-    name: Guardia E1 (classDecl header == tassonomia-gh.xml)
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install lxml
-        run: pip install lxml
-
-      - name: Check required files exist
-        run: |
-          test -f tei/taxonomy/tassonomia-gh.xml || { echo "::error::tei/taxonomy/tassonomia-gh.xml non trovato"; exit 1; }
-          test -f tei/header/castello-anima-teiHeader.xml || { echo "::error::tei/header/castello-anima-teiHeader.xml non trovato"; exit 1; }
-
-      - name: Verifica non-divergenza delle 8 tassonomie interpretative (fonte <-> copia nell'header)
-        run: |
-          cat > e1_guard.py << 'PYEOF'
-          import sys
-          from lxml import etree
-
-          NS = {"t": "http://www.tei-c.org/ns/1.0"}
-          XMLID = "{http://www.w3.org/XML/1998/namespace}id"
-          INTERP = {"func", "impact", "risk", "mystic_state",
-                    "operation", "exposition", "phase", "relation"}
-          SRC = "tei/taxonomy/tassonomia-gh.xml"
-          HDR = "tei/header/castello-anima-teiHeader.xml"
-
-          def cats(path):
-              doc = etree.parse(path)
-              d = {}
-              for tax in doc.iterfind(".//t:taxonomy", NS):
-                  if tax.get(XMLID) not in INTERP:
-                      continue          # esclude fase/workflow: esistono solo nell'header
-                  for c in tax.iterfind(".//t:category", NS):
-                      cd = c.find("t:catDesc", NS)
-                      txt = " ".join("".join(cd.itertext()).split()) if cd is not None else None
-                      d[c.get(XMLID)] = txt
-              return d
-
-          src, hdr = cats(SRC), cats(HDR)
-          errors = []
-          for cid in sorted(set(src) | set(hdr)):
-              if cid not in src:
-                  errors.append(f"{cid}: presente nell'header ma NON nella fonte")
-              elif cid not in hdr:
-                  errors.append(f"{cid}: presente nella fonte ma NON nell'header")
-              elif src[cid] != hdr[cid]:
-                  errors.append(
-                      f"{cid}: catDesc DIVERGENTE\n"
-                      f"      fonte : {src[cid][:90]}\n"
-                      f"      header: {hdr[cid][:90]}"
-                  )
-
-          if errors:
-              print("::error::Divergenza E1 (fonte tassonomia-gh.xml <-> copia nell'header):")
-              for e in errors:
-                  print("  -", e)
-              sys.exit(1)
-
-          print(f"Guardia E1 superata: {len(src)} categorie interpretative identiche fra fonte e header.")
-          PYEOF
-          python e1_guard.py
+          print("Guardia Schematron indice d'impatto superata (R1/R2/R3 su tutte le <fs>).")
+          PY
