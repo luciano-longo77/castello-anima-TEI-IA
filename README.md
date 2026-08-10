@@ -186,9 +186,8 @@ Vedi il file `LICENCE.md` per i dettagli completi.
 ---
 
 ## 👤 Autore
-
 **Luciano Longo**   
-Contatti: <luciano.longo@dedalus.com> 
-ORCID: <https://orcid.org/0009-0005-7557-7546> 
-GitHub: <https://github.com/luciano-longo77>
-Website: <https://luciano-longo77.github.io>
+- Contatti: <luciano.longo@dedalus.com> 
+- ORCID: <https://orcid.org/0009-0005-7557-7546> 
+- GitHub: <https://github.com/luciano-longo77>
+- Website: <https://luciano-longo77.github.io>
