@@ -173,7 +173,7 @@ Il testo usa questi elementi (che il `tagsDecl` dell'header dichiara), raggruppa
 - **Genetica:** `add` `del` `subst` `restore` `retrace` `metamark`
 - **Apparato:** `app` `lem` `rdg`
 - **Interpretazione / stand-off:** `seg` `span` `spanGrp` `interp` `interpGrp` `link` `linkGrp` `rs` `hi` `term` `note`
-- **Indice d'impatto:** `standOff` `fs` `f` `numeric`
+- **Indice d'impatto:** `standOff` `fs` `f` `numeric` `symbol`
 - **Citazioni ed entità:** `cit` `quote` `bibl` `ref` `ptr` `persName` `placeName` `orgName` `date`
 
 ---
