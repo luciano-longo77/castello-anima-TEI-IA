@@ -25,8 +25,7 @@ attribuita** (`@resp`), così che la lezione originale resti sempre recuperabile
 Il passaggio al **livello interpretativo** non cancella il diplomatico: lo **stratifica**.
 La forma d'autore e la forma regolarizzata convivono in `<choice>`; l'interpretazione
 (funzione retorica, rischio, impatto…) si aggiunge sopra, tramite `@ana` sul `<seg>` e gli
-strati `<standOff>`. Regola d'oro: **niente intervento tacito** — o è visibile nella marcatura,
-o non si fa.
+strati `<standOff>`.
 
 ---
 
@@ -52,7 +51,6 @@ diplomatica non si perde mai: sta in `orig` / `sic` / `abbr` / `del`, la forma e
 | Enfasi grafica (non semantica) | `<hi>…</hi>` | `@rend` | `<hi rend="rubric">…</hi>` |
 | Materiale di cornice (segnatura, richiamo, n. di carta) | `<fw>…</fw>` | `@type` | `<fw type="catch">…</fw>` |
 | Cambio di carta / foliazione | `<pb/>` | `@n` | `<pb n="158r"/>` |
-| A-capo di **parola spezzata** (solo questo) | `<lb/>` | `@break="no"` | `<lb break="no"/>` |
 
 > **Non si tocca** con marcatura editoriale: punteggiatura e maiuscole possono essere
 > regolarizzate **solo** dentro `reg`/`corr` (mai in silenzio); gli a-capo ordinari **non**
