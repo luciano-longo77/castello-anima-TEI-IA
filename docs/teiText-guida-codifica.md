@@ -212,7 +212,13 @@ Persone `#Anna-La-Longa` `#s-teresa` `#dio` `#esterno` `#p-avila` `#p-john` `#p-
 ### A5 · `#fig-*` — figure retoriche (`interpGrp` in un `<standOff type="rhetorical-figures">`)
 `#fig-metafora` `#fig-similitudine` `#fig-anafora` `#fig-antitesi` `#fig-allegoria` `#fig-iperbole` `#fig-apostrofe` `#fig-climax` `#fig-ossimoro` `#fig-paradosso` `#fig-personificazione` `#fig-sinestesia` *(seme estendibile)*
 
-### A6 · `#workflow-*` — operazioni IA controfattuali (tassonomia `workflow` dell'header)
+### A6 · `#area-*` — aree semantiche concettuali (`interpGrp type="area-concettuale"` in un `<standOff type="semantic-focus">`)
+
+Vocabolario locale che proietta il testo su dieci **aree concettuali** ricorrenti; ogni tratto rilevante è ancorato con `<span>` e classificato via `@ana`. Non grava sulla tassonomia normativa.
+
+`#area-obedientia` (obbedienza) · `#area-humilitas` (umiltà) · `#area-sapientia` (sapienza divina) · `#area-orthodoxia` (ortodossia) · `#area-purificatio` (purificazione) · `#area-ascensio` (ascesa) · `#area-pax` (pace/quiete) · `#area-otium` (otium) · `#area-unio` (unione/sposalizio) · `#area-desiderium` (desiderio)
+
+### A7 · `#workflow-*` — operazioni IA controfattuali (tassonomia `workflow` dell'header)
 `#workflow-rimozione` (−CIT) · `#workflow-recupero-cancellature` (+TEXTsub) · `#workflow-aggiunta` (+CIT) · `#workflow-validazione` — dimensioni ΔI: **D1** chiarezza · **D2** coesione · **D3** stabilità dottrinale.
 
 ---
