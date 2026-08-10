@@ -37,20 +37,21 @@ diplomatica non si perde mai: sta in `orig` / `sic` / `abbr` / `del`, la forma e
 
 | Fenomeno sul testimone | Soluzione TEI | Attributi chiave | Esempio (dal *Castello*) |
 |---|---|---|---|
-| Grafia d'autore da regolarizzare | `<choice><orig>…</orig><reg>…</reg></choice>` | — | `à` → `a` |
-| Errore evidente da correggere | `<choice><sic>…</sic><corr>…</corr></choice>` | — | `sapere` → `sapete` |
-| Abbreviazione / sigla da sciogliere | `<choice><abbr>…</abbr><expan>…</expan></choice>` | — | `I.M.I.` → `Iesus Maria Ioseph` |
-| Cancellatura autoriale | `<del>…</del>` | `@rend` `@hand` `@resp` `@type` | `<del rend="strikethrough" hand="#ink_1" resp="#s-teresa" type="correction">to</del>` |
-| Aggiunta autoriale | `<add>…</add>` | `@place` `@hand` `@resp` `@type` | `<add place="inline" hand="#ink_1" resp="#s-teresa" type="substitution">i</add>` |
-| Sostituzione (cancella + aggiunge) | `<subst><del/><add/></subst>` | `@hand` | `del` "to" + `add` "i" entro un `subst` |
-| Variante fra fasi redazionali | `<app><lem/><rdg/></app>` | `@wit` `@varSeq` | `<lem wit="#txt-c">secondo</lem>` / `<rdg wit="#txt-b0">to secondo</rdg>` |
-| Lettura incerta | `<unclear>…</unclear>` | `@reason` `@cert` | `<unclear reason="ink-fade" cert="medium">…</unclear>` |
-| Perdita materiale (lacuna) | `<gap/>` | `@reason` `@unit` `@quantity` | `<gap reason="damage" unit="word" quantity="1"/>` |
-| Integrazione congetturale dell'editore | `<supplied>…</supplied>` | `@reason` `@resp` | `<supplied reason="editorial" resp="#editor">…</supplied>` |
-| Latino entro il volgare | `<foreign>…</foreign>` | `@xml:lang="la"` | `<foreign xml:lang="la">Consummatum est</foreign>` |
-| Enfasi grafica (non semantica) | `<hi>…</hi>` | `@rend` | `<hi rend="rubric">…</hi>` |
-| Materiale di cornice (segnatura, richiamo, n. di carta) | `<fw>…</fw>` | `@type` | `<fw type="catch">…</fw>` |
-| Cambio di carta / foliazione | `<pb/>` | `@n` | `<pb n="158r"/>` |
+| Grafia d'autore da regolarizzare | `choice` › `orig` / `reg` | — | à → a |
+| Errore evidente da correggere | `choice` › `sic` / `corr` | — | sapere → sapete |
+| Abbreviazione / sigla da sciogliere | `choice` › `abbr` / `expan` | — | I.M.I. → Iesus Maria Ioseph |
+| Cancellatura autoriale | `del` | `@rend @hand @resp @type` | del *to* (rend=strikethrough) |
+| Aggiunta autoriale | `add` | `@place @hand @resp @type` | add *i* (place=inline) |
+| Sostituzione (cancella + aggiunge) | `subst` › `del` + `add` | `@hand` | *to* → *i* entro subst |
+| Variante fra fasi redazionali | `app` › `lem` / `rdg` | `@wit @varSeq` | lem *secondo* / rdg *to secondo* |
+| Lettura incerta | `unclear` | `@reason @cert` | unclear reason=ink-fade |
+| Perdita materiale (lacuna) | `gap` | `@reason @unit @quantity` | gap reason=damage unit=word |
+| Integrazione congetturale dell'editore | `supplied` | `@reason @resp` | supplied resp=#editor |
+| Latino entro il volgare | `foreign` | `@xml:lang="la"` | foreign *Consummatum est* |
+| Enfasi grafica (non semantica) | `hi` | `@rend` | hi rend=rubric |
+| Materiale di cornice (segnatura, richiamo, n. carta) | `fw` | `@type` | fw type=catch |
+| Cambio di carta / foliazione | `pb` | `@n` | pb n=158r |
+| A-capo di parola spezzata (solo questo) | `lb` | `@break="no"` | lb break=no |
 
 > **Non si tocca** con marcatura editoriale: punteggiatura e maiuscole possono essere
 > regolarizzate **solo** dentro `reg`/`corr` (mai in silenzio); gli a-capo ordinari **non**
@@ -83,19 +84,19 @@ diplomatica non si perde mai: sta in `orig` / `sic` / `abbr` / `del`, la forma e
 
 ## 4. Registro degli interventi
 
-Compilare **una riga per intervento**. La colonna *Elemento TEI* rende esplicito il tipo di
-operazione; *Lezione diplomatica* e *Esito* tengono sempre visibile il prima/dopo.
+Compilare **una riga per intervento**. La colonna *Diplomatica → Esito* tiene sempre visibile
+il prima/dopo; *Elemento TEI* rende esplicito il tipo di operazione.
 
-| # | Luogo (c. / §) | Fenomeno | Lezione diplomatica | Esito editoriale | Elemento TEI | Attributi | `@hand` | `@resp` | `@cert` | Note |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | 158r | grafia | `à` | `a` | `choice > orig/reg` | — | — | `#editor` | — | regolarizzazione accento |
-| 2 | 158r | errore | `sapere` | `sapete` | `choice > sic/corr` | — | — | `#editor` | high | lapsus d'autore |
-| 3 | 158r | sigla | `I.M.I.` | `Iesus Maria Ioseph` | `choice > abbr/expan` | — | — | `#editor` | high | invocazione iniziale |
-| 4 | — | sostituzione | `to` (canc.) | `i` (agg.) | `subst > del + add` | `del/@rend=strikethrough`; `add/@place=inline`; `@type` | `#ink_1` | `#s-teresa` | high | correzione autoriale inline |
-| 5 | — | variante di fase | `to secondo` | `secondo` | `app > lem/rdg` | `lem/@wit=#txt-c`; `rdg/@wit=#txt-b0`; `@varSeq` | `#ink_1` | `#s-teresa` | — | fase base → edizione critica |
-| 6 | | | | | | | | | | |
-| 7 | | | | | | | | | | |
-| 8 | | | | | | | | | | |
+| # | Luogo (c./§) | Fenomeno | Diplomatica → Esito | Elemento TEI | `@resp` · `@cert` | Note (attributi, mano) |
+|---|---|---|---|---|---|---|
+| 1 | 158r | grafia | à → a | choice › orig/reg | #editor | regolarizzazione accento |
+| 2 | 158r | errore | sapere → sapete | choice › sic/corr | #editor · high | lapsus d'autore |
+| 3 | 158r | sigla | I.M.I. → Iesus Maria Ioseph | choice › abbr/expan | #editor · high | invocazione iniziale |
+| 4 | — | sostituzione | to → i | subst › del+add | #s-teresa · high | rend=strikethrough; place=inline; hand #ink_1 |
+| 5 | — | variante di fase | to secondo → secondo | app › lem/rdg | #s-teresa | lem @wit=#txt-c; rdg @wit=#txt-b0; @varSeq; hand #ink_1 |
+| 6 |  |  |  |  |  |  |
+| 7 |  |  |  |  |  |  |
+| 8 |  |  |  |  |  |  |
 
 
 ### Dal diplomatico all'interpretativo
@@ -108,4 +109,4 @@ catene). L'indice d'impatto **non si digita**: la `<fs>` registra le bande, lo s
 ---
 
 **Verifica**: buona formazione, RelaxNG (TEI All), guardie di CI (NFC, `@ana` referenziale,
-co-occorrenza, `impactindex.sch`).*
+co-occorrenza, `impactindex.sch`).
