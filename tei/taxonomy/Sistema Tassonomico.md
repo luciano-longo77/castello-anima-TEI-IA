@@ -227,7 +227,7 @@ categoria di `operation`. La coincidenza è coerente con il `catDesc` di
 
 ### 5.3 Registrazione TEI
 La classe discreta è dichiarata in `@ana` sul segmento (una delle 4 categorie
-`impact`); il calcolo (N, A, F, I) è registrato come **feature structure** `<fs>`
+`impact`); il calcolo (N_band, A_band, N, A, F, Fnorm, I) è registrato come **feature structure** `<fs>`
 in `<standOff type="impact-index">`, collegata al segmento via `@corresp`. La
 formula è dichiarata **una sola volta** nell'`editorialDecl`, non ripetuta.
 
@@ -323,19 +323,21 @@ Il sistema impone controlli rigorosi via Schematron (definiti in `taxonomy-sch.s
 *   **`category-prefix-consistency`**: Per tutte le tassonomie tranne `func`, le categorie con trattino rispettano il prefisso della tassonomia radice (es. `risk-*`, `operation-*`, `exposition-*`, etc.).
 *   **`taxonomy-category-xmlid-unique`**: Unicità globale di `@xml:id` su tutti gli elementi `<taxonomy>` e `<category>` (rete di sicurezza per bug RNG).
 
-### 8.3 Vincoli editoriali (prosa normativa)
-I seguenti vincoli sono **gestiti manualmente in fase di annotazione** e **non ancora enforced da Schematron**:
+### 8.3 Vincoli di annotazione — automatizzati e manuali
 
-**Coerenza `@ana` → categorie**: `@ana` deve puntare a categorie effettivamente definite in `tassonomia-gh.xml` (verificabile via XPath, ma non enforced da schema RNG/Schematron).
+Parte di questi vincoli è oggi **imposta automaticamente dalla CI**; resta manuale solo la corrispondenza fra i rami interni di `func` e `operation`.
 
-**Corrispondenza `rischio-*` ↔ `operation-*`** (vedi §6.1): quando un segmento riceve `#rischio-attenuatio` (o `precisatio`, `declaratio`), deve ricevere la corrispondente `#operation-attenuatio` (o `precisatio`, `declaratio`).
+**Automatizzati in CI (bloccanti):**
 
-**Compatibilità `phase-critical`** (vedi §4.2):
-`#phase-critical` deve comparire insieme a una fase posizionale (`#phase-introduction`, `#phase-mediana`, o `#phase-conclusive`).
+- **Coerenza `@ana` → categorie** — ogni token `@ana` punta a una categoria di `tassonomia-gh.xml`: guardia **E2** (`e2_guard.py`, workflow *Validate Text*).
+- **Compatibilità `phase-critical`** (vedi §4.2) — `#phase-critical` sempre con una e una sola fase posizionale (`#phase-introduction`/`#phase-mediana`/`#phase-conclusive`): **guardia di co-occorrenza** (`cooccurrence_guard.py`).
+- **Coerenza dell'indice `impact-index`** (vedi §5.3) — vocabolario delle bande, valori-ancora, `I` = formula e classe `#impact-*` = banda di `I`: **Schematron `impactindex.sch`** (workflow *Validate Text*).
 
-**Registrazione dell'indice `impact-index`** (vedi §5.3): ogni segmento con una categoria `impact-*` deve avere una `<fs>` corrispondente in `<standOff type="impact-index">` (collegata via `@corresp`), e la classe formale F ivi registrata deve essere congruente con la categoria `operation-*` dichiarata in `@ana` (delimitazione → F=1; attenuatio/precisatio/riequilibrio → F=2; declaratio → F=3).
+**Ancora manuale (revisione editoriale):**
 
-**Prossimi passi**: questi vincoli vanno convertiti in regole Schematron e inclusi in `taxonomy-sch.sch` per automazione completa della validazione. Sono candidati per una futura versione dell'ODD.
+- **Corrispondenza `rischio-*` ↔ `operation-*`** (vedi §6.1): quando un segmento riceve `#rischio-attenuatio` (o `precisatio`, `declaratio`) deve ricevere la corrispondente `#operation-attenuatio` (o `precisatio`, `declaratio`). Non ancora convertita in regola Schematron.
+
+**Nota.** La *presenza* della `<fs>` per ogni `#impact-*` e la congruenza F ↔ `operation` sono verificate dallo strumento `tools/impact_index.py` in modalità audit (non bloccante in CI).
 
 ## 9. Come citare questo lavoro
 Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca, cita come segue:
