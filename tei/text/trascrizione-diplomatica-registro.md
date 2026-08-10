@@ -1,4 +1,4 @@
-# Trascrizione diplomatica — procedure e registro degli interventi
+# Trascrizione diplomatica - procedure e registro degli interventi
 ## Dal livello diplomatico al livello interpretativo
 ### Intertestualità sotto sorveglianza
 #### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
@@ -110,5 +110,5 @@ catene). L'indice d'impatto **non si digita**: la `<fs>` registra le bande, lo s
 
 ---
 
-*Verifica: buona formazione, RelaxNG (TEI All), guardie di CI (NFC, `@ana` referenziale,
+**Verifica**: buona formazione, RelaxNG (TEI All), guardie di CI (NFC, `@ana` referenziale,
 co-occorrenza, `impactindex.sch`).*
