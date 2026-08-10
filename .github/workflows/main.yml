@@ -131,6 +131,31 @@ jobs:
                 f"{len(esempio_files)} file esempio verificati (@ana referenziale OK).")
           PYEOF
           python validate_taxonomy.py
+      - name: Validazione strutturale degli esempi (RNG TEI All)
+        run: |
+          test -s schema/tei_all.rng || { echo "::error::schema/tei_all.rng mancante o vuoto"; exit 1; }
+          cat > validate_esempi.py << 'PYEOF'
+          import sys, glob
+          from lxml import etree
+          rng = etree.RelaxNG(etree.parse("schema/tei_all.rng"))
+          errors, files = [], sorted(glob.glob("tei/taxonomy/esempio/*.xml"))
+          for f in files:
+              try:
+                  doc = etree.parse(f)
+              except etree.XMLSyntaxError as e:
+                  errors.append(f"{f}: non ben formato: {e}"); continue
+              if not rng.validate(doc):
+                  for log in rng.error_log:
+                      errors.append(f"{f}: {log}")
+          if not files:
+              print("::warning::nessun esempio in tei/taxonomy/esempio/*.xml")
+          if errors:
+              print("::error::Validazione strutturale esempi fallita:")
+              for e in errors: print("  -", e)
+              sys.exit(1)
+          print(f"Validazione strutturale OK: {len(files)} esempio/i validi contro tei_all.rng.")
+          PYEOF
+          python validate_esempi.py
 
   e1-guard:
     name: Guardia E1 (classDecl header == tassonomia-gh.xml)
