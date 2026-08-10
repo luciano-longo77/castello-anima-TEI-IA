@@ -107,12 +107,12 @@ Porzioni di testo rilevanti, classificate tramite `@ana` secondo la funzione che
 ### Indice di impatto
 
 Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`, `impact-high`, `impact-critical`), calcolato secondo la formula 
-**`I = (4·F_norm + 2·N + 1·A) / 7`**, con pesi derivanti da un confronto a coppie secondo il principio dell'**Analytic Hierarchy Process** (AHP).
+**`I = (4·Fnorm + 2·N + 1·A) / 7`**, con pesi derivanti da un confronto a coppie secondo il principio dell'**Analytic Hierarchy Process** (AHP).
 Il confronto restituisce il rapporto **F : N : A = 4 : 2 : 1**, assegnato a citazioni e glosse in base a:
 
 - **N** — necessità interpretativa (esposizione dottrinale del passo prima dell'intervento);
 - **A** — riduzione dell'ambiguità (quanto l'intervento restringe le letture possibili);
-- **F** — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse `operation`), normalizzata come `F_norm = F/3`.
+- **F** — funzione prudenziale come classe formale del marcatore (ordinale 1/2/3, derivata dall'asse `operation`), normalizzata come `Fnorm = F/3`.
 
 Le soglie delle quattro classi sono calibrate sulla distribuzione reale del campione. 
 N e A si assegnano per **bande** (l'annotatore sceglie la banda, non il decimale), ciascuna con un **valore‑ancora fisso**; la doppia registrazione porta la classe `#impact-*` in `@ana` e il calcolo in una `<fs>` dentro `<standOff type="impact-index">`. ➡️
