@@ -164,7 +164,7 @@ Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico 
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
 | `standOff` | Contenitore di annotazioni non in linea (indice d'impatto, figure). |
-| `fs`, `f`, `numeric` | Struttura di tratti, tratto singolo e valore numerico dell'indice. |
+| `fs`, `f`, `symbol`, `numeric` | Struttura di tratti, tratto singolo, valore-banda (`symbol`: N_band/A_band) e valore numerico (`numeric`: N/A/F/Fnorm/I) dell'indice. |
 
 ### I. Collegamenti e Citazioni
 | Elemento | Uso Ecdotico / Computazionale |
