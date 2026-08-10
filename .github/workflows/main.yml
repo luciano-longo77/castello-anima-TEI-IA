@@ -156,6 +156,18 @@ jobs:
           print(f"Validazione strutturale OK: {len(files)} esempio/i validi contro tei_all.rng.")
           PYEOF
           python validate_esempi.py
+      - name: Guardia co-occorrenza sugli esempi
+        run: |
+          set -e
+          shopt -s nullglob
+          n=0
+          for f in tei/taxonomy/esempio/*.xml; do
+            echo "::group::co-occorrenza $f"
+            python3 .github/workflows/scripts/cooccurrence_guard.py "$f"
+            echo "::endgroup::"
+            n=$((n+1))
+          done
+          echo "Guardia co-occorrenza superata su $n esempio/i."
 
   e1-guard:
     name: Guardia E1 (classDecl header == tassonomia-gh.xml)
