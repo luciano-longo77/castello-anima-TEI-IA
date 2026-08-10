@@ -15,7 +15,7 @@
 
 ---
 
-## `func` — Funzioni retoriche
+## `func`- Funzioni retoriche
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -36,7 +36,7 @@
 | `ethos-esperienza` | `#ethos-esperienza` | Rivendicazione dell’esperienza (“non parlo senza l’esperienza”) come fondamento epistemico che le… |
 | `ethos-obbedienza` | `#ethos-obbedienza` | Insistenza sull’obbedienza al confessore (a scopo difensivo), vista come condizione necessaria pe… |
 
-## `impact` — Indice d'impatto (classe discreta)
+## `impact`- Indice d'impatto (classe discreta)
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -45,7 +45,7 @@
 | `impact-low` | `#impact-low` | Fascia inferiore dell'indice (I < 0.50): minima forza regolativa del marcatore. Parti ornamentali… |
 | `impact-critical` | `#impact-critical` | Fascia superiore dell'indice (I ≥ 0.82): massima forza regolativa del marcatore. Nel campione coi… |
 
-## `risk` — Rischio dottrinale
+## `risk`- Rischio dottrinale
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -55,7 +55,7 @@
 | `risk-impeccabilita` | `#risk-impeccabilita` | Ambiguità relative alla “sicurtà” mistica e alla percezione dell’impossibilità di peccare nello s… |
 | `risk-ambiguita` | `#risk-ambiguita` | Punti in cui la formulazione è oscura, metaforica o oscillante, generando difficoltà interpretati… |
 
-## `mystic_state` — Stati mistici
+## `mystic_state` - Stati mistici
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -65,7 +65,7 @@
 | `mystic_state-otium` | `#mystic_state-otium` | Ozio delle potenze inteso non come inerzia quietista, ma come sospensione operata da Dio affinché… |
 | `mystic_state-unione` | `#mystic_state-unione` | Stato mistico di massimo avvicinamento a Dio, descritto con lessico alto e analogie complesse; lu… |
 
-## `operation` — Operazioni prudenziali
+## `operation` - Operazioni prudenziali
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -75,7 +75,7 @@
 | `operation-declaratio` | `#operation-declaratio` | Dichiarazioni dirette di ortodossia, con cui l’autrice esplicita la propria adesione alla dottrin… |
 | `operation-riequilibrio` | `#operation-riequilibrio` | Interventi equilibranti che compensano un’affermazione rischiosa con una precisazione ortodossa p… |
 
-## `exposition` — Livello d'esposizione
+## `exposition` - Livello d'esposizione
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -84,7 +84,7 @@
 | `exposition-high` | `#exposition-high` | Esposizione intensa di dottrine mistiche complesse che richiedono glosse, precisazioni e cautele … |
 | `exposition-critical` | `#exposition-critical` | Livello massimo di esposizione dottrinale, tipico delle sezioni sul matrimonio spirituale, la tra… |
 
-## `phase` — Fase discorsiva
+## `phase` - Fase discorsiva
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
@@ -93,7 +93,7 @@
 | `phase-conclusive` | `#phase-conclusive` | Chiusure che ricapitolano i contenuti, riordinano la materia e predispongono alla transizione ver… |
 | `phase-critical` | `#phase-critical` | Marcatore trasversale, non posizionale: segnala che il segmento è teologicamente delicato indipen… |
 
-## `relation` — Relazioni intertestuali
+## `relation` - Relazioni intertestuali
 
 | `xml:id` | in `@ana` | Descrizione |
 |---|---|---|
