@@ -10,7 +10,7 @@
 
 ## Cos'è questo file
 
-`taxonomy-text-model.xml` mostra, su un brano reale del *Castello dell'anima* (apertura del Libro III, c. 158r), come si applica in pratica il sistema tassonomico dell'edizione. Non è un file di lavoro dell'edizione vera e propria — serve solo a documentare l'uso corretto dell'attributo `@ana`.
+`taxonomy-text-model.xml` mostra, su un brano reale del *Castello dell'anima* (apertura del Libro III, c. 158r), come si applica in pratica il sistema tassonomico dell'edizione. Non è un file di lavoro dell'edizione vera e propria, serve solo a documentare l'uso corretto dell'attributo `@ana`.
 
 ## Come leggerlo
 
