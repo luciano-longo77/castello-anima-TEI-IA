@@ -109,16 +109,18 @@ L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, c
 Le **figure retoriche** si annotano in **stand-off** con `<span>`/`<spanGrp>`: il tratto di testo che realizza la figura si àncora per riferimento e si classifica con `@ana` su un vocabolario retorico locale (`#fig-metafora`, `#fig-similitudine`…), tenuto nel file del testo come `interpGrp`. Così l'annotazione retorica non spezza il flusso testuale e resta governata da un vocabolario, senza gravare sulla tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa editoriale è `<note>`. 
 La glossa (`<note type="glossa">`) si àncora al segmento/lemma tramite `@target` (puntamento direzionale glossa→testo), mentre `@corresp` resta riservato al legame `<fs>`-indice → `seg;` la collocazione materiale è resa da `@place` (margin, interlinear…) e la mano da `@hand`.
 
-L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La categoria (`#impact-*`) sta in `@ana` sul `seg`; il fascio numerico sta in un `<fs>` (feature structure) in uno strato `<standOff type="impact-index">`, fratello di `<text>` nello stesso documento, collegato via `@corresp`. Si usa `fs`, **non `<val>`** (non ammesso in `seg`). La formula AHP — `I = (4·F_norm + 2·N + 1·A)/7` con `F` dal rango dell'asse `operation` — è dichiarata **una volta** in `editorialDecl`; il valore `I` è prodotto dallo script, mai digitato a mano.
+L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La categoria (`#impact-*`) sta in `@ana` sul `seg`; il fascio numerico sta in un `<fs>` (feature structure) in uno strato `<standOff type="impact-index">`, fratello di `<text>` nello stesso documento, collegato via `@corresp`. Si usa `fs`, **non `<val>`** (non ammesso in `seg`). La formula AHP — `I = (4·Fnorm + 2·N + 1·A)/7` con `F` dal rango dell'asse `operation` — è dichiarata **una volta** in `editorialDecl`; il valore `I` è prodotto dallo script, mai digitato a mano.
 
 ```xml
 <standOff type="impact-index">
-  <fs xml:id="idx-159r" corresp="#seg-159r" cert="medium">
-    <f name="N"><numeric value="0.92"/></f>
-    <f name="A"><numeric value="0.82"/></f>
+  <fs xml:id="idx-seg-c8-desiderio" corresp="#seg-c8-desiderio" cert="medium">
+    <f name="N_band"><symbol value="critica"/></f>
+    <f name="A_band"><symbol value="alta"/></f>
+    <f name="N"><numeric value="0.90"/></f>
+    <f name="A"><numeric value="0.85"/></f>
     <f name="F"><numeric value="2"/></f>
     <f name="Fnorm"><numeric value="0.667"/></f>
-    <f name="I"><numeric value="0.761"/></f>
+    <f name="I"><numeric value="0.760"/></f>
   </fs>
 </standOff>
 ```
@@ -192,8 +194,8 @@ Valori **chiusi**, letti dai file costruiti. Usare solo questi.
 ### A2 · `@wit` — gli 8 testimoni/fasi (ordine per `@varSeq`)
 `#txt-b0` (1) · `#txt-b1` (2) · `#txt-1` (3) · `#txt-2` (4) · `#txt-3` (5) · `#txt-m` (6) · `#txt-4` (esterno) · `#txt-c` (edizione critica → solo a `lem`)
 
-### A3 · `@ref` / `@resp` — le 16 entità
-Persone `#s-teresa` `#Anna-La-Longa` `#editor` `#esterno` `#p-avila` `#p-john` `#p-molinos` `#CelestinoSanNicolo` · Luoghi `#Palermo` `#Sicilia` `#Caltanissetta` · Org `#Carmelo` `#Inquisizione` `#BCP` `#AI_controllata` `#QA`
+### A3 · `@ref` / `@resp` — le 17 entità
+Persone `#Anna-La-Longa` `#s-teresa` `#dio` `#esterno` `#p-avila` `#p-john` `#p-molinos` `#CelestinoSanNicolo` `#editor` `#QA` · Luoghi `#Palermo` `#Caltanissetta` `#Sicilia` · Org `#AI_controllata` `#BCP` `#Carmelo` `#Inquisizione`
 
 ### A4 · `@ana` — le 8 tassonomie interpretative (un valore per asse)
 | Asse | Valori |
