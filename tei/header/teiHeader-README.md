@@ -55,7 +55,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 ├─────────────────┤├────────────────┤ ├────────────────────┤├────────────────┤
 │ • Titolo & Auth ││ • Criteri Ecd. │ │ • Sociolinguistica ││ • JSON IA      │
 │ • Codicologia   ││ • classDecl(10)│ │ • listPerson       ││ • METS Link    │
-│ • Apparati      ││ • tagsDecl (67)│ │ • listOrg          ││                │
+│ • Apparati      ││ • tagsDecl (70)│ │ • listOrg          ││                │
 │                 ││                │ │ • textClass        ││                │
 └─────────────────┘└────────────────┘ └────────────────────┘└────────────────┘
                                         │
@@ -105,7 +105,7 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
 
 ## 4. Dichiarazione del Tagset (`tagsDecl`)
 
-Il tagset disciplina **67 elementi TEI**, dichiarati nel `tagsDecl` in un unico ordinamento logico dal contenitore al dettaglio e qui raggruppati per macro-funzione (A–J).
+Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico ordinamento logico dal contenitore al dettaglio e qui raggruppati per macro-funzione (A–J).
 
 ### A. Struttura Radice e Metadati
 | Elemento | Uso Ecdotico / Computazionale |
