@@ -97,7 +97,6 @@ operazione; *Lezione diplomatica* e *Esito* tengono sempre visibile il prima/dop
 | 7 | | | | | | | | | | |
 | 8 | | | | | | | | | | |
 
-*(duplicare le righe vuote secondo necessità)*
 
 ### Dal diplomatico all'interpretativo
 
