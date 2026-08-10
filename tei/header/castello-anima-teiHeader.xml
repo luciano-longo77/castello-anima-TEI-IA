@@ -952,6 +952,8 @@
                             <tagUsage gi="layout">Struttura grafica e rigatura.</tagUsage>
                             
                             <!-- 3. STRUTTURA DEL TESTO -->
+                            <tagUsage gi="text">Contenitore del corpo testuale primario.</tagUsage>
+                            <tagUsage gi="body">Corpo del testo.</tagUsage>
                             <tagUsage gi="div">Struttura dell’opera (Libri, Capitoli).</tagUsage>
                             <tagUsage gi="head">Rubriche tematiche e titoli.</tagUsage>
                             <tagUsage gi="argument">Sommario/rubrica argomentativa in apertura di capitolo.</tagUsage>
@@ -1005,6 +1007,7 @@
                             <tagUsage gi="fs">Struttura di tratti dell’indice d’impatto.</tagUsage>
                             <tagUsage gi="f">Tratto singolo (dimensione dell’indice).</tagUsage>
                             <tagUsage gi="numeric">Valore numerico di un tratto.</tagUsage>
+                            <tagUsage gi="symbol">Valore simbolico di un tratto: banda di N e A (critica/alta/media/bassa).</tagUsage>
                             
                             <!-- 9. COLLEGAMENTI E CITAZIONI -->
                             <tagUsage gi="ref">Rinvii interni, esterni, intertestuali.</tagUsage>
