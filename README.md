@@ -106,7 +106,9 @@ Porzioni di testo rilevanti, classificate tramite `@ana` secondo la funzione che
 
 ### Indice di impatto
 
-Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`, `impact-high`, `impact-critical`), calcolato secondo la formula del progetto AURORA `I = (4·F_norm + 2·N + 1·A) / 7`, con pesi AHP in rapporto F : N : A = 4 : 2 : 1, assegnato a citazioni e glosse in base a:
+Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`, `impact-high`, `impact-critical`), calcolato secondo la formula 
+**`I = (4·F_norm + 2·N + 1·A) / 7`**, con pesi derivanti da un confronto a coppie secondo il principio dell'**Analytic Hierarchy Process** (AHP).
+Il confronto restituisce il rapporto **F : N : A = 4 : 2 : 1**, assegnato a citazioni e glosse in base a:
 
 - **N** — necessità interpretativa (esposizione dottrinale del passo prima dell'intervento);
 - **A** — riduzione dell'ambiguità (quanto l'intervento restringe le letture possibili);
@@ -116,6 +118,7 @@ Le soglie delle quattro classi sono calibrate sulla distribuzione reale del camp
 N e A si assegnano per **bande** (l'annotatore sceglie la banda, non il decimale), ciascuna con un **valore‑ancora fisso**; la doppia registrazione porta la classe `#impact-*` in `@ana` e il calcolo in una `<fs>` dentro `<standOff type="impact-index">`. ➡️
  [Leggi il README dell'Indice d'impatto (impact-index)](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/docs/indice-impatto.md)
 
+> Fonte: **T. L. Saaty**, *The Analytic Hierarchy Process: Planning, Priority Setting, Resource Allocation*, New York, McGraw-Hill, 1980
 ---
 
 ## Pipeline AI
