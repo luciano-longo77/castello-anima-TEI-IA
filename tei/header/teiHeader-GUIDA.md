@@ -38,11 +38,11 @@ Serve a:
 
 Il teiHeader è composto da cinque blocchi diretti:
 
-*   **`<fileDesc>`** — Identità, provenienza, responsabilità
-*   **`<encodingDesc>`** — Metodo editoriale, tassonomie (`classDecl`)
-*   **`<profileDesc>`** — Lingue, persone, contesto storico
-*   **`<xenoData>`** — Pipeline IA (specifica machine-readable) e puntatore METS; è un blocco a sé, non annidato in `encodingDesc`
-*   **`<revisionDesc>`** — Log completo della lavorazione
+*   **`<fileDesc>`** - Identità, provenienza, responsabilità
+*   **`<encodingDesc>`** - Metodo editoriale, tassonomie (`classDecl`)
+*   **`<profileDesc>`** -  Lingue, persone, contesto storico
+*   **`<xenoData>`** -  Pipeline IA (specifica machine-readable) e puntatore METS; è un blocco a sé, non annidato in `encodingDesc`
+*   **`<revisionDesc>`** - Log completo della lavorazione
 
 ***
 
@@ -174,7 +174,8 @@ Controlla:
 
 ### ✅ *Importare le tassonomie*
 
-Per il riuso, parti dalla fonte normativa tei/taxonomy/tassonomia-gh.xml (le 8 tassonomie interpretative, con schema di validazione). Le 2 tassonomie di processo (fase, workflow) presenti nell'header sono interne al workflow editoriale e non sono pensate per il riuso.
+Per il riuso, parti dalla fonte normativa **tei/taxonomy/tassonomia-gh.xml** (le 8 tassonomie interpretative, con schema di validazione). 
+Le 2 tassonomie di processo **(`fase`, `workflow`)** presenti nell'header sono interne al **workflow editoriale** e non sono pensate per il riuso.
 
 ### ✅ *Replicare il metodo editoriale*
 
@@ -186,7 +187,7 @@ Le tassonomie non sono attualmente esportate in formati Linked Open Data, ma la 
 
 ### ✅ *Creare documentazione FAIR*
 
-`revisionDesc` fornisce provenance completa per depositi in piattaforme.
+`revisionDesc` fornisce *provenance* completa per depositi in piattaforme.
 
 ***
 
