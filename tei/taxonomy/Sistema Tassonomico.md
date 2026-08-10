@@ -89,6 +89,7 @@ Descrive **dove** un segmento agisce nel discorso e **con quale forza interpreta
 *   `phase` — fase discorsiva.
 
 ## 3. Tassonomie operative (core)
+
 ```xml
 <classDecl>
 <taxonomy xml:id="func"/>
@@ -101,6 +102,7 @@ Descrive **dove** un segmento agisce nel discorso e **con quale forza interpreta
 <taxonomy xml:id="phase"/>
 </classDecl>
 ```
+
 **Elenco completo dei valori ammessi**
 L'elenco delle `<category>` per ciascuna tassonomia è definito nel file
 **`./tassonomia-gh.xml`**, che costituisce la **fonte normativa primaria** dei valori annotativi.
@@ -110,13 +112,15 @@ In TEI P5 l'attributo `@ana` ha tipo **pointer** e **deve contenere URI o fragme
 L'attributo `@ana` può contenere **valori multipli**, separati da spazi bianchi (whitespace), ciascuno riferito a una categoria distinta.
 
 ### Esempio (forma TEI‑compliant)
+
 ```xml
 <seg
 ana="#pedagogia
-#relation-mistica-attiva-meditazione
-#risk-dottrinale
-#operation-delimitazione
-#impact-high #phase-mediana">
+  #relation-mistica-attiva-meditazione
+    #risk-dottrinale
+      #operation-delimitazione
+        #impact-high
+          #phase-mediana">
 Testo annotato del manoscritto...
 </seg>
 ```
@@ -156,38 +160,39 @@ La categoria `phase-critical` della tassonomia `phase` è un **marcatore trasver
 - `#phase-conclusive` (se il passaggio critico si trova in conclusione)
 
 **Esempio corretto**:
+
 ```xml
 <seg
 ana="#phase-critical
-#phase-mediana
-#exposition-critical
-#risk-quietismo">
+      #phase-mediana
+        #exposition-critical
+          #risk-quietismo">
 Testo con problematiche teologiche in sezione centrale...
 </seg>
 ```
 
 **Esempio scorretto** (manca fase posizionale):
+
 ```xml
 <seg
 ana="#phase-critical
-#exposition-critical
-#risk-quietismo">
+    #exposition-critical
+      #risk-quietismo">
 
 <!-- Errore: manca fase posizionale (introduction/mediana/conclusive) -->
 </seg>
 ```
 
-**Implementazione**: il vincolo è **gestito in fase editoriale** (prosa normativa).
-Un futuro constraint Schematron può essere aggiunto per enforcing automatico (vedi §8.3).
+**Implementazione**: il vincolo è **imposto in CI** dalla guardia di co-occorrenza (`cooccurrence_guard.py`, workflow *Validate Text*) — vedi §8.3.
 
 ## 5. Indice composito di impatto (N–A–F)
 L'indice di impatto è un valore **derivato** (non una tassonomia) che quantifica
 la forza regolativa di ogni occorrenza annotata. Combina tre parametri:
 
 - **N** = necessità interpretativa (esposizione dottrinale del passo *prima*
-  dell'intervento), continuo 0–1;
+  dell'intervento), assegnata per **banda** (Critica/Alta/Media/Bassa → ancore 0.90/0.75/0.55/0.30);
 - **A** = riduzione dell'ambiguità (quanto l'intervento restringe le letture),
-  continuo 0–1;
+  assegnata per **banda** (Alta/Media/Bassa → ancore 0.85/0.675/0.40);
 - **F** = funzione prudenziale, espressa come **classe formale del marcatore** su
   scala ordinale {1, 2, 3}, **derivata dal rango dell'asse `operation`**:
   - `operation-delimitazione` → F = 1 (il «cioè»: circoscrive una parola);
@@ -195,10 +200,13 @@ la forza regolativa di ogni occorrenza annotata. Combina tre parametri:
     → F = 2 (il «s'intende/ non s'intende»: ridefinisce una proposizione);
   - `operation-declaratio` → F = 3 (il «io mi dichiaro»: dichiarazione performativa).
 
+N e A si assegnano scegliendo una **banda**; il valore‑ancora è determinato dalla banda,
+l'annotatore non digita il decimale. F si legge dall'asse `operation`.
+
 ### 5.1 Formula (AHP)
 Pesi da confronti a coppie (Analytic Hierarchy Process) in rapporto F : N : A = 4 : 2 : 1:
 
-    I = (4·F_norm + 2·N + 1·A) / 7,   con F_norm = F/3
+    I = (4·Fnorm + 2·N + 1·A) / 7,   con Fnorm = F/3
 
 (w_F = 4/7, w_N = 2/7, w_A = 1/7).
 
@@ -256,6 +264,7 @@ Ogni categoria della tassonomia `func` che appartenga al ramo `rischio` (cioè `
 Un segmento che riceve `#rischio-attenuatio` deve ricevere anche `#operation-attenuatio`. Analogamente per `precisatio` e `declaratio`.
 
 **Esempio corretto**:
+
 ```xml
 <seg
 ana="#rischio-attenuatio
@@ -267,6 +276,7 @@ Glosse esplicative che smorzano formulazioni rischiose...
 ```
 
 **Esempio scorretto** (manca operazione corrispondente):
+
 ```xml
 <seg ana="#rischio-attenuatio
 #legittimazione">
@@ -284,21 +294,25 @@ il vincolo è **formalmente dichiarato ma non ancora codificato in Schematron** 
 >**Nota:** le query presuppongono che il namespace TEI (`xmlns:tei="http://www.tei-c.org/ns/1.0"`) sia correttamente dichiarato nel processore XPath/XQuery e che `@ana` contenga **pointer** (fragment identifier con `#`).
 
 ### Segmenti ad alto rischio con operazione attenuativa
+
 ```xpath
 //tei:seg[matches(@ana, '#risk-dottrinale') and matches(@ana, '#operation-attenuatio')]
 ```
 
 ### Segmenti marcati come critical in fase mediana
+
 ```xpath
 //tei:seg[matches(@ana, '#phase-critical') and matches(@ana, '#phase-mediana')]
 ```
 
 ### Segmenti che ricevono strategia di rischio (per validazione)
+
 ```xpath
 //tei:seg[matches(@ana, '#rischio-')]
 ```
 
 ### Tutti i segmenti che violano il vincolo `rischio-*` ↔ `operation-*` (per validazione manuale)
+
 ```xpath
 //tei:seg[matches(@ana, '#rischio-attenuatio') and not(matches(@ana, '#operation-attenuatio'))]
 ```
@@ -306,6 +320,7 @@ il vincolo è **formalmente dichiarato ma non ancora codificato in Schematron** 
 ## 8. Validazione e setup ambientale
 ### 8.1 Configurazione oXygen XML Editor
 Per attivare la validazione automatica (strutturale e logica) durante l'editing del corpus TEI, il file corpus deve referenziare gli schemi locali inclusi nel pacchetto:
+
 ```xml
 <?xml-model
 href="../../tei/taxonomy/schema/taxonomy-rng.rng" type="application/xml"
@@ -313,6 +328,7 @@ schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../../tei/taxonomy/schema/taxonomy-sch.sch" type="application/xml"
 schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
+
 (Regolare il percorso relativo `href` in base alla posizione del corpus rispetto al directory `tei/taxonomy/schema/`.)
 
 ### 8.2 Vincoli Schematron (automatici)
@@ -346,6 +362,7 @@ Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca
 > Luciano Longo, *Sistema Tassonomico del modello TEI interpretativo per il Castello dell'anima di Teresa di San Geronimo* (versione 2026), Repository GitHub: https://github.com/luciano-longo77/castello-anima-TEI-IA
 
 **Formato BibTeX**
+
 ```bibtex
 @software{longo_tassonomia_2026,
   author       = {Longo, Luciano},
@@ -367,13 +384,7 @@ Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e in
 ## 11. Statuto del documento
 Questo documento descrive il sistema tassonomico a **scopo di orientamento**. La **fonte normativa vincolante** resta *tassonomia-gh.xml (dati) e taxonomy-odd.odd (definizione formale)*; in caso di divergenza tra questo documento e i file XML della repository, prevalgono questi ultimi.
 
-**Versione corrente**: 2026-08-07.
-
-**Changelog essenziale**
-- *2026-08-07* — §5 riscritto sul modello AHP (indice AURORA): formula `I = (4·F_norm + 2·N + 1·A)/7` (pesi F:N:A = 4:2:1), **F** derivato dal rango dell'asse `operation` (non più continuo), soglie a quattro bande calibrate sul campione; §2.3 allineato (`impact` come esito del calcolo); §8.3 esteso con il vincolo di registrazione `impact-index`. **Schema invariato** (nessun asse nuovo: F è derivato, non reificato). Allineamento con XML e schema riverificato.
-- *2026-07-29* — versione precedente (indice N–A–F con pesi ad hoc `I = 0.40·N + 0.35·A + 0.25·F`, F continuo, soglie 0.4/0.7).
 
 **Licenza:**
 Tutti i contenuti del repository sono rilasciati sotto licenza
 **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
-Vedi il file **SPDX-License-Identifier: CC-BY-4.0** per i dettagli completi.
