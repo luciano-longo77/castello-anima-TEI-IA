@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-    xml:id="esempio-castello-anima"
-    xml:lang="it">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="esempio-castello-anima" xml:lang="it">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -18,72 +16,103 @@
     </teiHeader>
     <text>
         <body>
-            <!-- ==================== PROEMIO (interpretativa 1-2) ==================== -->
-            <div type="preface" xml:id="III-proem">
-               <p n="1">
-                  <!-- S1 OBBEDIENZA. Inaugura il libro ponendolo sotto il mandato dell'obbedienza: auto-legittimazione
-                       che disinnesca il sospetto d'iniziativa personale. N=0.40 (media-bassa: cornice, non nodo a rischio;
-                       lemma di bassa complessità, nessuna metafora); A=0.40 (restringe debolmente); F=1 delimitazione -> I=0.362 low.
-                       Norm: sic/corr sapere->sapete. -->
-                  <seg xml:id="seg-158r-obedienza" type="indicatio" subtype="obbedienza-performativa" hand="#ink_1" cert="high"
-                       ana="#ethos-obbedienza #operation-delimitazione #risk-dottrinale #exposition-medium #phase-introduction #mystic_state-quiete #impact-low">Incomincio
-                     <rs type="divinita" ref="#dio">mio Dio</rs>, come <choice><sic>sapere</sic><corr resp="#editor" cert="high">sapete</corr></choice>,
-                     questo terzo ed ultimo libro per <term type="mistico">santa obedienza</term></seg>, e per narrar
-                  <!-- S2 AUTO-ABBASSAMENTO. Topos d'umiltà ("miserabile creatura") che riduce l'autorità dell'io scrivente.
-                       N=0.30 (bassa: formula convenzionale, nessuna metafora né termine ambiguo); A=0.35 (bassa); F=1 delimitazione -> I=0.326 low.
-                       Norm: sic/corr l'opera nostra->l'opere nostre. -->
-                  <seg xml:id="seg-158r-autodemotio" type="indicatio" subtype="auto-abbassamento" hand="#ink_1" cert="medium"
-                       ana="#ethos-umilta #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-quiete #impact-low"><choice><sic>l'opera nostra</sic><corr resp="#editor" cert="high">l'opere nostre</corr></choice>,
-                     questa sì <rs type="soggetto-autodemotio">miserabile creatura</rs></seg>,
-                  <!-- S3 INVOCAZIONE DELLA SAPIENZA. Supplica la sapienza divina come condizione del dire; il libro "a materia
-                       più alta" richiede un aiuto superiore. N=0.35 (bassa-media: dipendenza da Dio, nessun nodo quietista);
-                       A=0.40 (bassa); F=1 delimitazione -> I=0.347 low.
-                       Genetico: app 'nel <del>to</del> secondo'. Norm sost.: domandano->domandavo, noi->voi, nostro->vostro. Graph.: à->a (x2). -->
-                  <seg xml:id="seg-158r-invocatio" type="indicatio" subtype="invocazione-sapienza" hand="#ink_1" cert="medium"
-                       ana="#ethos-umilta #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-quiete #impact-low">e se nel <app>
-                        <lem wit="#txt-c">secondo</lem>
-                        <rdg wit="#txt-b0"><del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">to</del> secondo</rdg>
-                     </app> <ref target="#Libro-II">libro</ref> <choice><sic>domandano</sic><corr resp="#editor" cert="medium">domandavo</corr></choice>
-                     <choice><orig>à</orig><reg>a</reg></choice> <choice><sic>noi</sic><corr resp="#editor" cert="medium">voi</corr></choice>
-                     <rs type="divinita" ref="#dio">mio Dio</rs> il <choice><sic>nostro</sic><corr resp="#editor" cert="medium">vostro</corr></choice>
-                     <term type="mistico">santo <choice><orig>agiuuto</orig><reg>agiuto</reg></choice></term>, più vi soplico adesso <choice><orig>à</orig><reg>a</reg></choice> darmi
-                     <term type="mistico">la vostra infinita sapienza</term></seg>,
-                  <!-- S4 FALSA MODESTIA. Il "confessarsi inabile a manegiar la penna" è topos retorico (captatio benevolentiae),
-                       non incapacità reale: retoricamente un'attenuatio dell'autorità autoriale. N=0.40 (media-bassa: dichiara
-                       "materia più alta" -> qualche esposizione, ma il gesto è autoschermatura); A=0.55 (media: attenua la pretesa);
-                       F=2 attenuatio -> I=0.574 medium.
-                       Genetico: app bisognosa (< besognosa, NOTA1). Norm: sic/corr trattano->trattavo; graph. poiche->poiché. -->
-                  <seg xml:id="seg-158r-incapacitas" type="indicatio" subtype="falsa-modestia" hand="#ink_1" cert="medium"
-                       ana="#ethos-umilta #operation-attenuatio #risk-ambiguita #exposition-low #phase-introduction #mystic_state-quiete #impact-medium"><choice><orig>poiche</orig><reg>poiché</reg></choice>
-                     havendo io da trattare di <term type="mistico">materia più alta</term> di che <choice><sic>trattano</sic><corr resp="#editor" cert="high">trattavo</corr></choice>
-                     nel <ref target="#Libro-II">trascorso libro</ref>, mi vedo perciò più <app>
-                        <lem wit="#txt-c">bisognosa</lem>
-                        <rdg wit="#txt-b0">b<del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">e</del><add place="inline" hand="#ink_1" resp="#s-teresa" type="substitution">i</add>sognosa</rdg>
-                     </app> della vostra <term type="mistico">sapienza</term>, senza la quale mi confesso al tutto
-                     <term type="etico">inabile</term>, ed <term type="etico">indegna</term> per manegiar la penna, la quale la prendo tutta
-                     <term type="etico">fidata</term> in <rs type="divinita" ref="#dio">voi mio Dio</rs></seg>.</p>
 
-               <p n="2">
-                  <!-- S5 DICHIARAZIONE D'ORTODOSSIA. Protestatio performativa ("mi protesto"): primo sigillo d'ortodossia, tipico
-                       delle zone sensibili sotto sorveglianza inquisitoriale. N=0.75 (alta: segnala che l'autrice sa di muoversi in
-                       zona a rischio dottrinale); A=0.80 (alta: fissa fortemente la cornice ortodossa); F=3 declaratio -> I=0.900 critical.
-                       Norm: sic/corr contra di chi->contradichi. -->
-                  <seg xml:id="seg-158r-declaratio" type="indicatio" subtype="dichiarazione-ortodossia" hand="#ink_1" cert="high"
-                       ana="#rischio-declaratio #operation-declaratio #risk-dottrinale #exposition-high #phase-introduction #mystic_state-quiete #impact-critical">Anche
-                     <rs type="interlocutore" ref="#esterno">padre</rs> mi protesto, che se dirò qualche cosa che
-                     <choice><sic>contra di chi</sic><corr resp="#editor" cert="medium">contradichi</corr></choice> la <term type="teologico">santa fede</term></seg>,
-                  <!-- S6 ATTENUAZIONE DELL'IGNORANZA. Attenua preventivamente la responsabilità di eventuali errori ("non per malitia,
-                       ma per ignoranza"). N=0.55 (media: prepara il terreno a possibili errori dottrinali); A=0.60 (media); F=2 attenuatio -> I=0.624 medium. -->
-                  <seg xml:id="seg-158r-ignoranza" type="indicatio" subtype="attenuazione-ignoranza" hand="#ink_1" cert="high"
-                       ana="#rischio-attenuatio #operation-attenuatio #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-quiete #impact-medium">non
-                     sarà per <rs type="concetto-etico">mia malitia</rs>, ma per <term type="etico">ignoranza</term></seg>,
-                  <!-- S7 SOTTOMISSIONE ECCLESIALE. Secondo sigillo d'ortodossia: sottomissione esplicita alla Chiesa ("figlia e seguace").
-                       N=0.70 (alta: gesto tipico delle zone sensibili); A=0.75 (media-alta: fissa la cornice ecclesiale); F=3 declaratio -> I=0.879 critical. -->
-                  <seg xml:id="seg-158r-sottomissione" type="indicatio" subtype="sottomissione-ecclesiale" hand="#ink_1" cert="high"
-                       ana="#ethos-obbedienza #operation-declaratio #risk-dottrinale #exposition-high #phase-introduction #mystic_state-quiete #impact-critical">e
-                     cossì quanto dirò non intendo contradire quel che dice la nostra
-                     <orgName type="istituzione-ecclesiale">santa Chiesa Catolica Romana</orgName>, confessandomi sua
-                     <rs type="relazione-ecclesiale">figlia</rs> e <rs type="relazione-ecclesiale">seguace</rs>, tutto che <term type="etico">indegna</term></seg>.</p>
+            <div type="preface" xml:id="III-proem">
+                <p n="1">
+                    <seg 
+                        xml:id="seg-158r-obedienza" type="indicatio" subtype="obbedienza-performativa" hand="#ink_1" 
+                        cert="high"
+                        ana="#ethos-obbedienza 
+                        #operation-delimitazione 
+                        #risk-dottrinale 
+                        #exposition-medium 
+                        #phase-introduction 
+                        #mystic_state-quiete 
+                        #impact-low"> 
+                        Incomincio mio Dio, come sapete, questo terzo ed ultimo libro per santa obedienza,
+                         e per narrar 
+                    </seg> 
+                    <seg 
+                        xml:id="seg-158r-autodemotio" type="indicatio" subtype="auto-abbassamento" hand="#ink_1" 
+                        cert="medium" 
+                        ana="#ethos-umilta 
+                        #operation-delimitazione 
+                        #risk-ambiguita 
+                        #exposition-low 
+                        #phase-introduction 
+                        #mystic_state-quiete 
+                        #impact-low">
+                        l'opere nostre, questa sì miserabile creatura </seg>, 
+                    <seg
+                        xml:id="seg-158r-invocatio" type="indicatio" subtype="invocazione-sapienza" hand="#ink_1" 
+                        cert="medium" 
+                        ana="#ethos-umilta 
+                        #operation-delimitazione 
+                        #risk-ambiguita 
+                        #exposition-medium 
+                        #phase-introduction 
+                        #mystic_state-quiete 
+                        #impact-low"> 
+                        e se nel secondo libro domandavo mio Dio il vostro santo agiuto, più vi soplico
+                        adesso a darmi la vostra infinita sapienza 
+                    </seg>, 
+                    <seg
+                        xml:id="seg-158r-incapacitas" type="indicatio" subtype="falsa-modestia" hand="#ink_1" 
+                        cert="medium" 
+                        ana="#ethos-umilta 
+                        #operation-attenuatio 
+                        #risk-ambiguita 
+                        #exposition-low 
+                        #phase-introduction 
+                        #mystic_state-quiete 
+                        #impact-medium"> 
+                        poiché havendo io da trattare di materia più alta di che trattavo nel trascorso libro, 
+                        mi vedo perciò più bisognosa della vostra sapienza, senza la quale mi confesso al tutto
+                        inabile, ed indegna per manegiar la penna, la quale la prendo tutta fidata
+                        in voi mio Dio
+                    </seg>. 
+                </p>
+
+                <p n="2">
+                    <seg xml:id="seg-158r-declaratio" type="indicatio" subtype="dichiarazione-ortodossia" hand="#ink_1" 
+                        cert="high"
+                        ana="#rischio-declaratio 
+                       #operation-declaratio 
+                       #risk-dottrinale 
+                       #exposition-high 
+                       #phase-introduction 
+                       #mystic_state-quiete 
+                       #impact-critical"> 
+                        Anche padre mi protesto, che se
+                        dirò qualche cosa che contradichi la santa fede 
+                    </seg>, 
+                    <seg
+                        xml:id="seg-158r-ignoranza" type="indicatio" subtype="attenuazione-ignoranza" hand="#ink_1" 
+                        cert="high"
+                        ana="#rischio-attenuatio 
+                       #operation-attenuatio 
+                       #risk-ambiguita 
+                       #exposition-medium 
+                       #phase-introduction 
+                       #mystic_state-quiete 
+                       #impact-medium">
+                        non sarà per mia malitia, ma per ignoranza 
+                    </seg>, 
+                    
+                    <seg xml:id="seg-158r-sottomissione" type="indicatio" subtype="sottomissione-ecclesiale" hand="#ink_1" 
+                        cert="high"
+                        ana="#ethos-obbedienza 
+                       #operation-declaratio 
+                       #risk-dottrinale 
+                       #exposition-high 
+                       #phase-introduction 
+                       #mystic_state-quiete 
+                       #impact-critical">
+                        e cossì quanto dirò non intendo
+                        contradire quel che dice la nostra santa Chiesa Catolica Romana,
+                        confessandomi sua figlia e seguace, tutto che indegna.
+                    </seg>
+                </p>
             </div>
         </body>
     </text>
