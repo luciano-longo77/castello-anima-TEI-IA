@@ -1615,6 +1615,16 @@
 
             <particDesc>
                 <listPerson>
+                    <!-- Referente divino -->
+                    <person xml:id="dio">
+                        <persName ref="#dio">Dio</persName>
+                        <trait>
+                            <note type="referential">Referente divino (Dio/Iddio), invocato e
+                                allocutario nel testo, anche nel registro sponsale del Cantico
+                                («sposo», «amato»). Marcato nel corpo con rs type="divinita"
+                                ref="#dio".</note>
+                        </trait>
+                    </person>
                     <!-- Autrice storica - Anna La Longa -->
                     <person xml:id="Anna-La-Longa">
                         <persName>
