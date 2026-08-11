@@ -308,8 +308,191 @@
                  Stato di 'oblivione / sonno'. Blocco della mistica alta e vigilata: densità di nodi a rischio
                  (quietismo dell'otio/sonno, panteismo dell'unione di sostanze, impeccabilità della 'sicurtà'),
                  sistematicamente disinnescati da precisationes. Cfr. base-dati III.3 (soglia del blocco matrimoniale). -->
+            <div type="chapter" n="2" xml:id="III-cap2">
+               <pb n="159v"/>
+               <head>Capitolo secondo</head>
+               <head type="sub">Si tratta del <term type="mistico">primo stato d'unione</term>, ch'è di <term type="mistico">silentio</term>.</head>
+
+               <p n="1">
+                  <!-- S1 INCIPIT / OBBEDIENZA. Meglio trattare il silentio in silentio; scrive per obbedienza al padre,
+                       chiedendo che lo Spirito Santo regga la penna. Ethos difensivo dell'obbedienza + topos dell'ispirazione.
+                       N=bassa/0.30; A=bassa/0.40; F=1 delimitazione -> I=0.333 low.
+                       Genetico: "rozza" -a corr. su -e. -->
+                  <seg xml:id="seg-c2p1-obbedienza-incipit" type="indicatio" subtype="obbedienza-incipit" hand="#ink_1" cert="high"
+                       ana="#ethos-obbedienza #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #impact-low">E per essere il nome di questo stato di <term type="mistico">silentio</term> sarebbe <rs type="interlocutore" ref="#esterno">padre</rs> assai meglio trattarne in silentio, che pretendire dirne qualche cosa; o pure per l'<term type="etico">obedienza</term>, che <rs type="interlocutore" ref="#esterno">Vostra Reverenza</rs> mi dà di scrivere tal cose, vuole lo <rs type="divinita" ref="#dio">Spirito Santo</rs> regermi la penna, altrimenti non posso con la mia <app><lem wit="#txt-c">rozza</lem><rdg wit="#txt-b0">rozz<subst><del hand="#ink_1" resp="#s-teresa" type="correction">e</del><add hand="#ink_1" resp="#s-teresa" type="substitution">a</add></subst></rdg></app> penna trattarne. E perciò prego la <rs type="divinita" ref="#dio">Bontà Vostra</rs> mio Dio, a poter fare compitamente l'obedienza, ch'è tanto grata alla <rs type="divinita" ref="#dio">Maestà vostra</rs></seg>.</p>
+
+               <p n="2">
+                  <!-- S2 PRECISATIO SULLA CESSAZIONE DELLE POTENZE (guardia). "cessano le potenze e sensi, e NON INTENDO DIRE come
+                       prima, che ne meno operavano... qui pero non e cossi": autocorrezione che distingue questa cessazione (nulla
+                       piu per mezzo delle potenze) dalla precedente. Rischio quietistico DISINNESCATO da guardia -> rischio-precisatio.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical. -->
+                  <seg xml:id="seg-c2p2-precisatio-cessazione" type="indicatio" subtype="precisazione-cessazione" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-quiete #impact-high">Dico dunque, che in questo stato cessano le potenze, e sensi, e non intendo dire come prima, che né meno operavano, poiché il suo operare era in modo di ricevere l'altra <term type="mistico">contemplatione infusa</term>, e cossì ricevevano, ed in questo modo operavano; qui però non è cossì, ma di quanto l'<rs type="soggetto-mistico">anima</rs> riceve non più, a mio parere, per mezzo delle potenze, e dei sensi</seg>,
+                  <!-- S3 DIO NEL FONDO DELL'ANIMA. Tutto nasce dal centro e fondo dell'anima, dove demora Dio, internandosi col tempo.
+                       Nodo esposto (inabitazione nel fondo), assertivo -> ambiguita.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico (T3): "col tempo" tem- rivergato con inchiostro diverso. -->
+                  <seg xml:id="seg-c2p2-fondo-anima" type="indicatio" subtype="inabitazione-fondo" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #impact-low">ma tutto nasce dal centro, e <term type="mistico">fondo dell'anima</term>, poiché in questo stato demora <rs type="divinita" ref="#dio">Dio</rs> nel fondo dell'anima, e <retrace hand="#ink_3-dark" cert="medium">col tem</retrace>po s'anderà più internando, sì come poi si dirà</seg>.</p>
+
+               <p n="3">
+                  <!-- S4 COMPARATIO DELLA PIOGGIA (Teresa d'Avila). Cita la Santa Madre Teresa: la contemplazione infusa come pioggia
+                       sul giardino senza fatica; "notitia confusa di Dio" (identificazione editoriale: Tommaso, Summa c. Gentiles III,38).
+                       Legittimazione per tradizione + esemplificazione. N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "pioggia" p<o>ioggia (o cassata, 2x); "frutti e fiori <del> di" cassatura; "adacquar" -r agg.
+                       interlinea sup., rivergata (T3). -->
+                  <seg xml:id="seg-c2p3-comparatione-teresa" type="indicatio" subtype="similitudine-pioggia" hand="#ink_1" cert="high"
+                       ana="#legittimazione-tradizione #pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-illuminazione #relation-intertesto-teresiano #impact-low">Hor come dico con le potenze voglio spiegarmi con una comperatione, non so s'è a proposito <rs type="interlocutore" ref="#esterno">padre</rs> mio. Chiama la nostra <rs type="fonte-mistica" ref="#p-avila">Santa Madre Teresa</rs> la <term type="mistico">contemplatione</term>, la compera dissi, alla <app><lem wit="#txt-c">pioggia</lem><rdg wit="#txt-b0">p<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">o</del>ioggia</rdg></app>, che cade dal cielo, e senza fatica alcuna dell'anima, come infatti è, ed habbiamo detto nel <ref target="#Libro-II">secondo libro</ref>; però non è cossì in questo stato. La comperatione è questa: vi fosse un <term type="mistico">giardino</term>, che senza fatica alcuna del giardiniero, fosse adacquato con la copiosa pioggia, che senza suo travaglio viene dal cielo; hor voglio qui dire, che tutto senza suo travaglio intende però lo strepito della pioggia, e vede in che modo vengano a crescere i frutti, e fiori <del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion"><gap reason="illegible" unit="word" quantity="1"/></del> di quel giardino. Cossì è l'<rs type="soggetto-mistico">anima</rs> contemplativa, cioè mentre sta ricevendo l'acqua di quella gratia e contemplatione infusa, intende lo strepito della pioggia, e questo nell'intelletto, ch'è la <term type="teologico">notitia confusa di Dio</term>, viene questa pioggia ed <add place="supralinear" hand="#ink_3-dark" resp="#s-teresa" cert="medium">adacquar</add> l'anima, ma ella tutto che non<pb n="160r"/> fatica, intende però lo strepito di quella pioggia, e questa è la contemplatione infusa</seg>.</p>
+
+               <p n="4">
+                  <!-- S5 SECONDA COMPARATIO. Il giardino frutta meglio di prima senza che il giardiniere veda pioggia o oda strepito,
+                       con piu quiete: cossi lo stato di silentio (nasce l'acqua nel fondo senza sapere il come).
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "fruttare" fr<o>uttare (o cassata). -->
+                  <seg xml:id="seg-c2p4-giardino-quiete" type="indicatio" subtype="similitudine-quiete" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">Andiamo di nuovo alla comperatione. E dico, che viene lo <term type="mistico">giardino</term> a <app><lem wit="#txt-c">fruttare</lem><rdg wit="#txt-b0">fr<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">o</del>uttare</rdg></app>, anzi meglio di prima, ma senza che il giardiniero veda pioggia, o intenda strepito, ma con più quiete, e senza sapere il come, viene meglio di prima adacquato; hor questa non sarebbe più cosa perfetta di prima? Certo <rs type="interlocutore" ref="#esterno">padre</rs>. Cossì a punto è l'<rs type="soggetto-mistico">anima</rs> della quale stamo noi adesso trattando, ch'è questo <term type="mistico">stato di silentio</term>, senza che intenda più strepito d'intelletto, e veda l'acqua di donde viene, se vede di bel modo nascere l'acqua nel fondo suo, e senza sapere il come</seg>.</p>
+
+               <p n="5">
+                  <!-- S6 LO SPOSO DEMORA / QUIETE ININQUIETABILE. Dio demora nel fondo, l'anima lo gode in gustoso raccoglimento e
+                       dolce quiete, senza operatione di sensi ne sospensione di potenze; nulla puo inquietarla.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "operatione" operation[e], buco. -->
+                  <seg xml:id="seg-c2p5-sposo-quiete" type="indicatio" subtype="inabitazione-quiete" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-quiete #relation-mistica-passiva-quiete #impact-low">Tutto ciò è <rs type="interlocutore" ref="#esterno">padre</rs>, che lo <rs type="divinita" ref="#dio">sposo</rs> già demora nell'<rs type="soggetto-mistico">anima</rs>, e va più, e più internadosi in lei. Demora <rs type="divinita" ref="#dio">Dio</rs> nell'anima a questi tempi nel fondo suo talmente, che l'anima lo sente godendo in gustoso <term type="mistico">raccoglimento</term>, e dolce <term type="mistico">quiete</term>, e senza più <app><lem wit="#txt-c">operatione</lem><rdg wit="#txt-b0">operation<supplied reason="hole" resp="#editor">e</supplied></rdg></app> di sensi, o vero sospensione di potenze, non havendo più, che fare nell'anima e godendo di questa quiete nel centro suo, non v'è cosa, che la possi inquietare, poiché principiando in lei l'unione, muta stato, onde se prima le persone di questo mondo gli potevano in qualche parte toglire la quiete, in questo stato però non ponno più inquietarla, ma sempre se ne gode della sua quiete</seg>.</p>
+
+               <p n="6">
+                  <!-- S7 DIFFERENZA DALL'HORE ATTOALE. Prima (nel sposalitio) le grazie sospendevano le potenze e alienavano i sensi
+                       (non poteva parlare ne muoversi); qui non piu. Discernimento pedagogico.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "non haverebbe potuto" p<.>otuto (1 lettera cassata). -->
+                  <seg xml:id="seg-c2p6-differenza-raccoglimento" type="indicatio" subtype="discernimento-raccoglimento" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">A questi tempi non ha più l'<rs type="soggetto-mistico">anima</rs> come prima l'hore attoale di <term type="mistico">raccoglimento</term>, voglio qui dire, che prima quando riceveva gratie erano sospese le potenze, alienati i sensi, talmente, che non poteva parlare, né far moto alcuno, se non vuoleva perdire la sua quiete, e talvolta tutto che havesse vuoluto non haverebbe <app><lem wit="#txt-c">potuto</lem><rdg wit="#txt-b0">p<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion"><gap reason="illegible" unit="char" quantity="1"/></del>otuto</rdg></app>, poiché veniva fortemente alienata dei sensi, e quanto ella teneva</seg>.</p>
+
+               <p n="7">
+                  <!-- S8 IL DEMONIO PRIMA (delimitazione di ambito). Prima il Demonio poteva inquietarla per mezzo dei sensi/fantasia;
+                       glossa parentetica "(qui intendo parlare di quando era in stato di sposalitio)" che delimita l'ambito.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c2p7-demonio-prima" type="indicatio" subtype="delimitazione-ambito" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">Poteva anche il <rs type="avversario">Demonio</rs> a qualche tempo inquietarla, servendosi per istromento delli medesimi sensi; gli poteva qualche poco inquietar la pace (qui intendo parlare di quando era in <term type="mistico">stato di sposalitio</term>) per mezzo di qualche specie communicata alli sensi, e fantasia, che tutto vuol dire una cosa</seg>.</p>
+
+               <p n="8">
+                  <!-- S9 PRECISATIO ATTUALE / HABITUALE (passo evidenziato). L'anima gode e nell'attoale (all'ore dell'oratione) e
+                       nell'habituale: "tutto e un tempo per lei". Precisazione discretiva sulla continuita dello stato.
+                       N=media/0.55; A=media/0.675; F=2 precisatio -> I=0.635 medium. -->
+                  <seg xml:id="seg-c2p8-attuale-habituale" type="indicatio" subtype="precisazione-continuita" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-precisatio #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-medium">In questo tempo però non è cossì, poiché può l'<rs type="soggetto-mistico">anima</rs> godere, e nell'attoale (cioè all'hore dell'oratione particolare) e nell'habituale, poiché tutto è un tempo per lei, per quel che s'è detto<pb n="160v"/> sopra</seg>.</p>
+
+               <p n="9">
+                  <!-- S10 PACE ININQUIETABILE. Sopposto quanto detto, l'anima gode la sua pace senza che niuno la possa inquietare.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c2p9-pace-ininquietabile" type="indicatio" subtype="descrizione-pace" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">Hor sopposto ciò che s'è detto, viene l'<rs type="soggetto-mistico">anima</rs> a godere la sua <term type="mistico">pace</term>, senza, che niuno la possi inquietare come prima</seg>.</p>
+
+               <p n="10">
+                  <!-- S11 LINGUAGGIO OSCURO / SAPIENZA INFUSA. Dio parla all'anima un linguaggio oscuro (da dirsi in silentio);
+                       grandissima notitia e sapienza; fortezza e pace; "inbalsamata d'odorosissimi inguenti", sapore di vita eterna.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "questi" -i corr. su -e; "tempi <d.> Dio" (d. cassato); "e molto" -> è verg. con inchiostro diverso (T3). -->
+                  <seg xml:id="seg-c2p10-linguaggio-oscuro" type="indicatio" subtype="sapienza-infusa" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-illuminazione #impact-low">A <app><lem wit="#txt-c">questi</lem><rdg wit="#txt-b0">quest<subst><del hand="#ink_1" resp="#s-teresa" type="correction">e</del><add hand="#ink_1" resp="#s-teresa" type="substitution">i</add></subst></rdg></app> tempi <del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">d.</del> <rs type="divinita" ref="#dio">Dio</rs> nell'<rs type="soggetto-mistico">anima</rs> <retrace hand="#ink_3-dark" cert="medium">è</retrace> molto di vicino, e gli parla d'un linguaggio tanto oscuro, ch'è necessario dirsi in <term type="mistico">silentio</term>, già che è cosa impossibile poter noi percepire questo parlare, che fa Dio all'hora con l'anima; solamente <rs type="interlocutore" ref="#esterno">padre</rs> posso dire, che v'è una grandissima <term type="teologico">notitia di Dio</term>, e una gran <term type="mistico">sapienza</term> nell'anima, poiché parla Dio; quando è cossì, intende l'anima in sé stesa in silentio grandissim, e qualunque romori del mondo, non può levarcelo. Vede l'anima, che quel tratto di Dio gli dà <term type="mistico">fortezza</term> grande, e pace interiore; intendisi nel suo interno, come se fosse tutta <term type="mistico">inbalsamata</term>, ed certa d'odorosissimi inguenti, senza saper dir ciò che fosse, ma ben vede, che nasce di chi habita in lei, che gl'incomincia a dar <term type="mistico">sapore di vita eterna</term>, ma non sa dirlo</seg>.</p>
+
+               <p n="11">
+                  <!-- S12 DISPOSIZIONI DEL DIVINO MATRIMONIO. Le unzioni sono dispositioni al matrimonio divino, piu fini di quelle
+                       dello sposalitio: unguenti piu pretiosi per disponire la sposa. Lessico sponsale (Cantico).
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c2p11-unzioni-matrimonio" type="indicatio" subtype="disposizioni-matrimonio" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">A mio parere sono queste tutte <term type="mistico">dispositione del divino matrimonio</term>, che farà <rs type="divinita" ref="#dio">Dio</rs> con l'<rs type="soggetto-mistico">anima</rs>, e queste unsione sono più assai fine, di quanto l'andava unguendo per lo <term type="mistico">sposalitio</term>, già che l'opera che se deve fare è senza comperatione più perfetta, e perciò ci vogliono <term type="mistico">unguenti più pretiosi</term>, per disponire la <rs type="soggetto-mistico">sposa</rs>, per celebrare il <term type="mistico">divino matrimonio</term>, sì come in questo libro si dirà con l'agiuto di Dio</seg>.</p>
+
+               <p n="12">
+                  <!-- S13 ALLEGORIA DEL CASTELLO / FONDO. L'anima libera dai sensi si interna nel centro del castello (l'oratione, cfr.
+                       Libro I): poche anime giungono al fondo (contemplatione, unione); molte restano nella sopraficie (le meditative).
+                       Legittimazione (Castillo interior teresiano) + esemplificazione.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "un forte" [u]n forte, buco. -->
+                  <seg xml:id="seg-c2p12-castello-fondo" type="indicatio" subtype="allegoria-castello" hand="#ink_1" cert="high"
+                       ana="#legittimazione-tradizione #pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-low">Incomincia già l'<rs type="soggetto-mistico">anima</rs> a provar ciò che vi è nel fondo del <term type="mistico">castello</term>, ch'è il centro suo con l'<rs type="divinita" ref="#dio">amato</rs> ed è in questo modo; essendo l'anima libera, e sciolta dei sensi, e potenze (cioè che possano impedirla) e passione, ed avvicinandosi nel fondo suo, non è altro, che internarsi nel centro del castello di cui dissimo, che l'anima (cioè lo dissimo al principio del <ref target="#Libro-I">primo libro</ref>) darsi che fa all'oratione, non fa altro, che dar principio ad <app><lem wit="#txt-c">un</lem><rdg wit="#txt-b0"><supplied reason="hole" resp="#editor">u</supplied>n</rdg></app> forte castello, ch'è l'oratione, nel quale si possa difendire dei pericoli, e tempeste del fiero mar di questo mondo. Hor non tutte l'anime, che danno principio a questo castello, chiama Dio, e premia per lo fondo di esso, poiché, sì come colà dissimo, non è altro questo fondo, che chiamar l'anima per la <term type="mistico">contemplatione</term>, ed unione, che puoche anime v'arrivano, essendo che molte se ne restano nella sopraficie di detto castello,<pb n="161r"/> non mai provano queste la dolce quiete del fondo, e centro di questo castello, ma se ne stanno nella sopraficie combattendo sempre, cioè con la proprie passioni, e queste sono l'<rs type="soggetto-mistico">anime meditative</rs></seg>.</p>
+
+               <p n="13">
+                  <!-- S14 IL CASTELLANO CELESTE / PARTE SECRETA. Il castellano si nasconde nella parte sotterranea e secreta;
+                       cossi Cristo incamina l'anima al fondo per goder la quiete ineffabile; anticipa la "cella secreta" (cap. VIII).
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "e qui" -> è qui (reg); "intelletto per" p[e]r, buco; "delle proprie" p<?>roprie (lettera cassata). -->
+                  <seg xml:id="seg-c2p13-castellano-secreto" type="indicatio" subtype="allegoria-castellano" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #impact-low">Hor quella anime, che <rs type="divinita" ref="#dio">Dio</rs> premia per la contemplatione, fa che se ne passino dalla sopraficie del detto castello al fondo, e ciò per non combattire più con proprie passioni, e sensi, ma per goder la dolce, e saporita quiete, poiché entrando nel fondo del castello il <rs type="divinita" ref="#dio">castellano</rs>, è cosa certa, che si nasconde dai tomolti e rumori del castello, se nasconde dei colpi, quando v'è guerra, se nasconde dei fischi dei soldati, e gridi di qualunque persona, e tutto perché si ritira a parte sotterranea, e molto secreta. Hor cossì a punto <choice><orig>e</orig><reg resp="#editor">è</reg></choice> qui il <rs type="divinita" ref="#dio">castellano celeste</rs>, quando si compiace chiamar l'<rs type="soggetto-mistico">anima</rs> per la contemplatione, non è altro all'hora che incaminarla per il centro, e fondo del castello, ch'è il fondo dell'anima, dove poi in questo <term type="mistico">stato d'unione</term>, di cui incominciamo a trattare fa, che s'interni in questo castello insieme con lui, e ciò per goder la dolce quiete, che può godere un'anima unita con Dio, non v'è lingua humana, che possa <rs type="interlocutore" ref="#esterno">padre</rs> spiegarlo, né meno intelletto, <app><lem wit="#txt-c">per</lem><rdg wit="#txt-b0">p<supplied reason="hole" resp="#editor">e</supplied>r</rdg></app> acuto che sia, che possa perciperlo. Ciò che dicevo, questo internarsi l'anima nel fondo detto del castello, ed uscir dei tomolti, e gridi dei soldati, non è altro, che esser già libera, e sciolta delle <app><lem wit="#txt-c">proprie</lem><rdg wit="#txt-b0">p<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion"><gap reason="illegible" unit="char" quantity="1"/></del>roprie</rdg></app> passioni, e sensi, e cossì gode di Dio a suo gusto nel fondo suo, e di ciò si tratterà più diffusamente nel <term type="mistico">matrimonio spirituale</term>, dove diremo della <term type="mistico">cella secreta</term>, che tiene l'anima in sé stessa</seg>.</p>
+
+               <p n="14">
+                  <!-- S15 PACE E TRE NEMICI. Sopposto ciò, l'anima gode pace di vita eterna; prima pativa per sensi/passioni ed era
+                       esposta ai tre nemici (mondo, carne, Demonio); della sicurta circa essi si tratta poi. Dottrina tradizionale.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c2p14-tre-nemici-pace" type="indicatio" subtype="tre-nemici" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">Hor sopposto ciò che s'è detto viene l'<rs type="soggetto-mistico">anima</rs> a goder pace di vita eterna, già che quanto prima pativa, tutto era per mezzo di quanto sopra s'è detto, cioè sensi, passioni, ed altre cose simili, oltre che anche era esposta alli tre nemici del mondo, cioè mondo, carne, e <rs type="avversario">Demonio</rs>, e della <term type="mistico">sicurtà</term>, e pace, che gode circa questi nemici tratteremo doppo con il divino agiuto, poiché quanto più l'anima a questi tempi passa di grado in grado non è altro, che nascondersi più, e più delli soi nemici, ed unirsi più con <rs type="divinita" ref="#dio">Dio</rs>, e come conseguentemente goder più perfetta pace</seg>.</p>
+
+               <p n="15">
+                  <!-- S16 COMUNICAZIONE DIRETTA / TOTALE OPERA DI DIO. Voglia di non trattar con alcuno; Dio si communica per intero,
+                       non piu per mezzo di creature o d'angeli; "totale opera di Dio, che nella sostanza dell'anima fa"; l'anima
+                       "disfarsi nel soave fuoco dell'amore" solo ascoltando. Vertice espositivo (sostanza + passivita + comunicazione
+                       diretta), assertivo e senza guardia -> ambiguita, N critica per esposizione.
+                       N=critica/0.90; A=bassa/0.40; F=1 delimitazione -> I=0.505 medium. exposition-critical.
+                       Genetico: "o d'angioli" o d'<.>Angioli (cassatura); "e totale" -> è totale (reg); "E tale" -> È tale (reg);
+                       "che disfarsi" <diff> disfarsi (cassatura di "diff"). -->
+                  <seg xml:id="seg-c2p15-comunicazione-diretta" type="indicatio" subtype="comunicazione-sostanziale" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-critical #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-medium">In questo <term type="mistico">stato di silentio</term> gode tanto l'<rs type="soggetto-mistico">anima</rs>, che gli viene certa voglia di non trattar con persona alcuna, poiché non fa altro <rs type="divinita" ref="#dio">Dio</rs> all'hora, che communicarsi tutto sé stesso per tutta l'anima, e ciò non per mezzo più di creature o d'<app><lem wit="#txt-c">Angioli</lem><rdg wit="#txt-b0"><del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion"><gap reason="illegible" unit="char" quantity="1"/></del>Angioli</rdg></app> o d'altra cosa creata, come<pb n="161v"/> forse prima sortiva, ma solamente per mezzo suo, mentre in questo tempo <choice><orig>e</orig><reg resp="#editor">è</reg></choice> totale opera di Dio, che nella <term type="mistico">sostanza dell'anima</term> per sua misericordia fa; e cossì come dico, non è altra la communicatione, che un diffondirsi Dio per tutta l'anima, e parlarci egli solo, ed ella non fa altro che tacitamente ascoltare. <choice><orig>E</orig><reg resp="#editor">È</reg></choice> tale però la dolcezza, e godimento dell'anima, che non fa altro, che <del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">diff</del> disfarsi nel soavi <term type="mistico">fuoco dell'amore</term>, e non farebbe altro, né fa altro, che stare in sé stessa molto raccolta ascoltando il suo <rs type="divinita" ref="#dio">sposo</rs>. A punto come chi ascolta una cosa mai saputa, e sta cossì attonita, quando non può dar l'orecchio ad altra cosa, che gli venghi detto</seg>.</p>
+
+               <p n="16">
+                  <!-- S17 VOGLIA DI SILENTIO / NON PARLA COL PADRE. La voglia di silentio e tale che non vuole parlar neanche col padre
+                       che la guida, "conoscendo che solamente in lei opera Dio, ne puo creatura fare o disfare". Passo esposto
+                       (autonomia dal direttore), qui motivato dall'ineffabilita; assertivo -> ambiguita, esposizione alta.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "percipere" i- corr. su -e-. -->
+                  <seg xml:id="seg-c2p16-silentio-non-parla" type="indicatio" subtype="silentio-ineffabile" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-otium #impact-low">E perciò dico, che gli viene certa voglia di starsine in <term type="mistico">silentio</term>, e né meno parlar di <rs type="divinita" ref="#dio">Dio</rs>, poiché ciò che ella intende, e vede non può darlo ad intendire, né ponno i sensi <app><lem wit="#txt-c">percipere</lem><rdg wit="#txt-b0">perc<subst><del hand="#ink_1" resp="#s-teresa" type="correction">e</del><add hand="#ink_1" resp="#s-teresa" type="substitution">i</add></subst>pere</rdg></app> cosa alcuna, e cossì non potendo ella dire ciò che vorrebbe, se ne sta in silentio gustando di Dio. È cossì grande la voglia di starsine in silentio, che né anche vuole parlar con il proprio <rs type="interlocutore" ref="#esterno">padre</rs> che la guida, incominciando già ella a conoscere, che solamente in lei opera Dio, né può più creatura alcuna fare, o disfare. Anche non ha questa voglia di parlare, che vede non trovar termini a quel che ella vorria dire, e perciò si contenta non dir niente</seg>.</p>
+
+               <p n="17">
+                  <!-- S18 IL PADRE NON GODE ANCORA DEL FRUTTO. Il padre spirituale non gode per ora del frutto (la dottrina, le opere
+                       di Dio nell'anima): non e tempo di parlare ma d'ascoltare. Ancora il tema del direttore, in registro d'attesa.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c2p17-padre-non-frutto" type="indicatio" subtype="attesa-direttore" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-otium #impact-low">A questi tempi trovare, che il <rs type="interlocutore" ref="#esterno">padre</rs> di quest'<rs type="soggetto-mistico">anima</rs> non gode per ancora del frutto suo, cioè della dottrina, che ha l'anima, ed anche dell'opere di <rs type="divinita" ref="#dio">Dio</rs>, poiché sì come ho detto sopra, non è tempo di parlare, come doppo sarà, ma solamente d'ascoltare ciò che gli vien detto</seg>.</p>
+
+               <p n="18">
+                  <!-- S19 PACE CONTINUA. Non v'e piu amarezza ma tutto dolcezza; se anche il mondo si voltasse contro, non puo
+                       inquietarla: gode d'una continua pace interiore.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "interiore" inter[io]re, buco. -->
+                  <seg xml:id="seg-c2p18-pace-continua" type="indicatio" subtype="pace-continua" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">In questo stato non v'è più amarezza per l'<rs type="soggetto-mistico">anima</rs>, ma tutto dolcezza, e doppo che il mondo si voltasse contro di lei, non può un tantino inquietarla, ma gode d'una continua pace <app><lem wit="#txt-c">interiore</lem><rdg wit="#txt-b0">inter<supplied reason="hole" resp="#editor">io</supplied>re</rdg></app></seg>.</p>
+
+               <p n="19">
+                  <!-- S20 IL DEMONIO NON PUO ENTRARE NELL'UNIONE. Non occorre piu dar segni per discernere Dio dal Demonio: nella vera
+                       unione e impossibile che il Demonio entri o finga, poiche il tutto opera Dio nel fondo. Certezza discretiva
+                       (registro della sicurta), assertiva -> ambiguita.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "si deve" -i corr. su -e; "fingere" -g- corr. su -c-, rivergata (T3). pb 162r (folio condiviso col cap. III). -->
+                  <seg xml:id="seg-c2p19-demonio-escluso" type="indicatio" subtype="discernimento-sicurta" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #impact-low">E non occorre di qua innanzi dar segni dei stati per conoscere l'affetti se sono di <rs type="divinita" ref="#dio">Dio</rs>, o del <rs type="avversario">Demonio</rs>, poiché mi lascio dire, che se veramente è <term type="mistico">unione</term>, come <app><lem wit="#txt-c">si</lem><rdg wit="#txt-b0">s<subst><del hand="#ink_1" resp="#s-teresa" type="correction">e</del><add hand="#ink_1" resp="#s-teresa" type="substitution">i</add></subst></rdg></app> deve trattare in questo libro, è cosa impossibile poterci entrare il Demonio, poiché sì come dissi sopra, in questi stati d'unione il tutto opera Dio nel fondo dell'<rs type="soggetto-mistico">anima</rs>, né può il Demonio <retrace hand="#ink_3-dark" cert="medium">fingere</retrace>, come poteva prima, e cossì sarebbe tempo perso<pb n="162r"/> dar più segni</seg>.</p>
+
+               <p n="20">
+                  <!-- S21 AUTONOMIA DAL DIRETTORE (passo evidenziato, il piu esposto). Non dara piu modo per guidar anime: entrata
+                       l'anima nell'unione, il padre non puo piu impedirla, "il motore di quest'anima e totalmente Dio"; se mancasse
+                       la guida non la danneggerebbe (guidandola Dio). E il nodo dottrinalmente piu delicato del capitolo (prossimo al
+                       terreno molinista), ma NON glossato dall'autrice -> per sobrieta resta risk-ambiguita + esposizione critica,
+                       senza phase-critical e senza rischio caldo: l'indice misura la forza regolativa, non il pericolo. Il peso reale
+                       e portato da exposition-critical e dagli strati semantici, non dall'indice.
+                       N=critica/0.90; A=bassa/0.40; F=1 delimitazione -> I=0.505 medium.
+                       Genetico: "daro" d[a]ro, buco. -->
+                  <seg xml:id="seg-c2p20-autonomia-direttore" type="indicatio" subtype="autonomia-direttore" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-critical #phase-mediana #mystic_state-unione #impact-medium">Anche non <app><lem wit="#txt-c">darò</lem><rdg wit="#txt-b0">d<supplied reason="hole" resp="#editor">a</supplied>rò</rdg></app> più modo per guidar <rs type="soggetto-mistico">anime</rs>, essendo che entrando l'anima in <term type="mistico">stato d'unione</term>, non può più il <rs type="interlocutore" ref="#esterno">padre</rs> impedirla, poiché il motore di quest'anima è totalmente <rs type="divinita" ref="#dio">Dio</rs>, né a questi tempi se mancasse guida all'anima, potrebbe danneggiarla come prima, guidandola Dio, e per dove vuole, e come vuole</seg>.</p>
+
+               <p n="21">
+                  <!-- S22 PRECISATIO CONCLUSIVA SUL SILENTIO (guardia). "questo silentio non s'intende nelle potenze, come quando
+                       l'anima era contemplativa, ma... nel fondo dell'anima... silentio d'anima, e non di spirito solamente": la
+                       clausola "non... ma" ridefinisce il silentio e rinvia la spiegazione ("il come... lo diro a suo luogo").
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical + conclusive. -->
+                  <seg xml:id="seg-c2p21-precisatio-silentio" type="indicatio" subtype="precisazione-silentio" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-quietismo #exposition-high #phase-conclusive #phase-critical #mystic_state-quiete #impact-high">Ho trattato <rs type="interlocutore" ref="#esterno">padre</rs> dello <term type="mistico">stato di silentio</term> in silentio, non potendo dire ciò vi sia, e conchiodo, che questo silentio non s'intende nelle potenze, come quando l'<rs type="soggetto-mistico">anima</rs> era contemplativa, ma è nelle potenze, è più nel <term type="mistico">fondo dell'anima</term>, e cossì si chiama <term type="mistico">silentio d'anima</term>, e non di spirito solamente; e nel principio di questo capitolo dissi io, che non vi sono in questo stato le potenze; il come intendo dire lo dirò a suo luogo</seg>.</p>
+            </div>
+
             <div type="chapter" n="3" xml:id="III-cap3">
-               <pb n="162r"/>
                <head>Capitolo terzo</head>
                <head type="sub">Si tratta di certo stato che siegue doppo il <choice><orig>sù</orig><reg>su</reg></choice> detto, ch'è d'<term type="mistico">oblivione</term>, <choice><orig>ò</orig><reg>o</reg></choice> <term type="mistico">sonno</term> come voglio chiamarlo.</head>
 
@@ -369,7 +552,7 @@
                        Genetico: obedienza (o + lettera cassata: o<.>bedienza); la [m]ia bassezza (buco). -->
                   <seg xml:id="seg-c3p1-santamadre" type="indicatio" subtype="emulazione-teresiana" hand="#ink_1" cert="high"
                        ana="#legittimazione-tradizione #operation-delimitazione #risk-ambiguita #exposition-low #phase-introduction #mystic_state-otium #relation-intertesto-teresiano #impact-low">Tutto
-                     che io sia imperfetta, stimo però questa <term type="mistico">virtù dell'<choice><orig>o<del rend="strikethrough" resp="#s-teresa"><gap reason="illegible" unit="char" quantity="1"/></del>bedienza</orig><reg>obedienza</reg></choice></term>,
+                     che io sia imperfetta, stimo però questa <term type="mistico">virtù dell'<choice><orig>o<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion"><gap reason="illegible" unit="char" quantity="1"/></del>bedienza</orig><reg>obedienza</reg></choice></term>,
                      e vorrei in ciò emitar la mia <rs type="soggetto-mistico" ref="#avila-castello">santa Madre</rs>, e non l'osservo perfettamente come lei, <choice><orig>perche</orig><reg>perché</reg></choice> tutta mi conosco imperfetta.
                      Accettane voi <rs type="divinita" ref="#dio">Maestà infinita</rs> quel che fa la vostra <rs type="soggetto-autodemotio">indegna serva</rs> e conoscene la <app>
                         <lem wit="#txt-c">m<supplied reason="hole" resp="#editor">i</supplied>a</lem>
@@ -701,6 +884,293 @@
                            <lem wit="#txt-c"><supplied reason="hole" resp="#editor">modo</supplied> alcuno spieg<supplied reason="hole" resp="#editor">arse</supplied></lem>
                            <rdg wit="#txt-b0"><gap reason="hole" unit="word" quantity="1"/> alcuno spieg<gap reason="hole" unit="chars" quantity="3"/></rdg>
                         </app></add>, e con una parola direi il tutto: <foreign xml:lang="la"><term type="biblico">mirabilia magna</term></foreign></seg>.</p>
+            </div>
+
+            <div type="chapter" n="4" xml:id="III-cap4">
+               <head>Capitolo quarto</head>
+               <head type="sub">Siegue un <term type="mistico">stato di scordanza</term>, che tiene l'<rs type="soggetto-mistico">anima</rs> di tutto il creato, e sé stessa.</head>
+
+               <p n="1">
+                  <!-- S1 SIMILITUDINE DEL SONNO / OBLIO ABITUALE. Il "sonno o oblio" si fa habituato nel fondo dell'anima
+                       senza impedire le potenze: definizione per similitudine dello stato di scordanza. Esposizione, non guardia.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c4p1-similitudine-sonno" type="indicatio" subtype="similitudine-oblio" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-otium #relation-mistica-passiva-quiete #impact-low">Sì come il <term type="mistico">sonno naturale</term> fa perdire i sensi, e totalmente scordarci di noi stessi, e senza ricordarci più cosa alcuna, cossì anche <rs type="interlocutore" ref="#esterno">padre</rs> il sopra detto <term type="mistico">sonno</term>, o <term type="mistico">oblio</term> facendosi habituato nel <term type="mistico">fondo dell'anima</term> e senza impedirci l'operatione esterne, o vero le potenze</seg>;
+                  <!-- S2 DIFFERENZA DALLO SPOSALITIO. Distingue lo stato presente dall'estasi di potenze dello sposalitio,
+                       in cui le operationi naturali erano escluse. Discernimento pedagogico.
+                       N=media/0.55; A=media/0.675; F=1 delimitazione -> I=0.444 low. -->
+                  <seg xml:id="seg-c4p1-differenza-sposalitio" type="indicatio" subtype="discernimento-stati" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #impact-low">a diffirenza di quando era l'<rs type="soggetto-mistico">anima</rs> in <term type="mistico">sposalitio</term>, che havendo altissima <term type="mistico">contemplatione</term> veniva in un'estasi di potenze, e per il tiro interiore venevano totalmente escluse l'operatione naturale, cioè dei sensi esterni, talmente, che per quell'atto era impossibile il corpo parer vivo</seg>.</p>
+
+               <p n="2">
+                  <!-- S3 PRECISATIO: ATTUALE / HABITUALE. Distingue i due stati per durata: lo sposalitio e attuale e breve
+                       (un'ora), la scordanza e habituale e crescente. Precisazione discretiva.
+                       N=media/0.55; A=media/0.675; F=2 precisatio -> I=0.635 medium.
+                       Genetico (T3): "attoale" -l- rivergata con inchiostro diverso; "in" -i- corr. su u-. -->
+                  <seg xml:id="seg-c4p2-attuale-habituale" type="indicatio" subtype="precisazione-durata" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-precisatio #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-medium"><rs type="divinita" ref="#dio">Dio</rs> tutto ciò spiegando con chiarezza, il tutto per chi legge, poiché essendovi questo stato di scordanza anche nello sposalitio per altissima contemplatione, ed assorbimento, che fa <rs type="divinita" ref="#dio">Dio</rs> nell'anima, potria essene credere, dico, che fosse quello stato, perciò dico, che v'è gran distanza, ma si somiglia il come. Primieramente si differiscono questi doi stati nell'<retrace hand="#ink_3-dark" cert="medium">attoale</retrace>, e nell'habituale, essendo quello dello sposalitio per <pb n="165r"/> breve tempo, non passandovi alle volte più d'un'hora, o quanto vuole <rs type="divinita" ref="#dio">Dio</rs>, basti, che non è habituale; questo del quale stamo noi trattando, cioè questa scordanza, è habituale nell'anima, anzi col tempo crescerà più assai</seg>.
+                  <!-- S4 PRECISATIO: POTENZE / FONDO. Seconda distinzione: la scordanza dello sposalitio e nelle potenze,
+                       questa e nel fondo dell'anima. Precisazione del locus interiore.
+                       N=media/0.55; A=media/0.675; F=2 precisatio -> I=0.635 medium. -->
+                  <seg xml:id="seg-c4p2-potenze-fondo" type="indicatio" subtype="precisazione-locus" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-precisatio #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-medium">Altra differenza vi è, che quella scordanza è nelle potenze, (ed anche per quest'atto nell'anima) e questa di cui stamo trattando è nel <term type="mistico">fondo dell'anima</term></seg>.
+                  <!-- S5 SILENTIO / INEFFABILITA. Le altre differenze non sa dirle, "passo il tutto in silentio": chiusura reticente.
+                       N=bassa/0.30; A=bassa/0.40; F=1 delimitazione -> I=0.333 low. -->
+                  <seg xml:id="seg-c4p2-silentio" type="indicatio" subtype="ineffabilita-reticenza" hand="#ink_1" cert="high"
+                       ana="#ethos-umilta #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-otium #impact-low">L'altre diffirenze son grande per l'altezza dello stato, né io qui so dirle, ma bene intenderle, passo dunque il tutto in <term type="mistico">silentio</term></seg>.</p>
+
+               <p n="3">
+                  <!-- S6 SCORDANZA DI SE. Dal sonno continuo nasce la scordanza non solo del creato ma di se stessa: l'anima
+                       "non e piu di questa vita, ma dell'altra" e pensa solo per l'amato. Nodo dottrinale esposto (perdita di se),
+                       ma assertivo e senza guardia autoriale locale: sorveglianza non attivata (sobrieta).
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c4p3-scordanza-di-se" type="indicatio" subtype="perdita-di-se" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">Hor sì come dissi sopra, dal <term type="mistico">sonno continuo</term>, ed abbraccio, che l'<rs type="soggetto-mistico">anima</rs> tiene in <rs type="divinita" ref="#dio">Dio</rs> gli nasce la scordanza, talmente, che non solamente è scordata da tutto il creato, essendo che quest'anima non è più di questa vita, ma dell'altra, ma anche di tutta sé stessa, e solamente pensa per l'<rs type="divinita" ref="#dio">amato</rs></seg>.
+                  <!-- S7 OCEANO D'AMORE. Metafora: l'anima "sommersa in un profondissimo oceano d'amore", non puo dare a intendere.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c4p3-oceano-amore" type="indicatio" subtype="metafora-amore" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-low">Io <rs type="interlocutore" ref="#esterno">padre</rs> non mi meraviglio, che l'anima entri in questa sì grande scordanza, poiché vede tanto, ed intende tanto nel centro suo, che resta attonita. Per a punto, come chi guardasse molte meraviglie, o per dir meglio per l'oggetto, che sta godendo, ed amando fosse cossì la spinta dell'amore, che non si ricordasse più di sé stesso. Hor cossì qui l'anima ama tanto, che anche si scorda di sé stessa; e qui resta l'anima sommersa in un <term type="mistico">profondissimo oceano d'amore</term>, e senza poter dare ad intendire ciò vede, o gode</seg>.
+                  <!-- S8 INEFFABILITA / UMILTA. Topos dell'indicibile e falsa modestia (labirinto, "la sola scorcia del granato").
+                       N=bassa/0.30; A=bassa/0.40; F=1 delimitazione -> I=0.333 low.
+                       Genetico: "mia <pa> capacita" cassatura d'autrice; "licenza" -c- ed -n- rivergate (T3). -->
+                  <seg xml:id="seg-c4p3-ineffabilita-labirinto" type="indicatio" subtype="ineffabilita-modestia" hand="#ink_1" cert="high"
+                       ana="#ethos-umilta #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-unione #impact-low">Scrivendo questi stati <rs type="interlocutore" ref="#esterno">padre</rs>, mi viene un profondissimo silentio nell'anima mia, ed altro non faccio, che resto attonita di quanto vorrei dire, se però trovasse termini opportuni per spiegarmi; ma che padre, che niente dico di quanto intendo, e mi viene certa confosione gustosa di vedermi in un <term type="mistico">labirinto</term> cossì confuso, mi vedo per certo imbrogliata, poiché di quanto ho detto non è altro, che dare a gustare dal granato la sola scorcia, il cibo non so chi mi trattene a communicarlo; non sarei io tanto scortese, se la mia <app><lem wit="#txt-c">capacità</lem><rdg wit="#txt-b0"><del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">pa</del> capacità</rdg></app> mi dasse <retrace hand="#ink_3-dark" cert="medium">licenza</retrace> di dire il tutto; e perciò <rs type="interlocutore" ref="#esterno">Vostra Reverenza</rs> mi compatisca di quanto saccio</seg>.</p>
+
+               <p n="4">
+                  <!-- S9 ESTASI CONTINUA / RACCOGLIMENTO. Estasi d'amore con alienazione dei sensi "per poco spatio", raccoglimento
+                       profondo; "quasi un continuo estasi senza pero detrimento di corpo": la delimitazione autoriale (poco tempo,
+                       nessun danno al corpo) tiene basso l'impatto.
+                       N=media/0.55; A=media/0.675; F=1 delimitazione -> I=0.444 low. -->
+                  <seg xml:id="seg-c4p4-estasi-continua" type="indicatio" subtype="descrizione-estasi" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #relation-mistica-passiva-quiete #impact-low">Torno al mio dire. Qui l'<rs type="soggetto-mistico">anima</rs> sta, per lo più, in un <term type="mistico">estasi d'amore</term>, talmente, che viene alle volte ad alienarsi dei sensi esteriori, ma per poco spatio di tempo; dico ciò, ch'è tanto lo <term type="mistico">raccoglimento</term>, che tiene in sé stessa, che trovandosi nel mezzo di chi si sia, o qualunque tratto, o che se gli parli, non ode ciò che gli vien detto, o ciò che si facci, e ciò per la profonda distrattione, che tiene di tutto il creato, e per la compagnia di <rs type="divinita" ref="#dio">Dio</rs>, e communicatione, che riceve, e cossì posso chiamar questo stato, quasi un continuo estasi, senza però detrimento di corpo</seg>.</p>
+
+               <p n="5">
+                  <!-- S10 PRECISATIO SULLA SOSPENSIONE DELLE POTENZE (guardia autoriale). "E qui pare mi disdicesse di quanto ho
+                       detto sopra... e dico, ch'e per poco spatio di tempo tornando doppo li sensi in se": autocorrezione esplicita
+                       che delimita l'alienazione dei sensi. Rischio quietistico DISINNESCATO da guardia -> rischio-precisatio.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical.
+                       Genetico: "sospesi" -i finale corr. su -e. -->
+                  <seg xml:id="seg-c4p5-precisatio-sospensione" type="indicatio" subtype="precisazione-quiete" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">E qui pare mi disdicesse di quanto ho detto sopra, cioè che nello stato d'unione non vi sono le potenze, ed alienatione di sensi, e dico, ch'è per poco spatio di tempo tornando doppo li sensi in sé, e l'esterni, e li interni, che per la spinta dell'amore stanno <app><lem wit="#txt-c">sospesi</lem><rdg wit="#txt-b0">sosp<subst><del hand="#ink_1" resp="#s-teresa" type="correction">e</del><add hand="#ink_1" resp="#s-teresa" type="substitution">i</add></subst></rdg></app>, ma non cessa però l'estasi dell'anima e lo raccoglimento che tiene, poiché la sospensione di questi tempi, non è altro, che di quando in quando restano attoniti di ciò che non sanno percepire, e perciò sortisce quanto ho detto. Il come poi è l'operatione delle potenze, se ne tratterà nel <term type="mistico">matrimonio spirituale</term></seg>.</p>
+
+               <p n="6">
+                  <!-- S11 MURO DELLA PACE / CESSAZIONE DELLE PASSIONI. La pace e piu fortificata, il godimento maggiore, nessuna
+                       passione inquieta. Metafora del muro.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c4p6-muro-pace" type="indicatio" subtype="descrizione-pace" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #impact-low">Qui è più fortificato il <term type="mistico">muro della pace</term>; qui il godimento è maggiore, poiché di grado in grado va qui salendo l'<rs type="soggetto-mistico">anima</rs> più a <rs type="divinita" ref="#dio">Dio</rs>, e cossì al godimento, e sodisfattione interiore; qui non si trovino punto le passioni per inquietarla</seg>;
+                  <!-- S12 NUOVA VITA DALLA MORTE (notte oscura). "questa nuova vita... gliela diede quella morte... la quale non e
+                       piu di lei, ma di Dio": eco paolina (Gal 2,20: "vivo non io, ma Cristo in me"). Forte ma assertiva, senza
+                       correzione: esposizione, non guardia. Densita biblica valorizzata in relation-intertesto-biblico.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico (T3): "le" agg. nell'interlinea sup., rivergata con inchiostro diverso. -->
+                  <seg xml:id="seg-c4p6-nuova-vita" type="indicatio" subtype="nuova-vita" hand="#ink_1" cert="high"
+                       ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-intertesto-biblico #impact-low">e sopra tutto intende una nuova cosa, la quale vorrei darla ad intendire, se potesse; e dico, che questa <term type="mistico">nuova vita</term>, che va sentendo l'anima in questo stato d'unione, gliela diede quella <term type="mistico">morte</term>, che dissimo eserci nella <term type="mistico">notte oscura</term>, la quale la fe morire alla vecchia, per adesso vivere alla nuova, la quale non è più di lei, ma di <rs type="divinita" ref="#dio">Dio</rs>; e questa nella <term type="mistico">trasformatione</term>, e <term type="mistico">matrimonio spirituale</term>, crescerà più al magior segno</seg>.</p>
+
+               <p n="7">
+                  <!-- S13 LA NUOVA VITA CACCIA LA VECCHIA / QUIETE. Distrutte le passioni e mancato ogni desiderio; l'abbraccio fa
+                       "dormire in un tranquillo mar di sua quiete". Registro quietistico ma descrittivo, senza guardia -> ambiguita.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico (T3): "tesoro" -s- rivergata con inchiostro diverso. -->
+                  <seg xml:id="seg-c4p7-nuova-caccia-vecchia" type="indicatio" subtype="mortificatione-quiete" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-low">Hor la <term type="mistico">nuova vita</term> caccia la vecchia, distrutte tutte le passioni, e mancata ogni sorte di desiderii, e l'abbraccio, che l'<rs type="soggetto-mistico">anima</rs> tiene con <rs type="divinita" ref="#dio">Dio</rs>, fa che dorma in un tranquillo <term type="mistico">mar di sua quiete</term>, e canti felicemente la sua trovata sorte, e del trovato <retrace hand="#ink_3-dark" cert="medium">tesoro</retrace></seg>;
+                  <!-- S14 CERTEZZA DI NON SEPARAZIONE. "vede, che non se separera piu di Dio": certezza di perseveranza (registro della
+                       "sicurta"), assertiva e senza guardia -> ambiguita, impatto basso ma esposizione alta.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c4p7-non-separazione" type="indicatio" subtype="certezza-perseveranza" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #impact-low">qui vede, che lo stato soblime, vede, che non se separerà più di <rs type="divinita" ref="#dio">Dio</rs>, e conosce ciò che prima non conosceva</seg>.</p>
+
+               <p n="8">
+                  <!-- S15 CONCLUSIO. Ricapitola: la scordanza non e solo del creato e del sensibile (gia prima dell'unione) ma anche
+                       di se stessa, "abbissata e sprofondata nell'amor del suo amato". Chiusura del capitolo.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "gia" gi[a] buco nel supporto. -->
+                  <seg xml:id="seg-c4p8-conclusio" type="indicatio" subtype="conclusione-capitolo" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-conclusive #mystic_state-unione #impact-low">Hor io conchiodo questo capitolo con dire, che questo stato di scordanza vuol dire, non solamente esser l'<rs type="soggetto-mistico">anima</rs> scordata da tutto il creato, né anche scordata dal sensibile, e corporeo, che di ciò era anche scordata prima d'arrivare all'unione con <rs type="divinita" ref="#dio">Dio</rs>, poiché un'anima contemplativa <app><lem wit="#txt-c">già</lem><rdg wit="#txt-b0">gi<supplied reason="hole" resp="#editor">a</supplied></rdg></app> si soppone esser da tutto il sensibile alienata; hor qui non solamente di ciò, ma anche di se stessa, essendo abbissata, e sprofondata nell'amor del suo <rs type="divinita" ref="#dio">amato</rs></seg>.</p>
+            </div>
+
+            <div type="chapter" n="5" xml:id="III-cap5">
+               <pb n="166r"/>
+               <head>Capitolo quinto</head>
+               <head type="sub">Si tratta di un <term type="mistico">stato d'indiffirenza</term>, che siegue doppo il su detto di scordanza.</head>
+
+               <p n="1">
+                  <!-- S1 UNIONE DELLE DUE VOLONTA. L'anima non ha piu propria volonta, ma quella di Dio: "due volonta a farsi una".
+                       Nodo esposto (annullamento della volonta propria), assertivo e senza guardia locale (la guardia arriva in par.2):
+                       esposizione, non sorveglianza (sobrieta).
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c5p1-due-volonta" type="indicatio" subtype="unione-volonta" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-introduction #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">In questo <term type="mistico">stato d'indiffirenza</term> viene l'<rs type="soggetto-mistico">anima</rs> a non havere più propria volontà, ma quella di <rs type="divinita" ref="#dio">Dio</rs>, è in lei talmente, che opera con la volontà di Dio, e facendo adimpire Dio nell'anima la volontà sua intende ella un godimento cossì grande, che come facesse la sua propria, e questa per l'unione grande, che tiene l'anima con Dio talmente, che vengono due volontà a farsi una, cioè quella di <rs type="divinita" ref="#dio">Dio</rs></seg>.</p>
+
+               <p n="2">
+                  <!-- S2 DISCERNIMENTO / GUARDIA GRAZIA-LIBERTA. "Non creda V.R., che questo sia come fanno alcuni... e questa sorte
+                       d'unione con la volonta di Dio e naturale, essendovi pero l'agiuto speciale di Dio": distingue la conformita
+                       naturale (con la grazia) dall'unione soprannaturale, difendendo grazia e libero arbitrio. Guardia esplicita.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical. -->
+                  <seg xml:id="seg-c5p2-discernimento-conformita" type="indicatio" subtype="precisazione-grazia" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-dottrinale #exposition-high #phase-mediana #phase-critical #mystic_state-unione #impact-high">Non creda <rs type="interlocutore" ref="#esterno">Vostra Reverenza</rs>, che questo sia come fanno alcuni, che cerchino da canto suo unirsi con il vuoler divino, e tutto che intendano ripognanza al soffrire, procurano resistere; questi tali fanno bene, e credo, sono molto accetti a sua divina <rs type="divinita" ref="#dio">Maestà</rs>, poiché nolo vuole, che noi ci conformiamo con la sua volontà per quanto potemo; e questa sorte d'unione con la volontà di <rs type="divinita" ref="#dio">Dio</rs> è naturale, essendovi però l'agiuto speciale di Dio, poiché noi naturalmente siemo mali inclinati, e vorressimo fare in tutto la nostra volontà per esser noi pieni d'amor proprio; ma dando Dio il suo santo agiuto, potemo noi agiutarci con le forze naturale atteggiare, e procurare questa conformetà</seg>,
+                  <!-- S3 NON ESCLUDE LA PENA. La conformita naturale non esclude la pena che sentiamo davanti alle cose contrarie:
+                       precisazione delimitante.
+                       N=media/0.55; A=media/0.675; F=1 delimitazione -> I=0.444 low. -->
+                  <seg xml:id="seg-c5p2-non-esclude-pena" type="indicatio" subtype="delimitazione-pena" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-purificazione #impact-low">e ciò non esclude la pena, che naturalmente noi intendemo, quando ci vengono le cose contrarie</seg>.</p>
+
+               <p n="3">
+                  <!-- S4 PRECISATIO: OPERA SOPRANNATURALE. "Non pero e cossi questa poiche e opera totalmente fatta da Dio, ed e
+                       totalmente supernaturale": distingue questa unione (passiva, soprannaturale) dalla conformita naturale di par.2.
+                       Guardia che qualifica la passivita.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical.
+                       Genetico: "interiore" -e corr. su -a. -->
+                  <seg xml:id="seg-c5p3-supernaturale" type="indicatio" subtype="precisazione-supernaturale" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">Non però è cossì questa poiché è opera totalmente fatta da <rs type="divinita" ref="#dio">Dio</rs>, ed è totalmente supernaturale; e cossì <rs type="interlocutore" ref="#esterno">padre</rs> viene l'<rs type="soggetto-mistico">anima</rs> a godere pace d'<rs type="soggetto-mistico">anime beati</rs>, poiché reggendo, e facendo il tutto Dio, ed essendovi il gusto suo come se lei reggesse ed operasse viene a godere la medesima pace di Dio, e questo non solamente nelle volontà unite insieme</seg>,
+                  <!-- S5 SOSTANZE UNITE. "per le sostanze unite insieme, cioe quella di Dio con quella dell'anima, viene l'anima a
+                       godere senza fine": unione delle sostanze, forte ma assertiva, senza guardia -> ambiguita.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c5p3-sostanze-unite" type="indicatio" subtype="unione-sostanze" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">ma per le <term type="mistico">sostanze unite insieme</term>, cioè quella di <rs type="divinita" ref="#dio">Dio</rs> con quella dell'anima, viene l'anima a godere senza fine</seg>;
+                  <!-- S6 INDIFFERENZA AGLI EVENTI. Gode di quanto di contrario accade e di quanto Dio opera in lei; e gia in perfetta
+                       unione. Chiusura del paragrafo.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c5p3-gode-contrario" type="indicatio" subtype="indifferenza-eventi" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-low">ed essendo in questo stato d'indiffirenza, gode di quanto nel mondo di contrario sortisce, e di quanto Dio opera in lei. O <rs type="interlocutore" ref="#esterno">padre</rs> che voglio dire, quando è impossibile poter trattare parte di questo stato<pb n="166v"/> già qui l'anima in stato di perfetta unione</seg>.</p>
+
+               <p n="4">
+                  <!-- S7 DISTINZIONE UNIONE / MATRIMONIO. Precisa la distanza fra stato d'unione e matrimonio spirituale ("il quale e
+                       piu assai stato soblime"): discernimento graduato.
+                       N=media/0.55; A=media/0.675; F=2 precisatio -> I=0.635 medium.
+                       Genetico: "tutti" -i corr. su -a. -->
+                  <seg xml:id="seg-c5p4-distinzione-matrimonio" type="indicatio" subtype="precisazione-gradi" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-precisatio #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-medium">Io <rs type="interlocutore" ref="#esterno">padre</rs> faccio grandissima distanza dallo <term type="mistico">stato d'unione</term>, a quello del <term type="mistico">matrimonio spirituale</term>; vero è, che <retrace hand="#ink_3-dark" cert="low">tutti</retrace> possiamo chiamarli stati d'unione, il più intimo ed il meno intimo; però per l'operatione, che fa <rs type="divinita" ref="#dio">Dio</rs> nell'anima, e per la consomatione di tutta sé stessa in lei, sì come si dirà, mi pare (e vedo esserci) distinguere l'unione, dal matrimonio spirituale, il quale è più assai stato soblime</seg>.</p>
+
+               <p n="5">
+                  <!-- S8 INDIFFERENZA TOTALE. Non desidera piu ne morte ne vita ne croce ne paradiso: indifferenza a tutto, ma
+                       "ben disposta per ricevere qualsivoglia cosa che piaccia alla Maesta di Dio" (ordinamento alla volonta divina).
+                       Esposto ma non glossato correttivamente -> ambiguita.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
+                  <seg xml:id="seg-c5p5-indifferenza-totale" type="indicatio" subtype="indifferenza-totale" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-otium #impact-low">Hor dico, che in questo stato sta l'<rs type="soggetto-mistico">anima</rs> indifferente al tutto, talmente, che non desidera più né morte, né vita, né <term type="mistico">croce</term>, né godere, né paradiso, né cosa alcuna per santa che sii; sì che sta ben disposta per ricevere qualsivoglia cosa che piaccia alla <rs type="divinita" ref="#dio">Maestà di Dio</rs></seg>.</p>
+
+               <p n="6">
+                  <!-- S9 CESSANO GLI ZELI. Cessano le pene di prima (per le offese a Dio, per il prossimo).
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico (T3): "zeli" z- rivergata con inchiostro diverso. -->
+                  <seg xml:id="seg-c5p6-cessano-zeli" type="indicatio" subtype="cessazione-pene" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-low">Qui cessano li <retrace hand="#ink_3-dark" cert="medium">zeli</retrace> di prima: verbigratia, se prima vedeva offendire lo <rs type="divinita" ref="#dio">sposo</rs> suo pativa per l'amor, che vi portava; se vedeva patire il prossimo pativa, ed queste, ed altre cose simili ne pativa molte; in questo stato però cessano queste pene</seg>,
+                  <!-- S10 GUARDIA: NON CAPACE DI PENA. "cossi anche quest'anima non e piu capace di pena... a somiglianza dell'anime
+                       beati... e cio non che fosse mancamento d'amore... ma perche non tengono la capaceta di patire, non
+                       accordandosi patimenti nella gloria": la clausola "non... ma" delimita l'impassibilita (non e freddezza).
+                       Registro impeccabilita/impassibilita con guardia autoriale esplicita.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical.
+                       Genetico: "patire" patir[e], buco. -->
+                  <seg xml:id="seg-c5p6-non-capace-pena" type="indicatio" subtype="precisazione-impassibilita" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-impeccabilita #exposition-high #phase-mediana #phase-critical #mystic_state-unione #relation-mistica-unione-sposalitio #impact-high">poiché sì come <rs type="divinita" ref="#dio">Dio</rs> non è capace di pena tutto che sia offeso nel mondo, e sortisca qualunque cosa, cossì anche quest'<rs type="soggetto-mistico">anima</rs> non è più capace di pena, e ciò per l'unione, che tiene con l'<rs type="divinita" ref="#dio">amato</rs>; è questo a somiglianza dell'<rs type="soggetto-mistico">anime beati</rs>, poiché non possono haver pena dell'offese di Dio, e ciò non che fosse mancamento d'amore, o poca conoscenza di Dio, ma perché non tengono la capacetà di <app><lem wit="#txt-c">patire</lem><rdg wit="#txt-b0">patir<supplied reason="hole" resp="#editor">e</supplied></rdg></app>, non accordandosi patimenti nella gloria. Hor cossì è qui l'anima, che godendo d'una perfetta pace, ed indiffirenza, ed una nuova vita, talmente, che la posso rassomigliare al godere dell'altra vita, la quale vita non è più sua, ma di Dio, poiché vive in lei per <term type="mistico">sostansiale unione</term>, e cosa, che non accorda esserci meschiato patire in tanta dolcezza</seg>.</p>
+
+               <p n="7">
+                  <!-- S11 CARITA: CESSA LA PENA. La prima carita del prossimo non se ne duole piu, per la perfetta unione delle due
+                       volonta (sapendo che Dio opera per la nostra salute).
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c5p7-cessa-pena-carita" type="indicatio" subtype="carita-senza-pena" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-low">Similmente dico della prima <term type="mistico">carità del prossimo</term>, che pare non dolersi più delle sue pene; e ciò nasce della perfetta unione delle due volontà, e sapendo l'<rs type="soggetto-mistico">anima</rs>, che quanto <rs type="divinita" ref="#dio">Dio</rs> opera tutto fa per nostra salute, e non potendo ella vuolere il contrario, non tiene più questa carità di modo che gli dia pena</seg>.
+                  <!-- S12 PERFETTO AMORE DEL PROSSIMO. Amore trasformato: ama il prossimo "col medesimo amore di Dio", spargirebbe il
+                       sangue per la salute delle anime, senza perdere la pace. Esposto ("col medesimo amore di Dio") ma assertivo.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "agiutando" ag[i]utando, buco; "anime" -e corr. su -a, rivergata (T3). -->
+                  <seg xml:id="seg-c5p7-amore-prossimo" type="indicatio" subtype="carita-trasformata" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-low">Io <rs type="interlocutore" ref="#esterno">padre</rs> però m'accorgio, che in questo stato v'è un perfetto amor del prossimo, però assai diffirente di prima, talmente che può<pb n="167r"/> l'anima <app><lem wit="#txt-c">agiutando</lem><rdg wit="#txt-b0">ag<supplied reason="hole" resp="#editor">i</supplied>utando</rdg></app> senza la prima pena. E questo sì grande amor del prossimo nasce, che l'anima è molto unita con <rs type="divinita" ref="#dio">Dio</rs>, ed amando Dio al prossimo quanto sé stesso, pare, l'amasse l'anima col medesimo amore di Dio; e di ciò nasce, che un'anima di queste spargirebbe il proprio sangue, per la salute dell'<app><lem wit="#txt-c">anime</lem><rdg wit="#txt-b0">anim<subst><del hand="#ink_1" resp="#s-teresa" type="correction">a</del><add hand="#ink_1" resp="#s-teresa" type="substitution">e</add></subst></rdg></app>, e come che in questo stato gli dimostra lo <rs type="divinita" ref="#dio">sposo</rs> vuolerla favorire, altro non domanda, che la salute dell'anime; è questo però senza inquetitudine, e perdimento di pace, poiché a questi tempi può l'anima dar sollievo a molte, senza perdire ella niente del suo</seg>.</p>
+
+               <p n="8">
+                  <!-- S13 GUARDIA: NON DESIDERAR CROCE. "questo non desiderar croce non s'intende in modo, che l'anima non vuole piu
+                       patire, anzi questa brama... il tutto abbraccia con pace... anzi giubila del patire": la clausola "non...anzi"
+                       disinnesca la lettura quietistica del non-desiderio.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical.
+                       Genetico: "desiderar" -ar aggiunto nell'interlinea. -->
+                  <seg xml:id="seg-c5p8-non-desiderar-croce" type="indicatio" subtype="precisazione-patire" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #pedagogia-discernimento #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-otium #impact-high">Anche il non <app><lem wit="#txt-c">desiderar</lem><rdg wit="#txt-b0">desider<add place="supralinear" hand="#ink_1" resp="#s-teresa">ar</add></rdg></app> più <term type="mistico">croce</term> nasce di quanto s'è detto della carità del prossimo, e cossì non occorre spiegarmi più, e questo non desiderar croce non s'intende in modo, che l'<rs type="soggetto-mistico">anima</rs> non vuole più patire, anzi questa brama, e questo non certo desiderio senza desiderio, ed havendo quest'anima patimenti, il tutto abbraccia con pace, e godimento interiore, ed anzi giubila del patire</seg>.</p>
+
+               <p n="9">
+                  <!-- S14 NON DESIDERAR MORTE / SATIETA. Non desidera piu morte ne vita: possedendo Dio non ha piu che desiderare,
+                       "gode una satieta di vita eterna". Rimando alla visione beatifica "faccia a faccia, senza velo di fede"
+                       (1 Cor 13,12): legittimazione biblica implicita. Esposto ma ancorato alla dottrina.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "a faccia e perciò" -> à faccia <,> e perciò, virgola cassata; "desidera" d[e]sidera, buco;
+                       aggiunta marginale sinistra (ink_1) con buchi ("non [?]", "quest[o]"). -->
+                  <seg xml:id="seg-c5p9-non-desiderar-morte" type="indicatio" subtype="satieta-desiderio" hand="#ink_1" cert="high"
+                       ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-intertesto-biblico #impact-low">Anche, che non desidera più né vita, né morte, e prima poteva desiderar la morte per sciogliersi dalla carne e godere di <rs type="divinita" ref="#dio">Dio</rs> nell'altra vita, poiché in questa vita, per alta <term type="mistico">contemplatione</term>, che vi sia, non può mai l'<rs type="soggetto-mistico">anima</rs> godire a Dio come nell'altra vita, dove senza velo di fede, lo gode da faccia<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">,</del> a faccia e perciò desidera perdire questa vita; qui però cessa poiché possedendo l'anima a Dio non tiene più che desiderare, né che vuolere, non lasciando Dio in lei luogo vacuo, e cossì niente brama niente cerca, e niente <app><lem wit="#txt-c">desidera</lem><rdg wit="#txt-b0">d<supplied reason="hole" resp="#editor">e</supplied>sidera</rdg></app>, e gode in essa una satietà di vita eterna. <add place="margin-left" hand="#ink_1" resp="#s-teresa" cert="medium">Ciò s'intende per non <gap reason="hole" unit="word" quantity="1"/> tempo dirà questo stato d'indiffirenza, che doppo verrà tempo bramerà la patria come suo centro sì come si dirà in quest<supplied reason="hole" resp="#editor">o</supplied> libro terzo.</add></seg></p>
+
+               <p n="10">
+                  <!-- S15 OBBEDIENZA AL PADRE SPIRITUALE. Perfetta conformita col padre spirituale: fa la sua volonta come propria,
+                       perfetta obedienza senza ripugnanza. Ethos difensivo dell'obbedienza.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c5p10-obbedienza-padre" type="indicatio" subtype="obbedienza-padre" hand="#ink_1" cert="high"
+                       ana="#ethos-obbedienza #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-low">E sì come tiene la conformetà con il vuoler divino, e di quanto sortisce in lei resta contenta, cossì ancora tiene una perfetta conformetà col <rs type="interlocutore" ref="#esterno">padre spirituale</rs>, talmente, che in questo stato fa la volontà del padre, come se fosse la sua propria, e perciò di tutto gode, e gusta; perciò viene a possedire una perfetta <term type="etico">obedienza</term>, né tiene ripognanza di far quanto gli vien comandato</seg>:
+                  <!-- S16 GUARDIA (T3): PALLA DI CERA. La totale mortificatione delle passioni fa l'anima "come una palla di cera, che
+                       cio che vogliano ne fanno". Passivita massima -> ma la clausola "Cio non s'intende a cose di male, ma che sta
+                       subordenata all'obedienza" e AGGIUNTA con inchiostro diverso (campagna T3): la guardia ortodossa e proprio lo
+                       strato prudenziale tardivo. Registro quietistico con guardia performativa.
+                       N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. phase-critical.
+                       Genetico: "mortificatione" prima -i- corr. su -a-; "Cio... all'obedienza" add ink_3-dark nello specchio;
+                       "sta" su abrasione. -->
+                  <seg xml:id="seg-c5p10-palla-cera" type="indicatio" subtype="precisazione-passivita" hand="#ink_1" cert="high"
+                       ana="#rischio-precisatio #ethos-obbedienza #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-otium #impact-high">e tutto ciò nasce per lo stato d'indiffirenza; nasce anche per la pace, che gode, ed acquisto delle massicie virtù, e totale <term type="mistico">mortificatione</term> delle passioni, talmente che l'<rs type="soggetto-mistico">anima</rs> viene a questi tempi a somigliarsi ad una <term type="mistico">palla di cera</term>, che ciò che vogliano ne fanno. Cossì è qui l'anima ciò che vogliano ne possono fare, non havendo più sua volontà. <add place="inline" hand="#ink_3-dark" resp="#s-teresa" cert="medium">Ciò non s'intende a cose di male, ma che sta subordenata all'<term type="etico">obedienza</term></add></seg>.</p>
+
+               <p n="11">
+                  <!-- S17 PERFETTO DISTACCO. Cresce un perfetto distacco, per la possessione di Dio: non resta croce per amare altre
+                       cose create.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c5p11-distacco" type="indicatio" subtype="distacco" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-otium #impact-low"><pb n="167v"/>E qui cresce, e prova un perfetto <term type="mistico">distacco</term>, che prima d'arrivare in questo stato, era impossibile poterlo possedere, e questo senza più spiegarmi è per la possessione che tiene l'<rs type="soggetto-mistico">anima</rs> di <rs type="divinita" ref="#dio">Dio</rs>, poiché è tanto unita, ed abbracciata con lui, ed è cossì perfetto l'amore, che non vi resta <term type="mistico">croce</term> per amare altre cose create, ed altri oggetti</seg>.</p>
+
+               <p n="12">
+                  <!-- S18 AFFETTI PERSI. Perde gli altri affetti spirituali: Dio non lascia luoghi vacui, occupa tutta l'anima.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico (T3): "affetti" a- rivergata con inchiostro diverso; "luoghi vacui <che>" cassatura di "che". -->
+                  <seg xml:id="seg-c5p12-affetti-persi" type="indicatio" subtype="occupazione-divina" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #impact-low">Anche se prima teneva altri <retrace hand="#ink_3-dark" cert="medium">affetti</retrace> spirituale, in questo stato viene a perderli, poiché <rs type="divinita" ref="#dio">Dio</rs> non gli lascia luoghi <app><lem wit="#txt-c">vacui</lem><rdg wit="#txt-b0">vacui <del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">che</del></rdg></app>, ma tutta l'<rs type="soggetto-mistico">anima</rs> di lui stesso occupa</seg>.</p>
+
+               <p n="13">
+                  <!-- S19 OSCURITA LUMINOSA. Labirinto gustoso: oscurita gustosa (ebbrezza della communicatione divina nel fondo) in
+                       mezzo a cui e una luce perfettissima, come sotterranea, che viene per il centro dell'anima. Paradosso mistico.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico (T3): "li" (sensi) l- vergata con inchiostro diverso. -->
+                  <seg xml:id="seg-c5p13-oscurita-luce" type="indicatio" subtype="oscurita-luminosa" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-illuminazione #impact-low">Qui si vede l'<rs type="soggetto-mistico">anima</rs> in un <term type="mistico">labirinto gustoso</term>, e vorrebbe dire e non può, poiché di quanto ella riceve nel fondo suo, non partecipano niente li sensi, e perciò gode molto, e niente dice. Tiene certa <term type="mistico">oscurità gustosa</term> che non sa dir che sia, e ben vede, che quella sua oscurità è l'altezza dalla communicatione, che <rs type="divinita" ref="#dio">Dio</rs> fa nel fondo suo; hor quanto più intima è questa communicatione, altritanto cresce l'oscurità, ma però v'è in mezzo a questa oscurità una <term type="mistico">luce</term> tanto perfetta, quanto non posso in modo alcuno spiegarla. Vede certa luce, come se fosse sotterranea e ciò è perché la luce non viene più per l'altro, ma per il centro dell'anima</seg>.</p>
+
+               <p n="14">
+                  <!-- S20 SIMILITUDINE DELLA CAMERA. La luce entra non per le finestre ma per il mezzo della camera: cossi la luce
+                       dell'anima proviene dall'interno, non piu per i sensi, perche lo sposo demora nel centro.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
+                  <seg xml:id="seg-c5p14-camera-luce" type="indicatio" subtype="similitudine-luce" hand="#ink_1" cert="high"
+                       ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-illuminazione #impact-low">Come se in una camera non entrasse più la luce per le finestre, ma per il mezzo di detta camera. Hor cossì è qui l'<rs type="soggetto-mistico">anima</rs>, che tutta la sua luce proviene dal suo interno e non più per li sensi, o potenze, e ciò perché lo <rs type="divinita" ref="#dio">sposo</rs> demora nel centro suo</seg>.</p>
+
+               <p n="15">
+                  <!-- S21 LIQUEFAZIONE DELLE SOSTANZE / DIVINIZZAZIONE. L'abbraccio cresce fino a "liquefarsi insieme le due sostanze
+                       per matrimonio spirituale", l'anima "andar piu divinizzando" e "gode una vita di Dio". Vertice espositivo del
+                       capitolo, panteismo-adiacente ma assertivo e senza guardia locale -> ambiguita (sobrieta), N critica per esposizione.
+                       N=critica/0.90; A=bassa/0.40; F=1 delimitazione -> I=0.505 medium. exposition-critical. -->
+                  <seg xml:id="seg-c5p15-liquefazione" type="indicatio" subtype="liquefazione-sostanze" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-critical #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-medium">Cresce in questo stato più di prima l'abbraccio di <rs type="divinita" ref="#dio">Dio</rs>, talmente, che pare puoco vi vuolesse a <term type="mistico">liquefarsi insieme le due sostanze</term> per <term type="mistico">matrimonio spirituale</term>, e se vede l'<rs type="soggetto-mistico">anima</rs> andar più <term type="mistico">divinizzando</term>, e tener vita mai da lei esperimentata, poiché all'hora gode una <term type="mistico">vita di Dio</term></seg>.</p>
+
+               <p n="16">
+                  <!-- S22 UN ALTRO DIO PER PARTICIPATIONE. "l'andarsi facendo un altro Dio per particepatione": la deificazione col
+                       qualificatore ortodosso "per participatione" (non per natura/essenza), che delimita il panteismo.
+                       N=critica/0.90; A=media/0.675; F=1 delimitazione -> I=0.544 medium. phase-critical.
+                       Genetico: "particepatione" par<..>ticepatione, cassatura di ~2 lettere. -->
+                  <seg xml:id="seg-c5p16-altro-dio-participatione" type="indicatio" subtype="deificazione-participativa" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-panteismo #exposition-critical #phase-mediana #phase-critical #mystic_state-unione #relation-mistica-unione-sposalitio #impact-medium">La communicatione qui anche cresce, più, non è altro l'abbraccio di <rs type="divinita" ref="#dio">Dio</rs> con l'<rs type="soggetto-mistico">anima</rs>, che andarsi più, e più diffondendosi Dio nell'anima, e questo caggiona all'anima godimento cossì grande, quanto è l'andarsi facendo un <term type="mistico">altro Dio per particepatione</term></seg>.
+                  <!-- S23 TOCCHI DI SOSTANZA. "son tocchi di sostanza, e sostanza, cioe quella di Dio con quella dell'anima": unione
+                       sostanziale, indicibile; l'anima gode pace e gloria d'anime beati. Esposto ma assertivo -> ambiguita.
+                       N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low.
+                       Genetico: "son <vecchi> tocchi" cassatura di "vecchi". -->
+                  <seg xml:id="seg-c5p16-tocchi-sostanza" type="indicatio" subtype="tocchi-sostanza" hand="#ink_1" cert="high"
+                       ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">Hor questi <rs type="interlocutore" ref="#esterno">padre</rs> son <app><lem wit="#txt-c">tocchi</lem><rdg wit="#txt-b0">son <del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">vecchi</del> tocchi</rdg></app> di sostanza, e sostanza, cioè quella di <rs type="divinita" ref="#dio">Dio</rs>, con quella dell'anima, e cossì è cosa impossibile potersene discorrire sì come passa questo abbraccio nel centro<pb n="168r"/> e fondo dell'anima, e cossì non dico altro, che l'anima gode una pace, e gloria d'<rs type="soggetto-mistico">anime beati</rs></seg>.</p>
+
+               <p n="17">
+                  <!-- S24 CONCLUSIO / TRANSIZIONE. In questo stato l'anima possiede tutti gli stati trattati nei capitoli precedenti in
+                       perfettissimo grado; chiude il capitolo e passa al seguente.
+                       N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low.
+                       Genetico: "ha possedire" -> "a possedire", regolarizzazione grafica (orig/reg). -->
+                  <seg xml:id="seg-c5p17-conclusio" type="indicatio" subtype="conclusione-capitolo" hand="#ink_1" cert="high"
+                       ana="#pedagogia-discernimento #operation-delimitazione #risk-ambiguita #exposition-medium #phase-conclusive #mystic_state-unione #impact-low">Hor in questo stato viene l'<rs type="soggetto-mistico">anima</rs> <choice><orig>ha</orig><reg resp="#editor">a</reg></choice> possedire tutti li stati, che habbiamo trattati nei trascorsi capitoli, e li possiede in perfettissimo grado, e cossì non tratto più di questo <term type="mistico">stato d'indiffirenza</term>, ma passo al siguente capitolo</seg>.</p>
             </div>
 
             <!-- ==================== CAPITOLO VIII (cc. 175v-179v; §§132-160 -> interpretativa 1-29) ====================
@@ -1176,6 +1646,28 @@
       <fs xml:id="idx-seg-c1-scala" corresp="#seg-c1-scala" cert="medium"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.635"/></f></fs>
       <fs xml:id="idx-seg-c2-notte" corresp="#seg-c2-notte" cert="medium"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
       <fs xml:id="idx-seg-c2-purificazione" corresp="#seg-c2-purificazione" cert="medium"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="alta"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.85"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.760"/></f></fs>
+      <fs xml:id="idx-seg-c2p1-obbedienza-incipit" corresp="#seg-c2p1-obbedienza-incipit" cert="high"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
+      <fs xml:id="idx-seg-c2p2-precisatio-cessazione" corresp="#seg-c2p2-precisatio-cessazione" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c2p2-fondo-anima" corresp="#seg-c2p2-fondo-anima" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p3-comparatione-teresa" corresp="#seg-c2p3-comparatione-teresa" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p4-giardino-quiete" corresp="#seg-c2p4-giardino-quiete" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p5-sposo-quiete" corresp="#seg-c2p5-sposo-quiete" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p6-differenza-raccoglimento" corresp="#seg-c2p6-differenza-raccoglimento" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p7-demonio-prima" corresp="#seg-c2p7-demonio-prima" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p8-attuale-habituale" corresp="#seg-c2p8-attuale-habituale" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.635"/></f></fs>
+      <fs xml:id="idx-seg-c2p9-pace-ininquietabile" corresp="#seg-c2p9-pace-ininquietabile" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p10-linguaggio-oscuro" corresp="#seg-c2p10-linguaggio-oscuro" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p11-unzioni-matrimonio" corresp="#seg-c2p11-unzioni-matrimonio" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p12-castello-fondo" corresp="#seg-c2p12-castello-fondo" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p13-castellano-secreto" corresp="#seg-c2p13-castellano-secreto" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p14-tre-nemici-pace" corresp="#seg-c2p14-tre-nemici-pace" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p15-comunicazione-diretta" corresp="#seg-c2p15-comunicazione-diretta" cert="high"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.505"/></f></fs>
+      <fs xml:id="idx-seg-c2p16-silentio-non-parla" corresp="#seg-c2p16-silentio-non-parla" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p17-padre-non-frutto" corresp="#seg-c2p17-padre-non-frutto" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p18-pace-continua" corresp="#seg-c2p18-pace-continua" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c2p19-demonio-escluso" corresp="#seg-c2p19-demonio-escluso" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c2p20-autonomia-direttore" corresp="#seg-c2p20-autonomia-direttore" cert="high"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.505"/></f></fs>
+      <fs xml:id="idx-seg-c2p21-precisatio-silentio" corresp="#seg-c2p21-precisatio-silentio" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
       <fs xml:id="idx-seg-c3-purga" corresp="#seg-c3-purga" cert="medium"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
       <fs xml:id="idx-seg-c4-pace2" corresp="#seg-c4-pace2" cert="medium"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
       <fs xml:id="idx-seg-c4-arca" corresp="#seg-c4-arca" cert="medium"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.635"/></f></fs>
@@ -1283,7 +1775,46 @@
       <fs xml:id="idx-seg-c8-s43-mare-simile" corresp="#seg-c8-s43-mare-simile" cert="medium"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
       <fs xml:id="idx-seg-c8-s44-liquefatta" corresp="#seg-c8-s44-liquefatta" cert="high"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.505"/></f></fs>
       <fs xml:id="idx-seg-c8-s45-tesoro" corresp="#seg-c8-s45-tesoro" cert="medium"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
-      <fs xml:id="idx-seg-c8-s46-taccio" corresp="#seg-c8-s46-taccio" cert="medium"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
+      <fs xml:id="idx-seg-c8-s46-taccio" corresp="#seg-c8-s46-taccio" cert="medium"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>      <fs xml:id="idx-seg-c4p1-similitudine-sonno" corresp="#seg-c4p1-similitudine-sonno" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c4p1-differenza-sposalitio" corresp="#seg-c4p1-differenza-sposalitio" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.444"/></f></fs>
+      <fs xml:id="idx-seg-c4p2-attuale-habituale" corresp="#seg-c4p2-attuale-habituale" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.635"/></f></fs>
+      <fs xml:id="idx-seg-c4p2-potenze-fondo" corresp="#seg-c4p2-potenze-fondo" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.635"/></f></fs>
+      <fs xml:id="idx-seg-c4p2-silentio" corresp="#seg-c4p2-silentio" cert="high"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
+      <fs xml:id="idx-seg-c4p3-scordanza-di-se" corresp="#seg-c4p3-scordanza-di-se" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c4p3-oceano-amore" corresp="#seg-c4p3-oceano-amore" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c4p3-ineffabilita-labirinto" corresp="#seg-c4p3-ineffabilita-labirinto" cert="high"><f name="N_band"><symbol value="bassa"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.30"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.333"/></f></fs>
+      <fs xml:id="idx-seg-c4p4-estasi-continua" corresp="#seg-c4p4-estasi-continua" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.444"/></f></fs>
+      <fs xml:id="idx-seg-c4p5-precisatio-sospensione" corresp="#seg-c4p5-precisatio-sospensione" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c4p6-muro-pace" corresp="#seg-c4p6-muro-pace" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c4p6-nuova-vita" corresp="#seg-c4p6-nuova-vita" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c4p7-nuova-caccia-vecchia" corresp="#seg-c4p7-nuova-caccia-vecchia" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c4p7-non-separazione" corresp="#seg-c4p7-non-separazione" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c4p8-conclusio" corresp="#seg-c4p8-conclusio" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p1-due-volonta" corresp="#seg-c5p1-due-volonta" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c5p2-discernimento-conformita" corresp="#seg-c5p2-discernimento-conformita" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c5p2-non-esclude-pena" corresp="#seg-c5p2-non-esclude-pena" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.444"/></f></fs>
+      <fs xml:id="idx-seg-c5p3-supernaturale" corresp="#seg-c5p3-supernaturale" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c5p3-sostanze-unite" corresp="#seg-c5p3-sostanze-unite" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c5p3-gode-contrario" corresp="#seg-c5p3-gode-contrario" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p4-distinzione-matrimonio" corresp="#seg-c5p4-distinzione-matrimonio" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.635"/></f></fs>
+      <fs xml:id="idx-seg-c5p5-indifferenza-totale" corresp="#seg-c5p5-indifferenza-totale" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c5p6-cessano-zeli" corresp="#seg-c5p6-cessano-zeli" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p6-non-capace-pena" corresp="#seg-c5p6-non-capace-pena" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c5p7-cessa-pena-carita" corresp="#seg-c5p7-cessa-pena-carita" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p7-amore-prossimo" corresp="#seg-c5p7-amore-prossimo" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p8-non-desiderar-croce" corresp="#seg-c5p8-non-desiderar-croce" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c5p9-non-desiderar-morte" corresp="#seg-c5p9-non-desiderar-morte" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c5p10-obbedienza-padre" corresp="#seg-c5p10-obbedienza-padre" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p10-palla-cera" corresp="#seg-c5p10-palla-cera" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="2"/></f><f name="Fnorm"><numeric value="0.667"/></f><f name="I"><numeric value="0.692"/></f></fs>
+      <fs xml:id="idx-seg-c5p11-distacco" corresp="#seg-c5p11-distacco" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p12-affetti-persi" corresp="#seg-c5p12-affetti-persi" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p13-oscurita-luce" corresp="#seg-c5p13-oscurita-luce" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p14-camera-luce" corresp="#seg-c5p14-camera-luce" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+      <fs xml:id="idx-seg-c5p15-liquefazione" corresp="#seg-c5p15-liquefazione" cert="high"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.505"/></f></fs>
+      <fs xml:id="idx-seg-c5p16-altro-dio-participatione" corresp="#seg-c5p16-altro-dio-participatione" cert="high"><f name="N_band"><symbol value="critica"/></f><f name="A_band"><symbol value="media"/></f><f name="N"><numeric value="0.90"/></f><f name="A"><numeric value="0.675"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.544"/></f></fs>
+      <fs xml:id="idx-seg-c5p16-tocchi-sostanza" corresp="#seg-c5p16-tocchi-sostanza" cert="high"><f name="N_band"><symbol value="alta"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.75"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.462"/></f></fs>
+      <fs xml:id="idx-seg-c5p17-conclusio" corresp="#seg-c5p17-conclusio" cert="high"><f name="N_band"><symbol value="media"/></f><f name="A_band"><symbol value="bassa"/></f><f name="N"><numeric value="0.55"/></f><f name="A"><numeric value="0.40"/></f><f name="F"><numeric value="1"/></f><f name="Fnorm"><numeric value="0.333"/></f><f name="I"><numeric value="0.405"/></f></fs>
+
    </standOff>
 
    <!-- ==================== FIGURE RETORICHE ==================== -->
@@ -1304,6 +1835,14 @@
          <span from="#seg-c6-statua" ana="#fig-similitudine">statua essiccata al sole / anima alleggerita.</span>
          <span from="#seg-c7-viaggio" ana="#fig-similitudine">viandante che riposa / anima dopo i travagli.</span>
          <span from="#seg-c11-nuovavita" ana="#fig-metafora">morte di prima / nuova vita: rinascita spirituale.</span>
+         <!-- III.2 -->
+         <span from="#seg-c2p3-comparatione-teresa" ana="#fig-similitudine">il giardino adacquato dalla pioggia dal cielo: la contemplazione infusa (comparatio teresiana).</span>
+         <span from="#seg-c2p4-giardino-quiete" ana="#fig-similitudine">il giardino che frutta senza che il giardiniere veda pioggia: lo stato di silentio.</span>
+         <span from="#seg-c2p10-linguaggio-oscuro" ana="#fig-metafora">l'anima inbalsamata d'odorosissimi unguenti: la sapienza infusa.</span>
+         <span from="#seg-c2p11-unzioni-matrimonio" ana="#fig-metafora">gli unguenti piu pretiosi per disporre la sposa: preparazione al matrimonio (Cantico).</span>
+         <span from="#seg-c2p12-castello-fondo" ana="#fig-allegoria">il castello dell'anima e il suo fondo/sopraficie: allegoria del Castillo interior.</span>
+         <span from="#seg-c2p13-castellano-secreto" ana="#fig-allegoria">il castellano celeste che si nasconde nella parte sotterranea e secreta.</span>
+         <span from="#seg-c2p15-comunicazione-diretta" ana="#fig-metafora">disfarsi nel soave fuoco dell'amore: l'anima che ascolta tacitamente lo sposo.</span>
          <!-- III.3 -->
          <span from="#seg-c3p2-similitudine-otio" ana="#fig-similitudine">chi sta in otio/silentio si addormenta: similitudine dello stato d'oblio.</span>
          <span from="#seg-c3p3-differenza-sonno" ana="#fig-antitesi">sonno / silentio: sensi persi vs sensi perfetti.</span>
@@ -1332,7 +1871,24 @@
          <span from="#seg-c8-s39-propria-stima" ana="#fig-antitesi">paradosso: stima di sé impossibile / dovuta perché possiede Dio.</span>
          <span from="#seg-c8-s5-morte-vitanuova" ana="#fig-antitesi">morte alla vita vecchia / vita nuova di Dio: antitesi.</span>
          <span from="#seg-c8-s24-bocca-sostanza" ana="#fig-metafora">«bocca con bocca, sostanza con sostanza»: lessico sponsale.</span>
-         <span from="#seg-c8-s44-liquefatta" ana="#fig-metafora">«tutta liquefatta in lui»: metafora dell'unione.</span>
+         <span from="#seg-c8-s44-liquefatta" ana="#fig-metafora">«tutta liquefatta in lui»: metafora dell'unione.</span>         <!-- III.4 -->
+         <span from="#seg-c4p1-similitudine-sonno" ana="#fig-similitudine">il sonno naturale che fa perdere i sensi: similitudine dell'oblio abituale.</span>
+         <span from="#seg-c4p2-attuale-habituale" ana="#fig-antitesi">attuale/habituale: antitesi discretiva fra sposalitio e scordanza.</span>
+         <span from="#seg-c4p3-oceano-amore" ana="#fig-metafora">l'anima sommersa in un profondissimo oceano d'amore.</span>
+         <span from="#seg-c4p3-ineffabilita-labirinto" ana="#fig-preterizione">"dare a gustare dal granato la sola scorcia": ineffabilita e falsa modestia.</span>
+         <span from="#seg-c4p6-muro-pace" ana="#fig-metafora">il muro della pace piu fortificato.</span>
+         <span from="#seg-c4p6-nuova-vita" ana="#fig-metafora">morte alla vecchia / vivere alla nuova: rinascita (eco Gal 2,20).</span>
+         <span from="#seg-c4p7-nuova-caccia-vecchia" ana="#fig-metafora">dormire in un tranquillo mar di sua quiete.</span>
+         <!-- III.5 -->
+         <span from="#seg-c5p2-discernimento-conformita" ana="#fig-antitesi">unione naturale (con aiuto) / unione soprannaturale: distinzione.</span>
+         <span from="#seg-c5p6-non-capace-pena" ana="#fig-similitudine">l'anima non piu capace di pena, a somiglianza delle anime beate.</span>
+         <span from="#seg-c5p8-non-desiderar-croce" ana="#fig-antitesi">non desiderar croce / anzi bramarla e giubilare del patire.</span>
+         <span from="#seg-c5p10-palla-cera" ana="#fig-similitudine">l'anima come una palla di cera: totale malleabilita all'obbedienza.</span>
+         <span from="#seg-c5p13-oscurita-luce" ana="#fig-antitesi">oscurita gustosa / luce sotterranea: il paradosso della notte luminosa.</span>
+         <span from="#seg-c5p14-camera-luce" ana="#fig-similitudine">la camera illuminata dall'interno e non per le finestre.</span>
+         <span from="#seg-c5p15-liquefazione" ana="#fig-allegoria">le due sostanze che si liquefanno: allegoria del matrimonio spirituale.</span>
+         <span from="#seg-c5p16-altro-dio-participatione" ana="#fig-metafora">"un altro Dio per participatione": la deificazione partecipativa.</span>
+
       </spanGrp>
    </standOff>
 
@@ -1394,7 +1950,39 @@
          <span from="#seg-c8-s37-felice-notte" ana="#area-unio"/><span from="#seg-c8-s38-estremi-sole" ana="#area-humilitas"/><span from="#seg-c8-s39-propria-stima" ana="#area-orthodoxia"/>
          <span from="#seg-c8-s40-padrone-assoluto" ana="#area-otium"/><span from="#seg-c8-s41-continua-oratione" ana="#area-otium"/><span from="#seg-c8-s42-sostanziale-unione" ana="#area-unio"/>
          <span from="#seg-c8-s43-mare-simile" ana="#area-unio"/><span from="#seg-c8-s44-liquefatta" ana="#area-unio"/><span from="#seg-c8-s45-tesoro" ana="#area-unio"/>
-         <span from="#seg-c8-s46-taccio" ana="#area-humilitas"/>
+         <span from="#seg-c8-s46-taccio" ana="#area-humilitas"/>         <span from="#seg-c4p1-similitudine-sonno" ana="#area-otium"/><span from="#seg-c4p1-differenza-sposalitio" ana="#area-unio"/>
+         <span from="#seg-c4p2-attuale-habituale" ana="#area-otium"/><span from="#seg-c4p2-potenze-fondo" ana="#area-otium"/>
+         <span from="#seg-c4p2-silentio" ana="#area-humilitas"/><span from="#seg-c4p3-scordanza-di-se" ana="#area-unio"/>
+         <span from="#seg-c4p3-oceano-amore" ana="#area-desiderium"/><span from="#seg-c4p3-ineffabilita-labirinto" ana="#area-humilitas"/>
+         <span from="#seg-c4p4-estasi-continua" ana="#area-otium"/><span from="#seg-c4p5-precisatio-sospensione" ana="#area-orthodoxia"/>
+         <span from="#seg-c4p6-muro-pace" ana="#area-pax"/><span from="#seg-c4p6-nuova-vita" ana="#area-unio"/>
+         <span from="#seg-c4p7-nuova-caccia-vecchia" ana="#area-otium"/><span from="#seg-c4p7-non-separazione" ana="#area-pax"/>
+         <span from="#seg-c4p8-conclusio" ana="#area-unio"/>
+         <span from="#seg-c5p1-due-volonta" ana="#area-unio"/><span from="#seg-c5p2-discernimento-conformita" ana="#area-orthodoxia"/>
+         <span from="#seg-c5p2-non-esclude-pena" ana="#area-purificatio"/><span from="#seg-c5p3-supernaturale" ana="#area-orthodoxia"/>
+         <span from="#seg-c5p3-sostanze-unite" ana="#area-unio"/><span from="#seg-c5p3-gode-contrario" ana="#area-pax"/>
+         <span from="#seg-c5p4-distinzione-matrimonio" ana="#area-unio"/><span from="#seg-c5p5-indifferenza-totale" ana="#area-otium"/>
+         <span from="#seg-c5p6-cessano-zeli" ana="#area-pax"/><span from="#seg-c5p6-non-capace-pena" ana="#area-orthodoxia"/>
+         <span from="#seg-c5p7-cessa-pena-carita" ana="#area-pax"/><span from="#seg-c5p7-amore-prossimo" ana="#area-unio"/>
+         <span from="#seg-c5p8-non-desiderar-croce" ana="#area-orthodoxia"/><span from="#seg-c5p9-non-desiderar-morte" ana="#area-desiderium"/>
+         <span from="#seg-c5p10-obbedienza-padre" ana="#area-obedientia"/><span from="#seg-c5p10-palla-cera" ana="#area-obedientia"/>
+         <span from="#seg-c5p11-distacco" ana="#area-otium"/><span from="#seg-c5p12-affetti-persi" ana="#area-unio"/>
+         <span from="#seg-c5p13-oscurita-luce" ana="#area-sapientia"/><span from="#seg-c5p14-camera-luce" ana="#area-sapientia"/>
+         <span from="#seg-c5p15-liquefazione" ana="#area-unio"/><span from="#seg-c5p16-altro-dio-participatione" ana="#area-unio"/>
+         <span from="#seg-c5p16-tocchi-sostanza" ana="#area-unio"/><span from="#seg-c5p17-conclusio" ana="#area-unio"/>
+
+         <!-- III.2 -->
+         <span from="#seg-c2p1-obbedienza-incipit" ana="#area-obedientia"/><span from="#seg-c2p2-precisatio-cessazione" ana="#area-orthodoxia"/>
+         <span from="#seg-c2p2-fondo-anima" ana="#area-unio"/><span from="#seg-c2p3-comparatione-teresa" ana="#area-sapientia"/>
+         <span from="#seg-c2p4-giardino-quiete" ana="#area-otium"/><span from="#seg-c2p5-sposo-quiete" ana="#area-otium"/>
+         <span from="#seg-c2p6-differenza-raccoglimento" ana="#area-otium"/><span from="#seg-c2p7-demonio-prima" ana="#area-purificatio"/>
+         <span from="#seg-c2p8-attuale-habituale" ana="#area-pax"/><span from="#seg-c2p9-pace-ininquietabile" ana="#area-pax"/>
+         <span from="#seg-c2p10-linguaggio-oscuro" ana="#area-sapientia"/><span from="#seg-c2p11-unzioni-matrimonio" ana="#area-unio"/>
+         <span from="#seg-c2p12-castello-fondo" ana="#area-ascensio"/><span from="#seg-c2p13-castellano-secreto" ana="#area-unio"/>
+         <span from="#seg-c2p14-tre-nemici-pace" ana="#area-pax"/><span from="#seg-c2p15-comunicazione-diretta" ana="#area-unio"/>
+         <span from="#seg-c2p16-silentio-non-parla" ana="#area-orthodoxia"/><span from="#seg-c2p17-padre-non-frutto" ana="#area-obedientia"/>
+         <span from="#seg-c2p18-pace-continua" ana="#area-pax"/><span from="#seg-c2p19-demonio-escluso" ana="#area-orthodoxia"/>
+         <span from="#seg-c2p20-autonomia-direttore" ana="#area-obedientia"/><span from="#seg-c2p21-precisatio-silentio" ana="#area-orthodoxia"/>
       </spanGrp>
    </standOff>
 
@@ -1467,6 +2055,51 @@
       </linkGrp>
       <linkGrp type="tema" subtype="hore-mortificatione">
          <link type="tema" subtype="hore-mortificatione" target="#seg-c8-s30-esorto-hore #seg-c8-s32-replica-hore #seg-c8-s34-opera-quiete #seg-c8-s35-mortificatione"/>
+      </linkGrp>      <linkGrp type="stato" subtype="scordanza-oblio">
+         <link type="stato" subtype="scordanza-oblio" target="#seg-c4p1-similitudine-sonno #seg-c4p2-potenze-fondo #seg-c4p3-scordanza-di-se #seg-c4p8-conclusio"/>
+      </linkGrp>
+      <linkGrp type="stato" subtype="silentio-sonno-oblio-c4">
+         <link type="stato" subtype="silentio-sonno-oblio-c4" target="#seg-c4p1-similitudine-sonno #seg-c4p2-silentio #seg-c4p3-ineffabilita-labirinto"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="quiete-otium-c4">
+         <link type="tema" subtype="quiete-otium-c4" target="#seg-c4p4-estasi-continua #seg-c4p5-precisatio-sospensione #seg-c4p6-muro-pace #seg-c4p7-nuova-caccia-vecchia"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="nuova-vita-morte">
+         <link type="tema" subtype="nuova-vita-morte" target="#seg-c4p6-nuova-vita #seg-c4p7-nuova-caccia-vecchia #seg-c4p7-non-separazione"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="indifferenza-volonta">
+         <link type="tema" subtype="indifferenza-volonta" target="#seg-c5p1-due-volonta #seg-c5p5-indifferenza-totale #seg-c5p10-palla-cera #seg-c5p11-distacco"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="guardie-precisatio-c5">
+         <link type="tema" subtype="guardie-precisatio-c5" target="#seg-c5p2-discernimento-conformita #seg-c5p3-supernaturale #seg-c5p6-non-capace-pena #seg-c5p8-non-desiderar-croce #seg-c5p10-palla-cera"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="unione-sostanze-c5">
+         <link type="tema" subtype="unione-sostanze-c5" target="#seg-c5p3-sostanze-unite #seg-c5p15-liquefazione #seg-c5p16-altro-dio-participatione #seg-c5p16-tocchi-sostanza"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="matrimonio-spirituale-c5">
+         <link type="tema" subtype="matrimonio-spirituale-c5" target="#seg-c5p4-distinzione-matrimonio #seg-c5p15-liquefazione #seg-c5p16-altro-dio-participatione"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="impassibilita-carita">
+         <link type="tema" subtype="impassibilita-carita" target="#seg-c5p6-non-capace-pena #seg-c5p7-cessa-pena-carita #seg-c5p7-amore-prossimo"/>
+      </linkGrp>
+      <linkGrp type="metafora" subtype="oscurita-luce-c5">
+         <link type="metafora" subtype="oscurita-luce-c5" target="#seg-c5p13-oscurita-luce #seg-c5p14-camera-luce"/>
+      </linkGrp>
+
+      <linkGrp type="stato" subtype="silentio-quiete">
+         <link type="stato" subtype="silentio-quiete" target="#seg-c2p2-precisatio-cessazione #seg-c2p5-sposo-quiete #seg-c2p8-attuale-habituale #seg-c2p9-pace-ininquietabile #seg-c2p18-pace-continua #seg-c2p21-precisatio-silentio"/>
+      </linkGrp>
+      <linkGrp type="metafora" subtype="pioggia-giardino">
+         <link type="metafora" subtype="pioggia-giardino" target="#seg-c2p3-comparatione-teresa #seg-c2p4-giardino-quiete"/>
+      </linkGrp>
+      <linkGrp type="allegoria" subtype="castello-fondo">
+         <link type="allegoria" subtype="castello-fondo" target="#seg-c2p2-fondo-anima #seg-c2p12-castello-fondo #seg-c2p13-castellano-secreto"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="autonomia-direttore">
+         <link type="tema" subtype="autonomia-direttore" target="#seg-c2p16-silentio-non-parla #seg-c2p17-padre-non-frutto #seg-c2p19-demonio-escluso #seg-c2p20-autonomia-direttore"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="dispositio-matrimonio-c2">
+         <link type="tema" subtype="dispositio-matrimonio-c2" target="#seg-c2p11-unzioni-matrimonio #seg-c2p13-castellano-secreto #seg-c2p15-comunicazione-diretta"/>
       </linkGrp>
    </standOff>
 </TEI>
