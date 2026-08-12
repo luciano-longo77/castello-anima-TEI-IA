@@ -1881,6 +1881,17 @@
         </xenoData>
         <revisionDesc status="consolidated">
             <change when="2026-08-12" who="#editor" ana="#fase-normalizzazione-tag">
+  Aggiunta la guardia di CI citazioni_guard.py (grammatica cit/quote/bibl:
+  quote@xml:lang + bibl nel seg, niente @ana/@type su cit, seg con
+  #relation-intertesto, nessuna quote latina orfana).
+</change>
+
+<change when="2026-08-12" who="#editor" ana="#fase-quality-assurance">
+  Costruzione dell'anagrafe delle citazioni:
+  28 citazioni distinte (23 bibliche, 2 patristiche, 1 scolastica, 2 liturgiche),
+  con carte.
+</change>
+            <change when="2026-08-12" who="#editor" ana="#fase-normalizzazione-tag">
    Fissata la grammatica dei commenti dei <code>seg</code>: normalizzate le ancore (10 ×
    <code>A=media/None</code> → <code>0.675</code>), reinserite le operazioni mancanti e uniformate
    le keyword d'apparato (<code>Norm:</code>). Aggiunta la guardia di CI <code>commenti_guard.py</code>
