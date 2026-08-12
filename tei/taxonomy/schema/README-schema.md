@@ -1,4 +1,4 @@
-# Schema — file di validazione della tassonomia
+# Schema - file di validazione della tassonomia
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
@@ -16,7 +16,7 @@ Questa cartella contiene i file che governano la validazione formale del sistema
 |---|---|---|
 | `taxonomy-odd.odd` | **Fonte normativa** — definizione astratta del modello, in linguaggio ODD (TEI) | Scritto a mano |
 | `taxonomy-rng.rng` | Schema RelaxNG — validazione strutturale | **Generato automaticamente** da `taxonomy-odd.odd` |
-| `taxonomy-sch.sch` | Regole Schematron — validazione semantica (4 regole: presenza `catDesc`, non-vacuità, coerenza prefisso, unicità `xml:id`) | **Generato automaticamente** da `taxonomy-odd.odd` |
+| `taxonomy-sch.sch` | Regole Schematron — validazione semantica (5 regole: presenza `catDesc`, non-vacuità, coerenza prefisso, unicità `xml:id`, coerenza ramo `func`) | **Generato automaticamente** da `taxonomy-odd.odd` |
 
 ## ⚠️ Non modificare `.rng` e `.sch` a mano
 
