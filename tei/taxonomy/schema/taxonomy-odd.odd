@@ -22,7 +22,7 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Meta-schema (ODD) da cui si generano Relax NG e Schematron per la validazione di <idno type="filename">tassonomia-gh.xml</idno> (definizione degli assi tassonomici). È ottimizzato per compilatori JavaScript (RomaJS) e per la toolchain standard dei TEI Stylesheets. Le regole di business (correttezza del prefisso di @xml:id, obbligo di <gi>catDesc</gi> e non vacuità di <gi>catDesc</gi>) sono dichiarate qui come <gi>constraintSpec</gi> e da qui derivano nel file Schematron compilato; non vanno quindi mantenute a mano in un file <code>.sch</code> separato.</p>
+                <p>Meta-schema (ODD) da cui si generano Relax NG e Schematron per la validazione di <idno type="filename">tassonomia-gh.xml</idno> (definizione degli assi tassonomici). È ottimizzato per compilatori JavaScript (RomaJS) e per la toolchain standard dei TEI Stylesheets. Le regole di business — obbligo di <gi>catDesc</gi> (<code>category-catdesc-present</code>), non vacuità di <gi>catDesc</gi> (<code>category-catdesc-not-empty</code>), correttezza del prefisso di @xml:id rispetto alla tassonomia radice (<code>category-prefix-consistency</code>), unicità degli @xml:id (<code>taxonomy-category-xmlid-unique</code>) e coerenza del ramo <code>func</code> (<code>func-branch-consistency</code>) — sono dichiarate qui come cinque <gi>constraintSpec</gi> e da qui derivano nel file Schematron compilato; non vanno quindi mantenute a mano in un file <code>.sch</code> separato.</p>
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
