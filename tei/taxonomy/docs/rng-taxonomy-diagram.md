@@ -15,7 +15,7 @@ graph TD
     taxonomy --> category
     category --> descNode["catDesc"]
 
-    category -.-> anaNode
+    category -.->|"riferita da"| anaNode["@ana (dal teiText)"]
 
     subgraph NoteTaxonomy
         taxList["func, risk, impact, mystic_state, operation, exposition, phase, relation"]
