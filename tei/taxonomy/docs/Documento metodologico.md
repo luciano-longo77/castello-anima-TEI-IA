@@ -89,7 +89,7 @@ Ogni categoria è identificata da un `xml:id` stabile ed è obbligatoriamente ac
 
 La tassonomia è implementata nel `teiHeader`, all'interno di `<encodingDesc>/<classDecl>`. Questa collocazione sancisce la sua funzione di **metamodello interpretativo**, distinto dal testo e dichiarato prima di ogni annotazione.
 
-Il file `tassonomia-gh.xml` è concepito come documento TEI completo e autosufficiente, dotato di statuto scientifico autonomo, e costituisce l'**unica fonte normativa** delle categorie interpretative del progetto. Eventuali altre occorrenze di `classDecl` presenti altrove nel repository (ad esempio in file di metadati del manoscritto) non hanno statuto normativo proprio e devono essere mantenute allineate a questa fonte, o preferibilmente sostituite da un riferimento (`xi:include`) ad essa.
+Il file `tassonomia-gh.xml` è concepito come documento TEI completo e autosufficiente, dotato di statuto scientifico autonomo, e costituisce l'**unica fonte normativa** delle categorie interpretative del progetto. Eventuali altre occorrenze di `classDecl` presenti altrove nel repository (ad esempio in file di metadati del manoscritto) non hanno statuto normativo proprio e devono essere mantenute allineate a questa fonte, o preferibilmente sostituite da un riferimento (`xi:include`) ad essa. Le tassonomie di **processo** — `fase` (fasi di lavorazione, usata nel `revisionDesc`) e `workflow` (operazioni IA controfattuali) — non sono categorie interpretative e sono perciò definite nel solo `classDecl` dell'header; andranno ricondotte alla fonte normativa (o incluse via `xi:include`) qualora entrino nell'`@ana` del testo.
 
 ### 3.2 Vincoli strutturali e semantici
 
