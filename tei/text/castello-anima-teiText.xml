@@ -31,7 +31,7 @@
             <!-- TITOLO. Annuncia materia (unione) e destinatari (anime perfette); "castello dell'anima" = metafora
                  strutturante + intertesto teresiano, "unione" = tema + intertesto molinista.
                  IMPATTO: N=media/0.55 (nomina 'unione', termine sensibile, ma in cornice paratestuale del titolo);
-                 A=bassa/0.40 (delimita materia/destinatari, non risolve l'ambiguità); F=1 delimitazione -> I=0.405 -> low. -->
+                 A=bassa/0.40 (delimita materia/destinatari, non risolve l'ambiguità); F=1 delimitazione -> I=0.405 low. -->
             <argument>
                <p>
                   <seg xml:id="seg-III-tit" type="indicatio" subtype="titolo-dottrinale" hand="#ink_1" cert="medium"
@@ -62,7 +62,7 @@
                   <!-- S3 INVOCAZIONE DELLA SAPIENZA. Supplica la sapienza divina come condizione del dire; il libro "a materia
                        più alta" richiede un aiuto superiore. N=bassa/0.30 (dipendenza da Dio, nessun nodo quietista);
                        A=bassa/0.40; F=1 delimitazione -> I=0.333 low.
-                       Genetico: app 'nel <del>to</del> secondo'. Norm sost.: domandano->domandavo, noi->voi, nostro->vostro. Graph.: à->a (x2). -->
+                       Genetico: app 'nel <del>to</del> secondo'. Norm: domandano->domandavo, noi->voi, nostro->vostro; à->a (x2). -->
                   <seg xml:id="seg-158r-invocatio" type="indicatio" subtype="invocazione-sapienza" hand="#ink_1" cert="medium"
                        ana="#ethos-umilta #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-quiete #impact-low">e se nel <app>
                         <lem wit="#txt-c">secondo</lem>
@@ -74,7 +74,7 @@
                      <term type="mistico">la vostra infinita sapienza</term></seg>,
                   <!-- S4 FALSA MODESTIA. Il "confessarsi inabile a manegiar la penna" è topos retorico (captatio benevolentiae),
                        non incapacità reale: retoricamente un'attenuatio dell'autorità autoriale. N=bassa/0.30 (dichiara
-                       "materia più alta" -> qualche esposizione, ma il gesto è autoschermatura); A=media/None (attenua la pretesa);
+                       "materia più alta" -> qualche esposizione, ma il gesto è autoschermatura); A=media/0.675 (attenua la pretesa);
                        F=2 attenuatio -> I=0.563 medium.
                        Genetico: app bisognosa (< besognosa, NOTA1). Norm: sic/corr trattano->trattavo; graph. poiche->poiché. -->
                   <seg xml:id="seg-158r-incapacitas" type="indicatio" subtype="falsa-modestia" hand="#ink_1" cert="medium"
@@ -97,12 +97,12 @@
                      <rs type="interlocutore" ref="#esterno">padre</rs> mi protesto, che se dirò qualche cosa che
                      <choice><sic>contra di chi</sic><corr resp="#editor" cert="medium">contradichi</corr></choice> la <term type="teologico">santa fede</term></seg>,
                   <!-- S6 ATTENUAZIONE DELL'IGNORANZA. Attenua preventivamente la responsabilità di eventuali errori ("non per malitia,
-                       ma per ignoranza"). N=media/0.55 (prepara il terreno a possibili errori dottrinali); A=media/None; F=2 attenuatio -> I=0.635 medium. -->
+                       ma per ignoranza"). N=media/0.55 (prepara il terreno a possibili errori dottrinali); A=media/0.675; F=2 attenuatio -> I=0.635 medium. -->
                   <seg xml:id="seg-158r-ignoranza" type="indicatio" subtype="attenuazione-ignoranza" hand="#ink_1" cert="high"
                        ana="#rischio-attenuatio #operation-attenuatio #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-quiete #impact-medium">non
                      sarà per <rs type="concetto-etico">mia malitia</rs>, ma per <term type="etico">ignoranza</term></seg>,
                   <!-- S7 SOTTOMISSIONE ECCLESIALE. Secondo sigillo d'ortodossia: sottomissione esplicita alla Chiesa ("figlia e seguace").
-                       N=alta/0.75 (gesto tipico delle zone sensibili); A=media/None (fissa la cornice ecclesiale); F=3 declaratio -> I=0.882 critical. -->
+                       N=alta/0.75 (gesto tipico delle zone sensibili); A=media/0.675 (fissa la cornice ecclesiale); F=3 declaratio -> I=0.882 critical. -->
                   <seg xml:id="seg-158r-sottomissione" type="indicatio" subtype="sottomissione-ecclesiale" hand="#ink_1" cert="high"
                        ana="#ethos-obbedienza #operation-declaratio #risk-dottrinale #exposition-high #phase-introduction #mystic_state-quiete #impact-critical">e
                      cossì quanto dirò non intendo contradire quel che dice la nostra
@@ -129,14 +129,14 @@
                      tanto più potrà starsine molto sicura, quando prima d'arrivare all'<term type="mistico">altezza</term> del
                      <rs type="luogo-metaforico">monte Olimpo</rs>, ha passata per <term type="mistico">duri croccivoli</term></seg>,
                   <!-- C3 RIEQUILIBRIO DELLA PACE. Bilancia pace e guerra: non c'è pace senza previa "lunga guerra".
-                       N=media/0.55; A=media/None (riequilibrio pace/guerra); F=2 riequilibrio -> I=0.635 medium.
+                       N=media/0.55; A=media/0.675 (riequilibrio pace/guerra); F=2 riequilibrio -> I=0.635 medium.
                        Richiamo 'godere' (fw catch, NOTA2 «in calce a destra»); graph. à->a. -->
                   <seg xml:id="seg-c1-pace" type="indicatio" subtype="riequilibrio-pace" hand="#ink_1" cert="medium"
                        ana="#legittimazione-tradizione #operation-riequilibrio #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-quiete #impact-medium">essendo
                      che è cosa molto certa che s'arriva <choice><orig>à</orig><reg>a</reg></choice><fw type="catch" place="bottom-right">godere</fw><pb n="158v"/> godere la
                      <term type="mistico">vera pace</term>, se prima non si passa per <term type="mistico">lunga guerra</term></seg>;
                   <!-- C4 ESORTAZIONE ALLA CROCE. Esorta a non rinunciare alla croce, "scala sicura" verso il Cielo.
-                       N=media/0.55; A=media/None; F=2 riequilibrio -> I=0.635 medium. Norm: ad regno->al regno. -->
+                       N=media/0.55; A=media/0.675; F=2 riequilibrio -> I=0.635 medium. Norm: ad regno->al regno. -->
                   <seg xml:id="seg-c1-scala" type="indicatio" subtype="esortazione-croce" hand="#ink_1" cert="medium"
                        ana="#pedagogia-esemplificazione #operation-riequilibrio #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-purificazione #impact-medium">e
                      perciò non vi sia <rs type="soggetto-mistico">anima</rs>, che rinuncii la <term type="mistico">croce</term>, essendo che ella è la
@@ -178,19 +178,19 @@
                         <rdg wit="#txt-b0">dell<del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">a</del><add place="inline" hand="#ink_1" resp="#s-teresa" type="substitution">e</add></rdg>
                      </app> sue amarezze</seg>,
                   <!-- C9 SEGNO DI SICURTÀ (Arca di Noè). Allegoria biblica: l'Arca e la "primavera ventura" come segni di sicurtà e rinascita.
-                       N=media/0.55 (segno biblico rassicurante); A=media/None; F=2 riequilibrio -> I=0.635 medium. Norm: ed'altri->ed altri. -->
+                       N=media/0.55 (segno biblico rassicurante); A=media/0.675; F=2 riequilibrio -> I=0.635 medium. Norm: ed'altri->ed altri. -->
                   <seg xml:id="seg-c4-arca" type="indicatio" subtype="segno-sicurta" hand="#ink_1" cert="medium"
                        ana="#legittimazione-biblica #operation-riequilibrio #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-quiete #relation-intertesto-biblico #impact-medium">e
                      comparir nella sua terra, in segno di sicurtà, l'<rs type="segno-biblico">Arca di Noè</rs>; vede più e più aprer le porte che prima
                      stavano per lei serrate e senza speranza d'aprirsi; e tutti questi, <choice><orig>ed'altri</orig><reg>ed altri</reg></choice> segni, che tutti
                      annunciano la <term type="mistico">primavera ventura</term> che verrà nell'anima, sì come doppo dirò</seg>,
-                  <!-- C10 STATO DI ARIDITÀ (sicilianismo 'astinuata'). L'anima resta prosciugata dal patire. N=bassa/0.30; A=bassa/0.40; F=1 -> I=0.333 low. -->
+                  <!-- C10 STATO DI ARIDITÀ (sicilianismo 'astinuata'). L'anima resta prosciugata dal patire. N=bassa/0.30; A=bassa/0.40; F=1 delimitazione -> I=0.333 low. -->
                   <seg xml:id="seg-c4-astinuata" type="indicatio" subtype="stato-aridita" hand="#ink_1" cert="medium"
                        ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-otium #impact-low">resta
                      l'anima tutta <term type="sicilianismo">astinuata</term> del patire <choice><orig>e</orig><reg>e'</reg></choice> <term type="mistico">travagli</term> passati</seg>.</p>
 
                <p n="5">
-                  <!-- C11 INTRODUZIONE DELLA SIMILITUDINE. Metatesto: annuncia una comparatione. N=bassa/0.30 (meta-testuale); A=bassa/0.40; F=1 -> I=0.333 low. Norm: ad'intendire->ad intendire. -->
+                  <!-- C11 INTRODUZIONE DELLA SIMILITUDINE. Metatesto: annuncia una comparatione. N=bassa/0.30 (meta-testuale); A=bassa/0.40; F=1 delimitazione -> I=0.333 low. Norm: ad'intendire->ad intendire. -->
                   <seg xml:id="seg-c5-intro" type="indicatio" subtype="introduzione-similitudine" hand="#ink_1" cert="medium"
                        ana="#pedagogia-introduzione #operation-delimitazione #risk-ambiguita #exposition-low #phase-mediana #mystic_state-quiete #impact-low">Qui
                      per farmi <choice><orig>ad'intendire</orig><reg>ad intendire</reg></choice> vorrei spiegarmi con una comperatione, per esempio</seg>.</p>
@@ -226,7 +226,7 @@
                         <rdg wit="#txt-b0"><del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">è</del><add place="inline" hand="#ink_1" resp="#s-teresa" type="substitution">e</add></rdg>
                      </app><fw type="catch" place="bottom-right">senza</fw><pb n="159r"/> senza più travagliare</seg>.
                   <!-- C16 RIEQUILIBRIO DEL RIPOSO. L'anima riposa ma "nei principii non tanto gode": auto-riequilibrio che frena l'attesa di godimento pieno.
-                       N=media/0.55 (sfiora l'otium ma lo modera); A=media/None; F=2 riequilibrio -> I=0.635 medium. Norm: ne'i->nei, ò->o, per che->perché. -->
+                       N=media/0.55 (sfiora l'otium ma lo modera); A=media/0.675; F=2 riequilibrio -> I=0.635 medium. Norm: ne'i->nei, ò->o, per che->perché. -->
                   <seg xml:id="seg-c7-reposa" type="indicatio" subtype="riequilibrio-riposo" hand="#ink_1" cert="medium"
                        ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-mediana #mystic_state-quiete #relation-mistica-passiva-quiete #impact-medium">Hor
                      cossì è qui l'anima, che doppo quei travagli e fatiche reposa, ma però <choice><orig>ne'i</orig><reg>nei</reg></choice> principii non tanto gode, non havendo
@@ -255,7 +255,7 @@
 
                <p n="9">
                   <!-- C19 PRECISAZIONE DEL LIMITE. Ristringe: la cessazione del desiderio NON è per totale possesso di Dio, e "però non totalmente".
-                       N=alta/0.75 (totale posessione, unione, rischio di sovra-affermazione); A=media/None (delimita fortemente); F=2 precisatio -> I=0.692 high.
+                       N=alta/0.75 (totale posessione, unione, rischio di sovra-affermazione); A=media/0.675 (delimita fortemente); F=2 precisatio -> I=0.692 high.
                        Norm: poiche->poiché, hò->ho. -->
                   <seg xml:id="seg-c9-precis2" type="indicatio" subtype="precisazione-limite" hand="#ink_1" cert="medium"
                        ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-high #phase-mediana #phase-critical #mystic_state-quiete #impact-high">E
@@ -274,7 +274,7 @@
                         <lem wit="#txt-c"><choice><orig>scuopri</orig><reg>scuoprì</reg></choice></lem>
                         <rdg wit="#txt-b0"><del place="inline" hand="#ink_1" resp="#s-teresa" type="correction">sc<gap reason="illegible" unit="char" quantity="1"/></del> scuoprì</rdg>
                      </app> in lei un gran crescemento senza saper ciò che sia</seg>;
-                  <!-- C21 PRESENZA DELL'AMATO. La "satietà nel fondo" interpretata come presenza dell'amato. N=media/0.55 (unione/presenza); A=bassa/0.40; F=1 -> I=0.405 low. -->
+                  <!-- C21 PRESENZA DELL'AMATO. La "satietà nel fondo" interpretata come presenza dell'amato. N=media/0.55 (unione/presenza); A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
                   <seg xml:id="seg-c10-satieta" type="indicatio" subtype="presenza-amato" hand="#ink_1" cert="medium"
                        ana="#pedagogia-esemplificazione #operation-delimitazione #risk-ambiguita #exposition-medium #phase-mediana #mystic_state-unione #relation-mistica-unione-sposalitio #impact-low">intende
                      una <term type="mistico">satietà</term> nel fondo suo, e questa mi credo sia la presenza dell'<rs type="divinita" ref="#dio">amato</rs>, sì che intende più, e più
@@ -285,12 +285,12 @@
                      <rdg wit="#txt-b0">mort<gap reason="hole" unit="char" quantity="1"/></rdg>
                   </app> di prima,
                   <!-- C22 RIEQUILIBRIO DELLA NUOVA VITA. Nasce una nuova vita, ma "però non totale come poi sarà": auto-riequilibrio (metafora morte/vita).
-                       N=media/0.55 (morte/nuova vita); A=media/None; F=2 riequilibrio -> I=0.635 medium. Norm: à->a. -->
+                       N=media/0.55 (morte/nuova vita); A=media/0.675; F=2 riequilibrio -> I=0.635 medium. Norm: à->a. -->
                   <seg xml:id="seg-c11-nuovavita" type="indicatio" subtype="riequilibrio-vita" hand="#ink_1" cert="medium"
                        ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-medium #phase-conclusive #mystic_state-quiete #impact-medium">incomincia
                      <choice><orig>à</orig><reg>a</reg></choice> nascere in lei una <term type="mistico">nuova vita</term>, però non totale come poi sarà</seg>.
                   <!-- C23 (MARQUEE) RIEQUILIBRIO DELL'OTIUM. La "grandissima quiete" sfiora l'otium quietista, ma è ristretta da "non è di
-                       continuo il godimento": auto-riequilibrio anti-quietista. N=alta/0.75 (quiete/otium -> rischio quietista); A=media/None;
+                       continuo il godimento": auto-riequilibrio anti-quietista. N=alta/0.75 (quiete/otium -> rischio quietista); A=media/0.675;
                        F=2 riequilibrio -> I=0.692 high. Norm: poiche->poiché. -->
                   <seg xml:id="seg-c11-quiete" type="indicatio" subtype="riequilibrio-quiete" hand="#ink_1" cert="medium"
                        ana="#rischio #operation-riequilibrio #risk-quietismo #exposition-high #phase-conclusive #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high">Cresce
