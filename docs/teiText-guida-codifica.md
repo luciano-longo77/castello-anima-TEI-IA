@@ -59,7 +59,7 @@ Principio: **ogni volta che l'editore regolarizza, scioglie o corregge**, il tes
 <choice><sic>perdire</sic><corr resp="#editor" cert="low">perdere</corr></choice>
 ```
 
-La **lettura incerta** è `<unclear reason="…" cert="…">`, la **perdita materiale** è `<gap reason="…" unit="…"/>`, l'**integrazione congetturale** è `<supplied reason="editorial" resp="#editor">`. Il latino entro il volgare è `<foreign xml:lang="la">` — segnala il *codice linguistico*, non un'enfasi.
+La **lettura incerta** è `<unclear reason="…" cert="…">`, la **perdita materiale** è `<gap reason="…" unit="…"/>`, l'**integrazione congetturale** è `<supplied reason="hole" resp="#editor" cert="medium">` — dove `@reason` registra la causa materiale (es. il buco della carta) e `@cert` il grado della congettura. Il **latino citazionale** non si marca come lingua straniera ma come citazione: `<cit>`/`<quote xml:lang="la">` (vedi §6); `<foreign xml:lang="la">` resta disponibile per spezzoni in lingua *non* citazionali (nel corpus attuale: nessuno).
 
 ## 3. La genetica sulla carta
 
@@ -140,11 +140,13 @@ Questi attributi ammettono **solo** i valori elencati.
 | Attributo | Valori |
 |---|---|
 | `div/@type` | `book` · `preface` · `chapter` |
-| `add/@type`, `del/@type` | `correction` · `substitution` · `integration` · `punctuation` |
-| `add/@place`, `del/@place` | **canonici TEI:** `above` · `below` · `inline` · `margin` — **estensioni progetto:** `interlinear` · `interlinear-above` · `margin-left` · `margin-right` |
+| `add/@type` | `correction` · `substitution` · `integration` · `punctuation` |
+| `del/@type` | `correction` · `deletion` · `substitution` · `integration` · `punctuation` |
+| `add/@place`, `del/@place` | **canonici TEI:** `above` · `below` · `inline` · `margin` — **estensioni progetto:** `interlinear` · `interlinear-above` · `supralinear` · `margin-left` · `margin-right` |
 | `del/@rend` | `strikethrough` · `erased` · `overwritten` · `expunged` · `crossed` |
 | `gap/@reason`, `unclear/@reason` | `illegible` · `damage` · `ink-fade` · `abrasion` · `binding` · `hole` · `stain` · `trimmed` |
 | `gap/@unit`, `supplied/@unit` | `char` · `chars` · `word` · `words` · `line` · `lines` |
+| `supplied/@reason` | `hole` *(cause materiali, come `gap/@reason`)* |
 | `app/@type` | `substitution` · `addition` · `deletion` · `transposition` · `variant` |
 | `rdg/@type` | `authorial` · `external` · `ai-counterfactual` |
 | `rdg/@cause` | `correction` · `clarification` · `orthodoxy` · `attenuation` · `precision` · `amplification` |
@@ -159,7 +161,7 @@ Questi attributi ammettono **solo** i valori elencati.
 1. **0 dangling** — ogni `#id` (`@ana`/`@hand`/`@wit`/`@ref`/`@resp`/`@target`/`@corresp`) risolve a un `xml:id` reale (verifica cross-file in CI).
 2. **Un valore per asse** in `@ana`, eccetto `#phase-critical` (che si affianca a una fase posizionale).
 3. **Astensione semantica** — nel dubbio, categoria immediatamente superiore.
-4. **Niente normalizzazione tacita** → sempre `choice`. **Niente lezioni inventate** → `unclear`/`gap`/`supplied` + `@cert`/`@resp`.
+4. **Niente normalizzazione tacita** → sempre `choice`. **Niente lezioni inventate** → `unclear`/`gap`/`supplied` + `@cert`/`@resp`. **Attribuzione a due livelli**: le regolarizzazioni meccaniche (`orig`/`reg`, `abbr`/`expan`) sono attribuite **globalmente** all'editore nell'`editorialDecl` (nessun `@resp` per-istanza; `@cert` solo dove pertinente); gli interventi sostanziali o congetturali (`sic`/`corr`, `supplied`) sono attribuiti e certificati **per-istanza** (`@resp` + `@cert`, con `supplied` di default `cert="medium"`).
 5. **`lem` = ultima volontà** (`#txt-c`); fasi ordinate con `@varSeq`; **`#txt-4` mai a `lem`**; eventi IA solo in `rdg` con `@resp="#AI_controllata"`.
 6. **`@hand` (mano fisica) ≠ `@wit` (fase genetica).** `@type` su `add`/`del` (atto materiale) ≠ `@type` su `app` (variazione d'apparato).
 7. **`I` mai a mano** — categoria in `@ana`, numeri in `<fs>` dallo script.
@@ -172,7 +174,7 @@ Il testo usa questi elementi (che il `tagsDecl` dell'header dichiara), raggruppa
 - **Diplomatica:** `choice` `orig` `reg` `abbr` `expan` `sic` `corr` `unclear` `gap` `supplied` `foreign`
 - **Genetica:** `add` `del` `subst` `restore` `retrace` `metamark`
 - **Apparato:** `app` `lem` `rdg`
-- **Interpretazione / stand-off:** `seg` `span` `spanGrp` `interp` `interpGrp` `link` `linkGrp` `rs` `hi` `term` `note`
+- **Interpretazione / stand-off:** `seg` `span` `spanGrp` `interp` `interpGrp` `link` `linkGrp` `rs` `hi` `term` `note` `soCalled`
 - **Indice d'impatto:** `standOff` `fs` `f` `numeric` `symbol`
 - **Citazioni ed entità:** `cit` `quote` `bibl` `ref` `ptr` `persName` `placeName` `orgName` `date`
 
