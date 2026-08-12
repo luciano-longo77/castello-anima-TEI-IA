@@ -70,6 +70,8 @@ jobs:
         run: python3 .github/workflows/scripts/e2_guard.py "$TEXT" "$TAX"
       - name: Guardia co-occorrenza (@ana)
         run: python3 .github/workflows/scripts/cooccurrence_guard.py "$TEXT"
+      - name: Guardia cit/glossa (indice solo su <seg>)
+        run: python3 .github/workflows/scripts/cit_glossa_guard.py "$TEXT"
       - name: Guardia Schematron indice d'impatto (bande + ancore + formula)
         run: |
           python3 - <<'PY'
