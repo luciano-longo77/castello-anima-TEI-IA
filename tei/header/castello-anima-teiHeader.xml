@@ -902,8 +902,7 @@
 
                <interpretation xml:id="imp-idx">
     <p>Dichiarazione della metrica interpretativa per il calcolo dell'indice di
-        impatto (Impact Index). Definizione di riferimento: progetto AURORA,
-        Part B-1, §1.2.d.4.</p>
+        impatto (Impact Index).</p>
     <p>Pesi derivati da confronti a coppie con Analytic Hierarchy Process (AHP),
         in rapporto F : N : A = 4 : 2 : 1 (w<hi rend="sub">F</hi>=4/7,
         w<hi rend="sub">N</hi>=2/7, w<hi rend="sub">A</hi>=1/7), fissi su tutto il
