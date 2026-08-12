@@ -35,7 +35,7 @@ Questo documento descrive in modo **formale** il sistema di tassonomie adottato 
 - 8.2 [Vincoli Schematron (automatici)](#82-vincoli-schematron-automatici)
 - 8.3 [Vincoli editoriali (prosa normativa)](#83-vincoli-editoriali-prosa-normativa)
 9. [Come citare questo lavoro](#9-come-citare-questo-lavoro)
-10. [Contribuzione e workflow](#10-contribuzione-e-workflow)
+10. [Workflow: aggiornamento e rigenerazione](#10-workflow-aggiornamento-e-rigenerazione)
 11. [Statuto del documento](#11-statuto-del-documento)
 
 ## 1. Principi generali del modello
@@ -100,8 +100,16 @@ Descrive **dove** un segmento agisce nel discorso e **con quale forza interpreta
 <taxonomy xml:id="operation"/>
 <taxonomy xml:id="exposition"/>
 <taxonomy xml:id="phase"/>
+<!-- tassonomie-banda di servizio: vocabolario controllato della <fs> d'impatto (N/A),
+     non assi @ana. Portano a 10 il totale degli elementi <taxonomy> in classDecl. -->
+<taxonomy xml:id="impact-band-N"/>
+<taxonomy xml:id="impact-band-A"/>
 </classDecl>
 ```
+
+Gli **otto** assi sopra sono le tassonomie interpretative destinate all'`@ana`; le due `impact-band-*`
+sono tassonomie di servizio (vocabolario delle bande N/A registrate nella `<fs>` dell'indice, cfr. §5).
+Gli elementi `<taxonomy>` complessivi in `classDecl` sono quindi **dieci**.
 
 **Elenco completo dei valori ammessi**
 L'elenco delle `<category>` per ciascuna tassonomia è definito nel file
@@ -375,7 +383,7 @@ Se utilizzi questo sistema tassonomico o i file di validazione nella tua ricerca
 }
 ```
 
-## 10. Contribuzione e workflow
+## 10. Workflow: aggiornamento e rigenerazione
 Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e includere:
 
 1. **Aggiornamento di `tei/taxonomy/tassonomia-gh.xml`**: aggiunta/modifica di categorie o descrizioni.
