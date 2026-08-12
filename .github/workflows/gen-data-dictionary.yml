@@ -1,0 +1,42 @@
+name: Genera data-dictionary
+
+# Rigenera docs/data-dictionary.md da tei/taxonomy/tassonomia-gh.xml.
+# Si attiva da solo quando cambia la tassonomia (o lo script/generatore), e
+# a mano dal pulsante "Run workflow". Se il dizionario risulta cambiato, lo
+# committa automaticamente sul branch.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tei/taxonomy/tassonomia-gh.xml"
+      - "tools/gen_data_dictionary.py"
+      - ".github/workflows/gen-data-dictionary.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install lxml
+      - name: Rigenera il data-dictionary dalla tassonomia
+        run: python3 tools/gen_data_dictionary.py
+      - name: Committa se il dizionario è cambiato
+        run: |
+          if git diff --quiet -- docs/data-dictionary.md; then
+            echo "data-dictionary.md già allineato alla tassonomia: nessuna modifica."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/data-dictionary.md
+            git commit -m "docs: rigenera data-dictionary dalla tassonomia"
+            git push
+            echo "data-dictionary.md rigenerato e committato."
+          fi
