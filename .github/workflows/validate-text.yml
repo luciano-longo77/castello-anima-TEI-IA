@@ -74,6 +74,8 @@ jobs:
         run: python3 .github/workflows/scripts/cit_glossa_guard.py "$TEXT"
       - name: Guardia commenti (grammatica dei commenti-seg)
         run: python3 .github/workflows/scripts/commenti_guard.py "$TEXT"
+      - name: Guardia interventi editoriali (normalizzazione ↔ genetico)
+        run: python3 .github/workflows/scripts/interventi_guard.py "$TEXT"
       - name: Guardia Schematron indice d'impatto (bande + ancore + formula)
         run: |
           python3 - <<'PY'
