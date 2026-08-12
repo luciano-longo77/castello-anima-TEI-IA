@@ -6,7 +6,7 @@
 
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
-**Licenza**: CC BY 4.0  
+**Licenza**: CC BY 4.0
 
 ## Abstract
 Questo documento descrive in modo **formale** il sistema di tassonomie adottato per l'annotazione semantica del manoscritto autografo *Castello dell'anima* (Palermo, BCP, ms. 2 Qq E 29, sec. XVII ex.). Il modello è progettato per rappresentare in modo **computabile**, **interrogabile** e **filologicamente auditabile** la dinamica prudenziale, retorica e dottrinale della scrittura mistica tardomoderna. Il sistema tassonomico qui descritto costituisce il **core semantico** dell'edizione digitale e governa l'uso dell'attributo `@ana` nel corpus TEI.
