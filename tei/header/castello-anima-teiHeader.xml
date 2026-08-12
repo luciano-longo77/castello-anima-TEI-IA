@@ -861,8 +861,11 @@
                     “parallel segmentation”, mediante <code>app</code>, <code>lem</code> e <code>rdg</code>, ed è
                     dedicato a cancellature, sostituzioni, aggiunte interlineari e interventi
                     d’autrice nei punti teologicamente sensibili. Le varianti sono classificate
-                    secondo le categorie: interlinear, margin, deleted, corrected, abbreviation,
-                    orthographic, lost. </p>
+                    con <att>type</att> su <code>app</code> (substitution, addition, deletion,
+                    transposition, variant) e, sui <code>rdg</code>, con <att>type</att> (authorial,
+                    external, ai-counterfactual) e <att>cause</att> (correction, clarification,
+                    orthodoxy, attenuation, precision, amplification); la topografia dell’atto
+                    materiale è resa da <att>place</att> su <code>add</code>/<code>del</code>. </p>
 
                 <p n="3"> Il modello ODD i moduli TEI relativi a linking,
                     analysis, transcrizione e critica del testo, in accordo con il tagset TEI P5. </p>
