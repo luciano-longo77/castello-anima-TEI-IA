@@ -41,5 +41,5 @@
 | 27 | liturgica | Te Deum | 100r, 100v, 113v, 114r, 216r, 252v |
 | 28 | liturgica | Pater noster, qui es in caelis | 21r |
 
-**Totali (dall'apparato):** 23 bibliche + 2 patristiche + 1 scolastica + 2 liturgiche = **28 citazioni distinte**.
+**Totali**: 23 bibliche + 2 patristiche + 1 scolastica + 2 liturgiche = **28 citazioni distinte**.
 
