@@ -338,6 +338,7 @@ Il sistema impone controlli rigorosi via Schematron (definiti in `taxonomy-sch.s
 *   **`category-catdesc-not-empty`**: Il contenuto di ogni `<catDesc>` non può essere vuoto (solo spazi bianchi).
 *   **`category-prefix-consistency`**: Per tutte le tassonomie tranne `func`, le categorie con trattino rispettano il prefisso della tassonomia radice (es. `risk-*`, `operation-*`, `exposition-*`, etc.).
 *   **`taxonomy-category-xmlid-unique`**: Unicità globale di `@xml:id` su tutti gli elementi `<taxonomy>` e `<category>` (rete di sicurezza per bug RNG).
+*   **`func-branch-consistency`**: Nell'asse `func` (esente dalla prefissazione radice), ogni `<category>` deve appartenere a uno dei quattro rami — `legittimazione`, `pedagogia`, `rischio`, `ethos` — o iniziare con uno di essi seguìto da trattino.
 
 ### 8.3 Vincoli di annotazione — automatizzati e manuali
 
