@@ -95,9 +95,9 @@
                     
                     <exemplum>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <category xml:id="func-rischio">
+                            <category xml:id="rischio">
                                 <catDesc>Strategie volte a prevenire o correggere letture potenzialmente eterodosse.</catDesc>
-                                <category xml:id="func-rischio-attenuatio">
+                                <category xml:id="rischio-attenuatio">
                                     <catDesc>Glosse esplicative per smorzare formulazioni rischiose.</catDesc>
                                 </category>
                             </category>
