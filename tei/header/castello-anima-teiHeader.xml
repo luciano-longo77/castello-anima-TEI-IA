@@ -885,10 +885,19 @@
                 </hyphenation>
 
                 <normalization>
-                    <p n="1"> Si è mantenuta la maiuscola originale di inizio capoverso e l’interpunzione
-                        è riprodotta fedelmente. Normalizzazioni grafiche sono applicate
-                        esclusivamente tramite <code>orig</code>/<code>reg</code> per favorire la leggibilità,
-                        senza modificare la struttura sintattica o stilistica dell’autografo. </p>
+                        <p n="1"> Si è mantenuta la maiuscola originale di inizio capoverso e l’interpunzione
+                            è riprodotta fedelmente. Normalizzazioni grafiche sono applicate
+                            esclusivamente tramite <code>orig</code>/<code>reg</code> per favorire la leggibilità,
+                            senza modificare la struttura sintattica o stilistica dell’autografo. </p>
+                        <p n="2"> Le regolarizzazioni grafiche (<code>orig</code>/<code>reg</code>) e gli
+                            scioglimenti di abbreviazione (<code>abbr</code>/<code>expan</code>) sono
+                            responsabilità dell’editore (<ref target="#editor">#editor</ref>): l’attribuzione
+                            è dichiarata qui una volta per tutte e non è ripetuta con <att>resp</att> sui
+                            singoli elementi. Restano attribuiti e certificati per-istanza
+                            (<att>resp</att> + <att>cert</att>) i soli interventi sostanziali o congetturali:
+                            le correzioni (<code>sic</code>/<code>corr</code>) e le integrazioni
+                            (<code>supplied</code>), queste ultime marcate <val>cert="medium"</val> salvo
+                            diversa valutazione. </p>
                 </normalization>
 
                <interpretation xml:id="imp-idx">
