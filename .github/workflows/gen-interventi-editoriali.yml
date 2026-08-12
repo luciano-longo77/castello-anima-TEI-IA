@@ -10,7 +10,7 @@ on:
     branches: [main]
     paths:
       - "tei/text/castello-anima-teiText.xml"
-      - "tools/gen_interventi_editoriali.py"
+      - "tools/estrattore_interventi.py"
       - ".github/workflows/gen-interventi-editoriali.yml"
   workflow_dispatch:
 
@@ -27,7 +27,7 @@ jobs:
           python-version: "3.11"
       - run: pip install lxml
       - name: Rigenera il rendiconto degli interventi editoriali
-        run: python3 tools/gen_interventi_editoriali.py
+        run: python3 tools/estrattore_interventi.py
       - name: Committa se il rendiconto è cambiato
         run: |
           if git diff --quiet -- docs/interventi-editoriali.md; then
