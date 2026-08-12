@@ -125,7 +125,7 @@ inferenziale (N è condizione ma non atto; A è in parte già catturato dalla sc
 marcatore).
 
 > **Nota di replica.** Nella formula si inserisce **sempre `Fnorm`, mai F grezzo**: un F non
-> normalizzato (1–3 anziché 0,333–1) porterebbe I fuori scala senza segnalare l'errore.
+> normalizzato (1–3 anziché 0.333–1) porterebbe I fuori scala senza segnalare l'errore.
 
 ## Bande (asse `impact`)
 
@@ -147,8 +147,8 @@ calcolando l'indice ai due estremi delle ancore per ciascun grado:
 
 | F (operazione) | I minimo → massimo | Classi raggiungibili |
 |:--------------:|:------------------:|----------------------|
-| 1 (`delimitazione`) | 0.333 → 0,569 | `low` / `medium` |
-| 2 (`attenuatio`/`precisatio`/`riequilibrio`) | 0.524 → 0,760 | `medium` / `high` |
+| 1 (`delimitazione`) | 0.333 → 0.569 | `low` / `medium` |
+| 2 (`attenuatio`/`precisatio`/`riequilibrio`) | 0.524 → 0.760 | `medium` / `high` |
 | 3 (`declaratio`) | 0.714 → 0.950 | `high` / `critical` |
 
 Due letture: (1) **F fissa la finestra** — giustificazione del peso dominante 4/7: una
@@ -178,8 +178,8 @@ prodotto dal calcolo, mai immesso dall'annotatore. Si usa `<fs>`, non `<val>`.
   <fs xml:id="idx-seg-c8-desiderio" corresp="#seg-c8-desiderio" cert="medium">
     <f name="N_band"><symbol value="critica"/></f>   <!-- banda scelta dall'annotatore -->
     <f name="A_band"><symbol value="alta"/></f>      <!-- banda scelta dall'annotatore -->
-    <f name="N"><numeric value="0.90"/></f>          <!-- banda Critica → ancora 0,90 -->
-    <f name="A"><numeric value="0.85"/></f>          <!-- banda Alta    → ancora 0,85 -->
+    <f name="N"><numeric value="0.90"/></f>          <!-- banda Critica → ancora 0.90 -->
+    <f name="A"><numeric value="0.85"/></f>          <!-- banda Alta    → ancora 0.85 -->
     <f name="F"><numeric value="2"/></f>             <!-- operation precisatio → grado 2 -->
     <f name="Fnorm"><numeric value="0.667"/></f>
     <f name="I"><numeric value="0.760"/></f>
@@ -187,8 +187,8 @@ prodotto dal calcolo, mai immesso dall'annotatore. Si usa `<fs>`, non `<val>`.
 </standOff>
 ```
 
-**Esempio.** N: banda Critica → 0,90 · A: banda Alta → 0,85 · F: `precisatio` → grado 2 →
-**I = (4·0,667 + 2·0,90 + 0,85) / 7 = 0,760 → `impact-high`**.
+**Esempio.** N: banda Critica → 0.90 · A: banda Alta → 0.85 · F: `precisatio` → grado 2 →
+**I = (4·0.667 + 2·0.90 + 0,85) / 7 = 0.760 → `impact-high`**.
 
 ## Automazione — `impact_index.py`
 
