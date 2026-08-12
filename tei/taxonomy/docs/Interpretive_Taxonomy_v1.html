@@ -148,8 +148,14 @@ const NODI = [
       {
         nome: "category-prefix-consistency",
         context: "tei:category",
-        spiegazione: "L'xml:id deve iniziare col prefisso della tassonomia radice (verificato contro l'antenato, non il padre immediato); l'asse func e' esente.",
+        spiegazione: "L'xml:id deve iniziare col prefisso della tassonomia radice (verificato contro l'antenato, non il padre immediato); l'asse func e' esente da QUESTA regola perche' governato dalla sua propria (func-branch-consistency).",
         test: "<sch:let name=\"taxID\" value=\"string(ancestor::tei:taxonomy[1]/@xml:id)\"/>\n<sch:assert role=\"error\"\n  test=\"$taxID = 'func' or starts-with(@xml:id, concat($taxID, '-'))\">\n  @xml:id deve iniziare con il prefisso della tassonomia radice.\n</sch:assert>"
+      },
+      {
+        nome: "func-branch-consistency",
+        context: "tei:taxonomy[@xml:id='func']//tei:category",
+        spiegazione: "Contrappeso all'esenzione precedente: sotto l'asse func l'xml:id deve essere uno dei quattro rami (legittimazione, pedagogia, rischio, ethos) o iniziare con uno di essi seguito da trattino. Cosi' func non e' un buco non vincolato, ma un asse a vocabolario chiuso.",
+        test: "<sch:rule context=\"tei:taxonomy[@xml:id='func']//tei:category\">\n  <sch:assert role=\"error\"\n    test=\"@xml:id='legittimazione' or @xml:id='pedagogia' or @xml:id='rischio' or @xml:id='ethos'\n      or starts-with(@xml:id,'legittimazione-') or starts-with(@xml:id,'pedagogia-')\n      or starts-with(@xml:id,'rischio-') or starts-with(@xml:id,'ethos-')\">\n    Sotto 'func' l'@xml:id deve essere uno dei quattro rami o iniziare con esso.\n  </sch:assert>\n</sch:rule>"
       }
     ],
     testValid: "<category xml:id=\"c1\">\n  <catDesc>Livello 1</catDesc>\n  <category xml:id=\"c1-a\">...</category>\n</category>",
