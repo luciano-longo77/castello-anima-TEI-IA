@@ -150,7 +150,6 @@ Questi attributi ammettono **solo** i valori elencati.
 | `app/@type` | `substitution` · `addition` · `deletion` · `transposition` · `variant` |
 | `rdg/@type` | `authorial` · `external` · `ai-counterfactual` |
 | `rdg/@cause` | `correction` · `clarification` · `orthodoxy` · `attenuation` · `precision` · `amplification` |
-| `cit/@type` | `bible` · `liturgy` · `mystic` · `patristic` |
 | `note/@type` | `editorial` · `doctrinal` · `contextual` · `glossa` · `critical` · `linguistic` |
 | `hi/@rend` | `italic` · `underline` · `superscript` · `larger` · `spaced` · `rubric` |
 | `fw/@type` | `header` · `footer` · `pageNum` · `sig` · `catch` |
