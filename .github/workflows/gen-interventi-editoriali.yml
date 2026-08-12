@@ -1,0 +1,43 @@
+name: Genera interventi-editoriali
+
+# Rigenera docs/interventi-editoriali.md da tei/text/castello-anima-teiText.xml.
+# Si attiva da solo quando cambia il teiText (o lo script/generatore), e a mano
+# dal pulsante "Run workflow". Se il rendiconto risulta cambiato, lo committa
+# automaticamente sul branch.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tei/text/castello-anima-teiText.xml"
+      - "tools/gen_interventi_editoriali.py"
+      - ".github/workflows/gen-interventi-editoriali.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install lxml
+      - name: Rigenera il rendiconto degli interventi editoriali
+        run: python3 tools/gen_interventi_editoriali.py
+      - name: Committa se il rendiconto è cambiato
+        run: |
+          if git diff --quiet -- docs/interventi-editoriali.md; then
+            echo "interventi-editoriali.md già allineato al teiText: nessuna modifica."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/interventi-editoriali.md
+            git commit -m "docs: rigenera rendiconto interventi editoriali dal teiText"
+            git pull --rebase --autostash
+            git push
+            echo "interventi-editoriali.md rigenerato e committato."
+          fi
