@@ -45,6 +45,37 @@
 | `impact-low` | `#impact-low` | Fascia inferiore dell'indice (I < 0.50): minima forza regolativa del marcatore. Parti ornamentali… |
 | `impact-critical` | `#impact-critical` | Fascia superiore dell'indice (I ≥ 0.82): massima forza regolativa del marcatore. Nel campione coi… |
 
+## Bande di calcolo dell'indice: `N_band` / `A_band` / `F`
+
+*Le bande **non** compaiono in `@ana`: sono i valori `<symbol>`/`<numeric>` dei campi della feature structure `<fs>` nello `standOff type="impact-index"`. L'annotatore sceglie la **banda**; il decimale è l'**ancora fissa** con cui lo script calcola l'indice. Formula: **`I = (4·Fnorm + 2·N + A) / 7`** (pesi AHP F:N:A = 4:2:1); la classe `#impact-*` in `@ana` coincide con la banda di `I`.*
+
+### `N` — necessità interpretativa (quattro bande)
+
+| `N_band` (`<symbol>`) | ancora `N` | intervallo | Descrizione |
+|---|---|---|---|
+| `critica` | 0.90 | N ≥ 0.85 | La rimozione del presidio esporrebbe il passo a eresia esplicita (panteismo o quietismo). |
+| `alta` | 0.75 | 0.65 ≤ N < 0.85 | Passo teologicamente sensibile: la glossa è strutturalmente utile, ma il nodo non collassa in eresia esplicita. |
+| `media` | 0.55 | 0.45 ≤ N < 0.65 | Chiarificazione utile, esposizione moderata; l'assenza non produrrebbe deriva dottrinale. |
+| `bassa` | 0.30 | N < 0.45 | Funzione marginale, ornamentale o descrittiva. |
+
+### `A` — riduzione dell'ambiguità (tre bande)
+
+| `A_band` (`<symbol>`) | ancora `A` | intervallo | Descrizione |
+|---|---|---|---|
+| `alta` | 0.85 | A ≥ 0.80 | Chiude quasi del tutto l'ambiguità e delimita con precisione. |
+| `media` | 0.675 | 0.55 ≤ A < 0.80 | Restringe il campo ma lascia un margine di lettura. |
+| `bassa` | 0.40 | A < 0.55 | Tocca l'ambiguità solo marginalmente. |
+
+### `F` — rango dell'operazione prudenziale (dall'asse `operation`)
+
+| operazione | `F` | `Fnorm` = F/3 | classi d'impatto raggiungibili |
+|---|---|---|---|
+| `delimitazione` | 1 | 0.333 | low / medium |
+| `attenuatio` · `precisatio` · `riequilibrio` | 2 | 0.667 | medium / high |
+| `declaratio` | 3 | 1.0 | high / critical |
+
+*Soglie di classe: `impact-low` I<0.50 · `impact-medium` 0.50≤I<0.66 · `impact-high` 0.66≤I<0.82 · `impact-critical` I≥0.82.*
+
 ## `risk`- Rischio dottrinale
 
 | `xml:id` | in `@ana` | Descrizione |
