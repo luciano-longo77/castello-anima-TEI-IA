@@ -78,7 +78,7 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 
 ## Versioning
 
-- **Dataset version**: v1.8
+- **Dataset version**: v1.9
 - **Data di preparazione**: 2026-08-07
 - **Autore**: Luciano Longo
 
@@ -86,6 +86,7 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 - **v1.1** (2026-03-25)
 - **v1.2** (2026-04-01)
 - **v1.3** (2026-08-07)
+- **v1.9** (2026-08-12) — ampliamento del campione a **36 capitoli / 29 loci**: +I.4, I.11; +II.3, II.4–5, II.7, II.20, II.21; +III.6, III.7, III.10, III.16, III.19, III.32, III.38, III.39. Chiude le glosse §6 orfane e integra le tre *declaratio* critiche (II.21, III.38, III.39).
 
 ## Uso del documento
 
@@ -115,7 +116,7 @@ Lista completa dei capitoli che rispondono ai criteri di:
 3. presenza di glosse o dispositivi di sorveglianza,
 4. rilevanza per gli esperimenti TEI+IA (-CIT, +TEXTsub, +CIT).
 
-Il campione consta di **14 loci di selezione** (corrispondenti a **16 capitoli**, poiché `I.1–2` e `II.1–2` raggruppano due capitoli ciascuno), distribuiti nei tre libri: 3 loci nel Libro I, 4 nel Libro II, 7 nel Libro III.
+Il campione consta di **29 loci di selezione** (corrispondenti a **36 capitoli**, poiché `I.1–2`, `II.1–2` e `II.4–5` raggruppano più capitoli e i capitoli `III.2–5` sono inclusi per intero come raccordo), distribuiti nei tre libri: 5 loci nel Libro I, 9 nel Libro II, 15 nel Libro III.
 
 ### 1.1. Libro I (Anime principianti)
 
@@ -124,8 +125,10 @@ Il campione consta di **14 loci di selezione** (corrispondenti a **16 capitoli**
 | Capitolo | Titolo | Motivo della selezione |
 |---|---|---|
 | I.1–2 | Si tratta della miseria humana / Come il mondo è una continua guerra… | Costruzione dell'**ethos**; assenza di citazioni → ideale per esperimenti **+CIT** |
+| I.4 | *Come per dar principio al Castello dell'anima è necessaria la notte de' sensi* (metafora del castello) | Fonda la **metafora-castello** (l'orazione come edificio ascensivo, rovesciamento avilese) e la notte dei sensi; glossa §6 6.4.1 → base testuale all'intertesto teresiano |
 | I.5 | Virtù dell'humiltà (Salmo *In te Domine speravi*) | Citazione strategica → segmento **legittimante** |
 | I.6 | Virtù dell'obedienza (*Christus factus est…*) | Citazione cristologica → perfetto per **-CIT / +CIT** |
+| I.11 | *Virtù del distacco* | Snodo pedagogico con citazione → 2° sito **+CIT** di Libro I |
 
 ### 1.2. Libro II (Anime proficienti)
 
@@ -134,9 +137,14 @@ Il campione consta di **14 loci di selezione** (corrispondenti a **16 capitoli**
 | Capitolo | Titolo | Motivo della selezione |
 |---|---|---|
 | II.1–2 | Dispositione dell'anima | Fondazione dottrinale del discernimento → baseline |
+| II.3 | *Anime che incominciano ad entrare nella contemplatione* | Soglia dell'ingresso contemplativo; glosse §6 6.2.2/6.6.1 → fascia media dell'indice |
+| II.4–5 | *Seconda notte / stati di notte oscura* | Intertesto **giovanneo** (Subida/Noche); catene notte→quiete |
+| II.7 | *S'incomincia a trattare della contemplatione infusa (oratione di quiete)* | Cuore **quietista** (quiete ×16); glossa §6 6.8.1 → banco **−CIT** |
 | II.8 (a–d) | Oratione d'unione | Nodo critico: consonanza con Molinos, casi concreti, rischio di quietismo; ideale per **-CIT / +CIT** |
 | II.9a–b | Travagli delle anime | Casistica mistica → esperimenti di spostamento citazionale |
 | II.10b | Segni per conoscere se la gratia è di Dio o del Demonio | Segmento normativo ad alta sensibilità; utile per **stress test IA** |
+| II.20 | *Pene più dense* | Densità di glosse massima del blocco pene; glossa §6 6.5.2 |
+| II.21 | *Pene doppo i sollievi* — «Mi dichiaro… se Dio l'abandonasse» (inchiostro scuro) | **Declaratio critica** (impeccabilità) §6 6.3.3 **e** strato **T3** ink_3-dark → primo `impact-critical` e primo T3 in Libro II |
 
 ### 1.3. Libro III (Anime perfette)
 
@@ -145,40 +153,54 @@ Il campione consta di **14 loci di selezione** (corrispondenti a **16 capitoli**
 | Capitolo | Titolo | Motivo della selezione |
 |---|---|---|
 | III.1 | *Si tratta della dispositione che lascia nell'anima la notte dello spirito* (c. 158r) | Soglia del Libro III: ingresso nella fase purgativa; baseline a bassa densità citazionale, comparabile a I.1–2 e II.1–2 → contrappunto strutturale |
+| III.6 | *Nudità dell'anima e bacio* (c. 168v) | Preparazione al matrimonio spirituale; glossa §6 6.1.2 (impeccabilità) |
+| III.7 | *Matrimonio spirituale che Dio fa con l'anima* (c. 173v) | Picco **panteismo**: «un altro Dio» ×3; glosse §6 6.1.3/6.1.6 |
 | III.8 | *Cella secreta / matrimonio spirituale* (c. 175v) | Capitolo più ricco di glosse difensive: «l'anima divenuta un altro Dio» (c. 178v) mitigata da «totale sicurtà… non per fidar di sé stessa»; «una sicurtà… se Dio ci lasciasse potremo di nuovo cadire» (c. 178r) |
+| III.10 | *Soggillo che Dio pone all'anima* (c. 182v) | *Annichilazione* ×4 (quietismo); glosse §6 6.1.4/6.1.7 |
 | III.12 | *Stato d'otio / operazione di Dio nel fondo* | Segmento di unione alta, senza glosse → banco per **+CIT / +TEXTsub** |
 | III.14 | *Santa ignoranza* | Concetto teologicamente esposto; alta utilità per analisi controfattuale |
+| III.16 | *Certa sorte d'unione straordinaria* (c. 197v) | Alta densità glosse/rischio; impeccabilità |
+| III.19 | *Molte sorte d'unione naturale e supernaturale* (c. 207v) | Distinzione naturale/**sovrannaturale** → punto più esposto al sospetto inquisitoriale |
 | III.24 | *Non si medita la passione, ma si "emita" Tristis est anima mea* | Citazione semiliturgica pericolosa → nodo critico |
+| III.32 | *Trasformatione nel crocefisso* (c. 241v) | Citazioni della **Passione** (*Consummatum est*, *In manus tuas*) → ancoraggio cristologico |
 | III.34 | *Trasformatione totale / matrimonio spirituale* | Culmine teologico → ideale per grafi intertestuali |
+| III.38 | *Sigillo d'ortodossia — «mi dichiaro»* (c. 256v) | **Declaratio critica** §6 6.3.1 |
+| III.39 | *«Mi dichiaro» + annichilazione* (c. 259v) | **Declaratio critica** + *annichil* ×5; glosse §6 6.3.2/6.10.1 (panteismo) |
 | III.40 | *Ultima cella dell'anima* (ultimo capitolo) | Segmento finale per chiudere il ciclo ascensionale |
 
 ## 2. Razionale dei capitoli selezionati
 
-- **Libro I** — I.1–2; I.5; I.6
-- **Libro II** — II.1–2; II.8 a–d; II.9 a–b; II.10b
-- **Libro III** — III.1; III.8; III.12; III.14; III.24; III.34; III.40
+- **Libro I** — I.1–2; I.4; I.5; I.6; I.11
+- **Libro II** — II.1–2; II.3; II.4–5; II.7; II.8 a–d; II.9 a–b; II.10b; II.20; II.21
+- **Libro III** — III.1; III.6; III.7; III.8; III.10; III.12; III.14; III.16; III.19; III.24; III.32; III.34; III.38; III.39; III.40
 
 ### 2.1. Razionale
 
-Il dataset necessario per l'analisi TEI+IA del *Castello dell'anima* è costruito in modo coerente con la metodologia del progetto, integrando la prospettiva filologica, quella retorico-dottrinale e la sperimentazione computazionale prevista dalla pipeline IA controllata. La selezione del campione segue tre criteri principali: la sensibilità dottrinale, la densità intertestuale e la comparabilità strutturale tra i tre libri. La prima esigenza deriva dal fatto che l'opera presenta una serie di snodi nei quali il discorso mistico diviene potenzialmente ambiguo, soprattutto quando tocca temi come l'unione trasformante, la sicurezza dell'anima, l'obbedienza e il discernimento delle mozioni interiori; è in questi luoghi che glosse e citazioni agiscono come dispositivi di chiarificazione e di recinzione semantica, e l'introduzione individua precisamente nel Libro II e nel Libro III le zone a maggiore rischio inquisitoriale e con più alta densità di glosse difensive. La seconda esigenza riguarda invece i capitoli che presentano citazioni bibliche, liturgiche o mistico-dottrinali utilizzate come meccanismi di stabilizzazione; in particolare, il capitolo sull'umiltà (Libro I), quello sull'obbedienza (Libro I), il capitolo VIII del Libro II e il capitolo VIII del Libro III, dove le citazioni si combinano con glosse e note di attenuazione. Infine, la comparabilità tra i libri richiede che il campione includa testi di estensione simile e di natura retorica complementare: la pedagogia spirituale del Libro I, il discernimento normativo del Libro II e la mistica alta e vigilata del Libro III, come l'introduzione esplicitamente prescrive. A partire da questi criteri, il dataset comprende **quattordici loci di selezione** (sedici capitoli, poiché `I.1–2` e `II.1–2` raggruppano due capitoli ciascuno), così distribuiti: tre nel Libro I, quattro nel Libro II e sette nel Libro III.
+Il dataset necessario per l'analisi TEI+IA del *Castello dell'anima* è costruito in modo coerente con la metodologia del progetto, integrando la prospettiva filologica, quella retorico-dottrinale e la sperimentazione computazionale prevista dalla pipeline IA controllata. La selezione del campione segue tre criteri principali: la sensibilità dottrinale, la densità intertestuale e la comparabilità strutturale tra i tre libri. La prima esigenza deriva dal fatto che l'opera presenta una serie di snodi nei quali il discorso mistico diviene potenzialmente ambiguo, soprattutto quando tocca temi come l'unione trasformante, la sicurezza dell'anima, l'obbedienza e il discernimento delle mozioni interiori; è in questi luoghi che glosse e citazioni agiscono come dispositivi di chiarificazione e di recinzione semantica, e l'introduzione individua precisamente nel Libro II e nel Libro III le zone a maggiore rischio inquisitoriale e con più alta densità di glosse difensive. La seconda esigenza riguarda invece i capitoli che presentano citazioni bibliche, liturgiche o mistico-dottrinali utilizzate come meccanismi di stabilizzazione; in particolare, il capitolo sull'umiltà (Libro I), quello sull'obbedienza (Libro I), il capitolo VIII del Libro II e il capitolo VIII del Libro III, dove le citazioni si combinano con glosse e note di attenuazione. Infine, la comparabilità tra i libri richiede che il campione includa testi di estensione simile e di natura retorica complementare: la pedagogia spirituale del Libro I, il discernimento normativo del Libro II e la mistica alta e vigilata del Libro III, come l'introduzione esplicitamente prescrive. A partire da questi criteri, il dataset comprende **ventinove loci di selezione** (trentasei capitoli, poiché `I.1–2`, `II.1–2` e `II.4–5` raggruppano più capitoli e i capitoli `III.2–5` sono inclusi per intero come raccordo), così distribuiti: cinque nel Libro I, nove nel Libro II e quindici nel Libro III.
 
 ### 2.2. Selezione Libro I: motivazioni
 
 Dal Libro I vengono selezionati i capitoli 1–2, 5 e 6. I primi due capitoli, dedicati alla *miseria humana* e alla verità rivelata, introducono la voce autoriale e costruiscono l'ethos della scrivente attraverso osservazioni autobiografiche e modelli di conversione come san Francesco, santa Maria Maddalena e santa Rosalia, elementi ben attestati nell'edizione; sono capitoli privi di citazioni formali e risultano preziosi per gli esperimenti IA di aggiunta artificiale di citazioni. Il capitolo sull'umiltà contiene invece la citazione salmica *In te Domine speravi, non confundar in aeternum*, indicata dalla Guida come esempio paradigmatico di citazione "legittimante" capace di rendere più chiaro e sorvegliato il discorso. Il capitolo sull'obbedienza presenta la citazione cristologica *Christus factus est pro nobis obediens usque ad mortem*, che costituisce l'architrave concettuale dell'argomentazione morale e permette di testare l'impatto della rimozione o della restituzione equifunzionale (+CIT).
 
+L'ampliamento aggiunge i capitoli **4** e **11**. Il capitolo 4 — «Come per dar principio al Castello dell'anima è necessaria la notte de' sensi» — fonda la **metafora architettonica del castello** (l'orazione come edificio ascensivo, rovesciamento del modello avilese) e reca una glossa di delimitazione (§6 6.4.1): dà finalmente base testuale all'intertesto teresiano oggi solo argomentato. Il capitolo 11 (virtù del distacco) offre un secondo sito citazionale utile agli esperimenti **+CIT**.
+
 ### 2.3. Selezione Libro II: motivazioni
 
 Dal Libro II vengono selezionati l'inizio (capitoli 1–2) e il capitolo VIII. I primi servono come baseline dottrinale e contengono la definizione delle tre fonti di inganno spirituale (mondo, carne, demonio), articolando una pedagogia normativa senza glosse. Il capitolo VIII è invece la sezione più sensibile del Libro II: esso contiene casi concreti di discernimento delle mozioni, descrizioni delle ripugnanze e confusioni dell'anima, critica verso i direttori spirituali incompetenti e ampi passaggi che richiamano implicitamente la tripartizione della *Guida spirituale* di Molinos, come evidenziato sia nell'introduzione sia nella Guida TEI-driven. Questo capitolo è ideale per gli esperimenti di rimozione (-CIT) e restituzione (+CIT) dei presìdi citazionali e glossematici, permettendo di osservare come la loro assenza modifichi stabilità dottrinale, chiarezza argomentativa e coesione interna.
 
+L'ampliamento estende il Libro II alla **soglia contemplativa** e al **blocco delle pene**: il capitolo **3** documenta l'ingresso nella contemplazione infusa (glosse §6 6.2.2/6.6.1); i capitoli **4–5** portano l'intertesto **giovanneo** della notte oscura; il capitolo **7** («S'incomincia a trattare della contemplatione infusa, oratione di quiete») è il nucleo **quietista** più prossimo a Molinos (glossa §6 6.8.1); i capitoli **20–21** coprono il blocco delle pene, con il capitolo **21** che contiene la terza *declaratio* dell'opera — «Mi dichiaro… se Dio l'abandonasse», glossa tardiva a inchiostro scuro (strato **T3**) e sigillo d'ortodossia di banda **critica** sull'impeccabilità (§6 6.3.3).
+
 ### 2.4. Selezione Libro III: motivazioni
 
-Dal Libro III vengono selezionati **sette loci** — III.1, III.8, III.12, III.14, III.24, III.34, III.40 — che coprono l'intero arco della mistica alta e vigilata. I capitoli contigui III.2–III.5, inclusi per intero come raccordo, documentano la transizione osservabile fra la soglia (III.1) e il picco difensivo (III.8), rendendo continua — e non solo per estremi — la curva della densità prudenziale nel Libro III.
+Dal Libro III vengono selezionati **quindici loci** — III.1, III.6, III.7, III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40 — che coprono l'intero arco della mistica alta e vigilata. I capitoli contigui III.2–III.5, inclusi per intero come raccordo, documentano la transizione osservabile fra la soglia (III.1) e il picco difensivo (III.8), rendendo continua — e non solo per estremi — la curva della densità prudenziale nel Libro III.
 
 Il capitolo I (c. 158r) funge da **soglia purgativa** a bassa densità difensiva, contrappunto strutturale a I.1–2 e II.1–2; i capitoli **8 e 12** costituiscono i poli di massima e minima densità difensiva, attorno ai quali si organizza in profondità l'analisi controfattuale; i capitoli 14, 24, 34 e 40 scandiscono i nodi successivi dell'itinerario ascensionale (santa ignoranza, imitazione della Passione, trasformazione totale, sigillo conclusivo). 
 
 Il capitolo VIII (c. 175v) presenta il nucleo più alto della mistica teresiana: unione, matrimonio spirituale, sicurezza dell'anima e la gestione dell'iperbole «l'anima divenuta un altro Dio» (c. 178v, §34), mitigata non per via sostanziale ma dal contesto prudenziale — «vedendosi tanto da lui fortificata», «totale sicurtà, e questo non per fidar di sé stessa» (c. 178v) — mentre il nodo della «sicurtà» è delimitato da «una sicurtà, però è di bene pensare, che se Dio ci lasciasse potremo di nuovo cadire» (c. 178r, §29). La formula anti-sostanziale «(un altro Dio) per particepatione» è invece il leitmotiv dei capitoli precedenti del blocco matrimoniale (III.5, c. 167v; III.6, c. 171v; III.7, c. 173r), e «per quanto sta da parte di Dio» appartiene a III.7 (c. 173v). Le citazioni cristologiche della Passione (*Consummatum est*, *In manus tuas, Domine, commendo spiritum meum*) non appartengono a questo capitolo ma ai capp. XXXI–XXXII (cc. 241v–243v). Il capitolo è caratterizzato inoltre dal ricorso prudenziale al refrain «dovemo sempre temere» / «mai fidarci di noi stessi» (§§28, 34), meccanismo di auto-mitigazione e di sorveglianza del discorso teologico. 
 
 Si tratta della sezione più adatta per gli esperimenti di rimozione citazionale (-CIT), di restituzione (+CIT) e di recupero delle cancellature autoriali (+TEXTsub), poiché consente di misurare con precisione la funzione stabilizzante delle glosse e delle correzioni autoriali. Il capitolo XII, invece, espone l'ozio delle potenze al rischio quietista ma risulta strutturalmente privo di glosse difensive esplicite; questa minima densità difensiva ne fa il contrappunto ideale a III.8 e il banco di prova per la restituzione di citazioni (+CIT) e il recupero di eventuali cancellature (+TEXTsub), così da valutarne l'effetto sulla coerenza argomentativa.
+
+L'ampliamento del Libro III chiude i vuoti rispetto alla **matrice glosse §6** e all'arco dottrinale. Il blocco del **matrimonio spirituale** — capitoli **6** (nudità/bacio, impeccabilità), **7** («un altro Dio» ×3, panteismo) e **10** (soggillo, annichilazione) — porta nel campione le glosse 6.1.2, 6.1.3, 6.1.6, 6.1.4 e 6.1.7, finora orfane; il capitolo **16** aggiunge una sorte straordinaria d'unione ad alta densità, il capitolo **19** la distinzione fra unione **naturale e sovrannaturale** (il punto più esposto al sospetto inquisitoriale), il capitolo **32** le citazioni cristologiche della **Passione** (*Consummatum est*, *In manus tuas*). Infine i capitoli **38** e **39** portano le due *declaratio* critiche restanti — le «mi dichiaro» di banda `impact-critical` (glosse 6.3.1, 6.3.2, 6.10.1) — che completano, con **II.21**, la copertura di **tutte e tre** le declaratio d'ortodossia dell'opera.
 
 ### 2.5. Dataset e Guida al modello
 
