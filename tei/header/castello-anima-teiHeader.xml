@@ -1869,6 +1869,12 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
+            <change when="2026-08-12" who="#editor" ana="#fase-normalizzazione-tag">
+   Fissata la grammatica dei commenti dei <code>seg</code>: normalizzate le ancore (10 ×
+   <code>A=media/None</code> → <code>0.675</code>), reinserite le operazioni mancanti e uniformate
+   le keyword d'apparato (<code>Norm:</code>). Aggiunta la guardia di CI <code>commenti_guard.py</code>
+   (clausola N/A/F-&gt;I, ancore col decimale, <code>commento-I == fs-I</code>, keyword ammesse).
+</change>
             <change when="2026-08-12" who="#editor" ana="#fase-annotazione-campione">
                 Integrati nel teiText i capitoli III.12 (<hi rend="italic">santo otio</hi>) e III.14
                 (<hi rend="italic">santa ignoranza</hi>) - Libro III, capp. 1·2·3·4·5·8·12·14 - e ancorate
