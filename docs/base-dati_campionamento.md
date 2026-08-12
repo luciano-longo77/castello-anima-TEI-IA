@@ -78,7 +78,7 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 
 ## Versioning
 
-- **Dataset version**: v1.9
+- **Dataset version**: v2.0
 - **Data di preparazione**: 2026-08-07
 - **Autore**: Luciano Longo
 
@@ -87,6 +87,7 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 - **v1.2** (2026-04-01)
 - **v1.3** (2026-08-07)
 - **v1.9** (2026-08-12) — ampliamento del campione a **36 capitoli / 29 loci**: +I.4, I.11; +II.3, II.4–5, II.7, II.20, II.21; +III.6, III.7, III.10, III.16, III.19, III.32, III.38, III.39. Chiude le glosse §6 orfane e integra le tre *declaratio* critiche (II.21, III.38, III.39).
+- **v2.0** (2026-08-12) — **anagrafe delle citazioni ricostruita dall'apparato dell'edizione critica**: 28 citazioni distinte (23 bibliche + 2 patristiche + 1 scolastica + 2 liturgiche) con **carte**. Corretto *In te Domine* → **Ps 70(71)** e *Amor meus **crucifissus*** (grafia; è a **III.24**, non III.34); aggiunte *Circumdederunt* (Ps 114,3), *Mc 14,36*, *Pater dimitte illis* (Lc 23,24), **S. Agostino** (*De Civitate Dei*), **S. Tommaso** (*Summa contra Gentiles*); riclassificati Vangeli/Epistole; §3.4 e Appendice riallineate.
 
 ## Uso del documento
 
@@ -215,11 +216,11 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **I.1–2** — Nessuna citazione formale → per esperimenti **+CIT**: aggiunta controllata di citazioni bibliche in stile.
 
 **I.5** — Virtù dell'umiltà  
-*In te Domine speravi, non confundar in aeternum* — Sal 30/31  
-→ citazione legittimante, frequente nella mistica dell'umiltà.
+*In te Domine speravi, non confundar in aeternum* — Ps 70(71) (c. 13r)  
+→ citazione legittimante, frequente nella mistica dell'umiltà; la stessa lezione ricorre in III.24 (cc. 220v-221r).
 
 **I.6** — Virtù dell'obbedienza  
-*Christus factus est pro nobis obediens usque ad mortem* — Fil 2,8  
+*Christus factus est pro nobis obediens usque ad mortem* — Fil 2,8 (c. 14r)  
 → pivot cristologico, altissimo impatto esplicativo.
 
 ### 3.2. Libro II
@@ -227,24 +228,24 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 *(discernimento + rischio dottrinale)*
 
 **II.1–2** — Baseline dottrinale  
-*Spiritus promptus est*  
+*Spiritus promptus est* — Mt 26,41 (attestata a c. 25r)  
 → utile per IA: aggiunta/restituzione di citazioni normative (+CIT).
 
 **II.8** — Orazione d'unione + effetti + avvertimenti *(contesto vicino a Molinos → test per glosse)*. Citazioni utili del corpus (ricorrenti nei capitoli mistici sulla quiete/unione):
 
-- *Pater noster, qui es in caelis* (formula liturgica) → molto ricorrente nelle sezioni di unione.
-- *Misericordias Domini in aeternum cantabo* — Sal 88,2 → citazione di stato gioioso/illuminativo.
-- *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Sal 118,32 → tipica delle sezioni di dilatazione del cuore.
+- *Pater noster, qui es in caelis* (formula liturgica; c. 21r) → molto ricorrente nelle sezioni di unione.
+- *Misericordias Domini in aeternum cantabo* — Sal 88,2 (cc. 92r, 182r, 203v) → citazione di stato gioioso/illuminativo.
+- *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Sal 118,32 (c. 78r) → tipica delle sezioni di dilatazione del cuore.
 
 **II.9** (travagli delle anime + cosa devono fare i direttori) → capitoli su aridità, turbamento, prove della quiete infusa. Citazioni utili:
 
-- *Spiritus quidem promptus est, caro autem infirma* (Mt 26,41) → perfetta per descrivere la debolezza che questi capitoli trattano.
-- *Secretum meum mihi* (Is 24,16, tradizione mistica) → molto usata per descrivere l'interiorità e il segreto divino.
+- *Spiritus quidem promptus est, caro autem infirma* (Mt 26,41; c. 25r) → perfetta per descrivere la debolezza che questi capitoli trattano.
+- *Secretum meum mihi* (Is 24,16, tradizione mistica; cc. 29v, 66v, 148v, 175v) → molto usata per descrivere l'interiorità e il segreto divino.
 
 **II.10b** — Segni per conoscere se *la gratia è di Dio o del Demonio*. Citazioni critiche:
 
-- *Dominus autem dirigat corda vestra...* (2 Ts 3,5) → citazione normativa di discernimento.
-- *Soli Deo honor et gloria* (1 Tm 1,17) → conclusione teologicamente sorvegliata.
+- *Dominus autem dirigat corda vestra...* (2 Ts 3,5; cc. 255v, 256r) → citazione normativa di discernimento.
+- *Soli Deo honor et gloria* (1 Tm 1,17; cc. 253r, 263r) → conclusione teologicamente sorvegliata.
 
 ### 3.3. Libro III
 
@@ -260,65 +261,79 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 
 > **N.B. (citazioni).** *Consummatum est*, *In manus tuas* e *Tristis est anima mea* non sono in III.8: le prime due sono in III.XXXI–XXXII (cc. 241v–243v), la terza in III.24 (c. 219r).
 
-- *Dignare Domine die isto sine peccato nos custodire* — Te Deum → liturgica, usata come protezione nei momenti di esposizione dottrinale.
+- *Dignare Domine die isto sine peccato nos custodire* — Te Deum (cc. 100r, 216r) → liturgica, usata come protezione nei momenti di esposizione dottrinale.
 
 **III.12** — stato d'otio / operazione nel fondo dell'anima. Citazioni compatibili col tema della quiete infusa:
 
-- *Deliciae meae esse cum filiis hominum* — Prov 8,31 → delizie divine = stato di quiete.
-- *Misericordias Domini...* → citazione perfetta per descrivere illuminazioni.
+- *Deliciae meae esse cum filiis hominum* — Prov 8,31 (c. 239r) → delizie divine = stato di quiete.
+- *Misericordias Domini...* (Sal 88,2; cc. 92r, 182r, 203v) → citazione perfetta per descrivere illuminazioni.
 
 **III.14** — santa ignoranza. Citazioni utili per marcazione teologica:
 
-- *Iam hiems transiit... surge amica mea, et veni* (Ct 2,10–11) → citazione sponsale perfetta per la trasformazione cognitiva.
-- *Secretum meum mihi* (Is 24,16, tradizione di commento) → ricorre nel contesto di "ignoranza sapiente".
+- *Iam hiems transiit... surge amica mea, et veni* (Ct 2,10-16; cc. 146r, 146v, 185r, 185v) → citazione sponsale perfetta per la trasformazione cognitiva.
+- *Secretum meum mihi* (Is 24,16, tradizione di commento; cc. 148v, 175v) → ricorre nel contesto di "ignoranza sapiente".
 
 **III.24** — imitazione della Passione. Citazioni centrali:
 
-- *Tristis est anima mea usque ad mortem* (Mt 26,38) → citazione-chiave, teologicamente delicata.
-- *Salvum me fac Deus...* (Sal 68,2-3) → evocazione della prova in acque profonde.
+- *Tristis est anima mea usque ad mortem* (Mt 26,38; cc. 219r, 219v) → citazione-chiave, teologicamente delicata.
+- *Salvum me fac Deus...* (Sal 68,2-3; c. 236r) → evocazione della prova in acque profonde.
 
 **III.34** — trasformazione totale / matrimonio spirituale. Citazioni utili per i grafi:
 
-- *Vivo autem, iam non ego: vivit vero in me Christus* (Gal 2,20) → formula di trasformazione.
-- *Amor meus crucifixus est...* (S. Ignazio) → intertesto patristico.
-- *Cupio dissolvi, et esse cum Christo* (Fil 1,23) → desiderio di unione perfetta.
+- *Vivo autem, iam non ego: vivit vero in me Christus* (Gal 2,20; c. 173v) → formula di trasformazione.
+- *Amor meus crucifissus est, et ego cum illo* (S. Ignazio, *Ad Romanos* 7) → intertesto patristico; **attestata a III.24** (c. 219v), non a III.34.
+- *Cupio dissolvi, et esse cum Christo* (Fil 1,23; cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v) → desiderio di unione perfetta.
 
 **III.40** — ultima cella dell'anima. Citazioni utili per concludere il ciclo ascensionale:
 
-- *Astitit regina a dextris tuis...* (Sal 44,10) → culminazione sponsale.
-- *Soli Deo honor et gloria* (Tm 1,17) → formula conclusiva.
+- *Astitit regina a dextris tuis...* (Sal 44,10; attestata a c. 111r, Libro II) → culminazione sponsale.
+- *Soli Deo honor et gloria* (Tm 1,17; cc. 253r, 263r) → formula conclusiva.
 
 ### 3.4. Authority list
 
-#### 3.4.1 Salmi
+*Anagrafe verificata sull'**apparato dell'edizione critica** (grafie volgarizzate come stampate; le carte indicano il folio dell'occorrenza). Tabella completa con occorrenze in [Appendice — Authority File](#appendice--authority-file).*
 
-- *In te Domine speravi* (Ps 30/31)
-- *Misericordias Domini...* (Ps 88,2)
-- *Vias mandatuorum...* (Ps 118,32)
-- *Salvum me fac Deus...* (Ps 68,2-3)
-- *Astitit regina...* (Ps 44,10)
+#### 3.4.1 Salmi
+- *In te Domine speravi, non confundar in aeternum* — Ps 70(71),1 (cc. 13r, 220v, 221r)
+- *Misericordias Domini in aeternum* — Ps 88,2 (cc. 92r, 182r, 203v)
+- *Vias mandatorum tuorum cucurri* — Ps 118,32 (c. 78r)
+- *Circumdederunt me dolores mortis* — Ps 114,3 (cc. 137v, 213r)
+- *Salvum me fac Deus* — Ps 68,2-3 (c. 236r)
+- *Astitit regina a dextris* — Ps 44,10 (c. 111r)
 
 #### 3.4.2 Vangeli
+- *Tristis est anima mea usque ad mortem* — Mt 26,38 (cc. 43r, 219r, 219v)
+- *Spiritus promptus, caro autem infirma* — Mt 26,41 (c. 25r)
+- *Deus meus… / Heloi Heloi lama sabacthani* — Mc 15,34 (cc. 213v, 219v, 220r, 243r)
+- *(Getsemani)* — Mc 14,36 (c. 219v)
+- *Pater dimitte illis, non enim sciunt* — Lc 23,24 (c. 220r)
+- *In manus tuas, Domine* — Lc 23,46 (cc. 242r–243v)
+- *Pater si vis, transfer calicem* — Lc 22,42 (cc. 25r, 25v, 219v)
+- *Consummatum est* — Gv 19,30 (cc. 241v, 254v, 255r)
+- *Sitio* — Gv 19,28 (cc. 241r, 241v)
 
-- *Christus factus est...* (Fil 2,8)
-- *Cupio dissolvi...* (Fil 1,23)
-- *Vivo autem, iam non ego...* (Gal 2,20)
-- *Consummatum est* (Gv 19,30)
-- *Sitio* (Gv 19,28)
-- *In manus tuas...* (Lc 23,46)
-- *Pater si vis...* (Lc 22,42)
-- *Deus meus...* (Mc 15,34)
-- *Tristis est anima mea...* (Mt 26,38)
-- *Spiritus quidem promptus est...* (Mt 26,41)
+#### 3.4.3 Epistole paoline
+- *Cupio dissolvi et esse cum Christo* — Fil 1,23 (cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v)
+- *Christus factus est pro nobis obediens* — Fil 2,8 (c. 14r)
+- *Vivo autem, iam non ego, vivit vero in me Christus* — Gal 2,20 (c. 173v)
+- *Soli Deo sit honor et gloria* (Regi autem saeculorum…) — 1 Tm 1,17 (cc. 253r, 263r)
+- *Dominus autem dirigat corda* — 2 Ts 3,5 (cc. 255v, 256r)
 
-#### 3.4.3 Altre Scritture
+#### 3.4.4 Altre Scritture
+- *Iam hiems transiit, imber abiit et recessit… surge amica mea et veni* — Ct 2,10-16 (cc. 146r, 146v, 185r, 185v)
+- *Secretum meum mihi* — Is 24,16 (cc. 29v, 66v, 148v, 175v)
+- *Deliciae meae esse cum filiis hominum* — Prov 8,31 (c. 239r)
 
-- *Iam hiems transiit... surge amica mea, et veni* (Ct 2,10–11)
-- *Secretum meum mihi* (Is 24,16)
-- *Deliciae meae esse cum filiis hominum* (Prov 8,31)
-- *Pater noster*
-- *Dignare Domine...* (Te Deum)
-- *Amor meus crucifixus est...* (Ignazio di Antiochia)
+#### 3.4.5 Patristica e scolastica
+- *Amor meus crucifissus est, et ego cum illo* — S. Ignazio, *Ad Romanos* 7 (c. 219v, III.24)
+- *De Civitate Dei* — S. Agostino (c. 248v)
+- *Summa contra Gentiles* III.38 — S. Tommaso d'Aquino (cc. 133r, 160v)
+
+#### 3.4.6 Liturgia
+- *Pater noster, qui es in caelis* (c. 21r)
+- *Te Deum* (*Dignare Domine / Pleni sunt caeli / Te Deum laudamus*) (cc. 100r, 100v, 113v, 114r, 216r, 252v)
+
+**Totale attestato: 28 citazioni distinte** (23 bibliche + 2 patristiche + 1 scolastica + 2 liturgiche).
 
 ## 4. Citazioni rilevanti
 
@@ -330,7 +345,7 @@ Le citazioni illustrano l'uso delle citazioni come dispositivi di stabilizzazion
 
 **Salmi**
 
-- *In te Domine speravi, non confundar in aeternum* — Sal 30/31 → usata nel Libro I per fondare la virtù dell'umiltà (I.5).
+- *In te Domine speravi, non confundar in aeternum* — Ps 70(71) → usata nel Libro I per fondare la virtù dell'umiltà (I.5, c. 13r); ripresa come ancoraggio in III.24 (cc. 220v-221r).
 - *Misericordias Domini in aeternum cantabo* — Sal 88,2 → citazione di stato mistico "di sicurezza", ricorrente nei momenti di luce divina.
 - *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Sal 118,32 → usata per la "dilatazione del cuore" nei capitoli di unione infusa.
 
@@ -376,7 +391,7 @@ Connesse al movimento dell'intelletto e alla santa *ignoranza*; accompagnano glo
 
 Citazioni rare e molto significative, segnano il punto di contatto tra mistica canonica ed eccesso trasformativo.
 
-- *Amor meus crucifixus est, et ego cum illo* — Ignazio di Antiochia → asse teologico di trasformazione mistica (III.34).
+- *Amor meus crucifissus est, et ego cum illo* — Ignazio di Antiochia, *Ad Romanos* 7 → asse teologico di trasformazione mistica; **attestata a III.24** (c. 219v).
 
 ## 6. Glosse — matrice tipizzata sugli assi di tassonomia-gh.xml
 
@@ -459,61 +474,68 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 
 ### 1. Biblia — Vulgata / Nova Vulgata
 
-| Sigla | Citazione | Riferimento | Nota d'uso |
+*Carte = folio dell'occorrenza sull'edizione critica (apparato).*
+
+| Sigla | Citazione | Carte | Nota d'uso |
 |---|---|---|---|
-| Ps 30(31),1 | *In te Domine speravi, non confundar in aeternum* | Biblia Sacra Vulgata | Citazione legittimante (Libro I) |
-| Ps 88(89),2 | *Misericordias Domini in aeternum cantabo* | BV | Stato mistico di sicurezza |
-| Ps 118(119),32 | *Vias mandatuorum tuorum cucurri...* | BV | Dilatazione del cuore |
-| Ps 68(69),2–3 | *Salvum me fac Deus...* | BV | Notte mistica / prove |
-| Ps 44(45),10 | *Astitit regina a dextris tuis* | BV | Culmine sponsale |
-| Ct 2,10–11 | *Iam hiems transiit... surge amica mea* | BV | Citazione sponsale (III.14) |
-| Is 24,16 | *Secretum meum mihi* | BV | Tradizione mistica, sapere nascosto |
-| Prov 8,31 | *Deliciae meae esse cum filiis hominum* | BV | Stato di quiete infusa |
-| Mt 26,38 | *Tristis est anima mea usque ad mortem* | NV | Citazione ad alto rischio |
-| Mt 26,41 | *Spiritus promptus est, caro autem infirma* | NV | Discernimento |
-| Mc 15,34 | *Deus meus, Deus meus...* | NV | Notte spirituale |
-| Lc 22,42 | *Pater si vis transfer calicem istum* | NV | Solitudine infusa |
-| Lc 23,46 | *In manus tuas, Domine...* | NV | Ancoraggio alla Passione |
-| Gv 19,28 | *Sitio* | NV | Stato sponsale / pene d'amore |
-| Gv 19,30 | *Consummatum est* | NV | Sicurezza mistica (III.XXXI–XXXII) |
-| Fil 1,23 | *Cupio dissolvi et esse cum Christo* | NV | Unione perfetta |
-| Fil 2,8 | *Christus factus est pro nobis obediens...* | NV | Pivot cristologico |
-| Gal 2,20 | *Vivo autem iam non ego...* | NV | Trasformazione totale |
-| 1 Tm 1,17 | *Soli Deo honor et gloria* | NV | Sigillo conclusivo |
-| 2 Ts 3,5 | *Dominus autem dirigat corda vestra...* | NV | Anti-quietista; discernimento |
+| Ps 70(71),1 | *In te Domine speravi, non confundar in aeternum* | 13r, 220v, 221r | Legittimante (I.5) e ancoraggio (III.24) |
+| Ps 88(89),2 | *Misericordias Domini in aeternum cantabo* | 92r, 182r, 203v | Stato mistico di sicurezza |
+| Ps 118(119),32 | *Vias mandatorum tuorum cucurri* | 78r | Dilatazione del cuore |
+| Ps 114,3 | *Circumdederunt me dolores mortis* | 137v, 213r | Prova / desolazione |
+| Ps 68(69),2-3 | *Salvum me fac Deus* | 236r | Notte mistica / prove |
+| Ps 44(45),10 | *Astitit regina a dextris tuis* | 111r | Culmine sponsale |
+| Mt 26,38 | *Tristis est anima mea usque ad mortem* | 43r, 219r, 219v | Alto rischio (III.24) |
+| Mt 26,41 | *Spiritus promptus, caro autem infirma* | 25r | Discernimento |
+| Mc 15,34 | *Deus meus… / Heloi Heloi lama sabacthani* | 213v, 219v, 220r, 243r | Notte spirituale |
+| Mc 14,36 | *(Getsemani — conformità alla volontà)* | 219v | Passione |
+| Lc 22,42 | *Pater si vis, transfer calicem istum* | 25r, 25v, 219v | Solitudine infusa |
+| Lc 23,24 | *Pater dimitte illis, non enim sciunt* | 220r | Perdono / passione |
+| Lc 23,46 | *In manus tuas, Domine* | 242r–243v | Ancoraggio alla Passione |
+| Gv 19,28 | *Sitio* | 241r, 241v | Pene d'amore / sponsale |
+| Gv 19,30 | *Consummatum est* | 241v, 254v, 255r | Sicurezza mistica |
+| Ct 2,10-16 | *Iam hiems transiit… surge amica mea et veni* | 146r, 146v, 185r, 185v | Sponsale (III.14) |
+| Is 24,16 | *Secretum meum mihi* | 29v, 66v, 148v, 175v | Sapere nascosto |
+| Prov 8,31 | *Deliciae meae esse cum filiis hominum* | 239r | Quiete infusa |
+| Fil 1,23 | *Cupio dissolvi et esse cum Christo* | 196r, 198v, 222r, 232v, 233r, 260r, 260v | Unione perfetta |
+| Fil 2,8 | *Christus factus est pro nobis obediens* | 14r | Pivot cristologico (I.6) |
+| Gal 2,20 | *Vivo autem, iam non ego, vivit vero in me Christus* | 173v | Trasformazione |
+| 1 Tm 1,17 | *Soli Deo sit honor et gloria* (Regi autem saeculorum…) | 253r, 263r | Sigillo conclusivo |
+| 2 Ts 3,5 | *Dominus autem dirigat corda* | 255v, 256r | Anti-quietista; discernimento |
 
 ### 2. Liturgia
 
-| Citazione | Fonte | Contesto |
-|---|---|---|
-| *Pater noster, qui es in caelis* | Liturgia Romana | Orazione d'unione, stato infuso |
-| *Dignare Domine die isto sine peccato nos custodire* | *Te Deum* | Protezione dottrinale |
+| Citazione | Fonte | Carte | Contesto |
+|---|---|---|---|
+| *Pater noster, qui es in caelis* | Liturgia Romana | 21r | Orazione d'unione, stato infuso |
+| *Te Deum* (*Dignare Domine / Pleni sunt caeli / Te Deum laudamus*) | *Te Deum* | 100r, 100v, 113v, 114r, 216r, 252v | Protezione dottrinale / lode |
 
-### 3. Patristica
+### 3. Patristica e scolastica
 
-| Citazione | Autore | Opera / Nota |
-|---|---|---|
-| *Amor meus crucifixus est, et ego cum illo* | Ignazio di Antiochia | *Ad Romanos* 7,2 — usato per trasformazione mistica |
-| *Secretum meum mihi* (ricezione) | Tradizione esegetica | Uso patristico e medievale (Gregorio, Bernardo) |
+| Citazione / Opera | Autore | Carte | Nota |
+|---|---|---|---|
+| *Amor meus crucifissus est, et ego cum illo* | S. Ignazio d'Antiochia, *Ad Romanos* 7 (MG 5-694) | 219v (III.24) | Trasformazione mistica |
+| *De Civitate Dei* | S. Agostino | 248v | Riferimento dottrinale |
+| *Summa contra Gentiles* III.38 | S. Tommaso d'Aquino | 133r, 160v | Riferimento scolastico |
+| *Secretum meum mihi* (ricezione) | Tradizione esegetica (Gregorio, Bernardo) | — | Uso patristico-medievale |
 
 ### 4. Mistica (post-tridentina, carmelitana, italiana)
 
-| Autore | Riferimento | Nota |
-|---|---|---|
-| Teresa d'Ávila | *Castillo interior* | Modello rovesciato nel *Castello* |
-| Giovanni della Croce | *Subida* / *Noche* | Schema purgativo, sospensione potenze |
-| Miguel de Molinos | *Guía espiritual* | Contro-modello implicito, rischio |
-| Maria Maddalena de' Pazzi | *Revelazioni* | Metafora della calamita |
-| Geltrude di Helfta | *Legatus divinae pietatis* | Genealogia mistica |
-| Chiara da Montefalco | *Vita et revelationes* | Esempio di mistica del cuore |
-| Caterina da Siena | *Dialogo* | Modello di autorità femminile |
+| Autore | Carte | Riferimento | Nota |
+|---|---|---|---|
+| Teresa d'Ávila | 16v | *Castillo interior* | Modello rovesciato nel *Castello* («serafica madre Teresa», c. 16v) |
+| Giovanni della Croce | 91r | *Subida* / *Noche* | Schema purgativo, sospensione potenze |
+| Miguel de Molinos | 19r, 63r | *Guía espiritual* | Contro-modello implicito («molinia»), rischio |
+| Maria Maddalena de' Pazzi | 16v, 31v | *Revelazioni* | Metafora della calamita |
+| Geltrude di Helfta | 16v | *Legatus divinae pietatis* | Genealogia mistica |
+| Chiara da Montefalco | 16v | *Vita et revelationes* | Esempio di mistica del cuore |
+| Caterina da Siena | 16v | *Dialogo* | Modello di autorità femminile |
 
 ### 5. Agiografia
 
-| Santa | Opera / Fonte base | Funzione |
-|---|---|---|
-| Santa Maria Maddalena | Tradizione esegetica / agiografica | Esempio di conversione |
-| Santa Rosalia | Vita secentesca siciliana | Modello ascetico locale |
-| Santa Geltrude | Vitae | Genealogia mistica |
-| Santa Chiara da Montefalco | Vitae | Mistica del cuore |
-| Santa Caterina da Siena | *Legenda Major* (Raymondo da Capua) | Legittimazione dottrinale |
+| Santa | Carte | Opera / Fonte base | Funzione |
+|---|---|---|---|
+| Santa Maria Maddalena | 2r | Tradizione esegetica / agiografica | Esempio di conversione (I.1) |
+| Santa Rosalia | 2r | Vita secentesca siciliana | Modello ascetico locale (I.1) |
+| Santa Geltrude (di Helfta) | 16v | Vitae | Genealogia mistica |
+| Santa Chiara da Montefalco | 16v | Vitae | Mistica del cuore |
+| Santa Caterina da Siena | 16v | *Legenda Major* (Raymondo da Capua) | Legittimazione dottrinale |
