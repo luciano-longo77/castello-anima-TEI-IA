@@ -1963,7 +1963,7 @@
                 univoci e riferimenti interni tutti risolti, e validato contro <code>tei_all</code>. </change>
 
             <change when="2026-08-07" who="#editor" ana="#fase-precisione-metodologica"> Aggiornato
-                l'indice d'impatto al modello AHP del progetto AURORA: <hi rend="italic">I =
+                l'indice d'impatto al modello AHP: <hi rend="italic">I =
                 (4·F_norm + 2·N + 1·A)/7</hi> (pesi F:N:A = 4:2:1), con F come classe formale
                 ordinale derivata dall'asse <code>operation</code> (delimitazione=1;
                 attenuatio/precisatio/riequilibrio=2; declaratio=3) e soglie calibrate sulla
