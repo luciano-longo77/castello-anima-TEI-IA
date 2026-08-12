@@ -883,7 +883,7 @@
                         <app>
                            <lem wit="#txt-c"><supplied reason="hole" resp="#editor">modo</supplied> alcuno spieg<supplied reason="hole" resp="#editor">arse</supplied></lem>
                            <rdg wit="#txt-b0"><gap reason="hole" unit="word" quantity="1"/> alcuno spieg<gap reason="hole" unit="chars" quantity="3"/></rdg>
-                        </app></add>, e con una parola direi il tutto: <foreign xml:lang="la"><term type="biblico">mirabilia magna</term></foreign></seg>.</p>
+                        </app><note type="glossa" ana="#operation-precisatio"/></add>, e con una parola direi il tutto: <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl>Sal 135,4</bibl></cit></seg>.</p>
             </div>
 
             <div type="chapter" n="4" xml:id="III-cap4">
@@ -1095,7 +1095,7 @@
                        Genetico: "a faccia e perciò" -> à faccia <,> e perciò, virgola cassata; "desidera" d[e]sidera, buco;
                        aggiunta marginale sinistra (ink_1) con buchi ("non [?]", "quest[o]"). -->
                   <seg xml:id="seg-c5p9-non-desiderar-morte" type="indicatio" subtype="satieta-desiderio" hand="#ink_1" cert="high"
-                       ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-intertesto-biblico #impact-low">Anche, che non desidera più né vita, né morte, e prima poteva desiderar la morte per sciogliersi dalla carne e godere di <rs type="divinita" ref="#dio">Dio</rs> nell'altra vita, poiché in questa vita, per alta <term type="mistico">contemplatione</term>, che vi sia, non può mai l'<rs type="soggetto-mistico">anima</rs> godire a Dio come nell'altra vita, dove senza velo di fede, lo gode da faccia<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">,</del> a faccia e perciò desidera perdire questa vita; qui però cessa poiché possedendo l'anima a Dio non tiene più che desiderare, né che vuolere, non lasciando Dio in lei luogo vacuo, e cossì niente brama niente cerca, e niente <app><lem wit="#txt-c">desidera</lem><rdg wit="#txt-b0">d<supplied reason="hole" resp="#editor">e</supplied>sidera</rdg></app>, e gode in essa una satietà di vita eterna. <add place="margin-left" hand="#ink_1" resp="#s-teresa" cert="medium">Ciò s'intende per non <gap reason="hole" unit="word" quantity="1"/> tempo dirà questo stato d'indiffirenza, che doppo verrà tempo bramerà la patria come suo centro sì come si dirà in quest<supplied reason="hole" resp="#editor">o</supplied> libro terzo.</add></seg></p>
+                       ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-intertesto-biblico #impact-low">Anche, che non desidera più né vita, né morte, e prima poteva desiderar la morte per sciogliersi dalla carne e godere di <rs type="divinita" ref="#dio">Dio</rs> nell'altra vita, poiché in questa vita, per alta <term type="mistico">contemplatione</term>, che vi sia, non può mai l'<rs type="soggetto-mistico">anima</rs> godire a Dio come nell'altra vita, dove senza velo di fede, lo gode da faccia<del rend="strikethrough" place="inline" hand="#ink_1" resp="#s-teresa" type="deletion">,</del> a faccia e perciò desidera perdire questa vita; qui però cessa poiché possedendo l'anima a Dio non tiene più che desiderare, né che vuolere, non lasciando Dio in lei luogo vacuo, e cossì niente brama niente cerca, e niente <app><lem wit="#txt-c">desidera</lem><rdg wit="#txt-b0">d<supplied reason="hole" resp="#editor">e</supplied>sidera</rdg></app>, e gode in essa una satietà di vita eterna. <add place="margin-left" hand="#ink_1" resp="#s-teresa" cert="medium">Ciò s'intende per non <gap reason="hole" unit="word" quantity="1"/> tempo dirà questo stato d'indiffirenza, che doppo verrà tempo bramerà la patria come suo centro sì come si dirà in quest<supplied reason="hole" resp="#editor">o</supplied> libro terzo.<note type="glossa" ana="#operation-precisatio"/></add></seg></p>
 
                <p n="10">
                   <!-- S15 OBBEDIENZA AL PADRE SPIRITUALE. Perfetta conformita col padre spirituale: fa la sua volonta come propria,
@@ -1200,7 +1200,7 @@
                   <seg xml:id="seg-c8-s2-secretum" type="indicatio" subtype="sigillo-biblico" hand="#ink_1" cert="high"
                        ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-medium #phase-introduction #mystic_state-unione #relation-intertesto-biblico #impact-low"><choice><orig>Perciò</orig><reg>perciò</reg></choice>
                      credemo esser molto scarse le misericordie di <rs type="divinita" ref="#dio">Dio</rs>, il vero è, che si vogliano provare a saper ciò che sono, ma la prova non giova per
-                     darsi ad intendire, <choice><orig>ne</orig><reg>né</reg></choice> farli capire nelle <term type="mistico">capacetà</term> degli huomini. <choice><abbr>Dunq</abbr><expan>Dunque</expan></choice> può dire l'anima <foreign xml:lang="la"><term type="biblico">secretum meum mihi</term></foreign></seg>.</p>
+                     darsi ad intendire, <choice><orig>ne</orig><reg>né</reg></choice> farli capire nelle <term type="mistico">capacetà</term> degli huomini. <choice><abbr>Dunq</abbr><expan>Dunque</expan></choice> può dire l'anima <cit><quote xml:lang="la"><term type="biblico">secretum meum mihi</term></quote><bibl>Is 24,16</bibl></cit></seg>.</p>
 
                <p n="2">
                   <!-- S3 COMPERATIONE DI ROMA. Similitudine: la cella come la 'grandezza di Roma' dove chi entra perde la vita e non può
@@ -1211,7 +1211,7 @@
                      prima d'incominciare a trattar di questa <term type="mistico">cella</term> voglio dir la <term type="sicilianismo">comperatione</term>, che molto mi quatra. <choice><sic>E</sic><corr resp="#editor" cert="medium">È</corr></choice>
                      questa cella a punto come la grandezza di <rs type="luogo-metaforico">Roma</rs>, dove vi sta scritto, che non v'è luogo più santo di quello, <choice><orig>ne</orig><reg>né</reg></choice> ciò che vi
                      sta di dentro si può sapere, <choice><orig>poiche</orig><reg>poiché</reg></choice> chi v'entra perde la vita <choice><orig>ne</orig><reg>né</reg></choice> per quei giorni, che sta in vita può dir cosa alcuna di quanto
-                     viddi, ma solo, <foreign xml:lang="la"><term type="biblico">mirabilia magna</term></foreign>. Sì come si tratta d'un <rs type="soggetto-comparante">Pontefice</rs>, che stimolato della coriosità vuole vedere, e <app>
+                     viddi, ma solo, <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl>Sal 135,4</bibl></cit>. Sì come si tratta d'un <rs type="soggetto-comparante">Pontefice</rs>, che stimolato della coriosità vuole vedere, e <app>
                         <lem wit="#txt-c">vi perdè</lem>
                         <rdg wit="#txt-b0"><supplied reason="hole" resp="#editor">v</supplied>i per dè</rdg>
                      </app> la vita e quei tre giorni, che visse non potè proferir guarda di quanto viddi</seg>.</p>
@@ -1252,7 +1252,7 @@
                      stii in questa vita per miracolo e giovare a molte <rs type="soggetto-mistico">anime</rs>; <add place="margin" hand="#ink_3-dark" cert="medium">sì bene lo <app>
                         <lem wit="#txt-c">crederabbe che</lem>
                         <rdg wit="#txt-b0">crederabbe che che</rdg>
-                     </app> sempre vi remane qualche colore sofficiente nel naturale per mantenerla in vita finché <rs type="divinita" ref="#dio">Dio</rs> li piace</add></seg>.</p>
+                     </app> sempre vi remane qualche colore sofficiente nel naturale per mantenerla in vita finché <rs type="divinita" ref="#dio">Dio</rs> li piace<note type="glossa" ana="#operation-riequilibrio"/></add></seg>.</p>
 
                <p n="5">
                   <!-- S8 PROGRAMMA / DIO NEL FONDO. Annuncia la divisione dell'anima; in questo stato Dio opera 'nel più fondo dell'anima come
@@ -1589,7 +1589,7 @@
                      <term type="mistico">pace di paradiso</term>; e da non poter più i sensi in questo <term type="mistico">centro d'anima</term>, viene ad esser libera di qualunque <term type="mistico">distrattioni</term>, talmente, che si troveranno i sensi, e potenze
                      molto distratte, e il <term type="mistico">fondo dell'anima</term> molto raccolto; e da qui viene ad essere la vita una <term type="mistico">continua oratione</term>,
                      <!-- ipotesi: mano del padre spirituale, post lectionem; inchiostro T3; NON confermato -->
-                     <add place="margin-right" hand="#ink_3-dark" cert="medium">sì bene i sensi non donano in desordene, anzi son corretti del centro dell'<supplied reason="hole" resp="#editor">oratione</supplied></add></seg>.
+                     <add place="margin-right" hand="#ink_3-dark" cert="medium">sì bene i sensi non donano in desordene, anzi son corretti del centro dell'<supplied reason="hole" resp="#editor">oratione</supplied><note type="glossa" ana="#operation-delimitazione"/></add></seg>.
                   <!-- S42 (MARQUEE) LA SOSTANZIALE UNIONE. Precisatio: alcuni credono si debba 'alzar la mente a Dio', ma 'di questo non v'è niente...
                        per la sostanziale unione che tiene Dio con l'anima, non vi vuole più questo mezzo': fine dell'orazione discorsiva.
                        N=alta/0.75; A=media/0.675; F=2 precisatio -> I=0.692 high. -->
@@ -1736,7 +1736,7 @@
                        tutto niente": vorrebbe tacere, "sicretun meum mihi" (Is 24,16). Autonomia dal direttore ancorata alla Scrittura.
                        N=alta/0.75; A=bassa/0.40; F=1 delimitazione -> I=0.462 low. -->
                   <seg xml:id="seg-c14p3-secretum-tacere" type="indicatio" subtype="silentio-secretum" hand="#ink_1" cert="high"
-                       ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-otium #relation-intertesto-biblico #impact-low">E perciò viene certa voglia di né meno parlare col <rs type="interlocutore" ref="#esterno">padre spirituali</rs>, poiché quanto ella gli dice con la bocca è tutto niente, certo ciò che vorria dire se potesse, e perciò vorrebbe tacere, dicendo <foreign xml:lang="la"><term type="biblico">sicretun meum mihi</term></foreign></seg>.</p>
+                       ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-otium #relation-intertesto-biblico #impact-low">E perciò viene certa voglia di né meno parlare col <rs type="interlocutore" ref="#esterno">padre spirituali</rs>, poiché quanto ella gli dice con la bocca è tutto niente, certo ciò che vorria dire se potesse, e perciò vorrebbe tacere, dicendo <cit><quote xml:lang="la"><term type="biblico">sicretun meum mihi</term></quote><bibl>Is 24,16</bibl></cit></seg>.</p>
 
                <p n="4">
                   <!-- S4 TEDIA IL DIRE / SOLO RACCOLTA. Se prima v'era sollievo nel dire o intendere dal padre lo stato, ora anzi
