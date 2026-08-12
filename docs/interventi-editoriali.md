@@ -15,7 +15,11 @@
 ---
 
 ## 1. Piano della normalizzazione (`choice`)
-
+| coppia | n | con `@resp` | con `@cert` | attribuzione attesa |
+|---|---:|---:|---:|---|
+| `orig/reg` | 130 | 0 | 0 | globale (`editorialDecl`): `@resp` = 0 |
+| `sic/corr` | 20 | 20 | 20 | per-istanza: `@resp` e `@cert` = n |
+| `abbr/expan` | 16 | 0 | 5 | globale; `@cert` solo dove pertinente |
 
 
 ## 2. Piano genetico (lavoro sul foglio)
