@@ -78,7 +78,7 @@ derivato formale, non un giudizio autonomo.
 N e A sono le due sole **decisioni interpretative**; F si legge dalla codifica. La procedura
 d'assegnazione — rubriche, criteri, esempi ancorati — è nel `Protocollo-indice-impatto.md`.
 
-## F — rango ordinale dell'asse `operation`
+## F - rango ordinale dell'asse `operation`
 
 F è il **rango dell'operazione** dichiarata in `@ana`, normalizzato `Fnorm = F/3`.
 
@@ -94,7 +94,7 @@ nello stesso grado le operazioni più difficili da distinguere (attenuatio ↔ p
 Serialità decrescente dei marcatori nell'edizione — **cioè 289 · s'intende/non s'intende
 128 · mi dichiaro 3** .
 
-## N e A — bande e valori-ancora
+## N e A - bande e valori-ancora
 
 Poiché la formula richiede un **numero** ma il giudizio filologico è affidabile solo a
 livello di **banda**, N e A si assegnano scegliendo una banda; il valore è poi determinato da
