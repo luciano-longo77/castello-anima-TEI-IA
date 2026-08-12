@@ -1869,7 +1869,31 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
-                        <change when="2026-08-09" who="#editor" ana="#fase-quality-assurance"> Consolidamento
+            <change when="2026-08-12" who="#editor" ana="#fase-mappatura-glosse">
+                Allineamento dell'intertestualità e delle glosse al modello: citazioni latine promosse
+                a <code>cit</code>/<code>quote</code>/<code>bibl</code> dentro il <code>seg</code>; glosse
+                a margine rese come <code>add</code> chiuso da <code>note type="glossa"</code> vuota
+                (asse <code>operation</code>), senza <code>@target</code>. Ancorate le carte del capitolo
+                III.12 (<code>pb</code> 192v/193r). Aggiunta la guardia di CI <hi rend="italic">cit/glossa</hi>
+                (indice sempre e solo sul <code>seg</code>); allineati <code>data-dictionary.md</code>
+                (bande N/A/F) e la guida alla codifica.
+            </change>
+            <change when="2026-08-11" who="#editor" ana="#fase-annotazione-campione">
+                Codifica dei capitoli III.2 (<hi rend="italic">santo silentio</hi>), III.12
+                (<hi rend="italic">santo otio</hi>) e III.14 (<hi rend="italic">santa ignoranza</hi>)
+                del Libro III e loro integrazione nel teiText unificato (ordine 1·2·3·4·5·8·12·14).
+                Applicate le procedure di verifica della metodologia di codifica — segmentazione in
+                <code>seg</code>, <code>@ana</code> a otto assi, indice d'impatto in <code>fs</code>,
+                apparato genetico, quattro strati <code>standOff</code> — con esito conforme.
+            </change>
+            <change when="2026-08-10" who="#editor" ana="#fase-annotazione-campione">
+                Codifica dei capitoli III.4 (<hi rend="italic">santa scordanza</hi>) e III.5
+                (<hi rend="italic">santa indifferenza</hi>); perfezionato l'apparato genetico di
+                III.3 (completato un <code>del</code> incompleto). Assemblato il teiText unificato con
+                i capitoli 1·2·3·4·5·8, validato contro RelaxNG (TEI All), Schematron dell'indice e
+                guardie di CI (NFC, E2, co-occorrenza).
+            </change>
+            <change when="2026-08-09" who="#editor" ana="#fase-quality-assurance"> Consolidamento
                 del pilota III.1 e dell'infrastruttura di validazione. Collegato il file del
                 <code>text</code> alla testata consolidata tramite <code>xi:include</code>
                 (xpointer <code>teiHeader-castello</code>), ripristinando l'integrità referenziale
