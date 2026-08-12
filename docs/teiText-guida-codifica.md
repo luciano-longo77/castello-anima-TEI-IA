@@ -106,8 +106,8 @@ Gli **eventi IA controfattuali** (il protocollo −CIT / +TEXTsub / +CIT) sono a
 
 L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, con puntatori alle categorie del `classDecl` (le 8 tassonomie): `@ana`, non un `@type` libero, perché deve restare *governata* dal vocabolario normativo. Regola: un valore per asse (eccetto `#phase-critical`, trasversale); nel dubbio si sale alla categoria superiore (*astensione semantica*).
 
-Le **figure retoriche** si annotano in **stand-off** con `<span>`/`<spanGrp>`: il tratto di testo che realizza la figura si àncora per riferimento e si classifica con `@ana` su un vocabolario retorico locale (`#fig-metafora`, `#fig-similitudine`…), tenuto nel file del testo come `interpGrp`. Così l'annotazione retorica non spezza il flusso testuale e resta governata da un vocabolario, senza gravare sulla tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa editoriale è `<note>`. 
-La glossa (`<note type="glossa">`) si àncora al segmento/lemma tramite `@target` (puntamento direzionale glossa→testo), mentre `@corresp` resta riservato al legame `<fs>`-indice → `seg;` la collocazione materiale è resa da `@place` (margin, interlinear…) e la mano da `@hand`.
+Le **figure retoriche** si annotano in **stand-off** con `<span>`/`<spanGrp>`: il tratto di testo che realizza la figura si àncora per riferimento e si classifica con `@ana` su un vocabolario retorico locale (`#fig-metafora`, `#fig-similitudine`…), tenuto nel file del testo come `interpGrp`. Così l'annotazione retorica non spezza il flusso testuale e resta governata da un vocabolario, senza gravare sulla tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa autoriale è resa da `<add>` con una `<note type="glossa">` vuota (vedi §3). 
+La glossa autoriale si codifica come **aggiunta materiale `<add>`** — con la collocazione grafica in `@place` (margin, interlinear…) e la mano in `@hand` — collocata **dentro il `<seg>`** che glossa e chiusa da una **`<note type="glossa">` vuota**, il cui `@ana` ne dichiara la funzione prudenziale (asse `operation`). Il contenimento nel segmento sostituisce il puntatore; `@corresp` resta riservato al solo legame `<fs>`-indice → `seg`.
 
 L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La categoria (`#impact-*`) sta in `@ana` sul `seg`; il fascio numerico sta in un `<fs>` (feature structure) in uno strato `<standOff type="impact-index">`, fratello di `<text>` nello stesso documento, collegato via `@corresp`. Si usa `fs`, **non `<val>`** (non ammesso in `seg`). La formula AHP — `I = (4·Fnorm + 2·N + 1·A)/7` con `F` dal rango dell'asse `operation` — è dichiarata **una volta** in `editorialDecl`; il valore `I` è prodotto dallo script, mai digitato a mano.
 
@@ -127,7 +127,7 @@ L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La 
 
 ## 6. Citazioni ed entità
 
-La citazione è `<cit>` che racchiude `<quote>` (con `@xml:lang`) e la fonte `<bibl>` — non un `<ref>` penzolante; `cit/@type` classifica (bible/liturgy/mystic/patristic) e `cit/@ana` la aggancia all'interpretazione. I rinvii interni sono `<ref>`/`<ptr>` con `@target` a `xml:id` esistenti. Le entità nominate (`<persName>`/`<placeName>`/`<orgName>`) portano `@ref` alle entità dell'header; le date sono `<date>` normalizzate.
+La citazione è `<cit>` che racchiude `<quote>` (con `@xml:lang`) e la fonte `<bibl>` — non un `<ref>` penzolante — ed è collocata **dentro il `<seg>`** che la contiene: la sua funzione intertestuale è dichiarata nell'`@ana` del `seg` (`#relation-intertesto-*`, ed eventualmente `#legittimazione-*`), non su `cit`; l'indice d'impatto resta sul `seg`. I rinvii interni sono `<ref>`/`<ptr>` con `@target` a `xml:id` esistenti. Le entità nominate (`<rs>`, `<orgName>`…) portano `@ref` alle entità dell'header; le date sono `<date>` normalizzate.
 
 ---
 
@@ -210,7 +210,7 @@ Persone `#Anna-La-Longa` `#s-teresa` `#dio` `#esterno` `#p-avila` `#p-john` `#p-
 | **relation** | `#relation-mistica`(+4) · `#relation-intertesto(-biblico/-liturgico/-teresiano/-molinista)` |
 
 ### A5 · `#fig-*` — figure retoriche (`interpGrp` in un `<standOff type="rhetorical-figures">`)
-`#fig-metafora` `#fig-similitudine` `#fig-anafora` `#fig-antitesi` `#fig-allegoria` `#fig-iperbole` `#fig-apostrofe` `#fig-climax` `#fig-ossimoro` `#fig-paradosso` `#fig-personificazione` `#fig-sinestesia` *(seme estendibile)*
+`#fig-metafora` `#fig-similitudine` `#fig-allegoria` `#fig-antitesi` `#fig-preterizione` `#fig-professio-fidei` *(dichiarate nell'`interpGrp`; estendibile alla bisogna)*
 
 ### A6 · `#area-*` — aree semantiche concettuali (`interpGrp type="area-concettuale"` in un `<standOff type="semantic-focus">`)
 
