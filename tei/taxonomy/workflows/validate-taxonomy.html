@@ -110,7 +110,13 @@
       <span class="badge green">phase</span>
       <span class="badge green">relation</span>
     </div>
-    <p>Se uno di questi <code>xml:id</code> risulta assente in <code>tassonomia-gh.xml</code>, oppure il file non è ben formato, non rispetta il RelaxNG, o viola una delle 4 regole Schematron (<code>catdesc-present</code>, <code>catdesc-not-empty</code>, <code>prefix-consistency</code>, <code>xmlid-unique</code>), la pipeline interrompe l'esecuzione (status ❌).</p>
+    <p>Se uno di questi <code>xml:id</code> risulta assente in <code>tassonomia-gh.xml</code>, oppure il file non è ben formato, non rispetta il RelaxNG, o viola una delle <strong>5 regole Schematron</strong> (<code>category-catdesc-present</code>, <code>category-catdesc-not-empty</code>, <code>category-prefix-consistency</code>, <code>taxonomy-category-xmlid-unique</code>, <code>func-branch-consistency</code>), la pipeline interrompe l'esecuzione (status ❌).</p>
+    <p style="margin-top: 0.75rem;">Oltre alla fonte, il workflow controlla anche i file in <code>tei/taxonomy/esempio/*.xml</code>:</p>
+    <ul class="checklist">
+      <li><span class="check-icon">✔</span> <strong>Riferimenti <code>@ana</code></strong>: ogni token <code>@ana</code> deve puntare a un <code>xml:id</code> realmente dichiarato in <code>tassonomia-gh.xml</code> (nessuna categoria inventata).</li>
+      <li><span class="check-icon">✔</span> <strong>Validazione strutturale</strong> di ogni esempio contro <code>schema/tei_all.rng</code>.</li>
+      <li><span class="check-icon">✔</span> <strong>Guardia di co-occorrenza</strong> (<code>cooccurrence_guard.py</code>) sulla combinazione multiassiale dei <code>@ana</code>.</li>
+    </ul>
   </div>
 
   <div class="step" id="step4">
