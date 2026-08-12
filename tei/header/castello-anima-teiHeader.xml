@@ -1869,29 +1869,51 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
+            <change when="2026-08-12" who="#editor" ana="#fase-annotazione-campione">
+                Integrati nel teiText i capitoli III.12 (<hi rend="italic">santo otio</hi>) e III.14
+                (<hi rend="italic">santa ignoranza</hi>) - Libro III, capp. 1·2·3·4·5·8·12·14 - e ancorate
+                le carte di III.12 (<code>pb</code> 192v/193r).
+            </change>
             <change when="2026-08-12" who="#editor" ana="#fase-mappatura-glosse">
-                Allineamento dell'intertestualità e delle glosse al modello: citazioni latine promosse
-                a <code>cit</code>/<code>quote</code>/<code>bibl</code> dentro il <code>seg</code>; glosse
-                a margine rese come <code>add</code> chiuso da <code>note type="glossa"</code> vuota
-                (asse <code>operation</code>), senza <code>@target</code>. Ancorate le carte del capitolo
-                III.12 (<code>pb</code> 192v/193r). Aggiunta la guardia di CI <hi rend="italic">cit/glossa</hi>
-                (indice sempre e solo sul <code>seg</code>); allineati <code>data-dictionary.md</code>
-                (bande N/A/F) e la guida alla codifica.
+                Allineamento dell'intertestualità e delle glosse al modello: citazioni latine promosse a
+                <code>cit</code>/<code>quote</code>/<code>bibl</code> dentro il <code>seg</code>; glosse a
+                margine rese come <code>add</code> chiuso da <code>note type="glossa"</code> vuota (asse
+                <code>operation</code>), senza <code>@target</code>. Aggiunta la guardia di CI cit/glossa
+                (indice sempre e solo sul <code>seg</code>).
+            </change>
+            <change when="2026-08-12" who="#editor" ana="#fase-documentazione-processo">
+                Automazione del <code>data-dictionary</code> (generatore + workflow di rigenerazione dalla
+                tassonomia, con sezione bande N/A/F). Allineati la guida alla codifica (figure retoriche e
+                modello glossa), la base-dati di campionamento (raccordo III.2–III.5) e la notazione decimale
+                di <code>indice-impatto</code>. Rimosso il registro-trascrizione provvisorio.
             </change>
             <change when="2026-08-11" who="#editor" ana="#fase-annotazione-campione">
-                Codifica dei capitoli III.2 (<hi rend="italic">santo silentio</hi>), III.12
-                (<hi rend="italic">santo otio</hi>) e III.14 (<hi rend="italic">santa ignoranza</hi>)
-                del Libro III e loro integrazione nel teiText unificato (ordine 1·2·3·4·5·8·12·14).
-                Applicate le procedure di verifica della metodologia di codifica — segmentazione in
-                <code>seg</code>, <code>@ana</code> a otto assi, indice d'impatto in <code>fs</code>,
-                apparato genetico, quattro strati <code>standOff</code> — con esito conforme.
+                Codifica e integrazione dei capitoli III.2 (<hi rend="italic">santo silentio</hi>), III.4
+                (<hi rend="italic">santa scordanza</hi>) e III.5 (<hi rend="italic">santa indifferenza</hi>):
+                il teiText unificato raggiunge i capitoli 1·2·3·4·5·8. Verifica RelaxNG (TEI All), Schematron
+                dell'indice e guardie di CI.
             </change>
             <change when="2026-08-10" who="#editor" ana="#fase-annotazione-campione">
-                Codifica dei capitoli III.4 (<hi rend="italic">santa scordanza</hi>) e III.5
-                (<hi rend="italic">santa indifferenza</hi>); perfezionato l'apparato genetico di
-                III.3 (completato un <code>del</code> incompleto). Assemblato il teiText unificato con
-                i capitoli 1·2·3·4·5·8, validato contro RelaxNG (TEI All), Schematron dell'indice e
-                guardie di CI (NFC, E2, co-occorrenza).
+                Codifica dei capitoli III.1 (<hi rend="italic">dispositione / notte dello spirito</hi>),
+                III.3 (<hi rend="italic">stato d'oblivione, o sonno</hi>) e III.8 (<hi rend="italic">cella
+                    secreta, matrimonio spirituale</hi>); inserito il proemio del Libro III (<code>div
+                        type="preface"</code> III-proem) con i segmenti annotati.
+            </change>
+            <change when="2026-08-10" who="#editor" ana="#fase-armonizzazione-header">
+                teiHeader: completati <code>tagsDecl</code> e <code>tagUsage</code> (<code>text</code>,
+                <code>body</code>), aggiunto <code>symbol</code> nella sezione indice d'impatto, consolidato
+                il referente <code>#dio</code> nel <code>particDesc</code> (rimossa la voce duplicata) e
+                integrate nuove entità.
+            </change>
+            <change when="2026-08-10" who="#editor" ana="#fase-validazione-esempi">
+                Infrastruttura di validazione degli esempi: validazione strutturale RelaxNG (TEI All) e
+                guardia di co-occorrenza sugli esempi (<code>taxonomy-text-model.xml</code>); aggiornate le
+                GitHub Actions alle versioni correnti.
+            </change>
+            <change when="2026-08-10" who="#editor" ana="#fase-documentazione-processo">
+                Documentazione: aggiornati README e GUIDA dell'header, il <code>data-dictionary</code> (aree
+                semantiche, <code>symbol</code>, titoli), il Sistema Tassonomico e la base-dati di campionamento
+                (tipologia delle 29 glosse e soglie di classe); rifinita la notazione della formula d'impatto.
             </change>
             <change when="2026-08-09" who="#editor" ana="#fase-quality-assurance"> Consolidamento
                 del pilota III.1 e dell'infrastruttura di validazione. Collegato il file del
