@@ -72,6 +72,8 @@ jobs:
         run: python3 .github/workflows/scripts/cooccurrence_guard.py "$TEXT"
       - name: Guardia cit/glossa (indice solo su <seg>)
         run: python3 .github/workflows/scripts/cit_glossa_guard.py "$TEXT"
+      - name: Guardia citazioni (grammatica cit/quote/bibl)
+        run: python3 .github/workflows/scripts/citazioni_guard.py "$TEXT"
       - name: Guardia commenti (grammatica dei commenti-seg)
         run: python3 .github/workflows/scripts/commenti_guard.py "$TEXT"
       - name: Guardia interventi editoriali (normalizzazione ↔ genetico)
