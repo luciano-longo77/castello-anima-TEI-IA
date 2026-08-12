@@ -102,8 +102,8 @@ un **valore-ancora fisso** per banda. L'annotatore sceglie la banda, non il deci
 
 | Parametro | Critica | Alta | Media | Bassa |
 |-----------|:-------:|:----:|:-----:|:-----:|
-| **N** | 0,90 | 0,75 | 0,55 | 0,30 |
-| **A** | — | 0,85 | 0,675 | 0,40 |
+| **N** | 0.90 | 0.75 | 0.55 | 0.30 |
+| **A** | — | 0.85 | 0.675 | 0.40 |
 
 Le soglie di banda e i criteri d'attribuzione (con esempi ancorati) sono nel **Protocollo**.
 Effetto: l'indice diventa **interamente ordinale**, tre giudizi di banda (F si legge, N e A
@@ -147,9 +147,9 @@ calcolando l'indice ai due estremi delle ancore per ciascun grado:
 
 | F (operazione) | I minimo → massimo | Classi raggiungibili |
 |:--------------:|:------------------:|----------------------|
-| 1 (`delimitazione`) | 0,333 → 0,569 | `low` / `medium` |
-| 2 (`attenuatio`/`precisatio`/`riequilibrio`) | 0,524 → 0,760 | `medium` / `high` |
-| 3 (`declaratio`) | 0,714 → 0,950 | `high` / `critical` |
+| 1 (`delimitazione`) | 0.333 → 0,569 | `low` / `medium` |
+| 2 (`attenuatio`/`precisatio`/`riequilibrio`) | 0.524 → 0,760 | `medium` / `high` |
+| 3 (`declaratio`) | 0.714 → 0.950 | `high` / `critical` |
 
 Due letture: (1) **F fissa la finestra** — giustificazione del peso dominante 4/7: una
 `delimitazione` non raggiunge mai `high`, una `declaratio` non scende mai sotto `high`. (2)
