@@ -82,7 +82,6 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 - **v1.3** (2026-08-07)
 - **v1.9** (2026-08-12)
 - **v2.0** (2026-08-12)
-**Autore**: Luciano Longo
 
 ## Uso del documento
 
