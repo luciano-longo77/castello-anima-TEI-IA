@@ -48,8 +48,6 @@
 
 Il presente documento descrive la struttura del dataset utilizzato per l'edizione digitale e l'analisi computazionale del *Castello dell'anima* di suor Teresa di San Geronimo. L'obiettivo è fornire una base dati chiara, riusabile e trasparente per la pipeline TEI+IA sviluppata nel progetto, in cui la codifica TEI P5, l'analisi delle funzioni retorico‑dottrinali e la generazione controllata di varianti controfattuali (-CIT, +TEXTsub, +CIT) operano in modo integrato. Il dataset raccoglie i capitoli dei tre libri dell'opera che presentano maggiore rilevanza per la ricerca: sezioni ad alta sensibilità dottrinale, segmenti con densità intertestuale significativa e passaggi caratterizzati da glosse autoriali, chiarificazioni e dispositivi di sorveglianza. Per ciascun capitolo viene indicato il motivo della selezione, in relazione ai fenomeni mistici, pedagogici o prudenziali che il modello TEI deve rappresentare. Accanto alla definizione del campione, il documento include un'authority list completa delle citazioni bibliche, liturgiche, patristiche e mistiche utilizzate nel testo, con una classificazione funzionale (legittimazione, ancoraggio cristologico, marcatori di sofferenza, citazioni sponsali, sigilli dottrinali). Una sezione dedicata raccoglie inoltre le glosse selezionate come **matrice tipizzata sugli assi della tassonomia** (`operation`+F, `func`, `risk`, `mystic_state`/`relation`, `impact`), con i valori N, A e I calcolati per ciascuna occorrenza. Chiude il documento un quadro sintetico dell'intertestualità del Castello, che include riferimenti alla tradizione teresiana, giovannea e alle mistiche femminili post‑tridentine, oltre a elementi di quietismo, agiografia e intertestualità culturale. Insieme, questi materiali costituiscono la base metodologica, filologica e computazionale per l'intera analisi del manoscritto e garantiscono la piena riusabilità del dataset nel repository.
 
-> *Documentazione del campione, authority list e glosse tipizzate. Le citazioni e i riferimenti al Castello sono ripresi dall'edizione critica di R. Casapullo (a cura di), Il Castello dell'anima, Alessandria, Edizioni dell'Orso, 2015 (in collab. con L. Longo, S. Mondino, R. Sciovè).*
-
 Questo documento costituisce la documentazione ufficiale del dataset utilizzato nel progetto *Intertestualità sotto sorveglianza: modello TEI+IA per il Castello dell'anima*. Raccoglie e descrive:
 
 - i capitoli selezionati dei tre libri dell'opera,
@@ -77,17 +75,14 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 5. Documentare i principi di intertestualità sorvegliata rilevanti per l'encoding TEI.
 
 ## Versioning
-
-- **Dataset version**: v2.0
-- **Data di preparazione**: 2026-08-07
-- **Autore**: Luciano Longo
-
+ **Dataset version**: v2.0
 - **v0.0** (2026-03-09)
 - **v1.1** (2026-03-25)
 - **v1.2** (2026-04-01)
 - **v1.3** (2026-08-07)
-- **v1.9** (2026-08-12) — ampliamento del campione a **36 capitoli / 29 loci**: +I.4, I.11; +II.3, II.4–5, II.7, II.20, II.21; +III.6, III.7, III.10, III.16, III.19, III.32, III.38, III.39. Chiude le glosse §6 orfane e integra le tre *declaratio* critiche (II.21, III.38, III.39).
-- **v2.0** (2026-08-12) — **anagrafe delle citazioni ricostruita dall'apparato dell'edizione critica**: 28 citazioni distinte (23 bibliche + 2 patristiche + 1 scolastica + 2 liturgiche) con **carte**. Corretto *In te Domine* → **Ps 70(71)** e *Amor meus **crucifissus*** (grafia; è a **III.24**, non III.34); aggiunte *Circumdederunt* (Ps 114,3), *Mc 14,36*, *Pater dimitte illis* (Lc 23,24), **S. Agostino** (*De Civitate Dei*), **S. Tommaso** (*Summa contra Gentiles*); riclassificati Vangeli/Epistole; §3.4 e Appendice riallineate.
+- **v1.9** (2026-08-12)
+- **v2.0** (2026-08-12)
+**Autore**: Luciano Longo
 
 ## Uso del documento
 
