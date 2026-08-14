@@ -848,6 +848,36 @@
                     identificatori univoci all'interno del documento. </p>
 
             </refsDecl>
+            <samplingDecl>
+                <p n="1"> L'edizione non trascrive l'intero <title>Castello dell'anima</title> ma un
+                    <term>campione ragionato</term> di capitoli, selezionati come base dati per l'analisi
+                    filologica e per la pipeline TEI+IA del progetto. La selezione risponde a quattro
+                    criterî convergenti: (a) <term>sensibilità dottrinale</term> (nodi mistici esposti al
+                    sospetto inquisitoriale: unione trasformante, sicurtà, annichilazione, impeccabilità,
+                    panteismo); (b) <term>densità intertestuale</term> (presenza di citazioni bibliche,
+                    liturgiche, patristiche e mistiche); (c) presenza di <term>glosse autoriali e
+                    dispositivi di sorveglianza</term> (attenuatio, precisatio, riequilibrio, declaratio);
+                    (d) utilità per gli esperimenti computazionali controllati (<code>-CIT</code>,
+                    <code>+TEXTsub</code>, <code>+CIT</code>). Il criterio completo, con la motivazione di
+                    ciascun capitolo, è documentato in <ref target="docs/base-dati_campionamento.md">docs/base-dati_campionamento.md</ref>. </p>
+                <p n="2"> Il piano di campionamento a regime comprende <num value="29">29</num> loci di
+                    selezione (corrispondenti a <num value="36">36</num> capitoli, poiché I.1–2, II.1–2 e
+                    II.4–5 raggruppano più capitoli e III.2–5 sono inclusi per intero come raccordo),
+                    distribuiti nei tre libri dell'opera: <list type="simple">
+                        <item><term>Libro I</term> (Anime principianti) — 5 loci: I.1–2, I.4, I.5, I.6, I.11;</item>
+                        <item><term>Libro II</term> (Anime proficienti) — 9 loci: II.1–2, II.3, II.4–5, II.7, II.8, II.9, II.10b, II.20, II.21;</item>
+                        <item><term>Libro III</term> (Anime perfette) — 15 loci: III.1, III.6, III.7, III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40, con i contigui III.2–III.5 inclusi per intero come raccordo.</item>
+                    </list></p>
+                <p n="3"> <hi rend="bold">Stato di avanzamento (work in progress).</hi> La presente
+                    release codifica integralmente il solo <term>Libro III</term>: i suoi 15 loci più i
+                    quattro capitoli di raccordo III.2–III.5, per un totale di <num value="19">19</num>
+                    capitoli effettivamente presenti (III.1–III.8, III.10, III.12, III.14, III.16, III.19,
+                    III.24, III.32, III.34, III.38, III.39, III.40). Il <term>Libro I</term> e il
+                    <term>Libro II</term> sono presenti nella struttura come <gi>div</gi> di libro senza
+                    contenuto (segnaposto), e saranno codificati nelle fasi successive secondo il piano
+                    sopra descritto. Le lacune di numerazione fra i capitoli del Libro III (es. III.9,
+                    III.11, III.13…) non sono omissioni ma capitoli non compresi nel campione. </p>
+            </samplingDecl>
             <editorialDecl>
 
                 <p n="1"> Questo documento utilizza il sistema di codifica definito dalle linee guida
