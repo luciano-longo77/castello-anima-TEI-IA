@@ -78,6 +78,8 @@ jobs:
         run: python3 .github/workflows/scripts/commenti_guard.py "$TEXT"
       - name: Guardia interventi editoriali (normalizzazione ↔ genetico)
         run: python3 .github/workflows/scripts/interventi_guard.py "$TEXT"
+      - name: Guardia regole-fissate (retrace/naming/@ana-seg/sobrietà)
+        run: python3 .github/workflows/scripts/regole_fissate_guard.py "$TEXT"
       - name: Guardia Schematron indice d'impatto (bande + ancore + formula)
         run: |
           python3 - <<'PY'
