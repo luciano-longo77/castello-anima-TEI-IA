@@ -31,7 +31,7 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 - **(O2)** Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
 
-- **(O3)** Strutturare un **campione di 14 loci (16 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
+- **(O3)** Strutturare un **campione di 29 loci (36 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
 
 - **(O4)** Implementare una **pipeline AI controllata** che consente:
 
@@ -74,15 +74,20 @@ Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto
 
 ### `/tools`
 
-Strumenti d'ausilio all'annotazione (non validati dalla CI): l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando). 
+Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando) — aiuti alla codifica, **non** parte della validazione automatica. Qui stanno anche i due **generatori** invocati dai workflow `gen-*` della CI: `gen_data_dictionary.py` (rigenera `docs/data-dictionary.md` dalla tassonomia) ed `estrattore_interventi.py` (rigenera `docs/interventi-editoriali.md` dal teiText).
 ➡️ [Leggi il README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
 
 ### `/.github/workflows`
 
-Due workflow di validazione automatica (CI), attivi a ogni push/PR:
+Quattro workflow di GitHub Actions, attivi a ogni push/PR (e avviabili a mano):
 
-- **Validate Taxonomy** — buona formazione, RelaxNG + Schematron della tassonomia, e guardia **E1** (le 8 tassonomie interpretative in `tassonomia-gh.xml` coincidono con la copia nella testata).
-- **Validate Text** — buona formazione, risoluzione `xi:include`, RelaxNG (TEI All, versione fissata), guardia **NFC**, guardia **E2** (ogni token `@ana` risolve a una categoria dichiarata), guardia di **co-occorrenza** e **Schematron dell'indice d'impatto** (`impactindex.sch`).
+- **Validate Text** — sul teiText: buona formazione, risoluzione `xi:include`, RelaxNG (TEI All, versione fissata), guardia **NFC**, guardia **E2** (ogni token `@ana` risolve a una categoria dichiarata), **co-occorrenza** degli assi, **cit/glossa**, **citazioni**, **commenti**, **interventi editoriali**, **regole-fissate** (retrace/naming/`@ana`-su-seg/sobrietà) e **Schematron dell'indice d'impatto** (`impactindex.sch`).
+- **Validate Taxonomy** — sulla tassonomia: buona formazione, RelaxNG + Schematron dedicati, validazione degli esempi, e guardia **E1** (le tassonomie interpretative in `tassonomia-gh.xml` coincidono con la copia nel `classDecl` della testata).
+- **Genera data-dictionary** — esegue `tools/gen_data_dictionary.py` e ricommitta `docs/data-dictionary.md` se cambiato.
+- **Genera interventi-editoriali** — esegue `tools/estrattore_interventi.py` e ricommitta `docs/interventi-editoriali.md` se cambiato.
+
+➡️ [Leggi il README della CI](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/.github/workflows/README.md)
+
 ---
 
 ## Modello TEI
@@ -139,8 +144,9 @@ Ogni evento è sottoposto a:
 
 ## Il campione
 
-Il dataset include un **campione di 14 loci (16 capitoli)** distribuiti nei tre Libri dell'opera.  
-I segmenti selezionati presentano:
+Il dataset è un **campione ragionato**: non trascrive l'intera opera, ma i capitoli a maggiore rilevanza dottrinale, intertestuale e genetica. Secondo il piano di campionamento (vedi *Base dati per il campionamento*), il campione consta di **29 loci di selezione, corrispondenti a 36 capitoli**, distribuiti nei tre Libri.
+
+I capitoli sono selezionati perché presentano:
 
 - nodi dottrinali sensibili (contemplazione, unione, sicurezza spirituale, discernimento),
 - elevata densità di citazioni o rimandi,
