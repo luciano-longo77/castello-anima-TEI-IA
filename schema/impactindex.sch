@@ -17,8 +17,8 @@
         and string-length($sid) &gt; 0 and not(starts-with($sid,'#'))"
         >C1: @corresp deve essere un singolo riferimento nella forma #xml:id.</sch:assert>
       <sch:assert test="tei:f[@name='N_band'] and tei:f[@name='A_band'] and tei:f[@name='N']
-        and tei:f[@name='A'] and tei:f[@name='F'] and tei:f[@name='I']"
-        >C2: fs d'impatto incompleta (servono N_band, A_band, N, A, F, I).</sch:assert>
+        and tei:f[@name='A'] and tei:f[@name='F'] and tei:f[@name='Fnorm'] and tei:f[@name='I']"
+        >C2: fs d'impatto incompleta (servono N_band, A_band, N, A, F, Fnorm, I).</sch:assert>
       <sch:assert test="@xml:id = concat('idx-',$sid)"
         >C3: xml:id della fs diverso da 'idx-' + xml:id del seg.</sch:assert>
       <sch:assert test="count(//tei:seg[@xml:id=$sid])=1 and //tei:seg[@xml:id=$sid]/@ana"
