@@ -70,12 +70,15 @@ Le citazioni sono `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` 
 
 ```xml
 <seg xml:id="seg-c1p8-desiderio"
-     ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">
-  incomincia l'anima a perdire qualunque desiderio
+     ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical
+          #phase-mediana #phase-critical #mystic_state-quiete
+          #relation-mistica-passiva-quiete #impact-high" hand="#ink_1">
+  incomincia l'anima a perdire qualunque desiderio…
 </seg>
 ```
+*(esempio reale, `@ana` completo: gli 8 assi nell'ordine canonico func · operation · risk · exposition · phase · mystic_state · relation · impact, più il modificatore `#phase-critical` e `#relation-*`.)*
 - `@xml:id` = ancora per apparato, indice d'impatto, standOff.
-- `@ana` = l'interpretazione a 8 assi (una categoria per asse, dal `classDecl`).
+- `@ana` = l'interpretazione **a 8 assi** (`#phase-critical` è un modificatore, non un asse; `relation` è ripetibile). Le categorie vengono dal `classDecl`.
 - `@hand` = la mano fisica.
 
 Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact-*`), ma nella `fs` gemella dello standOff.
