@@ -97,7 +97,7 @@ Per questo <seg> il compito EDITORIALE è scegliere SOLO le bande e l'operazione
 - NON scegliere né arrotondare I a intuito: N, A e I vanno ricavati applicando le ancore
   fisse e la formula normativa di teiText-guida-codifica.md / impactindex.sch (o generati
   dallo script), con l'arrotondamento definito lì; tu porti solo bande+operazione
-- costruisci la <fs corresp="#{segid}" xml:id="idx-{segid}"> con N_band,A_band,N,A,F,I
+- costruisci la <fs corresp="#{segid}" xml:id="idx-{segid}"> con N_band,A_band,N,A,F,Fnorm,I (Fnorm=F/3)
 - la classe #impact-* nell'@ana del seg deve corrispondere alla banda di I
 Output: la <fs> + il commento-seg canonico N=…/…; A=…/…; F=… op -> I=… classe.
 ```
@@ -316,8 +316,8 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
       <sch:assert test="matches(@corresp,'^#[A-Za-z_][A-Za-z0-9_.-]*$')"
         >Indice: @corresp non è un singolo riferimento nella forma #xml:id.</sch:assert>
       <sch:assert test="tei:f[@name='N_band'] and tei:f[@name='A_band'] and tei:f[@name='N']
-        and tei:f[@name='A'] and tei:f[@name='F'] and tei:f[@name='I']"
-        >Indice: fs incompleta (servono N_band, A_band, N, A, F, I).</sch:assert>
+        and tei:f[@name='A'] and tei:f[@name='F'] and tei:f[@name='Fnorm'] and tei:f[@name='I']"
+        >Indice: fs incompleta (servono N_band, A_band, N, A, F, Fnorm, I).</sch:assert>
       <sch:assert test="count($seg)=1">Indice: @corresp non punta a un unico &lt;seg&gt; esistente.</sch:assert>
       <sch:assert test="$seg/@ana">Indice: il &lt;seg&gt; puntato dalla fs non ha @ana.</sch:assert>
       <sch:assert test="@xml:id = concat('idx-',$sid)">Indice: xml:id della fs ≠ 'idx-' + xml:id del seg.</sch:assert>
@@ -448,7 +448,7 @@ For this <seg> the EDITORIAL task is to choose ONLY the bands and the operation:
 - do NOT pick or round I by intuition: N, A and I follow from applying the fixed anchors
   and the normative formula of teiText-guida-codifica.md / impactindex.sch (or are
   script-generated), with the rounding defined there; you supply only bands+operation
-- build <fs corresp="#{segid}" xml:id="idx-{segid}"> with N_band,A_band,N,A,F,I
+- build <fs corresp="#{segid}" xml:id="idx-{segid}"> with N_band,A_band,N,A,F,Fnorm,I (Fnorm=F/3)
 - the seg's #impact-* class must match the band of I
 Output: the <fs> + the canonical seg-comment N=…/…; A=…/…; F=… op -> I=… class.
 ```
@@ -667,8 +667,8 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
       <sch:assert test="matches(@corresp,'^#[A-Za-z_][A-Za-z0-9_.-]*$')"
         >Index: @corresp is not a single reference of the form #xml:id.</sch:assert>
       <sch:assert test="tei:f[@name='N_band'] and tei:f[@name='A_band'] and tei:f[@name='N']
-        and tei:f[@name='A'] and tei:f[@name='F'] and tei:f[@name='I']"
-        >Index: incomplete fs (needs N_band, A_band, N, A, F, I).</sch:assert>
+        and tei:f[@name='A'] and tei:f[@name='F'] and tei:f[@name='Fnorm'] and tei:f[@name='I']"
+        >Index: incomplete fs (needs N_band, A_band, N, A, F, Fnorm, I).</sch:assert>
       <sch:assert test="count($seg)=1">Index: @corresp does not point to a single existing &lt;seg&gt;.</sch:assert>
       <sch:assert test="$seg/@ana">Index: the &lt;seg&gt; pointed to by the fs has no @ana.</sch:assert>
       <sch:assert test="@xml:id = concat('idx-',$sid)">Index: fs xml:id ≠ 'idx-' + seg xml:id.</sch:assert>
@@ -708,4 +708,3 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
 **Rule not XPath-expressible (commenti_guard).** Every `<seg>` with `@ana` must be **preceded** by a `<!-- … -->` comment with the clause `N=<band>/<anchor>; A=<band>/<anchor>; F=<n> <operation> -> I=<X.XXX> <class>`; anchors↔bands, `F`↔operation, class↔`I` threshold, and the comment's `I` = the twin `<fs>`'s `I`. **`I`** is serialised to **3 decimals** (verified 203/203); comparison is within tolerance (0.001 in Schematron, 0.0005 comment↔fs), so the rounding mode is **immaterial**.
 
 *This protocol is method documentation, versioned with the repository; it is the **operational reference** for the **transparency and reproducibility** of AI use in the edition (full guarantee also requires environment pinning — §0 — and negative fixtures).*
-
