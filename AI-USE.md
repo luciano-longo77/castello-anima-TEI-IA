@@ -42,6 +42,7 @@ L'IA è stata usata come **strumento di supporto** per:
 ### Tracciabilità e riproducibilità
 - Il contributo dell'IA è **assistivo e supervisionato**: è dichiarato in questo documento ed è ricostruibile dalla **cronologia dei commit** del repository, di cui l'autore è l'unico autore.
 - L'autore **conserva tutti i *prompt*** e i flussi di *prompt-engineering* impiegati, organizzati come ***skill* riutilizzabili** degli strumenti di IA e sottoposti a **revisione mensile**.
+- Per la **codifica TEI assistita da AI**, il metodo operativo — ruolo dell'AI, prompt, cardinalità, guardie e verifica — è fissato nel [**protocollo operativo per la codifica assistita da AI**](docs/protocollo-IA-codifica.md), versionato col repository e verificabile in CI: attua in modo concreto i principi di trasparenza e sorveglianza umana dichiarati qui.
 
 ### Allineamento ai principi di *Trustworthy AI*
 Questo uso è coerente con le *Ethics Guidelines for Trustworthy AI* (High-Level Expert Group on AI, Commissione Europea, 2019), in particolare **trasparenza**, **azione e sorveglianza umana** e **responsabilità (*accountability*)**.
@@ -86,6 +87,7 @@ AI was used as a **supporting tool** for:
 ### Traceability and reproducibility
 - The AI contribution is **assistive and supervised**: it is disclosed in this document and reconstructable from the repository's **commit history**, of which the author is the sole author.
 - The author **keeps all *prompts*** and the *prompt-engineering* workflows used, organised as **reusable *skills*** for the AI tools and subject to **monthly review**.
+- For **AI-assisted TEI encoding**, the operational method — the AI's role, prompts, cardinalities, guards and verification — is fixed in the [**AI-assisted encoding protocol**](docs/protocollo-IA-codifica.md), versioned with the repository and CI-verifiable: it concretely implements the transparency and human-oversight principles declared here.
 
 ### Alignment with *Trustworthy AI* principles
 This use is consistent with the *Ethics Guidelines for Trustworthy AI* (High-Level Expert Group on AI, European Commission, 2019), in particular **transparency**, **human agency and oversight**, and **accountability**.
