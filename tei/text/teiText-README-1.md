@@ -43,7 +43,7 @@ Il testo codificato è un **campione ragionato** del Libro III (anime perfette):
 | **Genetico (lavoro d'autrice)** | `<del>` `<add>` `<subst>` `<retrace>` | 139 `del` · 91 `add` · 25 `subst` · **52 `retrace` tutti `#ink_1`** (ritracciatura bruna T0→T1); lo strato scuro tardivo è `<add hand="#ink_3-dark">` (T3) |
 | **Materiale** | `<gap>` `<unclear>` `<supplied>` | 54 `gap` · 6 `unclear` · **104 `supplied`** (`@reason="hole"/"stain"`, `@resp="#editor"`, `@cert`) |
 | **Apparato critico** | `<app>`/`<lem>`/`<rdg>` | 62 `app`; `lem` = ultima volontà (`@wit="#txt-c"`), `rdg` = fasi anteriori (`#txt-b0`/`#txt-b1`) con `@varSeq` |
-| **Interpretativo** | `@ana` sul `<seg>` (8 assi) | governato dal `classDecl`; un valore per asse (+ `#phase-critical` trasversale) |
+| **Interpretativo** | `@ana` sul `<seg>` (8 assi) | governato dal `classDecl`; **1 valore per asse**, con eccezioni: `func` 1..n · `mystic_state` 0..1 · `relation` 0..n; `#phase-critical` è un modificatore della fase, non un asse. Cardinalità imposte da `cooccurrence_guard.py` |
 | **Intertesto** | `<cit>`/`<quote xml:lang="la">`/`<bibl>` | citazioni latine registrate anche in [`docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md) |
 
 ## 4. I quattro strati standOff
