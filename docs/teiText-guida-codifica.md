@@ -33,7 +33,7 @@ La marcatura è stratificata in cinque livelli, dal più esterno (la struttura d
 Il testo è un autografo unico, articolato in **Libri** e **capitoli**: una gerarchia continua. Per questo la struttura si rende con `<div>` annidati (`@type` = `book` › `chapter`) e **non** con `<milestone>`, che segnerebbe confini senza contenere il testo. Le rubriche dei capitoli sono `<head>`; l'eventuale cappello che precede un capitolo è `<argument>` (elemento di struttura dedicato, non una `<note>`).
 
 ```xml
-<div type="chapter" n="III.1" xml:id="L3-1">
+<div type="chapter" n="1" xml:id="III-cap1">
   <head>Capitolo Primo</head>
   <p n="1"> … </p>
 </div>
@@ -41,10 +41,10 @@ Il testo è un autografo unico, articolato in **Libri** e **capitoli**: una gera
 
 Il paragrafo è `<p>` (con `@n` come integrazione editoriale). La **materialità** entra con `<pb n="158r"/>` — la foliazione *reale* del manoscritto e con `<lb break="no"/>`, riservato ai **soli** a-capo rilevanti (parola spezzata), non a ogni riga. Il materiale non-testuale di pagina (segnature, richiami, numeri di carta) è `<fw>`, tenuto distinto dal testo d'autore.
 
-L'unità portante dell'annotazione è **`<seg>`**, non `<ab>` né `<p>`: è l'unica che porta `@ana` (l'interpretazione) a granularità sub-paragrafo ed è governata dal `classDecl`. Ogni `seg` del corpo ha un `@xml:id` nel formato `Libro-cap-p-progr`, che diventa l'ancora per l'apparato e per l'indice d'impatto.
+L'unità portante dell'annotazione è **`<seg>`**, non `<ab>` né `<p>`: è l'unica che porta `@ana` (l'interpretazione) a granularità sub-paragrafo ed è governata dal `classDecl`. Ogni `seg` del corpo ha un `@xml:id` nel formato `seg-c<cap>p<par>-<label>` (es. `seg-c1p8-desiderio`), che diventa l'ancora per l'apparato e per l'indice d'impatto.
 
 ```xml
-<seg xml:id="seg-159r" ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">
+<seg xml:id="seg-c1p8-desiderio" ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">
   incomincia l'anima a perdire qualunque desiderio
 </seg>
 ```
@@ -113,7 +113,7 @@ L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La 
 
 ```xml
 <standOff type="impact-index">
-  <fs xml:id="idx-seg-c8-desiderio" corresp="#seg-c8-desiderio" cert="medium">
+  <fs xml:id="idx-seg-c1p8-desiderio" corresp="#seg-c1p8-desiderio" cert="medium">
     <f name="N_band"><symbol value="critica"/></f>
     <f name="A_band"><symbol value="alta"/></f>
     <f name="N"><numeric value="0.90"/></f>
