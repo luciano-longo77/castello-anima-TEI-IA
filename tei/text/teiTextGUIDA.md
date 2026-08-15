@@ -1,0 +1,116 @@
+# Guida alla navigazione del *teiText*
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
+
+---
+
+## Indice
+- [1. Cos'è questo file](#1-cosè-questo-file)
+- [2. Struttura generale del teiText](#2-struttura-generale-del-teitext)
+- [3. Mappa rapida della navigazione](#3-mappa-rapida-della-navigazione)
+- [4. Come è fatto un segmento](#4-come-è-fatto-un-segmento)
+- [5. Come cercare velocemente](#5-come-cercare-velocemente)
+- [6. Esempio di percorso tipico](#6-esempio-di-percorso-tipico)
+- [7. Riferimenti utili](#7-riferimenti-utili)
+- [8. Contatti](#8-contatti)
+
+---
+
+## 1. Cos'è questo file
+
+`castello-anima-teiText.xml` contiene il **testo del manoscritto** e i suoi quattro strati di annotazione. I **metadati** (mani, testimoni, tassonomia, criteri editoriali) non sono qui: stanno nel `teiHeader`, richiamato via `xi:include`. Per capire *cosa significa* un `@ana`, una mano o un testimone, si va nell'header (vedi [`../header/teiHeader-GUIDA.md`](../header/teiHeader-GUIDA.md)). Per capire *dov'è* e *com'è codificato* un passo, si usa questa guida.
+
+Riferimento tecnico completo del file: [`teiText-README.md`](teiText-README.md).
+
+## 2. Struttura generale del teiText
+
+```
+<TEI>
+ ├── <teiHeader> (via xi:include → ../header/…)
+ └── <text><body>
+       └── <div type="book" n="3">          ← Libro III (le altre come segnaposto)
+             ├── <div type="chapter" n="1">  ← III-cap1
+             │     ├── <head> / <argument>
+             │     └── <p n="…"> → <seg xml:id="seg-cNpP-label" ana="…"> … </seg>
+             └── … 19 capitoli …
+ └── <standOff type="impact-index">        ← una <fs> per <seg>
+ └── <standOff type="rhetorical-figures">  ← figure retoriche (<span>)
+ └── <standOff type="semantic-focus">      ← aree tematiche (<span>)
+ └── <standOff type="semantic-chains">     ← catene e relazioni (<link>)
+```
+
+## 3. Mappa rapida della navigazione
+
+### 🔹 Per trovare un capitolo
+Cerca `xml:id="III-capN"` (es. `III-cap8`) oppure `type="chapter" n="N"`.
+
+### 🔹 Per leggere l'apparato genetico e critico
+- Correzione d'autrice: `<subst><del>…</del><add>…</add></subst>` (con `@hand`, `@place`).
+- Ritracciatura del tratto bruno T0→T1: `<retrace hand="#ink_1">`.
+- Aggiunta prudenziale tardiva (inchiostro scuro T3): `<add hand="#ink_3-dark">`.
+- Variante fra fasi: `<app><lem wit="#txt-c">…</lem><rdg wit="#txt-b0" varSeq="1">…</rdg></app>` — `lem` è l'**ultima volontà**.
+- Lacuna materiale: `<gap reason="hole"/>` o restituzione `<supplied reason="hole" resp="#editor" cert="…">`.
+
+### 🔹 Per passare da un `<seg>` al suo indice d'impatto
+Il `<seg xml:id="seg-c8p2-roma">` è collegato alla `<fs xml:id="idx-seg-c8p2-roma" corresp="#seg-c8p2-roma">` nello `standOff type="impact-index"`: stesso identificatore, prefisso `idx-`.
+
+### 🔹 Per vedere le figure retoriche o l'area di un segmento
+Negli standOff `rhetorical-figures` e `semantic-focus` cerca lo `<span from="#seg-…">`.
+
+### 🔹 Per trovare una citazione
+Le citazioni sono `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` dentro il `<seg>`. L'elenco completo con le carte è in [`../../docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md).
+
+## 4. Come è fatto un segmento
+
+```xml
+<seg xml:id="seg-c1p8-desiderio"
+     ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">
+  incomincia l'anima a perdire qualunque desiderio
+</seg>
+```
+- `@xml:id` = ancora per apparato, indice d'impatto, standOff.
+- `@ana` = l'interpretazione a 8 assi (una categoria per asse, dal `classDecl`).
+- `@hand` = la mano fisica.
+
+Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact-*`), ma nella `fs` gemella dello standOff.
+
+## 5. Come cercare velocemente
+
+| Cerchi… | Come |
+|---|---|
+| un capitolo | `xml:id="III-capN"` |
+| un segmento e il suo senso | `xml:id="seg-cNpP-…"` → leggi il suo `@ana` |
+| il calcolo d'impatto di un seg | `corresp="#seg-cNpP-…"` nello `standOff impact-index` |
+| tutte le correzioni d'autrice | `<subst>` · `<del>` · `<add>` |
+| le ritracciature | `<retrace>` (sempre `hand="#ink_1"`) |
+| le restituzioni editoriali | `<supplied>` |
+| una citazione | `<cit>` / `<bibl>` |
+| cosa significa una categoria `@ana` | → nel `teiHeader` (`classDecl`) |
+
+## 6. Esempio di percorso tipico
+
+**«Voglio capire come è annotato il "perdere il desiderio" in III.1»**
+1. Vai a `xml:id="III-cap1"`.
+2. Cerca il `<seg>` col testo → `seg-c1p8-desiderio`.
+3. Leggi il suo `@ana` (funzione, rischio, operazione, fase, stato, impatto).
+4. Per il calcolo dell'impatto, cerca `idx-seg-c1p8-desiderio` nello `standOff impact-index`.
+5. Per il senso delle categorie, apri il `teiHeader` (`classDecl`) o [`docs/data-dictionary.md`](../../docs/data-dictionary.md).
+
+## 7. Riferimenti utili
+
+- Riferimento tecnico del file: [`teiText-README.md`](teiText-README.md)
+- Metodologia di codifica: [`docs/teiText-guida-codifica.md`](../../docs/teiText-guida-codifica.md)
+- Indice d'impatto: [`docs/indice-impatto.md`](../../docs/indice-impatto.md)
+- Anagrafe delle citazioni: [`docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md)
+- Interventi editoriali (rendiconto): [`docs/interventi-editoriali.md`](../../docs/interventi-editoriali.md)
+- Metadati e categorie: [`../header/teiHeader-GUIDA.md`](../header/teiHeader-GUIDA.md)
+
+## 8. Contatti
+
+**Luciano Longo** — <luciano.longo@dedalus.com> · [ORCID](https://orcid.org/0009-0005-7557-7546) · [GitHub](https://github.com/luciano-longo77)
