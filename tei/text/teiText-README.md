@@ -60,8 +60,8 @@ Gli `interpGrp` dei vocabolari `fig-*`/`area-*` sono dichiarati **una volta** ne
 ## 5. Convenzioni degli `xml:id`
 
 - **Libro / capitolo**: `Libro-III` · `III-cap1`, `III-cap2`, …
-- **Segmento**: **`seg-cNpP-label`** (es. `seg-c8p2-roma`); proemio `seg-pro-pP-label`; titolo `seg-tit-…`.
-- **Feature structure d'impatto**: `idx-<segid>` (es. `idx-seg-c8p2-roma`).
+- **Segmento**: **`seg-b<L>-cNpP-label`** (`b<L>` = numero del libro, es. `b3`; es. `seg-b3-c8p2-roma`); proemio `seg-b<L>-pro-pP-label`; titolo `seg-b<L>-tit-…`.
+- **Feature structure d'impatto**: `idx-<segid>` (es. `idx-seg-b3-c8p2-roma`).
 - **Vocabolari standOff**: `fig-*`, `area-*`.
 
 Le convenzioni sono **imposte in CI** dalla guardia `regole_fissate_guard.py`.
