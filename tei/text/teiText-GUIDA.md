@@ -37,7 +37,7 @@ Riferimento tecnico completo del file: [`teiText-README.md`](teiText-README.md).
        └── <div type="book" n="3">          ← Libro III (le altre come segnaposto)
              ├── <div type="chapter" n="1">  ← III-cap1
              │     ├── <head> / <argument>
-             │     └── <p n="…"> → <seg xml:id="seg-cNpP-label" ana="…"> … </seg>
+             │     └── <p n="…"> → <seg xml:id="seg-b3-cNpP-label" ana="…"> … </seg>
              └── … 19 capitoli …
  └── <standOff type="impact-index">        ← una <fs> per <seg>
  └── <standOff type="rhetorical-figures">  ← figure retoriche (<span>)
@@ -58,7 +58,7 @@ Cerca `xml:id="III-capN"` (es. `III-cap8`) oppure `type="chapter" n="N"`.
 - Lacuna materiale: `<gap reason="hole"/>` o restituzione `<supplied reason="hole" resp="#editor" cert="…">`.
 
 ### 🔹 Per passare da un `<seg>` al suo indice d'impatto
-Il `<seg xml:id="seg-c8p2-roma">` è collegato alla `<fs xml:id="idx-seg-c8p2-roma" corresp="#seg-c8p2-roma">` nello `standOff type="impact-index"`: stesso identificatore, prefisso `idx-`.
+Il `<seg xml:id="seg-b3-c8p2-roma">` è collegato alla `<fs xml:id="idx-seg-b3-c8p2-roma" corresp="#seg-b3-c8p2-roma">` nello `standOff type="impact-index"`: stesso identificatore, prefisso `idx-`.
 
 ### 🔹 Per vedere le figure retoriche o l'area di un segmento
 Negli standOff `rhetorical-figures` e `semantic-focus` cerca lo `<span from="#seg-…">`.
@@ -69,7 +69,7 @@ Le citazioni sono `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` 
 ## 4. Come è fatto un segmento
 
 ```xml
-<seg xml:id="seg-c1p8-desiderio"
+<seg xml:id="seg-b3-c1p8-desiderio"
      ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical
           #phase-mediana #phase-critical #mystic_state-quiete
           #relation-mistica-passiva-quiete #impact-high" hand="#ink_1">
@@ -88,8 +88,8 @@ Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact
 | Cerchi… | Come |
 |---|---|
 | un capitolo | `xml:id="III-capN"` |
-| un segmento e il suo senso | `xml:id="seg-cNpP-…"` → leggi il suo `@ana` |
-| il calcolo d'impatto di un seg | `corresp="#seg-cNpP-…"` nello `standOff impact-index` |
+| un segmento e il suo senso | `xml:id="seg-b<L>-cNpP-…"` → leggi il suo `@ana` |
+| il calcolo d'impatto di un seg | `corresp="#seg-b<L>-cNpP-…"` nello `standOff impact-index` |
 | tutte le correzioni d'autrice | `<subst>` · `<del>` · `<add>` |
 | le ritracciature | `<retrace>` (sempre `hand="#ink_1"`) |
 | le restituzioni editoriali | `<supplied>` |
@@ -100,9 +100,9 @@ Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact
 
 **«Voglio capire come è annotato il "perdere il desiderio" in III.1»**
 1. Vai a `xml:id="III-cap1"`.
-2. Cerca il `<seg>` col testo → `seg-c1p8-desiderio`.
+2. Cerca il `<seg>` col testo → `seg-b3-c1p8-desiderio`.
 3. Leggi il suo `@ana` (funzione, rischio, operazione, fase, stato, impatto).
-4. Per il calcolo dell'impatto, cerca `idx-seg-c1p8-desiderio` nello `standOff impact-index`.
+4. Per il calcolo dell'impatto, cerca `idx-seg-b3-c1p8-desiderio` nello `standOff impact-index`.
 5. Per il senso delle categorie, apri il `teiHeader` (`classDecl`) o [`docs/data-dictionary.md`](../../docs/data-dictionary.md).
 
 ## 7. Riferimenti utili
