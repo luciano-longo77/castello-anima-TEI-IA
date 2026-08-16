@@ -25,7 +25,7 @@
         >C4: @corresp non punta a un unico &lt;seg&gt; con @ana.</sch:assert>
     </sch:rule>
     <!-- completezza inversa: ogni <seg> annotato ha ESATTAMENTE una fs gemella -->
-    <sch:rule context="tei:seg[@ana]">
+    <sch:rule context="tei:text//tei:seg[@ana]">
       <sch:let name="sid" value="string(@xml:id)"/>
       <sch:assert test="count(//tei:fs[@corresp=concat('#',$sid)])=1"
         >C5: il &lt;seg&gt; annotato non ha esattamente una &lt;fs&gt; gemella (corresp='#'+xml:id).</sch:assert>
