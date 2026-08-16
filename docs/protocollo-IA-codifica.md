@@ -214,7 +214,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
        e2_guard.py e' autoritativo sulla forma '#id' e sulla referenzialita'. NB: func NON ha prefisso
        #func- (e' #legittimazione-*/#pedagogia-*/#rischio-*/#ethos-*); mystic_state con underscore. -->
   <sch:pattern id="ana-cooccurrence">
-    <sch:rule context="tei:seg[@ana]">
+    <sch:rule context="tei:text//tei:seg[@ana]">
       <sch:let name="t" value="tokenize(normalize-space(@ana),' ')"/>
       <sch:assert test="count($t[. = ('#phase-introduction','#phase-mediana','#phase-conclusive')])=1"
         >Attesa esattamente 1 fase base.</sch:assert>
@@ -343,7 +343,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
         >Indice: la classe #impact-* del seg è incoerente con I (soglie 0.50 / 0.66 / 0.82).</sch:assert>
     </sch:rule>
     <!-- completezza inversa: ogni <seg> annotato ha ESATTAMENTE una fs gemella (1:1, verificato) -->
-    <sch:rule context="tei:seg[@ana]">
+    <sch:rule context="tei:text//tei:seg[@ana]">
       <sch:let name="sid" value="string(@xml:id)"/>
       <sch:assert test="count(//tei:fs[@corresp = concat('#',$sid)]) = 1"
         >Indice: il &lt;seg&gt; annotato non ha esattamente una &lt;fs&gt; gemella (corresp='#'+xml:id).</sch:assert>
@@ -565,7 +565,7 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
        e2_guard.py is authoritative on '#id' form and token referentiality. NB: func has NO #func-
        prefix (it is #legittimazione-*/#pedagogia-*/#rischio-*/#ethos-*); mystic_state uses underscore. -->
   <sch:pattern id="ana-cooccurrence">
-    <sch:rule context="tei:seg[@ana]">
+    <sch:rule context="tei:text//tei:seg[@ana]">
       <sch:let name="t" value="tokenize(normalize-space(@ana),' ')"/>
       <sch:assert test="count($t[. = ('#phase-introduction','#phase-mediana','#phase-conclusive')])=1"
         >Exactly 1 base phase expected.</sch:assert>
@@ -694,7 +694,7 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
         >Index: the seg's #impact-* class is incoherent with I (thresholds 0.50 / 0.66 / 0.82).</sch:assert>
     </sch:rule>
     <!-- inverse completeness: every annotated <seg> has EXACTLY one twin fs (1:1, verified) -->
-    <sch:rule context="tei:seg[@ana]">
+    <sch:rule context="tei:text//tei:seg[@ana]">
       <sch:let name="sid" value="string(@xml:id)"/>
       <sch:assert test="count(//tei:fs[@corresp = concat('#',$sid)]) = 1"
         >Index: the annotated &lt;seg&gt; does not have exactly one twin &lt;fs&gt; (corresp='#'+xml:id).</sch:assert>
