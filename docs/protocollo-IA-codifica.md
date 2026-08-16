@@ -245,7 +245,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
       <sch:assert test="not(parent::tei:add)">R1: retrace mai dentro add.</sch:assert>
     </sch:rule>
     <sch:rule context="tei:seg[@xml:id]">
-      <sch:assert test="matches(@xml:id,'^seg-(c\d+p\d+[a-z]?|pro-p\d+|tit)-')"
+      <sch:assert test="matches(@xml:id,'^seg-(b\d+-)?(c\d+p\d+[a-z]?|pro-p\d+|tit)-')"
         >R2: xml:id del seg fuori convenzione (seg-cNpP-label | seg-pro-pP-* | seg-tit-*).</sch:assert>
     </sch:rule>
     <sch:rule context="tei:cit[@ana] | tei:rs[@ana] | tei:term[@ana] | tei:quote[@ana]">
@@ -596,7 +596,7 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
       <sch:assert test="not(parent::tei:add)">R1: retrace never inside add.</sch:assert>
     </sch:rule>
     <sch:rule context="tei:seg[@xml:id]">
-      <sch:assert test="matches(@xml:id,'^seg-(c\d+p\d+[a-z]?|pro-p\d+|tit)-')"
+      <sch:assert test="matches(@xml:id,'^seg-(b\d+-)?(c\d+p\d+[a-z]?|pro-p\d+|tit)-')"
         >R2: seg xml:id off-convention (seg-cNpP-label | seg-pro-pP-* | seg-tit-*).</sch:assert>
     </sch:rule>
     <sch:rule context="tei:cit[@ana] | tei:rs[@ana] | tei:term[@ana] | tei:quote[@ana]">
