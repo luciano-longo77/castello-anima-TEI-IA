@@ -31,7 +31,7 @@ TEXT = sys.argv[1] if len(sys.argv) > 1 else "tei/text/castello-anima-teiText.xm
 R = etree.parse(TEXT).getroot()
 errors = []
 
-SEG_ID = re.compile(r"^seg-(c\d+p\d+[a-z]?|pro-p\d+|tit)-")
+SEG_ID = re.compile(r"^seg-(b\d+-)?(c\d+p\d+[a-z]?|pro-p\d+|tit)-")
 ANA_VIETATO = {T("cit"), T("rs"), T("term"), T("quote")}
 GUARD_OPS = {"#operation-precisatio", "#operation-attenuatio", "#operation-riequilibrio", "#operation-declaratio"}
 CALDI = {"#risk-quietismo", "#risk-panteismo", "#risk-impeccabilita", "#risk-dottrinale"}
