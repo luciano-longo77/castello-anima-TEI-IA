@@ -55,7 +55,7 @@ for tx in tax_doc.iter(T + "taxonomy"):
             cat2axis[c.get(XMLID)] = ax
 errors = []
 n = 0
-for seg in doc.iterfind(".//t:seg", NS):
+for seg in doc.iterfind(".//t:text//t:seg", NS):
     ana = seg.get("ana")
     if not ana:
         continue
