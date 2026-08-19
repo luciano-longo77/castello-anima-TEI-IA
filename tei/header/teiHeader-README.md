@@ -18,8 +18,8 @@
    - A. [Struttura Radice e Metadati](#a-struttura-radice-e-metadati)
    - B. [Descrizione del Manoscritto](#b-descrizione-del-manoscritto)
    - C. [Struttura del Testo](#c-struttura-del-testo)
-   - D. [Trascrizione Diplomatica](#d-trascrizione-diplomatica)
-   - E. [Genetica e Correzioni d'Autore](#e-genetica-e-correzioni-dautore)
+   - D. [Trascrizione Interpretativa e Integrazioni](#d-trascrizione-interpretativa-e-integrazioni)
+   - E. [Genetica d'Autrice (nell'apparato)](#e-genetica-dautrice-nellapparato)
    - F. [Apparato Critico](#f-apparato-critico)
    - G. [Annotazione Interpretativa e Stand-off](#g-annotazione-interpretativa-e-stand-off)
    - H. [Indice d'Impatto (Feature Structures)](#h-indice-dimpatto-feature-structures)
@@ -105,7 +105,7 @@ Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distin
 
 ## 4. Dichiarazione del Tagset (`tagsDecl`)
 
-Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico ordinamento logico dal contenitore al dettaglio e qui raggruppati per macro-funzione (A–J).
+Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico ordinamento logico dal contenitore al dettaglio e qui raggruppati per macro-funzione (A–J). Il modello editoriale è la **trascrizione interpretativa** a normalizzazione grafica **silenziosa e dichiarata** ([`docs/criteri-trascrizione.md`](../../docs/criteri-trascrizione.md) + `editorialDecl`): alcuni elementi restano *dichiarati* nel tagset per compatibilità e riuso, ma **non compaiono** nel testo di lettura (vedi D–E).
 
 ### A. Struttura Radice e Metadati
 | Elemento | Uso Ecdotico / Computazionale |
@@ -130,21 +130,27 @@ Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico 
 | `pb`, `lb` | Foliazione originale (recto/verso) e interruzioni di riga. |
 | `fw`, `anchor` | Elementi di cornice (richiami, segnature) e punti d'ancoraggio per lo stand-off. |
 
-### D. Trascrizione Diplomatica
-| Elemento | Uso Ecdotico / Computazionale |
-| :--- | :--- |
-| `abbr`, `expan` | Abbreviazioni e relativi scioglimenti. |
-| `choice`, `orig`, `reg` | Contenitore di alternative editoriali; forma originale vs normalizzata. |
-| `sic`, `corr` | Errori materiali del ms. vs correzioni editoriali esplicite. |
-| `foreign` | Segmenti in lingua diversa (latino biblico/liturgico). |
-| `gap`, `supplied`, `unclear` | Lacune fisiche, integrazioni congetturali e grafie illeggibili. |
+### D. Trascrizione Interpretativa e Integrazioni
 
-### E. Genetica e Correzioni d'Autore
+> La grafia (accenti, abbreviazioni, divisione delle parole, refusi di copia) è regolarizzata **silenziosamente** e dichiarata una volta per tutte. Gli elementi diplomatici di normalizzazione — `choice`, `orig`/`reg`, `sic`/`corr`, `abbr`/`expan` — restano **dichiarati nel tagset** ma **non compaiono** nel testo di lettura. Attivi i soli marcatori di integrazione e incertezza materiale.
+
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
-| `add`, `del`, `subst` | Aggiunte, cancellature e sostituzioni autoriali. |
+| `abbr`, `expan` | Abbreviazioni e scioglimenti — *dichiarati, non usati* (scioglimento silenzioso). |
+| `choice`, `orig`, `reg` | Alternative editoriali, forma originale vs normalizzata — *dichiarati, non usati* (normalizzazione silenziosa). |
+| `sic`, `corr` | Errori del ms. vs correzioni editoriali — *dichiarati, non usati* (correzione silenziosa). |
+| `foreign` | Segmenti in lingua diversa **non** citazionali (nel corpus attuale: nessuno; il latino citazionale è `cit`/`quote`, vedi I). |
+| `gap`, `supplied`, `unclear` | **Attivi:** lacune fisiche, integrazioni congetturali/su guasto (le parentesi quadre `[ ]`) e grafie illeggibili. |
+
+### E. Genetica d'Autrice (nell'apparato)
+
+> Le varianti **sostanziali** d'autrice — aggiunte, cassature, sostituzioni — si registrano **solo dentro `<app>`/`<rdg>`** (apparato sostanziale, F); le correzioni puramente grafiche non si marcano (silenziose). Restano inline le sole ritracciature/ripristini.
+
+| Elemento | Uso Ecdotico / Computazionale |
+| :--- | :--- |
+| `add`, `del`, `subst` | Aggiunte, cancellature e sostituzioni autoriali — **dentro `<rdg>`** dell'apparato. |
 | `restore` | Ripristino di una porzione cancellata e poi confermata. |
-| `retrace` | Ripasso/rinforzo del tratto da parte della stessa mano. |
+| `retrace` | Ripasso/rinforzo del tratto da parte della stessa mano (strato prudenziale tardivo `#ink_3-dark`). |
 | `metamark` | Segni operativi d'autore (richiami, segni di spostamento). |
 
 ### F. Apparato Critico
@@ -193,7 +199,7 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
 | `+CIT` | Integrazione per esteso di una citazione richiamata |
 
 ### Principi di Controllo Filologico
-1. **Exepert-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
+1. **Expert-in-the-Loop:** Nessuna variante generata dall'IA viene incorporata nel testo base. Ogni evento è verificato ed espresso come lettura alternativa (`<app>/<lem>/<rdg>`).
 2. **Auditability:** Parametri, vincoli e campi obbligatori dell'audit trail sono formalizzati in sintassi JSON all'interno di `xenoData`.
 
 ---
