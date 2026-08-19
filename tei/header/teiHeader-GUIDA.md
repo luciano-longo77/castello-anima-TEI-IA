@@ -1,4 +1,4 @@
-# Guida alla navigazione del *teiHeader*
+# Guida alla navigazione del *teiText*
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
@@ -6,224 +6,116 @@
 
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
-**Licenza**: CC BY 4.0  
+**Licenza**: CC BY 4.0
 
 ---
-## Indice
 
-1. [Cos'è questo file](#1-cosè-questo-file)
-2. [Struttura generale del teiHeader](#2-struttura-generale-del-teiheader)
-3. [Mappa rapida della navigazione](#3-mappa-rapida-della-navigazione)
-4. [Che cosa contiene ogni sezione](#4-che-cosa-contiene-ogni-sezione)
-5. [Come cercare velocemente nel teiHeader](#5-come-cercare-velocemente-nel-teiheader)
-6. [Come usare il teiHeader per il riuso](#6-come-usare-il-teiheader-per-il-riuso)
-7. [Esempio di percorso tipico](#7-esempio-di-percorso-tipico)
-8. [Riferimenti utili](#8-riferimenti-utili)
-9. [Contatti](#9-contatti)
-***
+## Indice
+- [1. Cos'è questo file](#1-cosè-questo-file)
+- [2. Struttura generale del teiText](#2-struttura-generale-del-teitext)
+- [3. Mappa rapida della navigazione](#3-mappa-rapida-della-navigazione)
+- [4. Come è fatto un segmento](#4-come-è-fatto-un-segmento)
+- [5. Come cercare velocemente](#5-come-cercare-velocemente)
+- [6. Esempio di percorso tipico](#6-esempio-di-percorso-tipico)
+- [7. Riferimenti utili](#7-riferimenti-utili)
+- [8. Contatti](#8-contatti)
+
+---
 
 ## 1. Cos'è questo file
 
-Questo documento è una **guida operativa** per orientarsi all'interno del *teiHeader* dell'edizione digitale del *Castello dell'anima*.  
-Serve a:
+`castello-anima-teiText.xml` contiene il **testo del manoscritto** e i suoi quattro strati di annotazione. I **metadati** (mani, testimoni, tassonomia, criteri editoriali) non sono qui: stanno nel `teiHeader`, richiamato via `xi:include`. Per capire *cosa significa* un `@ana`, una mano o un testimone, si va nell'header (vedi [`../header/teiHeader-README.md`](../header/teiHeader-README.md)). Per capire *dov'è* e *com'è codificato* un passo, si usa questa guida.
 
-*   capire come è organizzata la struttura
-*   trovare rapidamente le sezioni rilevanti
-*   riutilizzare tassonomie, metodo, modelli editoriali
-*   navigare gli ID, le mani, le tassonomie e il revision log
+Il testo è dato nella forma **interpretativa** costituita, a normalizzazione grafica **silenziosa e dichiarata** ([`../../docs/criteri-trascrizione.md`](../../docs/criteri-trascrizione.md)); l'unico apparato inline è quello **sostanziale** (`app`/`lem`/`rdg`). Riferimento tecnico completo del file: [`teiText-README.md`](teiText-README.md).
 
-***
+## 2. Struttura generale del teiText
 
-## 2. Struttura generale del teiHeader
+```
+<TEI>
+ ├── <teiHeader> (via xi:include → ../header/…)
+ └── <text><body>
+       ├── <div type="book" n="1">          ← Libro I (proemio + I.1, I.2, I.4, I.5, I.6, I.11)
+       │     └── <div type="chapter">        ← I-cap1 … → <p> → <seg xml:id="seg-b1-cNpP-label" ana="…">
+       ├── <div type="book" n="2">          ← Libro II (segnaposto, da codificare)
+       └── <div type="book" n="3">          ← Libro III (proemio + 19 capitoli)
+             └── <div type="chapter" n="1">  ← III-cap1 → <p> → <seg xml:id="seg-b3-cNpP-label" ana="…">
+ └── <standOff type="impact-index">        ← una <fs> per <seg>
+ └── <standOff type="rhetorical-figures">  ← figure retoriche (<span>)
+ └── <standOff type="semantic-focus">      ← aree tematiche (<span>)
+ └── <standOff type="semantic-chains">     ← catene e relazioni (<link>)
+```
 
-Il teiHeader è composto da cinque blocchi diretti:
-
-*   **`<fileDesc>`** - Identità, provenienza, responsabilità
-*   **`<encodingDesc>`** - Metodo editoriale, tassonomie (`classDecl`)
-*   **`<profileDesc>`** -  Lingue, persone, contesto storico
-*   **`<xenoData>`** -  Pipeline IA (specifica machine-readable) e puntatore METS; è un blocco a sé, non annidato in `encodingDesc`
-*   **`<revisionDesc>`** - Log completo della lavorazione
-
-***
+Sono codificati il **Libro I** (proemio + I.1, I.2, I.4, I.5, I.6, I.11) e il **Libro III** (proemio + 19 capitoli); il **Libro II** è presente come `div` segnaposto (da codificare).
 
 ## 3. Mappa rapida della navigazione
 
-### 🔹 **Per trovare i dati materiali del manoscritto**
-
-Vai in:
-
-*   `fileDesc` → `sourceDesc` → `msDesc` → `physDesc` → `handDesc`
-*   `fileDesc` → `sourceDesc` → `listWit`
-
-### 🔹 **Per capire i criteri editoriali**
-
-Vai in:
-
-*   `encodingDesc`
-*   `editorialDecl`
-*   `projectDesc`
-*   `tagsDecl`
-
-### 🔹 **Per capire le categorie usate in @ana**
-
-Vai in:
-
-*   `encodingDesc` → `classDecl`
-*   ogni `<taxonomy xml:id="...">`
-
-### 🔹 **Per ricostruire il workflow editoriale**
-
-Vai in:
-
-*   `revisionDesc`
-
-### 🔹 **Per studiare la rete delle persone**
-
-Vai in:
-
-*   `profileDesc` → `particDesc` → `listPerson`
-*   `profileDesc` → `particDesc` → `listOrg`
-
-***
-
-## 4. Che cosa contiene ogni sezione
-
-### **`<fileDesc>`**
-
-*   informazioni su titolo, autore, editor
-*   provenienza del manoscritto
-*   bibliografia primaria
-*   identificazioni archivistiche
-
-### **`<encodingDesc>`**
-
-*   principi di trascrizione
-*   apparato critico in *parallel segmentation*
-*   definizione delle mani e dei layer
-*   tassonomie utilizzate nell'attributo `@ana` (in `classDecl`)
-
-### **`<profileDesc>`**
-
-*   lingue
-*   profilo sociolinguistico
-*   lista delle persone coinvolte
-*   istituzioni religiose e inquisitoriali
-
-### **`<xenoData>`**
-
-*   specifica machine-readable della pipeline IA (modello, vincoli, operazioni controfattuali, audit trail)
-*   puntatore METS
-
-### **`<revisionDesc>`**
-
-*   lista cronologica delle operazioni editoriali
-*   scenari IA
-*   validazioni
-*   note di correzione
-
-### **`<classDecl>`** (dentro `encodingDesc`)
-
-*   il modello concettuale dell'intera edizione, articolato in otto assi interpretativi: funzioni retoriche (`func`), rischio dottrinale (`risk`), impatto interpretativo (`impact`), stati mistici (`mystic_state`), operazioni discorsive (`operation`), livelli di esposizione (`exposition`), fasi discorsive (`phase`), relazioni semantiche (`relation`)
-*   più due assi di processo editoriale (`fase`, `workflow`)
-
-***
-
-## 5. Come cercare velocemente nel teiHeader
-
-### 🔍 *Cerchi una categoria @ana?*
-
-Cerca:
-
-    taxonomy xml:id="..."
-
-### 🔍 *Cerchi come trattare glosse, aggiunte, cancellature?*
-
-Controlla:
-
-    encodingDesc → editorialDecl
-
-### 🔍 *Cerchi come funzionano i testimoni?*
-
-Controlla:
-
-    fileDesc → sourceDesc → listWit
-
-### 🔍 *Cerchi cosa indica un certo xml:id?*
-
-Cerca:
-
-    xml:id="..."
-
-### 🔍 *Cerchi l'elenco delle mani scriventi?*
-
-Controlla:
-
-    fileDesc → sourceDesc → msDesc → physDesc → handDesc
-
-### 🔍 *Cerchi come è stata gestita l'IA?*
-
-Controlla:
-
-    xenoData (specifica machine-readable)
-    projectDesc (descrizione discorsiva)
-    revisionDesc (scenari applicati)
-
-***
-
-## 6. Come usare il teiHeader per il riuso
-
-### ✅ *Importare le tassonomie*
-
-Per il riuso, parti dalla fonte normativa **tei/taxonomy/tassonomia-gh.xml** (le 8 tassonomie interpretative, con schema di validazione). 
-Le 2 tassonomie di processo **(`fase`, `workflow`)** presenti nell'header sono interne al **workflow editoriale** e non sono pensate per il riuso.
-
-### ✅ *Replicare il metodo editoriale*
-
-La sezione `<encodingDesc>` è pensata per essere usata come modello.
-
-### ✅ *Estrarre l'ontologia del testo*
-
-Le tassonomie non sono attualmente esportate in formati Linked Open Data, ma la loro struttura (categorie con `xml:id` stabile e `catDesc`) le rende adattabili, con lavoro aggiuntivo, a formati come SKOS, RDF, JSON-LD o OntoLex-Lemon.
-
-### ✅ *Creare documentazione FAIR*
-
-`revisionDesc` fornisce *provenance* completa per depositi in piattaforme.
-
-***
-
-## 7. Esempio di percorso tipico
-
-### 🔹 Per capire "cos'è `risk-dottrinale`"
-
-1.  Cerca `risk-dottrinale` in `classDecl` (tassonomia `risk`)
-2.  Vedi la sua definizione e il dominio semantico
-3.  Torna nel testo e leggi i segmenti che lo usano
-
-### 🔹 Per sapere cosa significa `xml:id="ink_1"`
-
-1.  Vai in `handDesc`
-2.  Leggi la descrizione paleografica
-3.  Trova i segmenti del testo che la usano
-
-### 🔹 Per vedere come è arrivato un certo valore
-
-1.  Cerca il suo `xml:id`
-2.  Trova la voce corrispondente in `revisionDesc`
-
-***
-
-## 8. Riferimenti utili
-
-Per una completa interoperabilità:
-
-*   TEI P5 Guidelines
-*   ODD customization
-*   Modello TEI + IA documentato in `xenoData` e `projectDesc`
-*   Tassonomie descritte in `classDecl`
-
-***
-
-##  9. Contatti
-
-Luciano Longo — `luciano.longo@dedalus.com`  
-ORCID: [0009-0005-7557-7546](https://orcid.org/0009-0005-7557-7546)
+### 🔹 Per trovare un capitolo
+Cerca `xml:id="I-capN"` / `xml:id="III-capN"` (es. `I-cap2`, `III-cap8`) oppure `type="chapter" n="N"` dentro il `div` del libro.
+
+### 🔹 Per leggere l'apparato sostanziale
+- Variante **sostanziale** d'autrice (aggiunte/cassature/sostituzioni): `<app><lem wit="#txt-c">…</lem><rdg wit="#txt-b0" varSeq="1"><subst><del>…</del><add>…</add></subst></rdg></app>` — `lem` è l'**ultima volontà**; `<subst>`/`<del>`/`<add>` con `@hand`/`@place` stanno **dentro il `<rdg>`**. *(Le correzioni puramente grafiche non si marcano: normalizzazione silenziosa.)*
+- Ritracciatura del tratto bruno T0→T1: `<retrace hand="#ink_1">`.
+- Aggiunta prudenziale tardiva (inchiostro scuro T3): `<add hand="#ink_3-dark">`.
+- Lacuna materiale / restituzione: `<gap reason="hole"/>` o `<supplied reason="hole" resp="#editor" cert="…">` (le parentesi quadre `[ ]`).
+
+### 🔹 Per passare da un `<seg>` al suo indice d'impatto
+Il `<seg xml:id="seg-b3-c8p2-roma">` è collegato alla `<fs xml:id="idx-seg-b3-c8p2-roma" corresp="#seg-b3-c8p2-roma">` nello `standOff type="impact-index"`: stesso identificatore, prefisso `idx-`.
+
+### 🔹 Per vedere le figure retoriche o l'area di un segmento
+Negli standOff `rhetorical-figures` e `semantic-focus` cerca lo `<span from="#seg-…">`.
+
+### 🔹 Per trovare una citazione
+Le citazioni sono `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` dentro il `<seg>`. L'elenco completo con le carte è in [`../../docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md).
+
+## 4. Come è fatto un segmento
+
+```xml
+<seg xml:id="seg-b3-c1p8-desiderio"
+     ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical
+          #phase-mediana #phase-critical #mystic_state-quiete
+          #relation-mistica-passiva-quiete #impact-high" hand="#ink_1">
+  incomincia l'anima a perdire qualunque desiderio…
+</seg>
+```
+*(esempio reale, `@ana` completo: gli 8 assi nell'ordine canonico func · operation · risk · exposition · phase · mystic_state · relation · impact, più il modificatore `#phase-critical` e `#relation-*`.)*
+- `@xml:id` = ancora per apparato, indice d'impatto, standOff (formato `seg-b<L>-cNpP-label`, `b<L>` = numero del libro).
+- `@ana` = l'interpretazione **a 8 assi** (`#phase-critical` è un modificatore, non un asse; `relation` è ripetibile). Le categorie vengono dal `classDecl`.
+- `@hand` = la mano fisica.
+
+Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact-*`), ma nella `fs` gemella dello standOff.
+
+## 5. Come cercare velocemente
+
+| Cerchi… | Come |
+|---|---|
+| un capitolo | `xml:id="I-capN"` / `xml:id="III-capN"` |
+| un segmento e il suo senso | `xml:id="seg-b<L>-cNpP-…"` → leggi il suo `@ana` |
+| il calcolo d'impatto di un seg | `corresp="#seg-b<L>-cNpP-…"` nello `standOff impact-index` |
+| le varianti sostanziali d'autrice | `<app>` (con `<subst>`/`<del>`/`<add>` dentro `<rdg>`) |
+| le ritracciature | `<retrace>` (sempre `hand="#ink_1"`) |
+| le restituzioni editoriali | `<supplied>` |
+| una citazione | `<cit>` / `<bibl>` |
+| cosa significa una categoria `@ana` | → nel `teiHeader` (`classDecl`) |
+
+## 6. Esempio di percorso tipico
+
+**«Voglio capire come è annotato il "perdere il desiderio" in III.1»**
+1. Vai a `xml:id="III-cap1"`.
+2. Cerca il `<seg>` col testo → `seg-b3-c1p8-desiderio`.
+3. Leggi il suo `@ana` (funzione, rischio, operazione, fase, stato, impatto).
+4. Per il calcolo dell'impatto, cerca `idx-seg-b3-c1p8-desiderio` nello `standOff impact-index`.
+5. Per il senso delle categorie, apri il `teiHeader` (`classDecl`) o [`docs/data-dictionary.md`](../../docs/data-dictionary.md).
+
+## 7. Riferimenti utili
+
+- Riferimento tecnico del file: [`teiText-README.md`](teiText-README.md)
+- Metodologia di codifica: [`docs/teiText-guida-codifica.md`](../../docs/teiText-guida-codifica.md)
+- Criteri di trascrizione e normalizzazione: [`docs/criteri-trascrizione.md`](../../docs/criteri-trascrizione.md)
+- Indice d'impatto: [`docs/indice-impatto.md`](../../docs/indice-impatto.md)
+- Anagrafe delle citazioni: [`docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md)
+- Interventi editoriali (rendiconto): [`docs/interventi-editoriali.md`](../../docs/interventi-editoriali.md)
+- Metadati e categorie: [`../header/teiHeader-README.md`](../header/teiHeader-README.md)
+
+## 8. Contatti
+
+**Luciano Longo** — <luciano.longo@dedalus.com> · [ORCID](https://orcid.org/0009-0005-7557-7546) · [GitHub](https://github.com/luciano-longo77)
