@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" 
     type="application/xml" 
-    schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="it">
+    schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="it">
     <teiHeader xml:id="teiHeader-castello">
         <fileDesc>
             <titleStmt>
@@ -710,30 +709,8 @@
         </fileDesc>
         <encodingDesc>
             <p xml:base="abstract">
-                <seg n="1"> Questo teiHeader descrive un modello di edizione digitale avanzata del
-                        <title ref="#castello-anima">Castello dell’anima</title> di Teresa di San
-                    Geronimo, fondato su una integrazione multilivello tra descrizione materiale,
-                    rappresentazione genetica e annotazione interpretativa del testo autografo. Il
-                    documento combina una ricostruzione diplomatica (mani, inchiostri,
-                    ductus, interventi marginali) con un sistema tassonomico esteso, progettato per
-                    rendere computabili le funzioni retoriche, i nodi dottrinali, gli stati mistici
-                    e le operazioni prudenziali tipiche della scrittura tardo‑seicentesca soggetta a
-                    sorveglianza inquisitoriale. Il modello adotta una segmentazione granulare (div, p,
-                    seg) collegata ai facsimili e articolata secondo la progressione mistica dei tre
-                    Libri (incipientes, proficientes, perfectae). </seg>
-                <seg n="2"> Le varianti d’autore sono rappresentate tramite un sistema genetico
-                    strutturato (Tb0–Tb3, T4) e integrate con un apparato critico in segmentazione
-                    parallela. L'encoding incorpora inoltre una pipeline IA controllata (expert‑in‑the‑loop), impiegata
-                    esclusivamente per la generazione di eventi controfattuali (rimozione, recupero di
-                    cancellature autoriali, integrazione di citazioni), 
-                    sottoposti a controllo filologico expert-in-the-loop e utili alla misurazione
-                     dell'effetto della perturbazione su (1) chiarezza argomentativa, (2) coesione locale e (3) stabilità
-                    dottrinale percepita.
-                    L’insieme forma una infrastruttura editoriale FAIR, replicabile
-                    e orientata alla ricerca, capace di connettere la materialità del manoscritto
-                    con la dinamica prudenziale del testo mistico post‑tridentino e di offrire un
-                    modello TEI interoperabile per future edizioni digitali di corpora affini.
-                </seg>
+                <seg n="1"> Questo teiHeader descrive un modello di edizione digitale avanzata del <title ref="#castello-anima">Castello dell’anima</title> di Teresa di San Geronimo, fondato su una trascrizione interpretativa a normalizzazione grafica dichiarata (cfr. la editorialDecl e la Nota al testo, Criteri di trascrizione), integrata con la descrizione materiale del testimone (mani, inchiostri, ductus, ritracciature) e con un sistema tassonomico esteso, progettato per rendere computabili le funzioni retoriche, i nodi dottrinali, gli stati mistici e le operazioni prudenziali tipiche della scrittura tardo-seicentesca soggetta a sorveglianza inquisitoriale. Il modello adotta una segmentazione granulare (div, p, seg) collegata ai facsimili e articolata secondo la progressione mistica dei tre Libri (incipientes, proficientes, perfectae). </seg>
+                <seg n="2"> Le normalizzazioni grafiche sono applicate silenziosamente e dichiarate una volta per tutte; le sole varianti d'autrice sostanziali (aggiunte, cassature, sostituzioni) sono rese con l'apparato critico in segmentazione parallela (app/lem/rdg), mentre le integrazioni editoriali restano segnalate (supplied/gap) e lo strato prudenziale tardivo a inchiostro scuro con retrace. L'encoding incorpora inoltre una pipeline IA controllata (expert-in-the-loop), impiegata esclusivamente per la generazione di eventi controfattuali (rimozione, recupero di cancellature autoriali, integrazione di citazioni), sottoposti a controllo filologico expert-in-the-loop e utili alla misurazione dell'effetto della perturbazione su (1) chiarezza argomentativa, (2) coesione locale e (3) stabilità dottrinale percepita. L'insieme forma una infrastruttura editoriale FAIR, replicabile e orientata alla ricerca, capace di connettere la materialità del manoscritto con la dinamica prudenziale del testo mistico post-tridentino e di offrire un modello TEI interoperabile per future edizioni digitali di corpora affini. </seg>
             </p>
 
             <projectDesc>
@@ -868,72 +845,82 @@
                         <item><term>Libro II</term> (Anime proficienti) — 9 loci: II.1–2, II.3, II.4–5, II.7, II.8, II.9, II.10b, II.20, II.21;</item>
                         <item><term>Libro III</term> (Anime perfette) — 15 loci: III.1, III.6, III.7, III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40, con i contigui III.2–III.5 inclusi per intero come raccordo.</item>
                     </list></p>
-                <p n="3"> <hi rend="bold">Stato di avanzamento (work in progress).</hi> La presente
-                    release codifica integralmente il solo <term>Libro III</term>: i suoi 15 loci più i
-                    quattro capitoli di raccordo III.2–III.5, per un totale di <num value="19">19</num>
-                    capitoli effettivamente presenti (III.1–III.8, III.10, III.12, III.14, III.16, III.19,
-                    III.24, III.32, III.34, III.38, III.39, III.40). Il <term>Libro I</term> e il
-                    <term>Libro II</term> sono presenti nella struttura come <gi>div</gi> di libro senza
-                    contenuto (segnaposto), e saranno codificati nelle fasi successive secondo il piano
-                    sopra descritto. Le lacune di numerazione fra i capitoli del Libro III (es. III.9,
-                    III.11, III.13…) non sono omissioni ma capitoli non compresi nel campione. </p>
+                <p n="3"> <hi rend="bold">Stato di avanzamento (work in progress).</hi> La presente release codifica il <term>Libro III</term> (<num value="19">19</num> capitoli effettivamente presenti: III.1–III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40) e il campione del <term>Libro I</term> (proemio più I.1, I.2, I.4, I.5, I.6, I.11), per un totale di <num value="697">697</num> segmenti. Il solo <term>Libro II</term> resta presente nella struttura come <gi>div</gi> di libro senza contenuto (segnaposto), e sarà codificato nella fase successiva (II.1–2, II.8, II.9, II.10) secondo il piano sopra descritto. Le lacune di numerazione fra i capitoli (es. III.9, III.11, III.13…) non sono omissioni ma capitoli non compresi nel campione. </p>
             </samplingDecl>
             <editorialDecl>
 
-                <p n="1"> Questo documento utilizza il sistema di codifica definito dalle linee guida
-                    della TEI P5. La trascrizione  conserva grafie, fenomeni
-                    materiali, aggiunte, cancellature e abbreviazioni presenti nel manoscritto, con
-                    normalizzazione minima dichiarata tramite <code>orig</code>/<code>reg</code>,
-                    <code>abbr</code>/<code>expan</code>, <code>sic</code>/<code>corr</code>, <code>unclear</code>,
-                    <code>gap</code> e <code>supplied</code>. </p>
+   <p n="1"> Il testo è dato nella forma <hi rend="italic">interpretativa</hi> costituita, secondo
+      i criteri fissati nella <ref target="../../docs/criteri-trascrizione.md">Nota al testo
+      (§2, Criteri di trascrizione)</ref>. La trascrizione è moderatamente interventista:
+      grafia e interpunzione sono ammodernate e regolarizzate per la leggibilità, conservando i
+      tratti linguistici significativi dell'autografo. Le normalizzazioni grafiche sono applicate
+      <hi rend="italic">silenziosamente</hi> (§2, e qui la <code>normalization</code>): nel testo di
+      lettura <hi rend="italic">non</hi> compaiono elementi diplomatici
+      (<code>orig</code>/<code>reg</code>, <code>sic</code>/<code>corr</code>,
+      <code>abbr</code>/<code>expan</code>, né correzioni grafiche <code>subst</code>/<code>del</code>/<code>add</code>). </p>
 
-                <p n="2"> L’apparato critico è rappresentato secondo la metodologia della
-                    “parallel segmentation”, mediante <code>app</code>, <code>lem</code> e <code>rdg</code>, ed è
-                    dedicato a cancellature, sostituzioni, aggiunte interlineari e interventi
-                    d’autrice nei punti teologicamente sensibili. Le varianti sono classificate
-                    con <att>type</att> su <code>app</code> (substitution, addition, deletion,
-                    transposition, variant) e, sui <code>rdg</code>, con <att>type</att> (authorial,
-                    external, ai-counterfactual) e <att>cause</att> (correction, clarification,
-                    orthodoxy, attenuation, precision, amplification); la topografia dell’atto
-                    materiale è resa da <att>place</att> su <code>add</code>/<code>del</code>. </p>
+   <p n="2"> L'unico apparato marcato inline è quello <hi rend="italic">sostanziale</hi>, in
+      segmentazione parallela mediante <code>app</code>, <code>lem</code> e <code>rdg</code>,
+      dedicato ai ripensamenti d'autrice e alle varianti nei punti teologicamente sensibili
+      (il <code>lem</code> è l'ultima volontà). Le varianti sono classificate con <att>type</att>
+      su <code>app</code> (substitution, addition, deletion, transposition, variant) e, sui
+      <code>rdg</code>, con <att>type</att> (authorial, external, ai-counterfactual) e
+      <att>cause</att> (correction, clarification, orthodoxy, attenuation, precision,
+      amplification). </p>
 
-                <p n="3"> Il modello ODD i moduli TEI relativi a linking,
-                    analysis, transcrizione e critica del testo, in accordo con il tagset TEI P5. </p>
+   <p n="3"> Le integrazioni editoriali restano segnalate: il guasto meccanico e le congetture
+      sono resi con <code>supplied</code> (con <code>gap</code> per le lettere illeggibili entro
+      il guasto), corrispondenti alle parentesi quadre <hi rend="italic">[ ]</hi> della Nota al
+      testo. Il modello ODD abilita i moduli TEI P5 relativi a linking, analysis, transcription e
+      textcrit. </p>
 
-                <p n="4"> La numerazione dei paragrafi non è presente nel manoscritto: quando introdotta,
-                    costituisce integrazione editoriale ed è resa tramite l’attributo @n su
-                    <code>p</code>. </p>
+   <p n="4"> La numerazione dei paragrafi non è presente nel manoscritto: quando introdotta,
+      costituisce integrazione editoriale ed è resa tramite l'attributo <att>n</att> su
+      <code>p</code>. </p>
 
-                <correction>
-                    <p n="1"> Le correzioni autoriali sono rappresentate tramite <code>del</code>, <code>add</code>
-                        e <code>subst</code>. Eventuali interventi editoriali sono dichiarati
-                        esplicitamente attraverso <code>corr</code> all’interno di <code>sic</code>, o
-                        documentati in note di chiarimento quando necessario. </p>
-                </correction>
+   <normalization method="silent">
+      <p n="1"> Le regolarizzazioni grafiche sono applicate silenziosamente e dichiarate una volta
+         per tutte nella <ref target="../../docs/criteri-trascrizione.md">Nota al testo, §2</ref>,
+         sotto la responsabilità dell'editore (<ref target="#editor">#editor</ref>); non si
+         ripete <att>resp</att> sui singoli luoghi, né si marcano con <code>orig</code>/<code>reg</code>. </p>
+      <p n="2"> Rientrano nella normalizzazione silenziosa: segni diacritici
+         (<mentioned>buon'animo</mentioned> &gt; <mentioned>buon animo</mentioned>;
+         <mentioned>poiche</mentioned> &gt; <mentioned>poiché</mentioned>); alternanze
+         <mentioned>à/hà/a</mentioned> &gt; <mentioned>a</mentioned>,
+         <mentioned>ò/hò/o</mentioned> &gt; <mentioned>o</mentioned>,
+         <mentioned>quì</mentioned> &gt; <mentioned>qui</mentioned>,
+         <mentioned>ne</mentioned> &gt; <mentioned>né</mentioned>,
+         <mentioned>se/sè</mentioned> &gt; <mentioned>sé</mentioned>; oscillazione
+         maiuscole/minuscole (<mentioned>Io</mentioned> &gt; <mentioned>io</mentioned>;
+         <mentioned>Padre</mentioned>, riferito alla guida spirituale, &gt; <mentioned>padre</mentioned>);
+         scioglimento delle abbreviazioni senza indicazione
+         (<mentioned>V.R.</mentioned> &gt; <mentioned>Vostra Reverenza</mentioned>). </p>
+   </normalization>
 
-                <hyphenation>
-                    <p n="1"> La sillabazione del testimone è mantenuta solo quando rilevante come
-                        fenomeno grafico. Non si introducono trattini aggiuntivi, né si modernizza
-                        la divisione delle parole. </p>
-                </hyphenation>
+   <punctuation marks="none" placement="internal">
+      <p n="1"> L'interpunzione è ammodernata per la leggibilità (i due punti del testimone, di
+         valore di pausa media, sono resi con punto e virgola o punto fermo secondo il contesto) e
+         ritoccata ovunque risulti compromessa la piena intelligibilità del testo. L'intervento è
+         silenzioso e dichiarato qui. </p>
+   </punctuation>
 
-                <normalization>
-                        <p n="1"> Si è mantenuta la maiuscola originale di inizio capoverso e l’interpunzione
-                            è riprodotta fedelmente. Normalizzazioni grafiche sono applicate
-                            esclusivamente tramite <code>orig</code>/<code>reg</code> per favorire la leggibilità,
-                            senza modificare la struttura sintattica o stilistica dell’autografo. </p>
-                        <p n="2"> Le regolarizzazioni grafiche (<code>orig</code>/<code>reg</code>) e gli
-                            scioglimenti di abbreviazione (<code>abbr</code>/<code>expan</code>) sono
-                            responsabilità dell’editore (<ref target="#editor">#editor</ref>): l’attribuzione
-                            è dichiarata qui una volta per tutte e non è ripetuta con <att>resp</att> sui
-                            singoli elementi. Restano attribuiti e certificati per-istanza
-                            (<att>resp</att> + <att>cert</att>) i soli interventi sostanziali o congetturali:
-                            le correzioni (<code>sic</code>/<code>corr</code>) e le integrazioni
-                            (<code>supplied</code>), queste ultime marcate <val>cert="medium"</val> salvo
-                            diversa valutazione. </p>
-                </normalization>
+   <hyphenation eol="hard">
+      <p n="1"> La divisione delle parole è conformata all'uso odierno
+         (<mentioned>inalto</mentioned> &gt; <mentioned>in alto</mentioned>;
+         <mentioned>nonsapeva</mentioned> &gt; <mentioned>non sapeva</mentioned>). La fine di carta
+         del testimone (barretta <hi rend="italic">/</hi>) è resa con <code>pb</code>. </p>
+   </hyphenation>
 
-               <interpretation xml:id="imp-idx">
+   <correction method="silent">
+      <p n="1"> I refusi di copia sono regolarizzati silenziosamente (nel testo di lettura non
+         compare <code>sic</code>/<code>corr</code>). I ripensamenti e le correzioni d'autrice non
+         sono marcati inline: quando teologicamente o filologicamente rilevanti sono resi
+         nell'apparato sostanziale <code>app</code>/<code>rdg</code> (§2); altrimenti sono documentati
+         nella Nota al testo. Restano marcate e certificate le sole integrazioni congetturali
+         (<code>supplied</code>). </p>
+   </correction>
+
+   <interpretation xml:id="imp-idx">
     <p>Dichiarazione della metrica interpretativa per il calcolo dell'indice di
         impatto (Impact Index).</p>
     <p>Pesi derivati da confronti a coppie con Analytic Hierarchy Process (AHP),
@@ -969,8 +956,7 @@
             </item>
         </list>
     </ab>
-</interpretation>
-            </editorialDecl>
+</interpretation></editorialDecl>
 
             <tagsDecl>
                 <namespace name="http://www.tei-c.org/ns/1.0">
@@ -1910,7 +1896,8 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
-            <change when="2026-08-14" who="#editor">Revisione filologica e di codifica del campione del Libro III: 
+            <change when="2026-08-19" who="#editor">Revisione filologica del testo costituito. Riclassificati i 25 luoghi sic/corr del campione: 7 refusi (correzione silenziosa), 1 integrazione su guasto meccanico ('t[r]ova') resa con supplied, 7 ripristini della lezione del manoscritto (Libro III cap. 3 e proemio), 10 confermati; piu' il ripristino di "l'unione che viene" e la conferma di "in un sant'otio". Collazione integrale del testo costituito contro le trascrizioni diplomatica e interpretativa: confermata la fedelta' dell'encoding alle scelte costitutive dell'editore; corretti 7 errori di codifica residui (I.4 reintegro di "questi"; I.5 dittografie "non son niente" e "di labra"; reintegro della clausola omessa in III.2; III.6 "Eh padre"; III.14 espunzione di "io"; III.39 "meriti"). Rimosse dalle note interne le annotazioni di correzione relative a lezioni-fantasma non presenti sul manoscritto. Hardening delle guardie CI cooccurrence_guard.py e citazioni_guard.py (scope a tei:text). Struttura invariata: 697 segmenti = 697 feature structures; validazione RNG+Schematron e 8 guardie CI verdi.</change>
+            <change when="2026-08-17" who="#editor">Integrazione del campione del Libro I (proemio e capp. I.1, I.2, I.4, I.5, I.6, I.11; 249 segmenti) con indice d'impatto, figure retoriche e aree semantiche in standOff, naming simmetrico seg-b1-; armonizzati i rs @type e agganciati gli @ref alle entita' gia' presenti (#dio, #esterno, #avila-castello, #p-avila). Differenziazione mirata dell'indice d'impatto sui luoghi di discretio spirituum del Libro I (11 segmenti: humilta' vera/diabolica in I.5b, quiete in I.11, notte dei sensi in I.4). Cambio di strategia editoriale: adozione della trascrizione interpretativa con normalizzazione grafica dichiarata (questa editorialDecl e docs/criteri-trascrizione.md, da Nota al testo, Criteri di trascrizione) e non piu' marcata inline; rimossi gli elementi diplomatici di normalizzazione (choice orig/reg e sic/corr; correzioni grafiche lettera-su-lettera) e convertito l'apparato genetico sostanziale (aggiunte, cassature e sostituzioni d'autrice) in apparato in segmentazione parallela app/lem/rdg; testo costituito invariato. Aggiunta la guardia di CI whitespace_guard.py (anti-corruzione da riformattazione dell'editor: whitespace iniettato dentro subst/choice intra-parola, non intercettato da RelaxNG/Schematron).</change><change when="2026-08-14" who="#editor">Revisione filologica e di codifica del campione del Libro III: 
                 uniformati i titoli di capitolo, normalizzata la codifica delle lacune; 
                 audit di validità (RelaxNG, Schematron) e di corrispondenza con le fonti.</change>
             <change when="2026-08-12" who="#editor" ana="#fase-normalizzazione-tag">
