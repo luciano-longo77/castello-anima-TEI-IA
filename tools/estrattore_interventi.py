@@ -2,9 +2,14 @@
 # -*- coding: utf-8 -*-
 """Genera docs/interventi-editoriali.md da tei/text/castello-anima-teiText.xml.
 
-Rendiconta gli interventi editoriali distinguendo due PIANI:
-  - NORMALIZZAZIONE (choice: orig/reg, sic/corr, abbr/expan);
-  - GENETICO (add, del, subst, retrace, restore, gap, supplied, metamark).
+Rendiconta gli interventi editoriali MARCATI: l'apparato sostanziale/genetico
+(add, del, subst dentro app/rdg), le ritracciature (retrace) e le integrazioni
+editoriali (gap, unclear, supplied, metamark). Nel modello interpretativo la
+normalizzazione grafica e' SILENZIOSA e dichiarata una volta per tutte
+(docs/criteri-trascrizione.md + editorialDecl): nel testo di lettura non
+compaiono elementi diplomatici (choice: orig/reg, sic/corr, abbr/expan). Un
+controllo segnala eventuali choice residui (attesi 0).
+
 Emette prospetti, l'esito dei controlli di coerenza e un'appendice per-istanza
 (una riga per intervento, con carta e seg) navigabile su GitHub.
 
@@ -35,9 +40,12 @@ PREAMBLE = (
 "**Licenza**: CC BY 4.0\n\n---\n\n"
 "**Fonte**\n"
 "*Generato da `tei/text/castello-anima-teiText.xml`. Fotografa ogni intervento editoriale "
-"distinguendo il piano della **normalizzazione** (scelte in `choice`) da quello **genetico** "
-"(lavoro dell'autrice sul foglio). L'attribuzione è a due livelli: `reg`/`expan` globale "
-"(`editorialDecl`), `corr`/`supplied` per-istanza (`@resp` + `@cert`).*\n\n---")
+"**marcato**: l'apparato sostanziale/genetico (`add`/`del`/`subst`, dentro `app`/`rdg`), le "
+"ritracciature (`retrace`) e le integrazioni editoriali (`gap`/`unclear`/`supplied`). La "
+"**normalizzazione grafica** è silenziosa e dichiarata una volta per tutte "
+"(`docs/criteri-trascrizione.md` + `editorialDecl`): nel testo di lettura non compaiono "
+"elementi diplomatici (`choice`). L'attribuzione delle integrazioni è per-istanza "
+"(`supplied`: `@resp` + `@cert`).*\n\n---")
 
 doc = etree.parse(SRC); R = doc.getroot()
 
@@ -53,25 +61,8 @@ def enclosing_seg(e):
         p = p.getparent()
     return "-"
 
-# ---- PIANO 1 · NORMALIZZAZIONE ----
-NORM_PAIRS = [("orig", "reg", "regolarizzazione grafica"),
-              ("sic", "corr", "correzione di errore materiale"),
-              ("abbr", "expan", "scioglimento di abbreviazione")]
-norm_rows = []
-norm_stats = defaultdict(lambda: {"n": 0, "resp": 0, "cert": 0})
-for ch in R.iter(T("choice")):
-    for a, b, _ in NORM_PAIRS:
-        ea = ch.find(T(a)); eb = ch.find(T(b))
-        if ea is not None and eb is not None:
-            st = norm_stats[b]; st["n"] += 1
-            if eb.get("resp"): st["resp"] += 1
-            if eb.get("cert"): st["cert"] += 1
-            norm_rows.append(("%s/%s" % (a, b), folio_of.get(ch, "?"), enclosing_seg(ch),
-                              (ea.text or "").strip(), (eb.text or "").strip(),
-                              eb.get("resp") or "", eb.get("cert") or ""))
-
-# ---- PIANO 2 · GENETICO ----
-GEN_TAGS = ["add", "del", "subst", "retrace", "restore", "gap", "supplied", "metamark"]
+# ---- APPARATO GENETICO / SOSTANZIALE + INTEGRAZIONI ----
+GEN_TAGS = ["add", "del", "subst", "retrace", "restore", "gap", "unclear", "supplied", "metamark"]
 gen_rows = []; gen_stats = defaultdict(Counter)
 for tag in GEN_TAGS:
     for e in R.iter(T(tag)):
@@ -93,14 +84,10 @@ def vals(tag, attr):
 
 # ---- CONTROLLI DI COERENZA ----
 issues = []
-if norm_stats["reg"]["resp"]:
-    issues.append("%d `reg` con `@resp` (atteso 0: attribuzione globale)" % norm_stats["reg"]["resp"])
-if norm_stats["expan"]["resp"]:
-    issues.append("%d `expan` con `@resp` (atteso 0: attribuzione globale)" % norm_stats["expan"]["resp"])
-if norm_stats["corr"]["resp"] != norm_stats["corr"]["n"]:
-    issues.append("`corr` non tutte con `@resp`")
-if norm_stats["corr"]["cert"] != norm_stats["corr"]["n"]:
-    issues.append("`corr` non tutte con `@cert`")
+nchoice = sum(1 for _ in R.iter(T("choice")))
+if nchoice:
+    issues.append("%d `choice` presenti (attese 0 nel modello interpretativo: "
+                  "la normalizzazione grafica e' silenziosa e dichiarata)" % nchoice)
 for e in R.iter(T("supplied")):
     if not e.get("resp") or not e.get("cert"):
         issues.append("`supplied` senza `@resp`/`@cert` a c.%s (seg %s)" %
@@ -112,18 +99,7 @@ for s in R.iter(T("subst")):
 # ============ EMISSIONE MARKDOWN ============
 o = [PREAMBLE, ""]
 
-o.append("## 1. Piano della normalizzazione (`choice`)\n")
-o.append("| coppia | n | con `@resp` | con `@cert` | attribuzione attesa |")
-o.append("|---|---:|---:|---:|---|")
-NOTE = {"reg": "globale (`editorialDecl`): `@resp` = 0",
-        "corr": "per-istanza: `@resp` e `@cert` = n",
-        "expan": "globale; `@cert` solo dove pertinente"}
-for a, b, _ in NORM_PAIRS:
-    s = norm_stats[b]
-    o.append("| `%s/%s` | %d | %d | %d | %s |" % (a, b, s["n"], s["resp"], s["cert"], NOTE[b]))
-o.append("")
-
-o.append("## 2. Piano genetico (lavoro sul foglio)\n")
+o.append("## 1. Apparato genetico e integrazioni\n")
 o.append("| elemento | n | con `@hand` | con `@cert` |")
 o.append("|---|---:|---:|---:|")
 for tag in GEN_TAGS:
@@ -131,7 +107,7 @@ for tag in GEN_TAGS:
     if s["n"]:
         o.append("| `%s` | %d | %d | %d |" % (tag, s["n"], s["hand"], s["cert"]))
 o.append("")
-o.append("### 2.1 Dettaglio dei valori\n")
+o.append("### 1.1 Dettaglio dei valori\n")
 o.append("| attributo | valori (conteggio) |")
 o.append("|---|---|")
 for tag, attr in [("del", "type"), ("del", "rend"), ("del", "place"), ("add", "type"),
@@ -143,33 +119,29 @@ for tag, attr in [("del", "type"), ("del", "rend"), ("del", "place"), ("add", "t
         o.append("| `%s/@%s` | %s |" % (tag, attr, cell))
 o.append("")
 
-o.append("## 3. Controlli di coerenza\n")
+o.append("## 2. Controlli di coerenza\n")
 if issues:
-    o.append("**Rilievi: %d.** I due piani non sono del tutto coerenti con la policy dichiarata:\n" % len(issues))
+    o.append("**Rilievi: %d.**\n" % len(issues))
     for x in issues:
         o.append("- %s" % x)
 else:
-    o.append("**Nessun rilievo.** I due piani sono coerenti con la policy dichiarata: "
-             "`reg`/`expan` senza `@resp` (attribuzione globale), `corr` pienamente attribuito, "
-             "ogni `supplied` con `@resp`+`@cert`, ogni `subst` = `add`+`del`.")
+    o.append("**Nessun rilievo.** Coerente con la policy dichiarata: nessun `choice` "
+             "(normalizzazione silenziosa), ogni `supplied` con `@resp`+`@cert`, "
+             "ogni `subst` = `add`+`del`.")
 o.append("")
 
-o.append("## 4. Appendice · dettaglio per-istanza\n")
+o.append("## 3. Appendice · dettaglio per-istanza\n")
 o.append("*Una riga per intervento, in ordine di documento; `carta` = ultimo `pb` precedente, "
          "`seg` = segmento contenitore. Ordine deterministico: i diff mostrano esattamente cosa cambia.*\n")
-o.append("| # | piano | elemento | carta | seg | tipo/valore | mano | cert | testo |")
-o.append("|---:|---|---|---|---|---|---|---|---|")
+o.append("| # | elemento | carta | seg | tipo/valore | mano | cert | testo |")
+o.append("|---:|---|---|---|---|---|---|---|")
 i = 0
-for r in norm_rows:  # (coppia, folio, seg, orig, edito, resp, cert)
-    i += 1
-    o.append("| %d | norm | `%s` | %s | %s | %s → %s | | %s | |" %
-             (i, r[0], r[1], r[2], r[3].replace("|", "\\|"), r[4].replace("|", "\\|"), r[6]))
 for r in gen_rows:  # (tag, folio, seg, info, hand, cert, text)
     i += 1
-    o.append("| %d | gen | `%s` | %s | %s | %s | %s | %s | %s |" %
+    o.append("| %d | `%s` | %s | %s | %s | %s | %s | %s |" %
              (i, r[0], r[1], r[2], r[3], r[4], r[5], r[6].replace("|", "\\|")))
 o.append("")
 
 open(OUT, "w", encoding="utf-8").write("\n".join(o))
-print("Scritto %s (%d normalizzazioni + %d interventi genetici; %d rilievi)" %
-      (OUT, len(norm_rows), len(gen_rows), len(issues)))
+print("Scritto %s (%d interventi genetici/integrazioni; %d rilievi)" %
+      (OUT, len(gen_rows), len(issues)))
