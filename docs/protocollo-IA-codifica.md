@@ -35,7 +35,7 @@
 1. **Proponi, non decidere.** Ogni intervento è una proposta; valida l'editore umano.
 2. **Non inventare lezioni.** Illeggibile → `<unclear>`/`<gap>`; congettura → `<supplied resp="#editor" cert="…">`. Se non sai, **chiedi**.
 3. **Solo id dichiarati.** `@ana`/`@hand`/`@wit`/`@resp` puntano a id realmente presenti negli allegati §0. Un valore non dichiarato **non esiste**: segnalalo.
-4. **Mai normalizzazioni tacite.** Documento (`orig`/`sic`/`abbr`/`del`) ≠ interpretazione (`reg`/`corr`/`expan`/`supplied`).
+4. **Normalizzazione grafica silenziosa.** La grafia (accenti, abbreviazioni, divisione delle parole, refusi di copia) è regolarizzata **tacitamente** e dichiarata una volta per tutte (`criteri-trascrizione.md` + `editorialDecl`): nessun `choice`/`orig`/`reg`/`sic`/`corr`/`abbr`/`expan` inline. Restano marcati e attribuiti per-istanza i soli interventi **congetturali** (`supplied`) e **sostanziali** (varianti d'apparato `app`/`rdg`).
 5. **Tutto verificabile.** Non proporre nulla che non superi la catena §3.
 
 ## 2. Ciclo operativo
@@ -79,11 +79,10 @@ Output: il solo attributo ana="…" + 1 riga di motivazione per asse non ovvio.
 ### Task C — Apparato genetico
 **PROMPT**:
 ```
-Codifica il lavoro d'autrice su questo passo (vedi teiText-guida-codifica.md):
-- correzione: <subst><del>…</del><add>…</add></subst> con @hand/@place
+Codifica il lavoro d'autrice SOSTANZIALE su questo passo (vedi teiText-guida-codifica.md). L'apparato genetico va SOLO dentro <app>/<rdg>; le correzioni puramente grafiche NON si marcano (normalizzazione silenziosa):
+- variante sostanziale d'autrice (aggiunta/cassatura/sostituzione): <app><lem wit="#txt-c">…</lem><rdg wit="#txt-b0" varSeq="n"><subst><del>…</del><add>…</add></subst></rdg></app>  (add/del/subst con @hand/@place stanno DENTRO il rdg)
 - ritracciatura del tratto bruno T0→T1: <retrace hand="#ink_1">…</retrace>  (mai #ink_3-dark, mai dentro <add>)
 - aggiunta prudenziale scura tardiva T3: <add hand="#ink_3-dark">…</add>
-- variante di fase: <app><lem wit="#txt-c">…</lem><rdg wit="#txt-b0" varSeq="n">…</rdg></app>
 Non promuovere una rdg a lem senza istruzione dell'editore.
 Output: il frammento XML dell'apparato, poi fermati.
 ```
@@ -386,7 +385,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
 1. **Propose, don't decide.** Every intervention is a proposal; the human editor validates.
 2. **Never invent readings.** Illegible → `<unclear>`/`<gap>`; conjecture → `<supplied resp="#editor" cert="…">`. If unsure, **ask**.
 3. **Declared ids only.** `@ana`/`@hand`/`@wit`/`@resp` point to ids actually present in the §0 attachments. An undeclared value **does not exist**: flag it.
-4. **No silent normalisation.** Document (`orig`/`sic`/`abbr`/`del`) ≠ interpretation (`reg`/`corr`/`expan`/`supplied`).
+4. **Silent graphic normalisation.** Spelling (accents, abbreviations, word division, copy slips) is regularised **tacitly** and declared once (`criteri-trascrizione.md` + `editorialDecl`): no inline `choice`/`orig`/`reg`/`sic`/`corr`/`abbr`/`expan`. Only **conjectural** (`supplied`) and **substantive** interventions (apparatus variants `app`/`rdg`) stay marked and attributed per-instance.
 5. **Everything verifiable.** Propose nothing that fails the §3 chain.
 
 ## 2. Operating loop
@@ -430,11 +429,10 @@ Output: the ana="…" attribute only + 1 line of rationale per non-obvious axis.
 ### Task C — Genetic apparatus
 **PROMPT**:
 ```
-Encode the authorial work on this passage (see teiText-guida-codifica.md):
-- correction: <subst><del>…</del><add>…</add></subst> with @hand/@place
+Encode the SUBSTANTIVE authorial work on this passage (see teiText-guida-codifica.md). Genetic apparatus goes ONLY inside <app>/<rdg>; purely graphic corrections are NOT marked (silent normalisation):
+- substantive authorial variant (addition/deletion/substitution): <app><lem wit="#txt-c">…</lem><rdg wit="#txt-b0" varSeq="n"><subst><del>…</del><add>…</add></subst></rdg></app>  (add/del/subst with @hand/@place go INSIDE the rdg)
 - brown re-inking T0→T1: <retrace hand="#ink_1">…</retrace>  (never #ink_3-dark, never inside <add>)
 - late cautionary dark addition T3: <add hand="#ink_3-dark">…</add>
-- phase variant: <app><lem wit="#txt-c">…</lem><rdg wit="#txt-b0" varSeq="n">…</rdg></app>
 Do not promote a rdg to lem without the editor's instruction.
 Output: the apparatus XML fragment, then stop.
 ```
