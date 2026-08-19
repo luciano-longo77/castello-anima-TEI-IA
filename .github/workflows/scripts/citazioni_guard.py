@@ -33,6 +33,13 @@ def txt(e): return "".join(e.itertext()).strip() if e is not None else ""
 TEXT = sys.argv[1] if len(sys.argv) > 1 else "tei/text/castello-anima-teiText.xml"
 R = etree.parse(TEXT).getroot()
 
+# La grammatica delle citazioni riguarda il TESTO di lettura: scopiamo i controlli
+# A e B dentro <text>. Le <quote>-menzione della prosa del teiHeader (es. «castello»),
+# viste solo su file risolto, non sono citazioni e restano escluse. La verifica C sulle
+# <fs> resta su tutto il documento (lo standOff e' fratello di <text>, non dentro).
+TXT = R.find(".//" + T("text"))
+SCOPE = TXT if TXT is not None else R
+
 def enclosing_seg(e):
     p = e.getparent()
     while p is not None:
@@ -43,7 +50,7 @@ def enclosing_seg(e):
 errors = []
 
 # --- A. nessuna <quote> fuori da <cit> (citazione non marcata) ---
-for q in R.iter(T("quote")):
+for q in SCOPE.iter(T("quote")):
     p = q.getparent()
     if p is None or ln(p) != "cit":
         seg = enclosing_seg(q)
@@ -53,7 +60,7 @@ for q in R.iter(T("quote")):
 
 # --- B. grammatica di ogni <cit> ---
 cit_ids = set()
-for c in R.iter(T("cit")):
+for c in SCOPE.iter(T("cit")):
     seg = enclosing_seg(c)
     where = (seg.get(Q("id")) if seg is not None else None) or "?"
     cid = c.get(Q("id"))
