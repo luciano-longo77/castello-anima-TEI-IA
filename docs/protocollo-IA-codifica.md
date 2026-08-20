@@ -55,14 +55,14 @@ Per **ogni** blocco: **① incolla il PROMPT → ② l'AI produce l'OUTPUT → �
 Segmenta il capitolo {N} del Libro III in <seg>, seguendo teiText-guida-codifica.md.
 - gerarchia: div[@type="chapter" n="{N}"] > (head, argument?) > p[@n] > seg
 - un <seg> = un'unità di senso annotabile; rispetta i confini di paragrafo del testo
-- xml:id di ogni seg = seg-c{N}p{P}-{label}  (label: parola-chiave italiana minuscola)
+- xml:id di ogni seg = seg-b{L}-c{N}p{P}-{label}  (b{L} = numero del libro: b1/b2/b3; label: parola-chiave italiana minuscola)
 - materialità dov'è: <pb n="…r/v"/>, <fw>, <lb break="no"/> solo su parola spezzata
 - NON assegnare @ana in questo task
 - se il capitolo è lungo, procedi per BLOCCHI di paragrafi dichiarando dove ti fermi;
   non troncare mai un elemento XML aperto (meglio meno paragrafi, ma completi)
 Output: solo il frammento XML del capitolo, poi fermati.
 ```
-**VERIFICA**: `xmllint --noout` (buona formazione) + `regole_fissate_guard.py` (naming `seg-cNpP-label`).
+**VERIFICA**: `xmllint --noout` (buona formazione) + `regole_fissate_guard.py` (naming `seg-b<L>-cNpP-label`).
 
 ### Task B — Assegnare `@ana` a un `<seg>`
 **PROMPT**:
@@ -172,7 +172,7 @@ PY
 ## 4. Output di trasparenza
 **(a) Per ogni intervento** l'AI emette una riga tracciabile:
 ```
-[regola: R2 naming | fonte: interpretativa | @resp=#editor | @cert=medium] seg-c3p4-abbandono: label da «abbandono» (§ operation-delimitazione)
+[regola: R2 naming | fonte: interpretativa | @resp=#editor | @cert=medium] seg-b3-c3p4-abbandono: label da «abbandono» (§ operation-delimitazione)
 ```
 **(b) A fine sessione** una voce per il `<revisionDesc>`:
 ```xml
@@ -251,7 +251,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
     </sch:rule>
     <sch:rule context="tei:seg[@xml:id]">
       <sch:assert test="matches(@xml:id,'^seg-b\d+-(c\d+p\d+[a-z]?|pro-p\d+|tit)-')"
-        >R2: xml:id del seg fuori convenzione (seg-cNpP-label | seg-pro-pP-* | seg-tit-*).</sch:assert>
+        >R2: xml:id del seg fuori convenzione (seg-b<L>-cNpP-label | seg-b<L>-pro-pP-* | seg-b<L>-tit-*).</sch:assert>
     </sch:rule>
     <sch:rule context="tei:cit[@ana] | tei:rs[@ana] | tei:term[@ana] | tei:quote[@ana]">
       <sch:assert test="false()">R3: @ana solo sul seg (mai su cit/rs/term/quote).</sch:assert>
@@ -406,7 +406,7 @@ For **every** block: **① paste the PROMPT → ② the AI yields the OUTPUT →
 Segment chapter {N} of Book III into <seg>, following teiText-guida-codifica.md.
 - hierarchy: div[@type="chapter" n="{N}"] > (head, argument?) > p[@n] > seg
 - one <seg> = one annotatable sense-unit; respect the text's paragraph boundaries
-- each seg xml:id = seg-c{N}p{P}-{label}  (label: lowercase Italian keyword)
+- each seg xml:id = seg-b{L}-c{N}p{P}-{label}  (b{L} = book number: b1/b2/b3; label: lowercase Italian keyword)
 - materiality where it is: <pb n="…r/v"/>, <fw>, <lb break="no"/> only on a split word
 - do NOT assign @ana in this task
 - if the chapter is long, proceed in paragraph BLOCKS stating where you stop;
@@ -523,7 +523,7 @@ PY
 ## 4. Transparency outputs
 **(a) For each intervention** the AI emits a traceable line:
 ```
-[rule: R2 naming | source: interpretive | @resp=#editor | @cert=medium] seg-c3p4-abbandono: label from «abbandono» (§ operation-delimitazione)
+[rule: R2 naming | source: interpretive | @resp=#editor | @cert=medium] seg-b3-c3p4-abbandono: label from «abbandono» (§ operation-delimitazione)
 ```
 **(b) At session end** a `<revisionDesc>` entry:
 ```xml
@@ -602,7 +602,7 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
     </sch:rule>
     <sch:rule context="tei:seg[@xml:id]">
       <sch:assert test="matches(@xml:id,'^seg-b\d+-(c\d+p\d+[a-z]?|pro-p\d+|tit)-')"
-        >R2: seg xml:id off-convention (seg-cNpP-label | seg-pro-pP-* | seg-tit-*).</sch:assert>
+        >R2: seg xml:id off-convention (seg-b<L>-cNpP-label | seg-b<L>-pro-pP-* | seg-b<L>-tit-*).</sch:assert>
     </sch:rule>
     <sch:rule context="tei:cit[@ana] | tei:rs[@ana] | tei:term[@ana] | tei:quote[@ana]">
       <sch:assert test="false()">R3: @ana only on the seg (never on cit/rs/term/quote).</sch:assert>
