@@ -24,7 +24,7 @@
 
 ## 1. Cos'è questo file
 
-`castello-anima-teiText.xml` contiene il **testo del manoscritto** e i suoi quattro strati di annotazione. I **metadati** (mani, testimoni, tassonomia, criteri editoriali) non sono qui: stanno nel `teiHeader`, richiamato via `xi:include`. Per capire *cosa significa* un `@ana`, una mano o un testimone, si va nell'header (vedi [`../header/teiHeader-README.md`](../header/teiHeader-README.md)). Per capire *dov'è* e *com'è codificato* un passo, si usa questa guida.
+`castello-anima-teiText.xml` contiene il **testo del manoscritto** e i suoi quattro strati di annotazione. I **metadati** (mani, testimoni, tassonomia, criteri editoriali) non sono qui: stanno nel `teiHeader`, richiamato via `xi:include`. Per capire *cosa significa* un `@ana`, una mano o un testimone, si va nell'header (vedi [`../header/teiHeader-README.md`](../header/teiHeader-README.md)). Per capire *dov'è* e *com'è codificato* un passo, si usa la guida del testo ([`../text/teiText-GUIDA.md`](../text/teiText-GUIDA.md)).
 
 Il testo è dato nella forma **interpretativa** costituita, a normalizzazione grafica **silenziosa e dichiarata** ([`../../docs/criteri-trascrizione.md`](../../docs/criteri-trascrizione.md)); l'unico apparato inline è quello **sostanziale** (`app`/`lem`/`rdg`). Riferimento tecnico completo del file: [`teiText-README.md`](teiText-README.md).
 
@@ -108,7 +108,7 @@ Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact
 
 ## 7. Riferimenti utili
 
-- Riferimento tecnico del file: [`teiText-README.md`](teiText-README.md)
+- Riferimento tecnico del file: [`teiText-README.md`](../text/teiText-README.md)
 - Metodologia di codifica: [`docs/teiText-guida-codifica.md`](../../docs/teiText-guida-codifica.md)
 - Criteri di trascrizione e normalizzazione: [`docs/criteri-trascrizione.md`](../../docs/criteri-trascrizione.md)
 - Indice d'impatto: [`docs/indice-impatto.md`](../../docs/indice-impatto.md)
