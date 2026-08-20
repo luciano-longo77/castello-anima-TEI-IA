@@ -1,5 +1,4 @@
 # Indice d'impatto (`impact-index`)
-
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
@@ -50,7 +49,7 @@ il secondo prova.
 L'indice non è un modulo isolato: è il terzo anello di una catena che va dal dato materiale alla misura sperimentale.
 
 ```
-trascrizione diplomatica
+testo costituito (trascrizione interpretativa)
         ↓
 annotazione TEI interpretativa      ← <seg> + tassonomia @ana (func, operation, risk,
         ↓                             exposition, phase, mystic_state, relation) + @hand/@place
@@ -167,7 +166,7 @@ prodotto dal calcolo, mai immesso dall'annotatore. Si usa `<fs>`, non `<val>`.
 
 ```xml
 <!-- nel testo: la sola categoria discreta -->
-<seg xml:id="seg-c8-desiderio"
+<seg xml:id="seg-b3-c1p8-desiderio"
      ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical
           #phase-mediana #phase-critical #mystic_state-quiete
           #relation-mistica-passiva-quiete #impact-high"
@@ -175,7 +174,7 @@ prodotto dal calcolo, mai immesso dall'annotatore. Si usa `<fs>`, non `<val>`.
 
 <!-- in standoff, stesso documento del testo: il fascio computabile -->
 <standOff type="impact-index">
-  <fs xml:id="idx-seg-c8-desiderio" corresp="#seg-c8-desiderio" cert="medium">
+  <fs xml:id="idx-seg-b3-c1p8-desiderio" corresp="#seg-b3-c1p8-desiderio" cert="medium">
     <f name="N_band"><symbol value="critica"/></f>   <!-- banda scelta dall'annotatore -->
     <f name="A_band"><symbol value="alta"/></f>      <!-- banda scelta dall'annotatore -->
     <f name="N"><numeric value="0.90"/></f>          <!-- banda Critica → ancora 0.90 -->
@@ -221,8 +220,8 @@ python3 impact_index.py tei/text/castello-anima-teiText.xml --bands bande.csv
 
 ```csv
 # bande.csv  —  id;banda_N;banda_A
-seg-c8-desiderio;critica;alta
-seg-c2-purificazione;critica;alta
+seg-b3-c1p8-desiderio;critica;alta
+seg-b3-c2p1-purificazione;critica;alta
 ```
 
 Due annotatori con le stesse due bande ottengono **output identico**: la riproducibilità è
