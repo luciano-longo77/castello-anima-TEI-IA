@@ -76,10 +76,12 @@ jobs:
         run: python3 .github/workflows/scripts/citazioni_guard.py "$TEXT"
       - name: Guardia commenti (grammatica dei commenti-seg)
         run: python3 .github/workflows/scripts/commenti_guard.py "$TEXT"
-      - name: Guardia interventi editoriali (normalizzazione ↔ genetico)
+      - name: Guardia interventi editoriali (supplied/subst; normalizzazione silenziosa)
         run: python3 .github/workflows/scripts/interventi_guard.py "$TEXT"
       - name: Guardia regole-fissate (retrace/naming/@ana-seg/sobrietà)
         run: python3 .github/workflows/scripts/regole_fissate_guard.py "$TEXT"
+      - name: Guardia anti-corruzione whitespace (subst/choice)
+        run: python3 .github/workflows/scripts/whitespace_guard.py "$TEXT"
       - name: Guardia Schematron indice d'impatto (bande + ancore + formula)
         run: |
           python3 - <<'PY'
