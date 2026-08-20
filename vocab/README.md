@@ -1,6 +1,19 @@
 # `vocab/` — vocabolario SKOS del *Castello dell'anima*
+# Intertestualità sotto sorveglianza
+## *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA) [![Vocabolario SKOS](https://img.shields.io/badge/SKOS-vocabolario%20online-1b7f5c)](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
+
+---
 
 Vocabolario controllato **SKOS** degli assi interpretativi dell'edizione, a supporto degli argomenti **FAIR** (interoperabile, riusabile, interrogabile via SPARQL). Non aggiunge contenuto interpretativo: dà alle categorie di `@ana` una forma standard, dereferenziabile.
+
+> 🔗 **Esplora il vocabolario online** — navigabile, con ricerca e URI dereferenziabili (ci clicchi e si apre):
+> **<https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/>**
+> Una pagina per concetto, es. [`…/vocab/site/?c=rischio-precisatio`](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/?c=rischio-precisatio). Il Turtle grezzo (per le macchine): [`castello-anima-vocab.ttl`](castello-anima-vocab.ttl).
 
 ## Patto fondamentale: **genera, non editare**
 
@@ -33,7 +46,9 @@ Base URI: `https://w3id.org/castello-anima-vocab/` (ogni concetto = base + `xml:
 | File | Cosa |
 |---|---|
 | `castello-anima-vocab.ttl` | il vocabolario (GENERATO — non editare) |
+| `site/index.html` | sito navigabile: una pagina per concetto (`?c=<id>`), legge il `.ttl` live |
 | `alignments.tsv` | allineamenti esterni opzionali (fonte per la rigenerazione) |
 | `../tools/gen_skos.py` | il generatore (solo `lxml`) |
+| `../tools/4-vocabolario-skos.html` | viewer offline (dati incorporati, apribile da disco) |
 | `../.github/workflows/scripts/skos_guard.py` | guardia round-trip (solo `lxml`) |
 | `../.github/workflows/vocab-skos.yml` | CI: sync + round-trip |
