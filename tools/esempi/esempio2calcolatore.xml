@@ -3,7 +3,7 @@
      Uso: apri 2-calcolatore-indice.html, incolla questo <seg> nell'area appunti e premi
      "Rileva operation e xml:id"; poi scegli banda N e banda A per ottenere I, la classe e la <fs>. -->
 
-<seg xml:id="seg-III-tit" type="indicatio" subtype="titolo-dottrinale" hand="#ink_1" cert="medium"
+<seg xml:id="seg-b3-tit-castello" type="indicatio" subtype="titolo-dottrinale" hand="#ink_1" cert="medium"
      ana="#legittimazione-tradizione 
      #operation-delimitazione 
      #risk-ambiguita 
