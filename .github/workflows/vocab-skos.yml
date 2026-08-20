@@ -1,0 +1,52 @@
+name: Vocab SKOS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tei/taxonomy/tassonomia-gh.xml"
+      - "tei/text/castello-anima-teiText.xml"
+      - "vocab/**"
+      - "tools/gen_skos.py"
+      - ".github/workflows/scripts/skos_guard.py"
+      - ".github/workflows/vocab-skos.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "tei/taxonomy/tassonomia-gh.xml"
+      - "tei/text/castello-anima-teiText.xml"
+      - "vocab/**"
+      - "tools/gen_skos.py"
+  workflow_dispatch:
+
+env:
+  TAX:  tei/taxonomy/tassonomia-gh.xml
+  TEXT: tei/text/castello-anima-teiText.xml
+  BASE: https://w3id.org/castello-anima-vocab/
+  TTL:  vocab/castello-anima-vocab.ttl
+  ALIGN: vocab/alignments.tsv
+
+jobs:
+  vocab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install lxml
+      - name: File richiesti presenti
+        run: |
+          test -f "$TAX"  || { echo "::error::$TAX non trovato"; exit 1; }
+          test -f "$TEXT" || { echo "::error::$TEXT non trovato"; exit 1; }
+          test -f "$TTL"  || { echo "::error::$TTL non trovato (genera con tools/gen_skos.py)"; exit 1; }
+      - name: Sync — il .ttl committato == rigenerazione dalla tassonomia (byte-identico)
+        run: |
+          python3 tools/gen_skos.py "$TAX" "$BASE" "$ALIGN" > /tmp/regen.ttl
+          if ! diff -u "$TTL" /tmp/regen.ttl; then
+            echo "::error::vocab/castello-anima-vocab.ttl NON allineato alla tassonomia. Rigenera: python3 tools/gen_skos.py $TAX $BASE $ALIGN > $TTL"
+            exit 1
+          fi
+          echo "Sync OK: il vocabolario SKOS e' la rigenerazione esatta della tassonomia."
+      - name: Round-trip — ogni @ana e banda del teiText risolve nel vocabolario
+        run: python3 .github/workflows/scripts/skos_guard.py "$TEXT" "$TTL"
