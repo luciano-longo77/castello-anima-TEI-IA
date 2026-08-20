@@ -1,9 +1,12 @@
 # Protocollo operativo per la codifica assistita da AI · AI-assisted encoding runbook
-### *Il Castello dell'anima* (TEI-IA)
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
-[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![CC BY 4.0](https://img.shields.io/badge/licenza-CC%20BY%204.0-7b2d3b)](https://creativecommons.org/licenses/by/4.0/)
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
 
-**Autrice / Author of the work**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703) · **Editor**: Luciano Longo
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
 
 *Lingua · Language: [Italiano](#italiano) · [English](#english)*
 
@@ -27,7 +30,7 @@
 | 5 | `docs/anagrafe-citazioni.md` | citazioni note + carte |
 | 6 | il capitolo/modulo su cui si lavora | `tei/text/…` |
 
-**Ambiente di verifica** (locale come in CI): `python3` + `lxml`, `xmllint` (`libxml2-utils`), `jing`; le 7 guardie in `.github/workflows/scripts/`, `schema/tei_all.rng`, `schema/impactindex.sch`. **Per la riproducibilità, fissa e registra le versioni** (nel change log o in un file di ambiente): TEI P5 (release del `tei_all.rng` vendorizzato), `python`, `lxml`, `libxml2`/`xmllint`, `jing`; e — quando si usa l'AI — **modello e versione**.
+**Ambiente di verifica** (locale come in CI): `python3` + `lxml`, `xmllint` (`libxml2-utils`), `jing`; le 8 guardie in `.github/workflows/scripts/`, `schema/tei_all.rng`, `schema/impactindex.sch`. **Per la riproducibilità, fissa e registra le versioni** (nel change log o in un file di ambiente): TEI P5 (release del `tei_all.rng` vendorizzato), `python`, `lxml`, `libxml2`/`xmllint`, `jing`; e — quando si usa l'AI — **modello e versione**.
 
 **Stato di lavoro**: si opera **su un ramo, mai su `main`**; **un capitolo/segmento per volta**; nulla si consegna se non passa §3.
 
@@ -137,7 +140,7 @@ xmllint --nofixup-base-uris --xinclude "$TEXT" > resolved.xml
 # 3. RelaxNG (TEI All vendorizzato) sul documento risolto
 jing "$RNG" resolved.xml
 
-# 4. Le sette guardie (sul modulo, xi:include NON risolto)
+# 4. Le otto guardie (sul modulo, xi:include NON risolto)
 python3 .github/workflows/scripts/e2_guard.py            "$TEXT" "$TAX"
 python3 .github/workflows/scripts/cooccurrence_guard.py  "$TEXT" "$TAX"   # $TAX esplicito = stessa tassonomia di e2
 python3 .github/workflows/scripts/cit_glossa_guard.py    "$TEXT"
@@ -145,6 +148,7 @@ python3 .github/workflows/scripts/citazioni_guard.py     "$TEXT"
 python3 .github/workflows/scripts/commenti_guard.py      "$TEXT"
 python3 .github/workflows/scripts/interventi_guard.py    "$TEXT"
 python3 .github/workflows/scripts/regole_fissate_guard.py "$TEXT"
+python3 .github/workflows/scripts/whitespace_guard.py    "$TEXT"   # anti-corruzione: whitespace intra-parola in subst/choice
 
 # 5. Schematron indice d'impatto — impactindex.sch del repo: queryBinding="xslt" (XSLT 1.0),
 #    regole INTRA-MODULO (fs + seg sono nel testo), quindi gira su $TEXT NON risolto. Verificato: OK.
@@ -178,7 +182,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
 
 ## 📎 Appendice A — Invarianti auto-verificabili (XPath/Schematron)
 
-> Le **stesse invarianti** della catena §3, come **specifica leggibile** in Schematron, perché l'AI ne faccia un **controllo preliminare dichiarativo** prima di ogni output. **Tre livelli distinti, non confondibili**: (1) l'auto-verifica dell'AI è un *pre-check logico*, **non** è prova di validazione; (2) l'**unico controllo autoritativo** è la pipeline §3 (le 7 guardie Python + lo Schematron `impactindex.sch` del repo); (3) il **giudizio editoriale** umano resta sovrano. **Autorità vs. specifica**: le **sette guardie Python + lo Schematron `impactindex.sch` del repo** sono l'**implementazione autoritativa** (l'asse è ricavato *semanticamente* dalla tassonomia); questa Appendice ne è una **specifica leggibile**, in cui alcuni assi sono formalizzati **per prefisso** (`starts-with`). In caso di divergenza, **vince l'implementazione autoritativa**.
+> Le **stesse invarianti** della catena §3, come **specifica leggibile** in Schematron, perché l'AI ne faccia un **controllo preliminare dichiarativo** prima di ogni output. **Tre livelli distinti, non confondibili**: (1) l'auto-verifica dell'AI è un *pre-check logico*, **non** è prova di validazione; (2) l'**unico controllo autoritativo** è la pipeline §3 (le 8 guardie Python + lo Schematron `impactindex.sch` del repo); (3) il **giudizio editoriale** umano resta sovrano. **Autorità vs. specifica**: le **otto guardie Python + lo Schematron `impactindex.sch` del repo** sono l'**implementazione autoritativa** (l'asse è ricavato *semanticamente* dalla tassonomia); questa Appendice ne è una **specifica leggibile**, in cui alcuni assi sono formalizzati **per prefisso** (`starts-with`). In caso di divergenza, **vince l'implementazione autoritativa**.
 >
 > ⚙️ **Processore.** Questo schema è `queryBinding="xslt2"` (usa `tokenize`/`matches`/`every`/`abs`): richiede uno Schematron **XSLT2/3** (es. SchXslt+Saxon). **Verificato: `lxml.isoschematron` lo RIFIUTA**, quindi **non** è il motore della CI (che esegue le guardie Python + `impactindex.sch`, `queryBinding="xslt"` XSLT 1.0). L'Appendice A è dunque **riferimento/spec**, non un secondo motore di pipeline. *Il blocco Schematron qui sotto è identico a quello del §Appendix inglese: i `@test` XPath non cambiano fra le due lingue; variano solo i commenti e i messaggi.*
 
@@ -377,7 +381,7 @@ Questo protocollo attua la dichiarazione d'uso dell'IA del repository — [**AI-
 | 5 | `docs/anagrafe-citazioni.md` | known citations + folios |
 | 6 | the chapter/module in hand | `tei/text/…` |
 
-**Verification environment** (local, as in CI): `python3` + `lxml`, `xmllint` (`libxml2-utils`), `jing`; the 7 guards in `.github/workflows/scripts/`, `schema/tei_all.rng`, `schema/impactindex.sch`. **For reproducibility, pin and record the versions** (in the change log or an environment file): TEI P5 (the vendored `tei_all.rng` release), `python`, `lxml`, `libxml2`/`xmllint`, `jing`; and — when the AI is used — **model and version**.
+**Verification environment** (local, as in CI): `python3` + `lxml`, `xmllint` (`libxml2-utils`), `jing`; the 8 guards in `.github/workflows/scripts/`, `schema/tei_all.rng`, `schema/impactindex.sch`. **For reproducibility, pin and record the versions** (in the change log or an environment file): TEI P5 (the vendored `tei_all.rng` release), `python`, `lxml`, `libxml2`/`xmllint`, `jing`; and — when the AI is used — **model and version**.
 
 **Working state**: work **on a branch, never `main`**; **one chapter/segment at a time**; nothing ships unless it passes §3.
 
@@ -487,7 +491,7 @@ xmllint --nofixup-base-uris --xinclude "$TEXT" > resolved.xml
 # 3. RelaxNG (vendored TEI All) on the resolved document
 jing "$RNG" resolved.xml
 
-# 4. The seven guards (on the module, xi:include NOT resolved)
+# 4. The eight guards (on the module, xi:include NOT resolved)
 python3 .github/workflows/scripts/e2_guard.py            "$TEXT" "$TAX"
 python3 .github/workflows/scripts/cooccurrence_guard.py  "$TEXT" "$TAX"   # explicit $TAX = same taxonomy as e2
 python3 .github/workflows/scripts/cit_glossa_guard.py    "$TEXT"
@@ -495,6 +499,7 @@ python3 .github/workflows/scripts/citazioni_guard.py     "$TEXT"
 python3 .github/workflows/scripts/commenti_guard.py      "$TEXT"
 python3 .github/workflows/scripts/interventi_guard.py    "$TEXT"
 python3 .github/workflows/scripts/regole_fissate_guard.py "$TEXT"
+python3 .github/workflows/scripts/whitespace_guard.py    "$TEXT"   # anti-corruption: intra-word whitespace in subst/choice
 
 # 5. Impact-index Schematron — repo's impactindex.sch: queryBinding="xslt" (XSLT 1.0),
 #    INTRA-MODULE rules (fs + seg are in the text), so it runs on the UNRESOLVED $TEXT. Verified: OK.
@@ -528,7 +533,7 @@ This runbook implements the repository's AI-use disclosure — [**AI-USE.md**](h
 
 ## 📎 Appendix A — Self-verifiable invariants (XPath/Schematron)
 
-> The **same invariants** as the §3 chain, as a **readable specification** in Schematron, for the AI to run as a **declarative pre-check** before every output. **Three distinct, non-interchangeable levels**: (1) the AI's self-check is a *logical pre-check*, **not** evidence of validation; (2) the **sole authoritative** check is the §3 pipeline (the 7 Python guards + the repo's `impactindex.sch`); (3) human **editorial judgement** remains sovereign. **Authority vs. specification**: the **seven Python guards + the repo's `impactindex.sch`** are the **authoritative implementation** (the axis is derived *semantically* from the taxonomy); this appendix is a **readable specification** in which some axes are formalised **by prefix** (`starts-with`). On divergence, **the authoritative implementation wins**.
+> The **same invariants** as the §3 chain, as a **readable specification** in Schematron, for the AI to run as a **declarative pre-check** before every output. **Three distinct, non-interchangeable levels**: (1) the AI's self-check is a *logical pre-check*, **not** evidence of validation; (2) the **sole authoritative** check is the §3 pipeline (the 8 Python guards + the repo's `impactindex.sch`); (3) human **editorial judgement** remains sovereign. **Authority vs. specification**: the **eight Python guards + the repo's `impactindex.sch`** are the **authoritative implementation** (the axis is derived *semantically* from the taxonomy); this appendix is a **readable specification** in which some axes are formalised **by prefix** (`starts-with`). On divergence, **the authoritative implementation wins**.
 >
 > ⚙️ **Processor.** This schema is `queryBinding="xslt2"` (uses `tokenize`/`matches`/`every`/`abs`): it needs an **XSLT2/3** Schematron (e.g. SchXslt+Saxon). **Verified: `lxml.isoschematron` REJECTS it**, so it is **not** the CI engine (which runs the Python guards + `impactindex.sch`, `queryBinding="xslt"` XSLT 1.0). Appendix A is therefore **reference/spec**, not a second pipeline engine. *The Schematron block below is identical to the Italian §Appendix one: the XPath `@test`s do not change between languages; only comments and messages do.*
 
