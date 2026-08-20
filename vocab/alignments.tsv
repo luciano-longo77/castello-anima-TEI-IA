@@ -1,0 +1,6 @@
+# Allineamenti esterni SKOS (opzionali) — 3 colonne separate da TAB:
+#   <xml:id categoria>	<closeMatch|exactMatch>	<URI esterno>
+# Vuoto di default. Decommenta/aggiungi righe: alla prossima rigenerazione entrano nel .ttl.
+# Esempi (Wikidata) — scelta editoriale per-concetto, da validare:
+# risk-quietismo	closeMatch	http://www.wikidata.org/entity/Q1478059
+# risk-panteismo	closeMatch	http://www.wikidata.org/entity/Q42005
