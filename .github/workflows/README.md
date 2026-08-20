@@ -31,9 +31,10 @@ Sul file `tei/text/castello-anima-teiText.xml`, in sequenza:
 6. **Guardia cit/glossa** — `cit` dentro `seg` con `quote`; `note type="glossa"` vuota in `add` (asse operation); nessuna `fs` verso cit/note.
 7. **Guardia citazioni** — grammatica di `cit`/`quote`/`bibl` (struttura del `cit`, `quote@xml:lang`, presenza e forma di `bibl`/`ref`).
 8. **Guardia commenti** — grammatica dei commenti `<!-- … -->` sui `seg` (clausola N/A/F→I, ancore col decimale, `commento-I == fs-I`, keyword ammesse).
-9. **Guardia interventi editoriali** — coerenza dei due piani: `reg`/`expan` senza `@resp` (attribuzione globale); `corr` e `supplied` con `@resp` + `@cert`; `subst` ben formato.
-10. **Guardia regole-fissate** — invarianti stratigrafiche/strutturali: `retrace` = `#ink_1` (mai `#ink_3-dark`, mai annidato in `add`); naming `seg-cNpP-label`; `@ana` interpretativo solo sul `seg`; sobrietà del `#phase-critical`.
-11. **Schematron** (`schema/impactindex.sch`) — R1 vocabolario bande, R2 ancore + formula, R3 classe ↔ I.
+9. **Guardia interventi editoriali** — ogni `supplied` con `@resp` + `@cert`; `subst` ben formato. *(La normalizzazione grafica è silenziosa e dichiarata: nessun `choice`.)*
+10. **Guardia regole-fissate** — invarianti stratigrafiche/strutturali: `retrace` = `#ink_1` (mai `#ink_3-dark`, mai annidato in `add`); naming `seg-b<L>-cNpP-label`; `@ana` interpretativo solo sul `seg`; sobrietà del `#phase-critical`.
+11. **Guardia anti-corruzione whitespace** — nessun whitespace iniettato dentro `subst`/`choice` intra-parola (anti-corruzione da riformattazione dell'editor).
+12. **Schematron** (`schema/impactindex.sch`) — R1 vocabolario bande, R2 ancore + formula, R3 classe ↔ I.
 
 ### `main.yml` — Validate Taxonomy
 Due job:
@@ -44,7 +45,7 @@ Due job:
 Esegue `tools/gen_data_dictionary.py` e, se `docs/data-dictionary.md` è cambiato, lo **committa da solo** (con `git pull --rebase` prima del push per evitare collisioni). Richiede *Read and write permissions* per le Actions.
 
 ### `gen-interventi-editoriali.yml` — Genera interventi-editoriali
-Esegue `tools/estrattore_interventi.py` e, se `docs/interventi-editoriali.md` è cambiato, lo **committa da solo** (stesso schema del data-dictionary). Rigenera il rendiconto degli interventi editoriali (normalizzazioni e apparato genetico) direttamente dal teiText. Richiede *Read and write permissions* per le Actions.
+Esegue `tools/estrattore_interventi.py` e, se `docs/interventi-editoriali.md` è cambiato, lo **committa da solo** (stesso schema del data-dictionary). Rigenera il rendiconto degli interventi editoriali (apparato sostanziale/genetico e integrazioni) direttamente dal teiText. Richiede *Read and write permissions* per le Actions.
 
 ## Le guardie (`scripts/`)
 
@@ -57,8 +58,9 @@ Script Python indipendenti, richiamati dai workflow ma eseguibili anche **in loc
 | `cit_glossa_guard.py` | modello intertestuale: `cit` nel `seg` con `quote`; `note glossa` vuota in `add` con `@ana` operation; indice solo sul `seg` |
 | `citazioni_guard.py` | grammatica delle citazioni: struttura di `cit`, `quote@xml:lang`, forma e presenza di `bibl`/`ref` |
 | `commenti_guard.py` | grammatica dei commenti dei `seg` (clausola N/A/F→I, ancore col decimale, `commento-I == fs-I`, keyword `Genetico:`/`Norm:`) |
-| `interventi_guard.py` | coerenza normalizzazione ↔ genetico: `reg`/`expan` senza `@resp`; `corr`/`supplied` con `@resp` + `@cert`; `subst` ben formato |
-| `regole_fissate_guard.py` | regole fissate: `retrace` = `#ink_1` (mai `#ink_3-dark`, mai annidato in `add`); naming `seg-cNpP`; `@ana` solo sul `seg`; sobrietà del `#phase-critical` |
+| `interventi_guard.py` | interventi marcati: ogni `supplied` con `@resp` + `@cert`; `subst` ben formato (controlli `reg`/`expan`/`corr` legacy, vacui: 0 `choice`) |
+| `regole_fissate_guard.py` | regole fissate: `retrace` = `#ink_1` (mai `#ink_3-dark`, mai annidato in `add`); naming `seg-b<L>-cNpP`; `@ana` solo sul `seg`; sobrietà del `#phase-critical` |
+| `whitespace_guard.py` | anti-corruzione: nessun whitespace iniettato dentro `subst`/`choice` intra-parola (riformattazione dell'editor) |
 
 ## Dove stanno gli schemi
 
@@ -86,6 +88,7 @@ python3 .github/workflows/scripts/citazioni_guard.py    tei/text/castello-anima-
 python3 .github/workflows/scripts/commenti_guard.py     tei/text/castello-anima-teiText.xml
 python3 .github/workflows/scripts/interventi_guard.py   tei/text/castello-anima-teiText.xml
 python3 .github/workflows/scripts/regole_fissate_guard.py tei/text/castello-anima-teiText.xml
+python3 .github/workflows/scripts/whitespace_guard.py    tei/text/castello-anima-teiText.xml
 ```
 
 ## Regola pratica: dove va cosa
