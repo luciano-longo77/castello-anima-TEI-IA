@@ -1,5 +1,4 @@
-successfully downloaded text file (SHA: 407bd80db2d4e8bcaf7ea8598ae20eb3693edeba)
-[Resource from github at repo://luciano-longo77/castello-anima-tei-ia/sha/c8c73ca48671d5056fe3a3beb640289e22acff19/contents/docs/base-dati_campionamento.md] # Base dati per il campionamento
+# Base dati per il campionamento
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
@@ -328,7 +327,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 - *Pater noster, qui es in caelis* (c. 21r)
 - *Te Deum* (*Dignare Domine / Pleni sunt caeli / Te Deum laudamus*) (cc. 100r, 100v, 113v, 114r, 216r, 252v)
 
-**Totale attestato: 28 citazioni distinte** (23 bibliche + 2 patristiche + 1 scolastica + 2 liturgiche).
+**Totale attestato: 32 citazioni distinte** (26 bibliche + 3 patristiche + 1 scolastica + 2 liturgiche). *(Conteggio allineato all'anagrafe delle citazioni, `docs/anagrafe-citazioni.md`, registro dedicato.)*
 
 ## 4. Citazioni rilevanti
 
