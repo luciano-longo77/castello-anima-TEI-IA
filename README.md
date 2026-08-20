@@ -1,12 +1,14 @@
 # Intertestualità sotto sorveglianza
 ## *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
-[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA) [![Vocabolario SKOS](https://img.shields.io/badge/SKOS-vocabolario%20online-1b7f5c)](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/)
 
 **Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
 Questo repository documenta un progetto che integra **TEI interpretativo** e **Intelligenza Artificiale (IA) controllata** *expert-in-the-loop*, per lo studio delle funzioni intertestuali nel *Castello dell'anima* (1692–1693) di **suor Teresa di San Geronimo**. La ricerca si concentra sul modo in cui citazioni, glosse autoriali e rimandi mistici contribuiscono alla costruzione di *chiarezza*, *coesione* e *stabilità dottrinale* all'interno di un testo caratterizzato da **forte vigilanza teologica**.
+
+> 🔗 **Vocabolario SKOS navigabile online** — gli otto assi interpretativi sono pubblicati come **vocabolario controllato SKOS**, con URI dereferenziabili (ci clicchi e si apre): **[esplora il vocabolario](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/)**.
 
 ---
 
@@ -68,21 +70,27 @@ Organizzata in tre sottocartelle:
 
 Schema di validazione generale del progetto: l'ODD del modello, il **`tei_all.rng` vendorizzato** (TEI All, versione fissata per una validazione riproducibile) e lo **Schematron dell'indice d'impatto** (`impactindex.sch`), a copertura dell'intero modello — non solo della tassonomia.
 
+### `/vocab`
+
+Il **vocabolario SKOS** degli assi interpretativi, **generato** da `tassonomia-gh.xml` (fonte normativa: non si edita a mano): **10 `skos:ConceptScheme` / 60 `skos:Concept`** con URI dereferenziabili (`https://w3id.org/castello-anima-vocab/…`). Contiene il Turtle (`castello-anima-vocab.ttl`), un **sito navigabile** (`vocab/site/`) e gli allineamenti esterni opzionali (`alignments.tsv`). La guardia CI **Vocab SKOS** garantisce la coerenza col teiText (sync + round-trip).
+➡️ **[Esplora il vocabolario online](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/)** · [Leggi il README di `vocab/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/vocab/README.md)
+
 ### `/docs`
 
 Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto per le singole sezioni (header, tassonomia, schema) confluisce anche qui, come punto di accesso unico alla documentazione completa.
 
 ### `/tools`
 
-Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando) — aiuti alla codifica, **non** parte della validazione automatica. Qui stanno anche i due **generatori** invocati dai workflow `gen-*` della CI: `gen_data_dictionary.py` (rigenera `docs/data-dictionary.md` dalla tassonomia) ed `estrattore_interventi.py` (rigenera `docs/interventi-editoriali.md` dal teiText).
+Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto, e il **Visualizzatore del vocabolario SKOS** (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando) — aiuti alla codifica, **non** parte della validazione automatica. Qui stanno anche i **generatori** invocati dai workflow `gen-*` della CI: `gen_data_dictionary.py` (rigenera `docs/data-dictionary.md` dalla tassonomia), `estrattore_interventi.py` (rigenera `docs/interventi-editoriali.md` dal teiText) e `gen_skos.py` (rigenera il vocabolario SKOS dalla tassonomia).
 ➡️ [Leggi il README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
 
 ### `/.github/workflows`
 
-Quattro workflow di GitHub Actions, attivi a ogni push/PR (e avviabili a mano):
+Cinque workflow di GitHub Actions, attivi a ogni push/PR (e avviabili a mano):
 
 - **Validate Text** — sul teiText: buona formazione, risoluzione `xi:include`, RelaxNG (TEI All, versione fissata), guardia **NFC**, guardia **E2** (ogni token `@ana` risolve a una categoria dichiarata), **co-occorrenza** degli assi, **cit/glossa**, **citazioni**, **commenti**, **interventi editoriali**, **regole-fissate** (retrace/naming/`@ana`-su-seg/sobrietà), **whitespace** (anti-corruzione: whitespace intra-parola in `subst`/`choice`) e **Schematron dell'indice d'impatto** (`impactindex.sch`).
 - **Validate Taxonomy** — sulla tassonomia: buona formazione, RelaxNG + Schematron dedicati, validazione degli esempi, e guardia **E1** (le tassonomie interpretative in `tassonomia-gh.xml` coincidono con la copia nel `classDecl` della testata).
+- **Vocab SKOS** — sul vocabolario: rigenera il `.ttl` dalla tassonomia e verifica **sync** (il file committato è byte-identico alla rigenerazione) e **round-trip** (ogni token `@ana` e ogni banda del teiText risolve a un `skos:Concept`).
 - **Genera data-dictionary** — esegue `tools/gen_data_dictionary.py` e ricommitta `docs/data-dictionary.md` se cambiato.
 - **Genera interventi-editoriali** — esegue `tools/estrattore_interventi.py` e ricommitta `docs/interventi-editoriali.md` se cambiato.
 
