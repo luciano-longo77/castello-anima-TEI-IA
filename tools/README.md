@@ -85,7 +85,7 @@ Richiede `python3` e `lxml` (`pip install lxml`).
 
 ---
 
-> **Esempi pronti** in [`tools/esempi/`](esempi/): [`esempio-1-assistente.xml`](esempi/esempio-1-assistente.xml) (segmento grezzo) → [`esempio-2-calcolatore.xml`](esempi/esempio-2-calcolatore.xml) (`@ana` + `#impact*`) → [`esempio-3-visualizzatore.xml`](esempi/esempio-3-visualizzatore.xml) (teiText compilato, apribile nel Visualizzatore). Stesso segmento (`seg-III-tit`) nei tre stadi del flusso.
+> **Esempi pronti** in [`tools/esempi/`](esempi/): [`esempio-1-assistente.xml`](esempi/esempio-1-assistente.xml) (segmento grezzo) → [`esempio-2-calcolatore.xml`](esempi/esempio-2-calcolatore.xml) (`@ana` + `#impact*`) → [`esempio-3-visualizzatore.xml`](esempi/esempio-3-visualizzatore.xml) (teiText compilato, apribile nel Visualizzatore). Stesso segmento (`seg-b3-tit-castello`) nei tre stadi del flusso.
 
 ---
 
@@ -110,7 +110,7 @@ python3 tools/impact_index.py tei/text/castello-anima-teiText.xml --bands bande.
 
 ```csv
 # bande.csv — id;banda_N;banda_A
-seg-c8-desiderio;critica;alta
+seg-b3-c1p8-desiderio;critica;alta
 ```
 
 ## Verificabilità e falsificabilità
