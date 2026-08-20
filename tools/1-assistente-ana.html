@@ -416,7 +416,7 @@
       {ax: "exposition", label: "exposition — grado di esposizione", req: false},
       {ax: "phase", label: "phase — fase (base)", req: true},
       {ax: "mystic_state", label: "mystic_state — stato mistico", req: false},
-      {ax: "relation", label: "relation — relazione/intertesto", req: false}
+      {ax: "relation", label: "relation — relazione/intertesto (0+; Ctrl/Cmd-click per selezione multipla)", req: false, multi: true}
     ];
     const DESC = {}; // id -> desc
     Object.values(AXES).flat().forEach(c => DESC[c.id] = c.desc);
@@ -432,12 +432,12 @@
       ORDER.forEach(o => {
         let cats = AXES[o.ax] || [];
         if (o.ax === "phase") cats = cats.filter(c => c.id !== "phase-critical"); // critical via checkbox
-        const opts = ['<option value="">— nessuna —</option>']
+        const opts = (o.multi ? [] : ['<option value="">— nessuna —</option>'])
           .concat(cats.map(c => `<option value="${c.id}">${indent(c.depth)}${c.id}</option>`)).join("");
         const div = document.createElement("div");
         div.className = "fld";
         div.innerHTML = `<label for="ax-${o.ax}">${o.label} ${o.req ? '<span class="req">*</span>' : ''}</label>
-      <select id="ax-${o.ax}" data-ax="${o.ax}"${o.req ? ' aria-required="true"' : ''}>${opts}</select>
+      <select id="ax-${o.ax}" data-ax="${o.ax}"${o.multi ? ' multiple size="6"' : ''}${o.req ? ' aria-required="true"' : ''}>${opts}</select>
       <div class="help" id="h-${o.ax}"></div>`;
         host.appendChild(div);
       });
@@ -447,8 +447,13 @@
     function tokens() {
       const t = [];
       ORDER.forEach(o => {
-        const v = $("ax-" + o.ax).value;
-        if (v) t.push("#" + v);
+        const el = $("ax-" + o.ax);
+        if (o.multi) {
+          Array.from(el.selectedOptions).forEach(op => { if (op.value) t.push("#" + op.value); });
+        } else {
+          const v = el.value;
+          if (v) t.push("#" + v);
+        }
         if (o.ax === "phase" && $("crit").checked) t.push("#phase-critical");
       });
       if ($("imp").checked) t.push("#impact*");
