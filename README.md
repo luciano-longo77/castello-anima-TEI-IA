@@ -53,7 +53,7 @@ Modellazione secondo TEI P5 con:
 - citazioni annotate con `cit/quote/ref/bibl`;
 - segmentazione retorica con `seg`;
 - funzioni, rischio, operazioni prudenziali, stati mistici, esposizione, fase discorsiva e relazioni tramite l'attributo `@ana`, con puntatori alle categorie dichiarate in `classDecl`;
-- gestione di varianti e fenomeni grafici con `add`, `del`, `subst`, `app`.
+- gestione delle varianti sostanziali d'autrice con `app`/`lem`/`rdg` (che contengono `add`/`del`/`subst`); la normalizzazione grafica è silenziosa e dichiarata (`docs/criteri-trascrizione.md`).
 
 Organizzata in tre sottocartelle:
 
