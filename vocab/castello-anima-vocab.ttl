@@ -1,0 +1,457 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :     <https://w3id.org/castello-anima-vocab/> .
+
+# Vocabolario SKOS del Castello dell'anima — GENERATO da tassonomia-gh.xml (non editare a mano).
+
+<https://w3id.org/castello-anima-vocab/func> a skos:ConceptScheme ;
+    dct:title "Asse func"@it .
+
+<https://w3id.org/castello-anima-vocab/legittimazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/func> ;
+    skos:notation "#legittimazione" ;
+    skos:prefLabel "legittimazione"@it ;
+    skos:definition "Procedure retoriche che consolidano l’ortodossia del discorso mistico mediante appoggi biblici, liturgici e tradizionali (anche aurorali), usati per evitare sospetti di quietismo e per ancorare temi rischiosi all’autorità della Chiesa, dei santi."@it .
+
+<https://w3id.org/castello-anima-vocab/legittimazione-biblica> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/legittimazione> ;
+    skos:notation "#legittimazione-biblica" ;
+    skos:prefLabel "legittimazione biblica"@it ;
+    skos:definition "Citazioni e parafrasi scritturali, spesso in latino, impiegate per rendere accettabili concetti come \"quiete\", \"infusione\" e \"unione\", mostrando conformità alla dottrina e inserendo l’esperienza mistica in una cornice canonica."@it .
+
+<https://w3id.org/castello-anima-vocab/legittimazione-liturgica> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/legittimazione> ;
+    skos:notation "#legittimazione-liturgica" ;
+    skos:prefLabel "legittimazione liturgica"@it ;
+    skos:definition "Ricorso a formule, stilemi e registri liturgici come garanzia devozionale e dottrinale, utile a circoscrivere affermazioni speculative e a integrare il trattato nella tradizione della preghiera ecclesiale."@it .
+
+<https://w3id.org/castello-anima-vocab/legittimazione-tradizione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/legittimazione> ;
+    skos:notation "#legittimazione-tradizione" ;
+    skos:prefLabel "legittimazione tradizione"@it ;
+    skos:definition "Appello a maestri della mistica esplicitamente richiamati in prima persona dall’autrice (\"la mia santa madre Teresa\" per Teresa d’Avila; \"il mio padre beato Giovanni della Croce\") come legittimazione autorevole, a creare continuità con la genealogia carmelitana e a rafforzare la credibilità di un’autrice priva di formazione scolastica."@it .
+
+<https://w3id.org/castello-anima-vocab/pedagogia> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/func> ;
+    skos:notation "#pedagogia" ;
+    skos:prefLabel "pedagogia"@it ;
+    skos:definition "Strategie formative rivolte ad anime \"incipienti\", \"proficienti\" e \"perfette\", basate su distinzioni operative, esemplificazioni concrete e introduzione graduale ai concetti mistici, al fine di guidare il lettore nel discernimento e prevenire errori dottrinali."@it .
+
+<https://w3id.org/castello-anima-vocab/pedagogia-introduzione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/pedagogia> ;
+    skos:notation "#pedagogia-introduzione" ;
+    skos:prefLabel "pedagogia introduzione"@it ;
+    skos:definition "Sezioni introduttive e inquadramenti che predispongono il lettore all’orazione mentale e alla costruzione del “castello”, facendo leva sull’obbedienza e sulla dichiarata umiltà dell’autrice."@it .
+
+<https://w3id.org/castello-anima-vocab/pedagogia-discernimento> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/pedagogia> ;
+    skos:notation "#pedagogia-discernimento" ;
+    skos:prefLabel "pedagogia discernimento"@it ;
+    skos:definition "Distinzioni tra (1) \"meditazione\", (2) \"contemplazione acquisita\", (3) \"contemplazione infusa\", (4) \"quiete\" e (5) \"sospensione delle potenze\", con cui l’autrice chiarisce la progressione mistica e aiuta il lettore-ascoltatore a riconoscere illusioni o inganni spirituali."@it .
+
+<https://w3id.org/castello-anima-vocab/pedagogia-esemplificazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/pedagogia> ;
+    skos:notation "#pedagogia-esemplificazione" ;
+    skos:prefLabel "pedagogia esemplificazione"@it ;
+    skos:definition "Uso di immagini quotidiane (acqua, mare, torrente, giardino, specchio) e comparazioni che rendono intelligibili realtà sovrasensibili, traducendo la teologia mistica in scenari comprensibili anche a un pubblico poco istruito."@it .
+
+<https://w3id.org/castello-anima-vocab/rischio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/func> ;
+    skos:notation "#rischio" ;
+    skos:prefLabel "rischio"@it ;
+    skos:definition "Insieme di strategie volte a prevenire o correggere letture potenzialmente eterodosse, specialmente nei punti critici (ex: Libro III), dove emergono concetti come \"impeccabilità\", \"fusione con Dio\", \"notte oscura\" e perdita apparente del \"libero arbitrio\"."@it .
+
+<https://w3id.org/castello-anima-vocab/rischio-attenuatio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/rischio> ;
+    skos:notation "#rischio-attenuatio" ;
+    skos:prefLabel "rischio attenuatio"@it ;
+    skos:definition "Glosse esplicative aggiunte per smorzare formulazioni rischiose, spesso tramite “cioè”, “intendo dire”, “mi dichiaro”, con cui l’autrice riduce ambiguità dottrinali."@it .
+
+<https://w3id.org/castello-anima-vocab/rischio-precisatio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/rischio> ;
+    skos:notation "#rischio-precisatio" ;
+    skos:prefLabel "rischio precisatio"@it ;
+    skos:definition "Limitazioni semantiche che delimitano concetti radicali (come “divenir un altro Dio”, “sicurtà totale”), precisando che il libero arbitrio non viene mai abolito e che l’azione resta sempre divina."@it .
+
+<https://w3id.org/castello-anima-vocab/rischio-declaratio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/rischio> ;
+    skos:notation "#rischio-declaratio" ;
+    skos:prefLabel "rischio declaratio"@it ;
+    skos:definition "Dichiarazioni esplicite di adesione alla Chiesa e di rifiuto della “molinia” (Molinos), formulate per disinnescare ogni sospetto di quietismo e per riconfigurare enunciati pericolosi in senso ortodosso."@it .
+
+<https://w3id.org/castello-anima-vocab/ethos> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/func> ;
+    skos:notation "#ethos" ;
+    skos:prefLabel "ethos"@it ;
+    skos:definition "Costruzione dell’immagine autoriale come donna ignorante, obbediente e priva di lettere, che scrive per comando del confessore; strategia di protezione che al contempo rivendica l’esperienza diretta come fonte primaria di sapere mistico."@it .
+
+<https://w3id.org/castello-anima-vocab/ethos-umilta> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/ethos> ;
+    skos:notation "#ethos-umilta" ;
+    skos:prefLabel "ethos umilta"@it ;
+    skos:definition "Professioni di \"indegnità\" e \"ignoranza\" per minimizzare la propria autorità; l’autrice usa queste formule per giustificare la scrittura teologica da parte di una donna."@it .
+
+<https://w3id.org/castello-anima-vocab/ethos-esperienza> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/ethos> ;
+    skos:notation "#ethos-esperienza" ;
+    skos:prefLabel "ethos esperienza"@it ;
+    skos:definition "Rivendicazione dell’esperienza (“non parlo senza l’esperienza”) come fondamento epistemico che legittima il discorso spirituale in mancanza di titoli di studio o di formazione teologica."@it .
+
+<https://w3id.org/castello-anima-vocab/ethos-obbedienza> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/func> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/ethos> ;
+    skos:notation "#ethos-obbedienza" ;
+    skos:prefLabel "ethos obbedienza"@it ;
+    skos:definition "Insistenza sull’obbedienza al confessore (a scopo difensivo), vista come condizione necessaria per scrivere e come garanzia di umiltà, prudenza e sottomissione dottrinale."@it .
+
+<https://w3id.org/castello-anima-vocab/impact> a skos:ConceptScheme ;
+    dct:title "Asse impact"@it .
+
+<https://w3id.org/castello-anima-vocab/impact-high> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:notation "#impact-high" ;
+    skos:prefLabel "impact high"@it ;
+    skos:definition "Fascia alta dell'indice (0.66 ≤ I < 0.82): forte forza regolativa del marcatore. Passaggi che ridefiniscono proposizioni dottrinali centrali (contemplazione infusa, unione, quiete, notte dei sensi), decisivi per la comprensione dell'opera e frequente oggetto di glosse prudenziali."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-medium> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:notation "#impact-medium" ;
+    skos:prefLabel "impact medium"@it ;
+    skos:definition "Fascia intermedia dell'indice (0.50 ≤ I < 0.66): forza regolativa moderata. Marcatori che rafforzano o integrano i concetti principali (esempi, distinzioni, spiegazioni accessorie) senza modificarne l'assetto teologico."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-low> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:notation "#impact-low" ;
+    skos:prefLabel "impact low"@it ;
+    skos:definition "Fascia inferiore dell'indice (I < 0.50): minima forza regolativa del marcatore. Parti ornamentali o reiterative, utili all'enfasi ma non decisive per l'argomentazione teologica."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-critical> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact> ;
+    skos:notation "#impact-critical" ;
+    skos:prefLabel "impact critical"@it ;
+    skos:definition "Fascia superiore dell'indice (I ≥ 0.82): massima forza regolativa del marcatore. Nel campione coincide con le declaratio (F=3), i sigilli performativi di ortodossia (\"io mi dichiaro\"), collocati nei nodi dottrinalmente più esposti (trasformazione, apparente \"impeccabilità\", \"sicurtà divina\", \"sospensione delle potenze\")."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-N> a skos:ConceptScheme ;
+    dct:title "Asse impact-band-N"@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-N-critica> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:notation "critica" ;
+    skos:prefLabel "impact band N critica"@it ;
+    skos:definition "Banda «critica» di necessità interpretativa (N ≥ 0.85); valore-ancora N = 0.90. La rimozione del presidio esporrebbe il passo a eresia esplicita (panteismo o quietismo)."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-N-alta> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:notation "alta" ;
+    skos:prefLabel "impact band N alta"@it ;
+    skos:definition "Banda «alta» (0.65 ≤ N < 0.85); valore-ancora N = 0.75. Passo teologicamente sensibile: la glossa è strutturalmente utile, ma il nodo non collassa in eresia esplicita."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-N-media> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:notation "media" ;
+    skos:prefLabel "impact band N media"@it ;
+    skos:definition "Banda «media» (0.45 ≤ N < 0.65); valore-ancora N = 0.55. Chiarificazione utile, esposizione moderata; l'assenza non produrrebbe deriva dottrinale."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-N-bassa> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-N> ;
+    skos:notation "bassa" ;
+    skos:prefLabel "impact band N bassa"@it ;
+    skos:definition "Banda «bassa» (N < 0.45); valore-ancora N = 0.30. Funzione marginale, ornamentale o descrittiva."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-A> a skos:ConceptScheme ;
+    dct:title "Asse impact-band-A"@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-A-alta> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-A> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-A> ;
+    skos:notation "alta" ;
+    skos:prefLabel "impact band A alta"@it ;
+    skos:definition "Banda «alta» di riduzione dell'ambiguità (A ≥ 0.80); valore-ancora A = 0.85. Chiude quasi del tutto l'ambiguità e delimita con precisione."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-A-media> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-A> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-A> ;
+    skos:notation "media" ;
+    skos:prefLabel "impact band A media"@it ;
+    skos:definition "Banda «media» (0.55 ≤ A < 0.80); valore-ancora A = 0.675. Restringe il campo ma lascia un margine di lettura."@it .
+
+<https://w3id.org/castello-anima-vocab/impact-band-A-bassa> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/impact-band-A> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/impact-band-A> ;
+    skos:notation "bassa" ;
+    skos:prefLabel "impact band A bassa"@it ;
+    skos:definition "Banda «bassa» (A < 0.55); valore-ancora A = 0.40. Tocca l'ambiguità solo marginalmente."@it .
+
+<https://w3id.org/castello-anima-vocab/risk> a skos:ConceptScheme ;
+    dct:title "Asse risk"@it .
+
+<https://w3id.org/castello-anima-vocab/risk-dottrinale> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/risk> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/risk> ;
+    skos:notation "#risk-dottrinale" ;
+    skos:prefLabel "risk dottrinale"@it ;
+    skos:definition "Rischio generale di equivocità su dottrine come \"grazia\", \"libertà\", \"unione\" e \"contemplazione\", soprattutto nei punti dove la lingua dell’autrice risulta ambigua o metaforicamente esasperata. Categoria contenitore: se usata direttamente in @ana, senza una delle foglie (quietismo, panteismo, impeccabilità, ambiguità), denota, per astensione semantica (guida, regola 3), un rischio dottrinale di sottotipo non specificato."@it .
+
+<https://w3id.org/castello-anima-vocab/risk-quietismo> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/risk> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/risk-dottrinale> ;
+    skos:notation "#risk-quietismo" ;
+    skos:prefLabel "risk quietismo"@it ;
+    skos:definition "Possibile lettura quietista dei concetti di “quiete”, “otio”, “non operare”, “abbandono totale”; rischio amplificato dal contesto storico e dalle accuse processuali."@it .
+
+<https://w3id.org/castello-anima-vocab/risk-panteismo> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/risk> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/risk-dottrinale> ;
+    skos:notation "#risk-panteismo" ;
+    skos:prefLabel "risk panteismo"@it ;
+    skos:definition "Rischio di interpretazione panteistica nelle espressioni sulla “trasformatione” e sul “divenir un altro Dio”; necessità di glosse per riaffermare la distinzione ontologica creatura/Creatore."@it .
+
+<https://w3id.org/castello-anima-vocab/risk-impeccabilita> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/risk> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/risk-dottrinale> ;
+    skos:notation "#risk-impeccabilita" ;
+    skos:prefLabel "risk impeccabilita"@it ;
+    skos:definition "Ambiguità relative alla “sicurtà” mistica e alla percezione dell’impossibilità di peccare nello stato di unione (impeccabilità); richiede continui interventi mitiganti."@it .
+
+<https://w3id.org/castello-anima-vocab/risk-ambiguita> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/risk> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/risk-dottrinale> ;
+    skos:notation "#risk-ambiguita" ;
+    skos:prefLabel "risk ambiguita"@it ;
+    skos:definition "Punti in cui la formulazione è oscura, metaforica o oscillante, generando difficoltà interpretative non collocabili in categorie specifiche."@it .
+
+<https://w3id.org/castello-anima-vocab/mystic_state> a skos:ConceptScheme ;
+    dct:title "Asse mystic_state"@it .
+
+<https://w3id.org/castello-anima-vocab/mystic_state-purificazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:notation "#mystic_state-purificazione" ;
+    skos:prefLabel "mystic state purificazione"@it ;
+    skos:definition "Fase purgativa del cammino mistico: prove, tribolazioni, sofferenze che preparano l’anima alla contemplazione, spesso associate alla croce."@it .
+
+<https://w3id.org/castello-anima-vocab/mystic_state-illuminazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:notation "#mystic_state-illuminazione" ;
+    skos:prefLabel "mystic state illuminazione"@it ;
+    skos:definition "Fase illuminativa: elevazione, dolcezza, chiarezza contemplativa che precede l’unione piena."@it .
+
+<https://w3id.org/castello-anima-vocab/mystic_state-quiete> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:notation "#mystic_state-quiete" ;
+    skos:prefLabel "mystic state quiete"@it ;
+    skos:definition "Stato di sospensione delle potenze, spesso minacciato da interpretazioni quietistiche; descritto come pace interiore infusa da Dio."@it .
+
+<https://w3id.org/castello-anima-vocab/mystic_state-otium> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:notation "#mystic_state-otium" ;
+    skos:prefLabel "mystic state otium"@it ;
+    skos:definition "Ozio delle potenze inteso non come inerzia quietista, ma come sospensione operata da Dio affinché l’anima riceva passivamente la contemplazione infusa."@it .
+
+<https://w3id.org/castello-anima-vocab/mystic_state-unione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/mystic_state> ;
+    skos:notation "#mystic_state-unione" ;
+    skos:prefLabel "mystic state unione"@it ;
+    skos:definition "Stato mistico di massimo avvicinamento a Dio, descritto con lessico alto e analogie complesse; luogo delle maggiori ambiguità teologiche."@it .
+
+<https://w3id.org/castello-anima-vocab/operation> a skos:ConceptScheme ;
+    dct:title "Asse operation"@it .
+
+<https://w3id.org/castello-anima-vocab/operation-delimitazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:notation "#operation-delimitazione" ;
+    skos:prefLabel "operation delimitazione"@it ;
+    skos:definition "Operazioni che circoscrivono semanticamente concetti rischiosi, evitando letture estreme e guidando l’interpretazione entro limiti ortodossi."@it .
+
+<https://w3id.org/castello-anima-vocab/operation-attenuatio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:notation "#operation-attenuatio" ;
+    skos:prefLabel "operation attenuatio"@it ;
+    skos:definition "Interventi che smorzano formulazioni troppo ardite mediante spiegazioni aggiunte, spesso negli spazi marginali del manoscritto."@it .
+
+<https://w3id.org/castello-anima-vocab/operation-precisatio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:notation "#operation-precisatio" ;
+    skos:prefLabel "operation precisatio"@it ;
+    skos:definition "Chiarimenti puntuali volti a definire meglio concetti ambigui, tipici della riflessione autografa posteriore alla stesura iniziale."@it .
+
+<https://w3id.org/castello-anima-vocab/operation-declaratio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:notation "#operation-declaratio" ;
+    skos:prefLabel "operation declaratio"@it ;
+    skos:definition "Dichiarazioni dirette di ortodossia, con cui l’autrice esplicita la propria adesione alla dottrina per evitare interpretazioni sospette."@it .
+
+<https://w3id.org/castello-anima-vocab/operation-riequilibrio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/operation> ;
+    skos:notation "#operation-riequilibrio" ;
+    skos:prefLabel "operation riequilibrio"@it ;
+    skos:definition "Interventi equilibranti che compensano un’affermazione rischiosa con una precisazione ortodossa prima o dopo l’enunciato mistico."@it .
+
+<https://w3id.org/castello-anima-vocab/exposition> a skos:ConceptScheme ;
+    dct:title "Asse exposition"@it .
+
+<https://w3id.org/castello-anima-vocab/exposition-low> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:notation "#exposition-low" ;
+    skos:prefLabel "exposition low"@it ;
+    skos:definition "Esposizione prudente di temi dottrinali, con ricorso limitato a tecnicismi e metafore."@it .
+
+<https://w3id.org/castello-anima-vocab/exposition-medium> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:notation "#exposition-medium" ;
+    skos:prefLabel "exposition medium"@it ;
+    skos:definition "Esposizione moderata di contenuti mistici, con appoggi occasionali a citazioni e spiegazioni aggiuntive."@it .
+
+<https://w3id.org/castello-anima-vocab/exposition-high> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:notation "#exposition-high" ;
+    skos:prefLabel "exposition high"@it ;
+    skos:definition "Esposizione intensa di dottrine mistiche complesse che richiedono glosse, precisazioni e cautele retoriche."@it .
+
+<https://w3id.org/castello-anima-vocab/exposition-critical> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/exposition> ;
+    skos:notation "#exposition-critical" ;
+    skos:prefLabel "exposition critical"@it ;
+    skos:definition "Livello massimo di esposizione dottrinale, tipico delle sezioni sul matrimonio spirituale, la trasformazione e l’unione; punti fortemente a rischio di censura."@it .
+
+<https://w3id.org/castello-anima-vocab/phase> a skos:ConceptScheme ;
+    dct:title "Asse phase"@it .
+
+<https://w3id.org/castello-anima-vocab/phase-introduction> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:notation "#phase-introduction" ;
+    skos:prefLabel "phase introduction"@it ;
+    skos:definition "Segmenti introduttivi che stabiliscono tono, pubblico e obbedienza iniziale, preparando la progressione mistica."@it .
+
+<https://w3id.org/castello-anima-vocab/phase-mediana> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:notation "#phase-mediana" ;
+    skos:prefLabel "phase mediana"@it ;
+    skos:definition "Sezioni centrali in cui si analizzano stati intermedi del cammino contemplativo, con esempi ed esperienze."@it .
+
+<https://w3id.org/castello-anima-vocab/phase-conclusive> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:notation "#phase-conclusive" ;
+    skos:prefLabel "phase conclusive"@it ;
+    skos:definition "Chiusure che ricapitolano i contenuti, riordinano la materia e predispongono alla transizione verso stati più elevati."@it .
+
+<https://w3id.org/castello-anima-vocab/phase-critical> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/phase> ;
+    skos:notation "#phase-critical" ;
+    skos:prefLabel "phase critical"@it ;
+    skos:definition "Marcatore trasversale, non posizionale: segnala che il segmento è teologicamente delicato indipendentemente da dove si colloca nella sequenza. Va assegnato insieme a una delle tre fasi posizionali sopra (introduction/mediana/conclusive), non al loro posto, per permettere l’allineamento tra collocazione testuale, rischio (risk) ed esposizione (exposition) sulla stessa occorrenza."@it .
+
+<https://w3id.org/castello-anima-vocab/relation> a skos:ConceptScheme ;
+    dct:title "Asse relation"@it .
+
+<https://w3id.org/castello-anima-vocab/relation-mistica> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:notation "#relation-mistica" ;
+    skos:prefLabel "relation mistica"@it ;
+    skos:definition "Relazioni che descrivono la progressione fenomenologica tra stati mistici lungo il cammino contemplativo, comprensiva delle immagini esperienziali (luce, tenebra, sonno, quiete) con cui l’autrice le descrive."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-mistica-infusa-purificazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-mistica> ;
+    skos:notation "#relation-mistica-infusa-purificazione" ;
+    skos:prefLabel "relation mistica infusa purificazione"@it ;
+    skos:definition "Relazione concettuale che descrive il passaggio dalle prove purgative alla contemplazione infusa."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-mistica-attiva-meditazione> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-mistica> ;
+    skos:notation "#relation-mistica-attiva-meditazione" ;
+    skos:prefLabel "relation mistica attiva meditazione"@it ;
+    skos:definition "Relazione progressiva dalla meditazione attiva alla maturazione spirituale che prepara alla contemplazione."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-mistica-passiva-quiete> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-mistica> ;
+    skos:notation "#relation-mistica-passiva-quiete" ;
+    skos:prefLabel "relation mistica passiva quiete"@it ;
+    skos:definition "Relazione tra contemplazione passiva e quiete, descritta come sospensione delle potenze per opera di Dio."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-mistica-unione-sposalitio> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-mistica> ;
+    skos:notation "#relation-mistica-unione-sposalitio" ;
+    skos:prefLabel "relation mistica unione sposalitio"@it ;
+    skos:definition "Sequenza che conduce dall’unione allo sposalizio spirituale e alla trasformazione, secondo i modelli mistici tradizionali."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-intertesto> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:topConceptOf <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:notation "#relation-intertesto" ;
+    skos:prefLabel "relation intertesto"@it ;
+    skos:definition "Relazioni con fonti esterne al testo, di diversa natura e provenienza."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-intertesto-biblico> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-intertesto> ;
+    skos:notation "#relation-intertesto-biblico" ;
+    skos:prefLabel "relation intertesto biblico"@it ;
+    skos:definition "Richiami espliciti o impliciti alla Scrittura che sostengono la dottrina mistica."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-intertesto-liturgico> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-intertesto> ;
+    skos:notation "#relation-intertesto-liturgico" ;
+    skos:prefLabel "relation intertesto liturgico"@it ;
+    skos:definition "Riferimenti a testi, formule o registri liturgici che rinforzano il tono devoto e la legittimità dell’opera."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-intertesto-teresiano> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-intertesto> ;
+    skos:notation "#relation-intertesto-teresiano" ;
+    skos:prefLabel "relation intertesto teresiano"@it ;
+    skos:definition "Risonanze e riprese del linguaggio e dei temi di Teresa d’Avila e delle tradizioni carmelitane."@it .
+
+<https://w3id.org/castello-anima-vocab/relation-intertesto-molinista> a skos:Concept ;
+    skos:inScheme <https://w3id.org/castello-anima-vocab/relation> ;
+    skos:broader <https://w3id.org/castello-anima-vocab/relation-intertesto> ;
+    skos:notation "#relation-intertesto-molinista" ;
+    skos:prefLabel "relation intertesto molinista"@it ;
+    skos:definition "Affinità o divergenze rispetto al linguaggio della Guida di Molinos, spesso tematizzate per prendere le distanze dal quietismo."@it .
+
