@@ -152,7 +152,7 @@ nell'`editorialDecl`, non ripetuta a ogni occorrenza.
 
 ```xml
 <!-- nel testo: la sola categoria  -->
-<seg xml:id="seg-c8-desiderio"
+<seg xml:id="seg-b3-c1p8-desiderio"
      ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical
           #phase-mediana #phase-critical #mystic_state-quiete
           #relation-mistica-passiva-quiete #impact-high"
@@ -161,7 +161,7 @@ nell'`editorialDecl`, non ripetuta a ogni occorrenza.
 
 <!-- in standoff (stesso documento): il fascio computabile -->
 <standOff type="impact-index">
-  <fs xml:id="idx-seg-c8-desiderio" corresp="#seg-c8-desiderio" cert="medium">
+  <fs xml:id="idx-seg-b3-c1p8-desiderio" corresp="#seg-b3-c1p8-desiderio" cert="medium">
     <f name="N_band"><symbol value="critica"/></f>
     <f name="A_band"><symbol value="alta"/></f>
     <f name="N"><numeric value="0.90"/></f>
@@ -189,7 +189,7 @@ nell'`editorialDecl`, non ripetuta a ogni occorrenza.
 
 **Occorrenza:** la *precisatio* di c. 159r con cui l'autrice restringe la formula «perdire
 qualunque desiderio»: *e non dico del mondo (...) intendo dunque dire che non desidera più gusti di
-spirito come prima* (`seg-c8-desiderio` nel teiText).
+spirito come prima* (`seg-b3-c1p8-desiderio` nel teiText).
 
 | Passo | Esito e perché |
 |-------|----------------|
