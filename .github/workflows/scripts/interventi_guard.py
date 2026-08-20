@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Guardia interventi-editoriali - impone la coerenza dei due piani (normalizzazione
-e genetico) sul teiText del *Castello dell'anima*.
+Guardia interventi-editoriali - impone la coerenza degli interventi editoriali MARCATI
+sul teiText del *Castello dell'anima* (modello interpretativo: normalizzazione grafica
+silenziosa e dichiarata; apparato sostanziale solo in app/rdg).
 
-Verifica:
-  - regolarizzazioni meccaniche `reg`/`expan` SENZA `@resp` (attribuzione globale in editorialDecl);
-  - `corr` pienamente attribuito (`@resp` + `@cert` su ognuna);
-  - ogni `supplied` con `@resp` E `@cert` (congettura editoriale, regola guida §2.2.4);
+Verifiche ATTIVE nel modello interpretativo:
+  - ogni `supplied` con `@resp` E `@cert` (integrazione congetturale/su guasto);
   - ogni `subst` ben formato (almeno un `add` e un `del`).
+
+Controlli LEGACY (rete di sicurezza; vacui finche' non esistono `<choice>`, che il modello
+interpretativo non usa - la normalizzazione grafica non e' marcata nel testo di lettura):
+  - `reg`/`expan` SENZA `@resp` (attribuzione globale in editorialDecl);
+  - `corr` pienamente attribuito (`@resp` + `@cert` su ognuna).
 
 Uso:  python3 interventi_guard.py [TEXT_XML]
 """
