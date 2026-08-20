@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vocabolario SKOS — Castello dell'anima</title>
+<link rel="alternate" type="text/turtle" href="../castello-anima-vocab.ttl">
+<style>
+:root{--ink:#1f2933;--mut:#6b7280;--line:#e5e7eb;--accent:#7b2d3b;--bg:#fff;--card:#faf9f7;--code:#f3f0ec}
+*{box-sizing:border-box}body{margin:0;font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{padding:20px;border-bottom:1px solid var(--line)}h1{margin:0;font-size:19px}.sub{color:var(--mut);font-size:13px;margin-top:3px}
+main{max-width:820px;margin:0 auto;padding:18px 20px 60px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.crumb{font-size:13px;margin-bottom:14px}
+.notn{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--code);padding:2px 7px;border-radius:6px}
+.uri{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--mut);word-break:break-all}
+.k{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin-top:16px}
+.def{margin:6px 0 0;font-size:15px}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:14px;padding:3px 10px;margin:3px 4px 0 0;font-size:13px;background:var(--card)}
+.scheme-list{columns:2;column-gap:26px}@media(max-width:640px){.scheme-list{columns:1}}
+.scheme-list h3{font-size:14px;color:var(--accent);margin:14px 0 4px;break-after:avoid}
+.scheme-list a{display:block;font-size:13.5px;padding:1px 0}
+input[type=search]{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font-size:14px;margin-bottom:6px}
+.err{color:#b91c1c}
+</style></head><body>
+<header><h1><a href="?" style="color:inherit">Vocabolario SKOS — <em>Il Castello dell'anima</em></a></h1>
+<div class="sub">Vocabolario controllato degli assi interpretativi · generato da <code>tassonomia-gh.xml</code></div></header>
+<main id="out">Carico il vocabolario…</main>
+<script>
+const BASE="https://w3id.org/castello-anima-vocab/";
+const esc=s=>(s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function parseTTL(t){
+  const cs=[],sc=[]; let m; const rs=/vocab\/([^>]+)> a skos:ConceptScheme/g;
+  while((m=rs.exec(t))) sc.push(m[1]);
+  t.split(/\n(?=<)/).forEach(b=>{ if(!b.includes("a skos:Concept ;"))return;
+    const g=re=>{const x=b.match(re);return x?x[1]:null};
+    cs.push({id:g(/vocab\/([^>]+)> a skos:Concept ;/),scheme:g(/skos:inScheme\s+<[^>]*\/([^>\/]+)>/),
+      broader:g(/skos:broader\s+<[^>]*\/([^>\/]+)>/),top:/skos:topConceptOf/.test(b),
+      notation:(g(/skos:notation\s+"((?:[^"\\]|\\.)*)"/)||"").replace(/\\"/g,'"'),
+      pref:(g(/skos:prefLabel\s+"((?:[^"\\]|\\.)*)"/)||"").replace(/\\"/g,'"'),
+      def:(g(/skos:definition\s+"((?:[^"\\]|\\.)*)"/)||"").replace(/\\"/g,'"')});
+  }); return {schemes:sc,concepts:cs};
+}
+let D=null;
+function link(id){return `<a href="?c=${encodeURIComponent(id)}">${esc(id)}</a>`}
+function renderConcept(id){
+  const c=D.concepts.find(x=>x.id===id);
+  const out=document.getElementById("out");
+  if(!c){out.innerHTML=`<p class="err">Concetto «${esc(id)}» non trovato.</p><p><a href="?">↑ Indice</a></p>`;return}
+  const kids=D.concepts.filter(x=>x.broader===id);
+  const parent=c.broader?`<span class="chip">↑ ${link(c.broader)}</span>`:'';
+  const nar=kids.length?`<div class="k">Concetti più specifici</div>${kids.map(k=>`<span class="chip">↓ ${link(k.id)}</span>`).join("")}`:'';
+  document.title=c.pref+" — Vocabolario SKOS";
+  out.innerHTML=`<div class="crumb"><a href="?">Indice</a> › <a href="?c=${encodeURIComponent(c.scheme)}-INDEX" onclick="return false" style="color:var(--mut);pointer-events:none">asse ${esc(c.scheme)}</a></div>
+    <h2 style="margin:0">${esc(c.pref)} <span class="notn">${esc(c.notation)}</span></h2>
+    <div class="uri">${esc(BASE+c.id)}</div>
+    ${c.top?'<div class="k">Ruolo</div><span class="chip">▲ top concept dell\'asse '+esc(c.scheme)+'</span>':''}
+    ${parent?'<div class="k">Concetto più generale</div>'+parent:''}
+    <div class="k">Definizione</div><p class="def">${esc(c.def)}</p>
+    ${nar}
+    <div class="k">Asse</div><span class="chip">inScheme: ${esc(c.scheme)}</span>
+    <div class="k">Formati</div><span class="chip"><a href="../castello-anima-vocab.ttl">tutto il vocabolario (Turtle)</a></span>`;
+}
+function renderIndex(q){
+  q=(q||"").toLowerCase();
+  const out=document.getElementById("out");
+  let html=`<input type="search" id="q" placeholder="Cerca…" value="${esc(q)}"><div class="sub" style="margin-bottom:8px">${D.concepts.length} concetti · ${D.schemes.length} assi · <a href="../castello-anima-vocab.ttl">Turtle</a></div><div class="scheme-list">`;
+  D.schemes.forEach(s=>{
+    const cs=D.concepts.filter(c=>c.scheme===s && (!q||[c.pref,c.notation,c.def,c.id].some(v=>(v||"").toLowerCase().includes(q))));
+    if(!cs.length)return;
+    html+=`<h3>${esc(s)}</h3>`;
+    cs.forEach(c=>{html+=`<a href="?c=${encodeURIComponent(c.id)}">${esc(c.pref)} <span class="notn">${esc(c.notation)}</span></a>`});
+  });
+  html+=`</div>`; out.innerHTML=html;
+  const qi=document.getElementById("q"); qi.focus();
+  qi.addEventListener("input",e=>renderIndex(e.target.value));
+}
+function route(){
+  const p=new URLSearchParams(location.search); const c=p.get("c");
+  if(c) renderConcept(c); else renderIndex("");
+}
+fetch("../castello-anima-vocab.ttl").then(r=>{if(!r.ok)throw 0;return r.text()})
+  .then(t=>{D=parseTTL(t);route();window.addEventListener("popstate",route);})
+  .catch(()=>{document.getElementById("out").innerHTML='<p class="err">Impossibile caricare <code>../castello-anima-vocab.ttl</code>. Questo sito va servito via HTTP (GitHub Pages), non aperto da file://.</p>';});
+</script></body></html>
