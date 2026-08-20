@@ -85,7 +85,7 @@ Richiede `python3` e `lxml` (`pip install lxml`).
 
 ---
 
-> **Esempi pronti** in [`tools/esempi/`](esempi/): [`esempio-1-assistente.xml`](esempi/esempio-1-assistente.xml) (segmento grezzo) → [`esempio-2-calcolatore.xml`](esempi/esempio-2-calcolatore.xml) (`@ana` + `#impact*`) → [`esempio-3-visualizzatore.xml`](esempi/esempio-3-visualizzatore.xml) (teiText compilato, apribile nel Visualizzatore). Stesso segmento (`seg-b3-tit-castello`) nei tre stadi del flusso.
+> **Esempi pronti** in [`tools/esempi/`](esempi/): [`esempio1assistente.xml`](esempi/esempio1assistente.xml) (segmento grezzo) → [`esempio2calcolatore.xml`](esempi/esempio2calcolatore.xml) (`@ana` + `#impact*`) → [`esempio3visualizzatore.xml`](esempi/esempio3visualizzatore.xml) (teiText compilato, apribile nel Visualizzatore). Stesso segmento (`seg-b3-tit-castello`) nei tre stadi del flusso.
 
 ---
 
