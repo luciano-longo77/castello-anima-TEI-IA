@@ -26,18 +26,19 @@
 
 `castello-anima-teiText.xml` è il **testo del manoscritto** codificato in TEI P5: il corpo dell'opera (`<text>`) e i quattro strati di annotazione `<standOff>` fratelli di `<text>`. Il file **non** contiene i metadati: il `teiHeader` è tenuto separato in `../header/castello-anima-teiHeader.xml` e richiamato via **`xi:include`**. I due file sono un'unica edizione e vanno tenuti accoppiati.
 
-Il testo codificato è un **campione ragionato** su due Libri:
+Il testo codificato è un **campione ragionato** su tre Libri:
 - **Libro III** (anime perfette): **19 capitoli** — III.1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 19, 24, 32, 34, 38, 39, 40 — più il proemio;
-- **Libro I** (anime principianti): **proemio** più i capitoli **I.1, I.2, I.4, I.5, I.6, I.11**.
+- **Libro I** (anime principianti): **proemio** più i capitoli **I.1, I.2, I.4, I.5, I.6, I.11**;
+- **Libro II** (anime proficienti): **11 capitoli** — II.1, II.2, II.3, II.4, II.5, II.7, II.8, II.9, II.10, II.20, II.21.
 
-Il solo **Libro II** compare come `div` segnaposto (campione pianificato — II.1, II.2, II.8, II.9, II.10 — non ancora trascritto). Il criterio di selezione è dichiarato nel `<samplingDecl>` dell'header e documentato in [`docs/base-dati_campionamento.md`](../../docs/base-dati_campionamento.md).
+Il criterio di selezione è dichiarato nel `<samplingDecl>` dell'header e documentato in [`docs/base-dati_campionamento.md`](../../docs/base-dati_campionamento.md).
 
 ## 2. Architettura del testo
 
 - **Gerarchia**: `<div type="book">` › `<div type="chapter">`; le rubriche sono `<head>`, il cappello di capitolo è `<argument>` (solo a livello di libro).
 - **Unità di annotazione**: **`<seg>`** (sub-paragrafo) — l'unica che porta l'`@ana` interpretativo. Il paragrafo è `<p n="…">`.
 - **Materialità**: `<pb n="158r"/>` (foliazione reale), `<fw>` (segnature/richiami), `<lb break="no"/>` (solo parola spezzata).
-- **Cifre del campione**: **697** `<seg>` · **599** `<p>` · **143** `<pb>` · **1406** `<term>` · **1313** `<rs>` · **27** `<cit>`/`<bibl>`.
+- **Cifre del campione**: **944** `<seg>` · **833** `<p>` · **260** `<pb>` · **1788** `<term>` · **2206** `<rs>` · **37** `<cit>`/`<bibl>`.
 
 ## 3. I piani della codifica
 
