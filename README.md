@@ -68,7 +68,7 @@ Organizzata in tre sottocartelle:
 
 ### `/schema`
 
-Schema di validazione generale del progetto: l'ODD del modello, il **`tei_all.rng` vendorizzato** (TEI All, versione fissata per una validazione riproducibile) e lo **Schematron dell'indice d'impatto** (`impactindex.sch`), a copertura dell'intero modello — non solo della tassonomia.
+Schema di validazione generale del progetto: il **`tei_all.rng` vendorizzato** (TEI All, versione fissata per una validazione riproducibile) e lo **Schematron dell'indice d'impatto** (`impactindex.sch`), a copertura dell'intero modello — non solo della tassonomia. L'**ODD del modello** è previsto (backlog): il suo contenuto è già documentato in [`docs/teiText-guida-codifica.md`](docs/teiText-guida-codifica.md).
 
 ### `/vocab`
 
