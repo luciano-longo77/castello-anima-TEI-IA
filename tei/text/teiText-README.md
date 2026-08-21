@@ -51,15 +51,15 @@ Il testo è dato nella forma **interpretativa** costituita, a **normalizzazione 
 | **Ritracciature** | `<retrace>` | **51 `retrace` tutti `#ink_1`** (ritracciatura bruna T0→T1); lo strato scuro tardivo prudenziale è `<add hand="#ink_3-dark">` (T3) |
 | **Integrazioni editoriali** | `<gap>` `<unclear>` `<supplied>` | 65 `gap` · 6 `unclear` · **150 `supplied`** (`@reason="hole"`, `@resp="#editor"`, `@cert`) — le parentesi quadre `[ ]` della Nota al testo |
 | **Interpretativo** | `@ana` sul `<seg>` (8 assi) | governato dal `classDecl`; **1 valore per asse**, con eccezioni: `func` 1..n · `mystic_state` 0..1 · `relation` 0..n; `#phase-critical` è un modificatore della fase, non un asse. Cardinalità imposte da `cooccurrence_guard.py` |
-| **Intertesto** | `<cit>`/`<quote xml:lang="la">`/`<bibl>` | **27** citazioni latine, registrate anche in [`docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md) |
+| **Intertesto** | `<cit>`/`<quote xml:lang="la">`/`<bibl>` | **37** citazioni (di cui **32** latine), registrate anche in [`docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md) |
 
 ## 4. I quattro strati standOff
 
 Fratelli di `<text>`, ancorati al testo per `@corresp`/`@from`/`@target`:
 
-1. **`impact-index`** — una `<fs>` per `<seg>` (**697**) con i 7 campi dell'indice d'impatto (N_band, A_band, N, A, F, Fnorm, I).
+1. **`impact-index`** — una `<fs>` per `<seg>` (**944**) con i 7 campi dell'indice d'impatto (N_band, A_band, N, A, F, Fnorm, I).
 2. **`rhetorical-figures`** — `<span>` che classificano le figure (`#fig-metafora`, `#fig-similitudine`…) su un `interpGrp` locale.
-3. **`semantic-focus`** — **almeno** un'area (`#area-*`) per ogni `<seg>`: 697 seg coperti da 764 `<span>` (un seg può avere più aree).
+3. **`semantic-focus`** — **almeno** un'area (`#area-*`) per ogni `<seg>`: 944 seg coperti da 1011 `<span>` (un seg può avere più aree).
 4. **`semantic-chains`** — `<link>`/`<linkGrp>` per le catene tematiche e le relazioni (rischio↔operazione, intertesto).
 
 Gli `interpGrp` dei vocabolari `fig-*`/`area-*` sono dichiarati **una volta** nel file del testo.
