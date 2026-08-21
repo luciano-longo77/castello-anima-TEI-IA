@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" 
+<?xml-model href="../../schema/tei_all.rng" 
     type="application/xml" 
     schematypens="http://relaxng.org/ns/structure/1.0"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="it">
     <teiHeader xml:id="teiHeader-castello">
@@ -1583,7 +1583,7 @@
                     </category>
                 </taxonomy>
             </classDecl>
-            <schemaRef type="odd" url="../../schema/castello-schema.odd.xml"/>
+            <schemaRef type="schematron" url="../../schema/impactindex.sch"/>
         </encodingDesc>
         <profileDesc>
             <langUsage>
