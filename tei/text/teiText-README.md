@@ -47,9 +47,9 @@ Il testo è dato nella forma **interpretativa** costituita, a **normalizzazione 
 | piano | elementi | note |
 |---|---|---|
 | **Normalizzazione grafica** | *(nessun elemento inline)* | applicata **silenziosamente** e dichiarata una volta per tutte; nel testo di lettura non compaiono `choice`/`orig`/`reg`, `sic`/`corr`, `abbr`/`expan` (**0 `choice`**) |
-| **Apparato sostanziale** | `<app>`/`<lem>`/`<rdg>` | **148 `app`**; `lem` = ultima volontà (`@wit="#txt-c"`), `rdg` = stato genetico (`@wit="#txt-b0"`). Le varianti d'autrice — aggiunte, cassature, sostituzioni — vivono **solo dentro l'apparato**: 96 `del` · 69 `add` · 16 `subst`, tutti entro `app`/`rdg` |
+| **Apparato sostanziale** | `<app>`/`<lem>`/`<rdg>` | **149 `app`**; `lem` = ultima volontà (`@wit="#txt-c"`), `rdg` = stato genetico (`@wit="#txt-b0"`). Le varianti d'autrice — aggiunte, cassature, sostituzioni — vivono **solo dentro l'apparato**: 96 `del` · 70 `add` · 16 `subst` entro `app`/`rdg` (più 1 `add` marginale di mano esterna, `#ink_4-external`) |
 | **Ritracciature** | `<retrace>` | **51 `retrace` tutti `#ink_1`** (ritracciatura bruna T0→T1); lo strato scuro tardivo prudenziale è `<add hand="#ink_3-dark">` (T3) |
-| **Integrazioni editoriali** | `<gap>` `<unclear>` `<supplied>` | 65 `gap` · 6 `unclear` · **150 `supplied`** (`@reason="hole"`, `@resp="#editor"`, `@cert`) — le parentesi quadre `[ ]` della Nota al testo |
+| **Integrazioni editoriali** | `<gap>` `<unclear>` `<supplied>` | 67 `gap` · 6 `unclear` · **200 `supplied`** (`@reason` prevalente `hole`, poi `damage`/`stain`/`omitted`/`editorial`/`illegible`/`heading-omitted`; `@resp="#editor"`, `@cert`) — le parentesi quadre `[ ]` della Nota al testo |
 | **Interpretativo** | `@ana` sul `<seg>` (8 assi) | governato dal `classDecl`; **1 valore per asse**, con eccezioni: `func` 1..n · `mystic_state` 0..1 · `relation` 0..n; `#phase-critical` è un modificatore della fase, non un asse. Cardinalità imposte da `cooccurrence_guard.py` |
 | **Intertesto** | `<cit>`/`<quote xml:lang="la">`/`<bibl>` | **37** citazioni (di cui **32** latine), registrate anche in [`docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md) |
 
