@@ -845,7 +845,13 @@
                         <item><term>Libro II</term> (Anime proficienti) — 9 loci: II.1–2, II.3, II.4–5, II.7, II.8, II.9, II.10b, II.20, II.21;</item>
                         <item><term>Libro III</term> (Anime perfette) — 15 loci: III.1, III.6, III.7, III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40, con i contigui III.2–III.5 inclusi per intero come raccordo.</item>
                     </list></p>
-                <p n="3"> <hi rend="bold">Stato di avanzamento (work in progress).</hi> La presente release codifica il <term>Libro III</term> (<num value="19">19</num> capitoli effettivamente presenti: III.1–III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40) e il campione del <term>Libro I</term> (proemio più I.1, I.2, I.4, I.5, I.6, I.11), per un totale di <num value="697">697</num> segmenti. Il solo <term>Libro II</term> resta presente nella struttura come <gi>div</gi> di libro senza contenuto (segnaposto), e sarà codificato nella fase successiva (II.1–2, II.8, II.9, II.10) secondo il piano sopra descritto. Le lacune di numerazione fra i capitoli (es. III.9, III.11, III.13…) non sono omissioni ma capitoli non compresi nel campione. </p>
+                <p n="3"> <hi rend="bold">Stato di avanzamento (work in progress).</hi> 
+                    La presente release codifica il <term>Libro III</term> (<num value="19">19</num> capitoli effettivamente presenti: 
+                    III.1–III.8, III.10, III.12, III.14, III.16, III.19, III.24, III.32, III.34, III.38, III.39, III.40) 
+                    e il campione del <term>Libro I</term> (proemio più I.1, I.2, I.4, I.5, I.6, I.11) 
+                    e il campione del <term>Libro II</term> (II.1, II.2, II.3, II.4, II.5, II.7, II.8, II.9, II.10, II.20, II.21, 
+                    per <num value="11">11</num> capitoli), per un totale di <num value="944">944</num> segmenti. 
+                    Le lacune di numerazione fra i capitoli per tutti e tre i libri non sono omissioni ma capitoli non compresi nel campione. </p>
             </samplingDecl>
             <editorialDecl>
 
