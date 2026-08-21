@@ -35,4 +35,4 @@ Ogni push che tocca `tei/taxonomy/**` attiva il workflow [`main.yml`](../../../.
 
 ## Documentazione completa
 
-Per la descrizione delle 8 tassonomie, delle regole Schematron nel dettaglio e dei vincoli editoriali non ancora automatizzati, vedi [`Sistema Tassonomico.md`](../Sistema%20Tassonomico.md).
+Per la descrizione delle 10 tassonomie (8 assi interpretativi @ana + 2 bande impact-band-N/A), delle regole Schematron nel dettaglio e dei vincoli editoriali non ancora automatizzati, vedi [`Sistema Tassonomico.md`](../Sistema%20Tassonomico.md).
