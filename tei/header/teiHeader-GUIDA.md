@@ -36,7 +36,7 @@ Il testo è dato nella forma **interpretativa** costituita, a normalizzazione gr
  └── <text><body>
        ├── <div type="book" n="1">          ← Libro I (proemio + I.1, I.2, I.4, I.5, I.6, I.11)
        │     └── <div type="chapter">        ← I-cap1 … → <p> → <seg xml:id="seg-b1-cNpP-label" ana="…">
-       ├── <div type="book" n="2">          ← Libro II (segnaposto, da codificare)
+       ├── <div type="book" n="2">          ← Libro II (11 capitoli: II.1–II.5, II.7–II.10, II.20, II.21)
        └── <div type="book" n="3">          ← Libro III (proemio + 19 capitoli)
              └── <div type="chapter" n="1">  ← III-cap1 → <p> → <seg xml:id="seg-b3-cNpP-label" ana="…">
  └── <standOff type="impact-index">        ← una <fs> per <seg>
@@ -45,7 +45,7 @@ Il testo è dato nella forma **interpretativa** costituita, a normalizzazione gr
  └── <standOff type="semantic-chains">     ← catene e relazioni (<link>)
 ```
 
-Sono codificati il **Libro I** (proemio + I.1, I.2, I.4, I.5, I.6, I.11) e il **Libro III** (proemio + 19 capitoli); il **Libro II** è presente come `div` segnaposto (da codificare).
+Sono codificati il **Libro I** (proemio + I.1, I.2, I.4, I.5, I.6, I.11), il **Libro II** (II.1–II.5, II.7–II.10, II.20, II.21) e il **Libro III** (proemio + 19 capitoli).
 
 ## 3. Mappa rapida della navigazione
 
