@@ -54,7 +54,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 │    fileDesc     ││  encodingDesc  │ │   profileDesc      ││   xenoData     │
 ├─────────────────┤├────────────────┤ ├────────────────────┤├────────────────┤
 │ • Titolo & Auth ││ • Criteri Ecd. │ │ • Sociolinguistica ││ • JSON IA      │
-│ • Codicologia   ││ • classDecl(10)│ │ • listPerson       ││ • METS Link    │
+│ • Codicologia   ││ • classDecl(12)│ │ • listPerson       ││ • METS Link    │
 │ • Apparati      ││ • tagsDecl (70)│ │ • listOrg          ││                │
 │                 ││                │ │ • textClass        ││                │
 └─────────────────┘└────────────────┘ └────────────────────┘└────────────────┘
@@ -78,27 +78,26 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 
 ## 3. Sistema Tassonomico (`classDecl`)
 
-Il sistema si fonda su **10 tassonomie** (8+2), suddivise in due famiglie distinte per evitare sovrapposizioni tra il piano ermeneutico sul testo (8 tassonomie) e il piano gestionale del lavoro editoriale (2 tassonomie).
+Il sistema si fonda su **12 tassonomie** (8+2+2): **8 interpretative** applicate al testo via `@ana`, **2 ausiliarie** (`impact-band-N`, `impact-band-A` — i vocabolari-banda usati nei `symbol` delle `fs` dell'indice d'impatto, non applicate via `@ana`) e **2 di processo** (`fase`, `workflow`) riservate al `revisionDesc`.
 
 ```
-                     classDecl (10 Tassonomie)
+                     classDecl (12 Tassonomie)
                                 │
-     ┌──────────────────────────┴──────────────────────────┐
-     ▼                                                     ▼
-8 Tassonomie Interpretative                    2 Tassonomie di Processo
-(Annotazione sul testo via @ana)               (Tracciamento in revisionDesc)
-├── func (Funzioni retoriche, 4 rami)           ├── fase (Fasi lavoro, 42)
-├── risk (Rischio dottrinale, 5)                └── workflow (Scenari IA, 4)
-├── impact (Impatto interpretativo, 4)
-├── mystic_state (Stati mistici, 5)
-├── operation (Operazioni discorsive, 5)
-├── exposition (Livelli esposizione, 4)
-├── phase (Fasi discorsive, 4)
-└── relation (Intertestualità, 10)
+   ┌─────────────────────────────┼─────────────────────────────┐
+   ▼                             ▼                             ▼
+8 Interpretative (via @ana)   2 Ausiliarie (symbol fs)    2 di Processo (revisionDesc)
+├── func (4 rami)             ├── impact-band-N (4)        ├── fase (42)
+├── risk (5)                  └── impact-band-A (3)        └── workflow (4)
+├── impact (4)
+├── mystic_state (5)
+├── operation (5)
+├── exposition (4)
+├── phase (4)
+└── relation (10)
 ```
 
 ### Regole di Formattazione e Integrità
-- **Separazione d'uso:** Le 8 tassonomie interpretative si applicano al testo tramite `@ana`. Le 2 di processo sono riservate al `revisionDesc`.
+- **Separazione d'uso:** Le 8 tassonomie interpretative si applicano al testo tramite `@ana`; le 2 ausiliarie `impact-band-N`/`impact-band-A` forniscono i valori-banda dei `symbol` nelle `fs`; le 2 di processo sono riservate al `revisionDesc`.
 - **Integrità dei Dati:** Ogni categoria possiede obbligatoriamente un `xml:id` e un elemento `catDesc` compilato e non vuoto. L'`xml:id` deve rispettare il prefisso della tassonomia radice — **eccetto l'asse `func`**, esplicitamente esente per consentire ai suoi assi di primo livello (`legittimazione`, `pedagogia`, `rischio`, `ethos`) di non portare il prefisso `func-`.
 
 ---
