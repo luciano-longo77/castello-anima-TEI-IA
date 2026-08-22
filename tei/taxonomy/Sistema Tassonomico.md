@@ -247,6 +247,8 @@ La classe discreta è dichiarata in `@ana` sul segmento (una delle 4 categorie
 in `<standOff type="impact-index">`, collegata al segmento via `@corresp`. La
 formula è dichiarata **una sola volta** nell'`editorialDecl`, non ripetuta.
 
+Oltre a `impact-index`, il modello impiega altri tre strati `<standOff>` fratelli di `<text>`: `rhetorical-figures` (figure retoriche), `semantic-focus` (aree `#area-*`) e `semantic-chains` (catene tematiche e relazioni rischio↔operazione/intertesto, via `<link>`/`<linkGrp>`). Le catene semantiche coprono **tutti e tre i libri**: 199 `<linkGrp>` in totale (Libro I 40, Libro II 46, Libro III 113).
+
 ### 5.4 Robustezza
 Ricalcolo con pesi alternativi (analisi di sensibilità) e prova inter-annotatore
 (*encoding challenge*): le divergenze di classificazione e di pesi vengono pubblicate.
