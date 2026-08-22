@@ -42,14 +42,25 @@ Baseline: **720 low · 93 medium · 115 high · 16 critical**.
 ### Seg «di frontiera»
 Solo **9 seg** hanno `I` entro 0.02 da una soglia — sono gli unici realmente esposti a un cambio: `I=0.501` (×2), `I=0.505` (×6) al confine **low↔medium**, e `I=0.652` (×1) al confine **medium↔high**. Tutti in Libro III; tutti al confine tra fasce **basse** (narrativo ↔ guardia lieve). Elenco completo nell'output dello script.
 
+### Movimento delle bande alte (high/critical) per scenario
+Le guardie forti restano ferme **in 13 scenari su 15**. Le toccano solo le due perturbazioni *estreme*:
+
+| scenario | seg che cambiano banda | di cui high/critical | transizione |
+|---|---|---|---|
+| **pesi 1:1:1** (equipeso) | 9 | **3** | `critical → high` |
+| **ancore −0.10** | 105 | **97** | `high → medium` |
+| *(gli altri 13 scenari)* | 0–105 | **0** | — |
+
+In **nessuno** scenario un seg `high`/`critical` scende a `low`: le uniche transizioni possibili sono `critical→high` e `high→medium` (attenuazione di **una sola banda**).
+
 ## Lettura
 
 1. **Robustezza alta.** Sotto perturbazioni *ragionevoli* (qualunque schema di pesi sensato; ancore ±0.05; soglie ±0.02) **≤1.1% dei seg cambia banda**. Le tarature non sono arbitrarie nei loro effetti: l'ordinamento è stabile.
-2. **Le guardie forti non si muovono.** Nessun seg `high` o `critical` è di frontiera: le classificazioni interpretativamente decisive (le recinzioni dottrinali, `F=3 declaratio`, `I≥0.82`) sono **lontane da ogni soglia** e non cambiano in nessuno scenario. La sorveglianza dove conta è insensibile ai parametri.
-3. **La (lieve) sensibilità è al confine low↔medium.** Gli unici spostamenti sotto perturbazioni grandi riguardano seg *narrativi/di guardia lieve* attorno a `I≈0.50` — la distinzione meno consequente del modello.
-4. **Perturbazioni grandi = grandi.** Uno shift di ±0.10 su *tutte* le ancore (10 punti) o −0.03 su *tutte* le soglie è un cambio di modello sostanziale; che perfino così solo ~1 seg su 9 cambi banda conferma la tenuta.
+2. **Le guardie forti reggono, e non si spengono mai.** Nessun seg `high` o `critical` è **di frontiera** (nessuno entro 0.02 da una soglia), e sotto ogni perturbazione *ragionevole* (qualsiasi schema di pesi tranne l'equipeso totale; ancore ±0.05; soglie ±0.02) **nessuna guardia forte cambia banda**. Solo due perturbazioni *estreme* le toccano: l'equipeso `1:1:1`, che azzera il primato di `F` (**3 `critical` → `high`**, i seg `F=3 declaratio`), e il collasso di **tutte** le ancore di −0.10 (**97 `high` → `medium`**). Ma in nessuno scenario — nemmeno estremo — un seg `high`/`critical` scende a `low`: la sorveglianza dove conta, sotto un rimodellamento sostanziale, **si attenua al massimo di una banda, non si spegne**.
+3. **La (lieve) sensibilità è al confine low↔medium.** Gli unici spostamenti *di frontiera* riguardano seg *narrativi/di guardia lieve* attorno a `I≈0.50` — la distinzione meno consequente del modello.
+4. **Perturbazioni grandi = grandi.** Uno shift di ±0.10 su *tutte* le ancore (10 punti) o −0.03 su *tutte* le soglie è un cambio di modello sostanziale; che perfino così solo ~1 seg su 9 cambi banda — e che le guardie forti al più scendano di una banda, mai a `low` — conferma la tenuta.
 
-**Conclusione:** l'indice d'impatto è **parametricamente robusto**; le conclusioni interpretative — in particolare le guardie forti — non dipendono dalla taratura fine. I 9 seg di frontiera sono i soli candidati a una verifica umana mirata.
+**Conclusione:** l'indice d'impatto è **parametricamente robusto**; le conclusioni interpretative non dipendono dalla taratura *fine*. Le guardie forti (`high`/`critical`) sono **invariate sotto ogni perturbazione ragionevole** e **non collassano mai a `low`**: solo un rimodellamento *estremo* (equipeso totale, oppure ancore −0.10) le attenua di una banda. I 9 seg di frontiera sono i soli candidati a una verifica umana mirata.
 
 ## Riproduzione
 
