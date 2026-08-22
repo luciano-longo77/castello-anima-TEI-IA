@@ -9104,6 +9104,126 @@
 
    <!-- ==================== CATENE SEMANTICHE ==================== -->
    <standOff type="semantic-chains">
+      <linkGrp type="tema" subtype="obbedienza-pro">
+         <link type="tema" subtype="obbedienza-pro" target="#seg-b1-pro-p1-obedienza-penna #seg-b1-pro-p2-invocatio-ortodossia"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="miseria-del-mondo-c1">
+         <link type="tema" subtype="miseria-del-mondo-c1" target="#seg-b1-c1p1-miseria-creato #seg-b1-c1p2-fanciullo-piange #seg-b1-c1p3-fanciulli-passioni #seg-b1-c1p4-insatiabilita-passioni #seg-b1-c1p5-satieta-in-dio #seg-b1-c1p6-davide-non-satio #seg-b1-c1p7-mondo-mani-vote #seg-b1-c1p8-cecita-riparo #seg-b1-c1p9-acqua-in-mano #seg-b1-c1p10-sonno-ombra-vento #seg-b1-c1p11-gran-miseria-lasciar-dio #seg-b1-c1p12-nemici-cose-strane"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="intertesto-biblico">
+         <link type="tema" subtype="intertesto-biblico" target="#seg-b1-c1p6-davide-non-satio #seg-b1-c1p14-cieco-nato-vista #seg-b1-c4p47-san-paolo-vocatione #seg-b1-c6p2-obediente-morte #seg-b1-c11p19-primo-comandamento"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="verita-che-libera-c1">
+         <link type="tema" subtype="verita-che-libera-c1" target="#seg-b1-c1p13-cecita-chiara-luce #seg-b1-c1p14-cieco-nato-vista #seg-b1-c1p15-dio-conoscere-verita #seg-b1-c1p16-dispreggiar-corone #seg-b1-c1p17-santi-verita"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="conversione">
+         <link type="tema" subtype="conversione" target="#seg-b1-c1p18-conversione-secolara #seg-b1-c1p19-cognitione-miserie #seg-b1-c1p20-veri-tesori-patimenti #seg-b1-c1p21-contemplatione-verita #seg-b1-c1p22-mio-niente-radicata #seg-b1-c1p23-dio-vero-tesoro"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="mondo">
+         <link type="tema" subtype="mondo" target="#seg-b1-c2p1-guerra-mondo #seg-b1-c2p4-nemico-mondo #seg-b1-c2p12-affanni-interni"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="militia-spiritualis">
+         <link type="tema" subtype="militia-spiritualis" target="#seg-b1-c2p1-guerra-mondo #seg-b1-c2p4-nemico-mondo #seg-b1-c2p5-nemico-carne #seg-b1-c2p6-nemico-demonio #seg-b1-c2p7-tre-nemici #seg-b1-c2p8-citta-assediata #seg-b1-c2p9-castello-difesa #seg-b1-c2p10-citta-anima #seg-b1-c2p11-viglia-continua #seg-b1-c2p12-affanni-interni #seg-b1-c2p18-fabricare-castello"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="purificazione-c2">
+         <link type="tema" subtype="purificazione-c2" target="#seg-b1-c2p2-chiamata-verita #seg-b1-c2p3-esperienza-buoni-stati #seg-b1-c2p5-nemico-carne #seg-b1-c2p16-lucerna-verita"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="oratione-c2">
+         <link type="tema" subtype="oratione-c2" target="#seg-b1-c2p4-nemico-mondo #seg-b1-c2p6-nemico-demonio #seg-b1-c2p13-religiose-tiepide #seg-b1-c2p14-claustrati-secolari #seg-b1-c2p17-fuor-castello #seg-b1-c2p18-fabricare-castello"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="vita-religiosa">
+         <link type="tema" subtype="vita-religiosa" target="#seg-b1-c2p13-religiose-tiepide #seg-b1-c2p14-claustrati-secolari #seg-b1-c2p15-miseria-religiosi #seg-b1-c2p16-lucerna-verita #seg-b1-c2p17-fuor-castello"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="notte-dei-sensi">
+         <link type="tema" subtype="notte-dei-sensi" target="#seg-b1-c4p1-gospel-due-paradisi #seg-b1-c4p2-sensi-notte-oscura #seg-b1-c4p4-adoperarsi-notte #seg-b1-c4p5-senso-naturale #seg-b1-c4p7-cinque-sensi #seg-b1-c4p8-sensi-non-anima #seg-b1-c4p10-occhio-udito-esempio #seg-b1-c4p14-dure-pura-fede #seg-b1-c4p15-notte-necessaria"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="mortificazione-1">
+         <link type="tema" subtype="mortificazione-1" target="#seg-b1-c4p3-notte-naturale #seg-b1-c4p9-oscurita-mortificatione #seg-b1-c4p11-mortificare-occhio #seg-b1-c4p12-mortificare-udito #seg-b1-c4p13-cambiare-vesti #seg-b1-c4p16-agiuto-remonerator #seg-b1-c4p18-habito-fuori-dentro #seg-b1-c4p19-attendere-spirito #seg-b1-c4p21-profitto-vere-virtu #seg-b1-c4p22-non-perda-tempo #seg-b1-c4p23-viandanti #seg-b1-c4p24-principio-castello #seg-b1-c4p41-arrasso-mondo"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="direzione-spirituale-c4">
+         <link type="tema" subtype="direzione-spirituale-c4" target="#seg-b1-c4p6-esplicare-padre #seg-b1-c4p34-rimedii-confidare #seg-b1-c4p35-buono-padre #seg-b1-c4p36-attaccarsi-spirituali #seg-b1-c4p37-madre-latte #seg-b1-c4p38-anima-bammina #seg-b1-c4p39-improdenza-distaccare #seg-b1-c4p40-distaccare-tempo #seg-b1-c4p42-rimedii-conclusione #seg-b1-c4p52-guida-contemplatione"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="purificazione-c4-1">
+         <link type="tema" subtype="purificazione-c4-1" target="#seg-b1-c4p17-buon-segno-perfettione #seg-b1-c4p20-forte-lasciare-mondo #seg-b1-c4p25-medico-purga #seg-b1-c4p26-prima-purga-dura #seg-b1-c4p27-albero-radicato #seg-b1-c4p28-anima-radicata #seg-b1-c4p29-conosco-anima #seg-b1-c4p30-grosso-albero #seg-b1-c4p31-piccolo-albero-vento #seg-b1-c4p32-merito-bandiera #seg-b1-c4p33-esorto-pacienza #seg-b1-c4p43-entrare-facilta #seg-b1-c4p44-prima-causa"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="purificazione-c4-2">
+         <link type="tema" subtype="purificazione-c4-2" target="#seg-b1-c4p45-seconda-causa-verita #seg-b1-c4p46-guardare-cielo #seg-b1-c4p47-san-paolo-vocatione #seg-b1-c4p48-chiamata-oratione #seg-b1-c4p50-albero-giardinello #seg-b1-c4p51-abborrimento-maestro #seg-b1-c4p53-che-devono-fare #seg-b1-c4p56-parabola-talenti #seg-b1-c4p57-buone-mercadanzie #seg-b1-c4p58-apparecchiarsi-patire #seg-b1-c4p59-verita-fortezza"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="mortificazione-2">
+         <link type="tema" subtype="mortificazione-2" target="#seg-b1-c4p49-sensi-terza-persona #seg-b1-c4p55-temer-occasione"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="humilta-c5-1">
+         <link type="tema" subtype="humilta-c5-1" target="#seg-b1-c5p1-metafora-fondamento #seg-b1-c5p2-humilta-fondamento #seg-b1-c5p3-cristo-peccatori #seg-b1-c5p4-vita-humile #seg-b1-c5p5-imitare-cristo #seg-b1-c5p6-atti-esterni #seg-b1-c5p8-innanzi-creature #seg-b1-c5p9-vero-humile #seg-b1-c5p10-vergine-maria-santi #seg-b1-c5p11-fondamento-castello #seg-b1-c5p12-dama-calamita #seg-b1-c5p13-esterno-interno #seg-b1-c5p14-parlare-edificativo"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="verita-che-libera-c5">
+         <link type="tema" subtype="verita-che-libera-c5" target="#seg-b1-c5p7-specchio-niente #seg-b1-c5p34-occhi-purissimi #seg-b1-c5p35-buggia-verita #seg-b1-c5p36-falsita-mondo #seg-b1-c5p38-humilta-vera-quiete #seg-b1-c5p53-humilta-verita #seg-b1-c5p55-noi-verita #seg-b1-c5p56-stimamo-niente #seg-b1-c5p57-bramamo-disprezzi #seg-b1-c5p58-anima-superbia #seg-b1-c5p59-schiava-esempio #seg-b1-c5p60-prencipe-esempio #seg-b1-c5p61-comperatione-fine"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="superbia">
+         <link type="tema" subtype="superbia" target="#seg-b1-c5p11-fondamento-castello #seg-b1-c5p18-humilta-interna #seg-b1-c5p24-falsa-amor-proprio #seg-b1-c5p30-humilta-labra #seg-b1-c5p40-laida-confusione #seg-b1-c5p58-anima-superbia"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="humilta-c5-2">
+         <link type="tema" subtype="humilta-c5-2" target="#seg-b1-c5p15-star-soggetta #seg-b1-c5p16-non-dar-parere #seg-b1-c5p17-esterna-interna #seg-b1-c5p18-humilta-interna #seg-b1-c5p21-rammarico-santi #seg-b1-c5p22-approfittate-principii #seg-b1-c5p23-conformita-volere #seg-b1-c5p24-falsa-amor-proprio #seg-b1-c5p25-humilta-confermata #seg-b1-c5p29-altra-sorte #seg-b1-c5p30-humilta-labra #seg-b1-c5p31-parola-ingioriosa #seg-b1-c5p32-anima-provata"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="purificazione-c5">
+         <link type="tema" subtype="purificazione-c5" target="#seg-b1-c5p19-mortificar-passioni #seg-b1-c5p20-anime-principianti #seg-b1-c5p28-distacco-spirito #seg-b1-c5p41-rimedi-padre #seg-b1-c5p44-letione-libri #seg-b1-c5p45-cummunione-cibo #seg-b1-c5p46-purga-dio-demonio #seg-b1-c5p47-segni-dio"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="tentazione">
+         <link type="tema" subtype="tentazione" target="#seg-b1-c5p23-conformita-volere #seg-b1-c5p26-rammarico-quiete #seg-b1-c5p37-humilta-demonio #seg-b1-c5p39-demonio-disperatione #seg-b1-c5p40-laida-confusione #seg-b1-c5p45-cummunione-cibo #seg-b1-c5p46-purga-dio-demonio #seg-b1-c5p49-humilta-contrario #seg-b1-c5p50-non-oratione #seg-b1-c5p51-voltare-mondo #seg-b1-c5p52-mali-segni"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="direzione-spirituale-c5">
+         <link type="tema" subtype="direzione-spirituale-c5" target="#seg-b1-c5p26-rammarico-quiete #seg-b1-c5p27-inganni-santita #seg-b1-c5p28-distacco-spirito #seg-b1-c5p39-demonio-disperatione #seg-b1-c5p41-rimedi-padre #seg-b1-c5p43-obedienza #seg-b1-c5p47-segni-dio #seg-b1-c5p48-purga-rimedii #seg-b1-c5p49-humilta-contrario #seg-b1-c5p50-non-oratione #seg-b1-c5p51-voltare-mondo #seg-b1-c5p52-mali-segni"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="humilta-c5-3">
+         <link type="tema" subtype="humilta-c5-3" target="#seg-b1-c5p33-finta-humilta #seg-b1-c5p34-occhi-purissimi #seg-b1-c5p37-humilta-demonio #seg-b1-c5p38-humilta-vera-quiete #seg-b1-c5p42-gratie-misericordia #seg-b1-c5p44-letione-libri #seg-b1-c5p53-humilta-verita #seg-b1-c5p54-cristo-maesta #seg-b1-c5p59-schiava-esempio #seg-b1-c5p60-prencipe-esempio #seg-b1-c5p61-comperatione-fine"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="intertesto-liturgico">
+         <link type="tema" subtype="intertesto-liturgico" target="#seg-b1-c5p44-letione-libri #seg-b1-c11p20-san-francesco"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="imitatio-Christi">
+         <link type="tema" subtype="imitatio-Christi" target="#seg-b1-c6p1-specchio-cristo #seg-b1-c6p2-obediente-morte"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="obbedienza-c6-1">
+         <link type="tema" subtype="obbedienza-c6-1" target="#seg-b1-c6p2-obediente-morte #seg-b1-c6p3-humilta-obedienza #seg-b1-c6p5-obedienza-penitenza #seg-b1-c6p6-madre-teresa #seg-b1-c6p7-pregiasi-obediente #seg-b1-c6p8-vite-santi #seg-b1-c6p9-due-maniere #seg-b1-c6p10-obedienza-volonta #seg-b1-c6p11-vera-obedienza #seg-b1-c6p12-cecita-intelletto #seg-b1-c6p15-principianti #seg-b1-c6p16-approfittate-intelletto #seg-b1-c6p17-io-approfittata #seg-b1-c6p18-conclusione"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="humilta-c6">
+         <link type="tema" subtype="humilta-c6" target="#seg-b1-c6p3-humilta-obedienza #seg-b1-c6p4-desiderio-sudita"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="volonta">
+         <link type="tema" subtype="volonta" target="#seg-b1-c6p4-desiderio-sudita #seg-b1-c6p10-obedienza-volonta #seg-b1-c6p11-vera-obedienza #seg-b1-c6p13-principii-perfettione #seg-b1-c6p14-agiuto-forze"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="intelletto">
+         <link type="tema" subtype="intelletto" target="#seg-b1-c6p12-cecita-intelletto #seg-b1-c6p13-principii-perfettione #seg-b1-c6p16-approfittate-intelletto"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="abnegazione-distacco-1">
+         <link type="tema" subtype="abnegazione-distacco-1" target="#seg-b1-c11p1-distacco-grato #seg-b1-c11p2-cuore-geloso #seg-b1-c11p3-fatiche-niente #seg-b1-c11p4-degna-gratie #seg-b1-c11p5-per-contrario #seg-b1-c11p8-vil-creatura #seg-b1-c11p9-creature-comparabili #seg-b1-c11p11-adio-creature #seg-b1-c11p19-primo-comandamento #seg-b1-c11p20-san-francesco #seg-b1-c11p21-mani-di-dio #seg-b1-c11p24-lasciar-robba #seg-b1-c11p25-religiosi-negotii"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="anima-sposa">
+         <link type="tema" subtype="anima-sposa" target="#seg-b1-c11p2-cuore-geloso #seg-b1-c11p6-sposa-mondo #seg-b1-c11p7-puro-amore #seg-b1-c11p21-mani-di-dio #seg-b1-c11p27-sposo-celeste #seg-b1-c11p31-obedienza-allegrezza #seg-b1-c11p51-pianta-anima #seg-b1-c11p61-gabbia-amore"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="grazia">
+         <link type="tema" subtype="grazia" target="#seg-b1-c11p4-degna-gratie #seg-b1-c11p5-per-contrario #seg-b1-c11p15-parole-aspre #seg-b1-c11p55-contemplatione-dio #seg-b1-c11p56-principianti-forze"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="miseria-del-mondo-c11">
+         <link type="tema" subtype="miseria-del-mondo-c11" target="#seg-b1-c11p10-dio-incomparabile #seg-b1-c11p12-verita-nascosta #seg-b1-c11p13-mondo-schernisce #seg-b1-c11p14-lusinghe-pietose #seg-b1-c11p15-parole-aspre"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="direzione-spirituale-c11-1">
+         <link type="tema" subtype="direzione-spirituale-c11-1" target="#seg-b1-c11p16-maestri-spirito #seg-b1-c11p46-buono-padre #seg-b1-c11p47-padre-prove #seg-b1-c11p48-principe-giardino #seg-b1-c11p49-contadino-negligente #seg-b1-c11p50-contadino-diligente #seg-b1-c11p51-pianta-anima #seg-b1-c11p52-albero-piccolo #seg-b1-c11p53-fanciullo-madre #seg-b1-c11p54-principianti-proficienti #seg-b1-c11p55-contemplatione-dio #seg-b1-c11p56-principianti-forze #seg-b1-c11p57-donnecciola-ignorante"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="purificazione-c11">
+         <link type="tema" subtype="purificazione-c11" target="#seg-b1-c11p17-prove-di-dio #seg-b1-c11p18-santa-pacienza #seg-b1-c11p22-demonio-affatica #seg-b1-c11p23-ripugnanza-merito #seg-b1-c11p38-totale-distacco #seg-b1-c11p39-piccoli-attacchi #seg-b1-c11p43-fatiche-principianti #seg-b1-c11p44-vegnaloio-uva #seg-b1-c11p45-frutti-maturi"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="abnegazione-distacco-2">
+         <link type="tema" subtype="abnegazione-distacco-2" target="#seg-b1-c11p26-vivono-danime #seg-b1-c11p27-sposo-celeste #seg-b1-c11p32-cristo-capannuccia #seg-b1-c11p33-luogo-inferiore #seg-b1-c11p34-habito-corona #seg-b1-c11p37-amare-per-dio #seg-b1-c11p38-totale-distacco #seg-b1-c11p40-molto-studio #seg-b1-c11p41-lasciato-tutto #seg-b1-c11p43-fatiche-principianti #seg-b1-c11p67-cosuccie-ripugnanza"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="amor-proprio">
+         <link type="tema" subtype="amor-proprio" target="#seg-b1-c11p28-amor-proprio-cella #seg-b1-c11p29-santo-fine #seg-b1-c11p30-obedienza-toglie #seg-b1-c11p34-habito-corona #seg-b1-c11p35-tal-cosa-piace #seg-b1-c11p36-crocefisso #seg-b1-c11p39-piccoli-attacchi #seg-b1-c11p42-frutti-fanciulli #seg-b1-c11p47-padre-prove #seg-b1-c11p66-fidare-al-padre"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="obbedienza-c11">
+         <link type="tema" subtype="obbedienza-c11" target="#seg-b1-c11p30-obedienza-toglie #seg-b1-c11p31-obedienza-allegrezza #seg-b1-c11p64-cieca-obedienza #seg-b1-c11p66-fidare-al-padre #seg-b1-c11p68-esame-conscienza"/>
+      </linkGrp>
+      <linkGrp type="tema" subtype="direzione-spirituale-c11-2">
+         <link type="tema" subtype="direzione-spirituale-c11-2" target="#seg-b1-c11p58-carita-cura #seg-b1-c11p59-dio-ciba #seg-b1-c11p60-cacciatore-uccello #seg-b1-c11p61-gabbia-amore #seg-b1-c11p62-padre-dolcezza #seg-b1-c11p63-conchiodemo #seg-b1-c11p64-cieca-obedienza #seg-b1-c11p65-cirurgico-medicina #seg-b1-c11p67-cosuccie-ripugnanza #seg-b1-c11p68-esame-conscienza"/>
+      </linkGrp>
       <linkGrp type="metafora" subtype="luce-sole">
          <link type="metafora" subtype="luce-sole" target="#seg-b3-c1p2-notte #seg-b3-c1p3-purga #seg-b3-c1p6-statua #seg-b3-c1p6-contemplatione"/>
       </linkGrp>
