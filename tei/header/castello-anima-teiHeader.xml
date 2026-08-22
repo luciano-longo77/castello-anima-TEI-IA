@@ -1902,6 +1902,11 @@
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
+                        <change when="2026-08-22" who="#editor">Aggiunte le catene semantiche del Libro I nello standOff semantic-chains 
+                            (40 linkGrp type="tema", inclusi intertesto biblico e liturgico), fondate sulle aree del semantic-focus. 
+                            Lo strato passa a 199 linkGrp su tutti e tre i libri (Libro I 40, Libro II 46, Libro III 113): 
+                            il Libro I dispone ora del quarto strato standOff come II e III. Modifica additiva (944 seg = 944 fs invariati). 
+                            Validazione RNG+Schematron e guardie CI verdi.</change>
                         <change when="2026-08-21" who="#editor">Integrato nel teiText il campione del Libro II 
                             (11 capitoli: II.1, II.2, II.3, II.4, II.5, II.7, II.8, II.9, II.10, II.20, II.21; 247 segmenti) 
                             con indice d'impatto in standOff (una fs per seg), figure retoriche, aree semantiche e catene, naming simmetrico seg-b2-. 
