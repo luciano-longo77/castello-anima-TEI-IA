@@ -117,6 +117,10 @@ Annotate come glosse esplicative, attenuative o dichiarative, collocate nei punt
 
 Porzioni di testo rilevanti, classificate tramite `@ana` secondo la funzione che svolgono nel discorso.
 
+### Strati stand-off e catene semantiche
+
+Oltre all'indice d'impatto, l'annotazione interpretativa vive in strati `<standOff>` fratelli di `<text>`: **figure retoriche** (`#fig-*`), **aree semantiche** (`#area-*`) e **catene semantiche** — `<link>`/`<linkGrp>` che collegano i `<seg>` per tema, metafora o relazione (rischio↔operazione, intertesto). Le catene coprono **tutti e tre i libri**: 199 `<linkGrp>` (Libro I 40, Libro II 46, Libro III 113).
+
 ### Indice di impatto
 
 Valore composito discretizzato in quattro classi (`impact-low`, `impact-medium`, `impact-high`, `impact-critical`), calcolato secondo la formula 
