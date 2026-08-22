@@ -60,7 +60,7 @@ Fratelli di `<text>`, ancorati al testo per `@corresp`/`@from`/`@target`:
 1. **`impact-index`** — una `<fs>` per `<seg>` (**944**) con i 7 campi dell'indice d'impatto (N_band, A_band, N, A, F, Fnorm, I).
 2. **`rhetorical-figures`** — `<span>` che classificano le figure (`#fig-metafora`, `#fig-similitudine`…) su un `interpGrp` locale.
 3. **`semantic-focus`** — **almeno** un'area (`#area-*`) per ogni `<seg>`: 944 seg coperti da 1011 `<span>` (un seg può avere più aree).
-4. **`semantic-chains`** — `<link>`/`<linkGrp>` per le catene tematiche e le relazioni (rischio↔operazione, intertesto).
+4. **`semantic-chains`** — **199 `<linkGrp>`** che raggruppano catene tematiche e relazioni (rischio↔operazione, intertesto), su **tutti e tre i libri** (Libro I 40, Libro II 46, Libro III 113).
 
 Gli `interpGrp` dei vocabolari `fig-*`/`area-*` sono dichiarati **una volta** nel file del testo.
 
