@@ -64,6 +64,9 @@ Il `<seg xml:id="seg-b3-c8p2-roma">` è collegato alla `<fs xml:id="idx-seg-b3-c
 ### 🔹 Per vedere le figure retoriche o l'area di un segmento
 Negli standOff `rhetorical-figures` e `semantic-focus` cerca lo `<span from="#seg-…">`.
 
+### 🔹 Per seguire una catena tematica
+Nello standOff `semantic-chains` cerca `<link target="#seg-…">`: ogni `<linkGrp>` raggruppa i `<seg>` che condividono un tema, una metafora o una relazione (rischio↔operazione, intertesto). Le catene coprono **tutti e tre i libri** — 199 `<linkGrp>` (Libro I 40, Libro II 46, Libro III 113).
+
 ### 🔹 Per trovare una citazione
 Le citazioni sono `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` dentro il `<seg>`. L'elenco completo con le carte è in [`../../docs/anagrafe-citazioni.md`](../../docs/anagrafe-citazioni.md).
 
@@ -91,6 +94,7 @@ Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact
 | un capitolo | `xml:id="I-capN"` / `xml:id="III-capN"` |
 | un segmento e il suo senso | `xml:id="seg-b<L>-cNpP-…"` → leggi il suo `@ana` |
 | il calcolo d'impatto di un seg | `corresp="#seg-b<L>-cNpP-…"` nello `standOff impact-index` |
+| le catene tematiche di un seg | `target="#seg-b<L>-cNpP-…"` nello `standOff semantic-chains` |
 | le varianti sostanziali d'autrice | `<app>` (con `<subst>`/`<del>`/`<add>` dentro `<rdg>`) |
 | le ritracciature | `<retrace>` (sempre `hand="#ink_1"`) |
 | le restituzioni editoriali | `<supplied>` |
@@ -104,7 +108,8 @@ Il calcolo dell'impatto **non** sta nel `seg` (che porta solo la classe `#impact
 2. Cerca il `<seg>` col testo → `seg-b3-c1p8-desiderio`.
 3. Leggi il suo `@ana` (funzione, rischio, operazione, fase, stato, impatto).
 4. Per il calcolo dell'impatto, cerca `idx-seg-b3-c1p8-desiderio` nello `standOff impact-index`.
-5. Per il senso delle categorie, apri il `teiHeader` (`classDecl`) o [`docs/data-dictionary.md`](../../docs/data-dictionary.md).
+5. Per vedere in quali catene tematiche entra, cerca il suo id nei `target` dello `standOff semantic-chains` (qui la catena `desiderio-cessazione`).
+6. Per il senso delle categorie, apri il `teiHeader` (`classDecl`) o [`docs/data-dictionary.md`](../../docs/data-dictionary.md).
 
 ## 7. Riferimenti utili
 
