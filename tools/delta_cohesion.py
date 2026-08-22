@@ -25,8 +25,17 @@ Metriche restituite per seg:
   - delta_connectivity : archi di co-membership rimossi dal grafo togliendo il seg
 
 Uso:
-  python3 tools/delta_cohesion.py tei/text/castello-anima-teiText.xml SEGID [SEGID ...]
-  python3 tools/delta_cohesion.py tei/text/castello-anima-teiText.xml --detail SEGID
+  python3 tools/delta_cohesion.py TEIXML SEGID [SEGID ...]        # tabella leggibile
+  python3 tools/delta_cohesion.py TEIXML --detail SEGID           # + dettaglio catene
+  python3 tools/delta_cohesion.py TEIXML --pilot FILE.tsv         # loci letti da file
+  python3 tools/delta_cohesion.py TEIXML --pilot FILE.tsv --tsv   # uscita TSV (artefatto)
+
+--pilot FILE.tsv : file TSV con colonna 1 = locus_id, colonna 2 (opzionale) = operazione;
+                   righe vuote e righe che iniziano con '#' sono ignorate; una riga di
+                   intestazione 'locus_id...' è saltata automaticamente.
+--tsv            : stampa una riga d'intestazione + una riga TSV per locus (rigenerabile,
+                   da redirigere in logs/D2-pilot.tsv).
+
 Solo lettura; non modifica il file. Dipendenza: solo stdlib.
 """
 import sys, re
@@ -47,23 +56,34 @@ def load_chains(path):
             chains.append((typ, sub, members))
     return chains
 
+def load_pilot(path):
+    """Legge un TSV di loci: ritorna lista di (locus_id, operation)."""
+    out = []
+    for line in open(path, encoding="utf-8"):
+        line = line.rstrip("\n")
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        cols = line.split("\t")
+        cid = cols[0].strip()
+        if not cid or cid.lower() == "locus_id":   # salta intestazione
+            continue
+        op = cols[1].strip() if len(cols) > 1 else "-"
+        out.append((cid, op))
+    return out
+
 def analyze(chains, seg):
     touched = [c for c in chains if seg in c[2]]
     broken = [c for c in touched if len([m for m in c[2] if m != seg]) < 2]
     shortened = [c for c in touched if len([m for m in c[2] if m != seg]) >= 2]
-    # grafo di co-membership
-    neighbors = defaultdict(int)   # vicino -> n. catene condivise col seg
+    neighbors = defaultdict(int)
     for c in touched:
         for m in c[2]:
             if m != seg:
                 neighbors[m] += 1
     degree = len(neighbors)
-    delta_connectivity = sum(neighbors.values())  # archi (seg--vicino) pesati per catene condivise
-    # vicini che perdono OGNI legame col seg = tutti (per definizione, rimosso il seg);
-    # ma "isolati" nel senso forte: vicini la cui UNICA catena era una che si spezza
+    delta_connectivity = sum(neighbors.values())
     isolated = 0
-    for nb, shared in neighbors.items():
-        # catene condivise col seg che si spezzano vs che sopravvivono accorciate
+    for nb in neighbors:
         surviving = sum(1 for c in shortened if nb in c[2])
         if surviving == 0:
             isolated += 1
@@ -79,29 +99,57 @@ def analyze(chains, seg):
         "_touched": touched, "_broken": broken,
     }
 
+TSV_COLS = ["locus_id", "operation", "chains_touched", "chains_broken",
+            "chains_shortened", "degree", "neighbors_isolated", "delta_connectivity"]
+
 def main(argv):
     if len(argv) < 3:
         print(__doc__); return 2
     path = argv[1]
     detail = "--detail" in argv
-    segs = [a for a in argv[2:] if not a.startswith("--")]
+    tsv = "--tsv" in argv
+    # loci: da --pilot FILE oppure posizionali
+    loci = []  # (id, op)
+    if "--pilot" in argv:
+        i = argv.index("--pilot")
+        if i + 1 >= len(argv):
+            print("errore: --pilot richiede un file", file=sys.stderr); return 2
+        loci = load_pilot(argv[i + 1])
+    pos = [a for a in argv[2:] if not a.startswith("--")]
+    # gli id posizionali (escluso l'argomento di --pilot) si aggiungono con op '-'
+    if "--pilot" in argv:
+        pos = [a for a in pos if a != argv[argv.index("--pilot") + 1]]
+    loci += [(a, "-") for a in pos]
+    if not loci:
+        print("errore: nessun locus (usa SEGID posizionali o --pilot FILE)", file=sys.stderr); return 2
+
     chains = load_chains(path)
     if not chains:
-        print("Nessuna catena trovata nello standOff semantic-chains."); return 1
+        print("Nessuna catena trovata nello standOff semantic-chains.", file=sys.stderr); return 1
+
+    if tsv:
+        print("\t".join(TSV_COLS))
+        for cid, op in loci:
+            r = analyze(chains, cid)
+            print("\t".join(str(x) for x in [cid, op, r["chains_touched"], r["chains_broken"],
+                  r["chains_shortened"], r["degree"], r["neighbors_isolated"], r["delta_connectivity"]]))
+        return 0
+
+    # modalità leggibile
     print("# grafo catene: %d catene, %d seg distinti coinvolti" %
-          (len(chains), len({m for _,_,ms in chains for m in ms})))
-    hdr = ("seg", "touch", "broken", "short", "degree", "isol", "Δconn")
-    print("%-34s %5s %6s %5s %6s %5s %6s" % hdr)
-    print("-" * 70)
-    for seg in segs:
-        r = analyze(chains, seg)
-        print("%-34s %5d %6d %5d %6d %5d %6d" % (
-            r["seg"], r["chains_touched"], r["chains_broken"], r["chains_shortened"],
+          (len(chains), len({m for _, _, ms in chains for m in ms})))
+    print("%-34s %-10s %5s %6s %5s %6s %5s %6s" %
+          ("seg", "operation", "touch", "broken", "short", "degree", "isol", "Δconn"))
+    print("-" * 84)
+    for cid, op in loci:
+        r = analyze(chains, cid)
+        print("%-34s %-10s %5d %6d %5d %6d %5d %6d" % (
+            cid, op, r["chains_touched"], r["chains_broken"], r["chains_shortened"],
             r["degree"], r["neighbors_isolated"], r["delta_connectivity"]))
         if detail:
             for typ, sub, ms in r["_touched"]:
-                mark = "SPEZZA" if r["_broken"] and (typ, sub, ms) in r["_broken"] else "accorcia"
-                print("      [%-8s] %-28s (%d→%d membri)" % (mark, sub, len(ms), len(ms)-1))
+                mark = "SPEZZA" if (typ, sub, ms) in r["_broken"] else "accorcia"
+                print("      [%-8s] %-28s (%d→%d membri)" % (mark, sub, len(ms), len(ms) - 1))
     return 0
 
 if __name__ == "__main__":
