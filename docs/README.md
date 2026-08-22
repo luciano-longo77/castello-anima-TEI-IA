@@ -14,7 +14,7 @@
 
 `docs/` raccoglie la **documentazione metodologica ed editoriale** dell'edizione: i criteri di trascrizione, il modello dell'indice d'impatto, il protocollo della codifica assistita da AI, il dizionario delle categorie, l'anagrafe delle citazioni, la base-dati del campione e i rendiconti verificabili. Il **testo** e la sua annotazione stanno in [`../tei/text/`](../tei/text/); i **metadati** (mani, testimoni, tassonomia, criteri) nel [`teiHeader`](../tei/header/); gli **schemi e le guardie** in [`../schema/`](../schema/) e [`../.github/workflows/`](../.github/workflows/).
 
-Il modello è **interpretativo**: normalizzazione grafica **silenziosa e dichiarata**, apparato **solo sostanziale** (`app`/`lem`/`rdg`), **zero `choice`**; naming dei segmenti `seg-b<L>-cNpP-label`. Coerenza garantita in CI da **8 guardie** + RelaxNG + Schematron.
+Il modello è **interpretativo**: normalizzazione grafica **silenziosa e dichiarata**, apparato **solo sostanziale** (`app`/`lem`/`rdg`), **zero `choice`**; naming dei segmenti `seg-b<L>-cNpP-label`. Coerenza garantita in CI da **8 guardie** + RelaxNG + Schematron. L'annotazione interpretativa vive in quattro strati `<standOff>` — indice d'impatto, figure retoriche, aree semantiche e **catene semantiche** (`<link>`/`<linkGrp>`): le catene coprono **tutti e tre i libri** (199 `<linkGrp>`: Libro I 40, Libro II 46, Libro III 113).
 
 ---
 
