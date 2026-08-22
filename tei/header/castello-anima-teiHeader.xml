@@ -1036,7 +1036,7 @@
                             <tagUsage gi="hi">Evidenziazione grafica rilevante.</tagUsage>
                             
                             <!-- 8. INDICE D’IMPATTO (FEATURE STRUCTURES) -->
-                            <tagUsage gi="standOff">Contenitore di annotazioni non in linea (indice d’impatto, figure).</tagUsage>
+                            <tagUsage gi="standOff">Contenitore di annotazioni non in linea (indice d'impatto, figure).</tagUsage>
                             <tagUsage gi="fs">Struttura di tratti dell’indice d’impatto.</tagUsage>
                             <tagUsage gi="f">Tratto singolo (dimensione dell’indice).</tagUsage>
                             <tagUsage gi="numeric">Valore numerico di un tratto.</tagUsage>
