@@ -168,7 +168,7 @@ Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico 
 ### H. Indice d'Impatto (Feature Structures)
 | Elemento | Uso Ecdotico / Computazionale |
 | :--- | :--- |
-| `standOff` | Contenitore di annotazioni non in linea (indice d'impatto, figure). |
+| `standOff` | Contenitore di annotazioni non in linea (indice d'impatto, figure retoriche, aree semantiche, catene). |
 | `fs`, `f`, `symbol`, `numeric` | Struttura di tratti, tratto singolo, valore-banda (`symbol`: N_band/A_band) e valore numerico (`numeric`: N/A/F/Fnorm/I) dell'indice. |
 
 ### I. Collegamenti e Citazioni
