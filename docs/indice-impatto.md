@@ -187,7 +187,7 @@ prodotto dal calcolo, mai immesso dall'annotatore. Si usa `<fs>`, non `<val>`.
 ```
 
 **Esempio.** N: banda Critica → 0.90 · A: banda Alta → 0.85 · F: `precisatio` → grado 2 →
-**I = (4·0.667 + 2·0.90 + 0,85) / 7 = 0.760 → `impact-high`**.
+**I = (4·0.667 + 2·0.90 + 0.85) / 7 = 0.760 → `impact-high`**.
 
 ## Automazione — `impact_index.py`
 
