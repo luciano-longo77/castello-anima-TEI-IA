@@ -1,0 +1,12 @@
+# pilot-loci.tsv — loci del pilota della pipeline IA controllata (Fase 2)
+# Selezione: alta esposizione dottrinale + centralita' nel grafo delle catene
+# + presidio reale coerente con l'operazione (-CIT: <cit>; +TEXTsub: <del>/<subst>; +CIT: allusione senza <cit>).
+# Colonne: locus_id  operation  note
+locus_id	operation	note
+seg-b2-c8p9-luce-tenebre	-CIT	citazione di legittimazione da rimuovere; nexus luce/tenebre
+seg-b3-c40p7-declaratio-dossologia	-CIT	dossologia con cit; unico presidio della sua catena (si spezza)
+seg-b3-c16p37-certezza-niente	+TEXTsub	cassatura d'autrice da ripristinare; hub (deg 15) sicurta/impeccabilita
+seg-b1-c5p38-humilta-vera-quiete	+TEXTsub	discretio spirituum Libro I; hub massimo (deg 17)
+seg-b3-c7p24-conclusione-precisazione-nature	+TEXTsub	precisatio sulle due nature (anti-panteismo); cassatura d'autrice
+seg-b3-c6p4-fomite-peccato	+TEXTsub	guardia anti-impeccabilita (fomite del peccato); cassatura d'autrice
+seg-b3-c8p24-divenuta-altrodio	+CIT	nexus panteista "divenuta un altro Dio"; allusione senza cit da restituire
