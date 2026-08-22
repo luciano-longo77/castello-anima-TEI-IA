@@ -131,6 +131,8 @@ L'**indice d'impatto** tiene distinta la *categoria discreta* dal *calcolo*. La 
 </standOff>
 ```
 
+Le **catene semantiche** raccolgono in **stand-off** i legami tematici e relazionali fra `<seg>`: nello `<standOff type="semantic-chains">` ogni `<linkGrp type="…" subtype="…">` contiene un `<link target="#seg-… #seg-…">` che unisce i segmenti che condividono un tema, una metafora o una relazione (rischio↔operazione, intertesto). A differenza dell'indice d'impatto (una `<fs>` per seg) e del focus (una o più aree per seg), le catene sono **facoltative** e collegano *insiemi* di segmenti. Coprono **tutti e tre i libri**: 199 `<linkGrp>` in totale (Libro I 40, Libro II 46, Libro III 113).
+
 ## 6. Citazioni ed entità
 
 La citazione è `<cit>` che racchiude `<quote>` (con `@xml:lang`) e la fonte `<bibl>` — non un `<ref>` penzolante — ed è collocata **dentro il `<seg>`** che la contiene: la sua funzione intertestuale è dichiarata nell'`@ana` del `seg` (`#relation-intertesto-*`, ed eventualmente `#legittimazione-*`), non su `cit`; l'indice d'impatto resta sul `seg`. I rinvii interni sono `<ref>`/`<ptr>` con `@target` a `xml:id` esistenti. Le entità nominate (`<rs>`, `<orgName>`…) portano `@ref` alle entità dell'header; le date sono `<date>` normalizzate.
