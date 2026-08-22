@@ -1883,7 +1883,7 @@
             "top_p": 0.95
             },
             "indicators": {
-            "clarity_score": "0–1 continuous",
+            "clarity_score": ["alta","media","bassa"],
             "cohesion_local": "referential chains delta pre/post",
             "doctrinal_stability": ["low","medium","high"]
             },
