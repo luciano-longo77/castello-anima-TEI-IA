@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="castello-anima-variants">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Il Castello dell'anima — apparato controfattuale IA (standoff esterno)</title>
+            <author>Teresa di San Geronimo (Anna La Longa, 1670–post 1703)</author>
+            <respStmt>
+               <resp>edizione critica e codifica TEI</resp>
+               <name xml:id="editor">Luciano Longo</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Luciano Longo</publisher>
+            <availability status="restricted">
+               <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Apparato <hi rend="italic">esterno</hi> delle varianti sperimentali controfattuali,
+               generate dalla pipeline IA controllata (expert-in-the-loop) e validate dall'editore.
+               Le lezioni costituite risiedono nel testo dell'edizione
+               (<ref target="../tei/text/castello-anima-teiText.xml">castello-anima-teiText.xml</ref>);
+               qui se ne registrano i soli controfattuali, ancorati per <att>loc</att> agli
+               <gi>seg</gi> del testo, così da <hi rend="bold">non mescolare</hi> l'apparato genetico
+               d'autrice con lo strato sperimentale IA. Metadati e tassonomie complete nel
+               <ref target="../tei/header/castello-anima-teiHeader.xml">teiHeader</ref> dell'edizione;
+               registro delle run in <ref target="../logs/runs.tsv">logs/runs.tsv</ref>.</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="apparatus" subtype="counterfactual-ai">
+            <head>Varianti controfattuali della pipeline IA controllata (Fase 2)</head>
+            <listApp type="counterfactual-ai">
+               <app loc="seg-b2-c8p9-luce-tenebre" type="workflow-rimozione">
+                  <lem wit="#txt-c">, ch'è quel che dice il mio padre beato <rs type="fonte-mistica" ref="#p-john">Giovanni della Croce</rs>, cioè <cit><quote xml:lang="it">intendire, non intendendo</quote><bibl>Giovanni della Croce</bibl></cit></lem>
+                  <rdg resp="#AI_controllata" cert="high">
+                     <!-- −CIT: formula attributiva + citazione rimosse; nessuna lezione le sostituisce -->
+                  </rdg>
+                  <note type="run">seed=1 · prompt_hash=40eb6f886cf5 · output_hash=fde0a870dfba · reviewer=#editor · esito=approvata · D2: 2 catene toccate, 0 spezzate, 2 accorciate · cfr. logs/runs.tsv</note>
+               </app>
+            </listApp>
+         </div>
+      </body>
+   </text>
+</TEI>
