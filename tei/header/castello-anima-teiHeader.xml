@@ -1062,12 +1062,16 @@
             </tagsDecl>
 
             <variantEncoding method="parallel-segmentation" location="internal"/>
+            <variantEncoding method="location-referenced" location="external"/>
             <!--L’apparato critico è codificato secondo segmentazione parallela. Le varianti
                 d’autore (fasi Tb0–Tb3) sono rappresentate mediante <code>app</code>, <code>lem</code>,
-                <code>rdg</code>. Le varianti sperimentali generate tramite IA controllata sono
-                dichiarate come <code>rdg ana="scenario:*"</code> e integrate nel flusso testuale
-                senza sostituire il testo base. Tutti i fenomeni grafici (del, add, subst)
-                sono riportati in situ.-->
+                <code>rdg</code> in situ nel testo di lettura (interno). Le varianti sperimentali
+                generate dalla pipeline IA controllata (Fase 2) NON sono integrate nel flusso
+                testuale: risiedono in un apparato standoff <code>esterno</code>
+                (<code>variants/castello-anima-variants.xml</code>), come <code>app</code> ancorati
+                per <code>@loc</code> al <code>seg</code>, con <code>rdg type="workflow-*"</code> e
+                <code>resp="#AI_controllata"</code>; il teiText di produzione resta intatto. Tutti i
+                fenomeni grafici (del, add, subst) sono riportati in situ.-->
 
             <!-- Sistema tassonomico -->
             <classDecl>
