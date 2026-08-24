@@ -10,7 +10,7 @@ Campi obbligatori — coincidono con `teiHeader` → `xenoData` → `audit_trail
 | campo | significato |
 | :--- | :--- |
 | `locus_id` | `xml:id` del `<seg>` perturbato |
-| `operation` | `−CIT` · `+TEXTsub` · `+CIT` |
+| `operation` | `-CIT` · `+TEXTsub` · `+CIT` |
 | `seed` | seed deterministico della generazione |
 | `prompt_hash` | hash del prompt usato |
 | `output_hash` | hash dell'output generato |
@@ -21,4 +21,6 @@ Campi obbligatori — coincidono con `teiHeader` → `xenoData` → `audit_trail
 ## Determinismo e replicabilità
 Generazione a `temperature 0.2`, `top_p 0.95`. Fissando `seed` + `prompt_hash`, la run è
 **riproducibile** e verificabile da terzi; `output_hash` certifica quale testo è stato
-effettivamente validato ed eventualmente codificato come `<rdg ana="#workflow-*">`.
+effettivamente validato ed eventualmente codificato come `<rdg type="workflow-*">` nell'apparato
+standoff **esterno** [`../variants/castello-anima-variants.xml`](../variants/castello-anima-variants.xml)
+(ancorato per `@loc` al `<seg>`), senza toccare il teiText di produzione.
