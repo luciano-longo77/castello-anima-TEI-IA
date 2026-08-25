@@ -8,7 +8,10 @@
 #               NB: i 4 loci +TEXTsub inizialmente ipotizzati (c16p37, c5p38, c7p24 e la
 #               sola cassatura di c6p4) sono stati scartati: cancellature illeggibili o
 #               frammenti di lettere, senza lezione sostanziale. Vedi variants/backlog-textsub-additions.md.
-#   +CIT      : allusione a una fonte senza <cit> esplicito.
+#   +CIT      : allusione a una fonte gia' documentata (anagrafe) e usata altrove nel testo,
+#               ma non esplicitata a questo nodo. Cluster deificazione «un altro Dio»: la fonte e'
+#               Gal 2,20 (#22), citata esplicitamente all'ancora c7p7 (impact-low) e integrata ai
+#               nodi paralleli non citati (impact-high/medium).
 # Colonne: locus_id  operation  note
 locus_id	operation	note
 seg-b2-c8p9-luce-tenebre	-CIT	citazione di legittimazione da rimuovere; nexus luce/tenebre
@@ -17,4 +20,7 @@ seg-b1-c6p5-obedienza-penitenza	+TEXTsub	(a) ripristino cassatura d'autrice «pe
 seg-b3-c6p4-fomite-peccato	+TEXTsub	(b) rimozione aggiunta a margine T3: guardia anti-impeccabilita (fomito del peccato); hub deg 12
 seg-b2-c21p10-quattro-passioni	+TEXTsub	(b) rimozione aggiunta a margine di MANO ESTERNA: anima vulnerabile alle passioni; deg 3
 seg-b3-c24p16-glossa-humanita	+TEXTsub	(b) rimozione glossa marginale T3: umanita di Cristo non impedimento; svuota il seg
-seg-b3-c8p24-divenuta-altrodio	+CIT	nexus panteista "divenuta un altro Dio"; allusione senza cit da restituire
+seg-b3-c8p24-divenuta-altrodio	+CIT	(B) integra Gal 2,20 (àncora citata a c7p7) al nodo «divenuta un altro Dio»; III.8; impact-high panteismo
+seg-b3-c5p16-altro-dio-participatione	+CIT	(C) integra Gal 2,20 al nodo «un altro Dio per participatione»; III.5 §19
+seg-b3-c7p4-precisazione-participatione	+CIT	(C) integra Gal 2,20 al nodo «un altro Dio per participatione»; III.7 §5
+seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	(C) integra Gal 2,20 al nodo «tutta divinizzata… un altro Dio per gratia»; III.7 §12
