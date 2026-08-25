@@ -1,4 +1,4 @@
-# CI del *Castello dell'anima* — workflow e guardie
+# CI del *Castello dell'anima* - workflow e guardie
 
 Questa cartella contiene l'**integrazione continua** dell'edizione: a ogni `push`/`pull_request`
 GitHub Actions verifica che testo, tassonomia e header restino **ben formati, validi e coerenti**.
@@ -9,17 +9,21 @@ semantiche (Schematron), infine le **guardie** Python che impongono le invariant
 [![Validate Taxonomy](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/main.yml)
 [![Genera data-dictionary](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/gen-data-dictionary.yml/badge.svg?branch=main)](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/gen-data-dictionary.yml)
 [![Genera interventi-editoriali](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/gen-interventi-editoriali.yml/badge.svg?branch=main)](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/gen-interventi-editoriali.yml)
+[![Vocab SKOS](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/vocab-skos.yml/badge.svg?branch=main)](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/vocab-skos.yml)
+[![Validate Variants](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/validate-variants.yml/badge.svg?branch=main)](https://github.com/luciano-longo77/castello-anima-TEI-IA/actions/workflows/validate-variants.yml)
 
-## I quattro workflow
+## I sei workflow
 
 | File | Nome | Quando parte | Che cosa garantisce |
 |---|---|---|---|
 | `validate-text.yml` | **Validate Text** | modifiche a `tei/text/**`, `tei/taxonomy/`, `tei/header/`, `schema/`, `.github/workflows/**` | il teiText è valido e coerente su tutti i piani |
 | `main.yml` | **Validate Taxonomy** | modifiche a `tei/taxonomy/**`, `tei/header/**` | la tassonomia è valida e la sua copia nell'header non diverge |
+| `validate-variants.yml` | **Validate Variants** | modifiche a `variants/*.xml`, `schema/tei_all.rng`, al workflow | l'apparato standoff esterno delle varianti IA è ben formato, NFC e valido TEI |
+| `vocab-skos.yml` | **Vocab SKOS** | modifiche alla tassonomia, al generatore SKOS o al vocabolario | il `.ttl` è sincronizzato con la tassonomia e ogni `@ana`/banda risolve a un `skos:Concept` |
 | `gen-data-dictionary.yml` | **Genera data-dictionary** | modifiche a `tei/taxonomy/tassonomia-gh.xml`, al generatore o al workflow; oppure a mano | rigenera e ricommitta `docs/data-dictionary.md` dalla tassonomia |
 | `gen-interventi-editoriali.yml` | **Genera interventi-editoriali** | modifiche a `tei/text/castello-anima-teiText.xml`, all'estrattore o al workflow; oppure a mano | rigenera e ricommitta `docs/interventi-editoriali.md` dal teiText |
 
-Tutti e quattro accettano l'avvio manuale dalla scheda **Actions** (`workflow_dispatch`).
+Tutti e sei accettano l'avvio manuale dalla scheda **Actions** (`workflow_dispatch`).
 
 ### `validate-text.yml` — Validate Text
 Sul file `tei/text/castello-anima-teiText.xml`, in sequenza:
@@ -40,6 +44,12 @@ Sul file `tei/text/castello-anima-teiText.xml`, in sequenza:
 Due job:
 - **validate** — su `tei/taxonomy/tassonomia-gh.xml`: ben formato, **RelaxNG** (`tei/taxonomy/schema/taxonomy-rng.rng`), **Schematron** (`taxonomy-sch.sch`), presenza delle **tassonomie core**, `@ana` referenziale negli esempi (`tei/taxonomy/esempio/*.xml`), validazione strutturale degli esempi contro `tei_all.rng` e guardia di co-occorrenza sugli esempi.
 - **e1-guard** — **guardia E1**: le tassonomie interpretative copiate nel `classDecl` dell'header sono **identiche** alla fonte `tassonomia-gh.xml` (categorie e `catDesc`). Impedisce che header e fonte divergano.
+
+### `validate-variants.yml` — Validate Variants
+Sull'apparato standoff **esterno** delle varianti controfattuali IA (`variants/*.xml`), un file `<TEI>` autonomo (nessun `xi:include`): **NFC**, **buona formazione** (`xmllint --noout`) e **RelaxNG** (`jing schema/tei_all.rng`). Valida lo strato sperimentale — che per scelta editoriale **non entra nel teiText** — senza toccare la *Validate Text*; il teiText di produzione resta l'edizione pulita.
+
+### `vocab-skos.yml` — Vocab SKOS
+Sul vocabolario SKOS: rigenera il `.ttl` dalla tassonomia con `tools/gen_skos.py` e verifica **sync** (il file committato è byte-identico alla rigenerazione) e **round-trip** (ogni token `@ana` e ogni banda del teiText risolve a un `skos:Concept`).
 
 ### `gen-data-dictionary.yml` — Genera data-dictionary
 Esegue `tools/gen_data_dictionary.py` e, se `docs/data-dictionary.md` è cambiato, lo **committa da solo** (con `git pull --rebase` prima del push per evitare collisioni). Richiede *Read and write permissions* per le Actions.
