@@ -86,10 +86,11 @@ Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e
 
 ### `/.github/workflows`
 
-Cinque workflow di GitHub Actions, attivi a ogni push/PR (e avviabili a mano):
+Sei workflow di GitHub Actions, attivi a ogni push/PR (e avviabili a mano):
 
 - **Validate Text** — sul teiText: buona formazione, risoluzione `xi:include`, RelaxNG (TEI All, versione fissata), guardia **NFC**, guardia **E2** (ogni token `@ana` risolve a una categoria dichiarata), **co-occorrenza** degli assi, **cit/glossa**, **citazioni**, **commenti**, **interventi editoriali**, **regole-fissate** (retrace/naming/`@ana`-su-seg/sobrietà), **whitespace** (anti-corruzione: whitespace intra-parola in `subst`/`choice`) e **Schematron dell'indice d'impatto** (`impactindex.sch`).
 - **Validate Taxonomy** — sulla tassonomia: buona formazione, RelaxNG + Schematron dedicati, validazione degli esempi, e guardia **E1** (le tassonomie interpretative in `tassonomia-gh.xml` coincidono con la copia nel `classDecl` della testata).
+- **Validate Variants** — sull'apparato standoff **esterno** delle varianti controfattuali IA (`variants/*.xml`): buona formazione, guardia **NFC** e RelaxNG (TEI All). Tiene valido l'apparato sperimentale senza toccare il teiText (che ha la sua *Validate Text*).
 - **Vocab SKOS** — sul vocabolario: rigenera il `.ttl` dalla tassonomia e verifica **sync** (il file committato è byte-identico alla rigenerazione) e **round-trip** (ogni token `@ana` e ogni banda del teiText risolve a un `skos:Concept`).
 - **Genera data-dictionary** — esegue `tools/gen_data_dictionary.py` e ricommitta `docs/data-dictionary.md` se cambiato.
 - **Genera interventi-editoriali** — esegue `tools/estrattore_interventi.py` e ricommitta `docs/interventi-editoriali.md` se cambiato.
