@@ -1,0 +1,11 @@
+locus_id	operation	esito	N_lem	A_lem	F_lem	I_lem	N_rdg	A_rdg	F_rdg	I_rdg	dI	rater	note
+seg-b2-c8p9-luce-tenebre	-CIT	approvata	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	tolta cit mistica (Giovanni della Croce): A media→bassa, F precisatio→delimitazione
+seg-b3-c40p7-declaratio-dossologia	-CIT	approvata	critica	alta	3	0.950	critica	media	3	0.925	-0.025	#editor	tolta dossologia: A alta→media; F=3 invariato (la declaratio «senso della Chiesa» regge)
+seg-b1-c6p5-obedienza-penitenza	+TEXTsub	approvata	bassa	bassa	1	0.333	bassa	bassa	1	0.333	+0.000	#editor	ripristino parola: nessun cambio regolativo → ΔI=0 (effetto su D1/D3)
+seg-b3-c6p4-fomite-peccato	+TEXTsub	approvata	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	tolta guardia anti-impeccabilità: A→bassa, F→delimitazione
+seg-b2-c21p10-quattro-passioni	+TEXTsub	approvata	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	tolta guardia (mano esterna): A→bassa, F→delimitazione
+seg-b3-c24p16-glossa-humanita	+TEXTsub	respinta	alta	alta	2	0.717						#editor	RESPINTA (svuota il seg): ΔI n/a
+seg-b3-c8p24-divenuta-altrodio	+CIT	approvata	critica	alta	2	0.760	critica	bassa	1	0.505	-0.255	#editor	scenario ii: +CIT converge al controllo c7p7 (F→1, A→bassa); I↓, D3↑
+seg-b3-c5p16-altro-dio-participatione	+CIT	approvata	critica	media	1	0.544	critica	bassa	1	0.505	-0.039	#editor	scenario ii: +CIT, F già 1, A media→bassa; I quasi invariato
+seg-b3-c7p4-precisazione-participatione	+CIT	approvata	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	scenario ii: +CIT converge a c7p7 (0.462 esatto)
+seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	da-rivedere	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	DA-RIVEDERE: warrant Gal 2,20 mal accoppiato; ΔI provvisorio
