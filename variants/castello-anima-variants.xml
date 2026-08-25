@@ -52,6 +52,26 @@
                   </rdg>
                   <note type="run">seed=1 · prompt_hash=19a9b52cafc4 · output_hash=5bdb6631b4bd · reviewer=#editor · esito=approvata · D2: 1 catena toccata, 1 spezzata (conformita-ortodossia), 0 accorciate · cfr. logs/runs.tsv</note>
                </app>
+               <app loc="seg-b1-c6p5-obedienza-penitenza" type="workflow-recupero-cancellature" subtype="ripristino-cassatura">
+                  <lem wit="#txt-c">obedienza</lem>
+                  <rdg resp="#AI_controllata" cert="high">penitenza</rdg>
+                  <note type="run">seed=1 · prompt_hash=05ac0b798e0c · output_hash=23ac9446c4b5 · reviewer=#editor · esito=approvata · +TEXTsub ripristino cassatura d'autrice «penitenza»→obedienza (registro penitenziale→obbedienziale) · D2: hub deg 13, 1 catena accorciata · cfr. logs/runs.tsv</note>
+               </app>
+               <app loc="seg-b3-c6p4-fomite-peccato" type="workflow-recupero-cancellature" subtype="rimozione-aggiunta">
+                  <lem wit="#txt-c">ciò perché l'<term type="mistico">annichilazione</term> che fece in <rs type="divinita" ref="#dio">Dio</rs>, ma non perché in lei non resti il <term type="mistico">fomito del peccato</term>, se bene</lem>
+                  <rdg resp="#AI_controllata" cert="high"/>
+                  <note type="run">seed=1 · prompt_hash=3b7796d30ada · output_hash=2ca4c160ed3d · reviewer=#editor · esito=approvata · +TEXTsub rimozione guardia anti-impeccabilità (aggiunta a margine T3, #ink_3-dark d'autrice: «fomito del peccato») · D2: hub deg 12, 2 catene accorciate · cfr. logs/runs.tsv</note>
+               </app>
+               <app loc="seg-b2-c21p10-quattro-passioni" type="workflow-recupero-cancellature" subtype="rimozione-aggiunta">
+                  <lem wit="#txt-c">Mi dichiarò però che resta nell'anima passiva capacetà ad essere contrariata dalle passioni quando Dio l'abandonasse</lem>
+                  <rdg resp="#AI_controllata" cert="high"/>
+                  <note type="run">seed=1 · prompt_hash=b51074f7de64 · output_hash=c4e85a3093b6 · reviewer=#editor · esito=approvata · +TEXTsub rimozione guardia anti-impeccabilità di MANO ESTERNA (#ink_4-external, resp #esterno: «resta capacità ad essere contrariata dalle passioni») · D2: deg 3, 1 catena accorciata · cfr. logs/runs.tsv</note>
+               </app>
+               <app loc="seg-b3-c24p16-glossa-humanita" type="workflow-recupero-cancellature" subtype="rimozione-aggiunta">
+                  <lem wit="#txt-c">cioè non che la <term type="mistico">passione</term> di <rs type="divinita" ref="#dio">Christo Signor nostro</rs> sii impedimento, essendo ella <term type="mistico">scola</term>, ma diciamo che tirando <rs type="divinita" ref="#dio">Dio</rs> all'<rs type="soggetto-mistico">anima</rs> per <term type="mistico">contemplatione</term> sì ella si vuol<supplied reason="hole" resp="#editor" cert="medium">esse</supplied> far viole<supplied reason="hole" resp="#editor" cert="medium">nza</supplied> <gap reason="hole" unit="char" quantity="1"/> <supplied reason="hole" resp="#editor" cert="medium">star</supplied>sene all'<term type="mistico">humanità</term> vi sarebbe d'impedimento</lem>
+                  <rdg resp="#AI_controllata" cert="high"/>
+                  <note type="run">seed=1 · prompt_hash=1fe13e2b00e3 · output_hash=e3b0c44298fc · reviewer=#editor · esito=approvata · +TEXTsub rimozione glossa marginale (T3, #ink_3-dark d'autrice: umanità di Cristo non impedimento; svuota il seg) · D2: nodo terminale, spezza la catena · cfr. logs/runs.tsv</note>
+               </app>
             </listApp>
          </div>
       </body>
