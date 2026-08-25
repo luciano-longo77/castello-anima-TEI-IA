@@ -1,0 +1,11 @@
+locus_id	operation	esito	D1_lem	D1_rdg	dD1	D3_lem	D3_rdg	dD3	rater	note
+seg-b2-c8p9-luce-tenebre	-CIT	approvata	media	media	+0.00	media	bassa	-0.25	#editor	tolta la legittimazione mistica (Giovanni della Croce): chiarezza invariata, stabilità cala (apofasi non più autorizzata)
+seg-b3-c40p7-declaratio-dossologia	-CIT	approvata	alta	alta	+0.00	alta	alta	+0.00	#editor	tolta la dossologia: la professio fidei «secondo il senso della Chiesa» regge chiarezza e stabilità → ΔD≈0 (come ΔI)
+seg-b1-c6p5-obedienza-penitenza	+TEXTsub	approvata	alta	bassa	-0.50	alta	media	-0.25	#editor	ripristino «penitenza»: la frase diventa tautologica («penitenza più grata della penitenza») → D1 CROLLA benché ΔI=0
+seg-b3-c6p4-fomite-peccato	+TEXTsub	approvata	media	media	+0.00	media	critica	-0.50	#editor	tolta la guardia anti-impeccabilità: l'annichilazione suona come impeccabilità non sorvegliata → D3 al minimo
+seg-b2-c21p10-quattro-passioni	+TEXTsub	approvata	media	media	+0.00	media	bassa	-0.25	#editor	tolta la guardia (mano esterna): la mortificazione delle passioni suona assoluta → D3 cala
+seg-b3-c24p16-glossa-humanita	+TEXTsub	respinta	media	nulla	-0.50	media			#editor	RESPINTA: la rimozione svuota il seg → D1=nulla (lettura inesistente); ΔD3 non calcolabile
+seg-b3-c8p24-divenuta-altrodio	+CIT	approvata	media	media	+0.00	bassa	media	+0.25	#editor	aggiunta Gal 2,20: la deificazione unguarded riceve garanzia scritturale → D3 SALE (additivo)
+seg-b3-c5p16-altro-dio-participatione	+CIT	approvata	media	media	+0.00	media	alta	+0.25	#editor	aggiunta Gal 2,20 su nodo già qualificato «per participatione»: doppia garanzia → D3 alta
+seg-b3-c7p4-precisazione-participatione	+CIT	approvata	media	media	+0.00	media	alta	+0.25	#editor	aggiunta Gal 2,20: legittimazione scritturale → D3 sale
+seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	da-rivedere	media	media	+0.00	bassa	media	+0.25	#editor	DA-RIVEDERE: Gal 2,20 mal accoppiato (inabitazione, non cambiamento di natura) → guardia solo parziale; D3 sale poco
