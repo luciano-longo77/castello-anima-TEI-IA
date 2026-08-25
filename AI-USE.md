@@ -21,6 +21,7 @@ Non tutti gli strumenti elencati sono usati in ogni fase; la sezione **«Ambiti 
 ### Ambiti d'uso
 L'IA è stata usata come **strumento di supporto** per:
 - **Codifica TEI** — compiti tecnici e ripetitivi (controlli di validità XML/TEI, coerenza della marcatura, bozze di script di verifica) e **test di protocolli di trascrizione automatizzata**;
+- **Esperimenti controfattuali controllati** (Fase 2) — generazione di *varianti sperimentali* di singoli luoghi (rimozione di una citazione `-CIT`, ripristino di una cassatura d'autrice `+TEXTsub`, integrazione di una citazione richiamata `+CIT`) al **solo scopo di misurarne l'effetto** su chiarezza, coesione e stabilità dottrinale. Ogni variante è **validata dall'editore** (l'IA *propone, non decide*; nessuna fonte inventata — la citazione deve esistere nell'anagrafe), è **tracciata** (seed, hash, esito in `logs/runs.tsv`) e **non entra mai nel testo costituito**: resta in un apparato standoff *esterno* (`variants/`), separato dall'edizione. Metodo in [`docs/protocollo-IA-codifica.md`](docs/protocollo-IA-codifica.md);
 - **Ricognizione bibliografica** — reperimento, mappatura e sintesi preliminare della letteratura (Elicit, Litmaps), sempre con **verifica diretta** di ogni fonte e citazione da parte dell'autore.
 
 ### Supervisione umana e responsabilità
@@ -66,6 +67,7 @@ Not all listed tools are used at every stage; the **"Scope of use"** section spe
 ### Scope of use
 AI was used as a **supporting tool** for:
 - **TEI encoding** — technical and repetitive tasks (XML/TEI validity checks, markup consistency, drafts of verification scripts) and **testing of automated transcription protocols**;
+- **Controlled counterfactual experiments** (Phase 2) — generation of *experimental variants* of individual loci (citation removal `-CIT`, authorial-deletion recovery `+TEXTsub`, integration of an alluded citation `+CIT`) **solely to measure their effect** on clarity, cohesion and doctrinal stability. Every variant is **editor-validated** (the AI *proposes, does not decide*; no invented sources — the citation must exist in the authority list), **traced** (seed, hash, outcome in `logs/runs.tsv`) and **never enters the constituted text**: it stays in an *external* standoff apparatus (`variants/`), separate from the edition. Method in [`docs/protocollo-IA-codifica.md`](docs/protocollo-IA-codifica.md);
 - **Bibliographic reconnaissance** — finding, mapping and preliminary summarising of the literature (Elicit, Litmaps), always with the author's **direct verification** of every source and citation.
 
 ### Human oversight and responsibility
