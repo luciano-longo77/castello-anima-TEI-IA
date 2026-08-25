@@ -134,7 +134,7 @@ Il campione consta di **29 loci di selezione** (corrispondenti a **36 capitoli**
 | II.1–2 | Dispositione dell'anima | Fondazione dottrinale del discernimento → baseline |
 | II.3 | *Anime che incominciano ad entrare nella contemplatione* | Soglia dell'ingresso contemplativo; glosse §6 6.2.2/6.6.1 → fascia media dell'indice |
 | II.4–5 | *Seconda notte / stati di notte oscura* | Intertesto **giovanneo** (Subida/Noche); catene notte→quiete |
-| II.7 | *S'incomincia a trattare della contemplatione infusa (oratione di quiete)* | Cuore **quietista** (quiete ×16); glossa §6 6.8.1 → banco **−CIT** |
+| II.7 | *S'incomincia a trattare della contemplatione infusa (oratione di quiete)* | Cuore **quietista** (quiete ×16); glossa §6 6.8.1 → banco **-CIT** |
 | II.8 (a–d) | Oratione d'unione | Nodo critico: consonanza con Molinos, casi concreti, rischio di quietismo; ideale per **-CIT / +CIT** |
 | II.9a–b | Travagli delle anime | Casistica mistica → esperimenti di spostamento citazionale |
 | II.10b | Segni per conoscere se la gratia è di Dio o del Demonio | Segmento normativo ad alta sensibilità; utile per **stress test IA** |
