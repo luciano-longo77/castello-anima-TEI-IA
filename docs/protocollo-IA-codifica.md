@@ -124,15 +124,15 @@ Genera una variante **controfattuale** di un locus per misurarne l'effetto (ΔI,
 
 | operazione | codice | famiglia | determinismo |
 | :--- | :--- | :--- | :--- |
-| rimozione citazione | **−CIT** | **sottrattiva** | deterministica: rimuove una porzione **già presente** nel testo; nessuna generazione, nessun rischio di lezione inventata |
+| rimozione citazione | **-CIT** | **sottrattiva** | deterministica: rimuove una porzione **già presente** nel testo; nessuna generazione, nessun rischio di lezione inventata |
 | recupero cancellatura | **+TEXTsub** | **sottrattiva** | deterministica: ripristina una lezione **già presente** nel `<rdg wit="#txt-b0">` (cassata d'autrice) |
 | integrazione citazione | **+CIT** | **additiva** | **generativa**: restituisce una citazione *richiamata ma non esplicitata* (max 35 parole) → richiede `temperature 0.2`, `top_p 0.95`, **seed + modello/versione registrati**; la fonte deve esistere in `anagrafe-citazioni.md` (niente riferimenti inventati) |
 
 **Perché la distinzione conta.** Nelle operazioni **sottrattive** l'AI non aggiunge testo: l'output è funzione deterministica dell'input, quindi `seed`/`temperature` in `logs/runs.tsv` valgono come *template* di tracciabilità (gli hash certificano prompt→output). Nell'operazione **additiva** l'AI *genera* testo: lì `seed`, `temperature` e **modello/versione** sono parametri reali e condizionano il risultato, quindi vanno registrati.
 
-**PROMPT (sottrattiva, es. −CIT)**:
+**PROMPT (sottrattiva, es. -CIT)**:
 ```
-Operazione −CIT sul locus <SEG_ID>. Rimuovi dalla lezione costituita la sola citazione
+Operazione -CIT sul locus <SEG_ID>. Rimuovi dalla lezione costituita la sola citazione
 di legittimazione e la sua formula attributiva, preservando la sintassi e SENZA introdurre
 testo nuovo. Restituisci il solo segmento risultante.
 ```
@@ -143,7 +143,7 @@ integra la citazione per esteso (max 35 parole), SOLO se presente in anagrafe-ci
 Non inventare né il riferimento né il testo. Parametri: temperature 0.2, top_p 0.95, seed <N>.
 Output: il frammento + la riga di anagrafe.
 ```
-**CODIFICA.** La variante approvata **non entra nel teiText**: si registra nell'apparato standoff **esterno** `variants/castello-anima-variants.xml` come `<app loc="#<SEG_ID>" type="workflow-*">` con `<lem wit="#txt-c">…</lem>` e `<rdg resp="#AI_controllata" cert="…">…</rdg>`. L'operazione sta su **`@type`** (token: `workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **non** su `@ana`: la tassonomia `workflow` è nel `teiHeader` (riservata al `revisionDesc`) e la guardia E2 risolve gli `@ana` del testo solo contro `tassonomia-gh.xml`.
+**CODIFICA.** La variante approvata **non entra nel teiText**: si registra nell'apparato standoff **esterno** `variants/castello-anima-variants.xml` come `<app loc="<SEG_ID>" type="workflow-*">` con `<lem wit="#txt-c">…</lem>` e `<rdg resp="#AI_controllata" cert="…">…</rdg>`. L'operazione sta su **`@type`** (token: `workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **non** su `@ana`: la tassonomia `workflow` è nel `teiHeader` (riservata al `revisionDesc`) e la guardia E2 risolve gli `@ana` del testo solo contro `tassonomia-gh.xml`.
 
 **VERIFICA**: `jing "$RNG" variants/castello-anima-variants.xml` (ben formato + valido) **+** una riga in `logs/runs.tsv` (`locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`). Le operazioni sottrattive non toccano il teiText, quindi non richiedono la catena §3 sul testo; l'additiva, se e quando la citazione integrata venisse promossa nel testo di lettura, ricadrebbe sotto il **Task E** e la catena §3.
 
@@ -503,15 +503,15 @@ Generate a **counterfactual** variant of a locus to measure its effect (ΔI, coh
 
 | operation | code | family | determinism |
 | :--- | :--- | :--- | :--- |
-| citation removal | **−CIT** | **subtractive** | deterministic: removes a portion **already present** in the text; no generation, no risk of an invented reading |
+| citation removal | **-CIT** | **subtractive** | deterministic: removes a portion **already present** in the text; no generation, no risk of an invented reading |
 | deletion recovery | **+TEXTsub** | **subtractive** | deterministic: restores a reading **already present** in `<rdg wit="#txt-b0">` (an authorial cancellation) |
 | citation integration | **+CIT** | **additive** | **generative**: supplies a citation *alluded to but not spelled out* (max 35 words) → requires `temperature 0.2`, `top_p 0.95`, **recorded seed + model/version**; the source must exist in `anagrafe-citazioni.md` (no invented references) |
 
 **Why the distinction matters.** In **subtractive** operations the AI adds no text: the output is a deterministic function of the input, so `seed`/`temperature` in `logs/runs.tsv` act as a traceability *template* (the hashes certify prompt→output). In the **additive** operation the AI *generates* text: there `seed`, `temperature` and **model/version** are real parameters that condition the result and must be recorded.
 
-**PROMPT (subtractive, e.g. −CIT)**:
+**PROMPT (subtractive, e.g. -CIT)**:
 ```
-−CIT operation on locus <SEG_ID>. Remove from the constituted reading ONLY the
+-CIT operation on locus <SEG_ID>. Remove from the constituted reading ONLY the
 legitimising citation and its attribution formula, preserving syntax and WITHOUT introducing
 new text. Return the resulting segment only.
 ```
@@ -522,7 +522,7 @@ supply the citation in full (max 35 words), ONLY if present in anagrafe-citazion
 Invent neither the reference nor the text. Params: temperature 0.2, top_p 0.95, seed <N>.
 Output: the fragment + the anagrafe row.
 ```
-**ENCODING.** The approved variant **does not enter the teiText**: it is recorded in the **external** standoff apparatus `variants/castello-anima-variants.xml` as `<app loc="#<SEG_ID>" type="workflow-*">` with `<lem wit="#txt-c">…</lem>` and `<rdg resp="#AI_controllata" cert="…">…</rdg>`. The operation goes on **`@type`** (token: `workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **not** on `@ana`: the `workflow` taxonomy lives in the `teiHeader` (reserved for `revisionDesc`), and the E2 guard resolves the text's `@ana` only against `tassonomia-gh.xml`.
+**ENCODING.** The approved variant **does not enter the teiText**: it is recorded in the **external** standoff apparatus `variants/castello-anima-variants.xml` as `<app loc="<SEG_ID>" type="workflow-*">` with `<lem wit="#txt-c">…</lem>` and `<rdg resp="#AI_controllata" cert="…">…</rdg>`. The operation goes on **`@type`** (token: `workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **not** on `@ana`: the `workflow` taxonomy lives in the `teiHeader` (reserved for `revisionDesc`), and the E2 guard resolves the text's `@ana` only against `tassonomia-gh.xml`.
 
 **VERIFY**: `jing "$RNG" variants/castello-anima-variants.xml` (well-formed + valid) **+** one row in `logs/runs.tsv` (`locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`). Subtractive operations do not touch the teiText, so they do not require the §3 chain on the text; the additive one, if and when the integrated citation were promoted into the reading text, would fall under **Task E** and the §3 chain.
 
