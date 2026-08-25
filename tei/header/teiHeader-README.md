@@ -69,7 +69,7 @@ Il `teiHeader` è strutturato in cinque moduli operativi, concepiti per garantir
 | Blocco XML | Funzione Ecdotica e Computazionale |
 | :--- | :--- |
 | **`fileDesc`** | **Descrizione bibliografica e materiale.** Include dati di titolarità, licenza, 6 tipologie di note critiche, descrizione codicologica analitica (mani, inchiostri, layout), bibliografia e testimoni. |
-| **`encodingDesc`** | **Modello formale ed ecdotico.** Contiene l'abstract del modello, i criteri editoriali (`projectDesc`, `refsDecl`, `editorialDecl`), il tagset dichiarato (`tagsDecl`) e le tassonomie (`classDecl`). |
+| **`encodingDesc`** | **Modello formale ed ecdotico.** Contiene l'abstract del modello, i criteri editoriali (`projectDesc`, `refsDecl`, `editorialDecl`), il tagset dichiarato (`tagsDecl`), le tassonomie (`classDecl`) e il **`listPrefixDef`** che documenta il ponte fra i token `@ana` e gli URI SKOS dereferenziabili su w3id (`cav:` → `https://w3id.org/castello-anima-vocab/`). |
 | **`profileDesc`** | **Inquadramento storico e sociolinguistico.** Traccia il contesto di produzione del testo mistico secentesco: analisi sociolinguistica della lingua, prosopografia (`listPerson`) e istituzioni (`listOrg`: Carmelo, Inquisizione). |
 | **`xenoData` (×2)** | **Dati non-TEI e interoperabilità.** Ospita la specifica JSON del protocollo di simulazione IA e il puntatore ai metadati METS. |
 | **`revisionDesc`** | **Audit trail della lavorazione.** Log cronologico decrescente (>70 voci) che traccia ogni modifica, revisione e decisione editoriale. |
