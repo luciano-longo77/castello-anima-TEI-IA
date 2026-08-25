@@ -1076,6 +1076,23 @@
                 <code>resp="#AI_controllata"</code>; il teiText di produzione resta intatto. Tutti i
                 fenomeni grafici (del, add, subst) sono riportati in situ.-->
 
+            <!-- Ponte @ana -> vocabolario SKOS dereferenziabile (w3id) -->
+            <listPrefixDef>
+                <prefixDef ident="cav" matchPattern="([a-z0-9-]+)"
+                    replacementPattern="https://w3id.org/castello-anima-vocab/$1">
+                    <p>I token interpretativi usati in <att>ana</att> — e le bande d'impatto — sono
+                        <gi>category</gi> locali della tassonomia
+                        (<ref target="../taxonomy/tassonomia-gh.xml">tassonomia-gh.xml</ref>) e corrispondono
+                        uno-a-uno ai <code>skos:Concept</code> del vocabolario SKOS pubblicato: p. es.
+                        <code>#operation-precisatio</code> si espande in <code>cav:operation-precisatio</code> =
+                        <code>https://w3id.org/castello-anima-vocab/operation-precisatio</code>. La corrispondenza
+                        è verificata in CI (workflow <hi rend="italic">Vocab SKOS</hi>, round-trip). L'attributo
+                        <att>ana</att> continua a usare la forma locale <code>#id</code> richiesta dalla guardia E2;
+                        questo <gi>prefixDef</gi> ne documenta l'espansione dereferenziabile (Linked Data), senza
+                        modificare la codifica.</p>
+                </prefixDef>
+            </listPrefixDef>
+
             <!-- Sistema tassonomico -->
             <classDecl>
                 <!-- 1. Tassonomia delle FUNZIONI RETORICHE -->
