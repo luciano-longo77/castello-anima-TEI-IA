@@ -240,7 +240,7 @@ registrata nel `<revisionDesc>`:
 
 | Token workflow | Sigla | Operazione |
 |----------------|:-----:|------------|
-| `#workflow-rimozione` | **−CIT** | rimozione di una glossa o citazione dal testo |
+| `#workflow-rimozione` | **-CIT** | rimozione di una glossa o citazione dal testo |
 | `#workflow-recupero-cancellature` | **+TEXTsub** | recupero di una cancellatura autoriale, quando il manoscritto lo consente |
 | `#workflow-aggiunta` | **+CIT** | integrazione *in extenso* di una citazione solo richiamata |
 | `#workflow-validazione` | — | verifica della tenuta dei criteri annotativi sotto perturbazione |
@@ -266,7 +266,7 @@ perturbazione verifica è ΔI. La variazione si proietta su tre dimensioni osser
 - **D2 — coesione locale** (continuità tematica e referenziale col contesto);
 - **D3 — stabilità dottrinale percepita** (persistenza/oscillazione della cornice teologica).
 
-Un ΔI ampio a fronte di una `−CIT` segnala un nodo che *dipende* dal proprio presidio; un ΔI
+Un ΔI ampio a fronte di una `-CIT` segnala un nodo che *dipende* dal proprio presidio; un ΔI
 trascurabile, un presidio ridondante. Così la logica seriale della prudenza dottrinale passa
 da postulato a evidenza verificabile.
 
