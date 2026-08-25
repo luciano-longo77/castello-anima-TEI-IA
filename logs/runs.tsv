@@ -1,3 +1,7 @@
 locus_id	operation	seed	prompt_hash	output_hash	reviewer	esito	notes
 seg-b2-c8p9-luce-tenebre	-CIT	1	40eb6f886cf5	fde0a870dfba	#editor	approvata	Giovanni della Croce « intendire, non intendendo » rimossa; sintassi integra; D2: 2 catene toccate, 0 spezzate, 2 accorciate.
 seg-b3-c40p7-declaratio-dossologia	-CIT	1	19a9b52cafc4	5bdb6631b4bd	#editor	approvata	dossologia « Soli Deo honor, et gloria » (1 Tim 1,17) rimossa; resta la professio fidei; D2: 1 catena toccata, 1 spezzata (conformita-ortodossia).
+seg-b1-c6p5-obedienza-penitenza	+TEXTsub	1	05ac0b798e0c	23ac9446c4b5	#editor	approvata	ripristino cassatura d'autrice «penitenza»→obedienza; collassa la tesi obbedienza>penitenza; D2: hub deg 13, 1 accorciata.
+seg-b3-c6p4-fomite-peccato	+TEXTsub	1	3b7796d30ada	2ca4c160ed3d	#editor	approvata	rimozione aggiunta a margine T3 (guardia anti-impeccabilità: fomito del peccato); D2: hub deg 12, 2 accorciate.
+seg-b2-c21p10-quattro-passioni	+TEXTsub	1	b51074f7de64	c4e85a3093b6	#editor	approvata	rimozione aggiunta a margine di MANO ESTERNA (#ink_4-external): l'anima resta vulnerabile alle passioni; D2: deg 3, 1 accorciata.
+seg-b3-c24p16-glossa-humanita	+TEXTsub	1	1fe13e2b00e3	e3b0c44298fc	#editor	approvata	rimozione glossa marginale T3 (umanità di Cristo non impedimento); svuota il seg; D2: terminale, spezza la catena.
