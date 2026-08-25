@@ -25,7 +25,11 @@
                <gi>seg</gi> del testo, così da <hi rend="bold">non mescolare</hi> l'apparato genetico
                d'autrice con lo strato sperimentale IA. Metadati e tassonomie complete nel
                <ref target="../tei/header/castello-anima-teiHeader.xml">teiHeader</ref> dell'edizione;
-               registro delle run in <ref target="../logs/runs.tsv">logs/runs.tsv</ref>.</p>
+               registro delle run in <ref target="../logs/runs.tsv">logs/runs.tsv</ref>. Le entità di
+               responsabilità richiamate (<att>resp</att> = #AI_controllata) e i puntatori (<att>ref</att>,
+               es. #p-john) sono definiti — unica fonte autoritativa — nel teiHeader/testo dell'edizione,
+               non ridichiarati qui; l'asse <att>type</att> (workflow-*) usa la tassonomia
+               <soCalled>workflow</soCalled> del teiHeader.</p>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
@@ -37,7 +41,7 @@
                <app loc="seg-b2-c8p9-luce-tenebre" type="workflow-rimozione">
                   <lem wit="#txt-c">, ch'è quel che dice il mio padre beato <rs type="fonte-mistica" ref="#p-john">Giovanni della Croce</rs>, cioè <cit><quote xml:lang="it">intendire, non intendendo</quote><bibl>Giovanni della Croce</bibl></cit></lem>
                   <rdg resp="#AI_controllata" cert="high">
-                     <!-- −CIT: formula attributiva + citazione rimosse; nessuna lezione le sostituisce -->
+                     <!-- -CIT: formula attributiva + citazione rimosse; nessuna lezione le sostituisce -->
                   </rdg>
                   <note type="run">seed=1 · prompt_hash=40eb6f886cf5 · output_hash=fde0a870dfba · reviewer=#editor · esito=approvata · D2: 2 catene toccate, 0 spezzate, 2 accorciate · cfr. logs/runs.tsv</note>
                </app>
