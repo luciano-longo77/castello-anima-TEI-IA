@@ -101,10 +101,14 @@ Scelta ecdotica di fondo: **`lem` = ultima volontà autoriale**, cioè l'edizion
 
 `lem` e `rdg` possono essere **vuoti**: una lezione presente in una fase ma assente nel testo critico (o viceversa) si rende con l'elemento vuoto, non omettendolo.
 
-Gli **eventi IA controfattuali** (il protocollo −CIT / +TEXTsub / +CIT) sono anch'essi `rdg`, mai `lem`: l'IA non fissa mai il testo. Portano `@type="ai-counterfactual"`, `@resp="#AI_controllata"` e un `@ana` alla tassonomia `workflow` dell'header; il loro scarto d'impatto (ΔI) si misura sulle dimensioni D1 chiarezza · D2 coesione · D3 stabilità dottrinale.
+Gli **eventi IA controfattuali** (il protocollo -CIT / +TEXTsub / +CIT) sono anch'essi `rdg`, mai `lem`: l'IA non fissa mai il testo. **Non entrano nel teiText**: per non mescolare l'apparato genetico d'autrice con lo strato sperimentale, sono registrati nell'apparato standoff **esterno** [`../variants/castello-anima-variants.xml`](../variants/castello-anima-variants.xml), come `<app loc="seg-…">` (ancoraggio *location-referenced*, `xml:id` nudo del `<seg>`) con `<lem wit="#txt-c">` e un `<rdg resp="#AI_controllata">`. L'operazione sta su **`@type`** (`workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **non** su `@ana`: la tassonomia `workflow` è nell'header (riservata al `revisionDesc`) e la guardia **E2** risolve gli `@ana` del testo solo contro `tassonomia-gh.xml`. Il loro scarto d'impatto (ΔI) si misura sulle dimensioni D1 chiarezza · D2 coesione · D3 stabilità dottrinale.
 
 ```xml
-<rdg type="ai-counterfactual" resp="#AI_controllata" ana="#workflow-rimozione" cert="medium">sonno</rdg>
+<!-- in variants/castello-anima-variants.xml, NON nel teiText -->
+<app loc="seg-b2-c8p9-luce-tenebre" type="workflow-rimozione">
+  <lem wit="#txt-c">…lezione costituita con la citazione…</lem>
+  <rdg resp="#AI_controllata" cert="high"/>
+</app>
 ```
 
 ## 5. L'interpretazione e l'indice d'impatto
@@ -156,7 +160,7 @@ Questi attributi ammettono **solo** i valori elencati.
 | `gap/@unit`, `supplied/@unit` | `char` · `chars` · `word` · `words` · `line` · `lines` |
 | `supplied/@reason` | `hole` *(cause materiali, come `gap/@reason`)* |
 | `app/@type` | `substitution` · `addition` · `deletion` · `transposition` · `variant` |
-| `rdg/@type` | `authorial` · `external` · `ai-counterfactual` |
+| `rdg/@type` | `authorial` · `external` *(le varianti IA controfattuali stanno nell'apparato esterno: `app/@type=workflow-*` + `rdg/@resp=#AI_controllata`, cfr. §4)* |
 | `rdg/@cause` | `correction` · `clarification` · `orthodoxy` · `attenuation` · `precision` · `amplification` |
 | `note/@type` | `editorial` · `doctrinal` · `contextual` · `glossa` · `critical` · `linguistic` |
 | `hi/@rend` | `italic` · `underline` · `superscript` · `larger` · `spaced` · `rubric` |
@@ -232,7 +236,7 @@ Vocabolario locale che proietta il testo su **31 aree concettuali** (dichiarate 
 `#area-obedientia` (obbedienza) · `#area-humilitas` (umiltà) · `#area-sapientia` (sapienza divina) · `#area-orthodoxia` (ortodossia) · `#area-purificatio` (purificazione) · `#area-ascensio` (ascesa) · `#area-pax` (pace/quiete) · `#area-otium` (otium) · `#area-unio` (unione/sposalizio) · `#area-desiderium` (desiderio) · `#area-innocentia` (innocenza, stato adamico) · `#area-passio` (passione/croce) · `#area-abnegatio` (distacco e abnegazione) · `#area-amor-proprius` (amor proprio) · `#area-conversio` (conversione dell'io) · `#area-directio-spiritualis` (direzione spirituale) · `#area-gratia` (grazia) · `#area-imitatio-Christi` (imitazione di Cristo) · `#area-intellectus` (intelletto) · `#area-militia-spiritualis` (militia spiritualis) · `#area-miseria-mundi` (miseria del mondo) · `#area-mortificatio` (mortificazione) · `#area-mundus` (mondo) · `#area-nox-sensuum` (notte dei sensi esterni) · `#area-oratio` (oratione) · `#area-sponsa-Christi` (anima sposa di Cristo) · `#area-superbia` (superbia) · `#area-tentatio` (tentazione) · `#area-veritas` (verità che libera) · `#area-vita-religiosa` (vita religiosa) · `#area-voluntas` (volontà)
 
 ### A7 · `#workflow-*` — operazioni IA controfattuali (tassonomia `workflow` dell'header)
-`#workflow-rimozione` (−CIT) · `#workflow-recupero-cancellature` (+TEXTsub) · `#workflow-aggiunta` (+CIT) · `#workflow-validazione` — dimensioni ΔI: **D1** chiarezza · **D2** coesione · **D3** stabilità dottrinale.
+`#workflow-rimozione` (-CIT) · `#workflow-recupero-cancellature` (+TEXTsub) · `#workflow-aggiunta` (+CIT) · `#workflow-validazione` — dimensioni ΔI: **D1** chiarezza · **D2** coesione · **D3** stabilità dottrinale.
 
 ---
 
