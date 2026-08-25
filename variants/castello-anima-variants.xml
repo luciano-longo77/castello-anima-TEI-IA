@@ -45,6 +45,13 @@
                   </rdg>
                   <note type="run">seed=1 · prompt_hash=40eb6f886cf5 · output_hash=fde0a870dfba · reviewer=#editor · esito=approvata · D2: 2 catene toccate, 0 spezzate, 2 accorciate · cfr. logs/runs.tsv</note>
                </app>
+               <app loc="seg-b3-c40p7-declaratio-dossologia" type="workflow-rimozione">
+                  <lem wit="#txt-c"> <cit><quote xml:lang="la"><term type="biblico">Soli Deo honor, et gloria</term></quote><bibl>1 Tim 1,17</bibl></cit></lem>
+                  <rdg resp="#AI_controllata" cert="high">
+                     <!-- -CIT: dossologia liturgica finale (Soli Deo honor et gloria, 1 Tim 1,17) rimossa; resta la sola professio fidei -->
+                  </rdg>
+                  <note type="run">seed=1 · prompt_hash=19a9b52cafc4 · output_hash=5bdb6631b4bd · reviewer=#editor · esito=approvata · D2: 1 catena toccata, 1 spezzata (conformita-ortodossia), 0 accorciate · cfr. logs/runs.tsv</note>
+               </app>
             </listApp>
          </div>
       </body>
