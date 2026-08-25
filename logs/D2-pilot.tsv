@@ -1,8 +1,8 @@
 locus_id	operation	chains_touched	chains_broken	chains_shortened	degree	neighbors_isolated	delta_connectivity
 seg-b2-c8p9-luce-tenebre	-CIT	2	0	2	9	0	9
 seg-b3-c40p7-declaratio-dossologia	-CIT	1	1	0	1	1	1
-seg-b3-c16p37-certezza-niente	+TEXTsub	3	0	3	15	0	19
-seg-b1-c5p38-humilta-vera-quiete	+TEXTsub	2	0	2	17	0	22
-seg-b3-c7p24-conclusione-precisazione-nature	+TEXTsub	3	0	3	11	0	14
+seg-b1-c6p5-obedienza-penitenza	+TEXTsub	1	0	1	13	0	13
 seg-b3-c6p4-fomite-peccato	+TEXTsub	2	0	2	12	0	13
+seg-b2-c21p10-quattro-passioni	+TEXTsub	1	0	1	3	0	3
+seg-b3-c24p16-glossa-humanita	+TEXTsub	1	1	0	1	1	1
 seg-b3-c8p24-divenuta-altrodio	+CIT	2	1	1	6	0	7
