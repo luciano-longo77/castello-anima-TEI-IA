@@ -870,9 +870,12 @@
       dedicato ai ripensamenti d'autrice e alle varianti nei punti teologicamente sensibili
       (il <code>lem</code> è l'ultima volontà). Le varianti sono classificate con <att>type</att>
       su <code>app</code> (substitution, addition, deletion, transposition, variant) e, sui
-      <code>rdg</code>, con <att>type</att> (authorial, external, ai-counterfactual) e
+      <code>rdg</code>, con <att>type</att> (authorial, external) e
       <att>cause</att> (correction, clarification, orthodoxy, attenuation, precision,
-      amplification). </p>
+      amplification). Le varianti IA controfattuali non sono inline: risiedono nell'apparato
+      standoff <hi rend="italic">esterno</hi> (<code>variants/castello-anima-variants.xml</code>),
+      con <att>type</att> workflow-* su <code>app</code> e <att>resp</att> #AI_controllata sui
+      <code>rdg</code>. </p>
 
    <p n="3"> Le integrazioni editoriali restano segnalate: il guasto meccanico e le congetture
       sono resi con <code>supplied</code> (con <code>gap</code> per le lettere illeggibili entro
