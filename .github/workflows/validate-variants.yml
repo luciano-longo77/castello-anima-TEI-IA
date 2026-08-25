@@ -1,0 +1,57 @@
+name: Validate Variants
+
+# Valida l'apparato standoff ESTERNO delle varianti controfattuali IA (Fase 2).
+# variants/castello-anima-variants.xml e' un <TEI> autonomo (nessun xi:include):
+# well-formed + NFC + RelaxNG (TEI All vendorizzato). Non tocca il teiText, che ha la sua CI.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "variants/*.xml"
+      - "schema/tei_all.rng"
+      - ".github/workflows/validate-variants.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "variants/*.xml"
+      - "schema/tei_all.rng"
+  workflow_dispatch:
+
+env:
+  RNG: schema/tei_all.rng
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Installa xmllint e jing
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libxml2-utils jing
+      - name: File richiesti presenti
+        run: |
+          test -s "$RNG" || { echo "::error::$RNG non trovato o vuoto (vendorizza tei_all.rng)"; exit 1; }
+          ls variants/*.xml >/dev/null 2>&1 || { echo "::error::nessun XML in variants/"; exit 1; }
+      - name: Guardia NFC (normalizzazione Unicode)
+        run: |
+          python3 - <<'PY'
+          import unicodedata, sys, glob
+          bad=[]
+          for f in glob.glob("variants/*.xml"):
+              s=open(f,encoding="utf-8").read()
+              if s!=unicodedata.normalize("NFC",s): bad.append(f)
+          if bad:
+              print("::error::File non in forma Unicode NFC:")
+              for f in bad: print("  -",f)
+              sys.exit(1)
+          print("Guardia NFC superata: tutti gli XML di variants/ sono NFC.")
+          PY
+      - name: Buona formazione (well-formed)
+        run: |
+          for f in variants/*.xml; do xmllint --noout "$f"; done
+      - name: Validazione RelaxNG (TEI All, schema vendorizzato)
+        run: |
+          for f in variants/*.xml; do jing "$RNG" "$f"; done
