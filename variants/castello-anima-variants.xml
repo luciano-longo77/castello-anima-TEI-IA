@@ -70,7 +70,7 @@
                <app loc="seg-b3-c24p16-glossa-humanita" type="workflow-recupero-cancellature" subtype="rimozione-aggiunta">
                   <lem wit="#txt-c">cioè non che la <term type="mistico">passione</term> di <rs type="divinita" ref="#dio">Christo Signor nostro</rs> sii impedimento, essendo ella <term type="mistico">scola</term>, ma diciamo che tirando <rs type="divinita" ref="#dio">Dio</rs> all'<rs type="soggetto-mistico">anima</rs> per <term type="mistico">contemplatione</term> sì ella si vuol<supplied reason="hole" resp="#editor" cert="medium">esse</supplied> far viole<supplied reason="hole" resp="#editor" cert="medium">nza</supplied> <gap reason="hole" unit="char" quantity="1"/> <supplied reason="hole" resp="#editor" cert="medium">star</supplied>sene all'<term type="mistico">humanità</term> vi sarebbe d'impedimento</lem>
                   <rdg resp="#AI_controllata" cert="high"/>
-                  <note type="run">seed=1 · prompt_hash=1fe13e2b00e3 · output_hash=e3b0c44298fc · reviewer=#editor · esito=approvata · +TEXTsub rimozione glossa marginale (T3, #ink_3-dark d'autrice: umanità di Cristo non impedimento; svuota il seg) · D2: nodo terminale, spezza la catena · cfr. logs/runs.tsv</note>
+                  <note type="run">seed=1 · prompt_hash=1fe13e2b00e3 · output_hash=e3b0c44298fc · reviewer=#editor · esito=respinta · +TEXTsub rimozione glossa marginale (T3, #ink_3-dark d'autrice: umanità di Cristo non impedimento) · RESPINTA dall'editore: operazione inapplicabile — la glossa È l'intero contenuto del seg, quindi la rimozione non produce una lettura controfattuale testabile ma un seg vuoto (D1=nulla/0.15) · D2: nodo terminale, spezza la catena · cfr. logs/runs.tsv</note>
                </app>
                <app loc="seg-b3-c8p24-divenuta-altrodio" type="workflow-aggiunta">
                   <lem wit="#txt-c"/>
@@ -90,7 +90,7 @@
                <app loc="seg-b3-c7p10-precisazione-divinizzazione-gratia" type="workflow-aggiunta">
                   <lem wit="#txt-c"/>
                   <rdg resp="#AI_controllata" cert="medium">, come può dire con san Paolo <cit><quote xml:lang="la">Nico ego sed non ego, nimis vero in me Christus</quote><bibl>Gal 2,20</bibl></cit></rdg>
-                  <note type="run">seed=1 · prompt_hash=72f89757273e · output_hash=c3a365f49c9b · reviewer=#editor · esito=approvata · +CIT integrazione Gal 2,20 (forma 1a, attestata a c7p7) al nodo deificazione «un altro Dio per gratia» [C · III.7 §12]; àncora citata a basso rischio: seg-b3-c7p7-sicurta-sposo · D2: 2 catene, 0 spezzate, 2 accorciate, deg 10 · cfr. logs/runs.tsv</note>
+                  <note type="run">seed=1 · prompt_hash=72f89757273e · output_hash=c3a365f49c9b · reviewer=#editor · esito=da-rivedere · +CIT integrazione Gal 2,20 (forma 1a, attestata a c7p7) al nodo deificazione «un altro Dio per gratia» [C · III.7 §12] · DA-RIVEDERE (correzione editore): Gal 2,20 garantisce l'inabitazione di Cristo, non il cambiamento di natura («la natura humana viene a farsi divina»); qui il freno reale è il qualificatore «per gratia». Il warrant appropriato (2 Pt 1,4 «consortes divinae naturae») non è in anagrafe → integrazione sospesa · àncora: seg-b3-c7p7-sicurta-sposo · D2: 2 catene, 2 accorciate, deg 10 · cfr. logs/runs.tsv</note>
                </app>
             </listApp>
          </div>
