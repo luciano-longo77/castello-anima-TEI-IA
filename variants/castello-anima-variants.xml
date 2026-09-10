@@ -92,6 +92,11 @@
                   <rdg resp="#AI_controllata" cert="medium">, come può dire con san Paolo <cit><quote xml:lang="la">Nico ego sed non ego, nimis vero in me Christus</quote><bibl>Gal 2,20</bibl></cit></rdg>
                   <note type="run">seed=1 · prompt_hash=72f89757273e · output_hash=c3a365f49c9b · reviewer=#editor · esito=non-eseguibile · +CIT integrazione Gal 2,20 (forma 1a, attestata a c7p7) al nodo deificazione «un altro Dio per gratia» [C · III.7 §12] · NON-ESEGUIBILE (giudizio editore): Gal 2,20 garantisce l'inabitazione di Cristo, non il cambiamento di natura («la natura humana viene a farsi divina»); il freno reale è il qualificatore volgare «per gratia». Il warrant teologicamente appropriato (2 Pt 1,4 «consortes divinae naturae») non è attestato nel manoscritto → nessuna citazione può fungere da controllo scenario-ii senza fabbricarla: il +CIT non è eseguibile e le misure controfattuali (ΔI/ΔD1/ΔD3) sono n/a. rdg conservato a documentazione della proposta IA · àncora: seg-b3-c7p7-sicurta-sposo · cfr. logs/runs.tsv</note>
                </app>
+               <app loc="seg-b3-c4p6-nuova-vita" type="workflow-aggiunta">
+                  <lem wit="#txt-c"/>
+                  <rdg resp="#AI_controllata" cert="medium">, come può dire con san Paolo <cit><quote xml:lang="la">Nico ego sed non ego, nimis vero in me Christus</quote><bibl>Gal 2,20</bibl></cit></rdg>
+                  <note type="run">model=claude-opus-4-8 · temperature=0.2 · top_p=0.95 · seed=2 (nominale: l'API Anthropic non espone seed) · prompt_hash=b44e56a0a1d5 · output_hash=da746c83a5fc · reviewer=#editor · esito=approvata · +CIT esplicitazione (A5, prima run generativa reale tracciata) dell'eco Gal 2,20 già presente nel seg («morire alla vecchia… vivere alla nuova… non più di lei, ma di Dio»); fonte attestata in anagrafe (riga 22) e a c7p7, forma 1a byte-identica (nessuna invenzione) · test riproducibilità ×3: cit-payload identico su tutte e 3 (hash d75a9e603be1), variò solo il connettivo (2 output: da746c83a5fc ×2, 32a2ea8059e7 ×1) → citazione stabile · cfr. logs/runs.tsv</note>
+               </app>
             </listApp>
          </div>
       </body>
