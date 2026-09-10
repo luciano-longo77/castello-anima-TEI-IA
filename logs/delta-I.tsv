@@ -8,4 +8,4 @@ seg-b3-c24p16-glossa-humanita	+TEXTsub	respinta	alta	alta	2	0.717						#editor	R
 seg-b3-c8p24-divenuta-altrodio	+CIT	approvata	critica	alta	2	0.760	critica	bassa	1	0.505	-0.255	#editor	scenario ii: +CIT converge al controllo c7p7 (F→1, A→bassa); I↓, D3↑
 seg-b3-c5p16-altro-dio-participatione	+CIT	approvata	critica	media	1	0.544	critica	bassa	1	0.505	-0.039	#editor	scenario ii: +CIT, F già 1, A media→bassa; I quasi invariato
 seg-b3-c7p4-precisazione-participatione	+CIT	approvata	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	scenario ii: +CIT converge a c7p7 (0.462 esatto)
-seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	da-rivedere	alta	media	2	0.692	alta	bassa	1	0.462	-0.230	#editor	DA-RIVEDERE: warrant Gal 2,20 mal accoppiato; ΔI provvisorio
+seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	non-eseguibile	alta	media	2	0.692						#editor	NON-ESEGUIBILE: warrant 2 Pt 1,4 non attestato nel ms, Gal 2,20 disallineato (inabitazione ≠ cambiamento di natura) → nessun controfattuale valido; ΔI n/a
