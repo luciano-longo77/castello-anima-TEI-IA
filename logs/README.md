@@ -8,7 +8,7 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-- **Registro delle run della pipeline IA**
+## **Registro delle run della pipeline IA**
 Registro **verificabile** di ogni run della pipeline controfattuale (Fase 2): **una riga
 per run** in [`runs.tsv`](runs.tsv). È ciò che trasforma un'affermazione («l'ambiguità
 cresce del 20%») in un **artefatto rigenerabile** («ecco la run, con questo seed»).
