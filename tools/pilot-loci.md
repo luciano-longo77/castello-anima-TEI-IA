@@ -31,10 +31,10 @@ La fonte è **Gal 2,20** (anagrafe #22), che l'autrice **cita esplicitamente all
 `c7p7`) ai nodi paralleli non citati, per misurare se la legittimazione scritturale **abbassa il rischio
 dottrinale**. `c7p7` resta il **controllo** (versione già citata, invariata).
 
-## Composizione del pilota (10 loci)
+## Composizione del pilota (12 loci)
 | operazione | n | loci |
 | :--- | :-- | :--- |
-| **-CIT** | 2 | `c8p9-luce-tenebre`, `c40p7-declaratio-dossologia` |
+| **-CIT** | 4 | `c8p9-luce-tenebre`, `c40p7-declaratio-dossologia`, `c34p13-tentatione-agostino`, `c6p2-obediente-morte` |
 | **+TEXTsub** | 4 | `c6p5-obedienza-penitenza` (a); `c6p4-fomite-peccato`, `c21p10-quattro-passioni`, `c24p16-glossa-humanita` (b) |
 | **+CIT** | 4 | `c8p24-divenuta-altrodio` (B); `c5p16`, `c7p4`, `c7p10` (C) |
 
