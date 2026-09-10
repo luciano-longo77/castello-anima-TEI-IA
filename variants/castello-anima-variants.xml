@@ -52,6 +52,20 @@
                   </rdg>
                   <note type="run">seed=1 · prompt_hash=19a9b52cafc4 · output_hash=5bdb6631b4bd · reviewer=#editor · esito=approvata · D2: 1 catena toccata, 1 spezzata (conformita-ortodossia), 0 accorciate · cfr. logs/runs.tsv</note>
                </app>
+               <app loc="seg-b3-c34p13-tentatione-agostino" type="workflow-rimozione">
+                  <lem wit="#txt-c"><cit><quote xml:lang="la"><term type="patristico">In hoc bello est tota vita Sanctorum</term></quote><bibl cert="medium">Agostino d'Ippona, sent. (riferimento non identificato con certezza; cfr. Iob 7,1)</bibl></cit></lem>
+                  <rdg resp="#AI_controllata" cert="high">
+                     <!-- -CIT: auctoritas patristica (Agostino, «In hoc bello est tota vita Sanctorum») rimossa; resta il volgare «sempre dovemo patire» senza l'ancora della tradizione -->
+                  </rdg>
+                  <note type="run">seed=1 · prompt_hash=0fbae7235ad0 · output_hash=da9284f1a4c8 · reviewer=#editor · esito=approvata · -CIT rimozione auctoritas patristica al nodo rischio-quietismo (riequilibrio): A media→bassa, F riequilibrio→delimitazione, N invariante → ΔI -0.230; ΔD3 -0.25 (espone alla lettura quietista) · D2: 1 catena toccata, 0 spezzate, 1 accorciata, deg 3 · cfr. logs/runs.tsv</note>
+               </app>
+               <app loc="seg-b1-c6p2-obediente-morte" type="workflow-rimozione">
+                  <lem wit="#txt-c"><cit><quote xml:lang="la">Christus factus est pro nobis obediens usque ad mortem, mortem autem crucis.</quote><bibl>Phil 2,8</bibl></cit></lem>
+                  <rdg resp="#AI_controllata" cert="high">
+                     <!-- -CIT: citazione-prova biblica (Phil 2,8) rimossa; resta l'esortazione volgare «Anche voi siate obediente sino alla morte» -->
+                  </rdg>
+                  <note type="run">seed=1 · prompt_hash=93d89ee5f0b8 · output_hash=47c97e87dfff · reviewer=#editor · esito=approvata · -CIT rimozione citazione-prova biblica confermativa (obbedienza, Libro I): nessun cambio regolativo → ΔI 0.000, ΔD1/ΔD3 nulli (baseline) · D2: 3 catene toccate, 1 spezzata, 2 accorciate, deg 18 · cfr. logs/runs.tsv</note>
+               </app>
                <app loc="seg-b1-c6p5-obedienza-penitenza" type="workflow-recupero-cancellature" subtype="ripristino-cassatura">
                   <lem wit="#txt-c">obedienza</lem>
                   <rdg resp="#AI_controllata" cert="high">penitenza</rdg>
