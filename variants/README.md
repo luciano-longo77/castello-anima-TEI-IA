@@ -1,4 +1,12 @@
 # `variants/` - varianti controfattuali della pipeline IA
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
+
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
 
 Questa cartella raccoglie le **varianti controfattuali** generate dalla pipeline IA
 controllata (Fase 2) e **validate dall'editore**. Sono tenute in un **file separato** —
@@ -10,6 +18,7 @@ strato **sperimentale IA**.
   (un `<TEI>` autonomo con `<listApp type="counterfactual-ai">`): raccoglie tutte le
   varianti, ciascuna ancorata per `@loc` al `<seg>` del testo. Il teiText di produzione
   resta **intatto** (link unidirezionale: dall'apparato al testo, mai il contrario).
+- [`backlog-textsub-additions.md`](backlog-textsub-additions.md) — **censimento** delle aggiunte marginali/interlineari (guardie T3) candidate a un +TEXTsub del sottotipo *rimozione-aggiunta*; backlog di estensione post-paper.
 - questo `README.md`.
 
 Per ogni **locus × operazione** una variante generata sotto controllo:
@@ -17,7 +26,7 @@ Per ogni **locus × operazione** una variante generata sotto controllo:
 | operazione | codice | tipo | cosa fa |
 | :--- | :--- | :--- | :--- |
 | rimozione citazione | **-CIT** | sottrattiva | toglie la citazione/`<cit>` di legittimazione dal segmento |
-| recupero cancellatura | **+TEXTsub** | sottrattiva | ripristina una lezione cassata d'autrice (dal `<rdg wit="#txt-b0">`) |
+| recupero cancellatura | **+TEXTsub** | sottrattiva | riporta il testo allo stato **pre-revisione**, in due sottotipi: **`ripristino-cassatura`** (recupera una lezione cassata d'autrice, dal `<rdg wit="#txt-b0">`) e **`rimozione-aggiunta`** (toglie una glossa/guardia **aggiunta** a margine o interlinea — strato tardivo T3 `#ink_3-dark` d'autrice o mano esterna `#ink_4-external`), per misurare da cosa la guardia proteggeva |
 | integrazione citazione | **+CIT** | additiva | restituisce una citazione *richiamata ma non esplicitata* (max 35 parole) |
 
 ## Governance (expert-in-the-loop)
