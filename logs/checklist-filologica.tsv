@@ -1,0 +1,17 @@
+locus_id	operation	A1_stile	A2_dottrina	A3_antianacronismo	A4_integrita_tei	esito	note
+seg-b2-c8p9-luce-tenebre	-CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c40p7-declaratio-dossologia	-CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b1-c6p5-obedienza-penitenza	+TEXTsub	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c6p4-fomite-peccato	+TEXTsub	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b2-c21p10-quattro-passioni	+TEXTsub	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c24p16-glossa-humanita	+TEXTsub	n/a	n/a	n/a	n/a	respinta	precondizione testabilita fallita: la rimozione svuota il seg (nessuna lettura controfattuale valutabile)
+seg-b3-c8p24-divenuta-altrodio	+CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c5p16-altro-dio-participatione	+CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c7p4-precisazione-participatione	+CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	OK	FALLITA	OK	OK	non-eseguibile	A2 dottrina: Gal 2,20 = inabitazione, non cambiamento di natura; warrant corretto (2 Pt 1,4) non attestato nel ms
+seg-b3-c4p6-nuova-vita	+CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c34p13-tentatione-agostino	-CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b1-c6p2-obediente-morte	-CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c34p14-vigilanza-nemici	+CIT	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c39p6-precisazione-liberoarbitrio	+TEXTsub	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
+seg-b3-c39p5-precisazione-matrimonio	+TEXTsub	OK	OK	OK	OK	approvata	4 assi superati; vaglio editoriale positivo
