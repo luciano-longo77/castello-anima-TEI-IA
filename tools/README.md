@@ -1,4 +1,4 @@
-# tools/  - Strumenti a supporto dell'edizione 
+# tools/ — Strumenti a supporto dell'edizione 
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
