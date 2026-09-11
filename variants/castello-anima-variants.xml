@@ -86,6 +86,16 @@
                   <rdg resp="#AI_controllata" cert="high"/>
                   <note type="run">seed=1 · prompt_hash=1fe13e2b00e3 · output_hash=e3b0c44298fc · reviewer=#editor · esito=respinta · +TEXTsub rimozione glossa marginale (T3, #ink_3-dark d'autrice: umanità di Cristo non impedimento) · RESPINTA dall'editore: operazione inapplicabile — la glossa È l'intero contenuto del seg, quindi la rimozione non produce una lettura controfattuale testabile ma un seg vuoto (D1=nulla/0.15) · D2: nodo terminale, spezza la catena · cfr. logs/runs.tsv</note>
                </app>
+               <app loc="seg-b3-c39p6-precisazione-liberoarbitrio" type="workflow-recupero-cancellature" subtype="rimozione-aggiunta">
+                  <lem wit="#txt-c">cioè questa libertà perduta non intento circa il liberibitrio, ma che stanno le potenze tutte a poter fare discorsi, o altre cose simili</lem>
+                  <rdg resp="#AI_controllata" cert="high"/>
+                  <note type="run">seed=1 · prompt_hash=2e0e9685c7d2 · output_hash=759bb8c12400 · reviewer=#editor · esito=approvata · +TEXTsub rimozione guardia anti-quietista T3 (#ink_3-dark d'autrice: salvaguardia del libero arbitrio «non circa il liberibitrio») · tolta la guardia, «né più libertà nelle potenze» resta assoluto → annichilamento del liberibitrio (eterodosso): A alta→bassa, F precisatio→delimitazione, N invariante → ΔI -0.255; ΔD3 -0.50 · D2: 1 catena toccata, 0 spezzate, 1 accorciata, deg 3 · cfr. logs/runs.tsv</note>
+               </app>
+               <app loc="seg-b3-c39p5-precisazione-matrimonio" type="workflow-recupero-cancellature" subtype="rimozione-aggiunta">
+                  <lem wit="#txt-c">cioè fuor della sua capacetà, ma perita nella sostanza di essa</lem>
+                  <rdg resp="#AI_controllata" cert="high"/>
+                  <note type="run">seed=1 · prompt_hash=6461a2c1088b · output_hash=ab13a62ea154 · reviewer=#editor · esito=approvata · +TEXTsub rimozione guardia anti-panteista T3 (#ink_3-dark d'autrice: distinzione capacità/sostanza nell'unione) · tolta la distinzione, «passa nella sostanza con naturalità» → fusione sostanziale (panteismo): A media→bassa, F precisatio→delimitazione, N invariante → ΔI -0.230; ΔD3 -0.25 · D2: 2 catene toccate, 0 spezzate, 2 accorciate, deg 5 · cfr. logs/runs.tsv</note>
+               </app>
                <app loc="seg-b3-c8p24-divenuta-altrodio" type="workflow-aggiunta">
                   <lem wit="#txt-c"/>
                   <rdg resp="#AI_controllata" cert="medium">, come può dire con san Paolo <cit><quote xml:lang="la">Nico ego sed non ego, nimis vero in me Christus</quote><bibl>Gal 2,20</bibl></cit></rdg>
