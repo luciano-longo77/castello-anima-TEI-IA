@@ -12,3 +12,5 @@ seg-b3-c7p10-precisazione-divinizzazione-gratia	+CIT	(C) integra Gal 2,20 al nod
 seg-b3-c34p13-tentatione-agostino	-CIT	rimozione auctoritas patristica (Agostino, In hoc bello est tota vita Sanctorum); nodo rischio-quietismo; funzione riequilibrio; impatto medio
 seg-b1-c6p2-obediente-morte	-CIT	rimozione citazione-prova biblica (Phil 2,8); tema obbedienza Libro I; legittimazione confermativa; impatto basso (baseline)
 seg-b3-c34p14-vigilanza-nemici	+CIT	esplicitazione auctoritas attestata (Agostino, In hoc bello est tota vita Sanctorum, forma byte-presente a c34p13); nodo rischio-quietismo; dittico con -CIT c34p13
+seg-b3-c39p6-precisazione-liberoarbitrio	+TEXTsub	(b) rimozione guardia T3 d'autrice anti-quietista: salvaguardia del libero arbitrio («non circa il liberibitrio»); nodo rischio-quietismo, exposition-critical
+seg-b3-c39p5-precisazione-matrimonio	+TEXTsub	(b) rimozione guardia T3 d'autrice anti-panteista: distinzione capacita/sostanza nell'unione; nodo rischio-panteismo
