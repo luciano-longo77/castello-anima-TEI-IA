@@ -1,4 +1,4 @@
-# `variants/` - varianti controfattuali della pipeline IA
+# `variants/` - varianti della pipeline IA
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
@@ -34,8 +34,9 @@ Nessuna variante è validata senza il **vaglio dell'editore** (protocollo
 `docs/protocollo-IA-codifica.md`: l'IA *propone, non decide*; `@cert`/`@resp`; niente
 lezioni inventate). Le operazioni **sottrattive** (-CIT, +TEXTsub) sono deterministiche per
 costruzione (rimozione/ripristino di una porzione già presente nella tradizione); l'operazione
-**additiva** (+CIT) è generativa e va prodotta a parametri fissati (`temperature 0.2`,
-`top_p 0.95`, **seed registrato**). La distinzione è formalizzata nel protocollo.
+**additiva** (+CIT) è generativa: il motore adottato **non espone un parametro `seed`**, quindi il
+`seed` registrato è **nominale** e la riproducibilità poggia su **modello+versione, prompt e
+`output_hash`** (generazione a `temperature 0.2`, `top_p 0.95`). La distinzione è formalizzata nel protocollo.
 
 ## Tracciabilità
 Ogni variante approvata è:
@@ -53,4 +54,4 @@ Ogni variante approvata è:
 
 Così la variante non è un file scollegato: **entra nella tradizione critica** del testo come
 apparato (un `<rdg>` in `<app>`, come una variante d'autore), ma **standoff** — ancorata al
-`<seg>` per `@loc` — ed è **rigenerabile** dal seed.
+`<seg>` per `@loc` — ed è **rigenerabile** dal seed (per le sottrattive) o **certificata** dall'`output_hash` (per il +CIT generativo, che non ha un seed effettivo).
