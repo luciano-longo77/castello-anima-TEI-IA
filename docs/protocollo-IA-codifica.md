@@ -125,10 +125,10 @@ Genera una variante **controfattuale** di un locus per misurarne l'effetto (ΔI,
 | operazione | codice | famiglia | determinismo |
 | :--- | :--- | :--- | :--- |
 | rimozione citazione | **-CIT** | **sottrattiva** | deterministica: rimuove una porzione **già presente** nel testo; nessuna generazione, nessun rischio di lezione inventata |
-| recupero cancellatura | **+TEXTsub** | **sottrattiva** | deterministica: ripristina una lezione **già presente** nel `<rdg wit="#txt-b0">` (cassata d'autrice) |
-| integrazione citazione | **+CIT** | **additiva** | **generativa**: restituisce una citazione *richiamata ma non esplicitata* (max 35 parole) → richiede `temperature 0.2`, `top_p 0.95`, **seed + modello/versione registrati**; la fonte deve esistere in `anagrafe-citazioni.md` (niente riferimenti inventati) |
+| recupero cancellatura | **+TEXTsub** | **sottrattiva** | deterministica, due sottotipi: *ripristino-cassatura* (ripristina una lezione **già presente** nel `<rdg wit="#txt-b0">`, cassata d'autrice) · *rimozione-aggiunta* (toglie una guardia tardiva a margine/interlinea, `#ink_3-dark`) |
+| integrazione citazione | **+CIT** | **additiva** | **generativa** (l'unica operazione che produce testo): esplicita una citazione *allusa e attestata* (max 35 parole) → il motore adottato **non espone un parametro `seed`**, quindi il seed registrato è **nominale** e la riproducibilità poggia su **modello+versione, prompt e `output_hash`** (generazione a `temperature 0.2`, `top_p 0.95`); la fonte deve esistere in `anagrafe-citazioni.md` — se non è attestata, il +CIT è **non-eseguibile** (niente riferimenti inventati) |
 
-**Perché la distinzione conta.** Nelle operazioni **sottrattive** l'AI non aggiunge testo: l'output è funzione deterministica dell'input, quindi `seed`/`temperature` in `logs/runs.tsv` valgono come *template* di tracciabilità (gli hash certificano prompt→output). Nell'operazione **additiva** l'AI *genera* testo: lì `seed`, `temperature` e **modello/versione** sono parametri reali e condizionano il risultato, quindi vanno registrati.
+**Perché la distinzione conta.** Nelle operazioni **sottrattive** l'AI non aggiunge testo: l'output è funzione deterministica dell'input, quindi `seed`/`temperature` in `logs/runs.tsv` valgono come *template* di tracciabilità (gli hash certificano prompt→output). Nell'operazione **additiva** l'AI *genera* testo, ma il motore adottato **non espone un parametro `seed`**: il `seed` in `logs/runs.tsv` è quindi **nominale** e la riproducibilità non poggia su di esso, bensì su **modello+versione**, sul prompt e sull'`output_hash` dell'esito validato — tracciabilità onesta, senza promettere un determinismo che il motore non dà.
 
 **PROMPT (sottrattiva, es. -CIT)**:
 ```
@@ -140,12 +140,13 @@ testo nuovo. Restituisci il solo segmento risultante.
 ```
 Operazione +CIT sul locus <SEG_ID>. La fonte <RIF> è richiamata ma non esplicitata:
 integra la citazione per esteso (max 35 parole), SOLO se presente in anagrafe-citazioni.md.
-Non inventare né il riferimento né il testo. Parametri: temperature 0.2, top_p 0.95, seed <N>.
+Non inventare né il riferimento né il testo. Parametri: temperature 0.2, top_p 0.95
+(il motore non espone un seed: registra modello+versione, prompt e output_hash dell'esito).
 Output: il frammento + la riga di anagrafe.
 ```
 **CODIFICA.** La variante approvata **non entra nel teiText**: si registra nell'apparato standoff **esterno** `variants/castello-anima-variants.xml` come `<app loc="<SEG_ID>" type="workflow-*">` con `<lem wit="#txt-c">…</lem>` e `<rdg resp="#AI_controllata" cert="…">…</rdg>`. L'operazione sta su **`@type`** (token: `workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **non** su `@ana`: la tassonomia `workflow` è nel `teiHeader` (riservata al `revisionDesc`) e la guardia E2 risolve gli `@ana` del testo solo contro `tassonomia-gh.xml`.
 
-**VERIFICA**: `jing "$RNG" variants/castello-anima-variants.xml` (ben formato + valido) **+** una riga in `logs/runs.tsv` (`locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`). Le operazioni sottrattive non toccano il teiText, quindi non richiedono la catena §3 sul testo; l'additiva, se e quando la citazione integrata venisse promossa nel testo di lettura, ricadrebbe sotto il **Task E** e la catena §3.
+**VERIFICA**: `jing "$RNG" variants/castello-anima-variants.xml` (ben formato + valido) **+** una riga in `logs/runs.tsv` (`locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`; `esito` ∈ `approvata · respinta · non-eseguibile`). Le operazioni sottrattive non toccano il teiText, quindi non richiedono la catena §3 sul testo; l'additiva, se e quando la citazione integrata venisse promossa nel testo di lettura, ricadrebbe sotto il **Task E** e la catena §3.
 
 ## 3. Catena di verifica (identica alla CI)
 Dal root del repository. Ogni comando che fallisce è un blocco da correggere prima di consegnare.
@@ -504,10 +505,10 @@ Generate a **counterfactual** variant of a locus to measure its effect (ΔI, coh
 | operation | code | family | determinism |
 | :--- | :--- | :--- | :--- |
 | citation removal | **-CIT** | **subtractive** | deterministic: removes a portion **already present** in the text; no generation, no risk of an invented reading |
-| deletion recovery | **+TEXTsub** | **subtractive** | deterministic: restores a reading **already present** in `<rdg wit="#txt-b0">` (an authorial cancellation) |
-| citation integration | **+CIT** | **additive** | **generative**: supplies a citation *alluded to but not spelled out* (max 35 words) → requires `temperature 0.2`, `top_p 0.95`, **recorded seed + model/version**; the source must exist in `anagrafe-citazioni.md` (no invented references) |
+| deletion recovery | **+TEXTsub** | **subtractive** | deterministic, two subtypes: *ripristino-cassatura* (restores a reading **already present** in `<rdg wit="#txt-b0">`, an authorial cancellation) · *rimozione-aggiunta* (removes a late marginal/interlinear guard, `#ink_3-dark`) |
+| citation integration | **+CIT** | **additive** | **generative** (the only text-producing operation): spells out a citation *alluded to and attested* (max 35 words) → the adopted engine **exposes no `seed` parameter**, so the recorded seed is **nominal** and reproducibility rests on **model+version, prompt and `output_hash`** (generation at `temperature 0.2`, `top_p 0.95`); the source must exist in `anagrafe-citazioni.md` — if it is not attested, the +CIT is **non-executable** (no invented references) |
 
-**Why the distinction matters.** In **subtractive** operations the AI adds no text: the output is a deterministic function of the input, so `seed`/`temperature` in `logs/runs.tsv` act as a traceability *template* (the hashes certify prompt→output). In the **additive** operation the AI *generates* text: there `seed`, `temperature` and **model/version** are real parameters that condition the result and must be recorded.
+**Why the distinction matters.** In **subtractive** operations the AI adds no text: the output is a deterministic function of the input, so `seed`/`temperature` in `logs/runs.tsv` act as a traceability *template* (the hashes certify prompt→output). In the **additive** operation the AI *generates* text, but the adopted engine **exposes no `seed` parameter**: the `seed` in `logs/runs.tsv` is therefore **nominal** and reproducibility rests not on it but on **model+version**, the prompt and the `output_hash` of the validated result — honest traceability, without promising a determinism the engine does not provide.
 
 **PROMPT (subtractive, e.g. -CIT)**:
 ```
@@ -519,12 +520,13 @@ new text. Return the resulting segment only.
 ```
 +CIT operation on locus <SEG_ID>. Source <REF> is alluded to but not spelled out:
 supply the citation in full (max 35 words), ONLY if present in anagrafe-citazioni.md.
-Invent neither the reference nor the text. Params: temperature 0.2, top_p 0.95, seed <N>.
+Invent neither the reference nor the text. Params: temperature 0.2, top_p 0.95
+(the engine exposes no seed: record model+version, prompt and output_hash of the result).
 Output: the fragment + the anagrafe row.
 ```
 **ENCODING.** The approved variant **does not enter the teiText**: it is recorded in the **external** standoff apparatus `variants/castello-anima-variants.xml` as `<app loc="<SEG_ID>" type="workflow-*">` with `<lem wit="#txt-c">…</lem>` and `<rdg resp="#AI_controllata" cert="…">…</rdg>`. The operation goes on **`@type`** (token: `workflow-rimozione` / `workflow-recupero-cancellature` / `workflow-aggiunta`), **not** on `@ana`: the `workflow` taxonomy lives in the `teiHeader` (reserved for `revisionDesc`), and the E2 guard resolves the text's `@ana` only against `tassonomia-gh.xml`.
 
-**VERIFY**: `jing "$RNG" variants/castello-anima-variants.xml` (well-formed + valid) **+** one row in `logs/runs.tsv` (`locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`). Subtractive operations do not touch the teiText, so they do not require the §3 chain on the text; the additive one, if and when the integrated citation were promoted into the reading text, would fall under **Task E** and the §3 chain.
+**VERIFY**: `jing "$RNG" variants/castello-anima-variants.xml` (well-formed + valid) **+** one row in `logs/runs.tsv` (`locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`; `esito` ∈ `approvata · respinta · non-eseguibile`). Subtractive operations do not touch the teiText, so they do not require the §3 chain on the text; the additive one, if and when the integrated citation were promoted into the reading text, would fall under **Task E** and the §3 chain.
 
 ## 3. Verification chain (identical to CI)
 From the repo root. Any failing command is a block to fix before shipping.
