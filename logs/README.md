@@ -46,6 +46,7 @@ giudizio sono validate dall'editore (`rater=#editor`) e coerenti tra i file.
 | [`D1-D3.tsv`](D1-D3.tsv) | misure interpretative **D1** (chiarezza argomentativa) e **D3** (stabilità dottrinale), costituito → controfattuale | `locus_id · operation · esito · D1_lem · D1_rdg · dD1 · D3_lem · D3_rdg · dD3 · rater · note` |
 | [`D2-pilot.tsv`](D2-pilot.tsv) | **coesione strutturale** (D2): effetto della rimozione del `<seg>` sulle catene semantiche — misura **deterministica** (nessun giudizio), **rigenerabile** | `locus_id · operation · chains_touched · chains_broken · chains_shortened · degree · neighbors_isolated · delta_connectivity` |
 | [`T10-aggregato.tsv`](T10-aggregato.tsv) | **join** finale per locus: ΔI · D2 (broken/shortened/conn) · ΔD1 · ΔD3 — fonte unica per grafici e §4 | `locus_id · operation · esito · I_lem · I_rdg · dI · D2_broken · D2_shortened · D2_conn · dD1 · dD3` |
+| [`checklist-filologica.tsv`](checklist-filologica.tsv) | **controllo filologico 4-assi** per variante (A1 stile · A2 dottrina · A3 antianacronismo · A4 integrità TEI) → esito: esplicita il vaglio editoriale del §3.4.2 (valori `OK` / `n/a` / `FALLITA`) | `locus_id · operation · A1_stile · A2_dottrina · A3_antianacronismo · A4_integrita_tei · esito · note` |
 
 **Convenzioni.** Gli ancoraggi del modello: N {critica .90 / alta .75 / media .55 / bassa .30}; A {alta .85 / media .675 / bassa .40};
 F {delimitazione 1 / attenuatio·precisatio·riequilibrio 2 / declaratio 3}; D1 {alta .90 / media .65 / bassa .40 / nulla .15}; D3 {alta .90 / media .65 / bassa .40 / critica .15};
