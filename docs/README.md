@@ -22,6 +22,7 @@ Il modello è **interpretativo**: normalizzazione grafica **silenziosa e dichiar
 
 | Se vuoi… | Vai a |
 |---|---|
+| avere il **quadro d'insieme** (il progetto in una pagina) | [`guida-introduttiva.md`](guida-introduttiva.md) |
 | capire **come si trascrive** (cosa si normalizza in silenzio, cosa resta) | [`criteri-trascrizione.md`](criteri-trascrizione.md) |
 | capire **come si codifica** il `<text>` (segmentazione, `@ana`, apparato, standOff) | [`teiText-guida-codifica.md`](teiText-guida-codifica.md) |
 | capire **cosa significa** una categoria `@ana` (gli 8 assi e i loro `xml:id`) | [`data-dictionary.md`](data-dictionary.md) *(derivato)* |
@@ -37,6 +38,7 @@ Il modello è **interpretativo**: normalizzazione grafica **silenziosa e dichiar
 
 | File | Cosa contiene | Origine |
 |---|---|---|
+| [`guida-introduttiva.md`](guida-introduttiva.md) | **Panoramica narrativa** del progetto in una pagina (modello → pipeline → misure → perché); non normativa, rimanda ai doc-autorità. | a mano |
 | [`criteri-trascrizione.md`](criteri-trascrizione.md) | Criteri di trascrizione e **normalizzazione grafica silenziosa**; cosa si normalizza e cosa (patina linguistica) si conserva. | a mano |
 | [`teiText-guida-codifica.md`](teiText-guida-codifica.md) | Guida ragionata alla codifica del `<text>`: `seg`, `@ana` a 8 assi, apparato sostanziale, indice, standOff. | a mano |
 | [`indice-impatto.md`](indice-impatto.md) | Il modello `impact-index`: formula AHP `I=(4·Fnorm+2·N+A)/7`, bande, pipeline `seg → fs`. | a mano |
