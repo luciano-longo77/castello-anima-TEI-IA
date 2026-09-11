@@ -1,6 +1,14 @@
 # `pilot-loci.tsv` — loci del pilota della pipeline IA controllata (Fase 2)
+## Intertestualità sotto sorveglianza
+### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
-Documentazione di corredo del file dati [`pilot-loci.tsv`](pilot-loci.tsv), tenuto come **TSV puro**
+[![TEI P5](https://img.shields.io/badge/TEI-P5-334155)](https://tei-c.org/) [![Castello dell'anima](https://img.shields.io/badge/Castello%20dell%27anima-7b2d3b)](https://github.com/luciano-longo77/castello-anima-TEI-IA)
+
+**Autrice**: Teresa di San Geronimo (Anna La Longa, 1670–post 1703)  
+**Editor**: Luciano Longo  
+**Licenza**: CC BY 4.0
+
+# Documentazione di corredo del file dati [`pilot-loci.tsv`](pilot-loci.tsv), tenuto come **TSV puro**
 (sola intestazione + righe, 3 colonne `locus_id · operation · note`) perché resti renderizzabile e
 ricercabile su GitHub. Qui la metodologia di selezione, che nel TSV non trova posto.
 
@@ -31,11 +39,11 @@ La fonte è **Gal 2,20** (anagrafe #22), che l'autrice **cita esplicitamente all
 `c7p7`) ai nodi paralleli non citati, per misurare se la legittimazione scritturale **abbassa il rischio
 dottrinale**. `c7p7` resta il **controllo** (versione già citata, invariata). A questo cluster si aggiunge **`c34p14`** (rischio *quietismo*): esplicitazione dell'*auctoritas* agostiniana «In hoc bello est tota vita Sanctorum» già alluso in volgare, in **dittico** con il -CIT `c34p13` sulla stessa fonte.
 
-## Composizione del pilota (13 loci)
+## Composizione del pilota (15 loci)
 | operazione | n | loci |
 | :--- | :-- | :--- |
 | **-CIT** | 4 | `c8p9-luce-tenebre`, `c40p7-declaratio-dossologia`, `c34p13-tentatione-agostino`, `c6p2-obediente-morte` |
-| **+TEXTsub** | 4 | `c6p5-obedienza-penitenza` (a); `c6p4-fomite-peccato`, `c21p10-quattro-passioni`, `c24p16-glossa-humanita` (b) |
+| **+TEXTsub** | 6 | `c6p5-obedienza-penitenza` (a); `c6p4-fomite-peccato`, `c21p10-quattro-passioni`, `c24p16-glossa-humanita` (b); `c39p6-precisazione-liberoarbitrio` (b, quietismo/libero arbitrio), `c39p5-precisazione-matrimonio` (b, panteismo) |
 | **+CIT** | 5 | `c8p24-divenuta-altrodio` (B); `c5p16`, `c7p4`, `c7p10` (C); `c34p14-vigilanza-nemici` (quietismo, dittico con -CIT `c34p13`) |
 
 ## Riproduzione della misura strutturale (D2)
