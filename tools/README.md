@@ -1,4 +1,4 @@
-# tools/
+# tools/  - Strumenti a supporto dell'edizione 
 ## Intertestualità sotto sorveglianza
 ### *Modello TEI-driven e AI-assisted per l'analisi di citazioni, glosse e rimandi nel Castello dell'anima*
 
@@ -8,8 +8,9 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-Strumenti a supporto dell'edizione del *Castello dell'anima*: uno script a riga di comando e tre
-strumenti visuali autonomi (pagine HTML, si aprono nel browser con doppio clic, **nessuna dipendenza esterna**).
+# Strumenti a supporto dell'edizione del *Castello dell'anima* 
+Uno script a riga di comando e tre strumenti visuali autonomi (pagine HTML, si aprono nel browser con doppio clic, **nessuna dipendenza esterna**).
+La cartella ospita inoltre gli strumenti della **fase sperimentale** (misure controfattuali) e i **generatori** invocati dalla CI, documentati nella sezione [*Altri strumenti*](#altri-strumenti-pipeline-fase-2-e-generatori) più sotto.
 Gli strumenti sono **aiuti** all'annotazione: la verifica autoritativa resta la **CI** (guardie E1/E2, co-occorrenza,
 RelaxNG, Schematron, NFC).
 
@@ -112,6 +113,35 @@ python3 tools/impact_index.py tei/text/castello-anima-teiText.xml --bands bande.
 # bande.csv — id;banda_N;banda_A
 seg-b3-c1p8-desiderio;critica;alta
 ```
+
+## Altri strumenti (pipeline Fase 2 e generatori)
+
+Oltre agli aiuti all'indice d'impatto, la cartella contiene gli strumenti della **fase sperimentale** (misure controfattuali) e i **generatori** di artefatti derivati invocati dalla CI.
+
+**Misure della pipeline controfattuale (Fase 2)**
+
+| File | Ruolo |
+|---|---|
+| `delta_cohesion.py` | misura **D2** (coesione strutturale): quanto la rete di catene semantiche si degrada rimuovendo un `<seg>` — **deterministica**, nessun LLM. Legge i loci da `pilot-loci.tsv` e produce [`../logs/D2-pilot.tsv`](../logs/D2-pilot.tsv) |
+| `pilot-loci.tsv` · `pilot-loci.md` | l'elenco dei **loci del pilota** (input della D2) e la relativa **nota di metodo** (composizione, criteri) |
+| `sensitivity.py` | **analisi di sensibilità** dell'indice: quanto le bande `#impact-*` resistono a perturbazioni dei pesi AHP, delle ancore N/A e delle soglie di classe. Doc: [`../docs/sensitivity-indice-impatto.md`](../docs/sensitivity-indice-impatto.md) |
+
+**Generatori di artefatti derivati** (invocati dai workflow `gen-*` / `Vocab SKOS` della CI; il committato deve essere byte-identico alla rigenerazione)
+
+| File | Rigenera | Da |
+|---|---|---|
+| `gen_skos.py` | il vocabolario SKOS [`../vocab/castello-anima-vocab.ttl`](../vocab/castello-anima-vocab.ttl) | `../tei/taxonomy/tassonomia-gh.xml` |
+| `gen_edizione_skos.py` | lo SKOS del **gemello** (17 stati-mistici) + l'allineamento `skos:*Match` | teiHeader del gemello `castello-dell-anima-edizione` |
+| `gen_data_dictionary.py` | [`../docs/data-dictionary.md`](../docs/data-dictionary.md) | `../tei/taxonomy/tassonomia-gh.xml` |
+| `estrattore_interventi.py` | [`../docs/interventi-editoriali.md`](../docs/interventi-editoriali.md) | `../tei/text/castello-anima-teiText.xml` |
+
+**Visualizzatore**
+
+| File | Ruolo |
+|---|---|
+| `4-vocabolario-skos.html` | viewer **offline** del vocabolario SKOS (dati incorporati, apribile da disco); la versione navigabile online è in [`../vocab/site/`](../vocab/site/) |
+
+> Come le pagine HTML, anche gli script `.py` sono **aiuti/generatori**: la fonte di verità resta il repository (tassonomia, teiText, schemi) e la **CI** ne impone la coerenza.
 
 ## Verificabilità e falsificabilità
 
