@@ -111,6 +111,11 @@
                   <rdg resp="#AI_controllata" cert="medium">, come può dire con san Paolo <cit><quote xml:lang="la">Nico ego sed non ego, nimis vero in me Christus</quote><bibl>Gal 2,20</bibl></cit></rdg>
                   <note type="run">model=claude-opus-4-8 · temperature=0.2 · top_p=0.95 · seed=2 (nominale: l'API Anthropic non espone seed) · prompt_hash=b44e56a0a1d5 · output_hash=da746c83a5fc · reviewer=#editor · esito=approvata · +CIT esplicitazione (A5, prima run generativa reale tracciata) dell'eco Gal 2,20 già presente nel seg («morire alla vecchia… vivere alla nuova… non più di lei, ma di Dio»); fonte attestata in anagrafe (riga 22) e a c7p7, forma 1a byte-identica (nessuna invenzione) · test riproducibilità ×3: cit-payload identico su tutte e 3 (hash d75a9e603be1), variò solo il connettivo (2 output: da746c83a5fc ×2, 32a2ea8059e7 ×1) → citazione stabile · cfr. logs/runs.tsv</note>
                </app>
+               <app loc="seg-b3-c34p14-vigilanza-nemici" type="workflow-aggiunta">
+                  <lem wit="#txt-c"/>
+                  <rdg resp="#AI_controllata" cert="medium">, cioè <cit><quote xml:lang="la"><term type="patristico">In hoc bello est tota vita Sanctorum</term></quote><bibl cert="medium">Agostino d'Ippona, sent. (riferimento non identificato con certezza; cfr. Iob 7,1)</bibl></cit></rdg>
+                  <note type="run">seed=1 · prompt_hash=3b41db404d3c · output_hash=933432a8eb51 · reviewer=#editor · esito=approvata · +CIT esplicitazione dell'auctoritas attestata (Agostino «In hoc bello est tota vita Sanctorum», forma byte-presente a c34p13) già alluso in volgare «tutta la vita dei santi è una continua guerra» · scenario-ii: A media→bassa, F riequilibrio→delimitazione, N invariante → ΔI -0.230; ΔD3 +0.25 (argina il quietismo) · D2: 1 catena toccata, 0 spezzate, 1 accorciata, deg 3 · dittico con -CIT c34p13 · cfr. logs/runs.tsv</note>
+               </app>
             </listApp>
          </div>
       </body>
