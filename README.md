@@ -84,6 +84,16 @@ Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto
 Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto, e il **Visualizzatore del vocabolario SKOS** (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando) — aiuti alla codifica, **non** parte della validazione automatica. Qui stanno anche i **generatori** invocati dai workflow `gen-*` della CI: `gen_data_dictionary.py` (rigenera `docs/data-dictionary.md` dalla tassonomia), `estrattore_interventi.py` (rigenera `docs/interventi-editoriali.md` dal teiText) e `gen_skos.py` (rigenera il vocabolario SKOS dalla tassonomia).
 ➡️ [Leggi il README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
 
+### `/variants`
+
+L'**apparato standoff esterno** delle varianti controfattuali della pipeline IA (Fase 2): un `<TEI>` autonomo (`castello-anima-variants.xml`) con `<listApp type="counterfactual-ai">`, in cui ogni variante è un `<app loc="seg-…" type="workflow-*">` ancorato per `@loc` al `<seg>` del testo, con `<lem wit="#txt-c">` (lezione costituita) e `<rdg resp="#AI_controllata">` (il solo controfattuale). È tenuto **separato** dal teiText per non mescolare l'apparato genetico d'autrice con lo strato sperimentale IA; lo valida la CI **Validate Variants**. Include anche il backlog delle aggiunte marginali (`backlog-textsub-additions.md`).
+➡️ [Leggi il README di `variants/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/variants/README.md).
+
+### `/logs`
+
+Il **registro tracciabile** della pipeline IA e le **misure** del pilota. `runs.tsv` — una riga per run (seed, hash di prompt/output, reviewer, esito) — rende ogni esperimento **rigenerabile**; accanto stanno i file derivati delle misure: `delta-I.tsv` (indice d'impatto, ΔI), `D1-D3.tsv` (chiarezza **D1** / stabilità dottrinale **D3**), `D2-pilot.tsv` (coesione strutturale, rigenerabile con `tools/delta_cohesion.py`) e `T10-aggregato.tsv` (join finale, fonte dei grafici del §4).
+➡️ [Leggi il README di `logs/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/logs/README.md).
+
 ### `/.github/workflows`
 
 Sei workflow di GitHub Actions, attivi a ogni push/PR (e avviabili a mano):
