@@ -24,7 +24,7 @@ Campi obbligatori — coincidono con `teiHeader` → `xenoData` → `audit_trail
 | `prompt_hash` | hash del prompt usato |
 | `output_hash` | hash dell'output generato |
 | `reviewer` | chi ha validato (editore) |
-| `esito` | `approvata` · `respinta` · `da-rivedere` · `non-eseguibile` |
+| `esito` | `approvata` · `respinta` · `non-eseguibile` (`da-rivedere` = stato **transitorio** di lavorazione, non un esito finale) |
 | `notes` | note filologiche/di validazione |
 
 ## Determinismo e replicabilità
@@ -33,7 +33,7 @@ fissando `seed` + `prompt_hash` la run è **riproducibile** e verificabile da te
 l'unica operazione **generativa** e il motore adottato **non espone un parametro `seed`**: il `seed`
 in `runs.tsv` è quindi **nominale** e la riproducibilità poggia su **modello+versione, prompt e
 `output_hash`** (non sul seed). `output_hash` certifica quale testo è stato
-effettivamente validato ed eventualmente codificato come `<rdg type="workflow-*">` nell'apparato
+effettivamente validato ed eventualmente codificato come `<rdg resp="#AI_controllata">` in un `<app type="workflow-*">` nell'apparato
 standoff **esterno** [`../variants/castello-anima-variants.xml`](../variants/castello-anima-variants.xml)
 (ancorato per `@loc` al `<seg>`), senza toccare il teiText di produzione.
 
