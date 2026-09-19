@@ -214,7 +214,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 → citazione legittimante, frequente nella mistica dell'umiltà; la stessa lezione ricorre in III.24 (cc. 220v-221r).
 
 **I.6** — Virtù dell'obbedienza  
-*Christus factus est pro nobis obediens usque ad mortem* — Fil 2,8 (c. 14r)  
+*Christus factus est pro nobis obediens usque ad mortem* — Phil 2,8 (c. 14r)  
 → pivot cristologico, altissimo impatto esplicativo.
 
 ### 3.2. Libro II
@@ -276,7 +276,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 
 - *Vivo autem, iam non ego: vivit vero in me Christus* (Gal 2,20; c. 173v) → formula di trasformazione.
 - *Amor meus crucifissus est, et ego cum illo* (S. Ignazio, *Ad Romanos* 7) → intertesto patristico; **attestata a III.24** (c. 219v), non a III.34.
-- *Cupio dissolvi, et esse cum Christo* (Fil 1,23; cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v) → desiderio di unione perfetta.
+- *Cupio dissolvi, et esse cum Christo* (Phil 1,23; cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v) → desiderio di unione perfetta.
 
 **III.40** — ultima cella dell'anima. Citazioni utili per concludere il ciclo ascensionale:
 
@@ -307,8 +307,8 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 - *Sitio* — Gv 19,28 (cc. 241r, 241v)
 
 #### 3.4.3 Epistole paoline
-- *Cupio dissolvi et esse cum Christo* — Fil 1,23 (cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v)
-- *Christus factus est pro nobis obediens* — Fil 2,8 (c. 14r)
+- *Cupio dissolvi et esse cum Christo* — Phil 1,23 (cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v)
+- *Christus factus est pro nobis obediens* — Phil 2,8 (c. 14r)
 - *Vivo autem, iam non ego, vivit vero in me Christus* — Gal 2,20 (c. 173v)
 - *Soli Deo sit honor et gloria* (Regi autem saeculorum…) — 1 Tm 1,17 (cc. 253r, 263r)
 - *Dominus autem dirigat corda* — 2 Ts 3,5 (cc. 255v, 256r)
@@ -347,7 +347,7 @@ Le citazioni illustrano l'uso delle citazioni come dispositivi di stabilizzazion
 
 Queste tipologie coincidono con i nodi a rischio riconosciuti dall'Inquisizione (unione, sicurtà, annichilazione, trasformazione), usate da suor Teresa per evitare derive quietiste.
 
-- *Christus factus est pro nobis obediens usque ad mortem* — Fil 2,8 → chiave di volta del capitolo sull'obbedienza (I.6).
+- *Christus factus est pro nobis obediens usque ad mortem* — Phil 2,8 → chiave di volta del capitolo sull'obbedienza (I.6).
 - *Consummatum est* — Gv 19,30 → usata come citazione di ancoraggio nei passaggi di croce (III.XXXI–XXXII, cc. 241v–255r).
 - *In manus tuas Domine, commendo spiritum meum* — Lc 23,46 → ancoraggio alla Passione per arginare l'annichilazione mistica (III.XXXII, cc. 241v–243v).
 - *Sitio* — Gv 19,28 → tipica delle pene mistiche d'amore e dello stato sponsale.
@@ -490,8 +490,8 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | Ct 2,10-16 | *Iam hiems transiit… surge amica mea et veni* | 146r, 146v, 185r, 185v | Sponsale (III.14) |
 | Is 24,16 | *Secretum meum mihi* | 29v, 66v, 148v, 175v | Sapere nascosto |
 | Prov 8,31 | *Deliciae meae esse cum filiis hominum* | 239r | Quiete infusa |
-| Fil 1,23 | *Cupio dissolvi et esse cum Christo* | 196r, 198v, 222r, 232v, 233r, 260r, 260v | Unione perfetta |
-| Fil 2,8 | *Christus factus est pro nobis obediens* | 14r | Pivot cristologico (I.6) |
+| Phil 1,23 | *Cupio dissolvi et esse cum Christo* | 196r, 198v, 222r, 232v, 233r, 260r, 260v | Unione perfetta |
+| Phil 2,8 | *Christus factus est pro nobis obediens* | 14r | Pivot cristologico (I.6) |
 | Gal 2,20 | *Vivo autem, iam non ego, vivit vero in me Christus* | 173v | Trasformazione |
 | 1 Tm 1,17 | *Soli Deo sit honor et gloria* (Regi autem saeculorum…) | 253r, 263r | Sigillo conclusivo |
 | 2 Ts 3,5 | *Dominus autem dirigat corda* | 255v, 256r | Anti-quietista; discernimento |
