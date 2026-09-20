@@ -3422,7 +3422,7 @@
                         <app>
                            <lem wit="#txt-c"><supplied reason="hole" resp="#editor" cert="medium">modo</supplied> alcuno spieg<supplied reason="hole" resp="#editor" cert="medium">arse</supplied></lem>
                            <rdg wit="#txt-b0"><gap reason="hole" unit="word" quantity="1"/> alcuno spieg<gap reason="hole" unit="chars" quantity="3"/></rdg>
-                        </app><note type="glossa" ana="#operation-precisatio"/></add></lem><rdg wit="#txt-b0"/></app>, e con una parola direi il tutto: <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl>Ps 135(136), 4</bibl></cit></seg>.</p>
+                        </app><note type="glossa" ana="#operation-precisatio"/></add></lem><rdg wit="#txt-b0"/></app>, e con una parola direi il tutto: <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl>Ps 135(136),4</bibl></cit></seg>.</p>
             </div>
 
             <div type="chapter" n="4" xml:id="III-cap4">
@@ -4020,7 +4020,7 @@
            cosa tanto sublime "il trattarne e una grande ingiuria... il meglio e trattarne in silentio". Preterizione e appoggio
            biblico; nessuna recinzione dottrinale calda -> impatto basso. Contiene il cambio di carta (c. 173v).
            N=media/0.55; A=bassa/0.40; F=1 delimitazione -> I=0.405 low. -->
-      <seg xml:id="seg-b3-c7p5-ineffabilita-preterizione" type="indicatio" subtype="ineffabilita-preterizione" hand="#ink_1" cert="high" ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-intertesto-biblico #impact-low">Non so <rs type="interlocutore" ref="#esterno">padre</rs>, come farmi intendire, e dire la cosa come passa, solo dico, che l'<rs type="soggetto-mistico">anima</rs> in questa <term type="mistico">cella</term> vede <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl cert="medium">cfr. Ps 135(136), 4</bibl></cit>. Egli è cosa certa <rs type="interlocutore" ref="#esterno">padre</rs> che<pb n="173v"/> una cosa molto soblime, il trattarne è una grande ingiuria, che se gli fa, il meglio è dunque trattarne in <term type="mistico">silentio</term>, poiché non trovo termini per sapermi spiegare</seg>.</p>
+      <seg xml:id="seg-b3-c7p5-ineffabilita-preterizione" type="indicatio" subtype="ineffabilita-preterizione" hand="#ink_1" cert="high" ana="#legittimazione-biblica #operation-delimitazione #risk-ambiguita #exposition-high #phase-mediana #mystic_state-unione #relation-intertesto-biblico #impact-low">Non so <rs type="interlocutore" ref="#esterno">padre</rs>, come farmi intendire, e dire la cosa come passa, solo dico, che l'<rs type="soggetto-mistico">anima</rs> in questa <term type="mistico">cella</term> vede <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl cert="medium">cfr. Ps 135(136),4</bibl></cit>. Egli è cosa certa <rs type="interlocutore" ref="#esterno">padre</rs> che<pb n="173v"/> una cosa molto soblime, il trattarne è una grande ingiuria, che se gli fa, il meglio è dunque trattarne in <term type="mistico">silentio</term>, poiché non trovo termini per sapermi spiegare</seg>.</p>
 
    <p n="6">
       <!-- S6 TRASFORMAZIONE / GAUDIO INEFFABILE. L'anima resta "perfettamente trasformata in Dio"; trasformazione non dicibile,
@@ -4232,7 +4232,7 @@
                      prima d'incominciare a trattar di questa <term type="mistico">cella</term> voglio dir la <term type="sicilianismo">comperatione</term>, che molto mi quatra. È
                      questa cella a punto come la grandezza di <rs type="luogo-metaforico">Roma</rs>, dove vi sta scritto, che non v'è luogo più santo di quello, né ciò che vi
                      sta di dentro si può sapere, poiché chi v'entra perde la vita né per quei giorni, che sta in vita può dir cosa alcuna di quanto
-                     viddi, ma solo, <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl>Ps 135(136), 4</bibl></cit>. Sì come si tratta d'un <rs type="soggetto-comparante">Pontefice</rs>, che stimolato della coriosità vuole vedere, e <supplied reason="hole" resp="#editor" cert="medium">v</supplied>i perdè la vita e quei tre giorni, che visse non potè proferir guarda di quanto viddi</seg>.</p>
+                     viddi, ma solo, <cit><quote xml:lang="la"><term type="biblico">mirabilia magna</term></quote><bibl>Ps 135(136),4</bibl></cit>. Sì come si tratta d'un <rs type="soggetto-comparante">Pontefice</rs>, che stimolato della coriosità vuole vedere, e <supplied reason="hole" resp="#editor" cert="medium">v</supplied>i perdè la vita e quei tre giorni, che visse non potè proferir guarda di quanto viddi</seg>.</p>
 
                <p n="3">
                   <!-- S4 CELLA INDICIBILE. La cella del matrimonio spirituale è indicibile: nessuno dice ciò che vi è, tanto è nascosto ai sensi.
