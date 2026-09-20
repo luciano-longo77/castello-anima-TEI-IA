@@ -365,7 +365,7 @@ Citazioni centrali per la funzione di recinzione semantica delle glosse; sono le
 
 Riferimenti mistico-sponsali come dispositivi canonici di legittimazione; sono il fondamento della mistica nuziale, ma anche possibile punto di rischio.
 
-- *Iam hiems transiit... surge amica mea, et veni* — Ct 2,10–11 → usata nei capitoli della *santa ignoranza* e della piena trasformazione (III.14).
+- *Iam hiems transiit... surge amica mea, et veni* — Ct 2,10–16 → usata nei capitoli della *santa ignoranza* e della piena trasformazione (III.14).
 
 ### 4.5. Citazioni di rifinitura dottrinale
 
