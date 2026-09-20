@@ -210,7 +210,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **I.1–2** — Nessuna citazione formale → per esperimenti **+CIT**: aggiunta controllata di citazioni bibliche in stile.
 
 **I.5** — Virtù dell'umiltà  
-*In te Domine speravi, non confundar in aeternum* — Ps 70(71) (c. 13r)  
+*In te Domine speravi, non confundar in aeternum* — Ps 70 (c. 13r)  
 → citazione legittimante, frequente nella mistica dell'umiltà; la stessa lezione ricorre in III.24 (cc. 220v-221r).
 
 **I.6** — Virtù dell'obbedienza  
@@ -288,7 +288,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 *Anagrafe verificata sull'**apparato dell'edizione critica** (grafie volgarizzate come stampate; le carte indicano il folio dell'occorrenza). Tabella completa con occorrenze in [Appendice — Authority File](#appendice--authority-file).*
 
 #### 3.4.1 Salmi
-- *In te Domine speravi, non confundar in aeternum* — Ps 70(71),1 (cc. 13r, 220v, 221r)
+- *In te Domine speravi, non confundar in aeternum* — Ps 70,1 (cc. 13r, 220v, 221r)
 - *Misericordias Domini in aeternum* — Ps 88,2 (cc. 92r, 182r, 203v)
 - *Vias mandatorum tuorum cucurri* — Ps 118,32 (c. 78r)
 - *Circumdederunt me dolores mortis* — Ps 114,3 (cc. 137v, 213r)
@@ -339,7 +339,7 @@ Le citazioni illustrano l'uso delle citazioni come dispositivi di stabilizzazion
 
 **Salmi**
 
-- *In te Domine speravi, non confundar in aeternum* — Ps 70(71) → usata nel Libro I per fondare la virtù dell'umiltà (I.5, c. 13r); ripresa come ancoraggio in III.24 (cc. 220v-221r).
+- *In te Domine speravi, non confundar in aeternum* — Ps 70 → usata nel Libro I per fondare la virtù dell'umiltà (I.5, c. 13r); ripresa come ancoraggio in III.24 (cc. 220v-221r).
 - *Misericordias Domini in aeternum cantabo* — Ps 88,2 → citazione di stato mistico "di sicurezza", ricorrente nei momenti di luce divina.
 - *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Ps 118,32 → usata per la "dilatazione del cuore" nei capitoli di unione infusa.
 
@@ -472,12 +472,12 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 
 | Sigla | Citazione | Carte | Nota d'uso |
 |---|---|---|---|
-| Ps 70(71),1 | *In te Domine speravi, non confundar in aeternum* | 13r, 220v, 221r | Legittimante (I.5) e ancoraggio (III.24) |
-| Ps 88(89),2 | *Misericordias Domini in aeternum cantabo* | 92r, 182r, 203v | Stato mistico di sicurezza |
-| Ps 118(119),32 | *Vias mandatorum tuorum cucurri* | 78r | Dilatazione del cuore |
+| Ps 70,1 | *In te Domine speravi, non confundar in aeternum* | 13r, 220v, 221r | Legittimante (I.5) e ancoraggio (III.24) |
+| Ps 88,2 | *Misericordias Domini in aeternum cantabo* | 92r, 182r, 203v | Stato mistico di sicurezza |
+| Ps 118,32 | *Vias mandatorum tuorum cucurri* | 78r | Dilatazione del cuore |
 | Ps 114,3 | *Circumdederunt me dolores mortis* | 137v, 213r | Prova / desolazione |
-| Ps 68(69),2-3 | *Salvum me fac Deus* | 236r | Notte mistica / prove |
-| Ps 44(45),10 | *Astitit regina a dextris tuis* | 111r | Culmine sponsale |
+| Ps 68,2-3 | *Salvum me fac Deus* | 236r | Notte mistica / prove |
+| Ps 44,10 | *Astitit regina a dextris tuis* | 111r | Culmine sponsale |
 | Mt 26,38 | *Tristis est anima mea usque ad mortem* | 43r, 219r, 219v | Alto rischio (III.24) |
 | Mt 26,41 | *Spiritus promptus, caro autem infirma* | 25r | Discernimento |
 | Mc 15,34 | *Deus meus… / Heloi Heloi lama sabacthani* | 213v, 219v, 220r, 243r | Notte spirituale |
