@@ -327,7 +327,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 - *Pater noster, qui es in caelis* (c. 21r)
 - *Te Deum* (*Dignare Domine / Pleni sunt caeli / Te Deum laudamus*) (cc. 100r, 100v, 113v, 114r, 216r, 252v)
 
-**Totale attestato: 32 citazioni distinte** (26 bibliche + 3 patristiche + 1 scolastica + 2 liturgiche). *(Conteggio allineato all'anagrafe delle citazioni, `docs/anagrafe-citazioni.md`, registro dedicato.)*
+**Totale attestato: 32 citazioni distinte** (26 bibliche + 3 patristiche + 1 scolastica + 2 liturgiche). *(Conteggio allineato all'anagrafe delle citazioni, `docs/anagrafe-citazioni.md`, registro dedicato; le 32 **fonti distinte** corrispondono a 37 **occorrenze** di `<cit>` nel testo TEI, con ricorrenze multiple di alcune fonti.)*
 
 ## 4. Citazioni rilevanti
 
