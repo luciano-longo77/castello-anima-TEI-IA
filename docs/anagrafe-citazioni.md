@@ -38,7 +38,7 @@ Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgich
 | 22 | biblica | Gal 2,20 · Vivo autem, iam non ego, vivit vero in me Christus | 173v (III.7) |
 | 23 | biblica | Phil 1,23 · Cupio dissolvi et esse cum Christo | 196r, 198v, 199r (III.16), 222r, 232v, 233r, 260r (III.39), 260v |
 | 24 | biblica | Phil 2,8 · Christus factus est pro nobis obediens | 14r (I.6) |
-| 25 | biblica | 1 Tm 1,17 · Soli Deo sit honor et gloria (Regi autem saeculorum…) | 253r, 263r (III.40) |
+| 25 | biblica | 1 Tim 1,17 · Soli Deo sit honor et gloria (Regi autem saeculorum…) | 253r, 263r (III.40) |
 | 26 | biblica | 2 Ts 3,5 · Dominus autem dirigat corda | 255v, 256r |
 | 27 | patristica | S. Ignazio, Ad Romanos 7 (MG 5-694) · Amor meus crucifissus est, et ego cum illo | 219v (III.24) |
 | 28 | patristica | S. Agostino, Serm. 151,7 (cfr. De Civitate Dei) · In hoc bello est tota vita Sanctorum | 248r (III.34) |
