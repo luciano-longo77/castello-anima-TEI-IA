@@ -228,8 +228,8 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **II.8** — Orazione d'unione + effetti + avvertimenti *(contesto vicino a Molinos → test per glosse)*. Citazioni utili del corpus (ricorrenti nei capitoli mistici sulla quiete/unione):
 
 - *Pater noster, qui es in caelis* (formula liturgica; c. 21r) → molto ricorrente nelle sezioni di unione.
-- *Misericordias Domini in aeternum cantabo* — Sal 88,2 (cc. 92r, 182r, 203v) → citazione di stato gioioso/illuminativo.
-- *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Sal 118,32 (c. 78r) → tipica delle sezioni di dilatazione del cuore.
+- *Misericordias Domini in aeternum cantabo* — Ps 88,2 (cc. 92r, 182r, 203v) → citazione di stato gioioso/illuminativo.
+- *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Ps 118,32 (c. 78r) → tipica delle sezioni di dilatazione del cuore.
 
 **II.9** (travagli delle anime + cosa devono fare i direttori) → capitoli su aridità, turbamento, prove della quiete infusa. Citazioni utili:
 
@@ -260,7 +260,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **III.12** — stato d'otio / operazione nel fondo dell'anima. Citazioni compatibili col tema della quiete infusa:
 
 - *Deliciae meae esse cum filiis hominum* — Prov 8,31 (c. 239r) → delizie divine = stato di quiete.
-- *Misericordias Domini...* (Sal 88,2; cc. 92r, 182r, 203v) → citazione perfetta per descrivere illuminazioni.
+- *Misericordias Domini...* (Ps 88,2; cc. 92r, 182r, 203v) → citazione perfetta per descrivere illuminazioni.
 
 **III.14** — santa ignoranza. Citazioni utili per marcazione teologica:
 
@@ -270,7 +270,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **III.24** — imitazione della Passione. Citazioni centrali:
 
 - *Tristis est anima mea usque ad mortem* (Mt 26,38; cc. 219r, 219v) → citazione-chiave, teologicamente delicata.
-- *Salvum me fac Deus...* (Sal 68,2-3; c. 236r) → evocazione della prova in acque profonde.
+- *Salvum me fac Deus...* (Ps 68,2-3; c. 236r) → evocazione della prova in acque profonde.
 
 **III.34** — trasformazione totale / matrimonio spirituale. Citazioni utili per i grafi:
 
@@ -280,7 +280,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 
 **III.40** — ultima cella dell'anima. Citazioni utili per concludere il ciclo ascensionale:
 
-- *Astitit regina a dextris tuis...* (Sal 44,10; attestata a c. 111r, Libro II) → culminazione sponsale.
+- *Astitit regina a dextris tuis...* (Ps 44,10; attestata a c. 111r, Libro II) → culminazione sponsale.
 - *Soli Deo honor et gloria* (Tm 1,17; cc. 253r, 263r) → formula conclusiva.
 
 ### 3.4. Authority list
@@ -340,8 +340,8 @@ Le citazioni illustrano l'uso delle citazioni come dispositivi di stabilizzazion
 **Salmi**
 
 - *In te Domine speravi, non confundar in aeternum* — Ps 70(71) → usata nel Libro I per fondare la virtù dell'umiltà (I.5, c. 13r); ripresa come ancoraggio in III.24 (cc. 220v-221r).
-- *Misericordias Domini in aeternum cantabo* — Sal 88,2 → citazione di stato mistico "di sicurezza", ricorrente nei momenti di luce divina.
-- *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Sal 118,32 → usata per la "dilatazione del cuore" nei capitoli di unione infusa.
+- *Misericordias Domini in aeternum cantabo* — Ps 88,2 → citazione di stato mistico "di sicurezza", ricorrente nei momenti di luce divina.
+- *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Ps 118,32 → usata per la "dilatazione del cuore" nei capitoli di unione infusa.
 
 ### 4.2. Citazioni come ancoraggio cristologico
 
@@ -371,7 +371,7 @@ Riferimenti mistico-sponsali come dispositivi canonici di legittimazione; sono i
 
 Questa tipologia chiude i segmenti, marca l'ortodossia e serve come *sigillo teologico*.
 
-- *Soli Deo honor et gloria* — Tm 1,17 → citazione conclusiva, sigillo di ortodossia in chiusura (Libro III).
+- *Soli Deo honor et gloria* — Tim 1,17 → citazione conclusiva, sigillo di ortodossia in chiusura (Libro III).
 - *Dominus autem dirigat corda...* — Ts 3,5 → associata al discernimento, utile come citazione *esatto congegno anti-moliniano* (II.10b).
 
 ### 4.6. Citazioni metafisiche e sapienziali
