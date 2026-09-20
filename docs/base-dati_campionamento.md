@@ -239,7 +239,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **II.10b** — Segni per conoscere se *la gratia è di Dio o del Demonio*. Citazioni critiche:
 
 - *Dominus autem dirigat corda vestra...* (2 Ts 3,5; cc. 255v, 256r) → citazione normativa di discernimento.
-- *Soli Deo honor et gloria* (1 Tm 1,17; cc. 253r, 263r) → conclusione teologicamente sorvegliata.
+- *Soli Deo honor et gloria* (1 Tim 1,17; cc. 253r, 263r) → conclusione teologicamente sorvegliata.
 
 ### 3.3. Libro III
 
@@ -281,7 +281,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **III.40** — ultima cella dell'anima. Citazioni utili per concludere il ciclo ascensionale:
 
 - *Astitit regina a dextris tuis...* (Ps 44,10; attestata a c. 111r, Libro II) → culminazione sponsale.
-- *Soli Deo honor et gloria* (Tm 1,17; cc. 253r, 263r) → formula conclusiva.
+- *Soli Deo honor et gloria* (Tim 1,17; cc. 253r, 263r) → formula conclusiva.
 
 ### 3.4. Authority list
 
@@ -310,7 +310,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 - *Cupio dissolvi et esse cum Christo* — Phil 1,23 (cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v)
 - *Christus factus est pro nobis obediens* — Phil 2,8 (c. 14r)
 - *Vivo autem, iam non ego, vivit vero in me Christus* — Gal 2,20 (c. 173v)
-- *Soli Deo sit honor et gloria* (Regi autem saeculorum…) — 1 Tm 1,17 (cc. 253r, 263r)
+- *Soli Deo sit honor et gloria* (Regi autem saeculorum…) — 1 Tim 1,17 (cc. 253r, 263r)
 - *Dominus autem dirigat corda* — 2 Ts 3,5 (cc. 255v, 256r)
 
 #### 3.4.4 Altre Scritture
@@ -493,7 +493,7 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | Phil 1,23 | *Cupio dissolvi et esse cum Christo* | 196r, 198v, 222r, 232v, 233r, 260r, 260v | Unione perfetta |
 | Phil 2,8 | *Christus factus est pro nobis obediens* | 14r | Pivot cristologico (I.6) |
 | Gal 2,20 | *Vivo autem, iam non ego, vivit vero in me Christus* | 173v | Trasformazione |
-| 1 Tm 1,17 | *Soli Deo sit honor et gloria* (Regi autem saeculorum…) | 253r, 263r | Sigillo conclusivo |
+| 1 Tim 1,17 | *Soli Deo sit honor et gloria* (Regi autem saeculorum…) | 253r, 263r | Sigillo conclusivo |
 | 2 Ts 3,5 | *Dominus autem dirigat corda* | 255v, 256r | Anti-quietista; discernimento |
 
 ### 2. Liturgia
