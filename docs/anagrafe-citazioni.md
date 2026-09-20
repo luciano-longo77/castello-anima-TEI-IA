@@ -17,11 +17,11 @@ Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgich
 | 1 | biblica | Ps 118,32 · Vias mandatorum tuorum cucurri | 78r |
 | 2 | biblica | Ps 88,2 · Misericordias Domini in aeternum | 92r, 182r, 203r (III.16) |
 | 3 | biblica | Ps 114,3 · Circumdederunt me dolores mortis | 137v, 213r |
-| 4 | biblica | Ps 70(71),1 · In te Domine speravi, non confundar in aeternum | 220v (III.24), 221r |
-| 5 | biblica | Ps 30(31),2 · In te Domine speravi, non confundar in aeternum *(= versetto finale del Te Deum)* | 13r (I.5) |
+| 4 | biblica | Ps 70,1 · In te Domine speravi, non confundar in aeternum | 220v (III.24), 221r |
+| 5 | biblica | Ps 30,2 · In te Domine speravi, non confundar in aeternum *(= versetto finale del Te Deum)* | 13r (I.5) |
 | 6 | biblica | Ps 68,2-3 · Salvum me fac Deus | 236r |
 | 7 | biblica | Ps 44,10 · Astitit regina a dextris | 111r |
-| 8 | biblica | Ps 135(136),4 · Qui facit mirabilia magna solus | 164v (III.3), 173r (III.7), 175v (III.8) |
+| 8 | biblica | Ps 135,4 · Qui facit mirabilia magna solus | 164v (III.3), 173r (III.7), 175v (III.8) |
 | 9 | biblica | Ct 2,10-16 · Iam hiems transiit, imber abiit et recessit… surge amica mea et veni | 146r, 146v, 185r, 185v |
 | 10 | biblica | Is 24,16 · Secretum meum mihi | 29v, 66v, 148v, 175v (III.8), 195r (III.14) |
 | 11 | biblica | Prov 8,31 · Deliciae meae esse cum filiis hominum | 239r |
@@ -51,4 +51,4 @@ Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgich
 
 > **Occorrenze vs fonti.** Questo repertorio conta le **fonti distinte** (**32**). Nel `teiText` le medesime fonti ricorrono in **37 occorrenze** di `<cit>` — alcune ripetute (p. es. *Mc 15,34* ×3, *Lc 23,34* ×2, *Lc 23,46* ×2, *Is 24,16* ×4). Le due cifre misurano cose diverse — *fonti* qui, *occorrenze* nel testo e nel paper — e **non vanno confuse**.
 
-> **Nota su «In te Domine speravi…».** L'incipit è comune a Ps 30(31),2, a Ps 70(71),1 e al versetto finale del *Te Deum*. Nel testo costituito la ricorrenza di **c. 13r (I.5)** è ricondotta a **Ps 30,2 / Te Deum**, quella di **c. 220v (III.24)** a **Ps 70(71),1**.
+> **Nota su «In te Domine speravi…».** L'incipit è comune a Ps 30,2, a Ps 70,1 e al versetto finale del *Te Deum*. Nel testo costituito la ricorrenza di **c. 13r (I.5)** è ricondotta a **Ps 30,2 / Te Deum**, quella di **c. 220v (III.24)** a **Ps 70,1**.
