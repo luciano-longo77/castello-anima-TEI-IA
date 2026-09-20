@@ -49,4 +49,6 @@ Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgich
 
 **Totali**: 26 bibliche + 3 patristiche + 1 scolastica + 2 liturgiche = **32 citazioni distinte**.
 
+> **Occorrenze vs fonti.** Questo repertorio conta le **fonti distinte** (**32**). Nel `teiText` le medesime fonti ricorrono in **37 occorrenze** di `<cit>` — alcune ripetute (p. es. *Mc 15,34* ×3, *Lc 23,34* ×2, *Lc 23,46* ×2, *Is 24,16* ×4). Le due cifre misurano cose diverse — *fonti* qui, *occorrenze* nel testo e nel paper — e **non vanno confuse**.
+
 > **Nota su «In te Domine speravi…».** L'incipit è comune a Ps 30(31),2, a Ps 70(71),1 e al versetto finale del *Te Deum*. Nel testo costituito la ricorrenza di **c. 13r (I.5)** è ricondotta a **Ps 30,2 / Te Deum**, quella di **c. 220v (III.24)** a **Ps 70(71),1**.
