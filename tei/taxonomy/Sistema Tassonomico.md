@@ -36,7 +36,8 @@ Questo documento descrive in modo **formale** il sistema di tassonomie adottato 
 - 8.3 [Vincoli editoriali (prosa normativa)](#83-vincoli-editoriali-prosa-normativa)
 9. [Come citare questo lavoro](#9-come-citare-questo-lavoro)
 10. [Workflow: aggiornamento e rigenerazione](#10-workflow-aggiornamento-e-rigenerazione)
-11. [Statuto del documento](#11-statuto-del-documento)
+11. [Materiali della cartella](#11-materiali-della-cartella)
+12. [Statuto del documento](#12-statuto-del-documento)
 
 ## 1. Principi generali del modello
 Il sistema tassonomico si fonda sui seguenti principi strutturali:
@@ -392,7 +393,27 @@ Ogni modifica al sistema tassonomico deve avvenire tramite **Pull Request** e in
 2. **Rigenerazione dello schema** (se necessario): usare Roma (oXygen) per generare `taxonomy-rng.rng` e `taxonomy-sch.sch` a partire da `tei/taxonomy/schema/taxonomy-odd.odd`. Includere entrambi i file generati nella PR.
 3. **Aggiornamento del presente documento (`Sistema Tassonomico.md`)** per riflettere i nuovi assi, categorie, o vincoli, inclusi eventuali aggiornamenti alla mappatura a tre assi interpretativi (§2) se una nuova tassonomia viene introdotta.
 
-## 11. Statuto del documento
+## 11. Materiali della cartella
+
+Oltre alla fonte normativa (`tassonomia-gh.xml`) e agli schemi (`schema/`), la cartella
+`tei/taxonomy/` raccoglie materiali di corredo, qui elencati perché nessun altro documento
+vi rimanda:
+
+| File | Che cos'è |
+|---|---|
+| [`docs/Documento metodologico.md`](docs/Documento%20metodologico.md) | La nota metodologica estesa del sistema tassonomico. |
+| [`docs/rng-taxonomy-diagram.md`](docs/rng-taxonomy-diagram.md) | Diagramma della struttura RelaxNG della tassonomia. |
+| [`docs/Interpretive_Taxonomy_v1-4.html`](docs/Interpretive_Taxonomy_v1-4.html) | Presentazione navigabile della tassonomia interpretativa (versione di lavoro). |
+| [`esempio/README-Esempio di annotazione tassonomica.md`](esempio/README-Esempio%20di%20annotazione%20tassonomica.md) | Guida all'esempio di annotazione: come leggere `taxonomy-text-model.xml`. |
+| [`esempio/taxonomy-text-model.xml`](esempio/taxonomy-text-model.xml) | L'esempio di annotazione, validato in CI da *Validate Taxonomy*. |
+| [`esempio/viewer-text-ex.html`](esempio/viewer-text-ex.html) | Visualizzatore dell'esempio annotato, apribile nel browser. |
+| [`workflows/validate-taxonomy.html`](workflows/validate-taxonomy.html) | Guida all'integrazione CI/CD della validazione tassonomica. |
+| [`log/[index] – Tassonomia interp.md`](log/%5Bindex%5D%20%E2%80%93%20Tassonomia%20interp.md) | Indice dei 15 log di lavorazione della tassonomia, in `log/`. |
+
+I file in `log/` sono **materiale di lavorazione**: documentano le decisioni prese sugli assi
+nel corso del progetto, non hanno valore normativo.
+
+## 12. Statuto del documento
 Questo documento descrive il sistema tassonomico a **scopo di orientamento**. La **fonte normativa vincolante** resta *tassonomia-gh.xml (dati) e taxonomy-odd.odd (definizione formale)*; in caso di divergenza tra questo documento e i file XML della repository, prevalgono questi ultimi.
 
 
