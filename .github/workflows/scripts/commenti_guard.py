@@ -69,7 +69,7 @@ for raw, sid in pairs:
     c = " ".join(raw.split())
     where = sid
     # 2) codice iniziale
-    if not re.match(r"^[A-Z]+\d+[a-z]?\b", c):
+    if not re.match(r"^[A-Z]+\d+(?:bis|ter|[A-Za-z])?\b", c):
         warns.append("%s: manca il CODICE iniziale (es. S1/C1)" % where)
     # 3) clausola numerica
     m = CLAUSE.search(c)
