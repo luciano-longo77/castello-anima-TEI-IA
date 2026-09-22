@@ -188,7 +188,7 @@ Il tagset disciplina **70 elementi TEI**, dichiarati nel `tagsDecl` in un unico 
 
 ## 5. Protocollo IA (`xenoData` + `projectDesc`)
 
-L'edizione integra un **protocollo IA per la generazione di eventi controfattuali** (Claude Sonnet 5, fallback Gemini), formalizzato nel blocco `xenoData` e nei criteri di `projectDesc`.
+L'edizione integra un **protocollo IA per la generazione di eventi controfattuali** (Claude Opus 4.8, fallback Gemini), formalizzato nel blocco `xenoData` e nei criteri di `projectDesc`.
 
 ### Codici delle Operazioni Controfattuali
 | Codice | Operazione |
