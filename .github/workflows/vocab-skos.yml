@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - run: pip install lxml
+      - run: pip install -r requirements-ci.txt
       - name: File richiesti presenti
         run: |
           test -f "$TAX"  || { echo "::error::$TAX non trovato"; exit 1; }
