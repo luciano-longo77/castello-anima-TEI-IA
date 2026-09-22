@@ -47,13 +47,16 @@ for f in R.iter(T + "fs"):
 src = open(TEXT, encoding="utf-8").read()
 # Per ogni <seg> associa il commento che lo precede (l'ultimo <!-- --> prima del tag,
 # senza altri <seg> in mezzo): robusto anche quando fra commento e seg c'e' <argument>/<head>.
+# Conserva l'INTERA lista dei commenti della finestra: l'annotazione di un seg puo' essere
+# legittimamente spezzata in due blocchi adiacenti (descrittivo col CODICE + clausola metrica);
+# in quel caso il CODICE sta nel primo blocco, mentre la clausola N/A/F->I resta nell'ultimo.
 seg_matches = list(re.finditer(r'<seg\s+xml:id="([^"]+)"', src))
 pairs, prev_end = [], 0
 for m in seg_matches:
     window = src[prev_end:m.start()]
     coms = re.findall(r'<!--((?:(?!-->).)*?)-->', window, re.S)
     if coms:
-        pairs.append((coms[-1], m.group(1)))
+        pairs.append((coms, m.group(1)))
     prev_end = m.end()
 commented = {sid for _, sid in pairs}
 
@@ -65,11 +68,15 @@ for sid in seg_ids:
     if sid not in commented:
         errors.append("%s: manca il commento sopra il <seg>" % sid)
 
-for raw, sid in pairs:
+CODE_RE = re.compile(r"^[A-Z]+\d+(?:bis|ter|[A-Za-z])?\b")
+for coms, sid in pairs:
+    raw = coms[-1]                       # blocco che porta la clausola N/A/F->I
     c = " ".join(raw.split())
     where = sid
-    # 2) codice iniziale
-    if not re.match(r"^[A-Z]+\d+(?:bis|ter|[A-Za-z])?\b", c):
+    # 2) codice iniziale — cercato su QUALSIASI blocco della finestra (l'annotazione puo'
+    #    essere spezzata: CODICE nel descrittivo, clausola nel blocco metrico successivo).
+    has_code = any(CODE_RE.match(" ".join(x.split())) for x in coms)
+    if not has_code:
         warns.append("%s: manca il CODICE iniziale (es. S1/C1)" % where)
     # 3) clausola numerica
     m = CLAUSE.search(c)
