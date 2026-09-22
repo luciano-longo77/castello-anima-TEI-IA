@@ -21,6 +21,7 @@ Campi obbligatori — coincidono con `teiHeader` → `xenoData` → `audit_trail
 | `locus_id` | `xml:id` del `<seg>` perturbato |
 | `operation` | `-CIT` · `+TEXTsub` · `+CIT` |
 | `seed` | seed della generazione: **deterministico** per le sottrattive (-CIT/+TEXTsub); **nominale** per il +CIT (il motore non espone un `seed`) |
+| `model` | modello IA **+ versione** dell'operazione **generativa** (`+CIT`), su cui — non sul seed — poggia la riproducibilità: `claude-opus-4-8`. `n/a` per le operazioni **deterministiche** (-CIT/+TEXTsub): non usano un modello |
 | `prompt_hash` | hash del prompt usato |
 | `output_hash` | hash dell'output generato |
 | `reviewer` | chi ha validato (editore) |
