@@ -17,7 +17,7 @@ Vocabolario controllato **SKOS** degli assi interpretativi dell'edizione, a supp
 
 ## Allineamento col vocabolario gemello
 
-Gli stati mistici sono allineati in SKOS al repo gemello **[`castello-dell-anima-edizione`](https://github.com/luciano-longo77/castello-dell-anima-edizione)** (17 stati-mistici, base `https://w3id.org/castello-edizione-vocab/`). Il ponte è in **[`alignments-castello-anima-edizione.ttl`](alignments-castello-anima-edizione.ttl)**: 4 `skos:closeMatch` (quiete, otium, unione, illuminazione↔contemplazione-infusa), 2 `skos:narrowMatch` (purificazione ⊃ purga, notte), 4 `skos:relatedMatch` (le relazioni mistiche). Rigenerabile con [`../tools/gen_edizione_skos.py`](../tools/gen_edizione_skos.py).
+Gli stati mistici sono allineati in SKOS al repo gemello **[`castello-dell-anima-edizione`](https://github.com/luciano-longo77/castello-dell-anima-edizione)** (17 stati-mistici, base `https://w3id.org/castello-edizione-vocab/`). Il ponte è in **[`alignments-castello-anima-edizione.ttl`](alignments-castello-anima-edizione.ttl)**: 4 `skos:closeMatch` (quiete, otium, unione, illuminazione↔contemplazione-infusa), 2 `skos:narrowMatch` (purificazione ⊃ purga, notte), 4 `skos:relatedMatch` (le relazioni mistiche). Rigenerabile con [`../tools/gen_edizione_skos.py`](../tools/gen_edizione_skos.py), indicando il TEI-Header del repo gemello (1° argomento o variabile `CASTELLO_TWIN_HDR`): scrive di default in `vocab/` e riproduce questo file **byte-identico**.
 
 ## Patto fondamentale: **genera, non editare**
 
