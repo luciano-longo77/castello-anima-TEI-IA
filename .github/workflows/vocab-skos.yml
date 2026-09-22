@@ -17,6 +17,8 @@ on:
       - "tei/text/castello-anima-teiText.xml"
       - "vocab/**"
       - "tools/gen_skos.py"
+      - ".github/workflows/scripts/skos_guard.py"
+      - ".github/workflows/vocab-skos.yml"
   workflow_dispatch:
 
 env:
