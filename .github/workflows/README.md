@@ -49,7 +49,7 @@ Due job:
 Sull'apparato standoff **esterno** delle varianti controfattuali IA (`variants/*.xml`), un file `<TEI>` autonomo (nessun `xi:include`): **NFC**, **buona formazione** (`xmllint --noout`) e **RelaxNG** (`jing schema/tei_all.rng`). Valida lo strato sperimentale — che per scelta editoriale **non entra nel teiText** — senza toccare la *Validate Text*; il teiText di produzione resta l'edizione pulita.
 
 ### `vocab-skos.yml` — Vocab SKOS
-Sul vocabolario SKOS: rigenera il `.ttl` dalla tassonomia con `tools/gen_skos.py` e verifica **sync** (il file committato è byte-identico alla rigenerazione) e **round-trip** (ogni token `@ana` e ogni banda del teiText risolve a un `skos:Concept`).
+Sul vocabolario SKOS: rigenera il `.ttl` dalla tassonomia con `tools/gen_skos.py` e verifica **sync** (il file committato è byte-identico alla rigenerazione) e **round-trip** (ogni token `@ana` e ogni banda del teiText risolve a un `skos:Concept`), tramite la guardia `.github/workflows/scripts/skos_guard.py`.
 
 ### `gen-data-dictionary.yml` — Genera data-dictionary
 Esegue `tools/gen_data_dictionary.py` e, se `docs/data-dictionary.md` è cambiato, lo **committa da solo** (con `git pull --rebase` prima del push per evitare collisioni). Richiede *Read and write permissions* per le Actions.
