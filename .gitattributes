@@ -1,0 +1,6 @@
+# Fine-riga: LF ovunque. Applica una volta: git add --renormalize . && git commit
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
