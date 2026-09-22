@@ -17,7 +17,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>Edizione digitale con annotazione semantica (versione di lavoro) <date when="2026-07-31"/></edition>
+                <edition>Edizione digitale con annotazione semantica (versione di lavoro) <date when="2026-09-09"/></edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>Prototipo DH. Proof-of-concept</publisher>
@@ -1919,13 +1919,14 @@
             ],
             "governance": "expert-in-the-loop"
             },
-            "last_update": "2026-07-25"
+            "last_update": "2026-09-09"
             }
         </xenoData>
         <xenoData type="mets">
             <mets:metsPtr xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mets.xml"/>
         </xenoData>
         <revisionDesc status="consolidated">
+                        <change when="2026-09-09" who="#editor">Normalizzazione delle sigle citazionali (Sal in Ps, Fil in Phil, Tm in Tim, Gn in Gen) e della numerazione salmica alla sola Vulgata; correzione di riferimenti biblici; ripristino degli schemi vendorizzati nella dichiarazione xml-model del teiText; allineamento del modello IA dichiarato a Claude Opus 4.8.</change>
                         <change when="2026-08-22" who="#editor">Aggiunte le catene semantiche del Libro I nello standOff semantic-chains 
                             (40 linkGrp type="tema", inclusi intertesto biblico e liturgico), fondate sulle aree del semantic-focus. 
                             Lo strato passa a 199 linkGrp su tutti e tre i libri (Libro I 40, Libro II 46, Libro III 113): 
