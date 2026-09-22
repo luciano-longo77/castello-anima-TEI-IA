@@ -1885,7 +1885,7 @@
             {
             "pipeline": "TEI-driven and AI-assisted workflow for Castello dell’anima",
             "model": {
-            "primary": "Claude Sonnet 5",
+            "primary": "Claude Opus 4.8",
             "fallback": "Gemini",
             "constraints": {
             "historical_style": "XVII-century Italian",
