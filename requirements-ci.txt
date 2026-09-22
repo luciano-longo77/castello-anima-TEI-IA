@@ -1,0 +1,7 @@
+# Dipendenze Python della CI — versioni FISSATE per riproducibilità.
+# Questa e' la versione con cui i derivati (data-dictionary.md, SKOS .ttl, interventi-editoriali.md)
+# risultano byte-identici alla rigenerazione. Aggiornarla solo dopo aver ri-verificato i diff.
+lxml==6.1.3
+
+# rdflib  # OPZIONALE: solo per validare il Turtle SKOS (tools/gen_edizione_skos.py);
+#         # non e' usato dalle 9 guardie ne' dai generatori in CI.
