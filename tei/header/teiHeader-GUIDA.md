@@ -147,7 +147,7 @@ Nel `particDesc` sono dichiarati gli agenti (bersaglio di `@resp` nel testo/appa
 
 Il primo `<xenoData>` è un blocco **JSON** che formalizza il protocollo di simulazione:
 
-- **model** — `primary: Claude Sonnet 5`, `fallback: Gemini` (coerente con [`../../AI-USE.md`](../../AI-USE.md)), con i vincoli di stile secentesco e integrità TEI;
+- **model** — `primary: Claude Opus 4.8`, `fallback: Gemini` (coerente con [`../../AI-USE.md`](../../AI-USE.md)), con i vincoli di stile secentesco e integrità TEI;
 - **operations** — `−CIT` (rimozione), `+TEXTsub` (recupero cancellature), `+CIT` (integrazione citazione, `max_words: 35`, l'unica **generativa**);
 - **parameters** — `temperature 0.2`, `top_p 0.95`;
 - **audit_trail.required_fields** — `locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`: **le stesse 8 colonne, nello stesso ordine**, di [`../../logs/runs.tsv`](../../logs/runs.tsv);
