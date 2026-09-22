@@ -2,14 +2,27 @@
 """Genera il SKOS del gemello (17 stati-mistici) + l'allineamento con castello-anima-vocab.
 Deterministico: legge i catDesc reali dal TEI-Header del gemello. Dipendenza: lxml (+ rdflib per validare)."""
 from lxml import etree
-import re, io
+import re, io, os, sys
 
-TWIN_HDR = "Micro-commits/MC-1/data/TEI-Header.xml"
+# Path del TEI-Header del repo GEMELLO (castello-dell-anima-edizione), da cui si leggono
+# i 17 stati-mistici. NON e' in questo repo: si indica come 1o argomento oppure con la
+# variabile d'ambiente CASTELLO_TWIN_HDR. Default: checkout del gemello affiancato a questo repo.
+TWIN_HDR = (sys.argv[1] if len(sys.argv) > 1
+            else os.environ.get("CASTELLO_TWIN_HDR",
+                 "../castello-dell-anima-edizione/Micro-commits/MC-1/data/TEI-Header.xml"))
+# Cartella di uscita dei TTL generati (2o argomento o CASTELLO_VOCAB_OUT). Default: vocab/
+# di questo repo (dove vive alignments-castello-anima-edizione.ttl).
+OUT_DIR  = (sys.argv[2] if len(sys.argv) > 2
+            else os.environ.get("CASTELLO_VOCAB_OUT", "vocab"))
 BASE_ED  = "https://w3id.org/castello-edizione-vocab/"
 BASE_AN  = "https://w3id.org/castello-anima-vocab/"
 ns = {'t':'http://www.tei-c.org/ns/1.0'}; X='{http://www.w3.org/XML/1998/namespace}id'
 
 def states():
+    if not os.path.exists(TWIN_HDR):
+        sys.exit("::error:: TEI-Header del gemello non trovato: %s\n"
+                 "Indica il path del repo castello-dell-anima-edizione come 1o argomento "
+                 "o nella variabile CASTELLO_TWIN_HDR." % TWIN_HDR)
     r = etree.parse(TWIN_HDR).getroot()
     out = []
     for tax in r.findall('.//t:taxonomy', ns):
@@ -45,7 +58,7 @@ for cid, d in st:
     else:
         L[-1] = L[-1].rstrip(' ;') + ' .'
     L.append("")
-io.open('/tmp/li2/fix/castello-edizione-vocab.ttl','w',encoding='utf-8').write('\n'.join(L))
+io.open(os.path.join(OUT_DIR, 'castello-edizione-vocab.ttl'),'w',encoding='utf-8').write('\n'.join(L))
 
 # --- 2) alignments-castello-anima-edizione.ttl --------------------------
 CLOSE = [("mystic_state-quiete","quiete"),("mystic_state-otium","otio"),
@@ -71,5 +84,5 @@ A.append("# closeMatch"); block(CLOSE,"closeMatch")
 A.append("# narrowMatch (il concetto 'anima' e' piu' ampio del corrispettivo 'edizione')"); block(NARROW,"narrowMatch")
 A.append("# relatedMatch (relazione 'anima' <-> concetto 'edizione')"); block(RELATED,"relatedMatch")
 A.append("")
-io.open('/tmp/li2/fix/alignments-castello-anima-edizione.ttl','w',encoding='utf-8').write('\n'.join(A))
+io.open(os.path.join(OUT_DIR, 'alignments-castello-anima-edizione.ttl'),'w',encoding='utf-8').write('\n'.join(A))
 print("scritti: castello-edizione-vocab.ttl (%d concetti) + alignments (%d match)" % (len(st), len(CLOSE)+len(NARROW)+len(RELATED)))
