@@ -221,7 +221,7 @@ python3 impact_index.py tei/text/castello-anima-teiText.xml --bands bande.csv
 ```csv
 # bande.csv  —  id;banda_N;banda_A
 seg-b3-c1p8-desiderio;critica;alta
-seg-b3-c2p1-purificazione;critica;alta
+seg-b3-c1p2-purificazione;critica;alta
 ```
 
 Due annotatori con le stesse due bande ottengono **output identico**: la riproducibilità è
