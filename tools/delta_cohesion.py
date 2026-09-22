@@ -36,24 +36,37 @@ Uso:
 --tsv            : stampa una riga d'intestazione + una riga TSV per locus (rigenerabile,
                    da redirigere in logs/D2-pilot.tsv).
 
-Solo lettura; non modifica il file. Dipendenza: solo stdlib.
+Solo lettura; non modifica il file. Dipendenza: lxml (selezione dello standOff via XPath
+`local-name()`, robusta a riordino attributi/apici/namespace, non fragile come una regex).
 """
-import sys, re
+import sys
 from collections import defaultdict
+from lxml import etree
+
+TEI = "http://www.tei-c.org/ns/1.0"
 
 def load_chains(path):
-    """Ritorna lista di catene: (type, subtype, [segid,...])."""
-    t = open(path, encoding="utf-8").read()
-    m = re.search(r'<standOff type="semantic-chains">(.*?)</standOff>', t, re.S)
-    if not m:
-        return []
-    body = m.group(1)
+    """Ritorna lista di catene: (type, subtype, [segid,...]).
+
+    Selezione via XPath sul modello TEI (non regex): lo standOff `semantic-chains`,
+    i suoi <linkGrp> (con @type/@subtype) e i <link> con @target. I membri sono i
+    token '#id' del @target, nell'ordine del documento — così l'uscita è stabile.
+    """
+    tree = etree.parse(path)
     chains = []
-    for lg in re.finditer(r'<linkGrp\b[^>]*?type="([^"]*)"[^>]*?subtype="([^"]*)"[^>]*?>(.*?)</linkGrp>', body, re.S):
-        typ, sub, inner = lg.group(1), lg.group(2), lg.group(3)
-        for lk in re.finditer(r'<link\b[^>]*target="([^"]*)"', inner):
-            members = [x.lstrip('#') for x in lk.group(1).split() if x.strip().startswith('#')]
-            chains.append((typ, sub, members))
+    # standOff type="semantic-chains": tollerante a namespace di default o prefissato
+    standoffs = tree.getroot().xpath(
+        ".//*[local-name()='standOff'][@type='semantic-chains']")
+    for so in standoffs:
+        for lg in so.xpath(".//*[local-name()='linkGrp']"):
+            typ = lg.get("type") or ""
+            sub = lg.get("subtype") or ""
+            for lk in lg.xpath(".//*[local-name()='link']"):
+                target = lk.get("target")
+                if not target:
+                    continue
+                members = [x.lstrip('#') for x in target.split() if x.strip().startswith('#')]
+                chains.append((typ, sub, members))
     return chains
 
 def load_pilot(path):
