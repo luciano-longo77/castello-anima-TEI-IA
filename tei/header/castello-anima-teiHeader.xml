@@ -469,7 +469,7 @@
                                 mentre gli atti inquisitoriali in italiano andarono distrutti nell’incendio dello Steri. 
                                 I verbali superstiti in spagnolo, conservati presso l' 
                                     <orgName>Archivio di Stato di 
-                                        <placeName ref="http://www.geonames.org/3117735">Madrid</placeName></orgName>, 
+                                        <placeName ref="https://www.geonames.org/3117735">Madrid</placeName></orgName>, 
                                     costituiscono la principale
                                 testimonianza sul contesto di produzione dell’opera e sulla sua
                                 ricezione censoria. 
@@ -1913,7 +1913,7 @@
             },
             "audit_trail": {
             "required_fields": [
-            "locus_id", "operation", "seed",
+            "locus_id", "operation", "seed", "model",
             "prompt_hash", "output_hash",
             "reviewer", "esito", "notes"
             ],
