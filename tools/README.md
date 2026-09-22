@@ -125,6 +125,8 @@ Oltre agli aiuti all'indice d'impatto, la cartella contiene gli strumenti della 
 | `delta_cohesion.py` | misura **D2** (coesione strutturale): quanto la rete di catene semantiche si degrada rimuovendo un `<seg>` — **deterministica**, nessun LLM. Legge i loci da `pilot-loci.tsv` e produce [`../logs/D2-pilot.tsv`](../logs/D2-pilot.tsv) |
 | `pilot-loci.tsv` · `pilot-loci.md` | l'elenco dei **loci del pilota** (input della D2) e la relativa **nota di metodo** (composizione, criteri) |
 | `sensitivity.py` | **analisi di sensibilità** dell'indice: quanto le bande `#impact-*` resistono a perturbazioni dei pesi AHP, delle ancore N/A e delle soglie di classe. Doc: [`../docs/sensitivity-indice-impatto.md`](../docs/sensitivity-indice-impatto.md) |
+| `conteggi_guard.py` | **verifica standalone** dei conteggi canonici del corpus: 944 `<seg>` = 944 `<fs>`, 37 `<cit>`, 199 `<linkGrp>` (I 40 · II 46 · III 113), 409 figure, 1011 fuochi. Fallisce (exit 1) se un numero in prosa/paper diverge dai dati. Lancio **manuale**, non è una guardia CI |
+| `link_check.py` | **verifica standalone** della raggiungibilità degli URI esterni (VIAF, GeoNames, w3id, arXiv, DHQ…): **warning-only** (exit sempre 0). `--list` elenca gli URI senza rete. Lancio **manuale**, non è un workflow |
 
 **Generatori di artefatti derivati** (invocati dai workflow `gen-*` / `Vocab SKOS` della CI; il committato deve essere byte-identico alla rigenerazione)
 
