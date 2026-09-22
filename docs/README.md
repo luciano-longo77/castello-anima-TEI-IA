@@ -43,6 +43,8 @@ Il modello è **interpretativo**: normalizzazione grafica **silenziosa e dichiar
 | [`teiText-guida-codifica.md`](teiText-guida-codifica.md) | Guida ragionata alla codifica del `<text>`: `seg`, `@ana` a 8 assi, apparato sostanziale, indice, standOff. | a mano |
 | [`indice-impatto.md`](indice-impatto.md) | Il modello `impact-index`: formula AHP `I=(4·Fnorm+2·N+A)/7`, bande, pipeline `seg → fs`. | a mano |
 | [`Protocollo-indice-impatto.md`](Protocollo-indice-impatto.md) | Protocollo operativo: come si applicano ancore, bande e formula caso per caso. | a mano |
+| [`sensitivity-indice-impatto.md`](sensitivity-indice-impatto.md) | **Analisi di sensibilità** dell'indice: quanti dei 944 `<seg>` cambiano banda perturbando pesi AHP, ancore e soglie. | a mano (rigenerabile via [`../tools/sensitivity.py`](../tools/sensitivity.py)) |
+| [`rubriche-D1-D3.md`](rubriche-D1-D3.md) | **Rubriche ancorate** per misurare le varianti controfattuali (`../variants/`): D1 *chiarezza* e D3 *stabilità dottrinale* (Δ = rdg − lem). | a mano |
 | [`protocollo-IA-codifica.md`](protocollo-IA-codifica.md) | Runbook della codifica **assistita da AI** (IT/EN): ruolo dell'AI, 8 guardie, verifica umana finale. | a mano |
 | [`data-dictionary.md`](data-dictionary.md) | Dizionario degli **8 assi** e delle categorie della tassonomia, con gli `xml:id` usati in `@ana`. | **derivato** da `tassonomia-gh.xml` |
 | [`anagrafe-citazioni.md`](anagrafe-citazioni.md) | Anagrafe delle **citazioni latine** (`cit`/`quote`/`bibl`) con carte e fonti. | a mano |
@@ -67,7 +69,9 @@ Due file di questa cartella sono **rigenerati da script**: le modifiche manuali 
 - **Testo e navigazione**: [`../tei/text/teiText-GUIDA.md`](../tei/text/teiText-GUIDA.md) (navigazione del file) · [`../tei/text/teiText-README.md`](../tei/text/teiText-README.md) (riferimento tecnico).
 - **Metadati**: [`../tei/header/teiHeader-GUIDA.md`](../tei/header/teiHeader-GUIDA.md) · [`../tei/header/teiHeader-README.md`](../tei/header/teiHeader-README.md).
 - **Tassonomia**: [`../tei/taxonomy/`](../tei/taxonomy/) (fonte normativa degli 8 assi).
-- **Schemi e validazione**: [`../schema/`](../schema/) (RelaxNG + Schematron) · [`../.github/workflows/README.md`](../.github/workflows/README.md) (CI e 8 guardie).
+- **Apparato controfattuale (Fase 2)**: [`../variants/`](../variants/) (`castello-anima-variants.xml`: le varianti IA `lem`/`rdg` agganciate al testo per `@loc`).
+- **Misure e rendiconti**: [`../logs/`](../logs/) (`runs.tsv` tracciamento run · `delta-I.tsv` ΔI · `D1-D3.tsv`, `D2-pilot.tsv`, `T10-aggregato.tsv` le tre dimensioni · `checklist-filologica.tsv`).
+- **Schemi e validazione**: [`../schema/`](../schema/) (RelaxNG + Schematron) · [`../.github/workflows/README.md`](../.github/workflows/README.md) (CI e 8 guardie) · [`../requirements-ci.txt`](../requirements-ci.txt) (versioni pinnate per la riproducibilità della CI).
 - **Strumenti**: [`../tools/README.md`](../tools/README.md) (assistente `@ana`, calcolatore e visualizzatore dell'indice).
 - **Panoramica del progetto**: [`../README.md`](../README.md).
 
