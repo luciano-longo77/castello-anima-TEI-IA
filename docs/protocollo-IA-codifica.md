@@ -201,7 +201,7 @@ PY
 ## 4. Output di trasparenza
 **(a) Per ogni intervento** l'AI emette una riga tracciabile:
 ```
-[regola: R2 naming | fonte: interpretativa | @resp=#editor | @cert=medium] seg-b3-c3p4-abbandono: label da «abbandono» (§ operation-delimitazione)
+[regola: R2 naming | fonte: interpretativa | @resp=#editor | @cert=medium] seg-b3-c24p4-abbandono-croce: label da «abbandono-croce» (§ operation-delimitazione)
 ```
 **(b) A fine sessione** una voce per il `<revisionDesc>`:
 ```xml
@@ -581,7 +581,7 @@ PY
 ## 4. Transparency outputs
 **(a) For each intervention** the AI emits a traceable line:
 ```
-[rule: R2 naming | source: interpretive | @resp=#editor | @cert=medium] seg-b3-c3p4-abbandono: label from «abbandono» (§ operation-delimitazione)
+[rule: R2 naming | source: interpretive | @resp=#editor | @cert=medium] seg-b3-c24p4-abbandono-croce: label from «abbandono-croce» (§ operation-delimitazione)
 ```
 **(b) At session end** a `<revisionDesc>` entry:
 ```xml
