@@ -1,0 +1,28 @@
+# --- Artefatti transitori della CI/validazione ---
+# Documento TEI composto (xmllint --xinclude) prodotto da validate-text.yml.
+resolved.xml
+# Script generati al volo da heredoc nei workflow (main.yml, ecc.): esistono solo
+# nel runner, non vanno mai versionati se qualcuno lancia la CI in locale.
+validate_taxonomy.py
+validate_esempi.py
+e1_guard.py
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.mypy_cache/
+
+# --- Editor / OS ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+# oXygen: file di backup e lock
+*.bak
+*.xml.orig
