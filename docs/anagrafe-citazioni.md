@@ -17,7 +17,7 @@ Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgich
 | # | Cat. | Citazione — fonte editoriale | Carte |
 |--:|---|---|---|
 | 1 | biblica | Ps 118,32 · Vias mandatorum tuorum cucurri | 78r |
-| 2 | biblica | Ps 88,2 · Misericordias Domini in aeternum | 92r (II.8), 182r, 203r (III.16) |
+| 2 | biblica | Ps 88,2 · Misericordias Domini in aeternum | 91v (II.8), 182r, 203r (III.16) |
 | 3 | biblica | Ps 114,3 · Circumdederunt me dolores mortis | 137v, 213r |
 | 4 | biblica | Ps 70,1 · In te Domine speravi, non confundar in aeternum | 220v (III.24), 221r |
 | 5 | biblica | Ps 30,2 · In te Domine speravi, non confundar in aeternum *(= versetto finale del Te Deum)* | 13r (I.5) |
