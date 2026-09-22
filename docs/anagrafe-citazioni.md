@@ -10,20 +10,22 @@
 
 ---
 
-Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgiche) del *Castello dell'anima*, con le carte del manoscritto in cui ricorrono. I loci del **campione codificato** (Libro I e Libro III) sono resi in TEI con `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` dentro il `<seg>`; l'annotazione «(I.n)» / «(III.n)» segnala i capitoli del campione.
+Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgiche) del *Castello dell'anima*, con le carte del manoscritto in cui ricorrono. I loci del **campione codificato** (Libri I, II e III) sono resi in TEI con `<cit><quote xml:lang="la">…</quote><bibl>…</bibl></cit>` dentro il `<seg>`; l'annotazione «(I.n)» / «(II.n)» / «(III.n)» segnala i capitoli del campione.
+
+> **Sigle.** Le sigle bibliche seguono l'uso misto adottato nell'edizione: forma **italiana** per i Vangeli (*Gv, Mc, Lc, Mt*), **latina** per epistole e Antico Testamento (*Ps, Phil, Act, Gal, 1 Tim, Iob, Prov*); i **Salmi** in numerazione **Vulgata** (forma semplice, es. *Ps 30,2*).
 
 | # | Cat. | Citazione — fonte editoriale | Carte |
 |--:|---|---|---|
 | 1 | biblica | Ps 118,32 · Vias mandatorum tuorum cucurri | 78r |
-| 2 | biblica | Ps 88,2 · Misericordias Domini in aeternum | 92r, 182r, 203r (III.16) |
+| 2 | biblica | Ps 88,2 · Misericordias Domini in aeternum | 92r (II.8), 182r, 203r (III.16) |
 | 3 | biblica | Ps 114,3 · Circumdederunt me dolores mortis | 137v, 213r |
 | 4 | biblica | Ps 70,1 · In te Domine speravi, non confundar in aeternum | 220v (III.24), 221r |
 | 5 | biblica | Ps 30,2 · In te Domine speravi, non confundar in aeternum *(= versetto finale del Te Deum)* | 13r (I.5) |
 | 6 | biblica | Ps 68,2-3 · Salvum me fac Deus | 236r |
-| 7 | biblica | Ps 44,10 · Astitit regina a dextris | 111r |
+| 7 | biblica | Ps 44,10 · Astitit regina a dextris | 111r (II.10) |
 | 8 | biblica | Ps 135,4 · Qui facit mirabilia magna solus | 164v (III.3), 173r (III.7), 175v (III.8) |
-| 9 | biblica | Ct 2,10-16 · Iam hiems transiit, imber abiit et recessit… surge amica mea et veni | 146r, 146v, 185r, 185v |
-| 10 | biblica | Is 24,16 · Secretum meum mihi | 29v, 66v, 148v, 175v (III.8), 195r (III.14) |
+| 9 | biblica | Ct 2,10-16 · Iam hiems transiit, imber abiit et recessit… surge amica mea et veni | 146r (II.21), 146v, 185r, 185v |
+| 10 | biblica | Is 24,16 · Secretum meum mihi | 29v, 66v (II.2), 148v (II.21), 175v (III.8), 195r (III.14) |
 | 11 | biblica | Prov 8,31 · Deliciae meae esse cum filiis hominum | 239r |
 | 12 | biblica | Mt 26,38 · Tristis est anima mea usque ad mortem | 43r, 219r, 219v (III.24) |
 | 13 | biblica | Mt 26,41 · Spiritus promptus, caro autem infirma | 25r |
@@ -44,11 +46,11 @@ Repertorio delle citazioni latine (bibliche, patristiche, scolastiche, liturgich
 | 28 | patristica | S. Agostino, Serm. 151,7 (cfr. De Civitate Dei) · In hoc bello est tota vita Sanctorum | 248r (III.34) |
 | 29 | patristica | S. Agostino, De Civitate Dei | 248v |
 | 30 | scolastica | S. Tommaso d'Aquino, Summa contra Gentiles III.38 | 133r, 160v |
-| 31 | liturgica | Te Deum | 100r, 100v, 113v, 114r, 216r, 252v |
+| 31 | liturgica | Te Deum | 100r (II.8), 100v, 113v, 114r, 216r, 252v |
 | 32 | liturgica | Pater noster, qui es in caelis (Mt 6,9) | 21r (I.11) |
 
 **Totali**: 26 bibliche + 3 patristiche + 1 scolastica + 2 liturgiche = **32 citazioni distinte**.
 
-> **Occorrenze vs fonti.** Questo repertorio conta le **fonti distinte** (**32**). Nel `teiText` le medesime fonti ricorrono in **37 occorrenze** di `<cit>` — alcune ripetute (p. es. *Mc 15,34* ×3, *Lc 23,34* ×2, *Lc 23,46* ×2, *Is 24,16* ×4). Le due cifre misurano cose diverse — *fonti* qui, *occorrenze* nel testo e nel paper — e **non vanno confuse**.
+> **Occorrenze vs fonti.** Questo repertorio conta le **fonti distinte** (**32**). Nel `teiText` le medesime fonti ricorrono in **37 occorrenze** di `<cit>` — alcune ripetute (p. es. *Mc 15,34* ×3, *Lc 23,34* ×2, *Lc 23,46* ×2, *Is 24,16* ×4). Le due cifre misurano cose diverse — *fonti* qui, *occorrenze* nel testo e nel paper — e **non vanno confuse**. Delle **37** occorrenze, **32 sono latine** (`xml:lang="la"`, in questo repertorio) e **5 volgari** (`xml:lang="it"`: *Gen 1,26*, *Giovanni della Croce* e tre sentenze mistiche in volgare), fuori da un'anagrafe *delle citazioni latine*.
 
 > **Nota su «In te Domine speravi…».** L'incipit è comune a Ps 30,2, a Ps 70,1 e al versetto finale del *Te Deum*. Nel testo costituito la ricorrenza di **c. 13r (I.5)** è ricondotta a **Ps 30,2 / Te Deum**, quella di **c. 220v (III.24)** a **Ps 70,1**.
