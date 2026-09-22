@@ -18,6 +18,9 @@ on:
       - "tei/taxonomy/tassonomia-gh.xml"
       - "tei/header/**"
       - "schema/impactindex.sch"
+      - "schema/tei_all.rng"
+      - ".github/workflows/validate-text.yml"
+      - ".github/workflows/scripts/**"
   workflow_dispatch:
 
 env:
@@ -37,7 +40,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - run: pip install lxml
+      - run: pip install -r requirements-ci.txt
       - name: Installa xmllint e jing
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libxml2-utils jing
       - name: File richiesti presenti
