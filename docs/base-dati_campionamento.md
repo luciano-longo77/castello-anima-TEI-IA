@@ -228,7 +228,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **II.8** — Orazione d'unione + effetti + avvertimenti *(contesto vicino a Molinos → test per glosse)*. Citazioni utili del corpus (ricorrenti nei capitoli mistici sulla quiete/unione):
 
 - *Pater noster, qui es in caelis* (formula liturgica; c. 21r) → molto ricorrente nelle sezioni di unione.
-- *Misericordias Domini in aeternum cantabo* — Ps 88,2 (cc. 91v, 182r, 203r) → citazione di stato gioioso/illuminativo.
+- *Misericordias Domini in aeternum cantabo* — Ps 88,2 (cc. 91v, 203r) → citazione di stato gioioso/illuminativo.
 - *Vias mandatuorum tuorum cucurri, cum dilatasti cor meum* — Ps 118,32 (c. 78r) → tipica delle sezioni di dilatazione del cuore.
 
 **II.9** (travagli delle anime + cosa devono fare i direttori) → capitoli su aridità, turbamento, prove della quiete infusa. Citazioni utili:
@@ -260,7 +260,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 **III.12** — stato d'otio / operazione nel fondo dell'anima. Citazioni compatibili col tema della quiete infusa:
 
 - *Deliciae meae esse cum filiis hominum* — Prov 8,31 (c. 239r) → delizie divine = stato di quiete.
-- *Misericordias Domini...* (Ps 88,2; cc. 91v, 182r, 203r) → citazione perfetta per descrivere illuminazioni.
+- *Misericordias Domini...* (Ps 88,2; cc. 91v, 203r) → citazione perfetta per descrivere illuminazioni.
 
 **III.14** — santa ignoranza. Citazioni utili per marcazione teologica:
 
@@ -289,7 +289,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 
 #### 3.4.1 Salmi
 - *In te Domine speravi, non confundar in aeternum* — Ps 70,1 (cc. 13r, 220v, 221r)
-- *Misericordias Domini in aeternum* — Ps 88,2 (cc. 91v, 182r, 203r)
+- *Misericordias Domini in aeternum* — Ps 88,2 (cc. 91v, 203r)
 - *Vias mandatorum tuorum cucurri* — Ps 118,32 (c. 78r)
 - *Circumdederunt me dolores mortis* — Ps 114,3 (cc. 137v, 213r)
 - *Salvum me fac Deus* — Ps 68,2-3 (c. 236r)
@@ -473,7 +473,7 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | Sigla | Citazione | Carte | Nota d'uso |
 |---|---|---|---|
 | Ps 70,1 | *In te Domine speravi, non confundar in aeternum* | 13r, 220v, 221r | Legittimante (I.5) e ancoraggio (III.24) |
-| Ps 88,2 | *Misericordias Domini in aeternum cantabo* | 91v, 182r, 203r | Stato mistico di sicurezza |
+| Ps 88,2 | *Misericordias Domini in aeternum cantabo* | 91v, 203r | Stato mistico di sicurezza |
 | Ps 118,32 | *Vias mandatorum tuorum cucurri* | 78r | Dilatazione del cuore |
 | Ps 114,3 | *Circumdederunt me dolores mortis* | 137v, 213r | Prova / desolazione |
 | Ps 68,2-3 | *Salvum me fac Deus* | 236r | Notte mistica / prove |
