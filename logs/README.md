@@ -8,10 +8,9 @@
 **Editor**: Luciano Longo  
 **Licenza**: CC BY 4.0
 
-## **Registro delle run della pipeline IA**
-Registro **verificabile** di ogni run della pipeline controfattuale (Fase 2): **una riga
-per run** in [`runs.tsv`](runs.tsv). È ciò che trasforma un'affermazione («l'ambiguità
-cresce del 20%») in un **artefatto rigenerabile** («ecco la run, con la sua impronta verificabile»).
+**A che cosa serve.** Il progetto pone una domanda precisa: i dispositivi con cui l'autrice protegge le tesi più esposte — le citazioni di legittimazione, le glosse di attenuazione, le cancellature — sono davvero necessari alla tenuta del testo, o sono ornamento? Per rispondere, la Fase 2 fa un esperimento: rimuove o altera quei dispositivi, uno alla volta, e guarda se e quanto il testo si indebolisce. `logs/` è dove quell'esperimento diventa **dato**: qui si registra ogni prova e si misura il suo effetto, in forma tabellare e verificabile.
+
+**Che cosa contiene.** Due tipi di file. Il primo è il diario delle prove, [`runs.tsv`](runs.tsv): ogni riga è una modifica eseguita, con l'operazione, il revisore, l'esito e le impronte (`prompt_hash`, `output_hash`) che permettono di ritrovarla. Gli altri sono le misure dell'effetto, una per dimensione, perché la «necessità» di un dispositivo non si giudica su un solo piano: [`delta-I.tsv`](delta-I.tsv) dice quanto cambia l'indice d'impatto; [`D2-pilot.tsv`](D2-pilot.tsv) quanto si sfalda la rete di rimandi quando il segmento viene tolto; [`D1-D3.tsv`](D1-D3.tsv) quanto restano la chiarezza dell'argomentazione (D1) e la stabilità dottrinale (D3); [`T10-aggregato.tsv`](T10-aggregato.tsv) riunisce queste misure passo per passo; [`checklist-filologica.tsv`](checklist-filologica.tsv) tiene il controllo filologico a quattro assi. Le colonne di ogni file sono descritte più sotto.
 
 ## Schema della riga (TSV)
 Campi obbligatori — coincidono con `teiHeader` → `xenoData` → `audit_trail/required_fields`:
