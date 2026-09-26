@@ -53,7 +53,7 @@ giudizio sono validate dall'editore (`rater=#editor`) e coerenti tra i file.
 
 **Convenzioni.** Gli ancoraggi del modello: N {critica .90 / alta .75 / media .55 / bassa .30}; A {alta .85 / media .675 / bassa .40};
 F {delimitazione 1 / attenuatio·precisatio·riequilibrio 2 / declaratio 3}; D1 {alta .90 / media .65 / bassa .40 / nulla .15}; D3 {alta .90 / media .65 / bassa .40 / critica .15};
-`I = (4·F/3 + 2·N + A)/7`. Le celle **vuote** indicano misure **n/a** (esito `respinta` o `non-eseguibile`: nessun controfattuale valido da misurare).
+`I = (4·F/3 + 2·N + A)/7`. Le celle **vuote** indicano misure **n/a**: il lato `lem` (testo costituito) è sempre misurato; il lato `rdg` (controfattuale) e il relativo Δ restano vuoti quando l'esito è `respinta`/`non-eseguibile`, salvo dove la reiezione stessa produce un esito misurabile, annotato nella riga (per es. una rimozione che azzera la chiarezza: `D1_rdg=nulla`).
 
 **Rigenerare D2** (deterministico, dal teiText + elenco loci del pilota):
 
