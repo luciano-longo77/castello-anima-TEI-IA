@@ -70,7 +70,7 @@ Nel `sourceDesc` → `<listWit>` cerca la `<witness xml:id="txt-…">` ([§5](#5
 Nel `particDesc` cerca la `<person xml:id="…">` o la `<org xml:id="…">` ([§6](#6-responsabilità-e-agenti)). Es. `#editor`, `#s-teresa`, `#esterno`, `#AI_controllata`, `#QA`.
 
 ### 🔹 Per capire il protocollo IA e la sua tracciabilità
-Vai nel primo `<xenoData>` (blocco JSON, [§7](#7-protocollo-ia-e-audit-trail-xenodata)): modello, operazioni (−CIT / +TEXTsub / +CIT), parametri, e i `required_fields` dell'`audit_trail` — le stesse 8 colonne di [`../../logs/runs.tsv`](../../logs/runs.tsv).
+Vai nel primo `<xenoData>` (blocco JSON, [§7](#7-protocollo-ia-e-audit-trail-xenodata)): modello, operazioni (−CIT / +TEXTsub / +CIT), parametri, e i `required_fields` dell'`audit_trail` — le stesse 9 colonne di [`../../logs/runs.tsv`](../../logs/runs.tsv).
 
 ### 🔹 Per ricostruire la storia del lavoro
 Vai nel `revisionDesc` ([§8](#8-il-diario-editoriale-revisiondesc)): ogni `<change when="…" who="#…" ana="#fase-…|#workflow-…">` è un passo datato, attribuito e classificato.
@@ -150,7 +150,7 @@ Il primo `<xenoData>` è un blocco **JSON** che formalizza il protocollo di simu
 - **model** — `primary: Claude Opus 4.8`, `fallback: Gemini` (coerente con [`../../AI-USE.md`](../../AI-USE.md)), con i vincoli di stile secentesco e integrità TEI;
 - **operations** — `−CIT` (rimozione), `+TEXTsub` (recupero cancellature), `+CIT` (integrazione citazione, `max_words: 35`, l'unica **generativa**);
 - **parameters** — `temperature 0.2`, `top_p 0.95`;
-- **audit_trail.required_fields** — `locus_id · operation · seed · prompt_hash · output_hash · reviewer · esito · notes`: **le stesse 8 colonne, nello stesso ordine**, di [`../../logs/runs.tsv`](../../logs/runs.tsv);
+- **audit_trail.required_fields** — `locus_id · operation · seed · model · prompt_hash · output_hash · reviewer · esito · notes`: **le stesse 9 colonne, nello stesso ordine**, di [`../../logs/runs.tsv`](../../logs/runs.tsv);
 - **governance** — `expert-in-the-loop`.
 
 Il secondo `<xenoData type="mets">` contiene il puntatore METS (`mets.xml`). Il razionale completo del protocollo è in [`../../docs/protocollo-IA-codifica.md`](../../docs/protocollo-IA-codifica.md); sul `seed` **nominale** in `+CIT` (il motore non espone un `seed`, la riproducibilità poggia su modello+versione, prompt e `output_hash`) vedi lì e in [`../../logs/README.md`](../../logs/README.md).
