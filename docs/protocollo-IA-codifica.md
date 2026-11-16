@@ -124,7 +124,7 @@ Genera una variante **controfattuale** di un locus per misurarne l'effetto (ΔI,
 
 | operazione | codice | famiglia | determinismo |
 | :--- | :--- | :--- | :--- |
-| rimozione citazione | **-CIT** | **sottrattiva** | deterministica: rimuove una porzione **già presente** nel testo; nessuna generazione, nessun rischio di lezione inventata |
+| rimozione di glossa o citazione | **-CIT** | **sottrattiva** | deterministica: rimuove una porzione **già presente** nel testo; nessuna generazione, nessun rischio di lezione inventata |
 | recupero cancellatura | **+TEXTsub** | **sottrattiva** | deterministica, due sottotipi: *ripristino-cassatura* (ripristina una lezione **già presente** nel `<rdg wit="#txt-b0">`, cassata d'autrice) · *rimozione-aggiunta* (toglie una guardia tardiva a margine/interlinea, `#ink_3-dark`) |
 | integrazione citazione | **+CIT** | **additiva** | **generativa** (l'unica operazione che produce testo): esplicita una citazione *allusa e attestata* (max 35 parole) → il motore adottato **non espone un parametro `seed`**, quindi il seed registrato è **nominale** e la riproducibilità poggia su **modello+versione, prompt e `output_hash`** (generazione a `temperature 0.2`, `top_p 0.95`); la fonte deve esistere in `anagrafe-citazioni.md` — se non è attestata, il +CIT è **non-eseguibile** (niente riferimenti inventati) |
 
