@@ -292,3 +292,21 @@ L'IA agisce come **perturbatore probabilistico controllato**, mai come interpret
   griglia (formula, ancore, soglie) dichiarata una sola volta e invariata sul corpus.
 - **FAIR** — testo, tassonomia, schemi e strumenti versionati in repository pubblico; ogni
   passaggio, dalla trascrizione alla misura, tracciabile e replicabile.
+
+  ## Limiti e validità
+
+L'indice d'impatto è uno **strumento euristico formalizzato**, non una misura assoluta: serve a rendere *comparabili e testabili* i dispositivi prudenziali del *Castello*, non a quantificarne un valore in sé. Se ne dichiarano i limiti, e il perimetro entro cui resta valido.
+
+**1. Natura degli input.** Le bande `N` (necessità), `A` (riduzione d'ambiguità) e `F` (operazione) sono **giudizi editoriali**, non misure. La catena di validazione (RelaxNG, Schematron, guardie) certifica la *forma* e l'*integrità referenziale* dell'annotazione, non la sua **correttezza interpretativa**: nessuna guardia può stabilire se una banda sia «giusta». *Mitigazione:* le bande sono **ancorate** (valori fissi per livello) e documentate con rubriche ed esempi; l'indice è **ordinale/comparativo** — conta la banda `#impact-*`, non il terzo decimale — e la sua funzione è la comparabilità, non la misura.
+
+**2. Circolarità fra stima e prova.** `N` è essa stessa una valutazione controfattuale («se togliessi il presidio, il nodo scivolerebbe verso l'eterodossia?»): pre-giudica in parte ciò che `ΔI` dovrebbe mostrare, e `ΔI` incorpora `N`. *Mitigazione:* `ΔI` **non è la prova da solo**. L'evidenza è la **convergenza (o divergenza)** fra tre dimensioni in parte indipendenti — `ΔI`, `D2` (coesione, *deterministica*, senza giudizio) e `D1`/`D3` (rubriche separate): è lo scarto *fra* le misure, non `ΔI` isolato, a sostenere o smentire l'ipotesi.
+
+**3. Precisione apparente.** `I` è serializzato a tre decimali pur nascendo da poche scelte di banda discrete. *Mitigazione:* i decimali servono alla **riproducibilità byte-identica** del calcolo (verificata dallo Schematron a tolleranza 0.001), non a una pretesa di precisione di misura; l'output operativo è la **banda** (low/medium/high/critical), ed è su quella che poggiano lettura e grafici.
+
+**4. Calibrazione e dimensione del campione.** Le soglie di banda sono tagliate sulla distribuzione di un campione ristretto (29 glosse, alcune a confidenza `low`); il pilota controfattuale conta **15 loci**. *Mitigazione:* è uno **studio pilota/esplorativo**, dichiaratamente **non inferenziale-statistico**. Il campione è **ragionato** (*purposive*): selezionato sui nodi ad alta esposizione dottrinale per gli esperimenti −CIT/+TEXTsub/+CIT, non per rappresentatività dell'intera opera. Non si rivendica alcuna generalizzazione statistica oltre il corpus annotato.
+
+**5. Dimensioni interpretative a rater singolo.** `D1` (chiarezza) e `D3` (stabilità) sono assegnate dal solo editore, **senza accordo inter-annotatore**. *Mitigazione:* il limite è dichiarato; `D2` fornisce un'àncora **oggettiva** (deterministica); l'estensione a un secondo annotatore su un sottoinsieme è prevista a backlog.
+
+**6. Riproducibilità vs tracciabilità.** Le operazioni sottrattive (−CIT, +TEXTsub) operano su testo già presente e sono **deterministiche**; l'unica operazione **generativa** (+CIT) usa un motore che non espone un `seed`, quindi **non è riproducibile** in senso stretto. *Mitigazione:* per il +CIT si garantisce **tracciabilità** (modello+versione, prompt, `output_hash` dell'esito validato), non riproducibilità: ogni esito è *verificabile a posteriori*, pur non essendo *rigenerabile* identico.
+
+**Perimetro di validità.** Entro questi confini il metodo è uno strumento **formale, trasparente e auditabile** per trattare citazioni, glosse e rimandi come entità comparabili e per saggiarne la funzione con esperimenti ripetibili e revisionati (*expert-in-the-loop*). La sua forza non è la generalizzazione statistica, ma la **falsificabilità della pipeline**: ogni passo — annotazione, indice, controfattuale, misura — è ispezionabile, contestabile e rifattibile. I limiti qui dichiarati non indeboliscono i risultati: ne **definiscono l'ambito di validità**.
