@@ -494,7 +494,7 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | Prov 8,31 | *Deliciae meae esse cum filiis hominum* | 239r | Quiete infusa |
 | Phil 1,23 | *Cupio dissolvi et esse cum Christo* | 196r, 198v, 222r, 232v, 233r, 260r, 260v | Unione perfetta |
 | Phil 2,8 | *Christus factus est pro nobis obediens* | 14r | Pivot cristologico (I.6) |
-| Gal 2,20 | *Vivo autem, iam non ego, vivit vero in me Christus* | 173v | Trasformazione |
+| Gal 2,20 | *Ego sed non ego, vivit vero in me Christus* | 173v | Trasformazione |
 | 1 Tim 1,17 | *Soli Deo sit honor et gloria* (Regi autem saeculorum…) | 253r, 263r | Sigillo conclusivo |
 | 2 Ts 3,5 | *Dominus autem dirigat corda* | 255v, 256r | Anti-quietista; discernimento |
 | Ps 135,4 | *Qui facit mirabilia magna solus* | 164v, 173r, 175v | Lode / legittimazione |
