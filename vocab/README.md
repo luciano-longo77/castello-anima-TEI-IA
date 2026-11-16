@@ -52,7 +52,9 @@ Base URI: `https://w3id.org/castello-anima-vocab/` (ogni concetto = base + `xml:
 | `castello-anima-vocab.ttl` | il vocabolario (GENERATO — non editare) |
 | `site/index.html` | sito navigabile: una pagina per concetto (`?c=<id>`), legge il `.ttl` live |
 | `alignments.tsv` | allineamenti esterni opzionali (fonte per la rigenerazione) |
+| `alignments-castello-anima-edizione.ttl` | ponte SKOS verso il gemello *edizione* (GENERATO — 4 `closeMatch`, 2 `narrowMatch`, 4 `relatedMatch`) |
 | `../tools/gen_skos.py` | il generatore (solo `lxml`) |
+| `../tools/gen_edizione_skos.py` | generatore del ponte SKOS col gemello (legge il TEI-Header del repo gemello) |
 | `../tools/4-vocabolario-skos.html` | viewer offline (dati incorporati, apribile da disco) |
 | `../.github/workflows/scripts/skos_guard.py` | guardia round-trip (solo `lxml`) |
 | `../.github/workflows/vocab-skos.yml` | CI: sync + round-trip |
