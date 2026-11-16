@@ -80,6 +80,7 @@ Il documento è concepito per essere riusabile, trasparente e interoperabile con
 - **v1.1** (2026-03-25)
 - **v1.2** (2026-04-01)
 - **v1.3** (2026-08-07)
+- **v1.8** (2026-08-10)
 - **v1.9** (2026-08-12)
 - **v2.0** (2026-08-12)
 
@@ -496,6 +497,8 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | Gal 2,20 | *Vivo autem, iam non ego, vivit vero in me Christus* | 173v | Trasformazione |
 | 1 Tim 1,17 | *Soli Deo sit honor et gloria* (Regi autem saeculorum…) | 253r, 263r | Sigillo conclusivo |
 | 2 Ts 3,5 | *Dominus autem dirigat corda* | 255v, 256r | Anti-quietista; discernimento |
+| Ps 135,4 | *Qui facit mirabilia magna solus* | 164v, 173r, 175v | Lode / legittimazione |
+| Act 9,6 | *Domine, quid vis me facere?* | 9r | Vocazione (I.4) |
 
 ### 2. Liturgia
 
@@ -512,6 +515,7 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | *De Civitate Dei* | S. Agostino | 248v | Riferimento dottrinale |
 | *Summa contra Gentiles* III.38 | S. Tommaso d'Aquino | 133r, 160v | Riferimento scolastico |
 | *Secretum meum mihi* (ricezione) | Tradizione esegetica (Gregorio, Bernardo) | — | Uso patristico-medievale |
+| *In hoc bello est tota vita Sanctorum* (Serm. 151,7) | S. Agostino | 248r | Auctoritas patristica (III.34) |
 
 ### 4. Mistica (post-tridentina, carmelitana, italiana)
 
