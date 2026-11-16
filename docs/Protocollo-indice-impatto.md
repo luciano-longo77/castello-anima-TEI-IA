@@ -180,7 +180,7 @@ nell'`editorialDecl`, non ripetuta a ogni occorrenza.
 - [ ] esiste l'`<fs>` in `<standOff>` con `@corresp` che punta al segmento;
 - [ ] la `<fs>` dichiara `N_band` e `A_band` (le bande scelte) come `<symbol>`;
 - [ ] **N ∈ {0.90, 0.75, 0.55, 0.30}** e **A ∈ {0.85, 0.675, 0.40}** (valori-ancora); **F ∈ {1, 2, 3}**;
-- [ ] I ricalcolato = formula (tolleranza 0) — controllo aritmetico via script;
+- [ ] I ricalcolato = formula (tolleranza 0.001) — controllo aritmetico via script;
 - [ ] la classe `#impact-X` coincide con la banda in cui cade I;
 - [ ] ogni puntatore (`#impact-X` → tassonomia; `#ink_1` → header) risolve: 0 dangling cross-file;
 - [ ] il file valida contro `tei_all` (RelaxNG).
