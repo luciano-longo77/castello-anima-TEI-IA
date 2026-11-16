@@ -113,7 +113,7 @@ Gli **eventi IA controfattuali** (il protocollo -CIT / +TEXTsub / +CIT) sono anc
 
 ## 5. L'interpretazione e l'indice d'impatto
 
-L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, con puntatori alle categorie del `classDecl` (le 8 tassonomie): `@ana`, non un `@type` libero, perché deve restare *governata* dal vocabolario normativo. Regola: un valore per asse (eccetto `#phase-critical`, trasversale); nel dubbio si sale alla categoria superiore (*astensione semantica*).
+L'annotazione interpretativa si àncora al testo tramite **`@ana` sul `seg`**, con puntatori alle categorie del `classDecl` (le 8 tassonomie): `@ana`, non un `@type` libero, perché deve restare *governata* dal vocabolario normativo. Regola: un valore per asse — eccezioni: `func` 1..n, `relation` 0..n, `mystic_state` 0..1, e `#phase-critical` trasversale; nel dubbio si sale alla categoria superiore (*astensione semantica*).
 
 Le **figure retoriche** si annotano in **stand-off** con `<span>`/`<spanGrp>`: il tratto di testo che realizza la figura si àncora per riferimento e si classifica con `@ana` su un vocabolario retorico locale (`#fig-metafora`, `#fig-similitudine`…), tenuto nel file del testo come `interpGrp`. Così l'annotazione retorica non spezza il flusso testuale e resta governata da un vocabolario, senza gravare sulla tassonomia normativa. Le relazioni esplicite fra loci (rischio↔operazione, intertesto) sono `<link>`/`<linkGrp>`; il referente generico è `<rs>`; il termine tecnico-mistico è `<term>`; la glossa autoriale è resa da `<add>` con una `<note type="glossa">` vuota (vedi sotto).
 
@@ -172,7 +172,7 @@ Questi attributi ammettono **solo** i valori elencati.
 ## 2.2 Regole trasversali
 
 1. **0 dangling** — ogni `#id` (`@ana`/`@hand`/`@wit`/`@ref`/`@resp`/`@target`/`@corresp`) risolve a un `xml:id` reale (verifica cross-file in CI).
-2. **Un valore per asse** in `@ana`, eccetto `#phase-critical` (che si affianca a una fase posizionale).
+2. **Un valore per asse** in `@ana` — eccezioni: `func` 1..n, `relation` 0..n, `mystic_state` 0..1, e `#phase-critical` (che si affianca a una fase posizionale).
 3. **Astensione semantica** — nel dubbio, categoria immediatamente superiore.
 4. **Normalizzazione grafica silenziosa** → dichiarata una volta per tutte ([`criteri-trascrizione.md`](criteri-trascrizione.md) + `editorialDecl`), **nessun `choice`** inline. **Niente lezioni inventate** → `unclear`/`gap`/`supplied` + `@cert`/`@resp`. **Attribuzione**: la normalizzazione grafica è attribuita **globalmente** all'editore (nessun `@resp` per-istanza); restano attribuiti e certificati **per-istanza** i soli interventi **sostanziali** (varianti d'apparato `app`/`rdg`) e **congetturali** (`supplied`, di default `cert="medium"`).
 5. **`lem` = ultima volontà** (`#txt-c`); fasi ordinate con `@varSeq`; **`#txt-4` mai a `lem`**; eventi IA solo in `rdg` con `@resp="#AI_controllata"`.
@@ -214,7 +214,7 @@ Valori **chiusi**, letti dai file costruiti. Usare solo questi.
 ### A3 · `@ref` / `@resp` — le 17 entità
 Persone `#Anna-La-Longa` `#s-teresa` `#dio` `#esterno` `#p-avila` `#p-john` `#p-molinos` `#CelestinoSanNicolo` `#editor` `#QA` · Luoghi `#Palermo` `#Caltanissetta` `#Sicilia` · Org `#AI_controllata` `#BCP` `#Carmelo` `#Inquisizione`
 
-### A4 · `@ana` — le 8 tassonomie interpretative (un valore per asse)
+### A4 · `@ana` — le 8 tassonomie interpretative (un valore per asse; eccezioni: func 1..n, relation 0..n, mystic_state 0..1)
 | Asse | Valori |
 |---|---|
 | **func** *(senza prefisso)* | `#legittimazione(-biblica/-liturgica/-tradizione)` · `#pedagogia(-introduzione/-discernimento/-esemplificazione)` · `#rischio(-attenuatio/-precisatio/-declaratio)` · `#ethos(-umilta/-esperienza/-obbedienza)` |
