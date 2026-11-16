@@ -72,7 +72,7 @@ Schema di validazione generale del progetto: il **`tei_all.rng` vendorizzato** (
 
 ### `/vocab`
 
-Il **vocabolario SKOS** degli assi interpretativi, **generato** da `tassonomia-gh.xml` (fonte normativa: non si edita a mano): **10 `skos:ConceptScheme` / 60 `skos:Concept`** con URI dereferenziabili (`https://w3id.org/castello-anima-vocab/…`). Contiene il Turtle (`castello-anima-vocab.ttl`), un **sito navigabile** (`vocab/site/`) e gli allineamenti esterni opzionali (`alignments.tsv`). La guardia CI **Vocab SKOS** garantisce la coerenza col teiText (sync + round-trip).
+Il **vocabolario SKOS** degli assi interpretativi, **generato** da `tassonomia-gh.xml` (fonte normativa: non si edita a mano): **10 `skos:ConceptScheme` / 60 `skos:Concept`** con URI dereferenziabili (`https://w3id.org/castello-anima-vocab/…`). Contiene il Turtle (`castello-anima-vocab.ttl`), un **sito navigabile** (`vocab/site/`) e gli allineamenti esterni opzionali (`alignments.tsv`). Include inoltre il **ponte SKOS** verso il progetto gemello *castello-dell-anima-edizione* (`alignments-castello-anima-edizione.ttl` — 10 allineamenti: 4 `closeMatch` e 2 `narrowMatch` fra stati mistici, 4 `relatedMatch` fra le relazioni mistiche, rigenerabile con `tools/gen_edizione_skos.py`). La guardia CI **Vocab SKOS** garantisce la coerenza col teiText (sync + round-trip).
 ➡️ **[Esplora il vocabolario online](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/)** · [Leggi il README di `vocab/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/vocab/README.md)
 
 ### `/docs`
