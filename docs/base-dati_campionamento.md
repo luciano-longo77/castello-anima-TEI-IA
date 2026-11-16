@@ -519,7 +519,7 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 |---|---|---|---|
 | Teresa d'Ávila | 16v | *Castillo interior* | Modello rovesciato nel *Castello* («serafica madre Teresa», c. 16v) |
 | Giovanni della Croce | 91r | *Subida* / *Noche* | Schema purgativo, sospensione potenze |
-| Miguel de Molinos | 19r, 63r | *Guía espiritual* | Contro-modello implicito («molinia»), rischio |
+| Miguel de Molinos | — | *Guía espiritual* | Contro-modello implicito (consonanza tematica, non attestazione); «molinia», rischio |
 | Maria Maddalena de' Pazzi | 16v, 31v | *Revelazioni* | Metafora della calamita |
 | Geltrude di Helfta | 16v | *Legatus divinae pietatis* | Genealogia mistica |
 | Chiara da Montefalco | 16v | *Vita et revelationes* | Esempio di mistica del cuore |
