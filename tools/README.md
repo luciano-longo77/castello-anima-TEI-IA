@@ -62,7 +62,7 @@ duplicati, presenza di `impact`. Le categorie sono uno **snapshot** di **`tei/ta
 ### `2-calcolatore-indice.html` — Calcolatore indice d'impatto
 
 Strumento a segmento singolo, da usare **mentre** si codifica. Si scelgono `operation` (dà F), **banda N** e
-**banda A**; applica **`I = (4·F/3 + 2·N + A)/7`** e restituisce `I`, la classe `#impact-*` e la `<fs>` pronta da
+**banda A**; applica **`I = (4·Fnorm + 2·N + A)/7`** e restituisce `I`, la classe `#impact-*` e la `<fs>` pronta da
 incollare. Include la **Guida alla griglia** (rubriche N/A/F, ancore, soglie, esempi ancorati) sempre visibile a
 fianco, l'aiuto contestuale sotto ogni menù e un'area appunti per la codifica. Il numero non si digita: si sceglie
 la banda, l'ancora è determinata. Per generare le `<fs>` di **molti** segmenti in un colpo si usa
@@ -77,7 +77,7 @@ e lo Schematron fanno in CI.
 
 ### `impact_index.py` — audit e authoring da riga di comando
 
-Calcolo deterministico e audit dell'**indice d'impatto** (`I = (4·F/3 + 2·N + A)/7`, pesi AHP 4:2:1).
+Calcolo deterministico e audit dell'**indice d'impatto** (`I = (4·Fnorm + 2·N + A)/7`, pesi AHP 4:2:1).
 Modello **a bande‑ancora**: N ∈ {0.90, 0.75, 0.55, 0.30}, A ∈ {0.85, 0.675, 0.40};
 F = rango dell'asse `operation` (delimitazione=1; attenuatio/precisatio/riequilibrio=2; declaratio=3).
 Definizione e protocollo: `docs/indice-impatto.md`, `docs/Protocollo-indice-impatto.md`.
