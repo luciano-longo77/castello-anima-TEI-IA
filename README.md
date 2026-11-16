@@ -221,7 +221,8 @@ Se usi questo repository, citalo secondo i metadati in [`CITATION.cff`](CITATION
 
 ## Licenza
 
-Creative Commons Attribution 4.0 International (**CC BY 4.0**).  
+Creative Commons Attribution 4.0 International (**CC BY 4.0**). 
+Vedi il file [`LICENCE.md`](LICENCE.md) per i dettagli completi.
 
 ---
 
