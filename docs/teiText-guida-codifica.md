@@ -20,7 +20,7 @@ Tre principi lo governano:
 
 1. **Ancoraggio.** Ogni puntatore (`#id`) usato — in `castello-anima-teiHeader.xml` (mani, testimoni, entità, tassonomia `workflow`) o in `tassonomia-gh.xml` (categorie `@ana`) — risolve a un `xml:id` reale.
 2. **Trasparenza filologica a due livelli.** La **normalizzazione grafica** è dichiarata *una volta per tutte* e applicata silenziosamente (nessun `@resp` per-istanza); gli interventi **sostanziali** (varianti d'apparato) e **congetturali** (integrazioni `supplied`) sono marcati, attribuiti e certificati **per-istanza**.
-3. **Verificabilità.** Elementi, attributi e annidamenti qui descritti sono verificati contro le specifiche **TEI P5** (`tei_all`): un esemplare che li esercita tutti supera il controllo strutturale con **0 errori**. La validazione RelaxNG completa (ordine, occorrenze, Schematron) si fa in oXygen.
+3. **Verificabilità.** Elementi, attributi e annidamenti qui descritti sono verificati contro le specifiche **TEI P5** (`tei_all`): un esemplare che li esercita tutti supera il controllo strutturale con **0 errori**. La validazione RelaxNG completa e lo Schematron girano automatizzati in CI (`validate-text.yml`), con le 8 guardie Python; oXygen resta utile per l'editing interattivo.
 
 > La forma canonica *machine-actionable* di questi vincoli è l'**ODD**; questo documento ne è il contenuto pronto (schema + manuale generabili in un secondo momento). Le liste di valori vincolati sono in [Appendice](#appendice--liste-di-valori-i-puntatori).
 
@@ -46,7 +46,7 @@ Il paragrafo è `<p>` (con `@n` come integrazione editoriale). La **materialità
 L'unità portante dell'annotazione è **`<seg>`**, non `<ab>` né `<p>`: è l'unica che porta `@ana` (l'interpretazione) a granularità sub-paragrafo ed è governata dal `classDecl`. Ogni `seg` del corpo ha un `@xml:id` nel formato `seg-b<libro>-c<cap>p<par>-<label>` (`b<libro>` = numero del libro, es. `b1`, `b3`; es. `seg-b1-c2p6-nemico-demonio`, `seg-b3-c1p8-desiderio`), che diventa l'ancora per l'apparato e per l'indice d'impatto.
 
 ```xml
-<seg xml:id="seg-b3-c1p8-desiderio" ana="#operation-precisatio #risk-quietismo #impact-high" hand="#ink_1">
+<seg xml:id="seg-b3-c1p8-desiderio" ana="#rischio-precisatio #operation-precisatio #risk-quietismo #exposition-critical #phase-mediana #phase-critical #mystic_state-quiete #relation-mistica-passiva-quiete #impact-high hand="#ink_1">
   incomincia l'anima a perdire qualunque desiderio
 </seg>
 ```
@@ -89,7 +89,7 @@ Lo stesso inchiostro può comparire in più fasi; la stessa fase può usare più
 
 L'edizione è un **autografo stratificato**: non ci sono testimoni indipendenti da collazionare, ma *fasi* di riscrittura sullo stesso foglio. Il metodo TEI adatto è la **segmentazione parallela**: ogni luogo di variazione **sostanziale** è un `<app>` che contiene la lezione a testo (`<lem>`) e le fasi (`<rdg>`). È l'**unico** apparato marcato inline: le regolarizzazioni grafiche non vi entrano (sono silenziose, §2).
 
-Scelta ecdotica di fondo: **`lem` = ultima volontà autoriale**, cioè l'edizione critica (`@wit="#txt-c"`). Le fasi anteriori vanno in `rdg`, ordinate con `@varSeq`. La **mano esterna** (`#txt-4`) non fissa mai il testo: **mai a `lem`**, solo a `rdg`.
+Scelta ecdotica di fondo: **`lem` = ultima volontà autoriale**, cioè l'edizione critica (`@wit="#txt-c"`). Le fasi anteriori vanno in `rdg`, ordinate con `@varSeq`. Il **testimone esterno** (`#txt-4`) non fissa mai il testo: **mai a `lem`**, solo a `rdg`.
 
 ```xml
 <app>
@@ -242,4 +242,4 @@ Vocabolario locale che proietta il testo su **31 aree concettuali** (dichiarate 
 
 ## Conformità
 
-Il set di tag qui descritto è verificato contro le specifiche **TEI P5** (`tei_all`): 0 errori al controllo strutturale (esistenza elementi, attributi ammessi, modelli di contenuto). Restano da eseguire in oXygen la validazione **RelaxNG** completa e i vincoli **Schematron** (0-dangling cross-file, `subst` = `add`+`del`, `lem`=`#txt-c`, IA solo `rdg`), che la forma **ODD** del progetto renderà automatici.
+Il set di tag qui descritto è verificato contro le specifiche **TEI P5** (`tei_all`): 0 errori al controllo strutturale (esistenza elementi, attributi ammessi, modelli di contenuto). La validazione **RelaxNG** completa e i vincoli **Schematron** (0-dangling cross-file, `subst` = `add`+`del`, `lem`=`#txt-c`, IA solo `rdg`) sono **già automatizzati in CI** (`validate-text.yml`, 8 guardie Python); un ODD del testo (previsto) li renderà anche derivabili da un unico sorgente.
