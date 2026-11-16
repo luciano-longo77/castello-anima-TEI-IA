@@ -83,6 +83,7 @@ e *falsificabile* (chiunque può rieseguire e verificare). La verifica autoritat
 (RelaxNG, Schematron, otto guardie, NFC) e l'apparato esterno tiene il testo di lettura **fuori dal
 raggio** dell'esperimento.
 
+> **Limiti.** L'indice e le misure sono strumenti **euristici e comparativi**, non misure assolute: le bande N/A/F sono giudizi editoriali (la CI ne valida la forma, non la correttezza interpretativa), le soglie sono calibrate su un campione ristretto e il pilota controfattuale conta **15 loci**. È uno **studio esplorativo, non inferenziale-statistico**: il campione è ragionato (nodi ad alta esposizione), non rappresentativo dell'intera opera. `D1`/`D3` poggiano su un rater singolo; l'operazione generativa `+CIT` è **tracciabile**, non riproducibile. La forza del metodo è la **trasparenza e falsificabilità** dell'intera pipeline, ispezionabile passo per passo.
 ---
 
 *Documento di orientamento, versionato col repository. Per la navigazione file-per-file →
