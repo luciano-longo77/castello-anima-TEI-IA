@@ -407,7 +407,7 @@ vi rimanda:
 | [`esempio/README-Esempio di annotazione tassonomica.md`](esempio/README-Esempio%20di%20annotazione%20tassonomica.md) | Guida all'esempio di annotazione: come leggere `taxonomy-text-model.xml`. |
 | [`esempio/taxonomy-text-model.xml`](esempio/taxonomy-text-model.xml) | L'esempio di annotazione, validato in CI da *Validate Taxonomy*. |
 | [`esempio/viewer-text-ex.html`](esempio/viewer-text-ex.html) | Visualizzatore dell'esempio annotato, apribile nel browser. |
-| [`workflows/validate-taxonomy.html`](workflows/validate-taxonomy.html) | Guida all'integrazione CI/CD della validazione tassonomica. |
+| [`docs/validate-taxonomy.html`](docs/validate-taxonomy.html) | Guida all'integrazione CI/CD della validazione tassonomica. |
 | [`log/[index] – Tassonomia interp.md`](log/%5Bindex%5D%20%E2%80%93%20Tassonomia%20interp.md) | Indice dei 15 log di lavorazione della tassonomia, in `log/`. |
 
 I file in `log/` sono **materiale di lavorazione**: documentano le decisioni prese sugli assi
