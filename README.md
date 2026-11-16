@@ -86,7 +86,7 @@ Raccoglie tutta la documentazione del progetto. Ogni README o documento prodotto
 
 ### `/tools`
 
-Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto, e il **Visualizzatore del vocabolario SKOS** (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando) — aiuti alla codifica, **non** parte della validazione automatica.Qui stanno anche i **generatori** della CI: `gen_data_dictionary.py` (rigenera `docs/data-dictionary.md` dalla tassonomia) ed `estrattore_interventi.py` (rigenera `docs/interventi-editoriali.md` dal teiText), invocati dai workflow `gen-*`; e `gen_skos.py` (rigenera il vocabolario SKOS dalla tassonomia), invocato dal workflow 
+Strumenti d'ausilio all'annotazione: l'**Assistente @ana**, il **Calcolatore** e il **Visualizzatore** dell'indice d'impatto, e il **Visualizzatore del vocabolario SKOS** (pagine HTML autonome, apribili nel browser) e `impact_index.py` (audit/authoring da riga di comando) — aiuti alla codifica, **non** parte della validazione automatica. Qui stanno anche i **generatori** della CI: `gen_data_dictionary.py` (rigenera `docs/data-dictionary.md` dalla tassonomia) ed `estrattore_interventi.py` (rigenera `docs/interventi-editoriali.md` dal teiText), invocati dai workflow `gen-*`; e `gen_skos.py` (rigenera il vocabolario SKOS dalla tassonomia), invocato dal workflow 
 **Vocab SKOS**.
 ➡️ [Leggi il README di `tools/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/tools/README.md).
 
