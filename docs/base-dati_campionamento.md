@@ -274,7 +274,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 
 **III.34** — trasformazione totale / matrimonio spirituale. Citazioni utili per i grafi:
 
-- *Vivo autem, iam non ego: vivit vero in me Christus* (Gal 2,20; c. 173v) → formula di trasformazione.
+- *Ego sed non ego, vivit vero in me Christus* (Gal 2,20; c. 173v) → formula di trasformazione.
 - *Amor meus crucifissus est, et ego cum illo* (S. Ignazio, *Ad Romanos* 7) → intertesto patristico; **attestata a III.24** (c. 219v), non a III.34.
 - *Cupio dissolvi, et esse cum Christo* (Phil 1,23; cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v) → desiderio di unione perfetta.
 
@@ -300,7 +300,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 - *Spiritus promptus, caro autem infirma* — Mt 26,41 (c. 25r)
 - *Deus meus… / Heloi Heloi lama sabacthani* — Mc 15,34 (cc. 213v, 219v, 220r, 243r)
 - *(Getsemani)* — Mc 14,36 (c. 219v)
-- *Pater dimitte illis, non enim sciunt* — Lc 23,24 (c. 220r)
+- *Pater dimitte illis, non enim sciunt* — Lc 23,34 (c. 220r)
 - *In manus tuas, Domine* — Lc 23,46 (cc. 242r–243v)
 - *Pater si vis, transfer calicem* — Lc 22,42 (cc. 25r, 25v, 219v)
 - *Consummatum est* — Gv 19,30 (cc. 241v, 254v, 255r)
@@ -309,7 +309,7 @@ L'intero dataset può essere rappresentato in TEI P5 secondo lo schema proposto 
 #### 3.4.3 Epistole paoline
 - *Cupio dissolvi et esse cum Christo* — Phil 1,23 (cc. 196r, 198v, 222r, 232v, 233r, 260r, 260v)
 - *Christus factus est pro nobis obediens* — Phil 2,8 (c. 14r)
-- *Vivo autem, iam non ego, vivit vero in me Christus* — Gal 2,20 (c. 173v)
+- *Ego sed non ego, vivit vero in me Christus* — Gal 2,20 (c. 173v)
 - *Soli Deo sit honor et gloria* (Regi autem saeculorum…) — 1 Tim 1,17 (cc. 253r, 263r)
 - *Dominus autem dirigat corda* — 2 Ts 3,5 (cc. 255v, 256r)
 
@@ -483,7 +483,7 @@ Il testo fa ampio uso della formula *non parlo senza l'esperienza* in contesti c
 | Mc 15,34 | *Deus meus… / Heloi Heloi lama sabacthani* | 213v, 219v, 220r, 243r | Notte spirituale |
 | Mc 14,36 | *(Getsemani — conformità alla volontà)* | 219v | Passione |
 | Lc 22,42 | *Pater si vis, transfer calicem istum* | 25r, 25v, 219v | Solitudine infusa |
-| Lc 23,24 | *Pater dimitte illis, non enim sciunt* | 220r | Perdono / passione |
+| Lc 23,34 | *Pater dimitte illis, non enim sciunt* | 220r | Perdono / passione |
 | Lc 23,46 | *In manus tuas, Domine* | 242r–243v | Ancoraggio alla Passione |
 | Gv 19,28 | *Sitio* | 241r, 241v | Pene d'amore / sponsale |
 | Gv 19,30 | *Consummatum est* | 241v, 254v, 255r | Sicurezza mistica |
