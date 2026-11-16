@@ -22,8 +22,8 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
   * [Il campione](#il-campione)
   * [Stato dell'arte e ragioni del modello](#stato-dellarte-e-ragioni-del-modello)
   * [Contributo del progetto](#contributo-del-progetto)
+  * [Come citare](#come-citare)
   * [Licenza](#licenza)
-  * [Autore](#-autore)
 
 ---
 
@@ -74,6 +74,11 @@ Schema di validazione generale del progetto: il **`tei_all.rng` vendorizzato** (
 
 Il **vocabolario SKOS** degli assi interpretativi, **generato** da `tassonomia-gh.xml` (fonte normativa: non si edita a mano): **10 `skos:ConceptScheme` / 60 `skos:Concept`** con URI dereferenziabili (`https://w3id.org/castello-anima-vocab/…`). Contiene il Turtle (`castello-anima-vocab.ttl`), un **sito navigabile** (`vocab/site/`) e gli allineamenti esterni opzionali (`alignments.tsv`). Include inoltre il **ponte SKOS** verso il progetto gemello *castello-dell-anima-edizione* (`alignments-castello-anima-edizione.ttl` — 10 allineamenti: 4 `closeMatch` e 2 `narrowMatch` fra stati mistici, 4 `relatedMatch` fra le relazioni mistiche, rigenerabile con `tools/gen_edizione_skos.py`). La guardia CI **Vocab SKOS** garantisce la coerenza col teiText (sync + round-trip).
 ➡️ **[Esplora il vocabolario online](https://luciano-longo77.github.io/castello-anima-TEI-IA/vocab/site/)** · [Leggi il README di `vocab/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/vocab/README.md)
+
+### `/w3id`
+
+Il setup degli **URI permanenti** del vocabolario: la base `https://w3id.org/castello-anima-vocab/` è servita da **w3id.org** con un redirect stabile verso l'host reale (GitHub Pages), indipendente da dove il `.ttl` è pubblicato. La PR a `perma-id/w3id.org` è **mergiata**: gli URI dei concetti sono **dereferenziabili**. È il presidio di **persistenza FAIR** del vocabolario.
+➡️ [Leggi il README di `w3id/`](https://github.com/luciano-longo77/castello-anima-TEI-IA/blob/main/w3id/README.md)
 
 ### `/docs`
 
@@ -163,6 +168,8 @@ Ogni evento è sottoposto a:
 2. verifica esperta (*expert-in-the-loop*),
 3. rianalisi TEI con misurazione dell'impatto su chiarezza argomentativa, coesione locale e stabilità dottrinale percepita.
 
+> **Trasparenza sull'uso dell'IA.** Se e come strumenti di IA sono stati impiegati nel repository è dichiarato per esteso in [`AI-USE.md`](AI-USE.md): la responsabilità scientifica e autoriale resta interamente **umana**.
+
 ---
 
 ## Il campione
@@ -206,11 +213,15 @@ Il modello permette di:
 - **(4)** fornire un protocollo replicabile per lo studio di testi mistici post tridentini e materiali prodotti in contesti di sorveglianza dottrinale.
 
 ---
+## Come citare
+
+Se usi questo repository, citalo secondo i metadati in [`CITATION.cff`](CITATION.cff) (formato *Citation File Format*, letto automaticamente da GitHub nel riquadro «Cite this repository»). Il progetto accompagna la scheda sulla **SSH Open Marketplace** (DARIAH).
+
+---
 
 ## Licenza
 
 Creative Commons Attribution 4.0 International (**CC BY 4.0**).  
-Vedi il file `LICENCE.md` per i dettagli completi.
 
 ---
 
