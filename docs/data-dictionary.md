@@ -15,6 +15,10 @@
 
 ---
 
+> **Nota terminologica.** Tre termini ricorrono su assi diversi e non vanno confusi: «**rischio**» è un valore dell'asse **`func`** (funzione retorica, con sottovalori `rischio-attenuatio/-precisatio/-declaratio`); «**risk**» è l'asse autonomo della **classe di pericolo** (`risk-dottrinale/-quietismo/-panteismo/-impeccabilita/-ambiguita`); «**attenuatio/precisatio/declaratio**» sono valori dell'asse **`operation`** (operazione prudenziale). Stesse radici, assi distinti.
+
+---
+
 ## `func`- Funzioni retoriche
 
 | `xml:id` | in `@ana` | Descrizione |
