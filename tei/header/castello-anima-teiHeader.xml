@@ -710,7 +710,7 @@
         <encodingDesc>
             <p xml:base="abstract">
                 <seg n="1"> Questo teiHeader descrive un modello di edizione digitale avanzata del <title ref="#castello-anima">Castello dell’anima</title> di Teresa di San Geronimo, fondato su una trascrizione interpretativa a normalizzazione grafica dichiarata (cfr. la editorialDecl e la Nota al testo, Criteri di trascrizione), integrata con la descrizione materiale del testimone (mani, inchiostri, ductus, ritracciature) e con un sistema tassonomico esteso, progettato per rendere computabili le funzioni retoriche, i nodi dottrinali, gli stati mistici e le operazioni prudenziali tipiche della scrittura tardo-seicentesca soggetta a sorveglianza inquisitoriale. Il modello adotta una segmentazione granulare (div, p, seg) collegata ai facsimili e articolata secondo la progressione mistica dei tre Libri (incipientes, proficientes, perfectae). </seg>
-                <seg n="2"> Le normalizzazioni grafiche sono applicate silenziosamente e dichiarate una volta per tutte; le sole varianti d'autrice sostanziali (aggiunte, cassature, sostituzioni) sono rese con l'apparato critico in segmentazione parallela (app/lem/rdg), mentre le integrazioni editoriali restano segnalate (supplied/gap) e lo strato prudenziale tardivo a inchiostro scuro con retrace. L'encoding incorpora inoltre una pipeline IA controllata (expert-in-the-loop), impiegata esclusivamente per la generazione di eventi controfattuali (rimozione, recupero di cancellature autoriali, integrazione di citazioni), sottoposti a controllo filologico expert-in-the-loop e utili alla misurazione dell'effetto della perturbazione su (1) chiarezza argomentativa, (2) coesione locale e (3) stabilità dottrinale percepita. L'insieme forma una infrastruttura editoriale FAIR, replicabile e orientata alla ricerca, capace di connettere la materialità del manoscritto con la dinamica prudenziale del testo mistico post-tridentino e di offrire un modello TEI interoperabile per future edizioni digitali di corpora affini. </seg>
+                <seg n="2"> Le normalizzazioni grafiche sono applicate silenziosamente e dichiarate una volta per tutte; le sole varianti d'autrice sostanziali (aggiunte, cassature, sostituzioni) sono rese con l'apparato critico in segmentazione parallela (app/lem/rdg), mentre le integrazioni editoriali restano segnalate (supplied/gap) e lo strato prudenziale tardivo a inchiostro scuro con retrace. L'encoding incorpora inoltre una pipeline IA controllata (expert-in-the-loop), impiegata esclusivamente per la generazione di eventi controfattuali (rimozione, ripristino dello stato anteriore a revisioni d'autrice — cassature o aggiunte —, integrazione di citazioni), sottoposti a controllo filologico expert-in-the-loop e utili alla misurazione dell'effetto della perturbazione su (1) chiarezza argomentativa, (2) coesione locale e (3) stabilità dottrinale percepita. L'insieme forma una infrastruttura editoriale FAIR, replicabile e orientata alla ricerca, capace di connettere la materialità del manoscritto con la dinamica prudenziale del testo mistico post-tridentino e di offrire un modello TEI interoperabile per future edizioni digitali di corpora affini. </seg>
             </p>
 
             <projectDesc>
@@ -775,7 +775,7 @@
                     codificati e interpretati in TEI, generando eventi controfattuali secondo tre
                     procedure controllate: (i) rimozione del dispositivo dal testo (-CIT), per
                     osservare cosa cambia in sua assenza; (ii) recupero nel testo di parole o
-                    passaggi che l'autrice stessa aveva cancellato (+TEXTsub), quando il manoscritto
+                    passaggi che l'autrice stessa aveva cancellato, o di aggiunte tardive da lei apposte (+TEXTsub), quando il manoscritto
                     ne permette il recupero; (iii) integrazione per esteso di una citazione che
                     l'autrice richiama senza riportarne le parole (+CIT). Ogni evento è prodotto
                     sotto vincoli di preservazione del markup TEI, coerenza linguistica (italiano
@@ -1595,7 +1595,7 @@
                             (-CIT).</catDesc>
                     </category>
                     <category xml:id="workflow-recupero-cancellature">
-                        <catDesc>Scenario controfattuale: recupero di cancellature autoriali 
+                        <catDesc>Scenario controfattuale: ripristino dello stato anteriore a una revisione d'autrice (cassatura recuperata o aggiunta rimossa) 
                             (+TEXTsub).</catDesc>
                     </category>
                     <category xml:id="workflow-aggiunta">
