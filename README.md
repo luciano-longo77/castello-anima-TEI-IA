@@ -38,7 +38,7 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 - **(O4)** Implementare una **pipeline AI controllata** che consente:
 
   * **rimozione** di un dispositivo testuale dal testo **(`-CIT`)**,
-  * **recupero** nel testo di una cancellatura autoriale **(`+TEXTsub`)**,
+  * **ripristino** dello stato anteriore a una revisione d'autrice — cassatura recuperata o aggiunta rimossa — **(`+TEXTsub`)**,
   * **integrazione** per esteso di una citazione richiamata ma non riportata **(`+CIT`)**,
 
 con successiva **valutazione degli effetti** su chiarezza argomentativa, coesione locale e stabilità dottrinale percepita.
@@ -160,7 +160,7 @@ N e A si assegnano per **bande** (l'annotatore sceglie la banda, non il decimale
 La pipeline opera su eventi controfattuali generati sotto controllo, secondo tre procedure:
 
 - **`-CIT`**: rimozione di un dispositivo testuale (glossa o citazione) per valutare l'effetto della sua assenza;
-- **`+TEXTsub`**: recupero nel testo di parole o passaggi che l'autrice stessa aveva cancellato, quando il manoscritto ne permette il recupero;
+- **`+TEXTsub`**: ripristino dello stato anteriore a una revisione d'autrice — recupero di una cassatura o rimozione di un'aggiunta successiva — quando il manoscritto lo permette;
 - **`+CIT`**: integrazione per esteso di una citazione che l'autrice richiama senza riportarne le parole.
 
 Ogni evento è sottoposto a:
