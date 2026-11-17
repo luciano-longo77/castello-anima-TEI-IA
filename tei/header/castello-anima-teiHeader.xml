@@ -776,9 +776,10 @@
                     (glosse, autocorrezioni, richiami alla tradizione mistica) precedentemente
                     codificati e interpretati in TEI, generando eventi controfattuali secondo tre
                     procedure controllate: (i) rimozione del dispositivo dal testo (-CIT), per
-                    osservare cosa cambia in sua assenza; (ii) recupero nel testo di parole o
-                    passaggi che l'autrice stessa aveva cancellato, o di aggiunte tardive da lei apposte (+TEXTsub), quando il manoscritto
-                    ne permette il recupero; (iii) integrazione per esteso di una citazione che
+                    osservare cosa cambia in sua assenza; (ii) ripristino dello stato anteriore a una revisione 
+                    — recupero di parole o passaggi cassati o rimozione di un'aggiunta successiva, 
+                    d'autrice o di mano esterna (+TEXTsub), quando il manoscritto lo consente; 
+                    (iii) integrazione per esteso di una citazione che
                     l'autrice richiama senza riportarne le parole (+CIT). Ogni evento è prodotto
                     sotto vincoli di preservazione del markup TEI, coerenza linguistica (italiano
                     tardo-seicentesco), assenza di anacronismi e rispetto della struttura del
