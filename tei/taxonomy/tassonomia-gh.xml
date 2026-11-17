@@ -471,8 +471,7 @@
                 occorrenza. Il criterio guida per la scelta resta l’iperonimia: dove il fenomeno
                 osservato non trova una categoria esistente con sufficiente precisione, si preferisce
                 la categoria più ampia disponibile piuttosto che l’introduzione ad hoc di una
-                sottocategoria, per preservare la replicabilità dell’annotazione tra annotatori
-                diversi.</p>
+                sottocategoria, per preservare la replicabilità dell’annotazione.</p>
             
             <p n="4">Un esempio di applicazione pratica di queste categorie a un’occorrenza reale del
                 manoscritto è disponibile in <ref target="esempio/taxonomy-text-model.xml">taxonomy/esempio.xml</ref>,
