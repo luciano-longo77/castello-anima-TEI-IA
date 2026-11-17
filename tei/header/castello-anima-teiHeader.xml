@@ -466,7 +466,8 @@
                                 </note>
                                 <note type="tradition">
                                     La tradizione diretta è limitata al solo testimone autografo conservato a Palermo,
-                                mentre gli atti inquisitoriali in italiano andarono distrutti nell’incendio dello Steri. 
+                                mentre gli atti inquisitoriali in italiano furono deliberatamente distrutti con l’archivio del tribunale allo Steri, 
+                                    all’abolizione dell’Inquisizione siciliana (1783). 
                                 I verbali superstiti in spagnolo, conservati presso l' 
                                     <orgName>Archivo Histórico Nacional,
                                         <placeName ref="https://www.geonames.org/3117735">Madrid</placeName></orgName>, 
@@ -544,7 +545,8 @@
                         <orgName>Archivo Histórico Nacional</orgName>
                         <placeName>Madrid</placeName>
                         <idno>Inquisición, Sicilia, Legajo 1747, f. 13</idno>
-                        <note>Traduzione castigliana. I verbali originali del processo inquisitoriale andarono distrutti nell'incendio dell'archivio di Palazzo Chiaramonte (lo Steri), Palermo.</note>
+                        <note>Traduzione castigliana. I verbali originali del processo inquisitoriale furono deliberatamente distrutti 
+                            con l'archivio del tribunale di Palazzo Chiaramonte (lo Steri), Palermo, all'abolizione dell'Inquisizione siciliana (1783).</note>
                     </bibl>
                     <bibl xml:id="modica-vasta-1989">
                         <author>M. Modica Vasta</author>
@@ -1687,7 +1689,7 @@
                             dell’anima</occupation>
                         <trait>
                             <note type="role">Guida spirituale di un circolo laico-religioso a
-                                Palermo (1691–1693).</note>
+                                Caltanissetta (1691–1693).</note>
                         </trait>
                         <trait>
                             <note type="legal" ana="#Inquisizione">Processata dal Sant’Uffizio
@@ -1861,20 +1863,17 @@
                                             Geronimo</persName> dal <date when="1688">1688</date>.</p>
                                 </item>
                                 <item>
-                                    <label>Conflitto:</label>
-                                    <p><orgName ref="#Carmelo">Ordine del Carmelo</orgName> in
-                                        conflitto con <orgName ref="#Inquisizione">Inquisizione</orgName> dal <date when="1695">1695</date> per rischio quietismo.</p>
+                                    <label>Caso Teresa:</label>
+                                    <p><persName ref="#s-teresa">Teresa di San Geronimo</persName>, 
+                                        terziaria dell’<orgName ref="#Carmelo">Ordine del Carmelo</orgName>, 
+                                        inquisita dal <date when="1695">1695</date> per rischio quietismo.</p>
                                 </item>
                             </list>
                         </note>
                     </org>
                     <org xml:id="Inquisizione">
-                        <orgName>Sant’Uffizio (Inquisizione Romana)</orgName>
-                        <idno type="VIAF">http://viaf.org/viaf/124871850</idno>
-
-                        <note>Ex Sant’Uffizio, responsabile dei processi per eresia e quietismo in
-                            Sicilia. <!-- Congregazione per la Dottrina della Fede -->
-                        </note>
+                        <orgName>Sant’Uffizio di Sicilia (Inquisizione spagnola)</orgName>
+                        <note>Tribunale del Sant’Uffizio di Sicilia, responsabile dei processi per eresia e quietismo nell’isola.</note>
                     </org>
                 </listOrg>
 
