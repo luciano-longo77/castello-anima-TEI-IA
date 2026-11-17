@@ -77,8 +77,8 @@ coerenti tra loro.
 
 L'IA non interpreta al posto del filologo: **misura e mette alla prova** il testo entro un
 perimetro definito dal TEI e sotto vaglio editoriale. Il risultato è un **laboratorio filologico
-digitale** — *tracciabile* (ogni run ha impronta e verdetto), *riproducibile* (le operazioni
-sottrattive e la coesione sono deterministiche; il +CIT è certificato dall'impronta del suo output)
+digitale** — *tracciabile* (ogni run ha codice di controllo e verdetto), *riproducibile* (le operazioni
+sottrattive e la coesione sono deterministiche; il +CIT è certificato dal codice di controllo del suo output)
 e *falsificabile* (chiunque può rieseguire e verificare). La verifica autoritativa resta la **CI**
 (RelaxNG, Schematron, otto guardie, NFC) e l'apparato esterno tiene il testo di lettura **fuori dal
 raggio** dell'esperimento.
