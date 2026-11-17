@@ -25,7 +25,7 @@ Per ogni **locus × operazione** una variante generata sotto controllo:
 | operazione | codice | tipo | cosa fa |
 | :--- | :--- | :--- | :--- |
 | rimozione citazione | **-CIT** | sottrattiva | toglie la citazione/`<cit>` di legittimazione dal segmento |
-| recupero cancellatura | **+TEXTsub** | sottrattiva | riporta il testo allo stato **pre-revisione**, in due sottotipi: **`ripristino-cassatura`** (recupera una lezione cassata d'autrice, dal `<rdg wit="#txt-b0">`) e **`rimozione-aggiunta`** (toglie una glossa/guardia **aggiunta** a margine o interlinea — strato tardivo T3 `#ink_3-dark` d'autrice o mano esterna `#ink_4-external`), per misurare da cosa la guardia proteggeva |
+| ripristino pre-revisione | **+TEXTsub** | sottrattiva | riporta il testo allo stato **pre-revisione**, in due sottotipi: **`ripristino-cassatura`** (recupera una lezione cassata d'autrice, dal `<rdg wit="#txt-b0">`) e **`rimozione-aggiunta`** (toglie una glossa/guardia **aggiunta** a margine o interlinea — strato tardivo T3 `#ink_3-dark` d'autrice o mano esterna `#ink_4-external`), per misurare da cosa la guardia proteggeva |
 | integrazione citazione | **+CIT** | additiva | restituisce una citazione *richiamata ma non esplicitata* (max 35 parole) |
 
 ## Governance (expert-in-the-loop)
