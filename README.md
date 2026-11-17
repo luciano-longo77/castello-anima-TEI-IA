@@ -33,7 +33,7 @@ Questo repository documenta un progetto che integra **TEI interpretativo** e **I
 
 - **(O2)** Modellare **glosse autoriali** (attenuatio, precisatio, declaratio) come dispositivi di chiarificazione e delimitazione dottrinale.
 
-- **(O3)** Strutturare un **campione di 29 loci (36 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e presenza di fenomeni di revisione.
+- **(O3)** Strutturare un **campione di 29 loci (36 capitoli)** selezionati per sensibilità dottrinale, densità intertestuale e comparabilità strutturale.
 
 - **(O4)** Implementare una **pipeline AI controllata** che consente:
 
@@ -181,8 +181,7 @@ I capitoli sono selezionati perché presentano:
 
 - nodi dottrinali sensibili (contemplazione, unione, sicurezza spirituale, discernimento),
 - elevata densità di citazioni o rimandi,
-- glosse autoriali impiegate per chiarificazione o attenuazione,
-- estensione comparabile e equilibrio fra fenomeni retorici.
+- estensione comparabile fra i libri (comparabilità strutturale).
 
 Questo campione costituisce la base per l'annotazione TEI e per la sperimentazione AI.
 
