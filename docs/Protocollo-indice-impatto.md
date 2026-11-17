@@ -208,7 +208,7 @@ spirito come prima* (`seg-b3-c1p8-desiderio` nel teiText).
 - **Valori-ancora:** N — Critica 0.90 · Alta 0.75 · Media 0.55 · Bassa 0.30; A — Alta 0.85 ·
   Media 0.675 · Bassa 0.40. L'annotatore sceglie la banda; il valore è determinato.
 - **Soglie delle 4 classi:** low I < 0.50 · medium 0.50 ≤ I < 0.66 · high 0.66 ≤ I < 0.82 ·
-  critical I ≥ 0.82; tagliate sulla distribuzione reale del campione (29 glosse).
+  critical I ≥ 0.82; tagliate sulla distribuzione reale del campione (le 29 glosse della matrice, §6 di `docs/base-dati_campionamento.md`).
 - **Normalizzazione di F:** Fnorm = F/3 (1 → 0.333, 2 → 0.667, 3 → 1.0).
 - **Derivazione di F:** rango dell'asse `operation` (delimitazione → 1;
   attenuatio/precisatio/riequilibrio → 2; declaratio → 3).
