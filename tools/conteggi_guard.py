@@ -55,6 +55,18 @@ EXPECTED = {
 # catene per libro (Libro I / II / III), desunte dal prefisso seg-b<L> dei membri
 EXPECTED_CHAINS_BY_BOOK = {"1": 40, "2": 46, "3": 113}
 
+# Marcatori di serialià sul TESTO-LETTURA COSTITUITO (corpo del <text>; rimossi
+# <rdg>, <del>, standOff e commenti; rubriche <head> TENUTE). Conteggio LESSICALE,
+# criterio dichiarato (paper §3.1.3/§4.2): cioè = tutte le forme (incl. 4 senza
+# accento); s'intende = SOLA FORMULA s'intende/non s'intende (presente indic.);
+# mi dichiaro = performativa. Verificato sul teiText: 144 / 54 (9) / 3.
+EXPECTED_SERIAL = {
+    "cioe":             144,   # \bcio[èée]\b
+    "s_intende":         54,   # \bs[''’]intende\b   (sola formula)
+    "s_intende_negate":   9,   # \bnon\s+s['’]intende\b
+    "mi_dichiaro":        3,   # \bmi\s+dichiaro\b
+}
+
 
 def ln(el):
     return etree.QName(el).localname
@@ -66,6 +78,32 @@ def count_spans_in_standoff(root, standoff_type):
         if isinstance(so.tag, str) and ln(so) == "standOff" and so.get("type") == standoff_type:
             n += sum(1 for e in so.iter() if isinstance(e.tag, str) and ln(e) == "span")
     return n
+
+
+def reading_text(root):
+    """Testo-lettura costituito: <body> con apparato risolto alla lezione a testo
+    (rimossi <rdg>, <del>, <standOff>); rubriche <head> tenute. Stringa piana."""
+    import copy
+    body = next((e for e in root.iter()
+                 if isinstance(e.tag, str) and ln(e) == "body"), root)
+    b = copy.deepcopy(body)
+    for el in list(b.iter()):
+        if isinstance(el.tag, str) and ln(el) in ("rdg", "del", "standOff"):
+            parent = el.getparent()
+            if parent is not None:
+                parent.remove(el)
+    return re.sub(r"\s+", " ", "".join(b.itertext()))
+
+
+def count_serial(root):
+    t = reading_text(root)
+    AP = "['’]"
+    return {
+        "cioe":             len(re.findall(r"\bcio[èée]\b", t, re.I)),
+        "s_intende":        len(re.findall(r"\bs" + AP + r"intende\b", t, re.I)),
+        "s_intende_negate": len(re.findall(r"\bnon\s+s" + AP + r"intende\b", t, re.I)),
+        "mi_dichiaro":      len(re.findall(r"\bmi\s+dichiaro\b", t, re.I)),
+    }
 
 
 def main(argv):
@@ -132,6 +170,12 @@ def main(argv):
     somma = sum(EXPECTED_CHAINS_BY_BOOK.values())
     if somma != EXPECTED["linkGrp"]:
         errors.append(f"incoerenza interna delle costanti: somma per libro {somma} != linkGrp {EXPECTED['linkGrp']}")
+
+    serial = count_serial(root)
+    for k, exp in EXPECTED_SERIAL.items():
+        obs = serial[k]
+        if obs != exp:
+            errors.append(f"serialità {k}: atteso {exp}, osservato {obs}")
 
     if errors:
         print(f"::error::Guardia conteggi: {len(errors)} numero/i canonico/i divergente/i "
