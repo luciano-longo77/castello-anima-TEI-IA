@@ -106,9 +106,8 @@ un **valore-ancora fisso** per banda. L'annotatore sceglie la banda, non il deci
 
 Le soglie di banda e i criteri d'attribuzione (con esempi ancorati) sono nel **Protocollo**.
 Effetto: l'indice diventa **interamente ordinale**, tre giudizi di banda (F si legge, N e A
-si scelgono) e ogni cifra è determinata. Due annotatori che concordano sulle bande ottengono
-lo stesso identico **I**: l'accordo inter-annotatore si misura sulla banda, non su un decimale non
-ispezionabile.
+si scelgono) e ogni cifra è determinata. A parità di bande scelte si ottiene lo stesso identico **I**: 
+il giudizio si esercita sulla banda — categoria ordinale ispezionabile — non su un decimale non ispezionabile.
 
 ## Formula (pesi AHP)
 
@@ -224,8 +223,7 @@ seg-b3-c1p8-desiderio;critica;alta
 seg-b3-c1p2-purificazione;critica;alta
 ```
 
-Due annotatori con le stesse due bande ottengono **output identico**: la riproducibilità è
-garantita per costruzione. Collocazione nel repo: `tools/`, accanto ai dati che valida.
+Le stesse due bande producono **output identico**: la riproducibilità è garantita per costruzione.
 
 ## Pipeline e workflow controfattuale
 
@@ -285,9 +283,6 @@ L'IA agisce come **perturbatore controllato**, mai come interprete:
 
 - **Sensibilità ai pesi** — ricalcolo con ponderazioni alternative; la quota di segmenti che
   cambiano banda è pubblicata come misura di sensibilità.
-- **Prova inter-annotatore** — codificatori TEI esterni annotano lo stesso campione e ripetono
-  in autonomia i confronti a coppie; l'accordo si misura sulla **banda** (non sul decimale) e
-  le divergenze sono documentate.
 - **Determinismo** — versione del modello e parametri fissati; `I` prodotto dallo script; la
   griglia (formula, ancore, soglie) dichiarata una sola volta e invariata sul corpus.
 - **FAIR** — testo, tassonomia, schemi e strumenti versionati in repository pubblico; ogni
@@ -305,7 +300,7 @@ L'indice d'impatto è uno **strumento euristico formalizzato**, non una misura a
 
 **4. Calibrazione e dimensione del campione.** Le soglie di banda sono tagliate sulla distribuzione di un campione ristretto (29 glosse, alcune a confidenza `low`); il pilota controfattuale conta **15 loci**. *Mitigazione:* è uno **studio pilota/esplorativo**, dichiaratamente **non inferenziale-statistico**. Il campione è **ragionato** (*purposive*): selezionato sui nodi ad alta esposizione dottrinale per gli esperimenti −CIT/+TEXTsub/+CIT, non per rappresentatività dell'intera opera. Non si rivendica alcuna generalizzazione statistica oltre il corpus annotato.
 
-**5. Dimensioni interpretative a rater singolo.** `D1` (chiarezza) e `D3` (stabilità) sono assegnate dal solo editore, **senza accordo inter-annotatore**. *Mitigazione:* il limite è dichiarato; `D2` fornisce un'àncora **oggettiva** (deterministica); l'estensione a un secondo annotatore su un sottoinsieme è prevista a backlog.
+**5. Dimensioni interpretative a valutatore singolo.** `D1` (chiarezza) e `D3` (stabilità) sono assegnate dal **solo editore**. *Mitigazione:* il limite è dichiarato; `D2` fornisce un'àncora **oggettiva** (deterministica).
 
 **6. Riproducibilità vs tracciabilità.** Le operazioni sottrattive (−CIT, +TEXTsub) operano su testo già presente e sono **deterministiche**; l'unica operazione **generativa** (+CIT) usa un motore che non espone un `seed`, quindi **non è riproducibile** in senso stretto. *Mitigazione:* per il +CIT si garantisce **tracciabilità** (modello+versione, prompt, `output_hash` dell'esito validato), non riproducibilità: ogni esito è *verificabile a posteriori*, pur non essendo *rigenerabile* identico.
 
