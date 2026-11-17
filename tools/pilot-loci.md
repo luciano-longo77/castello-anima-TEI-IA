@@ -33,7 +33,7 @@ completo delle aggiunte in [`../variants/backlog-textsub-additions.md`](../varia
 ## Nota su +CIT (cluster «un altro Dio»)
 Il +CIT opera sul **cluster di deificazione** «l'anima divenuta un altro Dio (per participatione/gratia)».
 La fonte è **Gal 2,20** (anagrafe #22), che l'autrice **cita esplicitamente all'àncora `c7p7`**
-(*«Nico ego sed non ego, nimis vero in me Christus»*) — e proprio lì il nodo è `#impact-low`
+(*«Ego sed non ego, vivit vero in me Christus»*) — e proprio lì il nodo è `#impact-low`
 (`#legittimazione-biblica`). Gli **stessi** enunciati di deificazione **senza** la citazione sono invece
 `#impact-high/medium #risk-panteismo`. Il +CIT integra quella citazione (forma **1a**, come attestata a
 `c7p7`) ai nodi paralleli non citati, per misurare se la legittimazione scritturale **abbassa il rischio
