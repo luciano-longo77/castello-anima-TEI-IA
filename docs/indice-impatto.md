@@ -272,7 +272,7 @@ da postulato a evidenza verificabile.
 
 ### Governance dell'IA
 
-L'IA agisce come **perturbatore probabilistico controllato**, mai come interprete:
+L'IA agisce come **perturbatore controllato**, mai come interprete:
 
 - modello, parametri (**temperatura, top-p, seed**), prompt e audit-trail sono fissati e
   registrati nel blocco `xenoData` del teiHeader;
