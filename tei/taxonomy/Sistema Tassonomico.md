@@ -251,8 +251,7 @@ formula è dichiarata **una sola volta** nell'`editorialDecl`, non ripetuta.
 Oltre a `impact-index`, il modello impiega altri tre strati `<standOff>` fratelli di `<text>`: `rhetorical-figures` (figure retoriche), `semantic-focus` (aree `#area-*`) e `semantic-chains` (catene tematiche e relazioni rischio↔operazione/intertesto, via `<link>`/`<linkGrp>`). Le catene semantiche coprono **tutti e tre i libri**: 199 `<linkGrp>` in totale (Libro I 40, Libro II 46, Libro III 113).
 
 ### 5.4 Robustezza
-Ricalcolo con pesi alternativi (analisi di sensibilità) e prova inter-annotatore
-(*encoding challenge*): le divergenze di classificazione e di pesi vengono pubblicate.
+Ricalcolo con pesi alternativi (analisi di sensibilità): la quota di segmenti che cambiano banda viene pubblicata come misura di robustezza.
 
 ## 6. Vincoli semantici cross-assiali
 Alcuni vincoli collegano categorie provenienti da assi diversi. Di seguito sono elencati i vincoli **cross-assiali** principali.
