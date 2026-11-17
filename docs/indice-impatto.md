@@ -127,7 +127,7 @@ marcatore).
 
 ## Bande (asse `impact`)
 
-Soglie fisse, tagliate sulla distribuzione reale del campione (29 glosse) e invariate sul
+Soglie fisse, tagliate sulla distribuzione reale del campione (le 29 glosse della matrice, §6 di `docs/base-dati_campionamento.md`) e invariate sul
 corpus:
 
 | Banda | Soglia |
@@ -298,7 +298,7 @@ L'indice d'impatto è uno **strumento euristico formalizzato**, non una misura a
 
 **3. Precisione apparente.** `I` è serializzato a tre decimali pur nascendo da poche scelte di banda discrete. *Mitigazione:* i decimali servono alla **riproducibilità byte-identica** del calcolo (verificata dallo Schematron a tolleranza 0.001), non a una pretesa di precisione di misura; l'output operativo è la **banda** (low/medium/high/critical), ed è su quella che poggiano lettura e grafici.
 
-**4. Calibrazione e dimensione del campione.** Le soglie di banda sono tagliate sulla distribuzione di un campione ristretto (29 glosse, alcune a confidenza `low`); il pilota controfattuale conta **15 loci**. *Mitigazione:* è uno **studio pilota/esplorativo**, dichiaratamente **non inferenziale-statistico**. Il campione è **ragionato** (*purposive*): selezionato sui nodi ad alta esposizione dottrinale per gli esperimenti −CIT/+TEXTsub/+CIT, non per rappresentatività dell'intera opera. Non si rivendica alcuna generalizzazione statistica oltre il corpus annotato.
+**4. Calibrazione e dimensione del campione.** Le soglie di banda sono tagliate sulla distribuzione di un campione ristretto (le 29 glosse della matrice del §6 di `docs/base-dati_campionamento.md`, alcune a confidenza `low`); il pilota controfattuale conta **15 loci**. *Mitigazione:* è uno **studio pilota/esplorativo**, dichiaratamente **non inferenziale-statistico**. Il campione è **ragionato** (*purposive*): selezionato sui nodi ad alta esposizione dottrinale per gli esperimenti −CIT/+TEXTsub/+CIT, non per rappresentatività dell'intera opera. Non si rivendica alcuna generalizzazione statistica oltre il corpus annotato.
 
 **5. Dimensioni interpretative a valutatore singolo.** `D1` (chiarezza) e `D3` (stabilità) sono assegnate dal **solo editore**. *Mitigazione:* il limite è dichiarato; `D2` fornisce un'àncora **oggettiva** (deterministica).
 
