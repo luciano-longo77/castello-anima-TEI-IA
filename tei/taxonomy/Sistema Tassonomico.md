@@ -226,7 +226,7 @@ Pesi da confronti a coppie (Analytic Hierarchy Process) in rapporto F : N : A = 
 ### 5.2 Discretizzazione (soglie calibrate)
 Il valore I è ricondotto alle 4 categorie dell'asse `impact`. Le soglie **non sono
 fissate a priori**: sono **calibrate sul campione** e verificate contro la
-distribuzione reale dei valori di I (le 29 glosse). Il taglio superiore isola le
+distribuzione reale dei valori di I (le 29 glosse della matrice, §6 di `docs/base-dati_campionamento.md`). Il taglio superiore isola le
 occorrenze a massima forza regolativa; i tagli intermedi cadono in corrispondenza
 degli addensamenti della distribuzione. Una volta calibrate, restano **invarianti
 su tutto il corpus**:
