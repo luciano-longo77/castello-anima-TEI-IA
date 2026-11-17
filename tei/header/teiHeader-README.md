@@ -194,7 +194,7 @@ L'edizione integra un **protocollo IA per la generazione di eventi controfattual
 | Codice | Operazione |
 | :--- | :--- |
 | `-CIT` | Soppressione di una glossa o citazione dal testo |
-| `+TEXTsub` | Recupero di una cancellatura autoriale |
+| `+TEXTsub` | Ripristino dello stato anteriore a una revisione d'autrice (cassatura recuperata o aggiunta rimossa) |
 | `+CIT` | Integrazione per esteso di una citazione richiamata |
 
 ### Principi di Controllo Filologico
