@@ -90,7 +90,7 @@ F è il **rango dell'operazione** dichiarata in `@ana`, normalizzato `Fnorm = F/
 I gradi sono **classi funzionali**, non un elenco chiuso di formule: un marcatore non
 canonico si assegna al grado la cui **operazione** condivide. La scala è robusta perché colloca
 nello stesso grado le operazioni più difficili da distinguere (attenuatio ↔ precisatio).
-Serialità decrescente dei marcatori nel campione codificato — **cioè 144 · s'intende/non s'intende 50 (9 negate) · mi dichiaro 3** .
+Serialità decrescente dei marcatori nel campione codificato — **cioè 144 · s'intende/non s'intende 54 (9 negate) · mi dichiaro 3** .
 
 ## N e A - bande e valori-ancora
 
@@ -238,7 +238,7 @@ registrata nel `<revisionDesc>`:
 | Token workflow | Sigla | Operazione |
 |----------------|:-----:|------------|
 | `#workflow-rimozione` | **-CIT** | rimozione di una glossa o citazione dal testo |
-| `#workflow-recupero-cancellature` | **+TEXTsub** | recupero di una cancellatura autoriale, quando il manoscritto lo consente |
+| `#workflow-recupero-cancellature` | **+TEXTsub** | ripristino dello stato anteriore a una revisione (cassatura recuperata o aggiunta rimossa), quando il manoscritto lo consente |
 | `#workflow-aggiunta` | **+CIT** | integrazione *in extenso* di una citazione solo richiamata |
 | `#workflow-validazione` | — | verifica della tenuta dei criteri annotativi sotto perturbazione |
 
