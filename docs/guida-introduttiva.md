@@ -49,7 +49,7 @@ Per misurare quanto un elemento *regge* il testo, la pipeline ne genera una **va
 controfattuale** e ne osserva l'effetto. Le operazioni consolidate sono tre:
 
 - **−CIT** — toglie una citazione/glossa di legittimazione (sottrattiva);
-- **+TEXTsub** — recupero di cancellatura, in due sottotipi (*ripristino-cassatura* e *rimozione-aggiunta*) (sottrattiva);
+- **+TEXTsub** — ripristino dello stato anteriore a una revisione, in due sottotipi (*ripristino-cassatura* e *rimozione-aggiunta*) (sottrattiva);
 - **+CIT** — esplicita una citazione **allusa e attestata** (additiva: l'**unica** operazione generativa).
 
 Ogni variante è **validata dall'editore** e registrata in un **apparato standoff esterno**,
